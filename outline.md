@@ -2,7 +2,7 @@ Outline (Combined)
 
 Introduction
 
-	Target Audience (L200-L300)
+	Target Audience (L200-L300) (Marko: L200-L300 refer to technical level, I think we still need to define the type of audience we are targeting)
 	
 		Azure MySQL application development topics.
 		
