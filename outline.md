@@ -2,7 +2,7 @@ Outline (Combined)
 
 Introduction
 
-	Target Audience (L200-L300)
+	Target Audience (L200-L300) (Marko: L200-L300 refer to technical level, I think we still need to define the type of audience we are targeting)
 	
 		Azure MySQL application development topics.
 		
@@ -18,7 +18,7 @@ Introduction to Azure Database for MySQL
 
 	What is MySQL?
 	
-	Hosting Options
+	MySQL Hosting Options
 	
 		Iaas/PaaS
 	
@@ -67,10 +67,54 @@ Getting Started
 			Java
 			
 			Windows/.NET Core, Framework
+	
+	Get started with Azure Free Account
+	
+		Create Azure free account
+		
+		Guide to deploy Az DB for MySQL with Azure free account
+	
+	Create Database
+		
+		Azure Portal
+		
+		Azure CLI
+		
+		ARM Template
+
+	Connect & query databases
+		
+		MySQL Workbench
+		
+		Azure CLI
+
+		PHP
+
+		Python
+		
+		Java
+
+		.NET
+
+		Connect to server in VNET
+		
+		Connect using TLS/SSL
+	
+	DB server Configuration
+		
+		Network
+		
+		Security
+		
+		Business Continuity
+
+	DB Server Monitoring and tuning
+
+
 
 End to end development
 
-	Type of applications
+	Type of MySQL applications
 	
 		Web App
 		
@@ -80,6 +124,24 @@ End to end development
 		
 		Batch
 		
+	Guide to choose the right service to host your application
+	
+		On Prem / Cloud - Azure, non-Azure
+		
+		Azure Cloud - App Services / Containers / AKS / 3rd party on Azure
+	
+	Integrating with other Azure Services
+	
+		Azure VMs
+		
+		Azure App Service
+		
+		Containerized Apps (ACI, ACR, App Svc)
+		
+		Azure Kubernetes Service 
+
+		3rd party services: CMS like Wordpress, LMS like Moodle, e-commerce like Magento, 
+
 	Versioning
 	
 		GitHub
@@ -115,14 +177,7 @@ End to end development
 			Choosing the right target.
 		
 		Configurations / Key Vault 
-		
-	Examples
 	
-		Wordpress
-		
-		Moodle
-		
-		Magento
 
 Monitoring
 
@@ -166,9 +221,10 @@ Performance
 	
 	Scaling
 
-Troubleshooting
-
+Troubleshooting 
+	
 	Connection Errors
+	
 
 Best Practices
 
@@ -186,9 +242,6 @@ Case Studies
 
 	Reference customers and applications
 	
-Zero to Hero
-
-	1-3 Sample Application Example Scenerios
 	
 Resources
 
