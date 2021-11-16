@@ -8,6 +8,14 @@ Microsoft announced Azure, formally known as Windows Azure, in 2008. At its ince
 
 ### Advantages
 
+The Azure platform is trusted by millions of customers and over 90,000 Cloud Solution Providers partnered with Microsoft. Azure allows firms to easily modernize their applications, expedite application development, and tailor their applications for their industries. In fact, according to internal Microsoft research, 85% of Fortune 100 companies have employed Azure AI solutions to innovate and greatly reduce their time to market for new features. Moreover, a [July 2020 Forrester study](https://azure.microsoft.com/resources/the-revenue-and-growth-opportunities-for-microsoft-azure-partners/) found that the studied group of Microsoft partners increased their gross margin by 12% due to customer demand for Azure solutions.
+
+By offering solutions on Azure, ISVs can access the largest B2B market. In addition, through the [Azure Partner Builder's Program](https://partner.microsoft.com/marketing/azure-isv-technology-partners), Azure assists ISVs with offering their solutions for customers to evaluate, purchase, and deploy. 
+
+Azure's development tools, such as Visual Studio and low-code Power Apps, are part of the platform's meteoric success. Companies that adopt capable, modern tools are 65% more innovative, according to a [2020 McKinsey & Company report.](https://azure.microsoft.com/mediahandler/files/resourcefiles/developer-velocity-how-software-excellence-fuels-business-performance/Developer-Velocity-How-software-excellence-fuels-business-performance-v4.pdf)
+
+![This image demonstrates common development tools on the Microsoft cloud platform to expedite application development.](media/ISV-Tech-Builders-tools.png "Microsoft cloud tooling")
+
 ### Free Subscription Offering
 
 To facilitate developers' adoption of Azure, Microsoft offers a [free subscription](https://azure.microsoft.com/free/search/) with $200 credit, applicable for thirty days; yearlong access to free quotas for popular services, including Azure Database for MySQL; and access to always free Azure service tiers.  
@@ -27,3 +35,5 @@ Because IaaS MySQL hosting gives greater control over the MySQL database engine 
 In the PaaS model, developers deploy a managed MySQL environment on Azure. Unlike IaaS, they cede control over patching the MySQL engine and OS to the Azure platform, and Azure automates many administrative tasks, like providing high availability, backups, and protecting data.
 
 Like IaaS, customers are still responsible for managing query performance, database access, and database objects, such as indexes. It is suitable for applications where the MySQL configuration exposed by Azure is sufficient and access to the OS is unnecessary.
+
+The Azure DBaaS MySQL offering is [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/#features), which is based on MySQL community edition and supports common administration tools and programming languages. As addressed in further depth, Microsoft provides multiple deployment modes to alleviate the weaknesses of PaaS databases.
