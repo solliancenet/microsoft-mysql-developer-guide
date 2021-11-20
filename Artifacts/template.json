@@ -1321,10 +1321,10 @@
           "hardwareProfile": { "vmSize": "[parameters('vmSize')]" },
           "storageProfile": {
             "imageReference": {
-              "publisher": "microsoftvisualstudio",
-              "offer": "visualstudio2019latest",
-              "sku": "vs-2019-comm-latest-ws2019",
-              "version": "latest"
+                "publisher": "MicrosoftWindowsServer",
+                "offer": "WindowsServer",
+                "sku": "2019-datacenter-gensecond",
+                "version": "latest"
             },
             "osDisk": {
               "name": "[concat(variables('resourceName'),'-paw-1-os')]",

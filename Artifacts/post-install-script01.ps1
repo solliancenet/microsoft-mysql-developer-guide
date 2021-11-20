@@ -59,15 +59,17 @@ InstallGit
         
 InstallAzureCli
 
-InstallOffice
+InstallIIs
+
+InstallPhp
 
 InstallMySql
 
 InstallMySQLWorkbench
 
-InstallIIs
+InstallVisualStudioCode
 
-InstallPhp
+InstallDockerDesktop
 
 Uninstall-AzureRm -ea SilentlyContinue
 
@@ -86,6 +88,6 @@ git clone https://github.com/solliancenet/$workshopName.git $workshopName
 
 #install the database...
 
-
+#install the app...
 
 Stop-Transcript
