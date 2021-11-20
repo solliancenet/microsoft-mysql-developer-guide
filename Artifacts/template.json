@@ -1113,7 +1113,7 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                    "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/Artifacts/environment-setup/spektra/post-install-script01.ps1"
+                    "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/Artifacts/post-install-script01.ps1"
                 ]
               },
               "protectedSettings": {
