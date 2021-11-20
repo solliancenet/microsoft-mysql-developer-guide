@@ -525,6 +525,26 @@
                 "id": "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'),'-web'))]"
               }
             }
+          },
+          {
+            "apiVersion": "2020-05-01",
+            "type": "virtualNetworkPeerings",
+            "name": "hub-to-db",
+            "location": "[variables('location')]",
+            "dependsOn": [
+              "[resourceId('Microsoft.Network/virtualNetworks/', concat(variables('resourceName'),'-db'))]",
+              "[resourceId('Microsoft.Network/virtualNetworks/', concat(variables('resourceName'),'-hub'))]"
+            ],
+            "comments": "hub to db",
+            "properties": {
+              "allowVirtualNetworkAccess": true,
+              "allowForwardedTraffic": true,
+              "allowGatewayTransit": true,
+              "useRemoteGateways": false,
+              "remoteVirtualNetwork": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'),'-db'))]"
+              }
+            }
           }
         ]
       },
@@ -586,6 +606,76 @@
               "[resourceId('Microsoft.Network/virtualNetworks/', concat(variables('resourceName'),'-hub'))]"
             ],
             "comments": "web to hub",
+            "properties": {
+              "allowVirtualNetworkAccess": true,
+              "allowForwardedTraffic": true,
+              "allowGatewayTransit": true,
+              "useRemoteGateways": false,
+              "remoteVirtualNetwork": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'),'-hub'))]"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2021-02-01",
+        "name": "[concat(variables('resourceName'),'-db')]",
+        "location": "[variables('location')]",
+        "properties": {
+          "addressSpace": { "addressPrefixes": ["10.4.0.0/16"] },
+          "dhcpOptions": { "dnsServers": [] },
+          "subnets": [
+            {
+              "name": "default",
+              "properties": {
+                "addressPrefix": "10.4.0.0/24",
+                "delegations": [],
+                "privateEndpointNetworkPolicies": "Enabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+              }
+            },
+            {
+              "name": "AzureFirewallSubnet",
+              "properties": {
+                "addressPrefix": "10.4.1.0/24",
+                "delegations": [],
+                "privateEndpointNetworkPolicies": "Enabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+              }
+            }
+          ],
+          "virtualNetworkPeerings": [
+            {
+              "name": "db-to-hub",
+              "properties": {
+                "peeringState": "Connected",
+                "remoteVirtualNetwork": {
+                  "id": "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'),'-hub'))]"
+                },
+                "allowVirtualNetworkAccess": true,
+                "allowForwardedTraffic": true,
+                "allowGatewayTransit": true,
+                "useRemoteGateways": false,
+                "remoteAddressSpace": { "addressPrefixes": ["10.0.0.0/16"] }
+              }
+            }
+          ],
+          "enableDdosProtection": false,
+          "enableVmProtection": false
+        },
+        "resources": [
+          {
+            "apiVersion": "2020-05-01",
+            "type": "virtualNetworkPeerings",
+            "name": "db-to-hub",
+            "location": "[variables('location')]",
+            "dependsOn": [
+              "[resourceId('Microsoft.Network/virtualNetworks/', concat(variables('resourceName'),'-db'))]",
+              "[resourceId('Microsoft.Network/virtualNetworks/', concat(variables('resourceName'),'-hub'))]"
+            ],
+            "comments": "db to hub",
             "properties": {
               "allowVirtualNetworkAccess": true,
               "allowForwardedTraffic": true,
@@ -1023,11 +1113,11 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                  "https://raw.githubusercontent.com/solliancenet/sentinel-defender-workshop-400/main/artifacts/environment-setup/spektra/post-install-script02.ps1"
+                    "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.ps1"
                 ]
               },
               "protectedSettings": {
-                "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File post-install-script02.ps1', variables('postInstallParameters'))]"
+                "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File post-install-script01.ps1', variables('postInstallParameters'))]"
               }
             }
           }
@@ -1133,7 +1223,7 @@
               "protectedSettings": {
                 "commandToExecute": "[concat('sh post-install-script01.sh ', variables('shPostInstallParameters'))]",
                 "fileUris": [
-                  "https://raw.githubusercontent.com/solliancenet/sentinel-defender-workshop-400/main/artifacts/environment-setup/spektra/post-install-script01.sh"
+                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.sh"
                 ],
                 "managedIdentity": {}
               }
@@ -1275,11 +1365,11 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                  "https://raw.githubusercontent.com/solliancenet/sentinel-defender-workshop-400/main/artifacts/environment-setup/spektra/post-install-script02.ps1"
+                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.ps1"
                 ]
               },
               "protectedSettings": {
-                "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File post-install-script02.ps1', variables('postInstallParameters'))]"
+                "commandToExecute": "[concat('powershell.exe -ExecutionPolicy Unrestricted -File post-install-script01.ps1', variables('postInstallParameters'))]"
               }
             }
           }
