@@ -1,4 +1,3 @@
-
 sudo apt-get update
 
 sudo apt-get install pass gnupg2 -y
@@ -12,3 +11,9 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
 sudo apt-get install docker-compose -y
 
 sudo apt-get install make -y
+
+sudo apt install mysql-server
+
+apt-get install git
+
+git clone https://github.com/solliancenet/microsoft-mysql-developer-guide.git
