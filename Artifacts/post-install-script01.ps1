@@ -63,6 +63,12 @@ InstallOffice
 
 InstallMySql
 
+InstallMySQLWorkbench
+
+InstallIIs
+
+InstallPhp
+
 Uninstall-AzureRm -ea SilentlyContinue
 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
@@ -77,5 +83,9 @@ $repoUrl = "solliancenet/$workshopName";
 #download the git repo...
 Write-Host "Download Git repo." -ForegroundColor Green -Verbose
 git clone https://github.com/solliancenet/$workshopName.git $workshopName
+
+#install the database...
+
+
 
 Stop-Transcript
