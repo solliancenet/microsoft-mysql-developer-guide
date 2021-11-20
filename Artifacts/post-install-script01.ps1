@@ -43,6 +43,10 @@ DisableInternetExplorerESC
 
 EnableIEFileDownload
 
+EnableDarkMode
+
+SetFileOptions
+
 InstallChocolaty
 
 InstallAzPowerShellModule
