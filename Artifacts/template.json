@@ -39,9 +39,9 @@
       "azureTenantID": "[subscription().tenantId]",
       "rgName": "[resourceGroup().name]",
       "playbookName": "get-sentinelalertsevidence",
-      "conn_azuresentinel": "[concat('azure_sentinel-',variables('playbookName'))]",
-      "conn_azuremonitorlogs": "[concat('azure_monitor-',variables('playbookName'))]",
-      "conn_eventhubs": "[concat('azure_eventhub-',variables('playbookName'))]",
+      "conn_azuresentinel": "[concat('azure_sentinel')]",
+      "conn_azuremonitorlogs": "[concat('azure_monitor')]",
+      "conn_eventhubs": "[concat('azure_eventhub')]",
       "eventsNumber": 10,
       "automationMap": {
         "eastus2": { "region": "East US" },
@@ -1113,7 +1113,7 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                    "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.ps1"
+                    "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/Artifacts/environment-setup/spektra/post-install-script01.ps1"
                 ]
               },
               "protectedSettings": {
@@ -1223,7 +1223,7 @@
               "protectedSettings": {
                 "commandToExecute": "[concat('sh post-install-script01.sh ', variables('shPostInstallParameters'))]",
                 "fileUris": [
-                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.sh"
+                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/Artifacts/post-install-script01.sh"
                 ],
                 "managedIdentity": {}
               }
@@ -1365,7 +1365,7 @@
               "autoUpgradeMinorVersion": true,
               "settings": {
                 "fileUris": [
-                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/artifacts/environment-setup/spektra/post-install-script01.ps1"
+                  "https://raw.githubusercontent.com/solliancenet/microsoft-mysql-developer-guide/main/Artifacts/post-install-script01.ps1"
                 ]
               },
               "protectedSettings": {
@@ -1496,7 +1496,7 @@
               "name": "mysql",
               "properties": {
                 "frontendIPConfiguration": {
-                  "id": "[variables('resourceName')]"
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIPConfigurations', variables('resourceName'), variables('resourceName'))]"
                 },
                 "protocol": "Tcp",
                 "frontendPort": 3306,
