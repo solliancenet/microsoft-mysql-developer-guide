@@ -82,6 +82,24 @@
         }
       },
       {
+        "type": "Microsoft.DataMigration/services",
+        "apiVersion": "2017-11-15-privatepreview",
+        "name": "[variables('resourceName')]",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), 'vnet-hub'), 'default')]"
+        ],
+        "sku": {
+            "name": "Standard_1vCores",
+            "tier": "Standard",
+            "size": "1 vCores"
+        },
+        "kind": "Cloud",
+        "properties": {
+            "virtualSubnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), 'vnet-hub'), 'default')]"
+        }
+    },
+      {
         "type": "Microsoft.Network/firewallPolicies",
         "apiVersion": "2021-02-01",
         "name": "[variables('resourceName')]",
@@ -281,6 +299,42 @@
         },
         "identity": { "type": "SystemAssigned" }
       },
+      {
+        "type": "Microsoft.DBforMySQL/flexibleServers",
+        "apiVersion": "2021-05-01",
+        "name": "[variables('resourceName')]",
+        "location": "[resourceGroup().location]",
+        "sku": {
+            "name": "Standard_B1ms",
+            "tier": "Burstable"
+        },
+        "properties": {
+          "administratorLogin": "[parameters('adminUsername')]",
+          "administratorLoginPassword": "[parameters('adminPassword')]",
+            "storage": {
+                "storageSizeGB": 20,
+                "iops": 360,
+                "autoGrow": "Enabled"
+            },
+            "version": "8.0.21",
+            "availabilityZone": "1",
+            "maintenanceWindow": {
+                "customWindow": "Disabled",
+                "dayOfWeek": 0,
+                "startHour": 0,
+                "startMinute": 0
+            },
+            "replicationRole": "None",
+            "network": {},
+            "backup": {
+                "backupRetentionDays": 7,
+                "geoRedundantBackup": "Disabled"
+            },
+            "highAvailability": {
+                "mode": "Disabled"
+            }
+        }
+    },
       {
         "type": "Microsoft.DBforMySQL/servers",
         "apiVersion": "2017-12-01",
