@@ -1,5 +1,7 @@
 create table user;
 
+create table guest;
+
 create table product;
 
 create table productoption;
