@@ -61,13 +61,21 @@ InstallAzureCli
 
 InstallIIs
 
+InstallWebPI
+
+InstallWebPIPhp
+
 InstallPhp
 
 InstallMySql
 
 InstallMySQLWorkbench
 
-InstallVisualStudioCode
+$extensions = @("ms-vscode-deploy-azure.azure-deploy");
+
+InstallVisualStudioCode $extensions;
+
+$global:localusername = "wsuser";
 
 InstallDockerDesktop
 

@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "s2admin";
-$password = "S2@dmins2@dmin";
+$username = "root";
+$password = "";
 $dbname = "ContosoCoffee";
 
 // Create connection
@@ -13,7 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, lastname FROM Guest";
+$sql = "SELECT id, firstname, lastname FROM user";
 
 $result = $conn->query($sql);
 

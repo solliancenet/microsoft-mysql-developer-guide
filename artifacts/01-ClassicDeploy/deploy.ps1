@@ -1,15 +1,25 @@
-$path = "c:\inetpub\wwwroot\01-ClassicDeploy";
+$sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts\01-ClassicDeploy";
+$targetPath = "c:\inetpub\wwwroot\01-ClassicDeploy";
 
 # create a new IIS directory
-mkdir $path
+mkdir $targetPath;
 
 # copy the php files
-copy ./app $path
+copy-item -Path "$sourcepath/app/*.*" "$targetpath"
 
 #deploy the database
-$username = "s2admin"
-$password = "S2@dmins2@dmin"
-$server = "localhost"
-$database = "ContosoCoffee"
+$username = "root";
+$password = "";
+$server = "localhost";
+$database = "ContosoCoffee";
 
-mysql -h $server -u $username $database < "$path/database/schema.sql"
+cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
+
+#create the database
+.\mysql -h $server -u $username -e "create database $database"
+
+#setup the schema
+.\mysql -h $server -u $username $database -e "source $sourcePath/database/schema.sql"
+
+#add the data
+#TODO
