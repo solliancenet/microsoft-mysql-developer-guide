@@ -1,12 +1,12 @@
-# Migrate to Docker Containers
+# Migrate to Azure Container Instances (ACI)
 
-This is a simple app that runs PHP code to connect to a MYSQL database.  Both the application and database are deployed via Docker containers.
+Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure Container Instances (ACI).
 
-## Migrate Application to Docker
+## Push images to Azure Container Registry
 
 1. TODO
 
-## Migrate Database to Docker
+## Run images in ACI
 
 1. TODO
 

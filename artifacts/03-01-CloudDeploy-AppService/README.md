@@ -1,12 +1,12 @@
-# Migrate to Docker Containers
+# Migrate to Azure App Service Containers
 
-This is a simple app that runs PHP code to connect to a MYSQL database.  Both the application and database are deployed via Docker containers.
+Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure App Service Containers.
 
-## Migrate Application to Docker
+## Push images to Azure Container Registry
 
 1. TODO
 
-## Migrate Database to Docker
+## Run images in Azure App Service
 
 1. TODO
 

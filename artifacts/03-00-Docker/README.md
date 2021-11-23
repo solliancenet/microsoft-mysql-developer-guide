@@ -102,12 +102,23 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ## Run the Docker images
 
-1. Run the following to create the web container:
+1. Create the following `store-web.yml` docker compose file:
+
+    ```docker
+
+    ```
+
+2. Run the following to create the web container:
 
     ```PowerShell
     ```
 
-2. Run the following to create the database container:
+3. Create the following `store-db.yml` docker compose file:
 
-    ```PowerShell
+    ```docker
+
     ```
+
+## Test the Docker images
+
+1. TODO

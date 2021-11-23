@@ -75,6 +75,7 @@ $extensions = @("ms-vscode-deploy-azure.azure-deploy");
 
 InstallVisualStudioCode $extensions;
 
+#to add the user to docker group
 $global:localusername = "wsuser";
 
 InstallDockerDesktop
@@ -94,8 +95,7 @@ $repoUrl = "solliancenet/$workshopName";
 Write-Host "Download Git repo." -ForegroundColor Green -Verbose
 git clone https://github.com/solliancenet/$workshopName.git $workshopName
 
-#install the database...
+#restart the machine...
 
-#install the app...
 
 Stop-Transcript

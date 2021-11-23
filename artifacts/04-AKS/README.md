@@ -1,39 +1,11 @@
-# Deployment via CI/CD
+# Migrate to Azure Kubernetes Services (AKS)
 
-This is a simple app that runs PHP code to connect to a MYSQL database.  Both the application and database are deployed via Docker containers.
+Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure Kubernetes Service (AKS).
 
-## GitHub Option
-
-### Create Github repo
+## Push images to Azure Container Registry
 
 1. TODO
 
-### Upload your application
-
-1. TODO
-
-### Deploy the code
-
-1. TODO
-
-### Test the code
-
-1. TODO
-
-## Azure DevOps Option
-
-### Create DevOps repo
-
-1. TODO
-
-### Upload your application
-
-1. TODO
-
-### Deploy the code
-
-1. TODO
-
-### Test the code
+## Run images in Azure Kubernetes Service (AKS)
 
 1. TODO
