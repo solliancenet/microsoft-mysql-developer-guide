@@ -5,7 +5,7 @@ $targetPath = "c:\inetpub\wwwroot\01-ClassicDeploy";
 mkdir $targetPath;
 
 # copy the php files
-copy-item -Path "$sourcepath/app/*.*" "$targetpath"
+copy-item -Path "$sourcepath/src/*.*" "$targetpath"
 
 #deploy the database
 $username = "root";

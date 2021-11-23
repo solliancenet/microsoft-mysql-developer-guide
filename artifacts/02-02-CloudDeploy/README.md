@@ -24,7 +24,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
     $appName = "mysqldev$suffix";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
-    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy\app.zip"
+
+    Compress-Archive -Path .\src\*.* -DestinationPath src.zip -force
+    
+    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy\src.zip"
     ```
 
 ### Test the Application
