@@ -122,3 +122,33 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 ## Test the Docker images
 
 1. TODO
+
+## Fix Storage persistence
+
+1. TODO
+
+## Re-test the Docker images
+
+1. TODO
+
+## Save the images to Azure Container Registry (ACR)
+
+1. Open the Azure Portal
+2. Browse to the **mysqldevSUFFIX** Azure Container Registry
+3. Under **Settings**, select **Access keys**
+4. Copy the username and password
+5. In the **paw-1** virtual machine, run the following:
+
+    ```powershell
+    docker login {acrName}.azurecr.io -u {username} -p {password}
+
+    docker tag store-mysql {acrName}.azurecr.io/store-mysql
+
+    docker tag store-php {acrName}.azurecr.io/store-php
+
+    docker push {acrName}.azurecr.io/store-mysql
+
+    docker push {acrName}.azurecr.io/store-php
+    ```
+
+6. You should now see two images in your Azure Container Registry that we will use later for deployment to other container based runtimes.
