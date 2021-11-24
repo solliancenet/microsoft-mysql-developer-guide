@@ -77,3 +77,6 @@ Failover Steps:
 - Setup read replicas for read intensive workloads and regional failover.
 - Create resource locks on resource groups.
 - Implement a load balancing strategy for applications for quick failover.
+
+
+TODO - https://semaphoreci.com/blog/7-continuous-integration-tools-for-php-laravel
