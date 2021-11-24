@@ -9,12 +9,12 @@
           "description": "Suffix added to all resource name to make them unique."
         }
       },
-      "adminUsername": {
+      "administratorLogin": {
         "type": "String",
         "defaultValue": "wsuser",
         "metadata": { "description": "" }
       },
-      "adminPassword": {
+      "administratorLoginPassword": {
         "type": "String",
         "defaultValue": "Solliance123",
         "metadata": { "description": "" }
@@ -309,8 +309,8 @@
             "tier": "Burstable"
         },
         "properties": {
-          "administratorLogin": "[parameters('adminUsername')]",
-          "administratorLoginPassword": "[parameters('adminPassword')]",
+          "administratorLogin": "[parameters('administratorLogin')]",
+          "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
             "storage": {
                 "storageSizeGB": 20,
                 "iops": 360,
@@ -354,8 +354,8 @@
                 "storageAutogrow": "Enabled"
             },
             "version": "8.0",
-            "administratorLogin": "[parameters('adminUsername')]",
-            "administratorLoginPassword": "[parameters('adminPassword')]",
+            "administratorLogin": "[parameters('administratorLogin')]",
+            "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
             "sslEnforcement": "Enabled",
             "minimalTlsVersion": "TLSEnforcementDisabled",
             "infrastructureEncryption": "Disabled",
@@ -1197,8 +1197,8 @@
           },
           "osProfile": {
             "computerName": "win10",
-            "adminUsername": "[parameters('adminUsername')]",
-            "adminPassword": "[parameters('adminPassword')]",
+            "adminUsername": "[parameters('administratorLogin')]",
+            "adminPassword": "[parameters('administratorLoginPassword')]",
             "secrets": [],
             "allowExtensionOperations": true
           },
@@ -1305,8 +1305,8 @@
           },
           "osProfile": {
             "computerName": "linux-1",
-            "adminUsername": "[parameters('adminUsername')]",
-            "adminPassword": "[parameters('adminPassword')]",
+            "adminUsername": "[parameters('administratorLogin')]",
+            "adminPassword": "[parameters('administratorLoginPassword')]",
             "linuxConfiguration": {
               "disablePasswordAuthentication": false,
               "provisionVMAgent": true
@@ -1368,8 +1368,8 @@
         "properties": {
           "osProfile": {
             "computerName": "paw-1",
-            "adminUsername": "[parameters('adminUsername')]",
-            "adminPassword": "[parameters('adminPassword')]",
+            "adminUsername": "[parameters('administratorLogin')]",
+            "adminPassword": "[parameters('administratorLoginPassword')]",
             "windowsConfiguration": { "provisionVmAgent": "true" }
           },
           "hardwareProfile": { "vmSize": "[parameters('vmSize')]" },
