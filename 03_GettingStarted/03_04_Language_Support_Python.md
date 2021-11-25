@@ -40,6 +40,18 @@ cursor.execute("SHOW STATUS LIKE 'Ssl_cipher'")
 print(cursor.fetchone())
 ```
 
+If you want to bind the [SSL public certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) with your connections to Flexible Server, which is recommended by Azure, download the public certificate to a location on your machine (such as `C:\Tools`). Then, edit the `config` dictionary to add the `ssl_ca` key and the file path of your certificate as the value.
+
+```python
+config = {
+  'host':'[SERVER].mysql.database.azure.com',
+  'user':'sqlroot',
+  'password':'[PASSWORD]',
+  'database':'newdatabase',
+  'ssl_ca': 'C:\Tools\DigiCertGlobalRootCA.crt.pem'
+}
+```
+
 The second code snippet connects to the MySQL instance and executes a raw query to SELECT all rows from the `inventory` table. This time, it uses the `fetchall()` method to parse the result set into a Python iterable. You should see an output like the one below.
 
 ```
