@@ -38,3 +38,9 @@ After the commands finish executing, observe that the Flexible Server instance p
 ![This image demonstrates the MySQL Flexible Server provisioned through Bash CLI commands.](./media/mysql-flex-params.png "CLI provisioning")
 
 ## ARM Template - TODO
+
+Azure provides a [quickstart document](https://docs.microsoft.com/azure/mysql/flexible-server/quickstart-create-arm-template#review-the-template) with a comprehensive ARM template for a Flexible Server deployment. The ARM template below is a simplified template that replicates the CLI deployment above.
+
+```json
+
+```
