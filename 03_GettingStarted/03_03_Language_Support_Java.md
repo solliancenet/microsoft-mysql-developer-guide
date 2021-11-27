@@ -1,8 +1,14 @@
 # Java (Spring Boot) Language Support
 
-This guide will demonstrate how to operate a Spring Framework application that queries Azure Database for MySQL through Spring Data JPA. We will also present Azure extensions for popular Java development tools.
+This guide will demonstrate how to operate a Spring Framework application that queries Azure Database for MySQL through the Spring Data JPA. We will also present Azure extensions for popular Java development tools.
 
 ## Setup
+
+### Prerequisites
+
+Please complete the instructions for [working with Flexible Server in MySQL Workbench.](03_06_Query_MySQL_Workbench.md) Utilize version 8.0.26 as you complete the guide to ensure compatibility with Single Server.
+
+Moreover, download Postman, a popular REST client. If you are more comfortable with another utility, such as `curl`, feel free to use it instead.
 
 ### IntelliJ Setup
 
@@ -51,6 +57,12 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server, but
 
     ![This image demonstrates Single Server MySQL connection information from the IntelliJ Azure explorer.](./media/mysql-instance-information.png "MySQL connection information")
 
+5. Create a new connection to your Azure Database for MySQL Single Server instance from MySQL Workbench. Use the following SQL statement to create a new database called `newdatabase`. This application will not function with the provided `mysql` system database.
+
+    ```sql
+    CREATE DATABASE newdatabase;
+    ```
+
 ## Run the App
 
 1. Open `application.properties` from the project hierarchy: `src` > `main` > `resources`. Delete all the `spring.datasource.*` entries.
@@ -62,3 +74,37 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server, but
 3. In the **Azure Resource Connector** window, keep all parameters the same. Simply populate the **Password**. Then, select **OK**.
 
     ![This image demonstrates the Azure Resource Connector dialog box.](./media/azure-resource-connector-intellij.png "Azure Resource Connector")
+
+4. Replace the contents you removed from the `application.properties` file with the following. Notice how the connection information is encapsulated in environment variables.
+
+    ```
+    spring.datasource.url=${AZURE_MYSQL_URL}
+    spring.datasource.username=${AZURE_MYSQL_USERNAME}
+    spring.datasource.password=${AZURE_MYSQL_PASSWORD}
+    ```
+
+5. Start the application from the upper right-hand corner of the screen.
+
+    ![This image shows how to start the Spring Boot app from IntelliJ.](./media/start-app-intellij.png "Starting Spring Boot app")
+
+## Testing the App
+
+1. Open Postman, or the REST client of your choice. Make a `POST` request to `http://localhost:8080/demo/add` with the URL parameters `name` and `email`.
+
+    ![This image shows how to make a POST request to the Java app endpoint.](./media/post-request-postman.png "POST to endpoint")
+
+2. Make a `GET` request to `http://localhost:8080/demo/all`. The entries that you added through the POST request will be displayed.
+
+    ![This image shows how to make a GET request to the Java app endpoint.](./media/get-request-postman.png "GET request from Postman")
+
+3. As expected, the data is persisted to the MySQL Single Server instance.
+
+    ![This image shows the user data persisted to the MySQL Single Server instance with a query in MySQL Workbench.](./media/result-set-mysql-workbench.png "Data persisted to Single Server")
+
+## Stop the App
+
+1. Stop the app in IntelliJ.
+
+2. In the **Azure Explorer**, right-click the MySQL Single Server instance you created and select **Stop**.
+
+Congratulations. You have successfully installed IntelliJ, the Azure Explorer extension, created a MySQL Single Server instance, and securely operated an app using the Single Server.
