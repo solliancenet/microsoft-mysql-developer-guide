@@ -1,0 +1,192 @@
+
+.header {
+	width: 100%;
+	height: 48px;
+	background-color: #33C3F0;
+	position: relative;
+	text-align: center;
+}
+.header > a {
+	display: inline-block;
+	font-size: 30px;
+	line-height: 48px;
+	color: #fff;
+	position: relative;
+}
+.header > a > img {
+	float: left;
+	width: 35px;
+	height: 35px;
+	margin-top: 5px;
+}
+
+.hero {
+	width: 100%;
+	height: 50vh;
+	background-color: #33C3F0;
+	background-image: url('/img/italian-cuisine-g0709f9a81_1920.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+}
+.hero .logo {
+	width: 100%;
+	text-align: center;
+	font-size: 45pt;
+	line-height: 45pt;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 0 12px rgba(0, 0, 0, 0.78);
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+h3 {
+	margin: 15px 0 0 0;
+	text-align: center;
+}
+
+button[disabled],
+.button[disabled] {
+	color: #bbb;
+	border-color: #ddd;
+	cursor: not-allowed;
+}
+
+.center-block {
+	padding: 15px;
+	text-align: center;
+}
+.center-block > .column {
+	margin: 0 auto;
+	float: none;
+}
+
+.category {
+	margin-bottom: 4%;
+	position: relative;
+	cursor: pointer;
+}
+.category:nth-child(4),
+.category:nth-child(7),
+.category:nth-child(10),
+.category:nth-child(13) {
+	margin-left: 0;
+}
+.category > .image {
+	width: 100%;
+	height: 50vw;
+	max-height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+	border-radius: 4px;
+}
+.category.selected:before {
+	content: '';
+	position: absolute;
+	top: -3%;
+	left: -2%;
+	width: 104%;
+	height: 106%;
+	border: 2px solid #33C3F0;
+	border-radius: 8px;
+}
+
+.item {
+	margin-bottom: 4%;
+	position: relative;
+	text-align: left;
+}
+.item:nth-child(4),
+.item:nth-child(7),
+.item:nth-child(10),
+.item:nth-child(13) {
+	margin-left: 0;
+}
+.item > .image {
+	width: 100%;
+	height: 50vw;
+	max-height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+	border-radius: 4px;
+}
+.item .name {
+	float: left;
+	font-weight: bold;
+}
+.item .price {
+	float: right;
+	top: 0;
+	right: 5px;
+	color: #33C3F0;
+}
+.item .desc {
+	clear: both;
+	margin: 5px 0;
+	font-size: .9em;
+	line-height: 1.2;
+	text-align: left;
+	color: #777;
+}
+.item button {
+	padding: 0 20px;
+	margin: 0;
+	height: 28px;
+	line-height: 28px;
+}
+
+
+
+/*
+.item {
+	margin-bottom: 15px;
+	text-align: left;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	position: relative;
+}
+.item .image {
+	float: left;
+	margin: 5px;
+	width: 200px;
+	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+	border-radius: 4px;
+}
+.item .name {
+	font-weight: bold;
+}
+.item .desc {
+	font-size: 1em;
+	line-height: 1.1;
+	margin: 10px 0;
+}
+.item .price {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	color: #33C3F0;
+}
+.item button {
+	float: right;
+	padding: 0 20px;
+	margin: 0 5px;
+	height: 28px;
+	line-height: 28px;
+}
+.item .clear {
+	clear: both;
+}
+*/
+
