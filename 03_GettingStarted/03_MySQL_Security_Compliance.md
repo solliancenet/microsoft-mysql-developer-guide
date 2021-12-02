@@ -37,7 +37,7 @@ When provisioning PaaS MySQL, Azure requires administrator user credentials. It 
 
 Single Server and Flexible Server also support audit logging. Note that excessive audit logging degrades server performance, so be mindful of the events and users configured for logging.
 
-**Audit Logging Guides**
+**Configuring Audit Logging Guides**
 
 - [Single Server](https://docs.microsoft.com/azure/mysql/concepts-audit-logs)
 - [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)
