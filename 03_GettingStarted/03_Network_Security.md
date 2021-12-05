@@ -25,4 +25,10 @@ Public access allows hosts, including Azure services, to access the PaaS MySQL i
 
 With private access, only clients in the specified virtual network(s) can access the MySQL instance. Virtual networks utilize private IP addresses, and network traffic travels over Microsoft's high-bandwidth network infrastructure.
 
+#### Private Link
+
+One approach to private access is through *Azure Private Link*. Private Link uses *Private Endpoints* to replace public resource endpoints with private network interfaces accessible through private IP addresses. With Azure Database for MySQL Single Server, private endpoints are supported in the General Purpose and Memory Optimized tiers.
+
+#### Service Endpoints
+
 TODO - Clarify difference between service endpoints and private endpoints according to MS learn module: https://docs.microsoft.com/en-us/learn/modules/design-implement-private-access-to-azure-services/

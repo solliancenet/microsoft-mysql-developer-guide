@@ -10,7 +10,7 @@ For managing database objects and access controls on those objects, standard MyS
 
 ## Azure Database for MySQL Deployment Modes
 
-Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings.
+Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings. For a more comprehensive comparison table, please consult [this document.](https://docs.microsoft.com/azure/mysql/select-right-deployment-type)
 
 ### Single Server
 
@@ -40,8 +40,20 @@ To compensate for the latency challenges, Azure provides HA within a single zone
 
 To learn more about HA with MySQL Flexible Server, consult the [documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-high-availability)
 
-**Place comparison visual - TODO**
+#### Flexible Server Pricing & TCO
 
-#### Flexible Server Pricing & TCO - TODO
+All three MySQL Flexible Server tiers offer a storage range between 20 GiB and 16 TiB and the same backup retention period range of 1-35 days. However, they differ in core count and memory per vCore. Choosing a compute tier affects the database IOPS and pricing.
 
-#### Flexible Server Unsupported Features - TODO
+- Burstable: This tier corresponds to a B-series Azure VM. Instances provisioned in this tier have 1-2 vCores. It is ideal for applications that do not utilize the CPU consistently.
+- General Purpose: This tier corresponds to a Ddsv4-series Azure VM. Instances provisioned in this tier have 2-64 vCores and 4 GiB memory per vCore. It is ideal for most enterprise applications requiring a strong balance between memory and vCore count.
+- Memory Optimized: This tier corresponds to an Edsv4-series Azure VM. Instances provisioned in this tier have 2-64 vCores and 8 GiB memory per vCore. It is ideal for high-performance or real-time workloads that depend on in-memory processing.
+
+To estimate the TCO for Azure Database for MySQL, use the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). Note that you can also use the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center. Simply indicate your on-premises hardware and the Azure landing zone, adjust calculation parameters, like the cost of electricity, and observe the potential savings.
+
+#### Flexible Server Unsupported Features
+
+Azure provides a [detailed list of the limitations of Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-limitations). Here are a few notable ones.
+
+- Support for only the InnoDB and MEMORY storage engines; MyISAM is unsupported
+- The DBA role and the `SUPER` privilege are unsupported
+- `SELECT ... INTO OUTFILE` statements to write query results to files are unsupported, as the filesystem is not directly exposed by the service
