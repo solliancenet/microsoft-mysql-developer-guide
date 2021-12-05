@@ -14,6 +14,8 @@ There are two major APIs to interact with MySQL in PHP: *MySQLi*, which is used 
 
 *PDO*, or *PHP Data Objects*, allows applications to access databases in PHP through abstractions, standardizing data access for different databases. PDO works with a database-specific driver, like *PDO_MYSQL*.
 
+Flexible Server and Single Server are compatible with all PHP client utilities for MySQL Community Edition.
+
 ## Resources
 
 1. [Backend libraries for mysqli and PDO_MySQL](https://www.php.net/manual/en/mysqlinfo.library.choosing.php)
