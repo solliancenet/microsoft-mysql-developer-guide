@@ -20,17 +20,5 @@
 @endsection
 @push('scripts')
 <script>
-$(document).ready( function() {
-	$('.category').on('click', function() {
-		$('.category').removeClass('selected');
-		$(this).addClass('selected');
-		$('.select-category').attr('disabled',false).addClass('button-primary');
-	});
-	$('.select-category').on('click', function() {
-		var category = $('.category.selected').attr('data-url');
-		var url = "/item-list/" + category;
-		location.href=url;
-	});
-});
 </script>
 @endpush

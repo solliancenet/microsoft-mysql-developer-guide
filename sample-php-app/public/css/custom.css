@@ -1,3 +1,16 @@
+.initially-hidden {
+	display: none;
+}
+.text-right {
+	text-align: right;
+}
+.m-b-0 {
+	margin-bottom: 0;
+}
+.b-b-0,
+.b-b-0 tr:last-child td {
+	border-bottom: 0;
+}
 
 .header {
 	width: 100%;
@@ -18,6 +31,150 @@
 	width: 35px;
 	height: 35px;
 	margin-top: 5px;
+}
+@media (max-width: 414px) {
+	.header {
+		text-align: left;
+		padding-left: 5px;
+	}
+}
+@media (max-width: 374px) {
+	.header > a {
+		font-size: 25px;
+	}
+	.header > a > img {
+		width: 30px;
+		height: 30px;
+		margin-top: 8px;
+	}
+
+}
+
+.global-cart {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	z-index: 1000;
+}
+.global-cart .cart-icon {
+	padding: 0 15px;
+	color: #fff;
+	float: right;
+	line-height: 48px;
+}
+.global-cart .cart-icon.disabled {
+	cursor: default;
+}
+.global-cart .cart-block {
+	clear: both;
+	width: 320px;
+	padding: 0 15px;
+	font-size: .8em;
+	background: #fbfbfb;
+	border-radius: 0 0 4px 4px;
+}
+@media (max-width: 414px) {
+	.global-cart .cart-block {
+		width: 100vw;
+	}
+}
+.global-cart .full-cart td:nth-child(1) {
+	width: 33%;
+	max-width: 33%;
+}
+.global-cart .full-cart td:nth-child(1) {
+    position: relative;
+}
+.global-cart .full-cart td:nth-child(1):before {
+    content: '&nbsp;';
+    visibility: hidden;
+}
+.global-cart .full-cart td:nth-child(1) span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.global-cart .full-cart td:nth-child(2) {
+	width: 19.5%
+	white-space: nowrap;
+}
+.global-cart .full-cart td:nth-child(3) {
+	width: 25.5%;
+	text-align: right;
+	white-space: nowrap;
+}
+.global-cart .full-cart td:nth-child(4) {
+	width: 22%;
+	text-align: right;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.global-cart .item-qty {
+	margin: 0;
+	padding: 0 4px;
+	height: 26px;
+	width: 31px;
+	text-align: right;
+}
+
+.checkout-cart {
+	margin-bottom: 15px;
+}
+.checkout-cart .image {
+	width: 48px;
+	height: 48px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	position: relative;
+	border-radius: 4px;
+}
+.checkout-cart td:nth-child(1) {
+	max-width: 48px;
+}
+.checkout-cart td:nth-child(2) {
+	width: 100%;
+}
+.checkout-cart td:nth-child(2) span:nth-child(1) {
+	display: inline-block;
+	width: 75%;
+}
+.checkout-cart td:nth-child(2) span:nth-child(2) {
+	display: inline-block;
+	width: 24%;
+	text-align: right;
+	color: #bbb;
+}
+@media (max-width: 414px) {
+	.checkout-cart td:nth-child(2) span:nth-child(1) {
+		display: inline-block;
+		width: 100%;
+	}
+	.checkout-cart td:nth-child(2) span:nth-child(2) {
+		display: inline-block;
+		width: 100%;
+		text-align: left;
+	}
+}
+.checkout-cart td:nth-child(3) {
+	min-width: 85px;
+	text-align: right;
+	font-weight: bold;
+}
+@media (max-width: 414px) {
+	.checkout-cart td:nth-child(3):before {
+		content: ' ';
+		display: inline-block;
+		width: 100%;
+	}
+}
+.checkout-cart tr:last-child td {
+	text-align: right;
+	font-weight: bold;
 }
 
 .hero {
@@ -54,6 +211,20 @@ button[disabled],
 	color: #bbb;
 	border-color: #ddd;
 	cursor: not-allowed;
+}
+
+.button-small {
+	padding: 0 20px;
+	margin: 0;
+	height: 28px;
+	line-height: 28px;
+}
+.button-tiny {
+	padding: 0 7px;
+	margin: 0;
+	height: 18px;
+	font-size: 9px;
+	line-height: 16px;
 }
 
 .center-block {
@@ -136,57 +307,3 @@ button[disabled],
 	text-align: left;
 	color: #777;
 }
-.item button {
-	padding: 0 20px;
-	margin: 0;
-	height: 28px;
-	line-height: 28px;
-}
-
-
-
-/*
-.item {
-	margin-bottom: 15px;
-	text-align: left;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	position: relative;
-}
-.item .image {
-	float: left;
-	margin: 5px;
-	width: 200px;
-	height: 150px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	position: relative;
-	border-radius: 4px;
-}
-.item .name {
-	font-weight: bold;
-}
-.item .desc {
-	font-size: 1em;
-	line-height: 1.1;
-	margin: 10px 0;
-}
-.item .price {
-	position: absolute;
-	top: 0;
-	right: 5px;
-	color: #33C3F0;
-}
-.item button {
-	float: right;
-	padding: 0 20px;
-	margin: 0 5px;
-	height: 28px;
-	line-height: 28px;
-}
-.item .clear {
-	clear: both;
-}
-*/
-

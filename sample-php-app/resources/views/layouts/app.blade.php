@@ -4,10 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', '') }}</title>
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/custom.js') }}"></script>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,6 +22,7 @@
         </style>
 		<link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/skeleton.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/icomoon.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @stack('styles')
@@ -28,10 +33,14 @@
 		<div class="header">
 			<a href="/">
 				<img src="/img/white-gd422548d7_640.png">
-				Contoso NoshNow
+				{{ config('app.name', '') }}
 			</a>
 		</div>
 @endif
+
+		<div id="global_cart" class="global-cart">
+{!! $global_cart ?? '' !!}
+		</div>
 
 @yield('content')
 
