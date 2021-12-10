@@ -1,0 +1,146 @@
+[
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/ISV-Tech-Builders-tools.png",
+        "for": "media/ISV-Tech-Builders-tools.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-services.png",
+        "for": "./media/azure-services.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/scope-levels.png",
+        "for": "./media/scope-levels.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/consistent-management-layer.png",
+        "for": "media/consistent-management-layer.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/rbac-overview.png",
+        "for": "media/rbac-overview.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-conceptual-diagram.png",
+        "for": "./media/mysql-conceptual-diagram.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/flexible-server.png",
+        "for": "./media/flexible-server.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/1-flexible-server-overview-zone-redundant-ha.png",
+        "for": "media/1-flexible-server-overview-zone-redundant-ha.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/flexible-server-overview-same-zone-ha.png",
+        "for": "./media/flexible-server-overview-same-zone-ha.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-flex-params.png",
+        "for": "./media/mysql-flex-params.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/analyst-query.png",
+        "for": "./media/analyst-query.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-explorer-intellij.png",
+        "for": "./media/azure-explorer-intellij.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/intellij-complete-spring-boot-project.png",
+        "for": "./media/intellij-complete-spring-boot-project.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/intellij-create-single-server.png",
+        "for": "./media/intellij-create-single-server.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-instance-information.png",
+        "for": "./media/mysql-instance-information.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/edit-application-properties.png",
+        "for": "./media/edit-application-properties.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-resource-connector-intellij.png",
+        "for": "./media/azure-resource-connector-intellij.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/start-app-intellij.png",
+        "for": "./media/start-app-intellij.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/post-request-postman.png",
+        "for": "./media/post-request-postman.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/get-request-postman.png",
+        "for": "./media/get-request-postman.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/result-set-mysql-workbench.png",
+        "for": "./media/result-set-mysql-workbench.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/vnet-concept.png",
+        "for": "./media/vnet-concept.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/show-private-link-overview.png",
+        "for": "./media/show-private-link-overview.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/new-ssl-connection-with-ca-file.png",
+        "for": "./media/new-ssl-connection-with-ca-file.png"
+    }
+]
