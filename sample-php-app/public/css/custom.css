@@ -12,6 +12,9 @@
 	border-bottom: 0;
 }
 
+#fos { width: 300px; height: 190px; overflow: hidden; }
+#fos p { padding: 10px; margin: 0; }
+
 .header {
 	width: 100%;
 	height: 48px;
@@ -130,6 +133,10 @@
 	height: 26px;
 	width: 31px;
 	text-align: right;
+}
+
+.delivery-label {
+	text-align: left;
 }
 
 .checkout-cart {
@@ -303,6 +310,10 @@ button[disabled],
 .item .name {
 	float: left;
 	font-weight: bold;
+	width: 62%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .item .price {
 	float: right;
@@ -317,4 +328,5 @@ button[disabled],
 	line-height: 1.2;
 	text-align: left;
 	color: #777;
+	overflow: hidden;
 }

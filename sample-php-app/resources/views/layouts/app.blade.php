@@ -31,7 +31,7 @@
 
 @if(isset($header))
 		<div class="header">
-			<a href="/">
+			<a href="{{ route('home') }}">
 				<img src="/img/white-gd422548d7_640.png">
 				{{ config('app.name', '') }}
 			</a>
