@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 use App\Helpers\AppHelper;
 use App\Models\Category;
@@ -21,24 +22,29 @@ class HomeController extends Controller
 	
 	public function categoryList()
 	{
-		if (AppHelper::instance()->checkDB()) {
-			$data = Category::all();
+		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories')) {
+			$data = Category::orderBy('name')->get();
+			$json = 0;
 		} else {
 			$data = AppHelper::instance()->categoryJson();
+			$json = 1;
 		}
 		$global_cart = AppHelper::instance()->globalCart();
-		return view('category-list', ['header'=>1, 'global_cart'=>$global_cart, 'category'=>$data]);
+		return view('category-list', ['header'=>1, 'global_cart'=>$global_cart, 'category'=>$data, 'json'=>$json]);
 	}
 	
 	public function itemList($category)
 	{
-		if (AppHelper::instance()->checkDB()) {
-			$data = Item::all();
+		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories') && Schema::hasTable('items')) {
+			$data = Category::where('url',$category)->with('items')->first();
+			$data = $data->items;
+			$json = 0;
 		} else {
 			$data = AppHelper::instance()->itemJson('byCategory',$category);
+			$json = 1;
 		}
 		$global_cart = AppHelper::instance()->globalCart();
-		return view('item-list', ['header'=>1, 'global_cart'=>$global_cart, 'item'=>$data]);
+		return view('item-list', ['header'=>1, 'global_cart'=>$global_cart, 'item'=>$data, 'json'=>$json]);
 	}
 
 	public function checkout()
@@ -46,10 +52,12 @@ class HomeController extends Controller
 		$cart = session('cart');
 		$item_list = [];
 		if ($cart) $item_list = array_keys($cart);
-		if (AppHelper::instance()->checkDB()) {
-			// pull from database
+		if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
+			$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
+			$json = 0;
 		} else {
 			$item = AppHelper::instance()->itemJson('items',$item_list);
+			$json = 1;
 		}
 		$cart_total = 0;
 		$cart_data = [];
@@ -61,7 +69,7 @@ class HomeController extends Controller
 			$cart_total += $i->sub;
 			$cart_data[$i->id] = $i;
 		}
-		return view('checkout', ['header'=>1, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total]);
+		return view('checkout', ['header'=>1, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
 	}
 
 	public function receipt()
@@ -72,10 +80,12 @@ class HomeController extends Controller
 		if ($cart) {
 			session()->forget('receipt');
 			$item_list = array_keys($cart);
-			if (AppHelper::instance()->checkDB()) {
-				// pull from database
+			if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
+				$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
+				$json = 0;
 			} else {
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
+				$json = 0;
 			}
 			$time = rand(5,20);
 			$cooktime = 0;
@@ -87,7 +97,7 @@ class HomeController extends Controller
 			if (!session('receipt')) {
 				session([ 'receipt' => [] ]);
 			}
-			session([ 'receipt' => ['order_placed'=>strtotime(now()), 'delivery'=>strtotime(now())+($time*60)] ]);
+			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>strtotime(now())+($time*60)], 'json'=>$json ]);
 		}
 		$receipt = session('receipt');
 		$time_left = floor( ($receipt['delivery'] - strtotime(now()) )/60 );
