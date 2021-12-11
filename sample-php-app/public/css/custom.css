@@ -135,7 +135,7 @@
 	text-align: right;
 }
 
-.delivery-label {
+.text-left {
 	text-align: left;
 }
 
@@ -193,6 +193,10 @@
 .checkout-cart tr:last-child td {
 	text-align: right;
 	font-weight: bold;
+}
+.checkout-form {
+	margin: 0 auto 15px;
+	max-width: 336px;
 }
 
 .hero {

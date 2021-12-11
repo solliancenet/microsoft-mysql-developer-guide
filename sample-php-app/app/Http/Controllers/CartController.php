@@ -15,6 +15,7 @@ class CartController extends Controller
 
 	public function checkout()
 	{
+		$user = session('user');
 		$cart = session('cart');
 		$item_list = [];
 		if ($cart) $item_list = array_keys($cart);
@@ -35,7 +36,7 @@ class CartController extends Controller
 			$cart_total += $i->sub;
 			$cart_data[$i->id] = $i;
 		}
-		return view('checkout', ['header'=>1, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
+		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
 	}
 
 	public function receipt()

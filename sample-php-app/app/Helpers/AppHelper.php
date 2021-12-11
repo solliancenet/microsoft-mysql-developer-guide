@@ -44,6 +44,31 @@ class AppHelper
 
 	// use these functions to get json data when there's no database:
 
+	public function userJson($id=null)
+	{
+		$json = '[ 
+			{"id":1,"name":"Bob Slydell","address":"820 Beach Street","email":"bslydell@gmail.com","password":"$2y$10$7LnWpy7R7hXgbMnn.IHaSu8i.9E0dTB4tuMVHFm77OwSV46qbIvWa"},
+			{"id":2,"name":"Bill Lumbergh","address":"9318 South Pulaski Ave.","email":"blumbergh@gmail.com","password":"$2y$10$XuvN1ti/OL5mdiPtdd0z6O5b1m0Yft3WHhk3zJphZhr4GrH0OhOzK"},
+			{"id":3,"name":"Barbara Reiss","address":"849 East Depot St.","email":"breiss@gmail.com","password":"$2y$10$ElCTjmvfndxWb/Z8EpDQkeKFCr0v1N8QSokKzEeXXwwHpPJhPv4EC"},
+			{"id":4,"name":"Nina McInroe","address":"839 Illinois St.","email":"nmcinroe@gmail.com","password":"$2y$10$GnIyO51JnABQ2yt/6NCzKOkubSPxq49PST5jWOpfGOhu0emBkNR9e"},
+			{"id":5,"name":"Drew Pitts","address":"234 Depot Ave.","email":"dpitts@gmail.com","password":"$2y$10$ynxB0d5QI/x/s0H.Ks5zIOSlPCT5/LvT2s1EJPsvs1E9SckW3lk8C"},
+			{"id":6,"name":"Jennifer Emerson","address":"71 Pierce St.","email":"jemerson@gmail.com","password":"$2y$10$ZeMIoZ9DPVx1Mmb6UldmQOBdpinovkCLtObAvJJr/aoC4ZV9X6RN."},
+			{"id":7,"name":"Milton Waddams","address":"497 Thomas Avenue","email":"mwaddams@gmail.com","password":"$2y$10$uyeh/gADnu0PRxhBwfyLT.8sGEL4ndbS0oX8SLg6Ei.eyjE/fffoG"},
+			{"id":8,"name":"Tom Smykowski","address":"25 Manchester Street","email":"tsmykowski@gmail.com","password":"$2y$10$CuTmay8q.38uCx67aHmTmu6WCDii0yXq4sP8bEcvilRS2e0puuYRK"},
+			{"id":9,"name":"Dom Portwood","address":"905 Deerfield Lane","email":"dportwood@gmail.com","password":"$2y$10$nEaJMT8ZcuFl5BitQouXXOMyiBVs2OX0MPuHB.wtRyzvpr/64e7J6"}
+		]';
+		$users = collect(json_decode($json))->sortBy('name')->all();
+		if ($id=='rand') {
+			$id = rand(1,count($users));
+		}
+		if ($id) {
+			$user = collect(json_decode($json))->where('id', $id)->first();
+			return $user;
+		} else {
+			return $users;
+		}
+	}
+
 	public function categoryJson()
 	{
 		$json = '[ 
