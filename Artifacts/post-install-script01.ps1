@@ -69,7 +69,8 @@ InstallPhp
 
 InstallMySql
 
-InstallMySQLWorkbench
+$version = "8.0.26";
+InstallMySQLWorkbench $version;
 
 $extensions = @("ms-vscode-deploy-azure.azure-deploy");
 

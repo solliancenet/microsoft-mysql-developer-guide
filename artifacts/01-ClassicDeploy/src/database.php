@@ -5,8 +5,11 @@ $username = "root";
 $password = "";
 $dbname = "ContosoCoffee";
 
+$conn = mysqli_init();
+
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+//$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_real_connect($conn, $servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {

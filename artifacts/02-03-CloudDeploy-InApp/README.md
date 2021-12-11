@@ -67,10 +67,38 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 5. Select the **Import** tab
 6. Browse to your export file, run it
 
-## Update the connection string
+## Update the environment variables
 
-1. Under **Settings**, select **Confgiuration**
-2. Add or update the **StoreDb** connection string to the MySql connection string you recorded above
+1. Browse to the **mysqldevSUFFIX** web application
+2. Under **Development Tools**, select **Advanced Tools**
+3. Select **Go->**
+4. Select **Debug console->CMD**
+5. Browse to **site-.wwwroot**
+6. Select the **edit** button for the `database.php` file
+7. Add the following database connection code below where you set the variables:
+
+    ```php
+    foreach ($_SERVER as $key => $value)
+    {
+        if (strpos($key, "MYSQLCONNSTR_") !== 0)
+        {
+            continue;
+        }
+
+        $servername = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+        $dbname = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
+        $username = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+        $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+    }
+    ```
+
+8. Remove the SSL settings code:
+
+    ```php
+    mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    ```
+
+9. Select **Save**
 
 ## Test the Application
 
