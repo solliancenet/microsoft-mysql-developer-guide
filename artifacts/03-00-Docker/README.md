@@ -6,7 +6,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Migrate to ENV variables
 
-1. TODO
+1. Ensure that you have updated your MySQL connection parameters to come from environment variables:
+
+    ```php
+    ```
 
 ### Download Docker container
 
