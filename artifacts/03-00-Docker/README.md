@@ -6,9 +6,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Migrate to ENV variables
 
-1. Ensure that you have updated your MySQL connection parameters to come from environment variables:
+1. Update the your php MySQL connection environment variables by removing the `APPSETTING_` from each:
 
     ```php
+    $servername = getenv("MYSQL_SERVERNAME");
+    $username = getenv("MYSQL_USERNAME");
+    $password = getenv("MYSQL_PASSWORD");
+    $dbname = getenv("MYSQL_DATABASE");
     ```
 
 ### Download Docker container
@@ -48,8 +52,15 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
     CMD ["start-apache.sh"]
 
-    ENV MYSQL_ROOT_PASSWORD=root
-    ENV MYSQL_ROOT_USER=root
+    ARG MYSQL_DATABASE
+    ARG MYSQL_USERNAME
+    ARG MYSQL_PASSWORD
+    ARG MYSQL_SERVERNAME
+
+    ENV MYSQL_DATABASE=$MYSQL_DATABASE
+    ENV MYSQL_USERNAME=$MYSQL_USERNAME
+    ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
+    ENV MYSQL_SERVERNAME=$MYSQL_SERVERNAME
     ```
 
 7. Run the following to create the image:

@@ -34,27 +34,40 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Create Service Connection
 
-1. Open the Azure Publish Settings page (https://portal.azure.com/#blade/Microsoft_Azure_ClassicResources/PublishingProfileBlade)
-2. Select your target subscription, then select **Validate**
-3. Select **Download Publish Settings**, copy the file to the root of your repository
-4. Select **Project Settings**
-5. Under **Pipelines**, select **Service Connections**
-6. Select **Create service connection**
-7. Select **Azure Resource Manager**
-8. Select **Next**
-9. For the authentication, select **Service principal (automatic)**
-10. Select **Next**
-11. For the service connection name, type **MySQL Dev**
-12. Select **Grant access permission to all pipelines**
-13. Select **Save**
+1. Select **Project Settings**
+2. Under **Pipelines**, select **Service Connections**
+3. Select **Create service connection**
+4. Select **Azure Resource Manager**
+5. Select **Next**
+6. For the authentication, select **Service principal (automatic)**
+7. Select **Next**
+8. Select your lab subscription and resource group
+
+    > **NOTE** If you do not see any subscriptions displayed, open Azure Dev Ops in a in-private window and try again
+
+9. For the service connection name, type **MySQL Dev**
+10. Select **Grant access permission to all pipelines**
+10.Select **Save**
 
 ### Create Pipeline
 
 1. Select **Pipelines**
 2. Select **Set up build**
 3. Select **Existing Azure Pipelines YAML file**
-4. Select the **azure-pipelines.yaml** file
+4. Select the **/azure-pipelines.yaml** file
 5. Select **Continue**
+6. Select **Run**
+
+### Create Release
+
+1. Select **Releases**
+2. Select **New pipeline**
+3. Select the **Azure App Service Deployment**
+4. Select **Apply**
+5. In the **Artifacts** section, select the **Add an artifact** shape
+6. For the project, select **contosocoffee**
+7. For the source, select **contosocoffee**
+8. Select **Add**
 
 ### Commit changes
 
@@ -66,9 +79,14 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git push
     ```
 
-### Test the deployment
+### Perform the deployment
 
 1. TODO
+
+### Test the DevOps deployment
+
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.
 
 ## GitHub Option
 
@@ -104,6 +122,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 1. TODO
 
-### Test the code
+### Test the GitHub deployment
 
-1. TODO
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.

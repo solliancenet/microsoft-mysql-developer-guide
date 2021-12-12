@@ -113,10 +113,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 4. Update the connection variables to the following:
 
     ```php
-    $servername = getenv("APPSETTING_servername");
-    $username = getenv("APPSETTING_mysql_username");
-    $password = getenv("APPSETTING_mysql_password");
-    $dbname = getenv("APPSETTING_dbname");
+    $servername = getenv("APPSETTING_MYSQL_SERVERNAME");
+    $username = getenv("APPSETTING_MYSQL_USERNAME");
+    $password = getenv("APPSETTING_MYSQL_PASSWORD");
+    $dbname = getenv("APPSETTING_MYSQL_DATABASE");
     ```
 
 5. Add the environment variables to the App Service:
@@ -125,10 +125,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
    - Under **Settings**, select **Configuration**
    - Select **New application setting**
    - Add the following:
-     - `servername` = `mysqldevSUFFIX.mysql.database.azure.com`
-     - `mysql_username` = `wsuser@mysqldevSUFFIX`
-     - `mysql_password` = `Solliance123`
-     - `dbname` = `contosocoffee`
+     - `MYSQL_SERVERNAME` = `mysqldevSUFFIX.mysql.database.azure.com`
+     - `MYSQL_USERNAME` = `wsuser@mysqldevSUFFIX`
+     - `MYSQL_PASSWORD` = `Solliance123`
+     - `MYSQL_DATABASE` = `contosocoffee`
 
 ## Test new settings #3
 
@@ -175,7 +175,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 1. Browse to the Azure Portal
 2. Select the **mysqldevSUFFIX** app service
 3. Under **Settings**, select **Configuration**
-4. Select the edit button for the **mysql_password** application setting
+4. Select the edit button for the **MYSQL_PASSWORD** application setting
 5. Update it to the following:
 
     ```text
