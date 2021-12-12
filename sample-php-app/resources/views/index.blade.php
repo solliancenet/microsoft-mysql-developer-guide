@@ -8,7 +8,8 @@
 	<div class="center-block order-form">
 		<div class="one-half column">
 			<form>
-				<input class="u-full-width" type="text" placeholder="Deliver to...">
+				<label for="delivery_address">Welcome back, {{ $user->first_name }}! Where should we deliver your meal?</label>
+				<input id="delivery_address" class="u-full-width" type="text" placeholder="Enter your street address" value="{{ $user->address }}">
 				<a href="{{ route('category-list') }}" class="start-order button button-primary">Start Order</a>
 			</form>
 		</div>

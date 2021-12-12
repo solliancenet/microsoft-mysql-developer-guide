@@ -24,7 +24,15 @@
 					</tr>
 				</tbody>
 			</table>
+
 			<!-- not sure what other fields we want here -->
+			<form class="checkout-form">
+				<label class="text-left">Name</label>
+				<input type="text" class="u-full-width" value="{{ $user ?? '' ? $user->name : '' }}">
+				<label class="text-left">Address</label>
+				<input type="text" class="u-full-width" value="{{ $user ?? '' ? $user->address : '' }}">
+			</form>
+
 			<a href="{{ route('category-list') }}" class="button">Add to Order</a>
 			<a href="{{ route('receipt') }}" class="button button-primary complete-order">Complete Order</a>
 			@else

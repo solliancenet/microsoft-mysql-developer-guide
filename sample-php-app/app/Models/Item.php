@@ -5,21 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Item extends Model
 {
 	use HasFactory;
 
 	public $timestamps = false;
 
 	protected $fillable = [
+		'category',
 		'name',
-		'url',
 		'img',
+		'price',
+		'cooktime',
+		'desc',
 	];
 
-	public function items()
+	protected $with = [
+		'category',
+	];
+
+	public function category()
 	{
-		return $this->hasMany(Item::class, 'category', 'id')->orderBy('name');
+		return $this->belongsTo(Category::class, 'category', 'id');
 	}
 
 }
