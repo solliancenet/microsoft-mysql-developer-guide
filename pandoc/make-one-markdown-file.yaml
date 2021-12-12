@@ -1,0 +1,78 @@
+
+# Instructions for a Windows machine.  If you are running a Mac OS or Linux, you do not need do this.
+# You need to create one markdown file from the directory tree from markdown files.
+
+# Step 1
+# Navigate to the media folder.  Delete all of the media files.  rem DEL /F/Q *.*
+# Run the Windows command below in the content base directory to produce a list of file paths to the markdown documents. 
+# EXAMPLE:  dir *.md /S /B /O N>./pandoc/markdown-files.txt
+# Open the text file and paste the contents into this yaml file in the input-files section.
+# You will need to add a prefix of "- " before each of the file paths. Open VS Code and add these
+# characters by placing the cursor in front and holding down CTRL, ALT.  Use the down arrow
+# key to highlight all of the lines at once.
+
+# The current version of Pandoc does not like including the images from a directory tree on Windows.
+# On a Windows machine, copy the images to one media folder with this DOS command. 
+
+# Step 2
+# EXAMPLE: for /r %i in (*.png) do xcopy /Y "%i" .\pandoc\media
+# Your image file names need to be unique.
+# Take the contents in the markdown-file.txt and paste it into the 'input-files'
+
+# Step 3
+# Run this command with the defaults.yaml file in the pandoc directory.
+# EXAMPLE:  pandoc --defaults=make-one-markdown-file
+from: markdown+pipe_tables+backtick_code_blocks
+to: markdown+pipe_tables
+output-file: mysql-developer-guide.md
+dpi: 300
+
+input-files:
+
+- D:\data\projects\microsoft-mysql-developer-guide\01_Intro\01_Introduction.md
+- D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_00_Intro_MySQL.md
+- D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_01_Why_Move_To_Azure.md
+- D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_02_Introduction_to_Azure.md
+- D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_03_Azure_MySQL.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00_Getting_Started.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_01_EnvSetup.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_05_Provision_MySQL_Flexible_Server.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Connect_Query_Azure_CLI.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Connect_Query_Java_IntelliJ.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Connect_Query_PHP.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Connect_Query_Python.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Java_Language_Support.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_MySQL_Security_Compliance.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Network_Security.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_PHP_Language_Support.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Python_Language_Support.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_Query_MySQL_Workbench.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_End_To_End_Development.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_Monitoring.md
+- D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_Securing.md
+- D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_Testing.md
+- D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_Performance.md
+- D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_Troubleshooting.md
+- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_BestPractices.md
+- D:\data\projects\microsoft-mysql-developer-guide\11_Architectures\11_Architectures.md
+- D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_CaseStudies.md
+- D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_ZeroToHero.md
+- D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_01_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_02_Resources.md
+
+
+# ERROR, WARNING, or INFO
+verbosity: INFO
+log-file: log.json
+
+table-of-contents: true
+toc-depth: 2
+
+# reference-links: true
+tab-stop: 4
+preserve-tabs: true
+default-image-extension: ".png"
+# shift-heading-level-by: 1
+section-divs: true
+highlight-style: tango
+atx-headers: true

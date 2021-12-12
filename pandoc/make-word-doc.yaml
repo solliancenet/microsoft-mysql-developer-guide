@@ -1,0 +1,32 @@
+
+# Instructions
+# Run the Windows command below in the content directory to produce a list of file paths to the markdown documents. 
+# EXAMPLE:  dir *.md /S /B /O N>markdown-files.txt
+# Take the contents in the markdown-file.txt and paste it into the 'input-files'
+# Run this command with the defaults.yaml file in the same directory.
+# EXAMPLE:  pandoc --defaults=defaults
+# Fix the in document links. In MS Word: FILE | OPTIONS | ADVANCED | SHOW FIELD VALUES.   Find links like: D:\\data\\projects\\redis-cache\\pandoc\\04_PostMigration\\01_Management.md/
+# Edit link and update to correct document location.
+from: markdown+backtick_code_blocks+pipe_tables
+to: docx
+output-file: Redis-guide.docx
+dpi: 300
+
+input-files:
+ - D:\mcw_temp\Redis\pandoc\Redis-guide.md    
+
+# ERROR, WARNING, or INFO
+verbosity: INFO
+log-file: log.json
+
+table-of-contents: true
+toc-depth: 2
+
+# reference-links: true
+tab-stop: 4
+preserve-tabs: true
+default-image-extension: ".png"
+# shift-heading-level-by: 1
+section-divs: true
+highlight-style: tango
+atx-headers: true
