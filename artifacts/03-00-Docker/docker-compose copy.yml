@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web2:
+    image: php:7.4-apache
+    environment:
+      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_SERVERNAME=localhost
+    ports:
+      - 8000:80
+      - 443:443
+  web:
+    image: store-php
+    environment:
+      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_SERVERNAME=localhost
+    ports:
+      - 8000:80
+      - 443:443
+    expose:
+      - "80"
+  db:
+    image: store-db 
+    environment:
+      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_SERVERNAME=localhost
+    ports:
+      - 3306:3306

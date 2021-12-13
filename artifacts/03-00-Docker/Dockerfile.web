@@ -1,0 +1,30 @@
+# Dockerfile
+FROM php:8.0-apache
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN apt-get update && apt-get upgrade -y
+
+#COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY start-apache.sh /usr/local/bin
+
+#RUN a2enmod rewrite
+
+#COPY src /var/www/html
+#RUN chown -R www-data:www-data /var/www/html
+
+#RUN chmod 755 /usr/local/bin/start-apache.sh
+
+#CMD ["start-apache.sh"]
+
+ARG MYSQL_DATABASE
+ARG MYSQL_USERNAME
+ARG MYSQL_PASSWORD
+ARG MYSQL_SERVERNAME
+
+ENV MYSQL_DATABASE=$MYSQL_DATABASE
+ENV MYSQL_USERNAME=$MYSQL_USERNAME
+ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
+ENV MYSQL_SERVERNAME=$MYSQL_SERVERNAME
+
+EXPOSE 80
+EXPOSE 443

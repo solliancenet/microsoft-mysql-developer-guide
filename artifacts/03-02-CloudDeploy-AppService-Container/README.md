@@ -4,7 +4,7 @@ Now that you have containerized versions of your applications, you can host them
 
 ## Push images to Azure Container Registry
 
-1. TODO
+1. If you haven't already, be sure to push your images to your Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
 
 ## Run images in Azure App Service
 

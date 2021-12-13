@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    image: store-php
+    environment:
+      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_SERVERNAME=db
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - 8000:80
+    extra_hosts:
+      - "dockerhost:172.20.0.1"
+  db:
+    image: store-db 
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=contosocoffee
+    ports:
+      - 9306:3306
+    volumes:
+      - ./data:/var/lib/mysql

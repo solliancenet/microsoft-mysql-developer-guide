@@ -45,8 +45,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
     RUN a2enmod rewrite
 
-    COPY src /var/www/
-    RUN chown -R www-data:www-data /var/www
+    COPY src /var/www/public
+    RUN chown -R www-data:www-data /var/www/public
 
     RUN chmod 755 /usr/local/bin/start-apache.sh
 
@@ -61,6 +61,9 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     ENV MYSQL_USERNAME=$MYSQL_USERNAME
     ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
     ENV MYSQL_SERVERNAME=$MYSQL_SERVERNAME
+
+    EXPOSE 80
+    EXPOSE 443
     ```
 
 7. Run the following to create the image:
@@ -116,30 +119,60 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ## Run the Docker images
 
-1. Create the following `store-web.yml` docker compose file:
+1. Create the following `docker-compose.yml` docker compose file:
 
-    ```docker
-
-    ```
+    ```yaml
+    version: '3'
+    services:
+    web:
+      image: store-php
+      environment:
+        - MYSQL_DATABASE=contosocoffee
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=
+        - MYSQL_SERVERNAME=localhost
+      ports:
+        - "80:80" 
+        - "443:443"
+      expose:
+        - "80" 
+        - "443" 
+    db:
+      image: store-db 
+        - MYSQL_DATABASE=contosocoffee
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=
+        - MYSQL_SERVERNAME=localhost
+      ports:
+        - "3306:3306"
+      expose:
+        - "3306"
+   ```
 
 2. Run the following to create the web container:
 
     ```PowerShell
+    docker compose run web
     ```
 
-3. Create the following `store-db.yml` docker compose file:
+3. Run the following to create the db container:
 
     ```docker
-
+    docker compose run db
     ```
 
 ## Test the Docker images
 
-1. TODO
+1. Open a browser to `http:\\localhost:80\default.php`
+2. 
 
 ## Fix Storage persistence
 
-1. TODO
+1. Create a new docker volume:
+
+    ```docker
+    docker volume create vol-db
+    ```
 
 ## Re-test the Docker images
 
