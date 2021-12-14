@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-db
+  namespace: mysqldev
+spec:
+  containers:
+    - name: mysql-db
+      image: <REGISTRY_NAME>.azurecr.io/store-db
+      imagePullPolicy: IfNotPresent
+  imagePullSecrets:
+    - name: acr-secret

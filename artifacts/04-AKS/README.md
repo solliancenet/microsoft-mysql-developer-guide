@@ -12,6 +12,8 @@ Now that you have containerized versions of your applications, you can host them
 
     ```powershell
     az aks install-cli
+
+    az aks get-credentials --name "mysqldevSUFFIX" --resource-group $resourceGroupName
     ```
 
 2. Run the following commands to deploy your containers:
@@ -25,11 +27,16 @@ Now that you have containerized versions of your applications, you can host them
     
     kubectl create namespace mysqldev
 
-    kubectl create secret docker-registry acr-secret \
-    --namespace mysqldev \
-    --docker-server=$acr.loginserver \
-    --docker-username=$creds.username \
-    --docker-password=$creds.password
+    $ACR_REGISTRY_ID=$(az acr show --name $ACRNAME --query "id" --output tsv);
+    $SERVICE_PRINCIPAL_NAME = "acr-service-principal";
+    $PASSWORD=$(az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --scopes $ACR_REGISTRY_ID --role acrpull --query "password" --output tsv)
+    $USERNAME=$(az ad sp list --display-name $SERVICE_PRINCIPAL_NAME --query "[].appId" --output tsv)
+
+    kubectl create secret docker-registry acr-secret `
+    --namespace mysqldev `
+    --docker-server=$acr.loginserver `
+    --docker-username=$username `
+    --docker-password=$password
     ```
 
 3. Create the following `store-db.yaml` deployment file:
@@ -55,7 +62,7 @@ spec:
     kubectl create -f store-db.yaml
     ```
 
-5. Create the following `store-php.yaml` deployment file:
+5. Create the following `store-web.yaml` deployment file:
 
 ```yaml
 apiVersion: v1
@@ -75,5 +82,5 @@ spec:
 6. Run the deployment:
 
     ```powershell
-    kubectl create -f store-php.yaml
+    kubectl create -f store-web.yaml
     ```
