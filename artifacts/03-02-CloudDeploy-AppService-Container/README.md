@@ -8,5 +8,35 @@ Now that you have containerized versions of your applications, you can host them
 
 ## Run images in Azure App Service
 
-1. TODO
+1. Run the following to create the app service containers:
 
+    ```powershell
+    $name = "mysqldev-app-php";
+    $acrName = "mysqldevSUFFIX";
+    $appPlan = "mysqldevSUFFIX-linux";
+    $image = "$acrName.azure.io/store-php";
+    $resourceGroupName = "";
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+    $creds = $acr | Get-AzContainerRegistryCredential;
+
+    New-AzWebApp -Name $name -ResourceGroupName $resourceGroupName -AppServicePlan $appPlan -ContainerImageName $image -ContainerRegistryUrl $acr.loginserver -ContainerRegistryUser $creds.username -ContainerRegistryPassword (ConvertTo-SecureString $creds.password -AsPlainText -Force) -Location $acr.location;
+
+    $config = Get-AzResource -ResourceGroupName $resourceGroupName -ResourceType Microsoft.Web/sites/config -ResourceName $name -ApiVersion 2018-02-01
+    $config.Properties.linuxFxVersion = "DOCKER|$($image):latest"
+    $config | Set-AzResource -ApiVersion 2018-02-01 -Debug -Force
+
+    $name = "mysqldev-app-db";
+    $image = "$acrName.azure.io/store-db";
+    New-AzWebApp -Name $name -ResourceGroupName $resourceGroupName -AppServicePlan $appPlan -ContainerImageName $image -ContainerRegistryUrl $acr.loginserver -ContainerRegistryUser $creds.username -ContainerRegistryPassword (ConvertTo-SecureString $creds.password -AsPlainText -Force) -Location $acr.location;
+
+    $config = Get-AzResource -ResourceGroupName $resourceGroupName -ResourceType Microsoft.Web/sites/config -ResourceName $name -ApiVersion 2018-02-01
+    $config.Properties.linuxFxVersion = "DOCKER|$($image):latest"
+    $config | Set-AzResource -ApiVersion 2018-02-01 -Debug -Force
+    ```
+
+## Test the containers
+
+1. Browse to the Azure Portal
+2. Select the **mysqldev-app-db** app service, record the url
+3. 

@@ -851,6 +851,32 @@
         }
       },
       {
+        "type": "Microsoft.Web/serverfarms",
+        "apiVersion": "2021-02-01",
+        "name": "[concat(variables('resourceName'),'-linux')]",
+        "location": "[variables('location')]",
+        "sku": {
+          "name": "P1v2",
+          "tier": "PremiumV2",
+          "size": "P1v2",
+          "family": "Pv2",
+          "capacity": 1
+        },
+        "kind": "linux",
+        "properties": {
+          "perSiteScaling": false,
+          "elasticScaleEnabled": false,
+          "maximumElasticWorkerCount": 1,
+          "isSpot": false,
+          "reserved": true,
+          "isXenon": false,
+          "hyperV": false,
+          "targetWorkerCount": 0,
+          "targetWorkerSizeId": 0,
+          "zoneRedundant": false
+        }
+      },
+      {
         "type": "Microsoft.Network/virtualNetworks/subnets",
         "apiVersion": "2021-02-01",
         "name": "[concat(variables('resourceName'),'-hub', '/default')]",
