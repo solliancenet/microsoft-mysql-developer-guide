@@ -22,9 +22,11 @@ Now that you have containerized versions of your applications, you can host them
     $imageRegistryCredential = New-AzContainerGroupImageRegistryCredentialObject -Server "$acrName.azurecr.io" -Username $creds.username -Password (ConvertTo-SecureString $creds.password -AsPlainText -Force)
     
     $containerName = "store-mysql";
+    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosocoffee";
+    $env2 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_ROOT_PASSWORD" -Value "root";
     $port1 = New-AzContainerInstancePortObject -Port 3306 -Protocol TCP;
     $volume = New-AzContainerGroupVolumeObject -Name "vol-data" -AzureFileShareName "voldata" -AzureFileStorageAccountName "username" -AzureFileStorageAccountKey (ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force);
-    $container = New-AzContainerInstanceObject -Name mysql-dev-db -Image "$acrName.azurecr.io/store-mysql" -Port @($port1);
+    $container = New-AzContainerInstanceObject -Name mysql-dev-db -Image "$acrName.azurecr.io/store-mysql" -Port @($port1) -EnvironmentVariable @($env1, $env2);
     New-AzContainerGroup -ResourceGroupName $resourceGroupName -Name $containerName -Container $container -OsType Linux -Location $rg.location -ImageRegistryCredential $imageRegistryCredential -IpAddressType Public;
     ```
 
@@ -40,7 +42,8 @@ Now that you have containerized versions of your applications, you can host them
     $env3 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_PASSWORD" -Value "root";
     $env4 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_SERVERNAME" -Value "IP_ADDRESS";
     $port1 = New-AzContainerInstancePortObject -Port 80 -Protocol TCP;
-    $container = New-AzContainerInstanceObject -Name mysql-dev-php -Image "$acrName.azurecr.io/store-php" -EnvironmentVariable @($env1, $env2, $env3, $env4) -Port @($port1);
+    $port2 = New-AzContainerInstancePortObject -Port 8080 -Protocol TCP;
+    $container = New-AzContainerInstanceObject -Name mysql-dev-php -Image "$acrName.azurecr.io/store-php" -EnvironmentVariable @($env1, $env2, $env3, $env4) -Port @($port1, $port2);
     New-AzContainerGroup -ResourceGroupName $resourceGroupName -Name $containerName -Container $container -OsType Linux -Location $rg.location -ImageRegistryCredential $imageRegistryCredential -IpAddressType Public;
     ```
 
