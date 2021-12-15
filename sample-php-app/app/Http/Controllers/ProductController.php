@@ -20,12 +20,18 @@ class ProductController extends Controller
 			$data = Category::orderBy('name')->get();
 			$json = 0;
 		} else {
+			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->categoryJson();
+			// set a flag so we can display a warning if JSON data is used
 			$json = 1;
 		}
+
+		// floating cart on every page
 		$global_cart = AppHelper::instance()->globalCart();
+
 		return view('category-list', ['header'=>1, 'global_cart'=>$global_cart, 'category'=>$data, 'json'=>$json]);
 	}
+
 	
 	public function itemList($category)
 	{
@@ -34,10 +40,15 @@ class ProductController extends Controller
 			$data = $data->items;
 			$json = 0;
 		} else {
+			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->itemJson('byCategory',$category);
+			// set a flag so we can display a warning if JSON data is used
 			$json = 1;
 		}
+
+		// floating cart on every page
 		$global_cart = AppHelper::instance()->globalCart();
+
 		return view('item-list', ['header'=>1, 'global_cart'=>$global_cart, 'item'=>$data, 'json'=>$json]);
 	}
 

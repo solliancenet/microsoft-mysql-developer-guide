@@ -26,21 +26,27 @@
 @endsection
 @push('scripts')
 <script>
+// to keep the layout and design simple, only show 6 lines of text from the item description
 var ellipsis_lines = 6;
 $(document).ready( function() {
 	ellipsis();
+
 	$('.checkout-button').on('click', function() {
 		var url = "{{ route('checkout') }}";
+		// fun little trick to allow ctrl-click on a javascript click event just like regular links
 		if (event.metaKey || event.ctrlKey) {
 			window.open(url,'_blank');
 		} else {
 			location.href = url;
 		}
 	});
+
 });
 $(window).resize( function() {
 	ellipsis();
 });
+
+// function to add ellipsis after (N) lines of text
 function ellipsis() {
 	var lines = ellipsis_lines;
 	$('.overflow').each(function( index ) {

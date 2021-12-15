@@ -23,7 +23,9 @@ class CartController extends Controller
 			$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
 			$json = 0;
 		} else {
+			// if there's no database connection, use a helper and JSON data
 			$item = AppHelper::instance()->itemJson('items',$item_list);
+			// set a flag so we can display a warning if JSON data is used
 			$json = 1;
 		}
 		$cart_total = 0;
@@ -31,9 +33,13 @@ class CartController extends Controller
 		foreach($item as $i) {
 			$qty = $cart[$i->id];
 			$i->qty = $qty;
+			// set price to 0 in the event there is bad data
 			$price = is_numeric($i->price) ? $i->price : '0';
+			// set item subtotal
 			$i->sub = $qty * number_format($price, 2);
+			// increment cart total
 			$cart_total += $i->sub;
+			// add item to cart array
 			$cart_data[$i->id] = $i;
 		}
 		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
@@ -41,9 +47,10 @@ class CartController extends Controller
 
 	public function receipt()
 	{
-		$cart = session('cart');
-		$item_list = [];
 		$time_left = 0;
+
+		// if we have a cart session, turn it into an order
+		$cart = session('cart');
 		if ($cart) {
 			session()->forget('receipt');
 			$item_list = array_keys($cart);
@@ -51,23 +58,40 @@ class CartController extends Controller
 				$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
 				$json = 0;
 			} else {
+				// if there's no database connection, use a helper and JSON data
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
+				// set a flag so we can display a warning if JSON data is used
 				$json = 0;
 			}
-			$time = rand(5,20);
+
+			// show a semi-random delivery time to make it more fun
 			$cooktime = 0;
+			// start with a random prep/drive time
+			$time = rand(5,20);
 			foreach($item as $i) {
-				$cooktime = $i->cooktime;
+				// get the longest cooktime of all items in the cart
+				if ($cooktime < $i->cooktime) { 
+					$cooktime = $i->cooktime; 
+				}
 			}
+			// add the cooktime to the random prep/drive time
 			$time+=$cooktime;
+			// turn it into minutes from *right now*
+			$delivery = strtotime(now())+($time*60);
+
 			session()->forget('cart');
 			if (!session('receipt')) {
 				session([ 'receipt' => [] ]);
 			}
-			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>strtotime(now())+($time*60)], 'json'=>$json ]);
+			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>$delivery], 'json'=>$json ]);
 		}
+
+		// if there was no cart, then either use the receipt session or display a generic message
 		$receipt = session('receipt');
+
+		// figure out how many minutes are left before food arrives
 		$time_left = floor( ($receipt['delivery'] - strtotime(now()) )/60 );
+
 		return view('receipt', ['header'=>1, 'receipt'=>$receipt, 'time_left'=>$time_left]);
 	}
 
@@ -88,7 +112,10 @@ class CartController extends Controller
 			$cart[$id] = 1;
 		}
 		session(['cart' => $cart]);
+
+		// update the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
+
 		return ['count'=>count(session('cart')),'html'=>$global_cart];
 	}
 
@@ -104,7 +131,10 @@ class CartController extends Controller
 			}
 		}
 		session(['cart' => $cart]);
+
+		// update the floating cart
 		$global_cart = AppHelper::instance()->globalCart('show');
+
 		return ['count'=>count(session('cart')),'html'=>$global_cart];
 	}
 

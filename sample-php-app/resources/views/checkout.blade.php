@@ -25,7 +25,7 @@
 				</tbody>
 			</table>
 
-			<!-- not sure what other fields we want here -->
+			<!-- keeping it simple for demo purposes, only displaying a name and street address field -->
 			<form class="checkout-form">
 				<label class="text-left">Name</label>
 				<input type="text" class="u-full-width" value="{{ $user ?? '' ? $user->name : '' }}">

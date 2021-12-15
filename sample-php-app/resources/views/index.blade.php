@@ -8,7 +8,8 @@
 	<div class="center-block order-form">
 		<div class="one-half column">
 			<form>
-				<label for="delivery_address">Welcome back, {{ $user->first_name }}! Where should we deliver your meal?</label>
+				<label for="delivery_address">Welcome back, {{ $user->name }}! Where should we deliver your meal?</label>
+				<!-- keeping it simple for demo purposes, only displaying a single street address field -->
 				<input id="delivery_address" class="u-full-width" type="text" placeholder="Enter your street address" value="{{ $user->address }}">
 				<a href="{{ route('category-list') }}" class="start-order button button-primary">Start Order</a>
 			</form>

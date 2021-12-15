@@ -45,16 +45,19 @@ $(document).ready( function() {
 
 function init_cart() {
 
+	// show cart
 	$('.cart-icon:not(.disabled)').unbind('click');
 	$('.cart-icon:not(.disabled)').on('click', function() {
 		$('.cart-block').slideDown(250);
 	});
 
+	// hide cart
 	$('.cart-footer .closer').unbind('click');
 	$('.cart-footer .closer').on('click', function() {
 		$('.cart-block').slideUp(250);
 	});
 
+	// update qty of item(s) in cart
 	$('.cart-update').unbind('click');
 	$('.cart-update').on('click', function() {
 		var cart_items = new Object();
@@ -68,7 +71,6 @@ function init_cart() {
 			data: { 'cart_items':cart_items },
 			url: '/update-cart',
 			success: function (result) {
-				// console.log(result);
 				$('#global_cart').html(result.html);
 				if (result.count) {
 					$('.checkout-button').addClass('button-primary').attr('disabled',false);
@@ -86,6 +88,7 @@ function init_cart() {
 }
 
 function set_receipt_text(minutes) {
+	// display approximate delivery time, update every minute
 	var m = minutes-0;
 	if (m > 2) {
 		$('#remaining_text').html('Your order will be delivered in approximately <strong>'+m+'</strong>&nbsp;minutes.');
