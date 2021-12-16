@@ -34,12 +34,12 @@ Now that you have containerized versions of your applications, you can host them
 
     kubectl create secret docker-registry acr-secret `
     --namespace mysqldev `
-    --docker-server=$acr.loginserver `
+    --docker-server="https://$($acr.loginserver)" `
     --docker-username=$username `
     --docker-password=$password
     ```
 
-3. Create the following `store-db.yaml` deployment file:
+3. Create the following `store-db.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
 
 ```yaml
 apiVersion: v1
@@ -52,6 +52,11 @@ spec:
     - name: mysql-db
       image: <REGISTRY_NAME>.azurecr.io/store-db
       imagePullPolicy: IfNotPresent
+      env:
+      - name: MYSQL_DATABASE
+        value: "ContosoCoffee"
+      - name: MYSQL_ROOT_PASSWORD
+        value: "root"
   imagePullSecrets:
     - name: acr-secret
 ```
@@ -62,7 +67,7 @@ spec:
     kubectl create -f store-db.yaml
     ```
 
-5. Create the following `store-web.yaml` deployment file:
+5. Create the following `store-web.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
 
 ```yaml
 apiVersion: v1
@@ -75,6 +80,15 @@ spec:
     - name: mysql-php
       image: <REGISTRY_NAME>.azurecr.io/store-php
       imagePullPolicy: IfNotPresent
+      env:
+      - name: MYSQL_DATABASE
+        value: "ContosoCoffee"
+      - name: MYSQL_USERNAME
+        value: "root"
+      - name: MYSQL_PASSWORD
+        value: "root"
+      - name: MYSQL_SERVER
+        value: "mysql-db"
   imagePullSecrets:
     - name: acr-secret
 ```
@@ -84,3 +98,37 @@ spec:
     ```powershell
     kubectl create -f store-web.yaml
     ```
+
+## Add services
+
+1. Create the following `store-db-service.yaml` yaml file:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-db
+spec:
+  ports:
+  - port: 3306
+  selector:
+    app: store-db
+```
+
+2. Create the following `store-web-service.yaml` yaml file:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-web
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: store-web
+```
+
+## Test your images
+
+1. TODO

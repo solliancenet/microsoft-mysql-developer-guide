@@ -33,6 +33,9 @@ Now that you have containerized versions of your applications, you can host them
     $config = Get-AzResource -ResourceGroupName $resourceGroupName -ResourceType Microsoft.Web/sites/config -ResourceName $name -ApiVersion 2018-02-01
     $config.Properties.linuxFxVersion = "DOCKER|$($image):latest"
     $config | Set-AzResource -ApiVersion 2018-02-01 -Debug -Force
+
+    az webapp create --resource-group $resourceGroupName --plan $appPlan --name $name --deployment-container-image-name $image
+    az webapp config set --resource-group $resourceGroupName --name $name --linux-fx-version "DOCKER|$image:latest"
     ```
 
 ## Test the containers
