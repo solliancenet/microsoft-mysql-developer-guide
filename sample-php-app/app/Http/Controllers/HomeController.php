@@ -21,28 +21,13 @@ class HomeController extends Controller
 	
 	public function index()
 	{
-		$user = session('user');
-		$cart = session('cart');
-
-		// set a flag so we can display a warning if JSON data is used
-		$json = 0;
-
-		// get random user, simulate we're logged in
-		if (!$user || !$cart) {
-			if (AppHelper::instance()->checkDB() && Schema::hasTable('users')) {
-				$user = User::inRandomOrder()->first();
-			} else {
-				// if there's no database connection, use a helper and JSON data
-				$user = AppHelper::instance()->userJson('rand');
-				$json = 1;
-			}
-		}
-		session([ 'user' => $user ]);
+		// pretend the user logged in
+		$user = AppHelper::instance()->randomUser();
 
 		// floating cart on every page
 		$global_cart = AppHelper::instance()->globalCart();
 
-		return view('index', ['global_cart'=>$global_cart, 'user'=>$user, 'json'=>$json]);
+		return view('index', ['global_cart'=>$global_cart, 'user'=>$user]);
 	}
 
 }

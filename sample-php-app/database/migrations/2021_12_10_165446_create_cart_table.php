@@ -16,8 +16,7 @@ class CreateCartTable extends Migration
 		Schema::create('carts', function (Blueprint $table) {
 			$table->id();
 			$table->integer('user');
-			$table->integer('item');
-			$table->unsignedSmallInteger('qty');
+			$table->string('status', 16);
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';

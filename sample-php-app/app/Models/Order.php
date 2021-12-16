@@ -7,5 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory;
+	use HasFactory;
+
+	protected $fillable = [
+		'user',
+		'cart',
+		'name',
+		'address',
+		'special_instructions',
+		'cooktime',
+	];
+
+	protected $with = [
+		'cart',
+	];
+
+	public function cart()
+	{
+		return $this->hasOne(Cart::class, 'cart', 'id');
+	}
+
 }

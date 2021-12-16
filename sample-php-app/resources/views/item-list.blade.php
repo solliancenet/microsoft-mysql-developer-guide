@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<a href="{{ route('category-list') }}" class="button">Back</a>
-		<button class="button {{ session('cart') && count(session('cart')) ? 'button-primary' : '' }} checkout-button" {{ session('cart') && count(session('cart')) ? '' : 'disabled' }}>Continue</button>
+		<button class="button {{ $global_cart['cart_total'] ? 'button-primary' : '' }} checkout-button" {{ $global_cart['cart_total'] ? '' : 'disabled' }}>Continue</button>
 	</div>
 
 @endsection

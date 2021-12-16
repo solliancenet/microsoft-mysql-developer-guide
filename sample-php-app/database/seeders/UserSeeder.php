@@ -74,6 +74,6 @@ class UserSeeder extends Seeder
 				'password' => Hash::make('password'),
 			],
 		];
-	    User::insert($users);
+		User::insert($users);
 	}
 }

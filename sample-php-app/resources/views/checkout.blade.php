@@ -24,17 +24,21 @@
 					</tr>
 				</tbody>
 			</table>
-
+		</div>
+		<div class="one-half column">
 			<!-- keeping it simple for demo purposes, only displaying a name and street address field -->
-			<form class="checkout-form">
-				<label class="text-left">Name</label>
-				<input type="text" class="u-full-width" value="{{ $user ?? '' ? $user->name : '' }}">
-				<label class="text-left">Address</label>
-				<input type="text" class="u-full-width" value="{{ $user ?? '' ? $user->address : '' }}">
-			</form>
+			<form method="post" action="{{ route('process-order') }}">
+				{{ csrf_field() }}
+				<label for="name" class="text-left">Name</label>
+				<input id="name" name="name" type="text" class="u-full-width" value="{{ $user ?? '' ? $user->name : '' }}">
+				<label for="address" class="text-left">Address</label>
+				<input id="address" name="address" type="text" class="u-full-width" value="{{ $user ?? '' ? $user->address : '' }}">
+				<label for="special_instruction" class="text-left">Special Instructions</label>
+				<textarea id="special_instruction" name="special_instructions" class="u-full-width"></textarea>
 
-			<a href="{{ route('category-list') }}" class="button">Add to Order</a>
-			<a href="{{ route('receipt') }}" class="button button-primary complete-order">Complete Order</a>
+				<a href="{{ route('category-list') }}" class="button">Add to Order</a>
+				<button class="button button-primary complete-order">Complete Order</button>
+			</form>
 			@else
 			<p>You have no food in your cart.</p>
 			<a href="{{ route('category-list') }}" class="button">Start a New Order</a>
