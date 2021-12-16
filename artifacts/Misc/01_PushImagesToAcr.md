@@ -20,11 +20,11 @@
     
     docker login -u $ACRNAME -p $ACRPASSWORD $ACRURL
 
-    docker tag store-php "$ACRNAME.azurecr.io/store-php"
+    docker tag store-web "$ACRNAME.azurecr.io/store-web"
 
     docker tag store-db "$ACRNAME.azurecr.io/store-db"
 
-    docker push "$ACRNAME.azurecr.io/store-php"
+    docker push "$ACRNAME.azurecr.io/store-web"
 
     docker push "$ACRNAME.azurecr.io/store-db"
 

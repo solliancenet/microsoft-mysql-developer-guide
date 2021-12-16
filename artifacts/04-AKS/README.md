@@ -73,12 +73,12 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysql-php
+  name: mysql-web
   namespace: mysqldev
 spec:
   containers:
-    - name: mysql-php
-      image: <REGISTRY_NAME>.azurecr.io/store-php
+    - name: store-web
+      image: <REGISTRY_NAME>.azurecr.io/store-web
       imagePullPolicy: IfNotPresent
       env:
       - name: MYSQL_DATABASE
@@ -131,4 +131,6 @@ spec:
 
 ## Test your images
 
-1. TODO
+1. Browse to the Azure Portal
+2. Navigate to your AKS cluster and select it
+3. In the 

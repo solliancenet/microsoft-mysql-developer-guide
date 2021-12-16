@@ -2,7 +2,7 @@ version: '3.8'
 services:
   php-apache-environment:
     container_name: php-apache
-    image: store-php
+    image: store-web
     environment:
       - MYSQL_DATABASE=contosocoffee
       - MYSQL_USERNAME=root

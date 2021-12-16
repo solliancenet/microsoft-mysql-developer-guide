@@ -11,10 +11,10 @@ Now that you have containerized versions of your applications, you can host them
 1. Run the following to create the app service containers:
 
     ```powershell
-    $name = "mysqldev-app-php";
+    $name = "mysqldev-app-web";
     $acrName = "mysqldevSUFFIX";
     $appPlan = "mysqldevSUFFIX-linux";
-    $image = "$acrName.azure.io/store-php";
+    $image = "$acrName.azure.io/store-web";
     $resourceGroupName = "";
 
     $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;

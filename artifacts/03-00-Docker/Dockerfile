@@ -13,5 +13,4 @@ RUN chmod 755 /usr/local/bin/start-apache.sh
 
 CMD ["start-apache.sh"]
 
-ENV MYSQL_ROOT_PASSWORD=root
-ENV MYSQL_ROOT_USER=root
+EXPOSE 80

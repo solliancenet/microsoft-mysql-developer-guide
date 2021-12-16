@@ -69,7 +69,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 7. Run the following to create the image:
 
     ```PowerShell
-    docker build -t store-php --file Dockerfile.web . 
+    docker build -t store-web --file Dockerfile.web . 
     ```
 
 ## Migrate Database to Docker
@@ -114,7 +114,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 3. Build the container:
 
     ```PowerShell
-    docker build -t store-mysql --file Dockerfile.db .
+    docker build -t store-db --file Dockerfile.db .
     ```
 
 ## Run the Docker images
@@ -125,7 +125,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     version: '3'
     services:
     web:
-      image: store-php
+      image: store-web
       environment:
         - MYSQL_DATABASE=contosocoffee
         - MYSQL_USER=root
@@ -189,13 +189,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     ```powershell
     docker login {acrName}.azurecr.io -u {username} -p {password}
 
-    docker tag store-mysql {acrName}.azurecr.io/store-mysql
+    docker tag store-db {acrName}.azurecr.io/store-db
 
-    docker tag store-php {acrName}.azurecr.io/store-php
+    docker tag store-web {acrName}.azurecr.io/store-web
 
-    docker push {acrName}.azurecr.io/store-mysql
+    docker push {acrName}.azurecr.io/store-db
 
-    docker push {acrName}.azurecr.io/store-php
+    docker push {acrName}.azurecr.io/store-web
     ```
 
 6. You should now see two images in your Azure Container Registry that we will use later for deployment to other container based runtimes.
