@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
 use App\Helpers\AppHelper;
+use App\Models\Cart;
+use App\Models\CartItem;
+use App\Models\Order;
 use App\Models\Item;
 
 class CartController extends Controller
@@ -20,39 +23,68 @@ class CartController extends Controller
 		$item_list = [];
 		if ($cart) $item_list = array_keys($cart);
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
-			$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
+			$items = Item::whereIn('id',$item_list)->orderBy('name')->get();
 			$json = 0;
 		} else {
 			// if there's no database connection, use a helper and JSON data
-			$item = AppHelper::instance()->itemJson('items',$item_list);
+			$items = AppHelper::instance()->itemJson('items',$item_list);
 			// set a flag so we can display a warning if JSON data is used
 			$json = 1;
 		}
 		$cart_total = 0;
 		$cart_data = [];
-		foreach($item as $i) {
-			$qty = $cart[$i->id];
-			$i->qty = $qty;
+		foreach($items as $item) {
+			$qty = $cart[$item->id];
+			$item->qty = $qty;
 			// set price to 0 in the event there is bad data
-			$price = is_numeric($i->price) ? $i->price : '0';
+			$price = is_numeric($item->price) ? $item->price : '0';
 			// set item subtotal
-			$i->sub = $qty * number_format($price, 2);
+			$item->sub = $qty * number_format($price, 2);
 			// increment cart total
-			$cart_total += $i->sub;
+			$cart_total += $item->sub;
 			// add item to cart array
-			$cart_data[$i->id] = $i;
+			$cart_data[$item->id] = $item;
 		}
+
+		if (AppHelper::instance()->checkDB() && Schema::hasTable('carts')) {
+			$full_cart = Cart::updateOrCreate(
+				['user' => $user->id, 'status' => 'open'],
+			);
+			$full_cart->save();
+			foreach($cart_data as $id => $item) {
+				$cart_insert = CartItem::updateOrCreate(
+					['cart' => $full_cart->id, 'item' => $id],
+					['qty' => $item->qty]
+				);
+				$full_cart->cart_items()->save($cart_insert);
+			}
+			session(['cart_id' => $full_cart->id]);
+		} else {
+			// if there's no database connection, fake it with sessions
+			session(['cart_id' => 'session']);
+			$json = 1;
+		}
+
 		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
 	}
 
-	public function receipt()
-	{
-		$time_left = 0;
 
-		// if we have a cart session, turn it into an order
+	public function processOrder(Request $request)
+	{
+		$user = session('user');
 		$cart = session('cart');
+		$cart_id = session('cart_id');
+
+		if (!$user || !$cart || !$cart_id) {
+			// something is missing, bounce back to the checkout page
+			return redirect()->route('checkout');
+		}
+
 		if ($cart) {
+			session()->forget('cart');
+			session()->forget('cart_id');
 			session()->forget('receipt');
+
 			$item_list = array_keys($cart);
 			if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
 				$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
@@ -61,7 +93,7 @@ class CartController extends Controller
 				// if there's no database connection, use a helper and JSON data
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
 				// set a flag so we can display a warning if JSON data is used
-				$json = 0;
+				$json = 1;
 			}
 
 			// show a semi-random delivery time to make it more fun
@@ -79,18 +111,38 @@ class CartController extends Controller
 			// turn it into minutes from *right now*
 			$delivery = strtotime(now())+($time*60);
 
-			session()->forget('cart');
-			if (!session('receipt')) {
-				session([ 'receipt' => [] ]);
+			if (AppHelper::instance()->checkDB() && Schema::hasTable('carts') && $cart_id!='session') {
+				// update cart to 'closed'
+				Cart::where('id', $cart_id)->update(['status' => 'closed']);
+				// save to order table
+				$order = new Order([
+					'user' => $user->id,
+					'cart' => $cart_id,
+					'name' => $request->name,
+					'address' => $request->address,
+					'special_instructions' => $request->special_instructions,
+					'cooktime' => $time
+				]);
+				$order->save();
 			}
+
 			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>$delivery], 'json'=>$json ]);
-		}
+		}		
+		// redirect to the receipt page
+		return redirect()->route('receipt');
+	}
 
-		// if there was no cart, then either use the receipt session or display a generic message
+
+	public function receipt()
+	{
+		$time_left = 0;
+
+		// use the receipt session or display a generic message
 		$receipt = session('receipt');
-
-		// figure out how many minutes are left before food arrives
-		$time_left = floor( ($receipt['delivery'] - strtotime(now()) )/60 );
+		if ($receipt) {
+			// figure out how many minutes are left before food arrives
+			$time_left = floor( ($receipt['delivery'] - strtotime(now()) )/60 );
+		}
 
 		return view('receipt', ['header'=>1, 'receipt'=>$receipt, 'time_left'=>$time_left]);
 	}
@@ -116,7 +168,7 @@ class CartController extends Controller
 		// update the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
 
-		return ['count'=>count(session('cart')),'html'=>$global_cart];
+		return $global_cart;
 	}
 
 	public function updateCart(Request $request)
@@ -135,7 +187,7 @@ class CartController extends Controller
 		// update the floating cart
 		$global_cart = AppHelper::instance()->globalCart('show');
 
-		return ['count'=>count(session('cart')),'html'=>$global_cart];
+		return $global_cart;
 	}
 
 }

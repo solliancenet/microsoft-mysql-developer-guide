@@ -22,6 +22,7 @@ Route::get('/category-list', 'ProductController@categoryList')->name('category-l
 Route::get('/item-list/{category}', 'ProductController@itemList')->name('item-list');
 
 Route::get('/checkout', 'CartController@checkout')->name('checkout');
+Route::post('/process-order', 'CartController@processOrder')->name('process-order');
 Route::get('/receipt', 'CartController@receipt')->name('receipt');
 
 

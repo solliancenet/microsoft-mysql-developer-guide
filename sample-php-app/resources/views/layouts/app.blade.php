@@ -39,7 +39,7 @@
 @endif
 
 		<div id="global_cart" class="global-cart">
-{!! $global_cart ?? '' !!}
+{!! $global_cart['html'] ?? '' !!}
 		</div>
 
 @yield('content')

@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
 use App\Helpers\AppHelper;
+use App\Models\User;
 use App\Models\Category;
-use App\Models\Item;
 
 class ProductController extends Controller
 {
@@ -16,6 +16,9 @@ class ProductController extends Controller
 
 	public function categoryList()
 	{
+		// pretend the user logged in
+		$user = AppHelper::instance()->randomUser();
+
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories')) {
 			$data = Category::orderBy('name')->get();
 			$json = 0;
@@ -35,6 +38,9 @@ class ProductController extends Controller
 	
 	public function itemList($category)
 	{
+		// pretend the user logged in
+		$user = AppHelper::instance()->randomUser();
+
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories') && Schema::hasTable('items')) {
 			$data = Category::where('url',$category)->with('items')->first();
 			$data = $data->items;

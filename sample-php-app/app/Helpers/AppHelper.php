@@ -14,6 +14,23 @@ class AppHelper
 	}
 
 
+	// get user from session or generate a random user
+	public function randomUser() {
+		$user = session('user');
+		if (!$user) {
+			// session died, so we need to get a new user
+			if ($this->checkDB() && Schema::hasTable('users')) {
+				// if there's no database connection, use JSON data
+				$user = User::inRandomOrder()->first();
+			} else {
+				$user = AppHelper::instance()->userJson('rand');
+			}
+		}
+		session([ 'user' => $user ]);
+		return $user;
+	}
+
+
 	// display a cart icon and a floating list of items in the cart
 	public function globalCart($show=null) {
 		$cart = session('cart');
@@ -30,7 +47,8 @@ class AppHelper
 				$cart_data[$i->id] = $i;
 			}
 		}
-		return view('includes/floating-cart')->with('cart_total',$cart_total)->with('cart_data',$cart_data)->with('show',$show)->render();
+		$html = view('includes/floating-cart')->with('cart_total',$cart_total)->with('cart_data',($cart_data ?? null))->with('show',$show)->render();
+		return ['html'=>$html, 'cart_total'=>$cart_total];
 	}
 
 

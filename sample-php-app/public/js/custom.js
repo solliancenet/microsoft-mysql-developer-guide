@@ -28,7 +28,7 @@ $(document).ready( function() {
 				// console.log(result);
 				$('#global_cart').html(result.html);
 				$('.cart-block').slideDown(250);
-				if (result.count) {
+				if (result.cart_total) {
 					$('.checkout-button').addClass('button-primary').attr('disabled',false);
 				} else {
 					$('.checkout-button').removeClass('button-primary').attr('disabled',true);
