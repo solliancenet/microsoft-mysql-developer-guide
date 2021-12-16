@@ -10,5 +10,19 @@ spec:
     - name: store-web
       image: <REGISTRY_NAME>.azurecr.io/store-php
       imagePullPolicy: IfNotPresent
+      ports:
+      - containerPort: 80
+        name: http
+      - containerPort: 443
+        name: https
+      env:
+      - name: MYSQL_DATABASE
+        value: "ContosoCoffee"
+      - name: MYSQL_USERNAME
+        value: "root"
+      - name: MYSQL_PASSWORD
+        value: "root"
+      - name: MYSQL_SERVER
+        value: "store-db"
   imagePullSecrets:
     - name: acr-secret
