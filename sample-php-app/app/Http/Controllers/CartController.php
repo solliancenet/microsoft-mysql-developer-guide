@@ -111,6 +111,9 @@ class CartController extends Controller
 			// turn it into minutes from *right now*
 			$delivery = strtotime(now())+($time*60);
 
+			$name = $request->name ?? $user->name;
+			$address = $request->address ?? $user->address;
+
 			if (AppHelper::instance()->checkDB() && Schema::hasTable('carts') && $cart_id!='session') {
 				// update cart to 'closed'
 				Cart::where('id', $cart_id)->update(['status' => 'closed']);
@@ -118,8 +121,8 @@ class CartController extends Controller
 				$order = new Order([
 					'user' => $user->id,
 					'cart' => $cart_id,
-					'name' => $request->name,
-					'address' => $request->address,
+					'name' => $name,
+					'address' => $address,
 					'special_instructions' => $request->special_instructions,
 					'cooktime' => $time
 				]);
