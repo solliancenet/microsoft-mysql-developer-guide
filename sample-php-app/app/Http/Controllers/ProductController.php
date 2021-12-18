@@ -21,18 +21,17 @@ class ProductController extends Controller
 
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories')) {
 			$data = Category::orderBy('name')->get();
-			$json = 0;
 		} else {
 			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->categoryJson();
 			// set a flag so we can display a warning if JSON data is used
-			$json = 1;
+			$json_warning = 1;
 		}
 
-		// floating cart on every page
+		// display the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
 
-		return view('category-list', ['header'=>1, 'global_cart'=>$global_cart, 'category'=>$data, 'json'=>$json]);
+		return view('category-list', ['header'=>1, 'global_cart'=>$global_cart, 'category'=>$data, 'json_warning'=>($json_warning ?? 0)]);
 	}
 
 	
@@ -44,18 +43,17 @@ class ProductController extends Controller
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('categories') && Schema::hasTable('items')) {
 			$data = Category::where('url',$category)->with('items')->first();
 			$data = $data->items;
-			$json = 0;
 		} else {
 			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->itemJson('byCategory',$category);
 			// set a flag so we can display a warning if JSON data is used
-			$json = 1;
+			$json_warning = 1;
 		}
 
-		// floating cart on every page
+		// display the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
 
-		return view('item-list', ['header'=>1, 'global_cart'=>$global_cart, 'item'=>$data, 'json'=>$json]);
+		return view('item-list', ['header'=>1, 'global_cart'=>$global_cart, 'item'=>$data, 'json_warning'=>($json_warning ?? 0)]);
 	}
 
 }

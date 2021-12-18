@@ -21,10 +21,10 @@ class Item extends Model
 	];
 
 	protected $with = [
-		'category',
+		'category_detail',
 	];
 
-	public function category()
+	public function category_detail()
 	{
 		return $this->belongsTo(Category::class, 'category', 'id');
 	}

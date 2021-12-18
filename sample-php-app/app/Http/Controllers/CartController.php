@@ -24,12 +24,11 @@ class CartController extends Controller
 		if ($cart) $item_list = array_keys($cart);
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
 			$items = Item::whereIn('id',$item_list)->orderBy('name')->get();
-			$json = 0;
 		} else {
 			// if there's no database connection, use a helper and JSON data
 			$items = AppHelper::instance()->itemJson('items',$item_list);
 			// set a flag so we can display a warning if JSON data is used
-			$json = 1;
+			$json_warning = 1;
 		}
 		$cart_total = 0;
 		$cart_data = [];
@@ -37,7 +36,7 @@ class CartController extends Controller
 			$qty = $cart[$item->id];
 			$item->qty = $qty;
 			// set price to 0 in the event there is bad data
-			$price = is_numeric($item->price) ? $item->price : '0';
+			$price = is_numeric($item->price) ? $item->price : 0;
 			// set item subtotal
 			$item->sub = $qty * number_format($price, 2);
 			// increment cart total
@@ -62,10 +61,10 @@ class CartController extends Controller
 		} else {
 			// if there's no database connection, fake it with sessions
 			session(['cart_id' => 'session']);
-			$json = 1;
+			$json_warning = 1;
 		}
 
-		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json'=>$json]);
+		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json_warning'=>($json_warning ?? 0)]);
 	}
 
 
@@ -81,19 +80,12 @@ class CartController extends Controller
 		}
 
 		if ($cart) {
-			session()->forget('cart');
-			session()->forget('cart_id');
-			session()->forget('receipt');
-
 			$item_list = array_keys($cart);
 			if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
 				$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
-				$json = 0;
 			} else {
 				// if there's no database connection, use a helper and JSON data
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
-				// set a flag so we can display a warning if JSON data is used
-				$json = 1;
 			}
 
 			// show a semi-random delivery time to make it more fun
@@ -129,7 +121,12 @@ class CartController extends Controller
 				$order->save();
 			}
 
-			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>$delivery], 'json'=>$json ]);
+			// clear all the sessions
+			session()->forget('cart');
+			session()->forget('cart_id');
+			session()->forget('receipt');
+
+			session([ 'receipt' => ['created_at'=>strtotime(now()), 'delivery'=>$delivery] ]);
 		}		
 		// redirect to the receipt page
 		return redirect()->route('receipt');
