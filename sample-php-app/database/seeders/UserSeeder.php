@@ -20,6 +20,24 @@ class UserSeeder extends Seeder
 		DB::table('users')->truncate();
 		$users = [
 			[
+				'name' => 'Peter Gibbons',
+				'address' => '97 Walt Whitman Street',
+				'email' => 'pgibbons@contoso-noshnow.com',
+				'password' => Hash::make('password'),
+			],
+			[
+				'name' => 'Michael Bolton',
+				'address' => '7756 Princeton Street',
+				'email' => 'mbolton@contoso-noshnow.com',
+				'password' => Hash::make('password'),
+			],
+			[
+				'name' => 'Samir Nagheenanajar',
+				'address' => '7583 Honey Creek St.',
+				'email' => 'snagheenanajar@contoso-noshnow.com',
+				'password' => Hash::make('password'),
+			],
+			[
 				'name' => 'Bob Slydell',
 				'address' => '820 Beach Street',
 				'email' => 'bslydell@contoso-noshnow.com',

@@ -26,9 +26,10 @@
 			</table>
 		</div>
 		<div class="one-half column">
-			<!-- keeping it simple for demo purposes, only displaying a name and street address field -->
 			<form method="post" action="{{ route('process-order') }}">
 				{{ csrf_field() }}
+
+				<!-- keeping it simple for demo purposes, only displaying a few fields -->
 				<label for="name" class="text-left">Name</label>
 				<input id="name" name="name" type="text" class="u-full-width" value="{{ $user ?? '' ? $user->name : '' }}">
 				<label for="address" class="text-left">Address</label>

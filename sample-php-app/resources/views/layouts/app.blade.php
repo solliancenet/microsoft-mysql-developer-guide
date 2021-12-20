@@ -45,7 +45,7 @@
 @yield('content')
 
 		<!-- show a little warning message if the data is coming from JSON and not the database -->
-		<div class="json-warning {{ $json ?? '' ? '' : 'initially-hidden' }}">Site is unable to pull from database. Using JSON data instead.</div>
+		<div class="json-warning {{ $json_warning ?? '' ? '' : 'initially-hidden' }}">Site is unable to pull from database. Using JSON data instead.</div>
 
 @stack('scripts')
 	</body>

@@ -3,8 +3,8 @@
 namespace App\Helpers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
+
 use App\Models\User;
 
 class AppHelper
@@ -55,6 +55,7 @@ class AppHelper
 
 
 	// use these functions to get json data when there's no database:
+	// (don't worry about this section, it's just here to keep the app working if there's no database)
 
 	// checks to see if database is connecting
 	public function checkDB()
@@ -67,7 +68,7 @@ class AppHelper
 		return true;
 	}
 
-	// returns a user (if ID is provide) or a list of users
+	// returns a user (if ID is provided) or a list of users
 	public function userJson($id=null)
 	{
 		$json = '[ 
@@ -142,7 +143,7 @@ class AppHelper
 			{"id":23,"category":6,"name":"Plate of Lettuce","img":"salad-2150548_1920.jpg","price":"2.69","cooktime":"1","desc":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dignissim lacus vel odio sagittis, ut faucibus felis vulputate. Duis nisi quam, luctus eget augue vel, ullamcorper commodo ipsum. Nunc quam turpis, facilisis interdum vestibulum et, volutpat congue arcu."}
 		]';
 
-		// need this to search json
+		// need this to search json by category
 		$category_to_id = [];
 		$category_list = collect($this->categoryJson());
 		foreach($category_list as $c) {
