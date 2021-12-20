@@ -24,7 +24,7 @@ class HomeController extends Controller
 		// pretend the user logged in
 		$user = AppHelper::instance()->randomUser();
 
-		// floating cart on every page
+		// display the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
 
 		return view('index', ['global_cart'=>$global_cart, 'user'=>$user]);

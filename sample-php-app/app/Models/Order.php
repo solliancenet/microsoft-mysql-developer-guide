@@ -19,10 +19,10 @@ class Order extends Model
 	];
 
 	protected $with = [
-		'cart',
+		'cart_detail',
 	];
 
-	public function cart()
+	public function cart_detail()
 	{
 		return $this->hasOne(Cart::class, 'cart', 'id');
 	}

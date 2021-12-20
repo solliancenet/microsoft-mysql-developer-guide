@@ -19,11 +19,11 @@ class CartItem extends Model
 	];
 
 	protected $with = [
-		// 'cart',
+		'cart_detail',
 		'item_detail',
 	];
 
-	public function cart()
+	public function cart_detail()
 	{
 		return $this->belongsTo(Cart::class, 'cart', 'id');
 	}
