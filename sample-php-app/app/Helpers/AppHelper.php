@@ -61,8 +61,9 @@ class AppHelper
 	public function checkDB()
 	{
 		try {
-			DB::connection()->getPdo();
+			DB::getPdo();
 		} catch (\Exception $e) {
+			// print($e->getMessage());
 			return false;
 		}
 		return true;
