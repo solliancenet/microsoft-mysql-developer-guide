@@ -19,7 +19,6 @@ class CartItem extends Model
 	];
 
 	protected $with = [
-		'cart_detail',
 		'item_detail',
 	];
 

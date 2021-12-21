@@ -21,6 +21,9 @@ class HomeController extends Controller
 	
 	public function index()
 	{
+		// forget the user session so we can get a new user on reload
+		session()->forget('user');
+
 		// pretend the user logged in
 		$user = AppHelper::instance()->randomUser();
 

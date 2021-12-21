@@ -8,7 +8,7 @@
 	<div class="center-block order-form">
 		<div class="one-half column">
 			<form>
-				<label for="delivery_address">Welcome back, {{ $user->name }}! Where should we deliver your meal?</label>
+				<label for="delivery_address">Welcome back, <span class="blue">{{ $user->name }}</span>! Where should we deliver your meal?</label>
 				<!-- 
 					Keeping it simple for demo purposes, only displaying a single street address field. We don't
 					actually use this field for anything though. It's just for show!
