@@ -4,7 +4,15 @@
 
 As described in the [Why Move to Azure document](../02_IntroToMySQL/02_01_Why_Move_To_Azure.md) document, Azure offers a $200 free credit for developers to trial Azure. Enroll today to explore MySQL offerings on Azure.
 
-## Azure Subscriptions and Limits - TODO
+## Azure Subscriptions and Limits
+
+As explained in the [Introduction to Azure document](../02_IntroToMySQL/02_02_Introduction_to_Azure.md), subscriptions are a critical component of the Azure hierarchy: resources cannot be provisioned without an Azure subscription.
+
+A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits using customer support.
+
+Since most Azure services are provisioned in regions, some limits apply at the region-level. Developers must consider both global and regional subscription limits when developing apps.
+
+Consult [Azure's comprehensive list of service and subscription limits](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) for more details.
 
 ## Azure Authentication
 
