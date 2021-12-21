@@ -139,6 +139,10 @@
 	text-align: left;
 }
 
+span.blue {
+	color: #33C3F0;
+}
+
 .checkout-cart {
 	margin-bottom: 15px;
 }
