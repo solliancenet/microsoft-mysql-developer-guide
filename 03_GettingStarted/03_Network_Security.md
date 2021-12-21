@@ -77,3 +77,18 @@ In the image below, since public access is disabled, access can only occur throu
 - Private Link
   - [Portal](https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-portal)
   - [CLI](https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-cli)
+
+## Networking Best Practices for Flexible Server
+
+- If you are deploying your application in an Azure region that supports *Availability Zones*, deploy your application and the Flexible Server instance in the same zone to minimize latency
+
+> For a review of availability zones, consult the [Introduction to Azure Database for MySQL](../02_IntroToMySQL/02_03_Azure_MySQL.md) document.
+
+- Organize the components of your application into multiple virtual networks, such as in a [hub and spoke configuration.](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) Employ virtual network peering or VPN Gateways to join the application's virtual networks.
+
+- Configure data protection at-rest and in-motion (see the [Security and Compliance document](03_MySQL_Security_Compliance.md)).
+
+- [General Azure Networking Best Practices](https://docs.microsoft.com/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking)
+  - Determine IP addressing & subnetting
+  - Determine DNS setup and whether forwarders are needed
+  - Employ tools like network security groups to secure traffic within and between subnets

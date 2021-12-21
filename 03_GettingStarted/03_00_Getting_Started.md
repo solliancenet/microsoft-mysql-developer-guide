@@ -6,7 +6,15 @@ As described in the [Why Move to Azure document](../02_IntroToMySQL/02_01_Why_Mo
 
 ## Azure Subscriptions and Limits - TODO
 
-## Azure Authentication - TODO
+## Azure Authentication
+
+As mentioned previously, Azure PaaS MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is also separated between the control plane and the data plane.
+
+In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to perform an operation against an Azure resource. Review Azure RBAC in the [Introduction to Azure document](../02_IntroToMySQL/02_02_Introduction_to_Azure.md) for more information.
+
+In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more.
+
+> Learn how to configure Azure Active Directory authentication for Azure PaaS MySQL Single Server from the [Microsoft docs.](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication)
 
 ## Creating Landing Zones
 

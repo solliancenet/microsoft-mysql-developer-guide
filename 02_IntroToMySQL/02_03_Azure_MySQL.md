@@ -20,25 +20,11 @@ Single Server is suitable when apps do not need extensive database customization
 
 ### Flexible Server
 
-Flexible Server is also managed by the Azure platform, but it exposes more control to the user. Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B1MS Azure VM tier and is optimized for workloads that do not continually use the CPU. Just like Single Server, [Flexible Server can also be paused.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli) The image below shows how Flexible Server works for a non-high availability arrangement.
+Flexible Server is also managed by the Azure platform, but it exposes more control to the user. Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. Just like Single Server, [Flexible Server can also be paused.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli) The image below shows how Flexible Server works for a non-high availability arrangement.
 
 > *Locally-redundant storage* replicates data within a single *availability zone*. *Availability zones* are present within a single Azure region (such as East US) and are geographically isolated. All Azure regions that support availability zones have at least three.
 
 ![This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.](./media/flexible-server.png "Operation of MySQL Flexible Server")
-
-#### High Availability
-
-The image above does not feature high availability. Flexible Server implements HA by provisioning another VM to serve as a standby.
-
-It is possible to provision this secondary Flexible Server VM in another availability zone, as shown below. As mentioned previously, this HA option is only supported for Azure regions with availability zones. While this option does provide redundancy against zonal failure, there is more latency between the zones that affects replication.
-
-![This image demonstrates Zone-Redundant HA for MySQL Flexible Server.](media/1-flexible-server-overview-zone-redundant-ha.png "Zone-Redundant HA")
-
-To compensate for the latency challenges, Azure provides HA within a single zone. In this configuration, both the primary node and the standby node are in the same zone. All Azure regions support this mode. Of course, it does not insulate against zonal failure.
-
-![This image demonstrates HA for MySQL Flexible Server in a single zone.](./media/flexible-server-overview-same-zone-ha.png "HA in a single zone")
-
-To learn more about HA with MySQL Flexible Server, consult the [documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-high-availability)
 
 #### Flexible Server Pricing & TCO
 
