@@ -19,6 +19,37 @@ function EnableIEFileDownload
   Set-ItemProperty -Path $HKCU -Name "1604" -Value 0 -ErrorAction SilentlyContinue -Verbose
 }
 
+function ConfigurePhp($iniPath)
+{
+    $content = get-content $iniPath;
+
+    $content = $content.replace(";extension=curl","extension=curl");
+    $content = $content.replace(";extension=fileinfo","extension=fileinfo");
+    $content = $content.replace(";extension=mbstring","extension=mbstring");
+    $content = $content.replace(";extension=openssl","extension=openssl");
+
+    set-content $iniPath $content;
+}
+
+function AddPhpApplication($path, $port)
+{
+  #create an IIS web site on the path and port
+  New-IISSite -Name "ContosoStore" -BindingInformation "*:$($port):" -PhysicalPath "$path\Public"
+
+  #add IIS permissions
+  $ACL = Get-ACL -Path "$path\storage";
+  $AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("IUSR","FullControl","Allow");
+  $ACL.SetAccessRule($AccessRule);
+  $ACL | Set-Acl -Path "$path\storage";
+
+  $ACL = Get-ACL -Path "$path\bootstrap\cache";
+  $AccessRule = New-Object System.Security.AccessControl.FileSystemAccessRule("IUSR","FullControl","Allow");
+  $ACL.SetAccessRule($AccessRule);
+  $ACL | Set-Acl -Path "$path\bootstrap\cache";
+
+  iisreset /restart 
+}
+
 Start-Transcript -Path C:\WindowsAzure\Logs\CloudLabsCustomScriptExtension.txt -Append
 
 [Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls
@@ -65,9 +96,15 @@ InstallWebPI
 
 InstallWebPIPhp
 
-InstallPhp
+$version = "8.0.8"
+InstallPhp $version;
 
 InstallMySql
+
+#install composer globally
+choco install composer
+
+choco install openssl
 
 $version = "8.0.26";
 InstallMySQLWorkbench $version;
@@ -91,12 +128,18 @@ $branchName = "main";
 $workshopName = "microsoft-mysql-developer-guide";
 $repoUrl = "solliancenet/$workshopName";
 
-
 #download the git repo...
 Write-Host "Download Git repo." -ForegroundColor Green -Verbose
 git clone https://github.com/solliancenet/$workshopName.git $workshopName
 
-#restart the machine...
+ConfigurePhp "c:\tools\php80\php.ini";
 
+$path = "C:\labfiles\$workshopName\sample-php-app";
+$port = "8080";
+AddPhpApplication $path $port;
+
+#run composer on app path
+cd "$path";
+composer install;
 
 Stop-Transcript
