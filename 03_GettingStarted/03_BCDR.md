@@ -1,0 +1,50 @@
+# Business Continuity and Disaster Recovery
+
+Businesses implement *business continuity* (BC) and *disaster recovery* (DR) strategies to minimize disruptions. While *business continuity* emphasizes preserving business operations through policies, *disaster recovery* explains how IT teams will restore access to data and services.
+
+## High Availability
+
+Flexible Server implements high availability by provisioning another VM to serve as a standby. It is possible to provision this secondary Flexible Server VM in another availability zone, as shown below. This HA option is only supported for Azure regions with availability zones. While this option does provide redundancy against zonal failure, there is more latency between the zones that affects replication.
+
+![This image demonstrates Zone-Redundant HA for MySQL Flexible Server.](media/1-flexible-server-overview-zone-redundant-ha.png "Zone-Redundant HA")
+
+To compensate for the latency challenges, Azure provides HA within a single zone. In this configuration, both the primary node and the standby node are in the same zone. All Azure regions support this mode. Of course, it does not insulate against zonal failure.
+
+![This image demonstrates HA for MySQL Flexible Server in a single zone.](./media/flexible-server-overview-same-zone-ha.png "HA in a single zone")
+
+Both of these HA solutions have transparent failover: in a failover event, the standby server becomes the primary server, and DNS records point to the new primary. If the old primary comes back online, it becomes the secondary.
+
+Critically, note that replication is not synchronous to avoid the performance penalty of synchronous replication. A transaction committed to the primary node is not necessarily committed to the secondary node; the secondary node is brought up to the latest committed transaction during failover. 
+
+To learn more about HA with MySQL Flexible Server, consult the [documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-high-availability)
+
+### Implementing Cross-Region High Availability
+
+Flexible Server does not currently support cross-region high availability. However, it is possible to achieve this using MySQL native replication, instead of replicating log files at the Azure storage-level. The image below demonstrates two Flexible Server instances deployed in two virtual networks in two Azure regions. The virtual networks are peered to provide network connectivity for MySQL native replication. As the image indicates, developers can employ MySQL native replication for scenarios like replicating from an on-premises primary to an Azure secondary.
+
+One disadvantage of this setup is that it is customer-managed.
+
+![This image demonstrates a possible cross-region HA scenario using two virtual networks.](./media/cross-region-ha.png "Cross-region HA scenario")
+
+## Backup and Restore
+
+Flexible Server takes backups of data and transaction log files. These backups can be stored in locally-redundant storage (replicated multiple times in a datacenter); zone-redundant storage (multiple copies are stored in two separate availability zones in a region); and geo-redundant storage (multiple copies are stored in two separate Azure regions).
+
+By default, backups are retained for seven days, though the retention time is configurable from 1 to 35 days. Data file backups are taken once daily, while transaction log backups are taken every five minutes.
+
+Azure provides the same amount of backup storage as the provisioned server storage for no cost. However, additional backup storage is charged monthly. A higher backup retention period increases backup storage consumption. Find additional pricing details for Flexible Server [here.](https://azure.microsoft.com/pricing/details/mysql/flexible-server/)
+
+Lastly, note that performing a restore from a backup provisions a new Flexible Server instance. Most of the new server's configuration is inherited from the old server, though it depends on the type of restore performed.
+
+Learn more about backup and restore in Flexible Server from the [Microsoft documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore)
+
+### Flexible Server Samples
+
+- [Point-in-time restore with Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-portal)
+- [Point-in-time restore with CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-cli)
+
+### Single Server Samples
+
+- [Restore with Azure portal](https://docs.microsoft.com/azure/mysql/howto-restore-server-portal)
+- [Restore with Azure CLI](https://docs.microsoft.com/azure/mysql/howto-restore-server-cli)
+- [Restore with Azure PowerShell](https://docs.microsoft.com/azure/mysql/howto-restore-server-powershell)
