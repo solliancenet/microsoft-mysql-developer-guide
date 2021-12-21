@@ -34,7 +34,7 @@ function ConfigurePhp($iniPath)
 function AddPhpApplication($path, $port)
 {
   #create an IIS web site on the path and port
-  New-IISSite -Name "ContosoStore" -BindingInformation "*:8080:" -PhysicalPath "$path\Public"
+  New-IISSite -Name "ContosoStore" -BindingInformation "*:$($port):" -PhysicalPath "$path\Public"
 
   #add IIS permissions
   $ACL = Get-ACL -Path "$path\storage";
@@ -109,14 +109,6 @@ choco install openssl
 $version = "8.0.26";
 InstallMySQLWorkbench $version;
 
-ConfigurePhp "c:\tools\php80\php.ini";
-
-AddPhpApplication $path $port;
-
-#run composer on app path
-cd "$path";
-composer install;
-
 $extensions = @("ms-vscode-deploy-azure.azure-deploy");
 
 InstallVisualStudioCode $extensions;
@@ -136,12 +128,18 @@ $branchName = "main";
 $workshopName = "microsoft-mysql-developer-guide";
 $repoUrl = "solliancenet/$workshopName";
 
-
 #download the git repo...
 Write-Host "Download Git repo." -ForegroundColor Green -Verbose
 git clone https://github.com/solliancenet/$workshopName.git $workshopName
 
-#restart the machine...
+ConfigurePhp "c:\tools\php80\php.ini";
 
+$path = "C:\labfiles\$workshopName\sample-php-app";
+$port = "8080";
+AddPhpApplication $path $port;
+
+#run composer on app path
+cd "$path";
+composer install;
 
 Stop-Transcript
