@@ -1,7 +1,7 @@
 package com.contoso.noshnowapi.controllers;
 
 import com.contoso.noshnowapi.models.User;
-import com.contoso.noshnowapi.repositories.IUserRepository;
+import com.contoso.noshnowapi.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,9 +9,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
-    private final IUserRepository userRepository;
+    private final UserRepository userRepository;
 
-    public UserController(IUserRepository userRepository)
+    public UserController(UserRepository userRepository)
     {
         this.userRepository = userRepository;
     }
