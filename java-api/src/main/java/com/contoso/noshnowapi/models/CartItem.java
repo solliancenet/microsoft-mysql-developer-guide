@@ -11,10 +11,10 @@ public class CartItem {
     private Long id;
 
     @Column(name = "cart", nullable = false)
-    private Integer cart;
+    private Long cart;
 
     @Column(name = "item", nullable = false)
-    private Integer item;
+    private Long item;
 
     @Column(name = "qty", nullable = false)
     private Integer qty;
@@ -27,19 +27,19 @@ public class CartItem {
         this.qty = qty;
     }
 
-    public Integer getItem() {
+    public Long getItem() {
         return item;
     }
 
-    public void setItem(Integer item) {
+    public void setItem(Long item) {
         this.item = item;
     }
 
-    public Integer getCart() {
+    public Long getCart() {
         return cart;
     }
 
-    public void setCart(Integer cart) {
+    public void setCart(Long cart) {
         this.cart = cart;
     }
 

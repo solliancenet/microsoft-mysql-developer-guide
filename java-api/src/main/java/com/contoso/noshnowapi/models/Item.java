@@ -12,7 +12,7 @@ public class Item {
     private Long id;
 
     @Column(name = "category", nullable = false)
-    private Integer category;
+    private Long category;
 
     @Column(name = "name", nullable = false, length = 32)
     private String name;
@@ -70,11 +70,11 @@ public class Item {
         this.name = name;
     }
 
-    public Integer getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(Long category) {
         this.category = category;
     }
 

@@ -11,7 +11,7 @@ public class Cart {
     private Long id;
 
     @Column(name = "user", nullable = false)
-    private Integer user;
+    private Long user;
 
     @Column(name = "status", nullable = false, length = 16)
     private String status;
@@ -24,11 +24,11 @@ public class Cart {
         this.status = status;
     }
 
-    public Integer getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(Integer user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 

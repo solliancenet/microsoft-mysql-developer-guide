@@ -12,10 +12,10 @@ public class Order {
     private Long id;
 
     @Column(name = "user", nullable = false)
-    private Integer user;
+    private Long user;
 
     @Column(name = "cart", nullable = false)
-    private Integer cart;
+    private Long cart;
 
     @Column(name = "name", nullable = false, length = 64)
     private String name;
@@ -84,19 +84,19 @@ public class Order {
         this.name = name;
     }
 
-    public Integer getCart() {
+    public Long getCart() {
         return cart;
     }
 
-    public void setCart(Integer cart) {
+    public void setCart(Long cart) {
         this.cart = cart;
     }
 
-    public Integer getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(Integer user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 
