@@ -10,7 +10,7 @@ As explained in the [Introduction to Azure document](../02_IntroToMySQL/02_02_In
 
 A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits using customer support.
 
-Since most Azure services are provisioned in regions, some limits apply at the region-level. Developers must consider both global and regional subscription limits when developing apps.
+Since most Azure services are provisioned in regions, some limits apply at the region level. Developers must consider both global and regional subscription limits when developing apps.
 
 Consult [Azure's comprehensive list of service and subscription limits](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) for more details.
 

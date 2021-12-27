@@ -81,4 +81,4 @@ Done.
 
 At this point, you have successfully opened a connection to Flexible Server, created a table (DDL), and performed CRUD operations (DML) against data in the table.
 
-If you created a Python Virtual Environment for this document, simply enter `deactive` into the console.
+If you created a Python Virtual Environment for this document, simply enter `deactivate` into the console.
