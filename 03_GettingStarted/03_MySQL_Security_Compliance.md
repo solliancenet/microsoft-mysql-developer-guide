@@ -8,13 +8,13 @@ Both Azure Database for MySQL offerings, Single Server and Flexible Server, offe
 
 While Azure can manage encryption keys, Single Server supports bring your own key (BYOK), providing organizations full key lifecycle control. This feature is only supported in the General Purpose and Memory Optimized tiers.
 
-**Configuring Data Encryption At-Rest Guides**
+### Configuring Data Encryption At-Rest Guides
 
 - [Single Server BYOK](https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql)
 
 Moreover, data in-transit is protected using SSL/TLS, which is enforced by default. However, it is possible to allow insecure connections for legacy applications or enforce a minimum TLS version for connections. Consult the guides below, as Flexible Server's TLS enforcement status can be set through the `require_secure_transport` MySQL server parameter.
 
-**Configuring Data Encryption In-Motion Guides**
+### Configuring Data Encryption In-Motion Guides
 
 - [Single Server](https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security)
 - [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl)

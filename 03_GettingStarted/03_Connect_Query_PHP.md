@@ -6,7 +6,7 @@ This document demonstrates how to manipulate data in an Azure Database for MySQL
 
 Follow one of the methods in the [Provision MySQL Flexible Server](03_05_Provision_MySQL_Flexible_Server.md) document to create a Flexible Server instance with a database.
 
-Moreover, install PHP on your system from the [downloads page.](https://windows.php.net/download/) These instructions were tested with Non Thread Safe PHP 8.0.13. 
+Moreover, install PHP on your system from the [downloads page.](https://windows.php.net/download/) These instructions were tested with PHP 8.0.13 (any PHP 8.0 version should work).
 
 > Your `php.ini` file needs to uncomment the `extension=mysqli` and `extension=openssl` lines for these steps to work.
 

@@ -10,7 +10,7 @@ Public access allows hosts, including Azure services, to access the PaaS MySQL i
 
 > Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
 
-**Configuring Public Access Guides**
+#### Configuring Public Access Guides
 
 - Single Server
   - [Azure portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
@@ -35,7 +35,7 @@ Virtual networks are joined through *peering*. The peered virtual networks can r
 
 Lastly, note that it is possible to access resources in a virtual network from on-premises. Some organizations opt to use VPN connections through [Azure VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways), which sends encrypted traffic over the Internet. Others opt for [Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction), which establishes a private connection to Azure through a service provider.
 
-**More Information on Virtual Networks**
+##### More Information on Virtual Networks
 
 - [Introduction to Azure Virtual Networks](https://docs.microsoft.com/learn/modules/introduction-to-azure-virtual-networks/)
 - Creating virtual networks
@@ -50,7 +50,7 @@ Flexible Server supports deployment into a virtual network for secure access. Sp
 
 > **Note**: If the Flexible Server client, such as a VM, is located in a peered virtual network, then the private DNS zone created for the Flexible Server must also be integrated with the peered virtual network.
 
-**Configuring Private Access for Flexible Server**
+##### Configuring Private Access for Flexible Server
 
 - [Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli)
@@ -69,7 +69,7 @@ In the image below, since public access is disabled, access can only occur throu
 
 ![This image explains how private endpoints work to bring PaaS services into virtual networks.](./media/show-private-link-overview.png "Private endpoints")
 
-**Configuring Private Access for Single Server**
+##### Configuring Private Access for Single Server
 
 - Service Endpoints
   - [Portal](https://docs.microsoft.com/azure/mysql/howto-manage-vnet-using-portal)

@@ -71,4 +71,6 @@ In this example, I configured an alert rule called **AbortedConnections** on the
 
 ![This image demonstrates the alert rule configuration and the configured action groups.](./media/aborted-connections-alert-rule.png "AbortedConnections alert rule and ServerNotifications action group")
 
-TODO - Generated Email Image
+After initiating multiple failed connections to the Flexible Server instance, I receive the following warning on my configured notification email address.
+
+![This image demonstrates the Azure Monitor alert rule sent to my email after attempting multiple failed connections.](./media/alert-rule-sent-to-email.png "Azure Monitor alert rule")
