@@ -15,12 +15,16 @@ class CreateCartItemsTable extends Migration
 	{
 		Schema::create('cart_items', function (Blueprint $table) {
 			$table->id();
-			$table->integer('cart');
-			$table->integer('item');
+			$table->bigInteger('cart_id')->unsigned();
+			$table->bigInteger('item_id')->unsigned();
 			$table->unsignedSmallInteger('qty');
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';
+		});
+		Schema::table('cart_items', function (Blueprint $table) {
+			$table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
+			$table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
 		});
 	}
 

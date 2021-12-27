@@ -16,11 +16,14 @@ class ItemSeeder extends Seeder
 	 */
 	public function run()
 	{
-		DB::table('items')->truncate();
+		// DB::table('items')->truncate();
+		Item::query()->delete();
+		DB::statement("ALTER TABLE `items` AUTO_INCREMENT = 1");
+
 		$items = [
 			// breakfast
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Cinnamon Roll',
 				'img' => 'cinnamon-rolls-gb12ce8577_1920.jpg',
 				'price' => '1.19',
@@ -28,7 +31,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Cupcake ipsum dolor sit amet dragée topping topping. Powder cheesecake cake shortbread gummies lollipop jelly carrot cake. Pudding sugar plum carrot cake I love muffin. Dessert topping croissant I love tart soufflé cheesecake sweet sweet. Liquorice pie marshmallow icing topping muffin. Topping brownie oat cake carrot cake donut chocolate bar cake. Bear claw jelly-o ice cream lollipop shortbread dessert jujubes macaroon. I love danish tootsie roll powder candy canes marzipan icing gingerbread chocolate bar.',
 			],
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Toast & Eggs',
 				'img' => 'breakfast-g7a2675ee6_1920.jpg',
 				'price' => '2.19',
@@ -36,7 +39,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Tiramisu muffin sweet roll cotton candy icing bonbon jelly. Tiramisu oat cake shortbread toffee bonbon shortbread candy canes toffee. Sweet roll biscuit I love oat cake gummies bonbon biscuit danish lemon drops. Toffee ice cream jelly beans caramels muffin. Tart jujubes chocolate bar marshmallow gingerbread I love pie. Chocolate I love chocolate cake cake liquorice lollipop. Tiramisu chocolate jelly-o muffin halvah. Shortbread soufflé ice cream oat cake cotton candy sesame snaps liquorice. Danish marzipan I love jelly brownie muffin halvah candy canes.',
 			],
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Croissant',
 				'img' => 'croissant-ga61b1fb0e_1920.jpg',
 				'price' => '3.19',
@@ -44,7 +47,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'I love chocolate cake I love I love jelly beans cotton candy jelly-o ice cream. Icing cotton candy sweet roll fruitcake biscuit apple pie. Gummies chocolate caramels biscuit I love I love I love cookie croissant. Topping apple pie wafer sesame snaps tootsie roll gummies. Apple pie I love wafer sweet roll tootsie roll. Cheesecake I love apple pie muffin tiramisu lemon drops cake. Macaroon caramels chocolate cotton candy soufflé tart. Chupa chups lemon drops cupcake topping pastry.',
 			],
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Bacon & Eggs',
 				'img' => 'eggs-g9c07e92b1_1920.jpg',
 				'price' => '4.19',
@@ -52,7 +55,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Toffee sesame snaps chupa chups pie pastry marshmallow I love tootsie roll soufflé. Marshmallow fruitcake cheesecake I love icing cake. Liquorice toffee chocolate bar marzipan cotton candy croissant powder. Bonbon I love danish bear claw tootsie roll. Candy canes wafer fruitcake caramels lollipop tart. Oat cake croissant tart gummi bears cookie muffin. Icing sweet roll chupa chups chupa chups jelly-o brownie. Jelly-o cotton candy liquorice tiramisu halvah jujubes.',
 			],
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Pancakes',
 				'img' => 'pancakes-g9d341228a_1920.jpg',
 				'price' => '5.19',
@@ -60,7 +63,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Chocolate caramels gingerbread dragée gingerbread brownie powder gummi bears pastry. Sugar plum sugar plum tootsie roll shortbread I love cotton candy. Chocolate cake chocolate bonbon cake biscuit. Toffee cheesecake I love cookie cake marzipan I love chocolate cake liquorice. Biscuit biscuit caramels macaroon lollipop powder tootsie roll. Shortbread jelly-o jujubes jelly-o chocolate carrot cake danish croissant. Biscuit jelly-o donut bonbon muffin carrot cake sesame snaps wafer chupa chups. Chupa chups chocolate bar bonbon I love jelly beans lemon drops macaroon muffin. Chocolate cake cookie jelly-o cake cake croissant muffin halvah candy. Apple pie icing pudding chupa chups macaroon I love biscuit fruitcake I love.',
 			],
 			[
-				'category' => 1,
+				'category_id' => 1,
 				'name' => 'Biscuits & Gravy',
 				'img' => 'biscuits-g07bd069f8_1920.jpg',
 				'price' => '6.19',
@@ -69,7 +72,7 @@ class ItemSeeder extends Seeder
 			],
 			// steak
 			[
-				'category' => 2,
+				'category_id' => 2,
 				'name' => 'Tomahawk',
 				'img' => 'steak-4342500_1920.jpg',
 				'price' => '1.29',
@@ -77,7 +80,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Bacon ipsum dolor amet shank picanha landjaeger kevin, ham hock spare ribs sausage capicola buffalo alcatra. Short loin spare ribs alcatra bresaola. Salami tongue drumstick tenderloin flank alcatra shank sirloin biltong landjaeger short ribs jerky. Porchetta meatloaf fatback frankfurter bacon tail, ham biltong kielbasa short ribs pork capicola leberkas jowl. Chicken tenderloin kielbasa pork belly, ham hock jowl bacon salami chuck burgdoggen hamburger tongue short loin biltong. Frankfurter sirloin meatloaf ribeye.',
 			],
 			[
-				'category' => 2,
+				'category_id' => 2,
 				'name' => 'Sirloin',
 				'img' => 'steak-1076665_1920.jpg',
 				'price' => '2.29',
@@ -85,7 +88,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Meatball fatback pastrami, porchetta doner chicken burgdoggen pancetta jerky beef ribs salami. Buffalo ball tip tenderloin chuck, frankfurter alcatra ribeye t-bone spare ribs. Hamburger pork chop swine, picanha flank corned beef burgdoggen shoulder frankfurter ham ball tip. Chicken biltong short ribs short loin spare ribs. Pork loin jerky pork chop, fatback frankfurter filet mignon turducken kevin swine. Prosciutto kielbasa short ribs shoulder frankfurter hamburger. Swine leberkas alcatra jerky, ball tip pastrami meatloaf pork belly doner venison turkey buffalo ham hock pig.',
 			],
 			[
-				'category' => 2,
+				'category_id' => 2,
 				'name' => 'T-Bone',
 				'img' => 'steak-978654_1920.jpg',
 				'price' => '3.29',
@@ -94,7 +97,7 @@ class ItemSeeder extends Seeder
 			],
 			// pizza
 			[
-				'category' => 3,
+				'category_id' => 3,
 				'name' => 'Pepperoni',
 				'img' => 'pizza-1344720_1920.jpg',
 				'price' => '1.39',
@@ -102,7 +105,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Gouda mozzarella babybel. Jarlsberg emmental who moved my cheese cauliflower cheese brie cheesy feet airedale swiss. Port-salut bocconcini monterey jack squirty cheese cut the cheese say cheese cauliflower cheese lancashire. Who moved my cheese who moved my cheese taleggio cheesy feet cheeseburger hard cheese emmental.',
 			],
 			[
-				'category' => 3,
+				'category_id' => 3,
 				'name' => 'Margherita',
 				'img' => 'pizza-3000274_1920.jpg',
 				'price' => '2.39',
@@ -111,7 +114,7 @@ class ItemSeeder extends Seeder
 			],
 			// burgers
 			[
-				'category' => 4,
+				'category_id' => 4,
 				'name' => 'Sliders',
 				'img' => 'hamburger-494706_1920.jpg',
 				'price' => '1.49',
@@ -119,7 +122,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Ribeye ball tip kevin tri-tip beef biltong. Pastrami pork belly burgdoggen, sirloin bresaola andouille flank fatback short ribs chuck shoulder tongue boudin strip steak. Bacon pancetta biltong kielbasa, cow shank sausage rump chuck spare ribs alcatra ground round meatball chicken strip steak. Sirloin andouille pig ham hock swine kielbasa salami tongue meatball cupim jowl. Cow fatback drumstick picanha ball tip. Meatloaf venison shankle rump, tail tenderloin short ribs.',
 			],
 			[
-				'category' => 4,
+				'category_id' => 4,
 				'name' => 'Charbroiled',
 				'img' => 'hamburger-1238246_1920.jpg',
 				'price' => '2.49',
@@ -127,7 +130,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Kielbasa boudin alcatra, beef ribs spare ribs rump pork belly pork chop salami ribeye pancetta. Alcatra picanha ground round, frankfurter short loin porchetta leberkas venison cow fatback landjaeger rump boudin. Flank t-bone kielbasa burgdoggen short ribs landjaeger tenderloin ham hock pastrami. Burgdoggen turducken landjaeger, short ribs frankfurter tail brisket chuck shoulder buffalo sausage doner rump. Swine ground round ribeye ham hock tongue turducken sirloin, burgdoggen sausage shank t-bone cupim.',
 			],
 			[
-				'category' => 4,
+				'category_id' => 4,
 				'name' => 'Diner Burger',
 				'img' => 'burger-3442227_1920.jpg',
 				'price' => '3.49',
@@ -136,7 +139,7 @@ class ItemSeeder extends Seeder
 			],
 			// sushi
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Sashimi Fresh Roll',
 				'img' => 'sushi-354628_1920.jpg',
 				'price' => '1.59',
@@ -144,7 +147,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Barbelless catfish eel-goby spiny eel yellowtail snapper mullet minnow white marlin northern pike bigeye? Sauger sandroller; hoki sixgill ray squawfish sailfin silverside. Olive flounder giant danio herring smelt tailor Australasian salmon barbeled houndshark southern grayling porbeagle shark roundhead.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Power Fish',
 				'img' => 'sushi-2853382_1920.jpg',
 				'price' => '2.59',
@@ -152,7 +155,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Atlantic silverside jewfish shovelnose sturgeon huchen temperate ocean-bass mullet menhaden stargazer yellowtail orangestriped triggerfish bluefin tuna. Arapaima plunderfish arapaima, mudskipper, earthworm eel snubnose eel Pacific viperfish tripletail.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Spicy Tuna',
 				'img' => 'sushi-599721_1920.jpg',
 				'price' => '3.59',
@@ -160,7 +163,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Elephantnose fish bango longjaw mudsucker; sand stargazer? Dragonet: kissing gourami tench demoiselle; bullhead shark lookdown catfish halibut tubeblenny southern flounder, hairtail gray reef shark. Long-whiskered catfish lake whitefish, worm eel Ratfish European minnow! Javelin temperate perch sandroller waryfish pikehead gouramie longnose dace starry flounder medusafish cusk-eel.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Avocado Roll',
 				'img' => 'maki-716432_1920.jpg',
 				'price' => '4.59',
@@ -168,7 +171,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Wormfish, glowlight danio Atlantic cod ide flagblenny, ribbon sawtail fish Kafue pike southern grayling. Speckled trout grayling ling nurseryfish threadfin. Snake eel char sturgeon scissor-tail rasbora blue eye worm eel southern smelt. Salmon jellynose fish, buffalofish lanternfish kaluga duckbill eel. Swampfish halosaur flashlight fish wahoo popeye catafula pirarucu; torpedo; rock beauty longnose chimaera elver thornfish, rough scad! Pipefish tompot blenny Kafue pike large-eye bream elasmobranch northern lampfish soapfish rocket danio mudskipper smalltooth sawfish.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Sampler Plate',
 				'img' => 'sushi-2856545_1920.jpg',
 				'price' => '5.59',
@@ -176,7 +179,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Poolfish waryfish frilled shark louvar, wasp fish blue catfish Molly Miller Black scalyfin gizzard shad, platyfish, common carp. Tiger shark roanoke bass milkfish yellowhead jawfish, round stingray sea bass surfperch treefish Asiatic glassfish. Silver carp scissor-tail rasbora pompano dolphinfish: frogmouth catfish mackerel shark. Perch hardhead catfish sand stargazer: goosefish wolf-herring.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Veggie Roll',
 				'img' => 'sushi-2020287_1920.jpg',
 				'price' => '6.59',
@@ -184,7 +187,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Stingray, tarpon; clown triggerfish plaice pleco wrasse Pacific herring kuhli loach rough scad, burma danio. River stingray weasel shark popeye catafula Australian grayling remora flying gurnard smalltooth sawfish, dwarf loach pike conger. Thornyhead megamouth shark pencilfish blacktip reef shark Atlantic silverside Black pickerel, electric eel spiderfish bass electric catfish? Peamouth tetra lightfish midshipman monkfish spearfish burrowing goby trahira, collared dogfish yellow weaver driftfish, dorab roosterfish, sea bream.',
 			],
 			[
-				'category' => 5,
+				'category_id' => 5,
 				'name' => 'Maki',
 				'img' => 'sushi-748139_1920.jpg',
 				'price' => '7.59',
@@ -193,7 +196,7 @@ class ItemSeeder extends Seeder
 			],
 			// salads
 			[
-				'category' => 6,
+				'category_id' => 6,
 				'name' => 'Bowl of Lettuce',
 				'img' => 'food-1834645_1920.jpg',
 				'price' => '1.69',
@@ -201,7 +204,7 @@ class ItemSeeder extends Seeder
 				'desc' => 'Carrot grape soko wakame plantain pea broccoli rabe desert raisin. Chard cabbage cress gumbo spinach mung bean turnip greens rock melon chicory collard greens bok choy. Wattle seed wakame eggplant soybean quandong garlic prairie turnip swiss chard radish okra.',
 			],
 			[
-				'category' => 6,
+				'category_id' => 6,
 				'name' => 'Plate of Lettuce',
 				'img' => 'salad-2150548_1920.jpg',
 				'price' => '2.69',

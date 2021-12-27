@@ -12,7 +12,7 @@ class Cart extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'user',
+		'user_id',
 		'status',
 	];
 
@@ -22,7 +22,7 @@ class Cart extends Model
 
 	public function cart_items()
 	{
-		return $this->hasMany(CartItem::class, 'cart', 'id');
+		return $this->hasMany(CartItem::class, 'cart_id', 'id');
 	}
 
 }

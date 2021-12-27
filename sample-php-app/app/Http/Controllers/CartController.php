@@ -47,12 +47,12 @@ class CartController extends Controller
 
 		if (AppHelper::instance()->checkDB() && Schema::hasTable('carts')) {
 			$full_cart = Cart::updateOrCreate(
-				['user' => $user->id, 'status' => 'open'],
+				['user_id' => $user->id, 'status' => 'open'],
 			);
 			$full_cart->save();
 			foreach($cart_data as $id => $item) {
 				$cart_insert = CartItem::updateOrCreate(
-					['cart' => $full_cart->id, 'item' => $id],
+					['cart_id' => $full_cart->id, 'item_id' => $id],
 					['qty' => $item->qty]
 				);
 				$full_cart->cart_items()->save($cart_insert);
@@ -111,8 +111,8 @@ class CartController extends Controller
 				Cart::where('id', $cart_id)->update(['status' => 'closed']);
 				// save to order table
 				$order = new Order([
-					'user' => $user->id,
-					'cart' => $cart_id,
+					'user_id' => $user->id,
+					'cart_id' => $cart_id,
 					'name' => $name,
 					'address' => $address,
 					'special_instructions' => $request->special_instructions,

@@ -16,7 +16,10 @@ class CategorySeeder extends Seeder
 	 */
 	public function run()
 	{
-		DB::table('categories')->truncate();
+		// DB::table('categories')->truncate();
+		Category::query()->delete();
+		DB::statement("ALTER TABLE `categories` AUTO_INCREMENT = 1");
+
 		$categories = [
 			[
 				'name' => 'Breakfast',

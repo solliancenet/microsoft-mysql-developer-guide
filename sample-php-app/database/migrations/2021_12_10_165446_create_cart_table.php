@@ -15,11 +15,14 @@ class CreateCartTable extends Migration
 	{
 		Schema::create('carts', function (Blueprint $table) {
 			$table->id();
-			$table->integer('user');
+			$table->bigInteger('user_id')->unsigned();
 			$table->string('status', 16);
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';
+		});
+		Schema::table('carts', function (Blueprint $table) {
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
 	}
 

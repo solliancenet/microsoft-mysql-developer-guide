@@ -19,7 +19,7 @@ class Category extends Model
 
 	public function items()
 	{
-		return $this->hasMany(Item::class, 'category', 'id')->orderBy('name');
+		return $this->hasMany(Item::class, 'category_id', 'id')->orderBy('name');
 	}
 
 }

@@ -17,7 +17,10 @@ class UserSeeder extends Seeder
 	 */
 	public function run()
 	{
-		DB::table('users')->truncate();
+		// DB::table('users')->truncate();
+		User::query()->delete();
+		DB::statement("ALTER TABLE `users` AUTO_INCREMENT = 1");
+
 		$users = [
 			[
 				'name' => 'Jon Yang',

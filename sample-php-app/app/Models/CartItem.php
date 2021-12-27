@@ -12,24 +12,23 @@ class CartItem extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'id',
-		'cart',
-		'item',
+		'cart_id',
+		'item_id',
 		'qty',
 	];
 
 	protected $with = [
-		'item_detail',
+		'item',
 	];
 
-	public function cart_detail()
+	public function cart()
 	{
-		return $this->belongsTo(Cart::class, 'cart', 'id');
+		return $this->belongsTo(Cart::class, 'cart_id', 'id');
 	}
 
-	public function item_detail()
+	public function item()
 	{
-		return $this->hasOne(Item::class, 'id', 'item')->orderBy('name');
+		return $this->hasOne(Item::class, 'id', 'item_id')->orderBy('name');
 	}
 
 }

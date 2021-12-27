@@ -10,8 +10,8 @@ class Order extends Model
 	use HasFactory;
 
 	protected $fillable = [
-		'user',
-		'cart',
+		'user_id',
+		'cart_id',
 		'name',
 		'address',
 		'special_instructions',
@@ -19,12 +19,12 @@ class Order extends Model
 	];
 
 	protected $with = [
-		'cart_detail',
+		'cart',
 	];
 
-	public function cart_detail()
+	public function cart()
 	{
-		return $this->hasOne(Cart::class, 'cart', 'id');
+		return $this->hasOne(Cart::class, 'cart_id', 'id');
 	}
 
 }

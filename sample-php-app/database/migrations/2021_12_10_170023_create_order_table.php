@@ -15,8 +15,8 @@ class CreateOrderTable extends Migration
 	{
 		Schema::create('orders', function (Blueprint $table) {
 			$table->id();
-			$table->integer('user');
-			$table->integer('cart');
+			$table->bigInteger('user_id')->unsigned();
+			$table->bigInteger('cart_id')->unsigned();
 			$table->string('name', 64);
 			$table->string('address', 256);
 			$table->text('special_instructions')->nullable();
@@ -25,6 +25,10 @@ class CreateOrderTable extends Migration
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';
+		});
+		Schema::table('orders', function (Blueprint $table) {
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
 		});
 	}
 

@@ -12,7 +12,7 @@ class Item extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'category',
+		'category_id',
 		'name',
 		'img',
 		'price',
@@ -20,9 +20,9 @@ class Item extends Model
 		'desc',
 	];
 
-	public function category_detail()
+	public function category()
 	{
-		return $this->belongsTo(Category::class, 'category', 'id');
+		return $this->belongsTo(Category::class, 'category_id', 'id');
 	}
 
 }

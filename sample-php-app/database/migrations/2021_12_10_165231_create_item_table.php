@@ -15,7 +15,7 @@ class CreateItemTable extends Migration
 	{
 		Schema::create('items', function (Blueprint $table) {
 			$table->id();
-			$table->integer('category');
+			$table->bigInteger('category_id')->unsigned();
 			$table->string('name', 32);
 			$table->string('img', 128);
 			$table->decimal('price', $precision = 6, $scale = 2);
@@ -24,6 +24,9 @@ class CreateItemTable extends Migration
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';
+		});
+		Schema::table('items', function (Blueprint $table) {
+			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 		});
 	}
 
