@@ -11,8 +11,8 @@ public class Item {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "category", nullable = false)
-    private Long category;
+    @Column(name = "category_id", nullable = false)
+    private Long categoryId;
 
     @Column(name = "name", nullable = false, length = 32)
     private String name;
@@ -70,12 +70,12 @@ public class Item {
         this.name = name;
     }
 
-    public Long getCategory() {
-        return category;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory(Long category) {
-        this.category = category;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public Long getId() {

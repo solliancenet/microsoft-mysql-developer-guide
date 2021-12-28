@@ -26,8 +26,8 @@ public class CartItemController {
     public CartItem addCartItem(@RequestBody CartItemPostApiModel cartItemPostApiModel)
     {
         CartItem cartItem = new CartItem();
-        cartItem.setCart(cartItemPostApiModel.getCart());
-        cartItem.setItem(cartItemPostApiModel.getItem());
+        cartItem.setCartId(cartItemPostApiModel.getCartId());
+        cartItem.setItemId(cartItemPostApiModel.getItemId());
         cartItem.setQty(cartItemPostApiModel.getQty());
         return cartItemRepository.save(cartItem);
     }

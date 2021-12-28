@@ -21,7 +21,7 @@ public class CartController {
     public Cart addCart(@RequestBody CartPostApiModel cartPostViewModel)
     {
         Cart cart = new Cart();
-        cart.setUser(cartPostViewModel.getUser());
+        cart.setUserId(cartPostViewModel.getUserId());
         cart.setStatus("open");
         return cartRepository.save(cart);
     }

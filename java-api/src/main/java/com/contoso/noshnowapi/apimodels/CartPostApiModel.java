@@ -1,13 +1,13 @@
 package com.contoso.noshnowapi.apimodels;
 
 public class CartPostApiModel {
-    private Long user;
+    private Long userId;
 
-    public Long getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(Long user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

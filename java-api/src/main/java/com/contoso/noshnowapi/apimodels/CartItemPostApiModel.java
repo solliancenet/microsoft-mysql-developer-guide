@@ -1,24 +1,24 @@
 package com.contoso.noshnowapi.apimodels;
 
 public class CartItemPostApiModel {
-    private Long cart;
-    private Long item;
+    private Long cartId;
+    private Long itemId;
     private Integer qty;
 
-    public Long getItem() {
-        return item;
+    public Long getItemId() {
+        return itemId;
     }
 
-    public void setItem(Long item) {
-        this.item = item;
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
     }
 
-    public Long getCart() {
-        return cart;
+    public Long getCartId() {
+        return cartId;
     }
 
-    public void setCart(Long cart) {
-        this.cart = cart;
+    public void setCartId(Long cartId) {
+        this.cartId = cartId;
     }
 
     public Integer getQty() {

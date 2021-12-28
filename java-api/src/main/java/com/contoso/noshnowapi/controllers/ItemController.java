@@ -26,9 +26,9 @@ public class ItemController {
     }
 
     @GetMapping("/categories/{categoryId}")
-    public List<Item> getItemsByCategory(@PathVariable Integer categoryId)
+    public List<Item> getItemsByCategory(@PathVariable Long categoryId)
     {
-        return itemRepository.findByCategory(categoryId);
+        return itemRepository.findByCategoryId(categoryId);
     }
 
     @GetMapping("/{id}")

@@ -10,8 +10,8 @@ public class Cart {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "user", nullable = false)
-    private Long user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
     @Column(name = "status", nullable = false, length = 16)
     private String status;
@@ -24,12 +24,12 @@ public class Cart {
         this.status = status;
     }
 
-    public Long getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(Long user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getId() {
