@@ -16,13 +16,21 @@ public class CartController {
     }
 
     // The request just needs a user ID in the body
-    // addCart() automatically populates the cart status
+    // openCart() automatically populates the cart status
     @PostMapping
-    public Cart addCart(@RequestBody CartPostApiModel cartPostViewModel)
+    public Cart openCart(@RequestBody CartPostApiModel cartPostViewModel)
     {
         Cart cart = new Cart();
         cart.setUserId(cartPostViewModel.getUserId());
         cart.setStatus("open");
         return cartRepository.save(cart);
+    }
+
+    @PutMapping("/{id}")
+    public Cart closeCart(@PathVariable Long id)
+    {
+        Cart currentCart = cartRepository.findById(id).orElseThrow();
+        currentCart.setStatus("closed");
+        return cartRepository.save(currentCart);
     }
 }

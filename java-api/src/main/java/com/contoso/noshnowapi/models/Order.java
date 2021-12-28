@@ -11,11 +11,11 @@ public class Order {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "user", nullable = false)
-    private Long user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
-    @Column(name = "cart", nullable = false)
-    private Long cart;
+    @Column(name = "cart_id", nullable = false)
+    private Long cartId;
 
     @Column(name = "name", nullable = false, length = 64)
     private String name;
@@ -84,20 +84,20 @@ public class Order {
         this.name = name;
     }
 
-    public Long getCart() {
-        return cart;
+    public Long getCartId() {
+        return cartId;
     }
 
-    public void setCart(Long cart) {
-        this.cart = cart;
+    public void setCartId(Long cartId) {
+        this.cartId = cartId;
     }
 
-    public Long getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(Long user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getId() {
