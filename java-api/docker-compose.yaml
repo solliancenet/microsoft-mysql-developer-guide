@@ -1,0 +1,11 @@
+# Run mvn spring-boot:build-image to create the API Docker image noshnowapi:0.0.1-SNAPSHOT
+# Connection information stored in .env file
+services:
+  api:
+    image: noshnowapi:0.0.1-SNAPSHOT
+    ports:
+      - "80:8080"
+    environment:
+      DB_CONNECTION_URL: ${DB_CONNECTION_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
