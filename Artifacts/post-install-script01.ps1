@@ -27,6 +27,7 @@ function ConfigurePhp($iniPath)
     $content = $content.replace(";extension=fileinfo","extension=fileinfo");
     $content = $content.replace(";extension=mbstring","extension=mbstring");
     $content = $content.replace(";extension=openssl","extension=openssl");
+    $content = $content.replace(";extension=pdo_mysql","extension=pdo_mysql");
 
     set-content $iniPath $content;
 }
@@ -112,6 +113,8 @@ InstallMySQLWorkbench $version;
 $extensions = @("ms-vscode-deploy-azure.azure-deploy");
 
 InstallVisualStudioCode $extensions;
+
+Install7Zip;
 
 #to add the user to docker group
 $global:localusername = "wsuser";

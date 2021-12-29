@@ -19,14 +19,16 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 4. In the terminal window, run the following:
 
     ```powershell
+    cd c:\labfiles\microsoft-mysql-developer-guide\sample-php-app
+
     git remote remove origin
     ```
 
-5. In the terminal window, paste the code you copied above, press **ENTER**
+5. In the terminal window, paste the code you copied above, press **ENTER** (be sure to replace ORG_NAME)
 
     ```powershell
-    git remote add origin https://PROJECT_NAME@dev.azure.com/PROJECT_NAME/contosocoffee/_git/contosocoffee
-    git push -u origin --all
+    git remote add origin https://ORG_NAME@dev.azure.com/ORG_NAME/contosocoffee/_git/contosocoffee
+    git push -f origin main
     ```
 
 6. In the dialog, login using your Azure Active Directory credentials for the repo.  You should see the files get pushed to the repo
@@ -68,6 +70,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 6. For the project, select **contosocoffee**
 7. For the source, select **contosocoffee**
 8. Select **Add**
+9. Select the **1 job, 1 task** link
+10. Select the subscription
+11. Select the **MySQL** app service
+12. Select **Save**
 
 ### Commit changes
 
@@ -76,7 +82,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     ```powershell
     git add -A
     git commit -a -m "Pipeline settings"
-    git push
+    git push -f origin main
     ```
 
 ### Perform the deployment

@@ -1,21 +1,74 @@
-trigger:
-- master
+# Github Pipeline for build / deploy
+# https://gist.github.com/zanechua/a67ed1de1fff20639edb121bdb0b6e4d
 
-pool:
-  vmImage: 'ubuntu-latest'
+name: Deploy ASP.NET MVC App deploy to Azure Web App
 
-steps:
+on: [push]
+
+env:
+  AZURE_WEBAPP_NAME: my-app    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './sample-php-app'      # set this to the path to your web app project, defaults to the repository root
+
+jobs:
+  build-and-deploy:
+    name: Contoso Store
+    runs-on: ubuntu-latest
+    steps:  
+    - name: 'Checkout'
+      uses: actions/checkout@main
+
+    - name: 'Use PHP version $(phpVersion)'
+      run: |
+        sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+        sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+        sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+        sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+        sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+        php -version
+      working-directory: $(Build.SourcesDirectory)/sample-php-app
+
+    - name: 'Installing System Dependencies'
+      run: |
+        curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+        sudo apt-get install -y build-essential debconf-utils screen nodejs mysql-server google-chrome-stable
+        sudo apt-get install -y unzip xvfb autogen autoconf libtool pkg-config nasm
+      working-directory: $(Build.SourcesDirectory)/sample-php-app
+
+    - name: Start mysql service
+      run: sudo systemctl start mysql
+
+    - name: 'Environment Setup'
+      run: |
+        cp .env.sample .env
+      working-directory: $(Build.SourcesDirectory)/sample-php-app
+
+    - name: 'Installing Package Dependencies'
+      run: |
+        sudo composer self-update
+        composer install --no-interaction --prefer-dist --no-suggest
+        composer --version
+      working-directory: $(Build.SourcesDirectory)/sample-php-app
+
+    - name: 'Running Migrations'
+      run: |
+        php artisan key:generate --force
+        php artisan migrate --force
+      working-directory: $(Build.SourcesDirectory)/sample-php-app
+
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
 - task: ArchiveFiles@2
+  condition: always()
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/artifacts/01-ClassicDeploy'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/sample-php-app'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/MySQLDev.zip'
     replaceExistingArchive: true
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'MySQLDev'
-    publishLocation: 'Container'
+

@@ -7,8 +7,8 @@ $dbname = "ContosoCoffee";
 
 $conn = mysqli_init();
 
-// Create connection
-//$conn = new mysqli($servername, $username, $password, $dbname);
+//mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+
 mysqli_real_connect($conn, $servername, $username, $password, $dbname);
 
 // Check connection

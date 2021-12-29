@@ -6,15 +6,15 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ### Deploy the Application
 
-1. Open the `` folder in Visual Studio code
+1. Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in Visual Studio code
 2. If prompted, select **Yes, I trust the authors**
 3. Open a terminal window, run the following:
 
     ```PowerShell
-    Compress-Archive -Path .\app\*.* -DestinationPath app.zip
+    Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip
     ```
 
-4. Deploy the zip to Azure, run the following:
+4. Deploy the zip to Azure, run the following, be sure to replace the `SUFFIX`:
 
     ```PowerShell
     Connect-AzAccount
@@ -25,22 +25,81 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     $appName = "mysqldev$suffix";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 
-    Compress-Archive -Path .\src\*.* -DestinationPath src.zip -force
+    #NOTE: you can't use this for linux based deployments
+    #Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip -force
+
+    7z a -r ./site.zip ./sample-php-app/*
     
-    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy\src.zip"
+    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip"
+
+    az login --scope https://management.core.windows.net//.default
+
+    az webapp deploy --resource-group $resourceGroupName --name $appName --src-path "C:\labfiles\microsoft-mysql-developer-guide\site.zip" --type zip
     ```
+
+### Update Application Settings
+
+1. Open the Azure Portal
+2. Browse to the **mysqldevSUFFIX** app service
+3. Under **Development tools**, select **SSH**, then select **Go**
+4. Run the following:
+
+    ```bash
+    cp /etc/nginx/sites-available/default /home/site/default
+    ```
+
+5. Edit the `default` file
+
+    ```bash
+    nano /home/site/default
+    ```
+
+6. Modify the root to be the following:
+
+    ```bash
+    root /home/site/wwwroot/public
+    ```
+
+7. Add the following to the `location` section after the `index  index.php index.html index.htm hostingstart.html;` line:
+
+    ```bash
+    try_files $uri $uri/ /index.php?$args;
+    ```
+
+8. Add a startup.sh file:
+
+   ```bash
+    nano /home/site/startup.sh
+    ```
+
+9. Copy and paste the following:
+
+    ```bash
+    #!/bin/bash
+
+    cp /home/site/default /etc/nginx/sites-available/default
+    service nginx reload
+    ```
+
+10. Switch back the Azure portal and the app service, under **Settings**, select **Configuration**
+11. Select **General settings**
+12. In the startup command textbox, type `/home/site/startup.sh`
+13. Select **Save**
 
 ### Test the Application
 
 1. Open the Azure Portal
-2. Browse to the `` app service
-3. Under **Settings**, select **Configuration**
-4. Select the **General settings** tab
-5. For the stack, select **PHP**
-6. For the php version, select **7.4**
-7. Select **Save**
-8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-9. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get an error.  This is because the connection details were embedded in the php file.
+2. Browse to `http://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
+3. Browse to `http://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get an error.  This is because the connection details were embedded in the php file.
+
+### Add Firewall IP Rule and Azure Access
+
+1. Switch to the Azure Portal
+2. Browse to the `mysqldevSUFFIX` mysql database server
+3. Under **Settings**, select **Networking**
+4. Select **Add current client IP address (...)**
+5. Select the **Allow public access from any Azure Service within Azure to this server** checkbox
+6. Select **Save**
 
 ### Migrate the Database
 
@@ -73,15 +132,19 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. Switch to the Azure Portal
 2. Browse to the **mysqldevSUFFIX** web application
-3. Under **Development Tools**, select **Advanced Tools**
+3. Under **Development Tools**, select **SSH**
 4. Select **Go->**
 5. Select **Debug console->CMD**
-6. Browse to **site-.wwwroot**
-7. Select the **edit** button for the `database.php` file
-8. Set the servername variable to `mysqldevSUFFIX.mysql.database.azure.com`
-9. Set the username to `wsuser@mysqldevSUFFIX`
-10. Set the password to `Solliance123`
-11. Select **Save**
+6. Edit the **/home/site/wwwroot/pubic/database.php**:
+
+    ```bash
+    nano /home/site/wwwroot/pubic/database.php
+    ```
+
+7. Set the servername variable to `mysqldevSUFFIX.mysql.database.azure.com`
+8. Set the username to `s2admin`
+9. Set the password to `Solliance123`
+10. Press Ctrl-X, then Y to save the file
 
 ## Test new settings #1
 
@@ -90,16 +153,27 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 ## Fix SSL error
 
 1. Download the `https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem` certificate
-2. Switch back to the kudo window
-3. Drag the **DigiCertGlobalRootCA.crt.pem** into the window to upload it
-4. Select the **edit** button for the `database.php` file
-5. Update the database connection to use ssl by adding the `mysqli_ssl_set` method before the `mysqli_real_connect` method:
+2. Switch back to the SSH window, run the following:
+
+    ```bash
+    cd /home/site/wwwroot/public
+
+    wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+    ```
+
+3. Edit the the `database.php` file
+
+    ```php
+    nano /home/site/wwwroot/public/database.php
+    ```
+
+4. Update the database connection to use ssl by uncommenting the `mysqli_ssl_set` method before the `mysqli_real_connect` method:
 
     ```php
     mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
     ```
 
-6. Select **Save**
+5. Press Ctrl-X, then Y to save the file
 
 ## Test new settings #2
 
@@ -107,28 +181,53 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Update to use Environment Variables
 
-1. Putting credential in the PHP files is not a best practice, it is better to utilize environment variables for this.
-2. Switch back to the kudo window
-3. Select the **edit** button for the `database.php` file:
-4. Update the connection variables to the following:
+Putting credential in the PHP files is not a best practice, it is better to utilize environment variables for this.
 
-    ```php
-    $servername = getenv("APPSETTING_MYSQL_SERVERNAME");
-    $username = getenv("APPSETTING_MYSQL_USERNAME");
-    $password = getenv("APPSETTING_MYSQL_PASSWORD");
-    $dbname = getenv("APPSETTING_MYSQL_DATABASE");
+1. Switch back to the SSH window
+2. Edit the **/home/site/wwwroot/pubic/database.php**:
+
+    ```bash
+    nano /home/site/wwwroot/pubic/database.php
     ```
 
-5. Add the environment variables to the App Service:
+3. Update the connection variables to the following:
+
+    ```php
+    $servername = getenv("APPSETTING_DB_HOST");
+    $username = getenv("APPSETTING_DB_USERNAME");
+    $password = getenv("APPSETTING_DB_PASSWORD");
+    $dbname = getenv("APPSETTING_DB_DATABASE");
+    ```
+
+    > **NOTE** Azure App Service adds the `APPSETTING` prefix to all environment variables
+
+4. Edit the **/home/site/wwwroot/config/database.php**:
+
+    ```bash
+    nano /home/site/wwwroot/config/database.php
+    ```
+
+5. Update the mysql connection to utilize the environment variables:
+
+    ```php
+    'host' => getenv('APPSETTING_DB_HOST'),
+    'port' => getenv('APPSETTING_DB_PORT'),
+    'database' => getenv('APPSETTING_DB_DATABASE'),
+    'username' => getenv('APPSETTING_DB_USERNAME'),
+    'password' => getenv('APPSETTING_DB_PASSWORD'),
+    ```
+
+6. Add the environment variables to the App Service:
    - Browse to the Azure Portal
    - Select the **mysqldevSUFFIX** app service
    - Under **Settings**, select **Configuration**
    - Select **New application setting**
    - Add the following:
-     - `MYSQL_SERVERNAME` = `mysqldevSUFFIX.mysql.database.azure.com`
-     - `MYSQL_USERNAME` = `wsuser@mysqldevSUFFIX`
-     - `MYSQL_PASSWORD` = `Solliance123`
-     - `MYSQL_DATABASE` = `contosocoffee`
+     - `DB_HOST` = `mysqldevflexSUFFIX.mysql.database.azure.com`
+     - `DB_USERNAME` = `s2admin`
+     - `DB_PASSWORD` = `Solliance123`
+     - `DB_DATABASE` = `contosocoffee`
+     - `DB_PORT` = `3306`
 
 ## Test new settings #3
 
