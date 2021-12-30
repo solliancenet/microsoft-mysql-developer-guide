@@ -7,7 +7,7 @@
 		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<title>{{ config('app.name', '') }}</title>
+		<title>{{ config('app.name', 'Contoso NoshNow') }}</title>
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}"></script>
