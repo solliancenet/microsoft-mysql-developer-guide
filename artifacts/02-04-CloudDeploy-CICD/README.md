@@ -121,12 +121,36 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git push -u origin main
     ```
 
-4. In the dialog, login using your Azure Active Directory credentials for the repo.  You should see the files get pushed to the repo
+4. In the dialog, login using your GitHub credentials for the repo.  You should see the files get pushed to the repo
 5. Switch back to GitHub, refresh the repo, you should see all the repo files
+
+### Generate Credentials
+
+1. Run the following commands to generate the azure credentials (be sure to replace the token values for subscription and resource group):
+
+    ```PowerShell
+    az login
+
+    az ad sp create-for-rbac --name "MySQLDevSUFFIX" --sdk-auth --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group}
+    ```
+
+2. Copy the json that is outputted
+3. Switch back to the GitHub repository, select **Settings** then select **Secrets**
+4. Select **New repository secret**
+5. For the name, type **AZURE_CREDENTIALS**
+6. Paste the json from above as the value
+7. Select **Save**
 
 ### Deploy the code
 
-1. TODO
+1. In the GitHub browser window, select **Actions**
+2. Select **set up a workflow yourself**
+3. Copy and paste the `github-pipelines.yaml` into the `main.yml` file
+4. Update the `AZURE_WEBAPP_NAME: mysqldevSUFFIX` line to replace the SUFFIX
+5. Select **Start commit**
+6. Select **Commit new file**
+7. Select **Actions**, then select the `Create main.yml` workflow instance, you should see the `Contoso Store` job displayed, select it
+8. Review the tasks that were executed
 
 ### Test the GitHub deployment
 

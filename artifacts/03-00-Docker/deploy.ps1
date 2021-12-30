@@ -1,10 +1,10 @@
-$path = "c:\inetpub\wwwroot\01-ClassicDeploy";
+$path = "c:\inetpub\wwwroot\";
 
 # create a new IIS directory
 mkdir $path
 
 # copy the php files
-copy ./app $path
+copy ./sample-php-app $path
 
 #deploy the database
 $username = "s2admin"

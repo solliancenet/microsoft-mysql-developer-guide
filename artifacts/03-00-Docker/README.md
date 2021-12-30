@@ -29,7 +29,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 5. Change the directory to the application directory
 
     ```PowerShell
-    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts\01-ClassicDeploy";
+    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\sample-php-app";
 
     cd $sourcePath;
     ```

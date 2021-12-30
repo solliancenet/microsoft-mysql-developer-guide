@@ -1,5 +1,5 @@
-$sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts\01-ClassicDeploy";
-$targetPath = "c:\inetpub\wwwroot\01-ClassicDeploy";
+$sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\sample-php-app";
+$targetPath = "c:\inetpub\wwwroot\";
 
 # create a new IIS directory
 mkdir $targetPath;
