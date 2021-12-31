@@ -25,10 +25,10 @@ public class ItemController {
         return itemRepository.findAll();
     }
 
-    @GetMapping("/categories/{categoryId}")
-    public List<Item> getItemsByCategory(@PathVariable Long categoryId)
+    @GetMapping("/categories/{categoryUrl}")
+    public List<Item> getItemsByCategory(@PathVariable String categoryUrl)
     {
-        return itemRepository.findByCategoryId(categoryId);
+        return itemRepository.findByCategoryUrl(categoryUrl);
     }
 
     @GetMapping("/{id}")

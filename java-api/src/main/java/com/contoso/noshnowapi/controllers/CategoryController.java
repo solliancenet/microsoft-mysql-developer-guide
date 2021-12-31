@@ -21,6 +21,6 @@ public class CategoryController {
     @GetMapping
     public List<Category> getCategories()
     {
-        return this.categoryRepository.findAll();
+        return this.categoryRepository.findByOrderByNameAsc();
     }
 }
