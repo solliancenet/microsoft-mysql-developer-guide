@@ -4,15 +4,15 @@ Azure Database for MySQL provides extensive platform management and simple integ
 
 ## Data Encryption
 
-Both Azure Database for MySQL offerings, Single Server and Flexible Server, offer data encryption at-rest. Data, backups, and temporary files created during query execution are all encrypted.
+Both Azure Database for MySQL offerings, Single Server and Flexible Server, offers data encryption at rest. Data, backups, and temporary files created during query execution are all encrypted.
 
 While Azure can manage encryption keys, Single Server supports bring your own key (BYOK), providing organizations full key lifecycle control. This feature is only supported in the General Purpose and Memory Optimized tiers.
 
-### Configuring Data Encryption At-Rest Guides
+### Configuring Data Encryption At Rest Guides
 
 - [Single Server BYOK](https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql)
 
-Moreover, data in-transit is protected using SSL/TLS, which is enforced by default. However, it is possible to allow insecure connections for legacy applications or enforce a minimum TLS version for connections. Consult the guides below, as Flexible Server's TLS enforcement status can be set through the `require_secure_transport` MySQL server parameter.
+Moreover, data-in-transit is protected using SSL/TLS, which is enforced by default. However, it is possible to allow insecure connections for legacy applications or enforce a minimum TLS version for connections. Consult the guides below, as Flexible Server's TLS enforcement status can be set through the `require_secure_transport` MySQL server parameter.
 
 ### Configuring Data Encryption In-Motion Guides
 
@@ -37,7 +37,7 @@ When provisioning PaaS MySQL, Azure requires administrator user credentials. It 
 
 Single Server and Flexible Server also support audit logging. Note that excessive audit logging degrades server performance, so be mindful of the events and users configured for logging.
 
-**Configuring Audit Logging Guides**
+#### Configuring Audit Logging Guides
 
 - [Single Server](https://docs.microsoft.com/azure/mysql/concepts-audit-logs)
 - [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)

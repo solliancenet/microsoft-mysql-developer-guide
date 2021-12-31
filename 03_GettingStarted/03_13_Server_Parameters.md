@@ -1,6 +1,6 @@
 # Server Parameters
 
-MySQL server parameters allow developers to optimize the MySQL engine for their applications. Azure exposes a subset of these parameters. Some parameters that cannot be configured at the server-level can be configured at the connection-level. Moreover, *dynamic* parameters can be changed without restarting the server, while modifying *static* parameters warrants a restart.
+MySQL server parameters allow developers to optimize the MySQL engine for their applications. Azure exposes a subset of these parameters. Some parameters that cannot be configured at the server level can be configured at the connection level. Moreover, *dynamic* parameters can be changed without restarting the server, while modifying *static* parameters warrants a restart.
 
 One of the advantages of Flexible Server is its versatility. Some important exposed parameters are listed below, and the instance's storage and compute tiers affect the possible parameter values. Consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters) for more information.
 

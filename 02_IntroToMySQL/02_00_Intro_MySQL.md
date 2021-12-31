@@ -1,6 +1,6 @@
 # Introduction to MySQL
 
-Choosing a relational database is an important consideration for any application. MySQL database is one of the most popular open source database choices, suitable for heavily-utilized enterprise applications. 
+Choosing a relational database is an important consideration for any application. MySQL database is one of the most popular open-source database choices, suitable for heavily-utilized enterprise applications. 
 
 ## Common Use Cases for MySQL
 
@@ -14,7 +14,7 @@ Though MySQL has a distinct set of advantages, it competes with a vast number of
 
 While MariaDB is compatible with the MySQL protocol, the project is not managed by Oracle, and its maintainers claim that this allows them to better compete with proprietary databases. However, MySQL has over twenty years of development experience, and businesses appreciate the platform's maturity.
 
-Another popular open source MySQL competitor is PostgreSQL. MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy to use manner.
+Another popular open-source MySQL competitor is PostgreSQL. MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner.
 
 ## Deployment Models
 

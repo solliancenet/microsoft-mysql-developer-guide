@@ -6,7 +6,7 @@ With Flexible Server, administrators can specify a custom **Day of week** and **
 
 > See [this](https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography) list from Microsoft to determine the physical location of Azure regions and thus the regional time zone.
 
-Azure always rolls out updates to servers with platform-managed schedules before instances with custom schedules. Platform-managed schedules allow developers to evaluate Flexible Server feature improvements in non-production environments. Moreover, maintenance events are relatively infrequent; there are typically 30 days of gap, unless a critical security fix must be applied.
+Azure always rolls out updates to servers with platform-managed schedules before instances with custom schedules. Platform-managed schedules allow developers to evaluate Flexible Server feature improvements in non-production environments. Moreover, maintenance events are relatively infrequent; there are typically 30 days of gap unless a critical security fix must be applied.
 
 > As a general rule, only set a maintenance schedule for production instances.
 
@@ -20,7 +20,7 @@ Use Azure Service Health to view upcoming infrastructure updates and set notific
 
 Single Server uses a gateway to access database instances, unlike Flexible Server. These gateways have public IP addresses that are retired and replaced, which may impede access from on-premises. Azure notifies customers about gateway retirements three months before. Learn more [here.](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture)
 
-Single Server does not support custom schedules for maintenance. Azure notifies administrators 72 hours prior to the maintenance event.
+Single Server does not support custom schedules for maintenance. Azure notifies administrators 72 hours before the maintenance event.
 
 ## Configure Maintenance Scheduling & Alerting
 
