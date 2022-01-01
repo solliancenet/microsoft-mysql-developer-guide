@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 
 use App\Helpers\AppHelper;
 use App\Helpers\ItemApiService;
+use App\Helpers\CartApiService;
+use App\Helpers\CartItemApiService;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -50,24 +52,30 @@ class CartController extends Controller
 			$cart_data[$item->id] = $item;
 		}
 
-		if (AppHelper::instance()->checkDB() && Schema::hasTable('carts')) {
-			$full_cart = Cart::updateOrCreate(
-				['user_id' => $user->id, 'status' => 'open'],
-			);
-			$full_cart->save();
+		try
+		{
+			$cart = CartApiService::instance()->openCart($user->id);
+			$cartItemApiService = CartItemApiService::instance();
+
+			// TODO: This is inefficient: replace with a single batch call
 			foreach($cart_data as $id => $item) {
-				$cart_insert = CartItem::updateOrCreate(
-					['cart_id' => $full_cart->id, 'item_id' => $id],
-					['qty' => $item->qty]
-				);
-				$full_cart->cart_items()->save($cart_insert);
+				$cartItemApiService->addCartItem($cart->id, $id, $item->qty);
 			}
-			session(['cart_id' => $full_cart->id]);
-		} else {
-			// if there's no database connection, fake it with sessions
+			session(['cart_id' => $cart->id]);
+		}
+		catch (ConnectException $e)
+		{
 			session(['cart_id' => 'session']);
 			$json_warning = 1;
 		}
+
+		// Temporary Testing Measure: Clear Session Information & Close Cart
+
+		session()->forget('cart');
+		session()->forget('cart_id');
+		session()->forget('receipt');
+
+		CartApiService::instance()->closeCart($cart->id);
 
 		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json_warning'=>($json_warning ?? 0)]);
 	}
