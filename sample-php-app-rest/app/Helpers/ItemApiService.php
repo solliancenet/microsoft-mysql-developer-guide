@@ -23,4 +23,11 @@ class ItemApiService {
         $categoryList = $this->client->request('GET', $this->apiPath . '/categories/' . $url);
         return json_decode($categoryList->getBody());
     }
+
+    public function getItemsInCart($cartItems)
+    {
+        $body = array("itemKeys" => $cartItems);
+        $itemList = $this->client->request('GET', $this->apiPath, ['json' => $body]);
+        return json_decode($itemList->getBody());
+    }
 }

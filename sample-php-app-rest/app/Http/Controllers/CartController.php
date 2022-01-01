@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 
 use App\Helpers\AppHelper;
+use App\Helpers\ItemApiService;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\Item;
+use GuzzleHttp\Exception\ConnectException;
 
 class CartController extends Controller
 {
@@ -22,9 +24,12 @@ class CartController extends Controller
 		$cart = session('cart');
 		$item_list = [];
 		if ($cart) $item_list = array_keys($cart);
-		if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
-			$items = Item::whereIn('id',$item_list)->orderBy('name')->get();
-		} else {
+		try
+		{
+			$items = ItemApiService::instance()->getItemsInCart($item_list);
+		}
+		catch (ConnectException $e)
+		{
 			// if there's no database connection, use a helper and JSON data
 			$items = AppHelper::instance()->itemJson('items',$item_list);
 			// set a flag so we can display a warning if JSON data is used
@@ -153,6 +158,7 @@ class CartController extends Controller
 
 	public function addToCart(Request $request)
 	{
+		// Item ID
 		$id = $request->item;
 		if (!session('cart')) {
 			session([ 'cart' => [] ]);
