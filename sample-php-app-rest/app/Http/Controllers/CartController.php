@@ -9,6 +9,7 @@ use App\Helpers\AppHelper;
 use App\Helpers\ItemApiService;
 use App\Helpers\CartApiService;
 use App\Helpers\CartItemApiService;
+use App\Helpers\OrderApiService;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -69,14 +70,6 @@ class CartController extends Controller
 			$json_warning = 1;
 		}
 
-		// Temporary Testing Measure: Clear Session Information & Close Cart
-
-		session()->forget('cart');
-		session()->forget('cart_id');
-		session()->forget('receipt');
-
-		CartApiService::instance()->closeCart($cart->id);
-
 		return view('checkout', ['header'=>1, 'user'=>$user, 'cart_data'=>$cart_data, 'cart_total'=>$cart_total, 'json_warning'=>($json_warning ?? 0)]);
 	}
 
@@ -94,10 +87,13 @@ class CartController extends Controller
 
 		if ($cart) {
 			$item_list = array_keys($cart);
-			if (AppHelper::instance()->checkDB() && Schema::hasTable('items') && Schema::hasTable('carts')) {
-				$item = Item::whereIn('id',$item_list)->orderBy('name')->get();
-			} else {
-				// if there's no database connection, use a helper and JSON data
+
+			try
+			{
+				$item = ItemApiService::instance()->getItemsInCart($item_list);
+			}
+			catch (ConnectException $e)
+			{
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
 			}
 
@@ -119,20 +115,12 @@ class CartController extends Controller
 			$name = $request->name ?? $user->name;
 			$address = $request->address ?? $user->address;
 
-			if (AppHelper::instance()->checkDB() && Schema::hasTable('carts') && $cart_id!='session') {
-				// update cart to 'closed'
-				Cart::where('id', $cart_id)->update(['status' => 'closed']);
-				// save to order table
-				$order = new Order([
-					'user_id' => $user->id,
-					'cart_id' => $cart_id,
-					'name' => $name,
-					'address' => $address,
-					'special_instructions' => $request->special_instructions,
-					'cooktime' => $time
-				]);
-				$order->save();
+			try
+			{
+				CartApiService::instance()->closeCart($cart_id);
+				OrderApiService::instance()->createOrder($user->id, $cart_id, $name, $address, $request->special_instructions, $time);
 			}
+			catch (ConnectException $e) {}
 
 			// clear all the sessions
 			session()->forget('cart');
