@@ -19,6 +19,15 @@ public class CartItem {
     @Column(name = "qty", nullable = false)
     private Integer qty;
 
+    public CartItem() {}
+
+    public CartItem(Long cartId, Long itemId, Integer qty)
+    {
+        this.cartId = cartId;
+        this.itemId = itemId;
+        this.qty = qty;
+    }
+
     public Integer getQty() {
         return qty;
     }

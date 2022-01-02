@@ -56,12 +56,14 @@ class CartController extends Controller
 		try
 		{
 			$cart = CartApiService::instance()->openCart($user->id);
-			$cartItemApiService = CartItemApiService::instance();
 
-			// TODO: This is inefficient: replace with a single batch call
+			// Batch cart items and then save them using the API
+			$cartItems = [];
 			foreach($cart_data as $id => $item) {
-				$cartItemApiService->addCartItem($cart->id, $id, $item->qty);
+				array_push($cartItems, array('cartId' => $cart->id, 'itemId' => $id, 'qty' => $item->qty));
 			}
+			CartItemApiService::instance()->addCartItems($cartItems);
+
 			session(['cart_id' => $cart->id]);
 		}
 		catch (ConnectException $e)

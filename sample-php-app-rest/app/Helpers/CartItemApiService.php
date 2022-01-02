@@ -18,10 +18,8 @@ class CartItemApiService {
         return new CartItemApiService();
     }
 
-    public function addCartItem($cartId, $itemId, $itemQty)
+    public function addCartItems($cartItems)
     {
-        $body = array("cartId" => $cartId, "itemId" => $itemId, "qty" => $itemQty);
-        $cartItem = $this->client->request('POST', $this->apiPath, ['json' => $body]);
-        return json_decode($cartItem->getBody());
+        $this->client->request('POST', $this->apiPath, ['json' => $cartItems]);
     }
 }
