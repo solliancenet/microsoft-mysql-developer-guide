@@ -5,12 +5,10 @@ namespace App\Helpers;
 use GuzzleHttp\Client;
 
 class UserApiService {
-    private string $apiPath;
     private Client $client;
 
     public function __construct()
     {
-        $this->apiPath = config('api.rest_api_base_path') . '/users';
         $this->client = new Client();
     }
     
@@ -21,7 +19,7 @@ class UserApiService {
 
     public function getRandomUser()
     {
-        $res = $this->client->request('GET', $this->apiPath . '/randomUser');
+        $res = $this->client->request('GET', config('api.user_service_path') . '/randomUser');
         return json_decode($res->getBody());
     }
 }

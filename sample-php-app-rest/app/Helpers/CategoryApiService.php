@@ -5,12 +5,10 @@ namespace App\Helpers;
 use GuzzleHttp\Client;
 
 class CategoryApiService {
-    private string $apiPath;
     private Client $client;
 
     public function __construct()
     {
-        $this->apiPath = config('api.rest_api_base_path') . '/categories';
         $this->client = new Client();
     }
 
@@ -20,7 +18,7 @@ class CategoryApiService {
 
     public function getCategoriesAsc()
     {
-        $categoryList = $this->client->request('GET', $this->apiPath);
+        $categoryList = $this->client->request('GET', config('api.category_service_path'));
         return json_decode($categoryList->getBody());
     }
 }

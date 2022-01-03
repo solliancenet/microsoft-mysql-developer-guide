@@ -1,5 +1,10 @@
 <?php
 
 return [
-    'rest_api_base_path' => env('REST_API_BASE_PATH')
+    'cart_service_path' => env('REST_API_BASE_PATH') . '/carts',
+    'user_service_path' => env('REST_API_BASE_PATH') . '/users',
+    'cart_item_service_path' => env('REST_API_BASE_PATH') . '/cartitems',
+    'category_service_path' => env('REST_API_BASE_PATH') . '/categories',
+    'item_service_path' => env('REST_API_BASE_PATH') . '/items',
+    'order_service_path' => env('REST_API_BASE_PATH') . '/orders'
 ];

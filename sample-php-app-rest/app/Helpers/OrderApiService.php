@@ -5,12 +5,10 @@ namespace App\Helpers;
 use GuzzleHttp\Client;
 
 class OrderApiService {
-    private string $apiPath;
     private Client $client;
 
     public function __construct()
     {
-        $this->apiPath = config('api.rest_api_base_path') . '/orders';
         $this->client = new Client();
     }
 
@@ -27,7 +25,7 @@ class OrderApiService {
             'specialInstructions' => $specialInstructions,
             'cooktime' => $cookTime
         );
-        $order = $this->client->request('POST', $this->apiPath, ['json' => $body]);
+        $order = $this->client->request('POST', config('api.order_service_path'), ['json' => $body]);
         return json_decode($order->getBody());
     }
 
