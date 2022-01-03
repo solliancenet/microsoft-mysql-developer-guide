@@ -3,7 +3,7 @@
 namespace App\Helpers;
 
 use Illuminate\Support\Facades\DB;
-use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 
 class AppHelper
 {
@@ -28,7 +28,7 @@ class AppHelper
 				$user = $this->userApiService->getRandomUser();
 				$user->fromJson = 0;
 			}
-			catch (ConnectException $e) {
+			catch (RequestException $r) {
 				$user = AppHelper::instance()->userJson('rand');
 				$user->fromJson = 1;
 			}

@@ -14,7 +14,7 @@ use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\Item;
-use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 
 class CartController extends Controller
 {
@@ -31,7 +31,7 @@ class CartController extends Controller
 		{
 			$items = ItemApiService::instance()->getItemsInCart($item_list);
 		}
-		catch (ConnectException $e)
+		catch (RequestException $e)
 		{
 			// if there's no database connection, use a helper and JSON data
 			$items = AppHelper::instance()->itemJson('items',$item_list);
@@ -66,7 +66,7 @@ class CartController extends Controller
 
 			session(['cart_id' => $cart->id]);
 		}
-		catch (ConnectException $e)
+		catch (RequestException $e)
 		{
 			session(['cart_id' => 'session']);
 			$json_warning = 1;
@@ -94,7 +94,7 @@ class CartController extends Controller
 			{
 				$item = ItemApiService::instance()->getItemsInCart($item_list);
 			}
-			catch (ConnectException $e)
+			catch (RequestException $e)
 			{
 				$item = AppHelper::instance()->itemJson('items',$item_list,'cooktime');
 			}
@@ -122,7 +122,7 @@ class CartController extends Controller
 				CartApiService::instance()->closeCart($cart_id);
 				OrderApiService::instance()->createOrder($user->id, $cart_id, $name, $address, $request->special_instructions, $time);
 			}
-			catch (ConnectException $e) {}
+			catch (RequestException $e) {}
 
 			// clear all the sessions
 			session()->forget('cart');

@@ -9,7 +9,7 @@ use App\Helpers\AppHelper;
 use App\Helpers\CategoryApiService;
 use App\Models\User;
 use App\Models\Category;
-use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 
 use App\Helpers\ItemApiService;
 
@@ -27,7 +27,7 @@ class ProductController extends Controller
 		{
 			$data = CategoryApiService::instance()->getCategoriesAsc();
 		}
-		catch (ConnectException $e)
+		catch (RequestException $e)
 		{
 			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->categoryJson();
@@ -51,7 +51,7 @@ class ProductController extends Controller
 		{
 			$data = ItemApiService::instance()->getItemsAsc($category);
 		}
-		catch (ConnectException $e)
+		catch (RequestException $e)
 		{
 			// if there's no database connection, use a helper and JSON data
 			$data = AppHelper::instance()->itemJson('byCategory',$category);
