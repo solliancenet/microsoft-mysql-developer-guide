@@ -47,6 +47,7 @@ steps:
   condition: always()
 
 - script: |
+    php artisan config:clear
     php artisan key:generate --force
     php artisan migrate --force
   displayName: 'Running Migrations'

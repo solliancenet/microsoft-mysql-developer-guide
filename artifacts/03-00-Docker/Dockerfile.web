@@ -16,14 +16,19 @@ COPY sample-php-app /var/www/html
 
 #CMD ["start-apache.sh"]
 
-ARG MYSQL_DATABASE
-ARG MYSQL_USERNAME
-ARG MYSQL_PASSWORD
-ARG MYSQL_SERVERNAME
+ENV SSH_PASSWD "root:Docker!"
+RUN apt-get update \
+        && apt-get install -y --no-install-recommends dialog \
+        && apt-get update \
+  && apt-get install -y --no-install-recommends openssh-server \
+  && echo "$SSH_PASSWD" | chpasswd 
 
-ENV MYSQL_DATABASE=$MYSQL_DATABASE
-ENV MYSQL_USERNAME=$MYSQL_USERNAME
-ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
-ENV MYSQL_SERVERNAME=$MYSQL_SERVERNAME
+COPY sshd_config /etc/ssh/
 
-EXPOSE 80
+COPY init.sh /usr/local/bin/
+
+RUN chmod u+x /usr/local/bin/init.sh
+
+EXPOSE 80 2222
+
+ENTRYPOINT ["init.sh"]

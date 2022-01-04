@@ -103,30 +103,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ### Migrate the Database
 
-1. In the virtual machine, open the MySQL Workbench
-2. Connect to the local instance
-3. Export the `ContosoStore` database
-   1. Select **Server->Data Export**
-   2. Select the **contosostore** schema
-   3. Select the following:
-      1. Dump Stored Procedures and Functions
-      2. Dump Events
-      3. Dump Triggers
-   4. For the project folder, type `C:\temp\ContosoStore\export`
-   5. Select **Start Export**, you should now see several files in the target folder
-4. Connect to the Azure MySQL instance
-   1. Select **Database->Connect to database**
-   2. For the hostname, type the dns of the Azure Database for MySQL server (ex `mysqldevSUFFIX.mysql.database.azure.com`)
-   3. For the username, type **wsuser@mysqldevSUFFIX**
-   4. For the password type **Solliance123**
-   5. Select **OK**
-5. Import the backup
-   1. Select **Server->Data Import**
-   2. For the project folder, type `C:\temp\ContosoStore\export`
-   3. Select **Load folder contents**
-   4. For the default target schema, select **New**
-   5. For the name, type **ContosoStore**, then select **OK**
-   6. Select **Start Import**
+1. Use the steps in [Migrate your database](./Misc/02_MigrateDatabase) article.
 
 ## Update the connection string
 

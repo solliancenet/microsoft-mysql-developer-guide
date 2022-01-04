@@ -32,10 +32,16 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     # Dockerfile
     FROM php:8.0-apache
 
-    RUN docker-php-ext-install mysqli pdo_mysql exif gd tidy zip
-    RUN docker-php-ext-enable mysqli
     RUN apt-get update && apt-get upgrade -y
-
+    RUN apt update && apt install -y zlib1g-dev libpng-dev && rm -rf /var/lib/apt/lists/*
+    RUN apt update && apt install -y curl
+    RUN apt-get install -y libcurl4-openssl-dev
+    RUN docker-php-ext-install fileinfo
+    RUN docker-php-ext-install curl
+    RUN docker-php-ext-install mysqli
+    RUN docker-php-ext-enable mysqli
+    RUN docker-php-ext-install pdo_mysql
+    
     COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
     COPY start-apache.sh /usr/local/bin
 
@@ -113,13 +119,23 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
           - MYSQL_PORT=3306
           - MYSQL_SERVERNAME=db
         ports:
-          - "8080:80" 
+          - "8080:80"
       db:
-        image: store-db 
+        image: store-db
+        restart: always
         environment:
           - MYSQL_ROOT_PASSWORD=root
         ports:
           - "3306:3306"
+      phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8081:80'
+        restart: always
+        environment:
+            PMA_HOST: db
+        depends_on:
+            - db
    ```
 
 2. Run the following to create the web container:
@@ -131,61 +147,98 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 3. Run the following to create the db container:
 
     ```docker
+    stop service mysql
+
     docker compose run db
     ```
+
+## Migrate the database
+
+1. Use export steps in [Migrate your database](./Misc/02_MigrateDatabase) article to export the database
+2. Open a browser to `http:\\localhost:8081` and the phpmyadmin portal
+3. Login to using `root` and `root`
+4. Select the **contosostore** database
+5. Run the exported database sql to import the database and data
+6. Run the following query, record the count
+
+  ```sql
+  select count(*) from `orders`
+  ```
 
 ## Test the Docker images
 
 1. Open a browser to `http:\\localhost:8080\index.php`
-2. Create an order
-  - TODO
-3. Shutdown and restart the image:
+2. Select **START ORDER**
 
-  ```PowerShell
-  ```
+  > **NOTE** If you get an error about the application not being able to connect, you can do the following to attempt to debug:
 
-4. Open a browser to `http:\\localhost:8080\index.php`
+  - Open a new PowerShell window, run the following to start a bash shell
+
+    ```powershell
+    docker exec -it artifacts-web-1 /bin/bash
+    ```
+
+  - Open a new PowerShell window, run the following to start a bash shell.  Review any errors and then resolve them.
+
+    ```bash
+    cd /var/www
+    
+    php artisian migrate
+    ```
+
+3. Select **Breakfast**, then select **CONTINUE**
+4. Select **Bacon & Eggs**, then select **ADD**
+5. Select **CHECKOUT**
+6. Select **COMPLETE ORDER**
+7. Switch to the PowerShell window that started the containers, shutdown the images, press **CTRL-X** to stop the images
+8. Restart the images:
+
+    ```PowerShell
+    docker compose up
+    ```
+
+9.  Attemp to re-run the query, notice that the database has no tables again.  This is because the container's data was lost when it was stopped/removed.
 
 ## Fix Storage persistence
 
-1. Create a new docker volume:
-
-    ```docker
-    docker volume create vol-db
-    ```
-
-2. Modify the `docker-compose.yml` docker compose file:
+1. Modify the `docker-compose.yml` docker compose file, notice how we are creating and adding a volume to the database container.  We also added the phpmyadmin continer:
 
   ```yaml
-    version: '3.8'
-    services:
-      web:
-        image: store-web
-        environment:
-          - DB_DATABASE=contosostore
-          - DB_USERNAME=root
-          - DB_PASSWORD=root
-          - DB_HOST=localhost
-        volumes:
-          - ./src:/var/www/html/
-        ports:
-          - "80:80" 
-          - "443:443"
-        expose:
-          - "80" 
-          - "443" 
-      db:
-        image: store-db 
-          - MYSQL_DATABASE=contosostore
-          - MYSQL_USER=root
-          - MYSQL_PASSWORD=root
-          - MYSQL_SERVERNAME=localhost
-        volumes:
-          - ./data:/var/lib/mysql
-        ports:
-          - "3306:3306"
-        expose:
-          - "3306"
+  version: '3.8'
+  services:
+    web:
+      image: store-web
+      environment:
+        - DB_DATABASE=contosostore
+        - DB_USERNAME=root
+        - DB_PASSWORD=root
+        - DB_HOST=db
+        - DB_PORT=3306
+        - MYSQL_ATTR_SSL_CA=
+      ports:
+        - "8080:80" 
+    db:
+      image: store-db
+      restart: always
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=contosostore
+      volumes:
+        - "db-volume:/var/lib/mysql"
+      ports:
+        - "3336:3306"
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      ports:
+          - '8081:80'
+      restart: always
+      environment:
+          PMA_HOST: db
+      depends_on:
+          - db
+  volumes:
+    db-volume:
+      external: false
    ```
 
 ## Re-test the Docker images
@@ -193,9 +246,12 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 1. Run the following:
 
   ```PowerShell
-  docker compose run web
-  docker compose run db
+  stop service mysql
+
+  docker compose up
   ```
+
+2. Create some more orders, restart the containers.  You will notice that your data is now persisted.  You will need to ensure that you maintain the database volume for the length of your solution.  If this volume is ever deleted, you will lose your data!
 
 ## Save the images to Azure Container Registry (ACR)
 
@@ -208,6 +264,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     ```powershell
     docker login {acrName}.azurecr.io -u {username} -p {password}
 
+    docker tag phpmyadmin/phpmyadmin {acrName}.azurecr.io/phpmyadmin/phpmyadmin
+
     docker tag store-db {acrName}.azurecr.io/store-db
 
     docker tag store-web {acrName}.azurecr.io/store-web
@@ -215,6 +273,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     docker push {acrName}.azurecr.io/store-db
 
     docker push {acrName}.azurecr.io/store-web
+
+    docker push {acrName}.azurecr.io/phpmyadmin/phpmyadmin
     ```
 
-6. You should now see two images in your Azure Container Registry that we will use later for deployment to other container based runtimes.
+6. You should now see three images in your Azure Container Registry that we will use later for deployment to other container based runtimes.

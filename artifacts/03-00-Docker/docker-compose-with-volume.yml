@@ -16,6 +16,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=contosostore
+    volumes:
+      - "db-volume:/var/lib/mysql"
     ports:
       - "3306:3306"
   phpmyadmin:
@@ -27,3 +29,6 @@ services:
         PMA_HOST: db
     depends_on:
         - db
+volumes:
+  db-volume:
+    external: false

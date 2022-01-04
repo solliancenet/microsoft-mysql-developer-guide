@@ -15,6 +15,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.
     ```PowerShell
     cd C:\labfiles\microsoft-mysql-developer-guide\artifacts\sample-php-app
 
+    php artisan config:clear
+    
     php artisan migrate
 
     php artisan db:seed
