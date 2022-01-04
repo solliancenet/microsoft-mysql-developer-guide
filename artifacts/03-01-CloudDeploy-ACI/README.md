@@ -22,7 +22,7 @@ Now that you have containerized versions of your applications, you can host them
     $imageRegistryCredential = New-AzContainerGroupImageRegistryCredentialObject -Server "$acrName.azurecr.io" -Username $creds.username -Password (ConvertTo-SecureString $creds.password -AsPlainText -Force)
     
     $containerName = "store-db";
-    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosocoffee";
+    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosostore";
     $env2 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_ROOT_PASSWORD" -Value "root";
     $port1 = New-AzContainerInstancePortObject -Port 3306 -Protocol TCP;
     $volume = New-AzContainerGroupVolumeObject -Name "vol-data" -AzureFileShareName "voldata" -AzureFileStorageAccountName "username" -AzureFileStorageAccountKey (ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force);
@@ -37,7 +37,7 @@ Now that you have containerized versions of your applications, you can host them
 
     ```Powershell
     $containerName = "store-web";
-    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosocoffee";
+    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosostore";
     $env2 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_USERNAME" -Value "root";
     $env3 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_PASSWORD" -Value "root";
     $env4 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_SERVERNAME" -Value "IP_ADDRESS";

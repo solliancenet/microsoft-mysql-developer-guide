@@ -11,7 +11,7 @@ copy-item -Path "$sourcepath/src/*.*" "$targetpath"
 $username = "root";
 $password = "";
 $server = "localhost";
-$database = "ContosoCoffee";
+$database = "ContosoStore";
 
 cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
 

@@ -8,7 +8,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 1. Login to Azure Dev Ops (https://dev.azure.com)
 2. Select **New project**
-3. For the name, type **contosocoffee**
+3. For the name, type **contosostore**
 4. Select **Create**
 
 ### Setup Git Origin and push code
@@ -27,7 +27,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 5. In the terminal window, paste the code you copied above, press **ENTER** (be sure to replace ORG_NAME)
 
     ```powershell
-    git remote add origin https://ORG_NAME@dev.azure.com/ORG_NAME/contosocoffee/_git/contosocoffee
+    git remote add origin https://ORG_NAME@dev.azure.com/ORG_NAME/contosostore/_git/contosostore
     git push -f origin main
     ```
 
@@ -67,8 +67,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 3. Select the **Azure App Service Deployment**
 4. Select **Apply**
 5. In the **Artifacts** section, select the **Add an artifact** shape
-6. For the project, select **contosocoffee**
-7. For the source, select **contosocoffee**
+6. For the project, select **contosostore**
+7. For the source, select **contosostore**
 8. Select **Add**
 9. Select the **1 job, 1 task** link
 10. Select the subscription
@@ -101,7 +101,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 1. Browse to https://github.com
 2. Login with your GitHub credentials
 3. In the top right, select the **+** then select **New repository**
-4. For the name, type **contosocoffee**
+4. For the name, type **contosostore**
 5. Select **Create repository**
 
 ### Upload your application
@@ -116,7 +116,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 3. In the terminal window, paste the code you copied above, press **ENTER**
 
     ```powershell
-    git remote add origin https://github.com/USERNAME/contosocoffee.git
+    git remote add origin https://github.com/USERNAME/contosostore.git
     git branch -M main
     git push -u origin main
     ```

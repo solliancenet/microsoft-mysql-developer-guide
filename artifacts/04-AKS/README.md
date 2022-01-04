@@ -54,7 +54,7 @@ spec:
       imagePullPolicy: IfNotPresent
       env:
       - name: MYSQL_DATABASE
-        value: "ContosoCoffee"
+        value: "ContosoStore"
       - name: MYSQL_ROOT_PASSWORD
         value: "root"
   imagePullSecrets:
@@ -82,7 +82,7 @@ spec:
       imagePullPolicy: IfNotPresent
       env:
       - name: MYSQL_DATABASE
-        value: "ContosoCoffee"
+        value: "ContosoStore"
       - name: MYSQL_USERNAME
         value: "root"
       - name: MYSQL_PASSWORD

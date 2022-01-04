@@ -15,7 +15,7 @@ spec:
         name: mysql
       env:
       - name: MYSQL_DATABASE
-        value: "ContosoCoffee"
+        value: "ContosoStore"
       - name: MYSQL_ROOT_PASSWORD
         value: "root"
   imagePullSecrets:

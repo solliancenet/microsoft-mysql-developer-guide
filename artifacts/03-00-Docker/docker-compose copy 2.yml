@@ -4,7 +4,7 @@ services:
     container_name: php-apache
     image: php:8.0-apache
     environment:
-      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_DATABASE=contosostore
       - MYSQL_USER=root
       - MYSQL_PASSWORD=
       - MYSQL_SERVERNAME=localhost

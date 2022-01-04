@@ -105,14 +105,14 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. In the virtual machine, open the MySQL Workbench
 2. Connect to the local instance
-3. Export the `ContosoCoffee` database
+3. Export the `ContosoStore` database
    1. Select **Server->Data Export**
-   2. Select the **contosocoffee** schema
+   2. Select the **contosostore** schema
    3. Select the following:
       1. Dump Stored Procedures and Functions
       2. Dump Events
       3. Dump Triggers
-   4. For the project folder, type `C:\temp\ContosoCoffee\export`
+   4. For the project folder, type `C:\temp\ContosoStore\export`
    5. Select **Start Export**, you should now see several files in the target folder
 4. Connect to the Azure MySQL instance
    1. Select **Database->Connect to database**
@@ -122,10 +122,10 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
    5. Select **OK**
 5. Import the backup
    1. Select **Server->Data Import**
-   2. For the project folder, type `C:\temp\ContosoCoffee\export`
+   2. For the project folder, type `C:\temp\ContosoStore\export`
    3. Select **Load folder contents**
    4. For the default target schema, select **New**
-   5. For the name, type **ContosoCoffee**, then select **OK**
+   5. For the name, type **ContosoStore**, then select **OK**
    6. Select **Start Import**
 
 ## Update the connection string
@@ -226,7 +226,7 @@ Putting credential in the PHP files is not a best practice, it is better to util
      - `DB_HOST` = `mysqldevflexSUFFIX.mysql.database.azure.com`
      - `DB_USERNAME` = `s2admin`
      - `DB_PASSWORD` = `Solliance123`
-     - `DB_DATABASE` = `contosocoffee`
+     - `DB_DATABASE` = `contosostore`
      - `DB_PORT` = `3306`
 
 ## Test new settings #3

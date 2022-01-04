@@ -46,7 +46,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. In the virtual machine, open the MySQL Workbench
 2. Connect to the local instance
-3. Export the `ContosoCoffee` database
+3. Export the `ContosoStore` database
 
 ### Enable MySQL In App
 
@@ -63,7 +63,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 1. In the Data import and export section, select **Import/Export**
 2. Select the **Manage** link, the `myphpadmin` panel will open
 3. In the left navigation, select **New**
-4. For the name, type **ContosoCoffee**
+4. For the name, type **ContosoStore**
 5. Select the **Import** tab
 6. Browse to your export file, run it
 

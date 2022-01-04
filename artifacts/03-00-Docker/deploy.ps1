@@ -10,6 +10,6 @@ copy ./sample-php-app $path
 $username = "s2admin"
 $password = "S2@dmins2@dmin"
 $server = "localhost"
-$database = "ContosoCoffee"
+$database = "ContosoStore"
 
 mysql -h $server -u $username $database < "$path/database/schema.sql"

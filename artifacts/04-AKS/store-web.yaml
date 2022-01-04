@@ -17,7 +17,7 @@ spec:
         name: https
       env:
       - name: MYSQL_DATABASE
-        value: "ContosoCoffee"
+        value: "ContosoStore"
       - name: MYSQL_USERNAME
         value: "root"
       - name: MYSQL_PASSWORD

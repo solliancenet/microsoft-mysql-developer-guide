@@ -1,5 +1,6 @@
 # Github Pipeline for build / deploy
 # https://gist.github.com/zanechua/a67ed1de1fff20639edb121bdb0b6e4d
+# https://github.com/shivammathur/setup-php/blob/master/examples/laravel-mysql.yml
 
 name: Deploy Laravel PHP app to App Service
 
@@ -51,6 +52,9 @@ jobs:
         composer --version
       working-directory: ./sample-php-app
       continue-on-error: true
+
+    - name: Clear Config
+      run: php artisan config:clear
 
     - name: 'Running Migrations'
       run: |

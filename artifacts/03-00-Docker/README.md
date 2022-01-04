@@ -6,7 +6,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Migrate to ENV variables
 
-1. Update the your php MySQL connection environment variables by removing the `APPSETTING_` from each:
+1. Open the `\public\database.php` file, update the your php MySQL connection environment variables by removing the `APPSETTING_` from each:
 
     ```php
     $servername = getenv("MYSQL_SERVERNAME");
@@ -23,92 +23,72 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 4. Open a PowerShell window, run the following to download and start a php-enabled docker container
 
     ```Powershell
-    docker run -d php:7.4-apache
+    docker run -d php:8.0-apache
     ```
 
-5. Change the directory to the application directory
-
-    ```PowerShell
-    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\sample-php-app";
-
-    cd $sourcePath;
-    ```
-
-6. Create a `Dockerfile.web` with the following:
+5. In the `c:\labfiles\microsoft-mysql-developer-guide\artifacts\03-00-Docker` directory, create the `Dockerfile.web` with the following:
 
     ```text
     # Dockerfile
-    FROM php:7.4-apache
+    FROM php:8.0-apache
+
+    RUN docker-php-ext-install mysqli pdo_mysql exif gd tidy zip
+    RUN docker-php-ext-enable mysqli
+    RUN apt-get update && apt-get upgrade -y
 
     COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
     COPY start-apache.sh /usr/local/bin
 
     RUN a2enmod rewrite
 
-    COPY src /var/www/public
-    RUN chown -R www-data:www-data /var/www/public
+    COPY sample-php-app /var/www
+    RUN chown -R www-data:www-data /var/www
 
     RUN chmod 755 /usr/local/bin/start-apache.sh
 
-    CMD ["start-apache.sh"]
-
-    ARG MYSQL_DATABASE
-    ARG MYSQL_USERNAME
-    ARG MYSQL_PASSWORD
-    ARG MYSQL_SERVERNAME
-
-    ENV MYSQL_DATABASE=$MYSQL_DATABASE
-    ENV MYSQL_USERNAME=$MYSQL_USERNAME
-    ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
-    ENV MYSQL_SERVERNAME=$MYSQL_SERVERNAME
+    #CMD ["start-apache.sh"]
 
     EXPOSE 80
-    EXPOSE 443
     ```
 
-7. Run the following to create the image:
+6. Run the following to create the image:
 
     ```PowerShell
+    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+
+    cd $sourcePath;
+
     docker build -t store-web --file Dockerfile.web . 
     ```
 
 ## Migrate Database to Docker
 
-1. Create a new `Dockerfile.db` docker compose file:
+1. Run the following to export the database:
+
+    ```powershell
+    cd "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+
+    $username = "root";
+    $password = "";
+    $server = "localhost";
+    $database = "ContosoStore";
+
+    $mysqlPath = "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
+
+    & "$mysqlPath\mysqldump" -h $server -u $username $database > data.sql
+    ```
+
+2. In the `c:\labfiles\microsoft-mysql-developer-guide\artifacts` directory, create a new `Dockerfile.db` docker compose file:
 
     ```text
     FROM mysql:5.7
     RUN chown -R mysql:root /var/lib/mysql/
 
-    ARG MYSQL_DATABASE
-    ARG MYSQL_USER
-    ARG MYSQL_PASSWORD
-    ARG MYSQL_ROOT_PASSWORD
-
-    ENV MYSQL_DATABASE=$MYSQL_DATABASE
-    ENV MYSQL_USER=$MYSQL_USER
-    ENV MYSQL_PASSWORD=$MYSQL_PASSWORD
-    ENV MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
-
     ADD data.sql /etc/mysql/data.sql
 
-    RUN sed -i 's/MYSQL_DATABASE/'$MYSQL_DATABASE'/g' /etc/mysql/data.sql
     RUN cp /etc/mysql/data.sql /docker-entrypoint-initdb.d
 
     EXPOSE 3306
-    ```
-
-2. Run the following to export the database:
-
-    ```powershell
-    $username = "root";
-    $password = "";
-    $server = "localhost";
-    $database = "ContosoCoffee";
-
-    $mysqlPath = "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
-
-    & "$mysqlPath\mysqldump" -h $server -u $username $database > data.sql
     ```
 
 3. Build the container:
@@ -122,31 +102,24 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 1. Create the following `docker-compose.yml` docker compose file:
 
     ```yaml
-    version: '3'
+    version: '3.8'
     services:
-    web:
-      image: store-web
-      environment:
-        - MYSQL_DATABASE=contosocoffee
-        - MYSQL_USER=root
-        - MYSQL_PASSWORD=
-        - MYSQL_SERVERNAME=localhost
-      ports:
-        - "80:80" 
-        - "443:443"
-      expose:
-        - "80" 
-        - "443" 
-    db:
-      image: store-db 
-        - MYSQL_DATABASE=contosocoffee
-        - MYSQL_USER=root
-        - MYSQL_PASSWORD=
-        - MYSQL_SERVERNAME=localhost
-      ports:
-        - "3306:3306"
-      expose:
-        - "3306"
+      web:
+        image: store-web
+        environment:
+          - MYSQL_DATABASE=contosostore
+          - MYSQL_USER=root
+          - MYSQL_PASSWORD=root
+          - MYSQL_PORT=3306
+          - MYSQL_SERVERNAME=db
+        ports:
+          - "8080:80" 
+      db:
+        image: store-db 
+        environment:
+          - MYSQL_ROOT_PASSWORD=root
+        ports:
+          - "3306:3306"
    ```
 
 2. Run the following to create the web container:
@@ -163,8 +136,15 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ## Test the Docker images
 
-1. Open a browser to `http:\\localhost:80\default.php`
-2. 
+1. Open a browser to `http:\\localhost:8080\index.php`
+2. Create an order
+  - TODO
+3. Shutdown and restart the image:
+
+  ```PowerShell
+  ```
+
+4. Open a browser to `http:\\localhost:8080\index.php`
 
 ## Fix Storage persistence
 
@@ -174,9 +154,48 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     docker volume create vol-db
     ```
 
+2. Modify the `docker-compose.yml` docker compose file:
+
+  ```yaml
+    version: '3.8'
+    services:
+      web:
+        image: store-web
+        environment:
+          - DB_DATABASE=contosostore
+          - DB_USERNAME=root
+          - DB_PASSWORD=root
+          - DB_HOST=localhost
+        volumes:
+          - ./src:/var/www/html/
+        ports:
+          - "80:80" 
+          - "443:443"
+        expose:
+          - "80" 
+          - "443" 
+      db:
+        image: store-db 
+          - MYSQL_DATABASE=contosostore
+          - MYSQL_USER=root
+          - MYSQL_PASSWORD=root
+          - MYSQL_SERVERNAME=localhost
+        volumes:
+          - ./data:/var/lib/mysql
+        ports:
+          - "3306:3306"
+        expose:
+          - "3306"
+   ```
+
 ## Re-test the Docker images
 
-1. TODO
+1. Run the following:
+
+  ```PowerShell
+  docker compose run web
+  docker compose run db
+  ```
 
 ## Save the images to Azure Container Registry (ACR)
 

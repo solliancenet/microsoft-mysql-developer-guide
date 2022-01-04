@@ -4,7 +4,7 @@ services:
     container_name: php-apache
     image: store-web
     environment:
-      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_DATABASE=contosostore
       - MYSQL_USERNAME=root
       - MYSQL_PASSWORD=root
       - MYSQL_SERVERNAME=db
@@ -18,7 +18,7 @@ services:
     image: store-db 
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=contosocoffee
+      - MYSQL_DATABASE=contosostore
     ports:
       - 9306:3306
     volumes:

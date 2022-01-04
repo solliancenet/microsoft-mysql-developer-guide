@@ -6,16 +6,18 @@ This is a simple app that runs PHP code to connect to a MYSQL database.
 
 1. Open a chrome browser window
 2. Navigate to `http://localhost:8080/default.php`, you should see **Hello World** displayed.
-3. Navigate to `http://localhost:8080/database.php`, you should see **1 results** displayed.
+3. Navigate to `http://localhost:8080/database.php`, you should see **12 results** displayed.
 
 ## Database Deployment
 
 1. Run the following commands to create the database (type `yes` when prompted):
 
     ```PowerShell
-    cd C:\labfiles\microsoft-mysql-developer-guide\sample-php-app
+    cd C:\labfiles\microsoft-mysql-developer-guide\artifacts\sample-php-app
 
     php artisan migrate
+
+    php artisan db:seed
     ```
 
 2. You should see several tables get created
