@@ -26,11 +26,12 @@ class HomeController extends Controller
 
 		// pretend the user logged in
 		$user = AppHelper::instance()->randomUser();
+		$json_warning = $user->fromJson;
 
 		// display the floating cart
 		$global_cart = AppHelper::instance()->globalCart();
 
-		return view('index', ['global_cart'=>$global_cart, 'user'=>$user]);
+		return view('index', ['global_cart'=>$global_cart, 'user'=>$user, 'json_warning'=>($json_warning ?? 0)]);
 	}
 
 }

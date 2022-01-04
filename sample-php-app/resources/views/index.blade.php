@@ -2,7 +2,7 @@
 @section('content')
 
 	<div class="hero">
-		<div class="logo">Contoso NoshNow</div>
+		<div class="logo">{{ config('app.name', 'Contoso NoshNow') }}</div>
 	</div>
 
 	<div class="center-block order-form">

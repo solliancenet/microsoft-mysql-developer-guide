@@ -26,6 +26,7 @@ class AppHelper
 				$user = User::inRandomOrder()->first();
 			} else {
 				$user = AppHelper::instance()->userJson('rand');
+				$user->fromJson = 1;
 			}
 		}
 		session([ 'user' => $user ]);
