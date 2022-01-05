@@ -1,0 +1,34 @@
+# Dockerfile
+FROM php:8.0-apache
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN apt-get update && apt-get upgrade -y
+
+#COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY start-apache.sh /usr/local/bin
+
+#RUN a2enmod rewrite
+
+COPY sample-php-app /var/www/html
+#RUN chown -R www-data:www-data /var/www/html
+
+#RUN chmod 755 /usr/local/bin/start-apache.sh
+
+#CMD ["start-apache.sh"]
+
+ENV SSH_PASSWD "root:Docker!"
+RUN apt-get update \
+        && apt-get install -y --no-install-recommends dialog \
+        && apt-get update \
+  && apt-get install -y --no-install-recommends openssh-server \
+  && echo "$SSH_PASSWD" | chpasswd 
+
+COPY sshd_config /etc/ssh/
+
+COPY init.sh /usr/local/bin/
+
+RUN chmod u+x /usr/local/bin/init.sh
+
+EXPOSE 80 2222
+
+ENTRYPOINT ["init.sh"]

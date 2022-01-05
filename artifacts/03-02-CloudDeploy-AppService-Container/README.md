@@ -36,6 +36,7 @@ Now that you have containerized versions of your applications, you can host them
 
     az webapp create --resource-group $resourceGroupName --plan $appPlan --name $name --deployment-container-image-name $image
     az webapp config set --resource-group $resourceGroupName --name $name --linux-fx-version "DOCKER|$image:latest"
+    az webapp config appsettings set --resource-group $resourceGroupName --name $name --settings WEBSITES_PORT=3306
     ```
 
 ## Test the containers

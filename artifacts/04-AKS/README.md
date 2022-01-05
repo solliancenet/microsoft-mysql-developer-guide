@@ -81,14 +81,14 @@ spec:
       image: <REGISTRY_NAME>.azurecr.io/store-web
       imagePullPolicy: IfNotPresent
       env:
-      - name: MYSQL_DATABASE
+      - name: DB_DATABASE
         value: "ContosoStore"
-      - name: MYSQL_USERNAME
+      - name: DB_USERNAME
         value: "root"
-      - name: MYSQL_PASSWORD
+      - name: DB_PASSWORD
         value: "root"
-      - name: MYSQL_SERVER
-        value: "mysql-db"
+      - name: DB_HOST
+        value: "db"
   imagePullSecrets:
     - name: acr-secret
 ```

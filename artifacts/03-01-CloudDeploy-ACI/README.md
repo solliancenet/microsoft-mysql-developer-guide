@@ -83,6 +83,8 @@ In the previous steps, you created a container instance for each of the containe
         - DB_PORT=3306
         ports:
         - "8080:80" 
+        depends_on:
+        - db 
     db:
         image: mysqldevSUFFIX.azurecr.io/store-db:latest
         volumes:
@@ -101,7 +103,7 @@ In the previous steps, you created a container instance for each of the containe
         environment:
             PMA_HOST: db
         depends_on:
-            - db
+          - db
     ```
 
 2. In a PowerShell window, run the following command:
