@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: store-db
-      image: <REGISTRY_NAME>.azurecr.io/store-db
+      image: <REGISTRY_NAME>.azurecr.io/store-db:latest
       imagePullPolicy: IfNotPresent
       ports:
       - containerPort: 3306

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: store-web
+  name: store-db
   namespace: mysqldev
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: store-web
+      app: store-db
   template:
     metadata:
       labels:
-        app: store-web
+        app: store-db
     spec:
       containers:
-      - name: store-web
-        image: <REGISTRY_NAME>.azurecr.io/store-web:latest
+      - name: store-db
+        image: <REGISTRY_NAME>.azurecr.io/store-db:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
@@ -25,11 +25,7 @@ spec:
         env:
         - name: DB_DATABASE
           value: "ContosoStore"
-        - name: DB_USERNAME
+        - name: DB_ROOT_PASSWORD
           value: "root"
-        - name: DB_PASSWORD
-          value: "root"
-        - name: DB_HOST
-          value: "store-db-svc"
       imagePullSecrets:
         - name: acr-secret

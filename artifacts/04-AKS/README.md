@@ -11,6 +11,8 @@ Now that you have containerized versions of your applications, you can host them
 1. Ensure kubectl is installed:
 
     ```powershell
+    cd 04-aks
+
     az aks install-cli
 
     az aks get-credentials --name "mysqldevSUFFIX" --resource-group $resourceGroupName
@@ -20,7 +22,8 @@ Now that you have containerized versions of your applications, you can host them
 
     ```powershell
     $acrName = "mysqldevSUFFIX";
-    $resourceGroupName = "";
+    $resourceName = "mysqldevSUFFIX";
+    $resourceGroupName = "RESOURCEGROUPNAME";
 
     $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
     $creds = $acr | Get-AzContainerRegistryCredential;
@@ -37,29 +40,64 @@ Now that you have containerized versions of your applications, you can host them
     --docker-server="https://$($acr.loginserver)" `
     --docker-username=$username `
     --docker-password=$password
+
+    #ensure that MSI is enabled
+    az aks update -g $resourceGroupName -n $resourceName --enable-managed-identity
+
+    #get the principal id
+    az aks show -g $resourceGroupName -n $resourceName --query "identity"
     ```
 
-3. Create the following `store-db.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
+3. Create a managed disk, copy its `id` for later use:
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mysql-db
-  namespace: mysqldev
-spec:
-  containers:
-    - name: mysql-db
-      image: <REGISTRY_NAME>.azurecr.io/store-db
-      imagePullPolicy: IfNotPresent
-      env:
-      - name: MYSQL_DATABASE
-        value: "ContosoStore"
-      - name: MYSQL_ROOT_PASSWORD
-        value: "root"
-  imagePullSecrets:
-    - name: acr-secret
-```
+  ```powershell
+  az disk create --resource-group $resourceGroupName --name "disk-store-db" --size-gb 200 --query id --output tsv
+  ```
+
+4. Create the following `storage-db.yaml` deployment file:
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: mysql-data
+    namespace: mysqldev
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 200Gi
+  ```
+
+4. Create the following `store-db.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` and `ID` tokens:
+
+  ```yaml
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: store-db
+    namespace: mysqldev
+  spec:
+    volumes:
+    - name: mysql-data
+      persistentVolumeClaim:
+        claimName: mysql-data
+    containers:
+      - name: store-db
+        image: <REGISTRY_NAME>.azurecr.io/store-db:latest
+        volumeMounts:
+        - mountPath: "/var/lib/mysql/"
+          name: mysql-data
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_DATABASE
+          value: "ContosoStore"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "root"
+    imagePullSecrets:
+      - name: acr-secret
+  ```
 
 4. Run the deployment:
 
@@ -69,29 +107,29 @@ spec:
 
 5. Create the following `store-web.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mysql-web
-  namespace: mysqldev
-spec:
-  containers:
-    - name: store-web
-      image: <REGISTRY_NAME>.azurecr.io/store-web
-      imagePullPolicy: IfNotPresent
-      env:
-      - name: DB_DATABASE
-        value: "ContosoStore"
-      - name: DB_USERNAME
-        value: "root"
-      - name: DB_PASSWORD
-        value: "root"
-      - name: DB_HOST
-        value: "db"
-  imagePullSecrets:
-    - name: acr-secret
-```
+  ```yaml
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: store-web
+    namespace: mysqldev
+  spec:
+    containers:
+      - name: store-web
+        image: <REGISTRY_NAME>.azurecr.io/store-web:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DB_DATABASE
+          value: "ContosoStore"
+        - name: DB_USERNAME
+          value: "root"
+        - name: DB_PASSWORD
+          value: "root"
+        - name: DB_HOST
+          value: "store-db"
+    imagePullSecrets:
+      - name: acr-secret
+  ```
 
 6. Run the deployment:
 
@@ -103,34 +141,49 @@ spec:
 
 1. Create the following `store-db-service.yaml` yaml file:
 
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: store-db
-spec:
-  ports:
-  - port: 3306
-  selector:
-    app: store-db
-```
+  ```yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: store-db
+  spec:
+    ports:
+    - port: 3306
+    selector:
+      app: store-db
+  ```
 
 2. Create the following `store-web-service.yaml` yaml file:
 
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: store-web
-spec:
-  ports:
-  - port: 80
-  selector:
-    app: store-web
-```
+  ```yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: store-web
+  spec:
+    ports:
+    - port: 80
+    selector:
+      app: store-web
+  ```
 
 ## Test your images
 
 1. Browse to the Azure Portal
 2. Navigate to your AKS cluster and select it
-3. In the 
+3. Under **Kubernetes resources**, select **Service and ingresses**
+4. For the **store-web-lb** service, select the external IP link. A new web browser tab should open to the web front end. Ensure that you can create an order without a database error.
+
+## Create a deployment
+
+Kubernetes deployments allow for you to create multiple instances of your pods and containers in case your nodes or pods crash unexpectiantly.  
+
+1. Create the following `store-deployment.yaml` file:
+
+  ```yaml
+  ```
+
+2. Deploy the deployment:
+
+  ```powershell
+  ```

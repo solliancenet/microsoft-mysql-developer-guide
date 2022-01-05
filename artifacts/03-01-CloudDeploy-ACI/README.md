@@ -64,7 +64,7 @@ Now that you have containerized versions of your applications, you can host them
 2. Search for the **store-web** Container instance and select it
 3. Copy the public IP address and then open a browser window to `http://IP_ADDRESS/default.php`
 
-## Multi-deploy
+## Multi-container single app service deployment
 
 In the previous steps, you created a container instance for each of the containers, however, you can create a multi-container container instance where all services are encapsulated into one container instance instance using Azure CLI.
 
