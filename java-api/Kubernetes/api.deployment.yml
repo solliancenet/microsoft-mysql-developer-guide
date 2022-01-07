@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-api
+  namespace: contosonoshnow
+spec:
+  selector:
+    matchLabels:
+      app: java-api
+  template:
+    metadata:
+      labels:
+        app: java-api
+    spec:
+      containers:
+      - name: java-api
+        image: noshnowapi:0.0.1-SNAPSHOT
+        # Only for local images
+        imagePullPolicy: Never
+        env:
+          # - name: JAVA_OPTS
+          #   value: "-Xms1G -Xmx2G"
+          - name: DB_CONNECTION_URL
+            valueFrom:
+              secretKeyRef:
+                name: connection-secret
+                key: DB_CONNECTION_URL
+          - name: DB_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: connection-secret
+                key: DB_USERNAME
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: connection-secret
+                key: DB_PASSWORD
+        resources:
+          limits:
+            memory: "3Gi"
+            cpu: "500m"
+          requests:
+            memory: "2Gi"
+            cpu: "250m"
+        ports:
+        - containerPort: 8080

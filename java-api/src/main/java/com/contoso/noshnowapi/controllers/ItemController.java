@@ -1,11 +1,9 @@
 package com.contoso.noshnowapi.controllers;
 
+import com.contoso.noshnowapi.apimodels.ItemsGetApiModel;
 import com.contoso.noshnowapi.models.Item;
 import com.contoso.noshnowapi.repositories.ItemRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,15 +18,15 @@ public class ItemController {
     }
 
     @GetMapping
-    public List<Item> getItems()
+    public List<Item> getItems(@RequestBody ItemsGetApiModel itemsGetApiModel)
     {
-        return itemRepository.findAll();
+        return itemRepository.findByIdIn(itemsGetApiModel.getItemKeys());
     }
 
-    @GetMapping("/categories/{categoryId}")
-    public List<Item> getItemsByCategory(@PathVariable Long categoryId)
+    @GetMapping("/categories/{categoryUrl}")
+    public List<Item> getItemsByCategory(@PathVariable String categoryUrl)
     {
-        return itemRepository.findByCategoryId(categoryId);
+        return itemRepository.findByCategoryUrl(categoryUrl);
     }
 
     @GetMapping("/{id}")
