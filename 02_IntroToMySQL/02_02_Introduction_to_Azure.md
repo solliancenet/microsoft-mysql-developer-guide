@@ -2,9 +2,9 @@
 
 Now that you understand why millions of users choose Azure, and the basic database deployment models on the cloud (IaaS vs. PaaS), this document will provide more theory about how developers interact with Azure.
 
-The image below from the [Azure Fundamentals Microsoft Learn Module](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/) demonstrates how IaaS and PaaS can classify Azure services. Moreover, Azure empowers flexible *hybrid cloud* deployments and supports a variety of common tools, such as Visual Studio and the Azure CLI, to manage Azure environments.
+The [Azure Fundamentals Microsoft Learn Module](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/) demonstrates how IaaS and PaaS can classify Azure services. Moreover, Azure empowers flexible *hybrid cloud* deployments and supports a variety of common tools, such as Visual Studio and the Azure CLI, to manage Azure environments.
 
-![This image shows the classification of Azure services into IaaS and PaaS categories.](./media/azure-services.png "Categories of Azure services")
+![IaaS and PaaS Azure service classification and categories](./media/azure-services.png "Categories of Azure services")
 
 Here is a summary of the Azure services used in the whitepaper scenario besides the managed MySQL offerings described previously. 
 
