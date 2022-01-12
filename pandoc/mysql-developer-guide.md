@@ -484,13 +484,16 @@ days). To reduce compute costs, developers can [pause the Single Server
 offering.](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server)
 It offers an [SLA of
 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
-\>**Note:** Single servers are best suited only for existing
-applications already leveraging single server. For all new developments
-or migrations, Flexible Server would be the recommended deployment
-option. \> For a refresher on how the SLAs of individual Azure services
-affect the SLA of the total deployment, review the associated [Microsoft
-Learn
-Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
+
+> **Note:** Single servers are best suited only for existing
+> applications already leveraging single server. For all new
+> developments or migrations, Flexible Server would be the recommended
+> deployment option.
+
+> For a refresher on how the SLAs of individual Azure services affect
+> the SLA of the total deployment, review the associated [Microsoft
+> Learn
+> Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ## Single Server and Flexible Server Comparison Table
 

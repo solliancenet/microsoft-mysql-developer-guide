@@ -2,8 +2,20 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/mysql-journey.png",
+        "for": "media/mysql-journey.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/ISV-Tech-Builders-tools.png",
         "for": "media/ISV-Tech-Builders-tools.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/cloud-adoption-strategies.png",
+        "for": "media/cloud-adoption-strategies.png"
     },
     {
         "type": "LoadedResource",
@@ -44,20 +56,14 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/1-flexible-server-overview-zone-redundant-ha.png",
-        "for": "media/1-flexible-server-overview-zone-redundant-ha.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/flexible-server-overview-same-zone-ha.png",
-        "for": "./media/flexible-server-overview-same-zone-ha.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
         "from": "./media/mysql-flex-params.png",
         "for": "./media/mysql-flex-params.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/new-ssl-connection-with-ca-file.png",
+        "for": "./media/new-ssl-connection-with-ca-file.png"
     },
     {
         "type": "LoadedResource",
@@ -140,7 +146,55 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/new-ssl-connection-with-ca-file.png",
-        "for": "./media/new-ssl-connection-with-ca-file.png"
+        "from": "./media/thread-pooling-performance.png",
+        "for": "./media/thread-pooling-performance.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/1-flexible-server-overview-zone-redundant-ha.png",
+        "for": "media/1-flexible-server-overview-zone-redundant-ha.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/flexible-server-overview-same-zone-ha.png",
+        "for": "./media/flexible-server-overview-same-zone-ha.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/cross-region-ha.png",
+        "for": "./media/cross-region-ha.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/microservices-with-replication.png",
+        "for": "./media/microservices-with-replication.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aborted-connections-alert-rule.png",
+        "for": "./media/aborted-connections-alert-rule.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/alert-rule-sent-to-email.png",
+        "for": "./media/alert-rule-sent-to-email.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-sample-query.png",
+        "for": "./media/activity-log-sample-query.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-query-results.png",
+        "for": "./media/activity-log-query-results.png"
     }
 ]
