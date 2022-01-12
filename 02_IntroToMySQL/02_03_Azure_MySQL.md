@@ -47,7 +47,9 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 ### Single Server
 
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, offer high availability, and manage backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering.](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server) It offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
->**Note:** Single servers are best suited only for existing applications already leveraging single server. For all new developments or migrations, Flexible Server would be the recommended deployment option.
+
+> **Note:** Single servers are best suited only for existing applications already leveraging single server. For all new developments or migrations, Flexible Server would be the recommended deployment option.
+
 > For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ## Single Server and Flexible Server Comparison Table

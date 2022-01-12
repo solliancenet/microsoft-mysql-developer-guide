@@ -376,9 +376,10 @@ offerings do not support direct management of the OS and the database
 engine, they have built-in support for high availability, automating
 backups, and meeting compliance requirements. Moreover, Azure Database
 for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it
-flexible for most migrations. For most use cases, Azure PaaS MySQL
-allows developers to focus on application development and deployment,
-instead of OS and RDBMS management, patching, and security.
+flexible for most migrations. (TODO:Add link for MySQL Migration
+Guide)For most use cases, Azure PaaS MySQL allows developers to focus on
+application development and deployment, instead of OS and RDBMS
+management, patching, and security.
 
 As the image below demonstrates, Azure Resource Manager handles resource
 configuration, meaning that standard Azure management tools, such as the
@@ -399,22 +400,6 @@ Azure provides both *Single Server* and *Flexible Deployment* modes.
 Below is a summary of these offerings. For a more comprehensive
 comparison table, please consult [this
 document.](https://docs.microsoft.com/azure/mysql/select-right-deployment-type)
-
-### Single Server
-
-Single Server is suitable when apps do not need extensive database
-customization. Single Server will manage patching, offer high
-availability, and manage backups on a predetermined schedule (though
-developers can set the backup retention times between a week and 35
-days). To reduce compute costs, developers can [pause the Single Server
-offering.](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server)
-It offers an [SLA of
-99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
-
-> For a refresher on how the SLAs of individual Azure services affect
-> the SLA of the total deployment, review the associated [Microsoft
-> Learn
-> Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ### Flexible Server
 
@@ -488,6 +473,24 @@ Here are a few notable ones.
 -   `SELECT ... INTO OUTFILE` statements to write query results to files
     are unsupported, as the filesystem is not directly exposed by the
     service
+
+### Single Server
+
+Single Server is suitable when apps do not need extensive database
+customization. Single Server will manage patching, offer high
+availability, and manage backups on a predetermined schedule (though
+developers can set the backup retention times between a week and 35
+days). To reduce compute costs, developers can [pause the Single Server
+offering.](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server)
+It offers an [SLA of
+99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
+\>**Note:** Single servers are best suited only for existing
+applications already leveraging single server. For all new developments
+or migrations, Flexible Server would be the recommended deployment
+option. \> For a refresher on how the SLAs of individual Azure services
+affect the SLA of the total deployment, review the associated [Microsoft
+Learn
+Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ## Single Server and Flexible Server Comparison Table
 
