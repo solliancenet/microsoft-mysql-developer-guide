@@ -2,6 +2,8 @@
 
 Welcome to THE comprehensive guide to developing MySQL based applications on Microsoft Azure! Whether you are creating your first production application or improving an existing enterprise system, the guide will take you through the basics of MySQL fundamentals all the way to advanced architecture and design. From beginning to end, it is a content journey designed to help ensure your future or existing MySQL systems are performing at their best now and as usage grows.
 
+![The diagram shows the progression of development evolution in the guide.](media/mysql-journey.png "MySQL Journey")
+
 The topics and flow contained in this guide cover the advantages of migrating to or leveraging the many valuable Azure cloud services. Learn how easy and quick it is to create a useful application backed by Azure Database for MySQL. Why waste time building or researching highly available services when you can leverage the vast amount of robust services available in the Azure Marketplace? Learn and leverage!
 
 Every company and project is unique. Insightful service descriptions and tool comparisons allow the reader to make choices that fit their environment, system, and budget needs. Proven industry architecture examples provide best practice jumpstarts allowing for solid architecture foundations and addressing compliance needs.
