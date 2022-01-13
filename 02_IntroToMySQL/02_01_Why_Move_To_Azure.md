@@ -10,6 +10,8 @@ By offering solutions on Azure, ISVs can access the largest B2B market. In addit
 
 Azure's development tools, such as Visual Studio and low-code Power Apps, are part of the platform's meteoric success. Companies that adopt capable, modern tools are 65% more innovative, according to a [2020 McKinsey & Company report.](https://azure.microsoft.com/mediahandler/files/resourcefiles/developer-velocity-how-software-excellence-fuels-business-performance/Developer-Velocity-How-software-excellence-fuels-business-performance-v4.pdf)
 
+TODO: Find image without black background.
+
 ![This image demonstrates common development tools on the Microsoft cloud platform to expedite application development.](media/ISV-Tech-Builders-tools.png "Microsoft cloud tooling")
 
 ## Free Subscription Offering

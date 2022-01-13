@@ -152,6 +152,8 @@ capable, modern tools are 65% more innovative, according to a [2020
 McKinsey & Company
 report.](https://azure.microsoft.com/mediahandler/files/resourcefiles/developer-velocity-how-software-excellence-fuels-business-performance/Developer-Velocity-How-software-excellence-fuels-business-performance-v4.pdf)
 
+TODO: Find image without black background.
+
 ![This image demonstrates common development tools on the Microsoft
 cloud platform to expedite application
 development.](media/ISV-Tech-Builders-tools.png "Microsoft cloud tooling")
@@ -250,7 +252,7 @@ This list is not exhaustive; for a more comprehensive view, consult the
 Learn](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/tour-of-azure-services)
 module.
 
-## The Azure Management Hierarchy
+## The Azure Resource Management Hierarchy
 
 Azure provides a flexible resource hierarchy to simplify cost management
 and security. This hierarchy consists of four levels:
@@ -275,20 +277,28 @@ and security. This hierarchy consists of four levels:
 ![This image shows Azure resource
 scopes.](./media/scope-levels.png "Azure resource scopes")
 
-The *Azure Resource Manager* governs interaction with Azure resources.
-All Azure management tools, including the CLI, PowerShell module, REST
-API, and browser-based Portal, interact with the Azure Resource Manager.
-Observe that security is built into Azure Resource Manager.
+## Automating and managing with Azure services
+
+When it comes to managing Azure, you have many options. The [Azure
+Resource
+Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
+is the deployment and management service for Azure. It provides a
+management layer that enables you to create, update, and delete
+resources in your Azure account. You use management features, like
+access control, locks, and tags, to secure and organize your resources
+after deployment.. All Azure management tools, including the CLI,
+PowerShell module, REST API, and browser-based Portal, interact with the
+Azure Resource Manager. Observe that security is built into Azure
+Resource Manager.
 
 ![This image demonstrates how the Azure Resource Manager provides a
 robust, secure interface to Azure
 resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
-After users and services authenticate with Azure, *role-based access
-control* (RBAC), built on the Azure Resource Manager, dictates whether
-they are authorized to access a resource, modify the resource, or give
-other users and services access to that resource. RBAC consists of three
-parts:
+Access control to all Azure services is due to Azure role-based access
+control (Azure RBAC) natively built into the management platform.
+
+RBAC consists of three parts:
 
 -   A *role definition* describes a set of actions that can be
     performed. It can be broad or granular.
@@ -309,31 +319,61 @@ RBAC.](media/rbac-overview.png "Azure RBAC overview")
 
 ### Azure Management Tools
 
+![Azure service management tool maturity
+progression.](media/azure-management-tool-maturity.png "Azure service management tool")
+
 The flexibility and variety of Azure's management tools make it
 intuitive for all users, irrespective of their skill level with certain
 technologies.
 
-The **Azure portal** gives developers a quick view of the state of their
-Azure resources. It supports extensive user configuration and simplifies
-custom reporting. The **Azure mobile app** provides similar features for
-mobile users.
+When you are just starting, the **Azure portal** gives developers a
+quick view of the state of their Azure resources. It supports extensive
+user configuration and simplifies custom reporting. The **Azure mobile
+app** provides similar features for mobile users.
+
+![The picture shows the some of the initial Azure service
+list.](media/azure-portal-services.png "Azure Portal Services")
+
+Azure runs on automation. Every action you take inside the portal
+translates somewhere to code being executed to read, create, modify, or
+delete resources.
+
+Moving your workload to Azure lifts some of the administrative burden
+but not all. As your rate of adoption with Azure increases so will the
+overhead. Even though you don't have to worry about the data center, you
+still have to patch and troubleshoot Azure VMs, failover databases, and
+configure virtual networks.
+
+By using the existing automation that runs Azure, command-line tools
+reduce that overhead.
 
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are
 useful for automating tasks that cannot be performed in the Azure
-portal. Note that both of these tools follow an *imperative* approach,
-meaning that users must explicitly script the creation of resources in
-the correct order. These tools do not support creating resources in
-parallel.
+portal. Both of these tools follow an *imperative* approach, meaning
+that users must explicitly script the creation of resources in the
+correct order.
 
-Lastly, **ARM templates** are optimal for deploying resources in a
-*declarative* manner. Azure Resource Manager can potentially create the
-resources in an ARM template in parallel. ARM templates are useful to
-create multiple identical environments, such as development, staging,
-and production environments.
+![Shows an example of the Azure
+CLI.](media/azure-cli-example.png "Azure CLI Example")
+
+Each operates differently, and the language is sometimes confused with
+the environment. Use [Azure command-line tool
+guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool)
+to determine which is the right tool for you.
+
+Lastly, [ARM
+templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/)
+are optimal for deploying resources in a *declarative* manner. Azure
+Resource Manager can potentially create the resources in an ARM template
+in parallel. ARM templates are useful to create multiple identical
+environments, such as development, staging, and production environments.
+
+![The picture shows an example of a ARM template JSON
+export.](media/azure-template-json-example.png "Azure Template JSON")
 
 ### Other Tips
 
-To develop an effective hierarchy, administrators must consult with
+To develop an effective hierarchy, administrators should consult with
 cloud architects and financial and security personnel. Here are a few
 other best practices to follow for Azure deployments.
 
