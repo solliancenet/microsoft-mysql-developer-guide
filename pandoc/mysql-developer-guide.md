@@ -46,9 +46,10 @@ MySQL is a relational database management system based on SQL --
 Structured Query Language. MySQL supports a rich set of SQL query
 capabilities and offers excellent performance through storage engines
 optimized for transactional and non-transactional workloads, in-memory
-processing, and robust server configuration through modules. Customers
-can use their existing frameworks and languages to ensure that a
-migration does not disrupt any business activity. Consult the [MySQL
+processing, and robust server configuration through modules. Its low
+total cost of ownership makes it extremely popular with many
+organizations. Customers can use their existing frameworks and languages
+to connect easily with a MySQL database. Consult the [MySQL
 Documentation](https://dev.mysql.com/doc/refman/8.0/en/features.html)
 for a more in-depth review of MySQL's features.
 
@@ -127,9 +128,9 @@ MySQL.
 
 # Introduction to hosting MySQL on Azure
 
-Now that you understand the benefits of a MySQL deployment and a few
-common models to operate MySQL, this section explains approaches to host
-MySQL on Azure and the advantages of the Azure platform.
+Now that you understand the benefits of MySQL and a few common
+deployment models, this section explains approaches to host MySQL on
+Azure and the advantages of the Azure platform.
 
 ## Advantages
 
@@ -137,8 +138,7 @@ The Azure platform is trusted by millions of customers, and there are
 over 90,000 Cloud Solution Providers partnered with Microsoft. Azure
 allows firms to easily modernize their applications, expedite
 application development, and tailor their applications for their
-industries. MySQL is a cost-effective database engine, and the Azure
-platform offers a high-quality support service to meet enterprise needs.
+industries.
 
 By offering solutions on Azure, ISVs can access the largest B2B market.
 In addition, through the [Azure Partner Builder's
@@ -319,12 +319,15 @@ RBAC.](media/rbac-overview.png "Azure RBAC overview")
 
 ### Azure Management Tools
 
+The flexibility and variety of Azure's management tools make it
+intuitive for all users, irrespective of their skill level with certain
+technologies. As your skill level and administration needs mature, Azure
+the right tool for you.
+
 ![Azure service management tool maturity
 progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
-The flexibility and variety of Azure's management tools make it
-intuitive for all users, irrespective of their skill level with certain
-technologies.
+**Azure portal**
 
 When you are just starting, the **Azure portal** gives developers a
 quick view of the state of their Azure resources. It supports extensive
@@ -347,6 +350,8 @@ configure virtual networks.
 By using the existing automation that runs Azure, command-line tools
 reduce that overhead.
 
+**Azure PowerShell and CLI**
+
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are
 useful for automating tasks that cannot be performed in the Azure
 portal. Both of these tools follow an *imperative* approach, meaning
@@ -360,6 +365,17 @@ Each operates differently, and the language is sometimes confused with
 the environment. Use [Azure command-line tool
 guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool)
 to determine which is the right tool for you.
+
+It is possible to run the Azure CLI from the [Azure Cloud
+Shell](shell.azure.com) or to [download the CLI tools locally from
+Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
+
+Again, developers can run Azure PowerShell directly from the [Azure
+Cloud Shell](shell.azure.com) or install the `Az` module from the
+PowerShell Gallery, as described in the [installation
+document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
+
+**ARM templates**
 
 Lastly, [ARM
 templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/)
@@ -630,30 +646,6 @@ The term *landing zone* refers to an Azure environment that supports
 application migration and modernization by facilitating scalability,
 security, governance, and more. Resources can be deployed to an Azure
 environment through the following tools.
-
-### Azure CLI Tools
-
-The Azure CLI is geared towards Bash shell users and is useful for
-automating tasks that cannot easily be performed in the Azure portal.
-Note that the CLI follows an *imperative* approach, meaning that users
-must explicitly script the creation of resources in the correct order,
-handle errors, and more.
-
-It is possible to run the Azure CLI from the [Azure Cloud
-Shell](shell.azure.com) or to [download the CLI tools locally from
-Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
-### Azure PowerShell
-
-Like the Azure CLI, Azure PowerShell is a useful automation tool that
-falls into the imperative infrastructure management category. It is
-geared towards Windows administrators, though PowerShell is
-cross-platform.
-
-Again, developers can run Azure PowerShell directly from the [Azure
-Cloud Shell](shell.azure.com) or install the `Az` module from the
-PowerShell Gallery, as described in the [installation
-document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
 ### Visual Studio Code
 

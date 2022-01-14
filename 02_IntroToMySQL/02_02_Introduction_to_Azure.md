@@ -48,11 +48,11 @@ An example is assigning the *Contributor* role over a resource group to a develo
 
 ### Azure Management Tools
 
+The flexibility and variety of Azure's management tools make it intuitive for all users, irrespective of their skill level with certain technologies. As your skill level and administration needs mature, Azure has the right tool for you.
+
 ![Azure service management tool maturity progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
-The flexibility and variety of Azure's management tools make it intuitive for all users, irrespective of their skill level with certain technologies. 
-
-#### Azure portal
+**Azure portal**
 
 When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **Azure mobile app** provides similar features for mobile users.
 
@@ -64,7 +64,7 @@ Moving your workload to Azure lifts some of the administrative burden but not al
 
 By using the existing automation that runs Azure, command-line tools reduce that overhead.
 
-#### Azure PowerShell and CLI
+**Azure PowerShell and CLI**
 
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
 
@@ -74,10 +74,9 @@ Each operates differently, and the language is sometimes confused with the envir
 
 It is possible to run the Azure CLI from the [Azure Cloud Shell](shell.azure.com) or to [download the CLI tools locally from Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
-
 Again, developers can run Azure PowerShell directly from the [Azure Cloud Shell](shell.azure.com) or install the `Az` module from the PowerShell Gallery, as described in the [installation document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
-#### ARM templates
+**ARM templates**
 
 Lastly, [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) are optimal for deploying resources in a *declarative* manner. Azure Resource Manager can potentially create the resources in an ARM template in parallel. ARM templates are useful to create multiple identical environments, such as development, staging, and production environments.
 

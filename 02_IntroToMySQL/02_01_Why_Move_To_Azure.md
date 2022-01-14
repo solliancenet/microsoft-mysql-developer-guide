@@ -1,10 +1,10 @@
 # Introduction to hosting MySQL on Azure
 
-Now that you understand the benefits of a MySQL deployment and a few common models to operate MySQL, this section explains approaches to host MySQL on Azure and the advantages of the Azure platform.
+Now that you understand the benefits of MySQL and a few common deployment models, this section explains approaches to host MySQL on Azure and the advantages of the Azure platform.
 
 ## Advantages
 
-The Azure platform is trusted by millions of customers, and there are over 90,000 Cloud Solution Providers partnered with Microsoft. Azure allows firms to easily modernize their applications, expedite application development, and tailor their applications for their industries. MySQL is a cost-effective database engine, and the Azure platform offers a high-quality support service to meet enterprise needs.
+The Azure platform is trusted by millions of customers, and there are over 90,000 Cloud Solution Providers partnered with Microsoft. Azure allows firms to easily modernize their applications, expedite application development, and tailor their applications for their industries. 
 
 By offering solutions on Azure, ISVs can access the largest B2B market. In addition, through the [Azure Partner Builder's Program](https://partner.microsoft.com/marketing/azure-isv-technology-partners), Azure assists ISVs with offering their solutions for customers to evaluate, purchase, and deploy.
 

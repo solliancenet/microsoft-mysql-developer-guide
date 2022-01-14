@@ -12,4 +12,4 @@ Development teams will understand the best architecture and security practices â
 
 Building and deploying an application is not enough. The guide will cover how easy it is to monitor system uptime and performance in Azure.  Administrators will appreciate the realistic and straightforward troubleshooting tips that help keep downtime to a minimum and users happy.
 
-The ultimate goal for you is to successfully deploy a stable, performant MySQL application running securely in Microsoft Azure using cloud best practices. Let's start the journey!  
+The ultimate goal for you is to successfully deploy a stable, performant MySQL application running securely in Microsoft Azure using cloud best practices. Let's start the journey!
