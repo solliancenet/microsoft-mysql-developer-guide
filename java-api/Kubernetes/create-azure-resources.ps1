@@ -16,6 +16,9 @@ az acr login -n $acrName
 docker image tag noshnowapi:0.0.1-SNAPSHOT "$acrName.azurecr.io/noshnowapi:0.0.1-SNAPSHOT"
 docker image push "$acrName.azurecr.io/noshnowapi:0.0.1-SNAPSHOT"
 
+docker image tag noshnowui:0.0.1 "$acrName.azurecr.io/noshnowui:0.0.1"
+docker image push "$acrName.azurecr.io/noshnowui:0.0.1"
+
 # Provision AKS with access to ACR
 
 $aksName = "appaks$suffix"
