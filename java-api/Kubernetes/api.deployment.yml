@@ -4,6 +4,7 @@ metadata:
   name: java-api
   namespace: contosonoshnow
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: java-api
@@ -14,22 +15,12 @@ spec:
     spec:
       containers:
       - name: java-api
-        image: noshnowapi:0.0.1-SNAPSHOT
-        # Only for local images
-        imagePullPolicy: Never
+        image: appacr[SUFFIX].azurecr.io/noshnowapi:0.0.1-SNAPSHOT
         env:
-          # - name: JAVA_OPTS
-          #   value: "-Xms1G -Xmx2G"
           - name: DB_CONNECTION_URL
-            valueFrom:
-              secretKeyRef:
-                name: connection-secret
-                key: DB_CONNECTION_URL
+            value: jdbc:mysql://mysqlflexapp[SUFFIX].mysql.database.azure.com/app
           - name: DB_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: connection-secret
-                key: DB_USERNAME
+            value: AppUser
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -37,10 +28,10 @@ spec:
                 key: DB_PASSWORD
         resources:
           limits:
-            memory: "3Gi"
+            memory: "2Gi"
             cpu: "500m"
           requests:
-            memory: "2Gi"
+            memory: "1Gi"
             cpu: "250m"
         ports:
         - containerPort: 8080
