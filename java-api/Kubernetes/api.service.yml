@@ -4,7 +4,7 @@ metadata:
   name: java-api-service
   namespace: contosonoshnow
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: java-api
   ports:
