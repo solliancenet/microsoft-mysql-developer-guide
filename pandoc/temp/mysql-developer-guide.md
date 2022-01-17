@@ -2,43 +2,54 @@
 
 Welcome to THE comprehensive guide to developing MySQL based
 applications on Microsoft Azure! Whether you are creating your first
-production application or improving an existing enterprise system, the
+production application or improving an existing enterprise system, this
 guide will take you through the basics of MySQL fundamentals all the way
 to advanced architecture and design. From beginning to end, it is a
 content journey designed to help ensure your future or existing MySQL
-systems are performing at their best now and as usage grows.
+systems are performing at their best and as usage grows.
 
 ![The diagram shows the progression of development evolution in the
 guide.](media/mysql-journey.png "MySQL Journey")
 
 The topics and flow contained in this guide cover the advantages of
-migrating to or leveraging the many valuable Azure cloud services. Learn
-how easy and quick it is to create a useful application backed by Azure
-Database for MySQL. Why waste time building or researching highly
-available services when you can leverage the vast amount of robust
-services available in the Azure Marketplace? Learn and leverage!
+migrating to or leveraging various simple to use, valuable Azure cloud
+services in your architectures. Learn how easy and quick it is to create
+applications backed by Azure Database for MySQL. In addition to building
+your own services, you can also leverage the vast amount of value-add
+services available in the Azure Marketplace. Throughout your developer
+journey, strive to leverage the vast number of resources presented
+rather than going at it on your own!
 
-Every company and project is unique. Insightful service descriptions and
-tool comparisons allow the reader to make choices that fit their
-environment, system, and budget needs. Proven industry architecture
-examples provide best practice jumpstarts allowing for solid
-architecture foundations and addressing compliance needs.
+Becuase every company and project is unique, this guide provides
+insightful service descriptions and tool comparisons to allow the reader
+to make choices that fit their environment, system, and budget needs.
+Proven industry architecture examples provide best practice jumpstarts
+allowing for solid architecture foundations and addressing potential
+compliance needs.
 
 Development teams will understand the best architecture and security
 practices -- avoiding the problems and costs of poor design. They will
 gain the knowledge to automate builds, package, test, and deliver
-applications to desired environments. Costs related to manual deployment
-tasks will be reduced or removed.
+applications to desired environments. By leveraging continous deployment
+and integration, costs related to manual deployment tasks can be reduced
+or completely removed.
 
-Building and deploying an application is not enough. The guide will
-cover how easy it is to monitor system uptime and performance in Azure.
+Building and deploying an application are not the final steps in the
+application lifecycle. This guide will cover how easy it is to monitor
+system uptime and performance in your various Azure services.
 Administrators will appreciate the realistic and straightforward
 troubleshooting tips that help keep downtime to a minimum and users
 happy.
 
-The ultimate goal for you is to successfully deploy a stable, performant
-MySQL application running securely in Microsoft Azure using cloud best
-practices. Let's start the journey!
+\<\<\<\<\<\<\< Updated upstream The ultimate goal for you is to
+successfully deploy a stable, performant MySQL application running
+securely in Microsoft Azure using cloud best practices. Let's start the
+journey! ======= The ultimate goal of this guide it to provide the
+guidance to successfully develop and deploy a stable, performant,
+secure, best practices based MySQL application running in Microsoft
+Azure.
+
+Let's begin the journey! \>\>\>\>\>\>\> Stashed changes
 
 # Introduction and common use cases for MySQL
 
@@ -46,9 +57,10 @@ MySQL is a relational database management system based on SQL --
 Structured Query Language. MySQL supports a rich set of SQL query
 capabilities and offers excellent performance through storage engines
 optimized for transactional and non-transactional workloads, in-memory
-processing, and robust server configuration through modules. Customers
-can use their existing frameworks and languages to ensure that a
-migration does not disrupt any business activity. Consult the [MySQL
+processing, and robust server configuration through modules. Its low
+total cost of ownership makes it extremely popular with many
+organizations. Customers can use their existing frameworks and languages
+to connect easily with a MySQL database. Consult the [MySQL
 Documentation](https://dev.mysql.com/doc/refman/8.0/en/features.html)
 for a more in-depth review of MySQL's features.
 
@@ -58,21 +70,22 @@ systems, such as [WordPress](https://wordpress.org/) and
 [Drupal](https://www.drupal.org/) utilize it for data persistence. More
 broadly, LAMP apps, which integrate Linux, Apache, MySQL, and PHP,
 leverage scalable web servers, languages, and database engines to serve
-a large fraction of global web services.
+a large set of global web services.
 
 ## Comparison with Other RDBMS offerings
 
-Though MySQL has a distinct set of advantages, it competes with a vast
-number of other relational database offerings. Though the emphasis of
-this guide is operating MySQL on Azure to architect scalable
-applications, it is important to be aware of other offerings, notably
-MariaDB. MariaDB was forked from the MySQL code base when Oracle
+Though MySQL has a distinct set of advantages, it does compete with
+other common relational database offerings. Though the emphasis of this
+guide is operating MySQL on Azure to architect scalable applications, it
+is important to be aware of other potential offerings such as MariaDB.
+MariaDB is a fork from the original MySQL code base when Oracle
 purchased MySQL.
 
 While MariaDB is compatible with the MySQL protocol, the project is not
 managed by Oracle, and its maintainers claim that this allows them to
-better compete with proprietary databases. However, MySQL has over
-twenty years of development experience, and businesses appreciate the
+better compete with other proprietary databases. Althought you have
+several options to choose from, MySQL has over twenty years of
+development experience backing it, and businesses appreciate the
 platform's maturity.
 
 Another popular open-source MySQL competitor is PostgreSQL. MySQL
@@ -95,11 +108,12 @@ MySQL on-premises deployments are highly configurable, but they require
 significant upfront hardware capital expenditure and have the
 disadvantages of hardware/OS maintenance.
 
-One of the biggest benefits of choosing a cloud provider is there are no
-enormous upfront costs. You pay monthly subscription fees as you go.
-Maintenance, up-to-date software, security and support all fall into the
-lap of the cloud provider---plus, your staff doesn't have to waste
-precious time troubleshooting problems.
+One benefit to choosing a cloud hosted environment is there are no large
+upfront costs. You have the option to pay monthly subscription fees as
+you go or to commit to certain usage level for discounts. Maintenance,
+up-to-date software, security and support all fall into the
+responsiblity of the cloud provider so IT staff are not required to
+utilize precious time troubleshooting hardware or software issues.
 
 ### Containers
 
@@ -108,10 +122,10 @@ start and stop them in a few seconds. Containers also offer tremendous
 portability, which makes them ideal for developing an application
 locally on your machine and then hosting it in the cloud, in test, and
 later in production. You can even run containers on-premises or in other
-clouds---the environment that you use on your development machine
-travels with your container, so your application always runs in the same
-ecosystem. Containerized applications are flexible, cost-effective, and
-deploy quickly.
+clouds. This is possible because the environment that you use on your
+development machine travels with your container, so your application
+always runs in the same way. Containerized applications are flexible,
+cost-effective, and deploy quickly.
 
 MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate
 MySQL in containerized applications. Containerized MySQL can persist
@@ -127,30 +141,35 @@ MySQL.
 
 # Introduction to hosting MySQL on Azure
 
-Now that you understand the benefits of a MySQL deployment and a few
-common models to operate MySQL, this section explains approaches to host
-MySQL on Azure and the advantages of the Azure platform.
+Now that you understand the benefits of MySQL and a few common
+deployment models, this section explains approaches to hosting MySQL on
+Azure and the advantages of the Azure platform.
 
 ## Advantages
 
-The Azure platform is trusted by millions of customers, and there are
-over 90,000 Cloud Solution Providers partnered with Microsoft. Azure
-allows firms to easily modernize their applications, expedite
-application development, and tailor their applications for their
-industries. MySQL is a cost-effective database engine, and the Azure
-platform offers a high-quality support service to meet enterprise needs.
+The Azure platform is trusted by millions of customers around the world,
+and there are over 90,000 Cloud Solution Providers partnered with
+Microsoft to add extra benefits and services to the Azure platform. By
+leveraging Azure, organizations can easily modernize their applications,
+expedite application development, and adapt application requirements to
+meet the demands of their users.
 
-By offering solutions on Azure, ISVs can access the largest B2B market.
-In addition, through the [Azure Partner Builder's
+By offering solutions on Azure, ISVs can access one of the largest B2B
+markets in the world. Through the [Azure Partner Builder's
 Program](https://partner.microsoft.com/marketing/azure-isv-technology-partners),
-Azure assists ISVs with offering their solutions for customers to
-evaluate, purchase, and deploy.
+Microsoft assists ISVs with the tools and platform to offer their
+solutions for customers to evaluate, purchase, and deploy with just a
+few clicks of the mouse.
 
-Azure's development tools, such as Visual Studio and low-code Power
-Apps, are part of the platform's meteoric success. Companies that adopt
-capable, modern tools are 65% more innovative, according to a [2020
-McKinsey & Company
+Microsofts's development suite includes such tools as the various Visual
+Studio products, Azure DevOps, GitHub, and low-code Power Apps. All of
+these have contributed to Azure's success and growth through their tight
+integrations with the Azure platform. Companies that adopt capable,
+modern tools are 65% more innovative, according to a [2020 McKinsey &
+Company
 report.](https://azure.microsoft.com/mediahandler/files/resourcefiles/developer-velocity-how-software-excellence-fuels-business-performance/Developer-Velocity-How-software-excellence-fuels-business-performance-v4.pdf)
+
+TODO: Find image without black background.
 
 ![This image demonstrates common development tools on the Microsoft
 cloud platform to expedite application
@@ -176,35 +195,34 @@ strategy.](media/cloud-adoption-strategies.png "Cloud adoption strategy")
 
 ### IaaS
 
-In the IaaS model, developers deploy MySQL on Azure Virtual Machines.
+In the IaaS model, organizations deploy MySQL on Azure Virtual Machines.
 This provides the customer with the flexibility to choose when to patch
-the VM OS and MySQL engine, and the option to install other software on
-the database server, such as antivirus utilities. Microsoft is
-responsible for the underlying VM hardware that constitutes the Azure
-infrastructure.
+the VM OS, the MySQL engine, and install other software such as
+antivirus utilities when required. Microsoft is responsible for the
+underlying VM hardware that constitutes the Azure infrastructure.
 
 Because IaaS MySQL hosting gives greater control over the MySQL database
-engine and the OS, many organizations choose it to migrate on-premises
-solutions while minimizing capital expenditure.
+engine and the OS, many organizations choose it to lift and shift
+on-premises solutions while minimizing capital expenditure.
 
 ### PaaS (DBaaS)
 
-In the PaaS model, developers deploy a managed MySQL environment on
-Azure. Unlike IaaS, they cede control over patching the MySQL engine and
-OS to the Azure platform, and Azure automates many administrative tasks,
-like providing high availability, backups, and protecting data.
+In the PaaS model, organizations deploy a fully managed MySQL
+environment on Azure. Unlike IaaS, they cede control over patching the
+MySQL engine and OS to the Azure platform, and Azure automates many
+administrative tasks, like providing high availability, backups, and
+protecting data.
 
 Like IaaS, customers are still responsible for managing query
-performance, database access, and database objects, such as indexes. It
-is suitable for applications where the MySQL configuration exposed by
-Azure is sufficient and access to the OS is unnecessary.
+performance, database access, and database objects, such as indexes.
+PaaS is suitable for applications where the MySQL configuration exposed
+by Azure is sufficient and access to the OS and filesystem is
+unnecessary.
 
 The Azure DBaaS MySQL offering is [Azure Database for
 MySQL](https://azure.microsoft.com/services/mysql/#features), which is
 based on MySQL community edition and supports common administration
-tools and programming languages. As addressed in further depth,
-Microsoft provides multiple deployment modes to alleviate the weaknesses
-of PaaS databases.
+tools and programming languages.
 
 ### Video Reference
 
@@ -214,23 +232,23 @@ Learn.](https://docs.microsoft.com/learn/modules/cmu-cloud-computing-overview/4-
 
 # Introduction to Azure
 
-Now that you understand why millions of users choose Azure, and the
-basic database deployment models on the cloud (IaaS vs. PaaS), this
-document will provide more theory about how developers interact with
-Azure.
+With a firm understanding of why millions of organizations choose Azure,
+and the database deployment models (IaaS vs. PaaS), the next step is to
+provide more detail about **how** developers interact with Azure.
 
 The [Azure Fundamentals Microsoft Learn
 Module](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/)
 demonstrates how IaaS and PaaS can classify Azure services. Moreover,
 Azure empowers flexible *hybrid cloud* deployments and supports a
-variety of common tools, such as Visual Studio and the Azure CLI, to
-manage Azure environments.
+variety of common tools, such as Visual Studio, PowerShell and the Azure
+CLI, to manage Azure environments.
 
 ![IaaS and PaaS Azure service classification and
 categories](./media/azure-services.png "Categories of Azure services")
 
-Here is a summary of the Azure services used in the whitepaper scenario
-besides the managed MySQL offerings described previously.
+The following tables outlines some of the Azure services used in
+application developer scenarios that will be discussed in further detail
+in later sections of this guide.
 
 -   **Virtual Machines (IaaS)**: You will begin by running a PHP sample
     application on an Azure Windows Server Virtual Machine.
@@ -245,12 +263,11 @@ besides the managed MySQL offerings described previously.
     apps, but it is optimized for more advanced orchestration scenarios,
     such as high availability.
 
-This list is not exhaustive; for a more comprehensive view, consult the
-[Azure Fundamentals Microsoft
+For a more comprehensive view, consult the [Azure Fundamentals Microsoft
 Learn](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/tour-of-azure-services)
 module.
 
-## The Azure Management Hierarchy
+## The Azure Resource Management Hierarchy
 
 Azure provides a flexible resource hierarchy to simplify cost management
 and security. This hierarchy consists of four levels:
@@ -272,23 +289,33 @@ and security. This hierarchy consists of four levels:
     subscription.
     -   Most Azure resources are provisioned in a particular region
 
-![This image shows Azure resource
-scopes.](./media/scope-levels.png "Azure resource scopes")
+    ![This image shows Azure resource
+    scopes.](./media/scope-levels.png "fig:Azure resource scopes")
 
-The *Azure Resource Manager* governs interaction with Azure resources.
+## Automating and managing with Azure services
+
+When it comes to managing Azure resources, you have many potential
+options. [Azure Resource
+Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview)
+is the deployment and management service for Azure. It provides a
+management layer that enables you to create, update, and delete
+resources in your Azure subscriptions. You use management features, like
+access control, locks, and tags, to secure and organize your resources
+after deployment.
+
 All Azure management tools, including the CLI, PowerShell module, REST
-API, and browser-based Portal, interact with the Azure Resource Manager.
-Observe that security is built into Azure Resource Manager.
+API, and browser-based Portal, interact with the Azure Resource Manager
+layer and as such the Identity and access management (IAM) security
+controls.
 
 ![This image demonstrates how the Azure Resource Manager provides a
 robust, secure interface to Azure
 resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
-After users and services authenticate with Azure, *role-based access
-control* (RBAC), built on the Azure Resource Manager, dictates whether
-they are authorized to access a resource, modify the resource, or give
-other users and services access to that resource. RBAC consists of three
-parts:
+Access control to all Azure services is offered via the Azure role-based
+access control (Azure RBAC) natively built into the management platform.
+
+RBAC consists of four parts:
 
 -   A *role definition* describes a set of actions that can be
     performed. It can be broad or granular.
@@ -296,6 +323,8 @@ parts:
     service.
 -   The *scope* dictates at what level a role assignment to a security
     principal applies.
+-   A *role assignment* which is a combination of a definition,
+    principal and scope.
 
 An example is assigning the *Contributor* role over a resource group to
 a developer in your organization. In this case, the *Contributor* role
@@ -307,36 +336,148 @@ developer's account in Azure Active Directory.
 ![This image demonstrates the three components of Azure
 RBAC.](media/rbac-overview.png "Azure RBAC overview")
 
-### Azure Management Tools
+## Azure Management Tools
 
 The flexibility and variety of Azure's management tools make it
-intuitive for all users, irrespective of their skill level with certain
-technologies.
+intuitive for any user, irrespective of their skill level with certain
+technologies. As your skill level and administration needs mature, Azure
+has the right tool to match your needs.
 
-The **Azure portal** gives developers a quick view of the state of their
-Azure resources. It supports extensive user configuration and simplifies
-custom reporting. The **Azure mobile app** provides similar features for
-mobile users.
+![Azure service management tool maturity
+progression.](media/azure-management-tool-maturity.png "Azure service management tool")
+
+### Azure Portal
+
+When you are just starting, the **Azure portal** gives developers a
+quick view of the state of their Azure resources. It supports extensive
+user configuration and simplifies custom reporting. The **Azure mobile
+app** provides similar features for mobile users.
+
+![The picture shows the some of the initial Azure service
+list.](media/azure-portal-services.png "Azure Portal Services")
+
+Azure runs on a common framework of backend resource services and every
+action you take on the Azure portal translates into a backend set of
+APIs developed by the respective engineering team to read, create,
+modify, or delete resources.
+
+Moving your workload to Azure lifts some of the administrative burden
+but not all, even though you don't have to worry about the data center,
+you are still responsible for how you have configured those servcies and
+the access your teams have to those resources.
+
+By using the existing command-line tools and REST based APIs, you can
+build your own tools to automate and report on your configurations based
+on any organizationl requirements that are required.
+
+### Azure PowerShell and CLI
 
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are
 useful for automating tasks that cannot be performed in the Azure
-portal. Note that both of these tools follow an *imperative* approach,
-meaning that users must explicitly script the creation of resources in
-the correct order. These tools do not support creating resources in
-parallel.
+portal. Both of these tools follow an *imperative* approach, meaning
+that users must explicitly script the creation of resources in the
+correct order.
 
-Lastly, **ARM templates** are optimal for deploying resources in a
-*declarative* manner. Azure Resource Manager can potentially create the
-resources in an ARM template in parallel. ARM templates are useful to
-create multiple identical environments, such as development, staging,
-and production environments.
+![Shows an example of the Azure
+CLI.](media/azure-cli-example.png "Azure CLI Example")
+
+Although very similar, you may find that there are some subtle
+differneces between how each of these tools operate and the actions that
+can be accomplished. Use [Azure command-line tool
+guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool)
+to determine which is the right tool for you.
+
+It is possible to run the Azure CLI and Azure Powershell from the [Azure
+Cloud Shell](shell.azure.com) but it does have some limitations. You can
+also run these tools locally.
+
+To use the Azure CLI [download the CLI tools from
+Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli).
+
+To use the Azure PowerShell cmdlets, install the `Az` module from the
+PowerShell Gallery, as described in the [installation
+document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
+
+### Infrastructure as Code
+
+[Infrastructure as Code
+(Iac)](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
+provides a way to describe or declare what infrastructure looks like
+using descriptive code. The infrastructure code the desired state. Once
+the code runs, the environment will be built. One of the main benefits
+of IaC it is human readable. Once the environment code has been tested,
+it can be versioned and saved into source code control.
+
+**ARM templates**
+
+[ARM
+templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/)
+are able to deploy Azure resources in a *declarative* manner. Azure
+Resource Manager can potentially create the resources in an ARM template
+in parallel. ARM templates are useful to create multiple identical
+environments, such as development, staging, and production environments.
+
+![The picture shows an example of a ARM template JSON
+export.](media/azure-template-json-example.png "Azure Template JSON")
+
+**Bicep**
+
+Reading, updating, and managing the ARM template JSON code can be
+difficult for a reasonably sized environment. What if there was a tool
+that translates simple declarative statements into ARM templates? Better
+yet, what if there was a tool that took existing ARM templates and
+translated them into a simple configuration?
+[Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
+is a domain-specific language (DSL) that uses declarative syntax to
+deploy Azure resources. In a Bicep file, you define the infrastructure
+you want to deploy to Azure, and then use that file throughout the
+development lifecycle to repeatedly deploy your infrastructure. Your
+resources are deployed in a consistent manner. Some of the benefits
+include:
+
+-   **Support for all resource types and API versions**: Bicep
+    immediately supports all preview and GA versions for Azure services.
+    As soon as a resource provider introduces new resources types and
+    API versions, you can use them in your Bicep file. You don't have to
+    wait for tools to be updated before using the new services.
+-   **Simple syntax**: When compared to the equivalent JSON template,
+    Bicep files are more concise and easier to read. Bicep requires no
+    previous knowledge of programming languages. Bicep syntax is
+    declarative and specifies which resources and resource properties
+    you want to deploy.
+-   **Authoring experience**: When you use VS Code to create your Bicep
+    files, you get a first-class authoring experience. The editor
+    provides rich type-safety, intellisense, and syntax validation.
+-   **Modularity**: You can break your Bicep code into manageable parts
+    by using modules. The module deploys a set of related resources.
+    Modules enable you to reuse code and simplify development. Add the
+    module to a Bicep file anytime you need to deploy those resources.
+-   **No state or state files to manage**: All state is stored in Azure.
+    Users can collaborate and have confidence their updates are handled
+    as expected. Use the what-if operation to preview changes before
+    deploying your template.
+-   **No cost and open source**: Bicep is completely free. You don't
+    have to pay for premium capabilities. It's also supported by
+    Microsoft support.
+
+**Terraform**
+
+The benefits of IaC have been described in the paragraphs above. There
+are instances of multi-cloud deployment requirements.
+[Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview)
+is adept at deploying an infrastructure across multiple cloud providers.
+It enables developers to use consistent tooling to manage each
+infrastructure definition.
 
 ### Other Tips
 
-To develop an effective hierarchy, administrators must consult with
-cloud architects and financial and security personnel. Here are a few
-other best practices to follow for Azure deployments.
+To develop an effective organization hierarchy of resources, Azure
+administrators should consult with cloud architects and financial and
+security personnel. Here are a few common best practices to follow for
+Azure deployments.
 
+-   **Utilize Management Groups** Create at least three levels of
+    management groups.
 -   **Adopt a naming convention:** Names in Azure should include
     business details, such as the organization department, and
     operational details for IT personnel, like the workload.
@@ -376,18 +517,19 @@ offerings do not support direct management of the OS and the database
 engine, they have built-in support for high availability, automating
 backups, and meeting compliance requirements. Moreover, Azure Database
 for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it
-flexible for most migrations. (TODO:Add link for MySQL Migration
-Guide)For most use cases, Azure PaaS MySQL allows developers to focus on
+flexible for most migrations. (TODO:Add link for MySQL Migration Guide)
+
+For most use cases, Azure PaaS MySQL allows developers to focus on
 application development and deployment, instead of OS and RDBMS
 management, patching, and security.
 
 As the image below demonstrates, Azure Resource Manager handles resource
 configuration, meaning that standard Azure management tools, such as the
-CLI, PowerShell, and ARM templates, are still applicable. This is termed
-the *control plane*.
+CLI, PowerShell, and ARM templates, are still applicable. This is
+commonly refered to as the *control plane*.
 
-For managing database objects and access controls on those objects,
-standard MySQL management tools, such as [MySQL
+For managing database objects and access controls at the server and
+database levels, standard MySQL management tools, such as [MySQL
 Workbench](https://www.mysql.com/products/workbench/), still apply. This
 is known as the *data plane*.
 
@@ -401,15 +543,37 @@ Below is a summary of these offerings. For a more comprehensive
 comparison table, please consult [this
 document.](https://docs.microsoft.com/azure/mysql/select-right-deployment-type)
 
+### Single Server
+
+Single Server is suitable when apps do not need extensive database
+customization. Single Server will manage patching, offer high
+availability, and manage backups on a predetermined schedule (though
+developers can set the backup retention times between a week and 35
+days). To reduce compute costs, developers can [pause the Single Server
+offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server).
+Single server offers an [SLA of
+99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
+
+> **Note:** Single servers are best suited for existing applications
+> already leveraging single server. For all new developments or
+> migrations, Flexible Server would be the recommended deployment
+> option.
+
+> For a refresher on how the SLAs of individual Azure services affect
+> the SLA of the total deployment, review the associated [Microsoft
+> Learn
+> Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
+
 ### Flexible Server
 
-Flexible Server is also managed by the Azure platform, but it exposes
-more control to the user. Cost management is one of the major advantages
-of Flexible Server: it supports a *burstable* tier, which is based on
-the B-series Azure VM tier and is optimized for workloads that do not
-continually use the CPU. Just like Single Server, [Flexible Server can
-also be
-paused.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli)
+Flexible Server is also a PaaS service fully managed by the Azure
+platform, but it exposes more control to the user than single server.
+
+Cost management is one of the major advantages of Flexible Server: it
+supports a *burstable* tier, which is based on the B-series Azure VM
+tier and is optimized for workloads that do not continually use the CPU.
+Just like Single Server, [Flexible Server can also be
+paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli).
 The image below shows how Flexible Server works for a non-high
 availability arrangement.
 
@@ -434,22 +598,22 @@ to learn more about Flexible Server's advantages.
 
 #### Flexible Server Pricing & TCO
 
-All three MySQL Flexible Server tiers offer a storage range between 20
-GiB and 16 TiB and the same backup retention period range of 1-35 days.
-However, they differ in core count and memory per vCore. Choosing a
-compute tier affects the database IOPS and pricing.
+The MySQL Flexible Server tiers offer a storage range between 20 GiB and
+16 TiB and the same backup retention period range of 1-35 days. However,
+they differ in core count and memory per vCore. Choosing a compute tier
+affects the database IOPS and pricing.
 
--   Burstable: This tier corresponds to a B-series Azure VM. Instances
-    provisioned in this tier have 1-2 vCores. It is ideal for
+-   **Burstable**: This tier corresponds to a B-series Azure VM.
+    Instances provisioned in this tier have 1-2 vCores. It is ideal for
     applications that do not utilize the CPU consistently.
--   General Purpose: This tier corresponds to a Ddsv4-series Azure VM.
-    Instances provisioned in this tier have 2-64 vCores and 4 GiB memory
-    per vCore. It is ideal for most enterprise applications requiring a
-    strong balance between memory and vCore count.
--   Memory Optimized: This tier corresponds to an Edsv4-series Azure VM.
-    Instances provisioned in this tier have 2-64 vCores and 8 GiB memory
-    per vCore. It is ideal for high-performance or real-time workloads
-    that depend on in-memory processing.
+-   **General Purpose**: This tier corresponds to a Ddsv4-series Azure
+    VM. Instances provisioned in this tier have 2-64 vCores and 4 GiB
+    memory per vCore. It is ideal for most enterprise applications
+    requiring a strong balance between memory and vCore count.
+-   **Memory Optimized**: This tier corresponds to an Edsv4-series Azure
+    VM. Instances provisioned in this tier have 2-64 vCores and 8 GiB
+    memory per vCore. It is ideal for high-performance or real-time
+    workloads that depend on in-memory processing.
 
 To estimate the TCO for Azure Database for MySQL, use the [Azure Pricing
 Calculator](https://azure.microsoft.com/pricing/calculator/). Note that
@@ -473,27 +637,6 @@ Here are a few notable ones.
 -   `SELECT ... INTO OUTFILE` statements to write query results to files
     are unsupported, as the filesystem is not directly exposed by the
     service
-
-### Single Server
-
-Single Server is suitable when apps do not need extensive database
-customization. Single Server will manage patching, offer high
-availability, and manage backups on a predetermined schedule (though
-developers can set the backup retention times between a week and 35
-days). To reduce compute costs, developers can [pause the Single Server
-offering.](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server)
-It offers an [SLA of
-99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
-
-> **Note:** Single servers are best suited only for existing
-> applications already leveraging single server. For all new
-> developments or migrations, Flexible Server would be the recommended
-> deployment option.
-
-> For a refresher on how the SLAs of individual Azure services affect
-> the SLA of the total deployment, review the associated [Microsoft
-> Learn
-> Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ## Single Server and Flexible Server Comparison Table
 
@@ -590,30 +733,6 @@ The term *landing zone* refers to an Azure environment that supports
 application migration and modernization by facilitating scalability,
 security, governance, and more. Resources can be deployed to an Azure
 environment through the following tools.
-
-### Azure CLI Tools
-
-The Azure CLI is geared towards Bash shell users and is useful for
-automating tasks that cannot easily be performed in the Azure portal.
-Note that the CLI follows an *imperative* approach, meaning that users
-must explicitly script the creation of resources in the correct order,
-handle errors, and more.
-
-It is possible to run the Azure CLI from the [Azure Cloud
-Shell](shell.azure.com) or to [download the CLI tools locally from
-Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
-### Azure PowerShell
-
-Like the Azure CLI, Azure PowerShell is a useful automation tool that
-falls into the imperative infrastructure management category. It is
-geared towards Windows administrators, though PowerShell is
-cross-platform.
-
-Again, developers can run Azure PowerShell directly from the [Azure
-Cloud Shell](shell.azure.com) or install the `Az` module from the
-PowerShell Gallery, as described in the [installation
-document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
 ### Visual Studio Code
 
@@ -2356,7 +2475,22 @@ assessment, choice of migration tools, and post-upgrade enhancement. The
 guide also features a sample application and environment to try the
 migration journey.
 
-# Monitoring and Alerts
+# End to End Development
+
+blah opening...
+
+## Scenerios
+
+-   Classic deployment
+-   Azure VM Deployment
+-   App Service deployment
+-   App Service (In App)
+-   Continous Integration / Continous Delivery
+-   Docker containers
+-   Azure Container Instances
+-   App Service Containers
+-   Azure Kubernetes Service
+-   MySQL Flexible Server \# Monitoring and Alerts
 
 Once the migration has been successfully completed, the next phase it to
 manage the new cloud-based data workload resources. Management

@@ -44,6 +44,30 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/azure-management-tool-maturity.png",
+        "for": "media/azure-management-tool-maturity.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-portal-services.png",
+        "for": "media/azure-portal-services.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-cli-example.png",
+        "for": "media/azure-cli-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-template-json-example.png",
+        "for": "media/azure-template-json-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/mysql-conceptual-diagram.png",
         "for": "./media/mysql-conceptual-diagram.png"
     },

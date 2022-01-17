@@ -49,13 +49,13 @@ An example is assigning the *Contributor* role over a resource group to a develo
 
   ![This image demonstrates the three components of Azure RBAC.](media/rbac-overview.png "Azure RBAC overview")
 
-### Azure Management Tools
+## Azure Management Tools
 
 The flexibility and variety of Azure's management tools make it intuitive for any user, irrespective of their skill level with certain technologies. As your skill level and administration needs mature, Azure has the right tool to match your needs.
 
 ![Azure service management tool maturity progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
-**Azure portal**
+### Azure Portal
 
 When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **Azure mobile app** provides similar features for mobile users.
 
@@ -67,7 +67,7 @@ Moving your workload to Azure lifts some of the administrative burden but not al
 
 By using the existing command-line tools and REST based APIs, you can build your own tools to automate and report on your configurations based on any organizationl requirements that are required.
 
-**Azure PowerShell and CLI**
+### Azure PowerShell and CLI
 
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
 
@@ -81,15 +81,30 @@ To use the Azure CLI [download the CLI tools from Microsoft.](https://docs.micro
 
 To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell Gallery, as described in the [installation document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
+### Infrastructure as Code
+
+[Infrastructure as Code (Iac)](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code has been tested, it can be versioned and saved into source code control. 
+
 **ARM templates**
 
-Lastly, [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) are optimal for deploying resources in a *declarative* manner. Azure Resource Manager can potentially create the resources in an ARM template in parallel. ARM templates are useful to create multiple identical environments, such as development, staging, and production environments.
+[ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) are able to deploy Azure resources in a *declarative* manner. Azure Resource Manager can potentially create the resources in an ARM template in parallel. ARM templates are useful to create multiple identical environments, such as development, staging, and production environments.
 
   ![The picture shows an example of a ARM template JSON export.](media/azure-template-json-example.png "Azure Template JSON")
 
-TODO: BICEPT
+**Bicep**
 
-TODO: Terraform
+Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner. Some of the benefits include:
+
+- **Support for all resource types and API versions**: Bicep immediately supports all preview and GA versions for Azure services. As soon as a resource provider introduces new resources types and API versions, you can use them in your Bicep file. You don't have to wait for tools to be updated before using the new services.
+- **Simple syntax**: When compared to the equivalent JSON template, Bicep files are more concise and easier to read. Bicep requires no previous knowledge of programming languages. Bicep syntax is declarative and specifies which resources and resource properties you want to deploy.
+- **Authoring experience**: When you use VS Code to create your Bicep files, you get a first-class authoring experience. The editor provides rich type-safety, intellisense, and syntax validation.
+- **Modularity**: You can break your Bicep code into manageable parts by using modules. The module deploys a set of related resources. Modules enable you to reuse code and simplify development. Add the module to a Bicep file anytime you need to deploy those resources.
+- **No state or state files to manage**: All state is stored in Azure. Users can collaborate and have confidence their updates are handled as expected. Use the what-if operation to preview changes before deploying your template.
+- **No cost and open source**: Bicep is completely free. You don't have to pay for premium capabilities. It's also supported by Microsoft support.
+
+**Terraform**
+
+The benefits of IaC have been described in the paragraphs above. There are instances of multi-cloud deployment requirements. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
 
 ### Other Tips
 
