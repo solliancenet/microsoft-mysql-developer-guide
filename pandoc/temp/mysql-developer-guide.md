@@ -630,7 +630,7 @@ Visual Studio Code workflow for MySQL.
 
 # PHP Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through PHP.
 
 ## Example Code
@@ -666,7 +666,7 @@ utilities for MySQL Community Edition.
     Reference](https://www.php.net/manual/en/ref.pdo-mysql.php) \# Java
     Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through Java.
 
 ## Example Code
@@ -757,7 +757,7 @@ and Azure Spring Cloud from their Maven workflows.
 
 # Python Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through Python.
 
 ## Example Code
@@ -830,7 +830,7 @@ implementations of the MySQL connector.
 
 # Provision Flexible Server and Database
 
-This document illustrates how to deploy MySQL Flexible Server using
+This section illustrates how to deploy MySQL Flexible Server using
 various Azure management tools.
 
 ## Azure Portal
@@ -891,7 +891,7 @@ Server](03_05_Provision_MySQL_Flexible_Server.md) document to create a
 Flexible Server instance with a database.
 
 Download MySQL Workbench from the [MySQL
-Downloads.](https://dev.mysql.com/downloads/workbench/) This document
+Downloads.](https://dev.mysql.com/downloads/workbench/) This section
 was written using version 8.0.26: we recommend this version because
 Single Server is not compatible with 8.0.27, so 8.0.26 has the greatest
 flexibility.
@@ -969,7 +969,7 @@ CLI.](./media/analyst-query.png "Running an admin query from the Azure CLI")
 
 # PHP Language Support
 
-This document demonstrates how to manipulate data in an Azure Database
+This section demonstrates how to manipulate data in an Azure Database
 for MySQL Flexible Server instance and query it using PHP and the
 *MySQLi* library, which is provided with PHP.
 
@@ -999,7 +999,7 @@ Windows. Adjust this if necessary.
 Microsoft's [quickstart
 guide](https://docs.microsoft.com/azure/mysql/flexible-server/connect-php)
 performs standard CRUD operations against the MySQL instance from a
-console app. This document modifies the code segments from the guide to
+console app. This section modifies the code segments from the guide to
 provide an encrypted connection to the Flexible Server instance.
 
 The first code snippet creates a table called `Products` with four
@@ -1219,7 +1219,7 @@ python -m venv venv
 
 ## Instructions
 
-This document is based on [Microsoft's
+This section is based on [Microsoft's
 sample](https://docs.microsoft.com/azure/mysql/flexible-server/connect-python).
 
 The first code snippet creates a table, `inventory`, with three columns.

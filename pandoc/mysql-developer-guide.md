@@ -662,7 +662,7 @@ Visual Studio Code workflow for MySQL.
 
 # PHP Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through PHP.
 
 ## Example Code
@@ -698,7 +698,7 @@ utilities for MySQL Community Edition.
     Reference](https://www.php.net/manual/en/ref.pdo-mysql.php) \# Java
     Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through Java.
 
 ## Example Code
@@ -789,7 +789,7 @@ and Azure Spring Cloud from their Maven workflows.
 
 # Python Language Support
 
-This document describes tools to interact with Azure Database for MySQL
+This section describes tools to interact with Azure Database for MySQL
 (Single Server and Flexible Server) through Python.
 
 ## Example Code
@@ -862,7 +862,7 @@ implementations of the MySQL connector.
 
 # Provision Flexible Server and Database
 
-This document illustrates how to deploy MySQL Flexible Server using
+This section illustrates how to deploy MySQL Flexible Server using
 various Azure management tools.
 
 ## Azure Portal
@@ -1001,7 +1001,7 @@ CLI.](./media/analyst-query.png "Running an admin query from the Azure CLI")
 
 # PHP Language Support
 
-This document demonstrates how to manipulate data in an Azure Database
+This section demonstrates how to manipulate data in an Azure Database
 for MySQL Flexible Server instance and query it using PHP and the
 *MySQLi* library, which is provided with PHP.
 
@@ -1251,7 +1251,7 @@ python -m venv venv
 
 ## Instructions
 
-This document is based on [Microsoft's
+This section is based on [Microsoft's
 sample](https://docs.microsoft.com/azure/mysql/flexible-server/connect-python).
 
 The first code snippet creates a table, `inventory`, with three columns.
