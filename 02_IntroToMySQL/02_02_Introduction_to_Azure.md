@@ -63,9 +63,9 @@ When you are just starting, the **Azure portal** gives developers a quick view o
 
 Azure runs on a common framework of backend resource services and every action you take on the Azure portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
 
-Moving your workload to Azure lifts some of the administrative burden but not all, even though you don't have to worry about the data center, you are still responsible for how you have configured those servcies and the access your teams have to those resources.
+Moving your workload to Azure lifts some of the administrative burden but not all, even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
 
-By using the existing command-line tools and REST based APIs, you can build your own tools to automate and report on your configurations based on any organizationl requirements that are required.
+By using the existing command-line tools and REST based APIs, you can build your own tools to automate and report on your configurations based on any organizational requirements that are required.
 
 ### Azure PowerShell and CLI
 
@@ -73,9 +73,9 @@ By using the existing command-line tools and REST based APIs, you can build your
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
-Although very similar, you may find that there are some subtle differneces between how each of these tools operate and the actions that can be accomplished. Use [Azure command-line tool guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
+Although very similar, you may find that there are some subtle differences between how each of these tools operate and the actions that can be accomplished. Use [Azure command-line tool guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
 
-It is possible to run the Azure CLI and Azure Powershell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. You can also run these tools locally.  
+It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. You can also run these tools locally.  
 
 To use the Azure CLI [download the CLI tools from Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -83,13 +83,13 @@ To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell
 
 ### Infrastructure as Code
 
-[Infrastructure as Code (Iac)](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code has been tested, it can be versioned and saved into source code control. 
+[Infrastructure as Code (Iac)](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code is the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code has been tested, it can be versioned and saved into source code control.
 
 **ARM templates**
 
 [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) are able to deploy Azure resources in a *declarative* manner. Azure Resource Manager can potentially create the resources in an ARM template in parallel. ARM templates are useful to create multiple identical environments, such as development, staging, and production environments.
 
-  ![The picture shows an example of a ARM template JSON export.](media/azure-template-json-example.png "Azure Template JSON")
+  ![The picture shows an example of an ARM template JSON export.](media/azure-template-json-example.png "Azure Template JSON")
 
 **Bicep**
 
@@ -104,7 +104,7 @@ Reading, updating, and managing the ARM template JSON code can be difficult for 
 
 **Terraform**
 
-The benefits of IaC have been described in the paragraphs above. There are instances of multi-cloud deployment requirements. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
+The benefits of IaC have been described in the paragraphs above. Hashicorp Terraform is an open-source tool for provisioning and managing cloud infrastructure. There are instances of multi-cloud deployment requirements. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
 
 ### Other Tips
 

@@ -21,9 +21,12 @@
 
 # Step 3
 # Run this command with the defaults.yaml file in the pandoc directory.
-# EXAMPLE:  pandoc --defaults=make-one-markdown-file
+# del .\media\*.png /Q
+# del .\temp\media\*.png /Q
 # xcopy .\media\*.png .\temp\media /Y
 # xcopy .\*.md .\temp /Y
+# EXAMPLE:  pandoc --defaults=make-one-markdown-file
+
 from: markdown+pipe_tables+backtick_code_blocks
 to: markdown+pipe_tables
 output-file: mysql-developer-guide.md
@@ -84,3 +87,4 @@ default-image-extension: ".png"
 section-divs: true
 highlight-style: tango
 atx-headers: true
+reference-links: true

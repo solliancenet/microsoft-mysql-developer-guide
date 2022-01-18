@@ -22,7 +22,8 @@ log-file: log.json
 table-of-contents: true
 toc-depth: 2
 
-# reference-links: true
+reference-links: true
+reference-location: document
 tab-stop: 4
 preserve-tabs: true
 default-image-extension: ".png"

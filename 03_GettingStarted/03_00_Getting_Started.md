@@ -1,5 +1,7 @@
 # Setup and Tools
 
+[Azure Database for MySQL Deployment Modes]
+
 ## Azure Free Account
 
 As described in the [Why Move to Azure document](../02_IntroToMySQL/02_01_Why_Move_To_Azure.md), Azure offers a $200 free credit for developers to trial Azure. Enroll today to explore MySQL offerings on Azure.

@@ -12,7 +12,7 @@
 
 ## Create a Lab Resource Group
 
-1. Use Azure Powershell to create a new resource group. Substitute the `rgName` and `location` parameters with the name of your resource group and its location, respectively.
+1. Use Azure PowerShell to create a new resource group. Substitute the `rgName` and `location` parameters with the name of your resource group and its location, respectively.
 
     ```powershell
     $rgName = ""
