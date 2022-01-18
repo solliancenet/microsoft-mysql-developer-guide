@@ -4,7 +4,7 @@ Like the other language support guides, Flexible Server is compatible with all M
 
 ## .NET
 
-.NET applications typically use ORMs to access databases and improve portability: two of the most popular ORMs are Entity Framework (Core) and Dapper. 
+.NET applications typically use ORMs to access databases and improve portability: two of the most popular ORMs are Entity Framework (Core) and Dapper.
 
 Using MySQL with Entity Framework (Core) requires [MySQL Connector/NET](https://github.com/mysql/mysql-connector-net), which is compatible with Single Server. Learn more [from the MySQL documentation](https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core.html) about support for Entity Framework (Core).
 

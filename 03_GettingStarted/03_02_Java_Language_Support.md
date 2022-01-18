@@ -1,6 +1,6 @@
 # Java Language Support
 
-This document describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Java.
+This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Java.
 
 ## Example Code
 
@@ -12,7 +12,7 @@ Refer to the [Connect and Query sample for Java](./03_Connect_Query_Java_Intelli
 
 To allow developers to focus on implementing business logic, applications commonly use persistence frameworks like Spring Data JPA. Spring Data JPA extends the JPA specification, which governs *object-relational mapping* (ORM) technologies in Java. It functions on top of JPA implementations, like the Hibernate ORM. The Connect and Query sample leverages Spring Data JPA and *MySQL Connector/J* to access the Azure MySQL instance and expose data through a web API.
 
-Flexible Server is compatible with all Java client utilities for MySQL Community Edition. However, Microsoft has only validated *MySQL Connector/J* for use with Single Server due to its network connectivity setup. Refer to [this](https://docs.microsoft.com/azure/mysql/concepts-compatibility) document for more information about drivers compatible with Single Server. 
+Flexible Server is compatible with all Java client utilities for MySQL Community Edition. However, Microsoft has only validated *MySQL Connector/J* for use with Single Server due to its network connectivity setup. Refer to [this](https://docs.microsoft.com/azure/mysql/concepts-compatibility) document for more information about drivers compatible with Single Server.
 
 ### Resources
 

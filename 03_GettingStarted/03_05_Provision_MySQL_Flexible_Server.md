@@ -1,6 +1,6 @@
 # Provision Flexible Server and Database
 
-This document illustrates how to deploy MySQL Flexible Server using various Azure management tools.
+This section illustrates how to deploy MySQL Flexible Server using various Azure management tools.
 
 ## Azure Portal
 
