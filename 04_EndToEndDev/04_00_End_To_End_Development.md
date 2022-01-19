@@ -23,7 +23,7 @@ It is recommeded that you follow each of the scenarios in the order shown so tha
 
 ## Classic Deployment
 
-In a classic deployment, you will typically setup your web server (such as Internet Information Services (IIS), Apache or NGIX) on physical hardware.  As most applications using MySQL as the backend are commonly using PHP as the front end (which is the case for the sampel application in this guide), you must ensure that you configure the web server to support PHP.
+In a classic deployment, you will typically setup your web server (such as Internet Information Services (IIS), Apache or NGIX) on physical or virtualized on-premises hardware.  Most applications using MySQL as the backend are using PHP as the front end (which is the case for the sample application in this guide); as such, you must ensure that you configure the web server to support PHP.  This includes configuring and enabling any PHP extensions and installing the required software to supporte those extensions.
 
 Some web servers are respectively easier to setup than others.  The complexity depends on what the target operating system is and what features your application and database are using, for example SSL/TLS.
 
