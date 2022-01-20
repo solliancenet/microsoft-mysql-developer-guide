@@ -89,10 +89,18 @@ To implement this deployment, follow the steps to perform deployments using ACI,
 
 TODO
 
+To implement this deployment, follow the steps to perform deployments using Azure App Service containers, reference the [Migrate to Azure App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md) article.
+
 ## Azure Kubernetes Service (AKS)
 
-TODO
+ACI and App Service Container hosting is a simple and easy way to run containers, but does not provide many enterprise features such as deployment across nodes that live in multiple regions, load balancing, automatic restarts and redployment and many other features.
+
+Moving to Azure Kubernetes Service (AKS) will enable your application to inherit all the enterprise features provided by AKS.
+
+To implement this deployment, follow the steps to perform deployments using AKS, reference the [Migrate to Azure Kubernetes Services (AKS)](./../artifacts/04-AKS/README.md) article.
 
 ## AKS with MySQL Flexible Server
 
-TODO
+Running your database layer in a container is better than running it in a VM, but not as great as removing all the operating system and software management components.
+
+To implement this deployment, follow the steps to perform deployments using AKS with Flexible Server, reference the [Utilize AKS and Azure Database for MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md) article.
