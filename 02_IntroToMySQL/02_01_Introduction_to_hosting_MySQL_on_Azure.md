@@ -2,7 +2,7 @@
 
 Now that you understand the benefits of MySQL and a few common deployment models, this section explains approaches to hosting MySQL on Azure and the advantages of the Azure platform.
 
-## Advantages
+## Advantages of choosing Azure
 
 The Azure platform is trusted by millions of customers around the world, and there are over 90,000 Cloud Solution Providers partnered with Microsoft to add extra benefits and services to the Azure platform. By leveraging Azure, organizations can easily modernize their applications, expedite application development, and adapt application requirements to meet the demands of their users.
 

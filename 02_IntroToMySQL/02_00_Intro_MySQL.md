@@ -8,7 +8,7 @@ One of the most common use cases for MySQL databases is web applications. Due to
 
 Though MySQL has a distinct set of advantages, it does compete with other common relational database offerings. Though the emphasis of this guide is operating MySQL on Azure to architect scalable applications, it is important to be aware of other potential offerings such as MariaDB. MariaDB is a fork from the original MySQL code base when Oracle purchased MySQL.
 
-While MariaDB is compatible with the MySQL protocol, the project is not managed by Oracle, and its maintainers claim that this allows them to better compete with other proprietary databases. Althought you have several options to choose from, MySQL has over twenty years of development experience backing it, and businesses appreciate the platform's maturity.
+While MariaDB is compatible with the MySQL protocol, the project is not managed by Oracle, and its maintainers claim that this allows them to better compete with other proprietary databases. Although you have several options to choose from, MySQL has over twenty years of development experience backing it, and businesses appreciate the platform's maturity.
 
 Another popular open-source MySQL competitor is PostgreSQL. MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner. Microsoft offers cloud-hosted PostgreSQL, which you can compare with cloud-hosted MySQL [in Microsoft Learn.](https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings)
 
@@ -16,11 +16,17 @@ Another popular open-source MySQL competitor is PostgreSQL. MySQL supports many 
 
 MySQL has multiple deployment options for development and production environments alike.
 
-### On-premises or in the cloud
+### On-premises
 
 MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and have the disadvantages of hardware/OS maintenance.
 
-One benefit to choosing a cloud hosted environment is there are no large upfront costs. You have the option to pay monthly subscription fees as you go or to commit to certain usage level for discounts. Maintenance, up-to-date software, security and support all fall into the responsiblity of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
+One benefit to choosing a cloud hosted environment is there are no large upfront costs. You have the option to pay monthly subscription fees as you go or to commit to certain usage level for discounts. Maintenance, up-to-date software, security and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
+
+### Cloud IaaS (in a VM)
+
+Migrating your organization's infrastructure to an IaaS solution helps you reduce maintenance of on-premises data centers, save money on hardware costs, and gain real-time business insights. IaaS solutions give you the flexibility to scale your IT resources up and down with demand. They also help you quickly provision new applications and increase the reliability of your underlying infrastructure.
+
+IaaS lets you bypass the cost and complexity of buying and managing physical servers and datacenter infrastructure. Each resource is offered as a separate service component, and you only pay for a particular resource for as long as you need it. A cloud computing service provider like Azure manages the infrastructure, while you purchase, install, configure, and manage your own software—including operating systems, middleware, and applications.
 
 ### Containers
 
