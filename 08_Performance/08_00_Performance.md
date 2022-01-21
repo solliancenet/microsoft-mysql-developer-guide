@@ -47,5 +47,13 @@ The recommended process is the same as utilizing read replicas for maintenance f
 - Utilize monitoring to drive tier upgrades and scale decisions.
 - Consider moving regions if the users or application needs change.
 
+## Server Parameters
+
+As part of the migration, it is likely the on-premises [server parameters](https://docs.microsoft.com/en-us/azure/mysql/concepts-server-parameters) were modified to support a fast egress. Also, modifications were made to the Azure Database for MySQL parameters to support a fast ingress. The Azure server parameters should be set back to their original on-premises workload optimized values after the migration.
+
+However, be sure to review and make server parameters changes that are appropriate for the workload and the environment. Some values that were great for an on-premises environment, may not be optimal for a cloud-based environment. Additionally, when planning to migrate the current on-premises parameters to Azure, verify that they can in fact be set.  
+
+Some parameters are not allowed to be modified in Azure Database for MySQL.
+
 
 TODO - https://wemakewaves.medium.com/migrating-our-php-applications-to-docker-without-sacrificing-performance-1a69d81dcafb

@@ -10,7 +10,17 @@ Public access allows hosts, including Azure services, to access the PaaS MySQL i
 
 > Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
 
-#### Configuring Public Access Guides
+## Private Link
+
+Both MySQL PaaS offerings support public connectivity, which permits certain hosts to access the instance over the public internet.  However most organization will want to utilize private connectivity which limits access to an Azure virtual network deployment. The difference between public and private access is addressed in the [network security document.](./06_01_Networking.md)
+
+To limit access to the Azure Database for MySQL to internal Azure resources, enable [Private Link](https://docs.microsoft.com/en-us/azure/mysql/concepts-data-access-security-private-link).  Private Link will ensure that the MySQL instance will be assigned a private IP rather than a public IP address.
+
+> **Note:** There are many other [basic Azure Networking considerations](https://docs.microsoft.com/en-us/azure/mysql/concepts-data-access-and-security-vnet) that must be taken into account that are not the focus of this guide.
+
+Review a set of potential [security baseline](https://docs.microsoft.com/en-us/azure/mysql/security-baseline) tasks that can be implemented across all Azure resources. Not all of the items described on the reference link will apply to the specific data workloads or Azure resources.
+
+### Configuring Public Access Guides
 
 - Single Server
   - [Azure portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
