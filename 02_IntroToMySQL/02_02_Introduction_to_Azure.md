@@ -8,10 +8,10 @@ The [Azure Fundamentals Microsoft Learn Module](https://docs.microsoft.com/learn
 
 The following tables outlines some of the Azure services used in application developer scenarios that will be discussed in further detail in later sections of this guide.
 
-- **Virtual Machines (IaaS)**: You will begin by running a PHP sample application on an Azure Windows Server Virtual Machine.
-- **Azure App Service (PaaS)**: You will deploy the PHP application to Azure App Service, a flexible, simple-to-use application hosting service.
-- **Azure Container Instances (PaaS)**: You will *containerize* your app on the VM to operate in an environment isolated from other development tools installed on the system. Azure Container Instances provides a managed environment to operate containers.
-- **Azure Kubernetes Service (PaaS)**: AKS also hosts containerized apps, but it is optimized for more advanced orchestration scenarios, such as high availability.
+- **[Virtual Machines (IaaS)](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview)**: You will begin by running a PHP sample application on an Azure Windows Server Virtual Machine.
+- **[Azure App Service (PaaS)](https://docs.microsoft.com/en-us/azure/app-service/overview)**: You will deploy the PHP application to Azure App Service, a flexible, simple-to-use application hosting service.
+- **[Azure Container Instances (PaaS)](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview)**: You will *containerize* your app on the VM to operate in an environment isolated from other development tools installed on the system. Azure Container Instances provides a managed environment to operate containers.
+- **[Azure Kubernetes Service (PaaS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)**: AKS also hosts containerized apps, but it is optimized for more advanced orchestration scenarios, such as high availability.
 
 For a more comprehensive view, consult the [Azure Fundamentals Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/tour-of-azure-services) module.
 
@@ -19,9 +19,9 @@ For a more comprehensive view, consult the [Azure Fundamentals Microsoft Learn](
 
 Azure provides a flexible resource hierarchy to simplify cost management and security. This hierarchy consists of four levels:
 
-- **Management groups**: Management groups consolidate multiple Azure subscriptions for compliance and security purposes.
+- **[Management groups](https://docs.microsoft.com/en-us/azure/governance/management-groups/overview)**: Management groups consolidate multiple Azure subscriptions for compliance and security purposes.
 - **Subscriptions**: Subscriptions govern cost control and access management. Azure users cannot provision Azure resources without a subscription.
-- **Resource groups**: Resource groups consolidate the individual Azure resources for a given deployment. All provisioned Azure resources belong to one resource group. In this whitepaper, you will provision a *resource group* in your *subscription* to hold the required resources.
+- **[Resource groups](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)**: Resource groups consolidate the individual Azure resources for a given deployment. All provisioned Azure resources belong to one resource group. In this whitepaper, you will provision a *resource group* in your *subscription* to hold the required resources.
   - Resource groups have a geographic location that determines where metadata about that resource group is stored
 - **Resources**: An Azure resource is an instance of a service. An Azure resource belongs to one resource group located in one subscription.
   - Most Azure resources are provisioned in a particular region
@@ -32,7 +32,7 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
 When it comes to managing Azure resources, you have many potential options. [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure subscriptions. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment.
 
-All Azure management tools, including the CLI, PowerShell module, REST API, and browser-based Portal, interact with the Azure Resource Manager layer and as such the Identity and access management (IAM) security controls.
+All Azure management tools, including the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli), [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-7.1.0) module, [Azure REST API](https://docs.microsoft.com/en-us/rest/api/azure/), and browser-based Portal, interact with the Azure Resource Manager layer and as such the [Identity and access management (IAM)](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) security controls.
 
   ![This image demonstrates how the Azure Resource Manager provides a robust, secure interface to Azure resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
@@ -40,10 +40,10 @@ Access control to all Azure services is offered via the Azure role-based access 
 
 RBAC consists of four parts:
 
-- A *role definition* describes a set of actions that can be performed. It can be broad or granular.
-- A *security principal* represents a user, a group of users, or a service.
-- The *scope* dictates at what level a role assignment to a security principal applies.
-- A *role assignment* which is a combination of a definition, principal and scope.
+- A *[role definition](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview#role-definition)* describes a set of actions that can be performed. It can be broad or granular.
+- A *[security principal](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview#security-principal)* represents a user, a group of users, or a service.
+- The *[scope](https://docs.microsoft.com/en-us/azure/role-based-access-control/scope-overview)* dictates at what level a role assignment to a security principal applies.
+- A *[role assignment](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal?tabs=current)* which is a combination of a definition, principal and scope.
 
 An example is assigning the *Contributor* role over a resource group to a developer in your organization. In this case, the *Contributor* role allows the developer to manage all resources contained within the resource group but not manage other users' access to those resources. The scope is the resource group, and the security principal is the developer's account in Azure Active Directory.
 
@@ -57,7 +57,7 @@ The flexibility and variety of Azure's management tools make it intuitive for an
 
 ### Azure Portal
 
-When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **Azure mobile app** provides similar features for mobile users.
+When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
 
   ![The picture shows the some of the initial Azure service list.](media/azure-portal-services.png "Azure Portal Services")
 
