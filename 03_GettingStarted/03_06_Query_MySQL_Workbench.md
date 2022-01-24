@@ -1,4 +1,4 @@
-# Query Azure Database for MySQL using MySQL Workbench
+# Connect and Query Azure Database for MySQL using MySQL Workbench
 
 This section explains how to perform queries against Azure Database for MySQL Flexible Server using MySQL Workbench, a UI-based management tool.
 

@@ -1,4 +1,4 @@
-# PHP Language Support
+# Connect and Query PHP Language Support
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through PHP.
 
