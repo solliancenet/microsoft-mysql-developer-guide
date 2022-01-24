@@ -1,4 +1,4 @@
-# Introduction to Azure
+# Introduction to Azure resource management
 
 With a firm understanding of why millions of organizations choose Azure, and the database deployment models (IaaS vs. PaaS), the next step is to provide more detail about **how** developers interact with Azure.
 
@@ -28,6 +28,10 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
   ![This image shows Azure resource scopes.](./media/scope-levels.png "Azure resource scopes")
 
+## Create your Landing zone
+
+An [Azure Landing zone](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure portal to fit the workloads needs.
+
 ## Automating and managing with Azure services
 
 When it comes to managing Azure resources, you have many potential options. [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure subscriptions. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment.
@@ -36,18 +40,7 @@ All Azure management tools, including the [Azure CLI](https://docs.microsoft.com
 
   ![This image demonstrates how the Azure Resource Manager provides a robust, secure interface to Azure resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
-Access control to all Azure services is offered via the Azure role-based access control (Azure RBAC) natively built into the management platform.
-
-RBAC consists of four parts:
-
-- A *[role definition](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview#role-definition)* describes a set of actions that can be performed. It can be broad or granular.
-- A *[security principal](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview#security-principal)* represents a user, a group of users, or a service.
-- The *[scope](https://docs.microsoft.com/en-us/azure/role-based-access-control/scope-overview)* dictates at what level a role assignment to a security principal applies.
-- A *[role assignment](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal?tabs=current)* which is a combination of a definition, principal and scope.
-
-An example is assigning the *Contributor* role over a resource group to a developer in your organization. In this case, the *Contributor* role allows the developer to manage all resources contained within the resource group but not manage other users' access to those resources. The scope is the resource group, and the security principal is the developer's account in Azure Active Directory.
-
-  ![This image demonstrates the three components of Azure RBAC.](media/rbac-overview.png "Azure RBAC overview")
+Access control to all Azure services is offered via the [Azure role-based access control (Azure RBAC)](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) natively built into the management platform. Azure RBAC is a system that provides fine-grained access management of Azure resources. Using Azure RBAC, you can segregate duties within your team and grant only the amount of access to users that they need to perform their jobs.
 
 ## Azure Management Tools
 
@@ -73,7 +66,7 @@ By using the existing command-line tools and REST based APIs, you can build your
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
-Although very similar, you may find that there are some subtle differences between how each of these tools operate and the actions that can be accomplished. Use [Azure command-line tool guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
+Although very similar, you may find that there are some subtle differences between how each of these tools operate and the actions that can be accomplished. Use the [Azure command-line tool guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
 
 It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. You can also run these tools locally.  
 
@@ -114,7 +107,7 @@ To develop an effective organization hierarchy of resources, Azure administrator
 - **Adopt a naming convention:** Names in Azure should include business details, such as the organization department, and operational details for IT personnel, like the workload.
 - **Adopt other Azure governance tools:** Azure provides mechanisms such as [resource tags](https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources?tabs=json) and [resource locks](https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources?tabs=json) to facilitate compliance, cost management, and security.
 
-## Resources to guide an Azure Deployment
+## Azure Deployment resources
 
 ### Support
 

@@ -1,4 +1,4 @@
-# Introduction to Azure Database for MySQL
+# Introduction to Azure Database for MySQL deployment options
 
 As mentioned previously, developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). Though PaaS offerings do not support direct management of the OS and the database engine, they have built-in support for high availability, automating backups, and meeting compliance requirements. Moreover, Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. (TODO:Add link for MySQL Migration Guide)
 
@@ -12,14 +12,13 @@ For managing database objects and access controls at the server and database lev
 
 ## Azure Database for MySQL Deployment Modes
 
-Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings. For a more comprehensive comparison table, please consult [this document.](https://docs.microsoft.com/azure/mysql/select-right-deployment-type)
+Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
 ### Single Server
 
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, offer high availability, and manage backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
 
 > **Note:** Single servers are best suited for existing applications already leveraging single server. For all new developments or migrations, Flexible Server would be the recommended deployment option.
-
 > For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 ### Flexible Server
@@ -56,7 +55,7 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 - The DBA role and the `SUPER` privilege are unsupported
 - `SELECT ... INTO OUTFILE` statements to write query results to files are unsupported, as the filesystem is not directly exposed by the service
 
-## Single Server and Flexible Server Comparison Table
+**Single Server and Flexible Server Comparison Table**
 
 The table below summarizes the concepts of this section. In the following section, we will address each offering's features in-depth.
 
@@ -68,4 +67,4 @@ The table below summarizes the concepts of this section. In the following sectio
 | Cost management through pausing | Supported | Supported
 | Optimized for burstable workloads | Supported | Does not provide the same variety of compute tiers
 | Application use cases | New applications & migrations from on-premises | Applications that already utilize Single Server
-| Control plane management tools | Azure PowerShell, Azure CLI, ARM templates, Azure REST API, SDKs for various languages | Azure PowerShell, Azure CLI, ARM templates, Azure REST API, SDKs for various languages
+| Control plane management tools | Azure PowerShell, Azure CLI, ARM templates, Azure REST API, SDKs for various languages | Azure PowerShell, Azure CLI, ARM templates, Azure REST API, SDKs for various languages|

@@ -158,14 +158,38 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/vnet-concept.png",
-        "for": "./media/vnet-concept.png"
+        "from": "./media/laravel-service-ip.png",
+        "for": "./media/laravel-service-ip.png"
     },
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/show-private-link-overview.png",
-        "for": "./media/show-private-link-overview.png"
+        "from": "./media/app-loads-aks.png",
+        "for": "./media/app-loads-aks.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-sample-query.png",
+        "for": "./media/activity-log-sample-query.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-query-results.png",
+        "for": "./media/activity-log-query-results.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aborted-connections-alert-rule.png",
+        "for": "./media/aborted-connections-alert-rule.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/alert-rule-sent-to-email.png",
+        "for": "./media/alert-rule-sent-to-email.png"
     },
     {
         "type": "LoadedResource",
@@ -196,29 +220,5 @@
         "verbosity": "INFO",
         "from": "./media/microservices-with-replication.png",
         "for": "./media/microservices-with-replication.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/aborted-connections-alert-rule.png",
-        "for": "./media/aborted-connections-alert-rule.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/alert-rule-sent-to-email.png",
-        "for": "./media/alert-rule-sent-to-email.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/activity-log-sample-query.png",
-        "for": "./media/activity-log-sample-query.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/activity-log-query-results.png",
-        "for": "./media/activity-log-query-results.png"
     }
 ]

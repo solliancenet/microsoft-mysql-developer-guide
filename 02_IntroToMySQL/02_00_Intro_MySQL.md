@@ -12,7 +12,7 @@ While MariaDB is compatible with the MySQL protocol, the project is not managed 
 
 Another popular open-source MySQL competitor is [PostgreSQL](https://www.postgresql.org/). MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner. Microsoft offers cloud-hosted [Azure Database for PostgreSQL](https://docs.microsoft.com/en-us/azure/postgresql/overview), which you can compare with cloud-hosted MySQL [in Microsoft Learn.](https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings)
 
-## Deployment models
+## Infrastructure deployment models
 
 MySQL has multiple deployment options for development and production environments alike.
 
@@ -34,6 +34,6 @@ While much more lightweight, containers are similar to VMs, and you can start an
 
 MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL in containerized applications. Containerized MySQL can persist data to the machine with the Docker runtime, and it can even operate from an existing MySQL data directory.
 
-### Cloud independence
+### Cloud PaaS
 
 MySQL databases can be deployed on public cloud platforms by utilizing VMs or Kubernetes. However, these platforms offer their own managed MySQL products, such as Amazon RDS for MySQL and Google Cloud SQL for MySQL.
