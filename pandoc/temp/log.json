@@ -38,12 +38,6 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/rbac-overview.png",
-        "for": "media/rbac-overview.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
         "from": "media/azure-management-tool-maturity.png",
         "for": "media/azure-management-tool-maturity.png"
     },

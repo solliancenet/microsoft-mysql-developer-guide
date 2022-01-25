@@ -35,9 +35,9 @@ To implement this deployment, follow the steps to perform a simulated classical 
 
 ## Azure VM Deployment
 
-An Azure VM Deployment is very similar to a classical deployment but rather than deploying to phsical hardware, you are deploying to virtualized hardware in the Azure cloud.  The operating system and software will be the same as your classic deployment, but in order to open the system up, you'll need to modify the virtual networking to allow access to your web server.
+An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, you are deploying to virtualized hardware in the Azure cloud.  The operating system and software will be the same as your classic deployment, but in order to open the system up, you'll need to modify the virtual networking to allow access to your web server.
 
-The advantages of using Azure to host your virtual machines include the ability to enable backup and restore services, disk encryption and scaling up options that require no upfront costs and provide flexiblity in configuration options with just a few clicks of the mouse.  This is in contrast to the relatively complex and extra work needed to enable these types of services on-premises.
+The advantages of using Azure to host your virtual machines include the ability to enable backup and restore services, disk encryption and scaling up options that require no upfront costs and provide flexibility in configuration options with just a few clicks of the mouse.  This is in contrast to the relatively complex and extra work needed to enable these types of services on-premises.
 
 To implement this deployment, follow the steps to perform an Azure VM deployment, reference the [Cloud Deployment to Azure VM](./../artifacts/02-01-CloudDeploy-Vm/README.md) article.
 
