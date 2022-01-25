@@ -1,8 +1,8 @@
-# Provision Flexible Server and Database
+# Provision Flexible Server and a database
 
 This section illustrates how to deploy MySQL Flexible Server using various Azure management tools.
 
-## Azure Portal
+## Azure portal
 
 Azure provides a [quickstart document](https://docs.microsoft.com/azure/mysql/flexible-server/quickstart-create-server-portal) for users who would like to use the Azure portal to provision Flexible Server. While this is a great opportunity to explore the configuration parameters of Flexible Server, IaC approaches, like the imperative Azure CLI or the declarative ARM template, are preferable to create deployments that can easily be replicated in other environments.
 
@@ -16,6 +16,6 @@ The image below, from a successful CLI provisioning attempt for Flexible Server,
 
 ![This image demonstrates the MySQL Flexible Server provisioned through Bash CLI commands.](./media/mysql-flex-params.png "CLI provisioning")
 
-## ARM Template
+## ARM template
 
 Azure provides a [quickstart document](https://docs.microsoft.com/azure/mysql/flexible-server/quickstart-create-arm-template#review-the-template) with a comprehensive ARM template for a Flexible Server deployment. We have also provided a [sample ARM template](mysql-flexible-server-template.json) that just requires the `serverName`, `administratorLogin`, and `administratorLoginPassword` parameters to deploy: the Azure sample template requires additional parameters to run. It can be deployed with the `New-AzResourceGroupDeployment` PowerShell command in the quickstart or the `az deployment group create` CLI command.

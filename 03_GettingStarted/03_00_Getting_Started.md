@@ -1,26 +1,26 @@
 # Getting Started - Setup and Tools
 
-With a firm understanding of Azure and MySQL offerings available to you, it is time to review how to get setup to start using these various services. In this section we will explore how to get your Azure subscriptions configured and ready to host your MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
+With a firm understanding of Azure and MySQL offerings available to you, it is time to review how to start using these various services. In this section, we will explore how to get your Azure subscriptions configured and ready to host your MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
 
 [Introduction to Azure Database for MySQL deployment options]
 
-## Azure Free Account
+## Azure free account
 
-Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account](https://azure.microsoft.com/en-in/free/mysql/)
+Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://azure.microsoft.com/en-in/free/mysql/)
 
-## Azure Subscriptions and Limits
+## Azure subscriptions and limits
 
-As explained in the [Introduction to Azure resource management], subscriptions are a critical component of the Azure hierarchy: resources cannot be provisioned without an Azure subscription and although the cloud is highly scalable, you cannot provision an unlimited number of resources. A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits by submitting support tickets through the Azure Portal. Limit increase requests help tell Microsoft capacity planning teams understand if they need to provide more capacity when needed.
+As explained in the [Introduction to Azure resource management], subscriptions are a critical component of the Azure hierarchy: resources cannot be provisioned without an Azure subscription, and although the cloud is highly scalable, you cannot provision an unlimited number of resources. A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits by submitting support tickets through the Azure portal. Limit increase requests help tell Microsoft capacity planning teams to understand if they need to provide more capacity when needed.
 
 Since most Azure services are provisioned in regions, some limits apply at the regional level. Developers must consider both global and regional subscription limits when developing and deploying applications.
 
 Consult [Azure's comprehensive list of service and subscription limits](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) for more details.
 
-## Azure Authentication
+## Azure authentication
 
 As mentioned previously, Azure PaaS MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is also separated between the control plane and the data plane.
 
-In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to perform an operation against an Azure resource. Review Azure RBAC in the [Introduction to Azure resource management] for more information.
+In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to operate against an Azure resource. Review Azure RBAC in the [Introduction to Azure resource management] section for more information.
 
 In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more.
 
@@ -41,4 +41,4 @@ Once you have determined your editor of choice, you will need to pick a developm
 [PHP language support]
 [Java language support]
 [Python language support]
-[Other popular languages for MySQL Apps]
+[Other notable languages for MySQL apps]

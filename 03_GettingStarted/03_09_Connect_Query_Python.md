@@ -1,4 +1,4 @@
-# Python Language Support
+# Connect and query Azure Database for MySQL using Python
 
 This section will demonstrate how to query Azure Database for MySQL Flexible Server using the `mysql-connector-python` library on Python 3.
 

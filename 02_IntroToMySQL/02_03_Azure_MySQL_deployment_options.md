@@ -10,20 +10,19 @@ For managing database objects and access controls at the server and database lev
 
 ![This image demonstrates the control plane for Azure PaaS MySQL.](./media/mysql-conceptual-diagram.png "Control plane for Azure PaaS MySQL")
 
-## Azure Database for MySQL Deployment Modes
+## Azure Database for MySQL deployment modes
 
 Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
 ### Single Server
 
-Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, offer high availability, and manage backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/).
+Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, high availability, and backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single Server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/). For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
-> **Note:** Single servers are best suited for existing applications already leveraging single server. For all new developments or migrations, Flexible Server would be the recommended deployment option.
-> For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
+> **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option.
 
 ### Flexible Server
 
-Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than single server.
+Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than Single Server.
 
 Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. Just like Single Server, [Flexible Server can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
@@ -31,13 +30,13 @@ Cost management is one of the major advantages of Flexible Server: it supports a
 
 ![This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.](./media/flexible-server.png "Operation of MySQL Flexible Server")
 
-#### Flexible Server Video Introduction
+#### Flexible Server video introduction
 
 Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
 > [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
 
-#### Flexible Server Pricing & TCO
+#### Flexible Server pricing & TCO
 
 The MySQL Flexible Server tiers offer a storage range between 20 GiB and 16 TiB and the same backup retention period range of 1-35 days. However, they differ in core count and memory per vCore. Choosing a compute tier affects the database IOPS and pricing.
 

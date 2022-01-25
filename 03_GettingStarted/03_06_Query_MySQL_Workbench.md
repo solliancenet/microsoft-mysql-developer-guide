@@ -1,4 +1,4 @@
-# Connect and Query Azure Database for MySQL using MySQL Workbench
+# Connect and query Azure Database for MySQL using MySQL Workbench
 
 This section explains how to perform queries against Azure Database for MySQL Flexible Server using MySQL Workbench, a UI-based management tool.
 
@@ -13,7 +13,7 @@ Download MySQL Workbench from the [MySQL Downloads.](https://dev.mysql.com/downl
 Explore the [Use MySQL Workbench with Azure Database for MySQL Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/connect-workbench) article to perform the following activities:
 
     - Create a new database in the Flexible Server instance
-    - Create, query and update data in a table (`inventory`)
+    - Create, query, and update data in a table (inventory)
     - Delete records from the table
 
 Note that MySQL Workbench can automatically initiate an SSL-secured connection to Azure Database for MySQL. However, it is recommended to use the [SSL public certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) in your connections. To bind the SSL public certificate to MySQL Workbench, choose the downloaded certificate file as the **SSL CA File** on the **SSL** tab.

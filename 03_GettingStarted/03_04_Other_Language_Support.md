@@ -1,4 +1,4 @@
-# Other Notable Languages for MySQL Apps
+# Other notable languages for MySQL apps
 
 Like the other language support guides, Flexible Server is compatible with all MySQL clients that support MySQL Community Edition. Microsoft provides a [curated list of compatible clients for MySQL Single Server](https://docs.microsoft.com/azure/mysql/concepts-compatibility).
 

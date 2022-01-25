@@ -4,7 +4,7 @@ MySQL is a relational database management system based on [SQL – Structured Qu
 
 One of the most common use cases for MySQL databases is web applications that need data persistence. Due to MySQL's scalability, popular content management systems, such as [WordPress](https://wordpress.org/) and [Drupal](https://www.drupal.org/) utilize it for their data persistence. More broadly, [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) apps, which integrate Linux, Apache, MySQL, and PHP, leverage scalable web servers, languages, and database engines to serve a large set of global web services.
 
-## Comparison with Other RDBMS offerings
+## Comparison with other RDBMS offerings
 
 Though MySQL has a distinct set of advantages, it does compete with other common relational database offerings. Though the emphasis of this guide is operating MySQL on Azure to architect scalable applications, it is important to be aware of other potential offerings such as [MariaDB](https://mariadb.org/). MariaDB is a fork from the original MySQL code base when [Oracle purchased Sun Microsystems](https://www.oracle.com/webfolder/college-recruiting/projects/mysql.html#.YexR-P7ML8o).
 
@@ -20,7 +20,7 @@ MySQL has multiple deployment options for development and production environment
 
 MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and have the disadvantages of hardware/OS maintenance.
 
-One benefit to choosing a cloud hosted environment is there are no large upfront costs. You have the option to pay monthly subscription fees as you go or to commit to certain usage level for discounts. Maintenance, up-to-date software, security and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
+One benefit to choosing a cloud-hosted environment is there are no large upfront costs. You have the option to pay monthly subscription fees as you go or to commit to a certain usage level for discounts. Maintenance, up-to-date software, security, and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
 
 ### Cloud IaaS (in a VM)
 

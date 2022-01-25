@@ -1,12 +1,12 @@
-# Python Language Support
+# Python language support
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Python.
 
-## Example Code
+## Example code
 
 Refer to the [Connect and Query sample for Python.](./03_Connect_Query_Python.md)
 
-## Application Connectors
+## Application connectors
 
 *MySQL Connector/Python* offers a Python Database API specification-compatible driver for MySQL database access (PEP 249). It does not depend on a MySQL client library. The Python Connect and Query sample utilizes *MySQL Connector/Python*.
 
