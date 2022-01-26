@@ -1,6 +1,6 @@
 # Deploying a Laravel app backed by a Java REST API to AKS
 
-## App Introduction
+## App introduction
 
 In the previous stages of this developer guide, you explored how an MVC app could be deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
 
@@ -12,7 +12,7 @@ We recommend creating a new resource group for this exercise.
 az group create -n [RESOURCE GROUP NAME] -l [AZURE REGION]
 ```
 
-## Provision the Database
+## Provision the database
 
 Navigate to the `Database` directory within the `java-api` directory in the project root from a PowerShell terminal instance. Then, execute the `create-database.ps1` script, passing the parameters in the order shown below. The command will provision a new Flexible Server instance with the app database schema.
 
@@ -29,7 +29,7 @@ The Flexible Server instance will have 1 vCore, 2 GiB memory, 32 GiB storage, an
 
 > Consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet) for information on how to configure private access for MySQL Flexible Server from Azure Kubernetes Service. This example uses public access for simplicity.
 
-## Create Docker Images
+## Create Docker images
 
 ### API
 
@@ -51,7 +51,7 @@ docker image build -t noshnowui:0.0.1 .
 
 ## Provision Azure Kubernetes Service
 
-Navigate to the `Kubernetes` directory within the `java-api` directory in the project root from a PowerShell terminal instance. Then, execute the `create-azure-resources.ps1` script, passing the parameters in the order shown below. The command will provision Azure Container Registry and push the two Docker images; provision a new Azure Kubernetes Service cluster and provide it access to ACR; and create the `contosonoshnow` namespace within the Kubernetes cluster.
+Navigate to the `Kubernetes` directory within the `java-api` directory in the project root from a PowerShell terminal instance. Then, execute the `create-azure-resources.ps1` script, passing the parameters in the order shown below. The command will provision Azure Container Registry and push the two Docker images; provision a new Azure Kubernetes Service cluster and provide it access to ACR; create the `contosonoshnow` namespace within the Kubernetes cluster.
 
 - Provide a unique `Suffix` that is the **same as the suffix used for the create-database.ps1 script**
 - Provide the name of your lab `Resource Group` (same as the Resource Group used for the prior script)
@@ -95,9 +95,9 @@ kubectl apply -f api.deployment.yml
 
 Congratulations. You have deployed the API to Azure Kubernetes Service and exposed it internally through a Service.
 
-## Deploy the Laravel App to Azure Kubernetes Service
+## Deploy the Laravel app to Azure Kubernetes Service
 
-### Create the Web App Service
+### Create the Laravel app Service
 
 Navigate to the `Kubernetes` directory in the `sample-php-app-rest` directory. Create a service to expose the Laravel app through a public IP address (in this case, through a Load Balancer provisioned in Azure).
 
@@ -105,7 +105,7 @@ Navigate to the `Kubernetes` directory in the `sample-php-app-rest` directory. C
 kubectl apply -f web.service.yml
 ```
 
-### Create the Web App Deployment
+### Create the Laravel app Deployment
 
 The deployment specified in the `web.deployment.yml` file (in the same directory as the previous step) creates two pods from the Laravel app image pushed to ACR.
 
@@ -115,7 +115,7 @@ Again, replace the `[SUFFIX]` placeholder in the file. Then, create the deployme
 kubectl apply -f web.deployment.yml
 ```
 
-## Browse to the App
+## Browse to the app
 
 Run `kubectl get svc` to get the public IP address of `laravel-ui-service`. Copy the `EXTERNAL-IP` value to a browser window.
 
