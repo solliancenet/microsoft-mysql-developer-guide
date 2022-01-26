@@ -90,7 +90,13 @@ To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell
 
 **Bicep**
 
+<<<<<<< Updated upstream:02_IntroToMySQL/02_02_Introduction_to_Azure_resource_mgmt.md
 Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed consistently. Some of the benefits include:
+=======
+Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner. 
+
+Some of the benefits include:
+>>>>>>> Stashed changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
 
 - **Support for all resource types and API versions**: Bicep immediately supports all preview and GA versions for Azure services. As soon as a resource provider introduces new resources types and API versions, you can use them in your Bicep file. You don't have to wait for tools to be updated before using the new services.
 - **Simple syntax**: When compared to the equivalent JSON template, Bicep files are more concise and easier to read. Bicep requires no previous knowledge of programming languages. Bicep syntax is declarative and specifies which resources and resource properties you want to deploy.
@@ -101,7 +107,11 @@ Reading, updating, and managing the ARM template JSON code can be difficult for 
 
 **Terraform**
 
+<<<<<<< Updated upstream:02_IntroToMySQL/02_02_Introduction_to_Azure_resource_mgmt.md
 The benefits of IaC have been described in the paragraphs above. Hashicorp Terraform is an open-source tool for provisioning and managing cloud infrastructure. There are instances of multi-cloud deployment requirements. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
+=======
+[Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
+>>>>>>> Stashed changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
 
 ### Other tips
 
