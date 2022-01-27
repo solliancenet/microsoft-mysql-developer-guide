@@ -1,10 +1,10 @@
 # Monitoring
 
-Once you have deployed your application and database, the next phase is to manage the new cloud-based data workload resources. Management operations include both control plane and data plane activities. Control plane activities are those related to the Azure resources versus data plane which is **inside** the Azure resource (in this case MySQL).
+Once you have deployed your application and database, the next phase is to manage the new cloud-based data workload resources. Management operations include both control plane and data plane activities. Control plane activities are related to Azure resources, versus data plane, which is **inside** the Azure resource (in this case MySQL).
 
-Azure Database for MySQL provides for the ability to monitor both of these types of operational activities using Azure-based tools such as [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview), [Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment) and [Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview). In addition to the Azure-based tools, security information and event management (SIEM) systems can be configured to consume these logs as well.
+Azure Database for MySQL provides for the ability to monitor both of these types of operational activities using Azure-based tools such as [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview), [Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment), and [Azure Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview). In addition to the Azure-based tools, security information and event management (SIEM) systems can be configured to consume these logs as well.
 
-Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn Azure and database administrators of any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure run books](https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-runbook) to address the event.
+Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn Azure and database administrators of any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-runbook) to address the event.
 
 ## Azure Monitor
 
@@ -41,8 +41,8 @@ The table below, pulled from the [Microsoft documentation](https://docs.microsof
 |Metric display name|Metric|Unit|Description|
 |---|---|---|---|
 |Host CPU percent|cpu_percent|Percent|The percentage of CPU utilization on the server, including CPU utilization from both customer workload and Azure MySQL processes|
-|Host Network In |network_bytes_ingress|Bytes|Incoming network traffic on the server, including traffic from both customer database and Azure MySQL features like replication, monitoring, logs etc.|
-|Host Network out|network_bytes_egress|Bytes|Outgoing network traffic on the server, including traffic from both customer database and Azure MySQL features like replication, monitoring, logs etc.|
+|Host Network In |network_bytes_ingress|Bytes|Incoming network traffic on the server, including traffic from both customer database and Azure MySQL features like replication, monitoring, logs, etc.|
+|Host Network out|network_bytes_egress|Bytes|Outgoing network traffic on the server, including traffic from both customer database and Azure MySQL features like replication, monitoring, logs, etc.|
 |Replication Lag|replication_lag|Seconds|The time since the last replayed transaction. This metric is available for replica servers only.|
 |Active Connections|active_connection|Count|The number of active connections to the server.|
 |Backup Storage Used|backup_storage_used|Bytes|The amount of backup storage used.|
@@ -50,14 +50,14 @@ The table below, pulled from the [Microsoft documentation](https://docs.microsof
 |Host Memory Percent|memory_percent|Percent|The percentage of memory in use on the server, including memory utilization from both customer workload and Azure MySQL processes|
 |Storage Limit|storage_limit|Bytes|The maximum storage for this server.|
 |Storage Percent|storage_percent|Percent|The percentage of storage used out of the server's maximum.|
-|Storage Used|storage_used|Bytes|The amount of storage in use. The storage used by the service may include the database files, transaction logs, and the server logs.|
+|Storage Used|storage_used|Bytes|The amount of storage in use. The storage used by the service may include the database files, transaction logs, and server logs.|
 |Total connections|total_connections|Count|The number of total connections to the server|
-|Aborted Connections|aborted_connections|Count|The number of failed attempts to connect to the MySQL, for example, failed connection due to bad credentials.|
+|Aborted Connections|aborted_connections|Count|The number of failed attempts to connect to MySQL, for example, failed connection due to bad credentials.|
 |Queries|queries|Count|The number of queries per second|
 
 > For a similar list for Single Server, consult [this document.](https://docs.microsoft.com/azure/mysql/concepts-monitoring)
 
-## MySQL Audit Logs
+## MySQL audit logs
 
 MySQL has a robust built-in audit log feature. By default, this [audit log feature is disabled](https://docs.microsoft.com/en-us/azure/mysql/concepts-audit-logs) in Azure Database for MySQL.  Server level logging can be enabled by changing the `audit_log_enabled` server parameter. Once enabled, logs can be accessed through [Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/overview) and [Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment) by turning on [diagnostic logging](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal#set-up-diagnostic-logs).
 
@@ -78,7 +78,7 @@ Note that excessive audit logging can degrade server performance, so be mindful 
 - [Single Server Audit Logs](https://docs.microsoft.com/azure/mysql/concepts-audit-logs)
 - [Flexible Server Audit Logs](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)
 
-### Enabling Audit Logs
+### Enabling audit logs
 
 Audit logging is controlled by the `audit_log_enabled` server parameter in Flexible Server. Azure provides granularity over the events logged (`audit_log_events`), the database users subject to logging (`audit_log_include_users`), and an explicit list of the database users exempt from logging (`audit_log_exclude_users`).
 
@@ -88,7 +88,7 @@ Besides being sent to Azure Monitor, MySQL audit logs can be sent to Azure Stora
 
 Reference [Configure and access audit logs for Azure Database for MySQL in the Azure portal](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal) for more information.
 
-### Notes about the Flexible Server Portal Example
+### Notes about the Flexible Server portal example
 
 If you try to run the KQL query in the Flexible Server Azure portal example, but you encounter errors, try to generate some activity and/or expand the scope of the `audit_log_events` parameter. Here are some actions which generated activity for my KQL queries:
 
@@ -107,9 +107,9 @@ As you can see, KQL imposes a schema on logs to facilitate analysis. Consult [th
 
 ### Helpful links - Monitoring
 
-- Flexible Server : [Configure audit logs (Azure portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
+- Flexible Server: [Configure audit logs (Azure portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
 
-- Single Server : [Configure and access audit logs in the Azure portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
+- Single Server: [Configure and access audit logs in the Azure portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
 
 - [Configure and access audit logs in the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-cli)
 
@@ -117,7 +117,7 @@ As you can see, KQL imposes a schema on logs to facilitate analysis. Consult [th
 
 - [Azure Monitor Logs Overview](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
 
-## Metrics Resources
+## Metrics resources
 
 ### Azure CLI
 
@@ -126,7 +126,7 @@ Azure CLI provides the `az monitor` series of commands to manipulate action grou
 - [Azure CLI reference commands for Azure Monitor](https://docs.microsoft.com/cli/azure/azure-cli-reference-for-monitor)
 - [Monitor and scale an Azure Database for MySQL Flexible Server using Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale)
 
-### Azure Portal
+### Azure portal
 
 While the Azure portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
 
