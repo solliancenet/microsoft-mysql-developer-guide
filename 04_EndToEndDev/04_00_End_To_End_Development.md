@@ -8,6 +8,8 @@ This will start with a typical classic deployment where you deploy your applicat
 
 The following scenarios will be discussed and demonstrated as part of this Azure MySQL developer's guide.  All of the following deployments will utilize the same application and database backend and what is needed to modify the application to support the targets. Topics will be discussed in the following simple to complex ordering.
 
+TODO: Links to the headers
+
 - Classic deployment
 - Azure VM Deployment
 - Simple App Service Deployment with Azure Database for My SQL Single Server
@@ -22,6 +24,8 @@ The following scenarios will be discussed and demonstrated as part of this Azure
 It is recommended that you follow each of the scenarios in the order shown so that you get a full picture of the steps involved in the development evolution and have the necessary pre-requisite items you need to move on to the more complex deployments.
 
 ## Classic deployment
+
+TODO: Pros and Cons
 
 In a classic deployment, you will typically set up your web server (such as Internet Information Services (IIS), Apache, or NGINX) on physical or virtualized on-premises hardware.  Most applications using MySQL as the backend are using PHP as the frontend (which is the case for the sample application in this guide); as such, you must ensure that you configure the web server to support PHP.  This includes configuring and enabling any PHP extensions and installing the required software to support those extensions.
 
@@ -64,6 +68,8 @@ To implement this deployment, reference the [Cloud Deployment to Azure App Servi
 Doing manual deployments every time you make a change can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  You can utilize both Azure DevOps and Github Actions to automatically deploy your code and database each time you perform a new commit to your codebase.
 
 Whether you choose to use DevOps or Github, you will need to do some setup work to support your deployments.  This typically includes creating credentials that can connect to your target environment and deploy the release artifacts.
+
+TODO: Need to replace all relative path links.
 
 To perform deployments using Azure DevOps and GitHub Actions, reference the [Deployment via CI/CD](./../artifacts/02-04-CloudDeploy-CICD/README.md) article.
 
