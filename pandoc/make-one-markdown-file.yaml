@@ -72,8 +72,6 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_02_Resources.md
 
-
-
 # ERROR, WARNING, or INFO
 verbosity: INFO
 log-file: log.json

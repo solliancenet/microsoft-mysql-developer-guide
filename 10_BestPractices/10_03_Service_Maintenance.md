@@ -24,6 +24,6 @@ Single Server does not support custom schedules for maintenance. Azure notifies 
 
 ## Configure Maintenance Scheduling & Alerting
 
-- [Manage scheduled maintenance settings using the Azure portal (Flexible Server)](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal)
-- [View service health notifications in the Azure portal](https://docs.microsoft.com/azure/service-health/service-notifications)
-- [Configure resource health alerts using Azure portal](https://docs.microsoft.com/azure/service-health/resource-health-alert-monitor-guide)
+- [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal)
+- [View service health notifications in the Azure Portal](https://docs.microsoft.com/azure/service-health/service-notifications)
+- [Configure resource health alerts using Azure Portal](https://docs.microsoft.com/azure/service-health/resource-health-alert-monitor-guide)

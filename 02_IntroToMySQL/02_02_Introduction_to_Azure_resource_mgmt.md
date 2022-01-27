@@ -30,11 +30,11 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
 ## Create your landing zone
 
-An [Azure landing zone](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure portal to fit the workload's needs.
+An [Azure landing zone](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure Portal to fit the workload's needs.
 
-To help organizations quickly move to Azure, Microsoft provides the Azure landing zone accelerator, which generates a landing zone ARM template according to an organization's core needs, governance requirements, and automation setup. The landing zone accelerator is available in the Azure portal.
+To help organizations quickly move to Azure, Microsoft provides the Azure landing zone accelerator, which generates a landing zone ARM template according to an organization's core needs, governance requirements, and automation setup. The landing zone accelerator is available in the Azure Portal.
 
-![This image demonstrates the Azure landing zone accelerator in the Azure portal, and how organizations can optimize Azure for their needs and innovate.](./media/landing-zone-accelerator.png "Azure landing zone accelerator screenshot")
+![This image demonstrates the Azure landing zone accelerator in the Azure Portal, and how organizations can optimize Azure for their needs and innovate.](./media/landing-zone-accelerator.png "Azure landing zone accelerator screenshot")
 
 ## Automating and managing Azure services
 
@@ -52,13 +52,13 @@ The flexibility and variety of Azure's management tools make it intuitive for an
 
 ![Azure service management tool maturity progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
-### Azure portal
+### Azure Portal
 
-When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
+When you are just starting, the **Azure Portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
 
   ![The picture shows the initial Azure service list.](media/azure-portal-services.png "Azure Portal Services")
 
-Azure runs on a common framework of backend resource services and every action you take on the Azure portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
+Azure runs on a common framework of backend resource services and every action you take on the Azure Portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
 
 Moving your workload to Azure lifts some of the administrative burdens, but not all, even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
 
@@ -66,7 +66,7 @@ By using the existing command-line tools and REST APIs, you can build your own t
 
 ### Azure PowerShell and CLI
 
-**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
+**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure Portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
@@ -107,11 +107,7 @@ Some of the benefits include:
 
 **Terraform**
 
-<<<<<<< Updated upstream:02_IntroToMySQL/02_02_Introduction_to_Azure_resource_mgmt.md
-The benefits of IaC have been described in the paragraphs above. Hashicorp Terraform is an open-source tool for provisioning and managing cloud infrastructure. There are instances of multi-cloud deployment requirements. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
-=======
 [Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
->>>>>>> Stashed changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
 
 ### Other tips
 

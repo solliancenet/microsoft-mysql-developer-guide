@@ -23,11 +23,11 @@ Review a set of potential [security baseline](https://docs.microsoft.com/en-us/a
 ### Configuring Public Access Guides
 
 - Single Server
-  - [Azure portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
+  - [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
   - [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
 - Flexible Server
-  - [Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal)
+  - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal)
   - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/flexibleservers/firewallrules?tabs=json)
 
@@ -62,7 +62,7 @@ Flexible Server supports deployment into a virtual network for secure access. Sp
 
 ##### Configuring Private Access for Flexible Server
 
-- [Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal)
+- [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli)
 
 #### Single Server

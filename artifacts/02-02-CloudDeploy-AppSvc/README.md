@@ -81,7 +81,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     service nginx reload
     ```
 
-10. Switch back the Azure portal and the app service, under **Settings**, select **Configuration**
+10. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
 11. Select **General settings**
 12. In the startup command textbox, type `/home/site/startup.sh`
 13. Select **Save**

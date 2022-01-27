@@ -86,11 +86,11 @@ Audit logging is controlled by the `audit_log_enabled` server parameter in Flexi
 
 Besides being sent to Azure Monitor, MySQL audit logs can be sent to Azure Storage accounts and Azure Event Hubs for integration with other systems.
 
-Reference [Configure and access audit logs for Azure Database for MySQL in the Azure portal](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal) for more information.
+Reference [Configure and access audit logs for Azure Database for MySQL in the Azure Portal](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal) for more information.
 
 ### Notes about the Flexible Server portal example
 
-If you try to run the KQL query in the Flexible Server Azure portal example, but you encounter errors, try to generate some activity and/or expand the scope of the `audit_log_events` parameter. Here are some actions which generated activity for my KQL queries:
+If you try to run the KQL query in the Flexible Server Azure Portal example, but you encounter errors, try to generate some activity and/or expand the scope of the `audit_log_events` parameter. Here are some actions which generated activity for my KQL queries:
 
 - Connecting to the Flexible Server instance from MySQL Workbench
 - Creating and dropping a dummy table (DDL activity)
@@ -99,7 +99,7 @@ As you work through the sample, note that Log Analytics is not just limited to t
 
 You can query the activity log from the samples provided on the **Logs** page.
 
-![This image demonstrates a sample query of the Activity Log from the Logs tab of the Azure portal.](./media/activity-log-sample-query.png "Activity log sample query")
+![This image demonstrates a sample query of the Activity Log from the Logs tab of the Azure Portal.](./media/activity-log-sample-query.png "Activity log sample query")
 
 ![This image demonstrates the query results from the opened sample.](./media/activity-log-query-results.png "Sample query output")
 
@@ -107,9 +107,9 @@ As you can see, KQL imposes a schema on logs to facilitate analysis. Consult [th
 
 ### Helpful links - Monitoring
 
-- Flexible Server: [Configure audit logs (Azure portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
+- Flexible Server: [Configure audit logs (Azure Portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
 
-- Single Server: [Configure and access audit logs in the Azure portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
+- Single Server: [Configure and access audit logs in the Azure Portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
 
 - [Configure and access audit logs in the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-cli)
 
@@ -126,9 +126,9 @@ Azure CLI provides the `az monitor` series of commands to manipulate action grou
 - [Azure CLI reference commands for Azure Monitor](https://docs.microsoft.com/cli/azure/azure-cli-reference-for-monitor)
 - [Monitor and scale an Azure Database for MySQL Flexible Server using Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale)
 
-### Azure portal
+### Azure Portal
 
-While the Azure portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
+While the Azure Portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
 
 - [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
 - [Tutorial: Analyze metrics for an Azure resource](https://docs.microsoft.com/azure/azure-monitor/essentials/tutorial-metrics)
@@ -142,7 +142,7 @@ To interact with the REST API, applications first need to obtain an authenticati
 - [REST API Walkthrough](https://docs.microsoft.com/azure/azure-monitor/essentials/rest-api-walkthrough)
 - [Azure Monitor REST API Reference](https://docs.microsoft.com/rest/api/monitor/)
 
-## Sample - Azure portal
+## Sample - Azure Portal
 
 In this example, I configured an alert rule called **AbortedConnections** on the Flexible Server instance I provisioned previously. It fires an alert if there were 10 or more aborted connections in the last 30 minutes, polled at a frequency of five minutes. The alert files an action group called **ServerNotifications** that sends me an email.
 

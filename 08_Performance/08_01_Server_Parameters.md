@@ -16,16 +16,16 @@ Azure Database for MySQL Single Server includes support for the three server par
 
 ## Tools to Set Server Parameters
 
-Standard Azure management tools, like the Azure portal, Azure CLI, and Azure PowerShell, allow for configuring Azure Database for MySQL server parameters.
+Standard Azure management tools, like the Azure Portal, Azure CLI, and Azure PowerShell, allow for configuring Azure Database for MySQL server parameters.
 
 ### Flexible Server Articles
 
-- [Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
+- [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli)
 
 ### Single Server Articles
 
-- [Azure portal](https://docs.microsoft.com/azure/mysql/howto-server-parameters)
+- [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-server-parameters)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli)
 - [Azure PowerShell](https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell)
 

@@ -32,6 +32,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "./media/landing-zone-accelerator.png",
+        "for": "./media/landing-zone-accelerator.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/consistent-management-layer.png",
         "for": "media/consistent-management-layer.png"
     },
