@@ -115,6 +115,7 @@ Azure provides [multiple support plans for businesses](https://azure.microsoft.c
 
 - [StackOverflow Azure Tag](https://stackoverflow.com/questions/tagged/azure)
 - [@Azure on Twitter](https://twitter.com/azure)
+- Move to Azure efficiently with customized guidance from Azure engineers. [FastTrack for Azure](https://azure.microsoft.com/en-us/programs/azure-fasttrack/)
 
 ### Training
 
