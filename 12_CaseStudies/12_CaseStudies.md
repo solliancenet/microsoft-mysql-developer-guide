@@ -6,6 +6,10 @@ Azure Database for MySQL is used by customers all over the world and many have s
 
 The following are a set of case studies from the Microsoft Customer Stories page focused on the usage of Azure Database for MySQL.
 
+### Minecraft
+
+### CVS
+
 ### TODO
 
 TODO
