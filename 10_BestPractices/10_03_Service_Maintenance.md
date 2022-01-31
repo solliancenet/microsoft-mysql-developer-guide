@@ -1,8 +1,8 @@
-# Service Maintenance
+# Service maintenance
 
 Like any Azure service, Flexible Server receives patches and functionality upgrades from Microsoft. To ensure that planned maintenance does not blindside administrators, Azure provides them control over when patching occurs.
 
-With Flexible Server, administrators can specify a custom **Day of week** and **Start time** for maintenance, or they can let the platform choose a day of week and time. If the maintenance schedule is chosen by the platform, maintenance will always occur between 11 PM and 7 AM in the region time zone.
+With Flexible Server, administrators can specify a custom **Day of week** and **Start time** for maintenance, or they can let the platform choose a day of week and time. If the maintenance schedule is chosen by the platform, maintenance will always occur between 11 PM and 7 AM in the region's time zone.
 
 > See [this](https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography) list from Microsoft to determine the physical location of Azure regions and thus the regional time zone.
 
@@ -22,7 +22,7 @@ Single Server uses a gateway to access database instances, unlike Flexible Serve
 
 Single Server does not support custom schedules for maintenance. Azure notifies administrators 72 hours before the maintenance event.
 
-## Configure Maintenance Scheduling & Alerting
+## Configure maintenance scheduling & alerting
 
 - [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal)
 - [View service health notifications in the Azure Portal](https://docs.microsoft.com/azure/service-health/service-notifications)

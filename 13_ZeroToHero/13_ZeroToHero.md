@@ -6,7 +6,7 @@ Now that you have read through this entire guide, you can now assess where you a
 
 In module 4, we explored an evolution from classic development and deployment to current modern methods.  It is important to understand where you are now and where you would like to be in the future.
 
-## Summary of Tasks
+## Summary of tasks
 
 - Have the right tools available
 - Determine how you are going to deploy your application
@@ -17,6 +17,6 @@ In module 4, we explored an evolution from classic development and deployment to
 - Secure your virtual networks
 - Monitor your applications and database workloads for performance
 - Perform regular testing
-- Ensure you have setup policies and procedures for auditing your application and database workloads
+- Ensure you have set up policies and procedures for auditing your application and database workloads
 - Setup backup and restore based on your RTO and RPO objectives
 - Be familiar with potential issues and how to remediate them
