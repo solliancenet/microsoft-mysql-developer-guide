@@ -81,10 +81,18 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     service nginx reload
     ```
 
-10. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
-11. Select **General settings**
-12. In the startup command textbox, type `/home/site/startup.sh`
-13. Select **Save**
+10. Exit the editor. Navigate to `AppServiceProvider.php`.
+
+    ```bash
+    nano /home/site/wwwroot/app/Providers/AppServiceProvider.php
+    ```
+
+11. Uncomment the `URL::forceScheme('https');` line in the `boot()` method.
+
+12. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
+13. Select **General settings**
+14. In the startup command textbox, type `/home/site/startup.sh`
+15. Select **Save**
 
 ### Test the Application
 
