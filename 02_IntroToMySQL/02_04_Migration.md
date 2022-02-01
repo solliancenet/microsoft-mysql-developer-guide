@@ -1,0 +1,3 @@
+# On-premises MySQL migration
+
+The emphasis of this guide is how to use Azure Database for MySQL, namely Flexible Server, to architect modern applications. However, many businesses already utilize MySQL on-premises and intend to migrate their MySQL databases and apps to Azure to reap its benefits. Microsoft has already produced a whitepaper titled [Migrate MySQL on-premises to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) to discuss the considerations of a MySQL migration, including the assessment, choice of migration tools, and post-upgrade enhancement. The guide also features a sample application and environment to try the migration journey.

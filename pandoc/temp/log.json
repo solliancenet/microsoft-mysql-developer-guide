@@ -220,5 +220,434 @@
         "verbosity": "INFO",
         "from": "./media/microservices-with-replication.png",
         "for": "./media/microservices-with-replication.png"
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<!--     - For the friendly name, type **paw-1**     - For the certificate store, select **Web Hosting**     - For Common name, type **PHP Dev**     - For Organization, type **PHP Dev**     - For Organizational unit, type **Dev**     - For City/locality, type **Redmond**     - For State/province, type **WA**     - Click **Next**     -->"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "<p align=\"center\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://laravel.com\" target=\"_blank\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "</p>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "<p align=\"center\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://travis-ci.org/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://travis-ci.org/laravel/framework.svg\" alt=\"Build Status\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/dt/laravel/framework\" alt=\"Total Downloads\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/v/laravel/framework\" alt=\"Latest Stable Version\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/l/laravel/framework\" alt=\"License\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "</p>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "<p align=\"center\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://laravel.com\" target=\"_blank\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "</p>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "<p align=\"center\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://travis-ci.org/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://travis-ci.org/laravel/framework.svg\" alt=\"Build Status\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/dt/laravel/framework\" alt=\"Total Downloads\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/v/laravel/framework\" alt=\"Latest Stable Version\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<a href=\"https://packagist.org/packages/laravel/framework\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<img src=\"https://img.shields.io/packagist/l/laravel/framework\" alt=\"License\">"
+            ]
+        }
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "</a>"
+            ]
+        }
+    },
+    {
+        "type": "BlockNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "</p>"
+            ]
+        }
     }
 ]

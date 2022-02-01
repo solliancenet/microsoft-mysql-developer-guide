@@ -6,7 +6,7 @@ With a firm understanding of Azure and MySQL offerings available to you, it is t
 
 ## Azure free account
 
-Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://azure.microsoft.com/en-in/free/mysql/)
+Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
 
 ## Azure subscriptions and limits
 
@@ -18,13 +18,13 @@ Consult [Azure's comprehensive list of service and subscription limits](https://
 
 ## Azure authentication
 
-As mentioned previously, Azure PaaS MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is also separated between the control plane and the data plane.
+As mentioned previously, Azure Database for MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is also separated between the control plane and the data plane.
 
 In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to operate against an Azure resource. Review Azure RBAC in the [Introduction to Azure resource management] section for more information.
 
 In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more.
 
-> Learn how to configure Azure Active Directory authentication for Azure PaaS MySQL Single Server from the [Microsoft docs.](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication)
+> Learn how to configure Azure Active Directory authentication for Azure Database for MySQL Single Server from the [Microsoft docs.](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication)
 
 ## Development editor tools
 
@@ -39,6 +39,9 @@ There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahe
 Once you have determined your editor of choice, you will need to pick a development language or platform. Below are some quick links:
 
 [PHP language support]
+
 [Java language support]
+
 [Python language support]
+
 [Other notable languages for MySQL apps]

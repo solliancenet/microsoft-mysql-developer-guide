@@ -1,4 +1,4 @@
-# Introduction and common use cases for MySQL
+# What is MySQL?
 
 MySQL is a relational database management system based on [SQL – Structured Query Language](https://en.wikipedia.org/wiki/SQL). MySQL supports a rich set of SQL query capabilities and offers excellent performance through storage engines optimized for transactional and non-transactional workloads, in-memory processing, and robust server configuration through modules. Its low total cost of ownership makes it extremely popular with many organizations. Customers can use their existing frameworks and languages to connect easily with a MySQL database. Consult the [MySQL Documentation](https://dev.mysql.com/doc/refman/8.0/en/features.html) for a more in-depth review of MySQL's features.  
 
@@ -12,7 +12,7 @@ While MariaDB is compatible with the MySQL protocol, the project is not managed 
 
 Another popular open-source MySQL competitor is [PostgreSQL](https://www.postgresql.org/). MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner. Microsoft offers cloud-hosted [Azure Database for PostgreSQL](https://docs.microsoft.com/en-us/azure/postgresql/overview), which you can compare with cloud-hosted MySQL [in Microsoft Learn.](https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings)
 
-## Infrastructure deployment models
+## MySQL hosting options
 
 MySQL has multiple deployment options for development and production environments alike.
 
