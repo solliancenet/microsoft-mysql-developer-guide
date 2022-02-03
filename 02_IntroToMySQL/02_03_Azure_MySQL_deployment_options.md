@@ -24,6 +24,18 @@ Cost management is one of the major advantages of Flexible Server: it supports a
 
 ![This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.](./media/flexible-server.png "Operation of MySQL Flexible Server")
 
+Here are a few other notable advantages of Flexible Server.
+
+- [User-scheduled service maintenance:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance) Flexible Server allows database administrators to set a day of the week and a time for Azure to perform service maintenance and upgrades. Providing notifications five days before a planned maintenance event, Flexible Server caters to the needs of IT operations personnel.
+
+- [Network security:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-networking) Applications access Flexible Server through the public Internet (though access is governed by firewall ACLs), or through private IP addresses in an Azure Virtual Network. Moreover, TLS support keeps traffic encrypted, irrespective of the chosen network access model.
+
+- [Automatic backups:](https://docs.microsoft.com/azure/mysql/flexible-server/overview) Azure automates database backups, encrypts them, and stores them for a configurable period.
+
+- [Read replicas:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas) Read replicas help teams scale their applications by providing read-only copies of the data updated on the master node. Often, applications that run on elastic, autoscaling services, like Azure App Service, couple well with read replicas.
+
+Some of these features are not exclusive to Flexible Server. However, as further sections of the guide demonstrate, Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.  
+
 #### Flexible Server video introduction
 
 Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
