@@ -4,7 +4,7 @@ This section describes tools to interact with Azure Database for MySQL (Single S
 
 ### Example code
 
-Refer to the [Connect and Query sample for Python.](./03_Connect_Query_Python.md)
+Refer to the [Connect and query Azure Database for MySQL using Python] sample.
 
 ### Application connectors
 
