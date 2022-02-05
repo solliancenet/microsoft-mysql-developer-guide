@@ -1,12 +1,12 @@
-# PHP language support
+## PHP language support
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through PHP.
 
-## Example code
+### Example code
 
-Refer to the [Connect and Query sample for PHP](./03_Connect_Query_PHP.md) application for examples of how to use PHP to connect to MySQL.
+Refer to the [Connect and query Azure Database for MySQL using PHP] application for examples of how to use PHP to connect to MySQL.
 
-## Application connectors
+### Application connectors
 
 There are two major APIs to interact with MySQL in PHP:
 
@@ -17,7 +17,7 @@ There are two major APIs to interact with MySQL in PHP:
 
 Flexible Server and Single Server are compatible with all PHP client utilities for MySQL Community Edition.
 
-## Resources
+### Resources
 
 1. [Backend libraries for mysqli and PDO_MySQL](https://www.php.net/manual/en/mysqlinfo.library.choosing.php)
 2. [Introduction to PDO](https://www.php.net/manual/en/intro.pdo.php)

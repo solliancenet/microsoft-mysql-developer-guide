@@ -30,17 +30,17 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
 ## Create your landing zone
 
-An [Azure landing zone](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure Portal to fit the workload's needs.
+An [Azure landing zone](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure portal to fit the workload's needs.
 
-To help organizations quickly move to Azure, Microsoft provides the Azure landing zone accelerator, which generates a landing zone ARM template according to an organization's core needs, governance requirements, and automation setup. The landing zone accelerator is available in the Azure Portal.
+To help organizations quickly move to Azure, Microsoft provides the Azure landing zone accelerator, which generates a landing zone ARM template according to an organization's core needs, governance requirements, and automation setup. The landing zone accelerator is available in the Azure portal.
 
-![This image demonstrates the Azure landing zone accelerator in the Azure Portal, and how organizations can optimize Azure for their needs and innovate.](./media/landing-zone-accelerator.png "Azure landing zone accelerator screenshot")
+![This image demonstrates the Azure landing zone accelerator in the Azure portal, and how organizations can optimize Azure for their needs and innovate.](./media/landing-zone-accelerator.png "Azure landing zone accelerator screenshot")
 
 ## Automating and managing Azure services
 
 When it comes to managing Azure resources, you have many potential options. [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure subscriptions. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment.
 
-All Azure management tools, including the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli), [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-7.1.0) module, [Azure REST API](https://docs.microsoft.com/en-us/rest/api/azure/), and browser-based Portal, interact with the Azure Resource Manager layer and as such the [Identity and access management (IAM)](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) security controls.
+All Azure management tools, including the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli), [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-7.1.0) module, [Azure REST API](https://docs.microsoft.com/en-us/rest/api/azure/), and browser-based portal, interact with the Azure Resource Manager layer and as such the [Identity and access management (IAM)](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) security controls.
 
   ![This image demonstrates how the Azure Resource Manager provides a robust, secure interface to Azure resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
@@ -52,13 +52,13 @@ The flexibility and variety of Azure's management tools make it intuitive for an
 
 ![Azure service management tool maturity progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
-### Azure Portal
+### Azure portal
 
-When you are just starting, the **Azure Portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
+When you are just starting, the **Azure portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
 
-  ![The picture shows the initial Azure service list.](media/azure-portal-services.png "Azure Portal Services")
+  ![The picture shows the initial Azure service list.](media/azure-portal-services.png "Azure portal Services")
 
-Azure runs on a common framework of backend resource services and every action you take on the Azure Portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
+Azure runs on a common framework of backend resource services and every action you take on the Azure portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
 
 Moving your workload to Azure lifts some of the administrative burdens, but not all, even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
 
@@ -66,11 +66,13 @@ By using the existing command-line tools and REST APIs, you can build your own t
 
 ### Azure PowerShell and CLI
 
-**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure Portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
+**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
 Although very similar, you may find that there are some subtle differences between how each of these tools operates and the actions that can be accomplished. Use the [Azure command-line tool guide](https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
+
+### Azure CLI
 
 It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. You can also run these tools locally.  
 
@@ -78,17 +80,34 @@ To use the Azure CLI, [download the CLI tools from Microsoft.](https://docs.micr
 
 To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell Gallery, as described in the [installation document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
+### PowerShell Module
+
+The Azure portal and Windows PowerShell can be used for managing the Azure Database for MySQL. To get started with PowerShell, install the Azure PowerShell cmdlets for MySQL with the following PowerShell command:
+
+```PowerShell
+Install-Module -Name Az.MySql
+```
+
+After the modules are installed, reference tutorials like the following to learn ways you can take advantage of scripting your management activities:
+
+- [Tutorial: Design an Azure Database for MySQL using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/tutorial-design-database-using-powershell)
+- [How to back up and restore an Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/howto-restore-server-powershell)
+- [Configure server parameters in Azure Database for MySQL using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/howto-configure-server-parameters-using-powershell)
+- [Auto grow storage in Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/howto-auto-grow-storage-powershell)
+- [How to create and manage read replicas in Azure Database for MySQL using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/howto-read-replicas-powershell)
+- [Restart Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/en-us/azure/mysql/howto-restart-server-powershell)
+
 ### Infrastructure as Code
 
 [Infrastructure as Code (IaC)](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code is the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code has been tested, it can be versioned and saved into source code control.
 
-**ARM templates**
+#### ARM templates
 
 [ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/) can deploy Azure resources in a *declarative* manner. Azure Resource Manager can potentially create the resources in an ARM template in parallel. ARM templates are useful to create multiple identical environments, such as development, staging, and production environments.
 
   ![The picture shows an example of an ARM template JSON export.](media/azure-template-json-example.png "Azure Template JSON")
 
-**Bicep**
+#### Bicep
 
 Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
 
@@ -101,7 +120,7 @@ Some of the benefits include:
 - **No state or state files to manage**: All state is stored in Azure. Users can collaborate and have confidence their updates are handled as expected. Use the what-if operation to preview changes before deploying your template.
 - **No cost and open source**: Bicep is completely free. You don't have to pay for premium capabilities. It's also supported by Microsoft support.
 
-**Terraform**
+#### Terraform
 
 [Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/en-us/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
 

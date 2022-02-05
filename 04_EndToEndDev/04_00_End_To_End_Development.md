@@ -1,8 +1,8 @@
-# End to End development
+# End to End application development
 
 Now that you have a development environment setup, it is time to explore the various options you have to deploy your application and its corresponding MySQL database.  
 
-This will start with a typical classic deployment where you deploy your application to a web server and a database server on a physical or virtualized host operating system and then explore the evolution of the potential deployment options in a simple to complex progression ending with your application running as containers in Azure Kubernetes Service (AKS) with Azure Database for MySQL hosting your database.
+This will start with a typical classic deployment where you deploy your application to a web server and a database server on a physical or virtualized host operating system. Next, explore the evolution of the potential deployment options from a simple web app deployed to a App Service to complex progression ending with your application running as containers in Azure Kubernetes Service (AKS) with Azure Database for MySQL hosting your database.
 
 ## Development evolution
 
@@ -12,7 +12,7 @@ TODO: Links to the headers
 
 - Classic deployment
 - Azure VM Deployment
-- Simple App Service Deployment with Azure Database for My SQL Single Server
+- Simple App Service Deployment with Azure Database for MySQL Flexible Server
 - App Service with InApp MySQL
 - Continuous Integration / Continuous Delivery
 - Containerizing your layers with Docker
@@ -45,7 +45,7 @@ The advantages of using Azure to host your virtual machines include the ability 
 
 To perform an Azure VM deployment, reference the [Cloud Deployment to Azure VM](./../artifacts/02-01-CloudDeploy-Vm/README.md) article.
 
-## Simple App Service deployment with Azure Database for MySQL Single Server
+## Simple App Service deployment with Azure Database for MySQL Flexible Server
 
 If supporting the operating system and the various other software is not a preferred approach, the next evolutionary path is to remove the operating system and web server from the list of setup and configuration steps. This can be accomplished by utilizing the Platform as a Service (PaaS) offerings of Azure App Service and Azure Database for MySQL.
 

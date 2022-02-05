@@ -223,7 +223,7 @@ PaaS is suitable for applications where the MySQL configuration exposed
 by Azure is sufficient and access to the OS and filesystem is
 unnecessary.
 
-The Azure DBaaS MySQL offering is [Azure Database for MySQL][16], which
+The Azure DBaaS MySQL offering is [Azure Database for MySQL][28], which
 is based on MySQL community edition and supports common administration
 tools and programming languages.
 
@@ -317,7 +317,7 @@ create, update, and delete resources in your Azure subscriptions. You
 use management features, like access control, locks, and tags, to secure
 and organize your resources after deployment.
 
-All Azure management tools, including the [Azure CLI][17], [Azure
+All Azure management tools, including the [Azure CLI][29], [Azure
 PowerShell] module, [Azure REST API], and browser-based Portal, interact
 with the Azure Resource Manager layer and as such the [Identity and
 access management (IAM)] security controls.
@@ -369,7 +369,7 @@ any organizational requirements that are required.
 
 **Azure PowerShell** and the **Azure CLI** (for Bash shell users) are
 useful for automating tasks that cannot be performed in the Azure
-portal. Both of these tools follow an *imperative* approach, meaning
+Portal. Both of these tools follow an *imperative* approach, meaning
 that users must explicitly script the creation of resources in the
 correct order.
 
@@ -410,8 +410,6 @@ environments.
 
 **Bicep**
 
-\<\<\<\<\<\<\< Updated
-upstream:02_IntroToMySQL/02_02_Introduction_to_Azure_resource_mgmt.md
 Reading, updating, and managing the ARM template JSON code can be
 difficult for a reasonably sized environment. What if there was a tool
 that translates simple declarative statements into ARM templates? Better
@@ -421,19 +419,9 @@ domain-specific language (DSL) that uses declarative syntax to deploy
 Azure resources. In a Bicep file, you define the infrastructure you want
 to deploy to Azure, and then use that file throughout the development
 lifecycle to repeatedly deploy your infrastructure. Your resources are
-deployed consistently. Some of the benefits include: ======= Reading,
-updating, and managing the ARM template JSON code can be difficult for a
-reasonably sized environment. What if there was a tool that translates
-simple declarative statements into ARM templates? Better yet, what if
-there was a tool that took existing ARM templates and translated them
-into a simple configuration? [Bicep] is a domain-specific language (DSL)
-that uses declarative syntax to deploy Azure resources. In a Bicep file,
-you define the infrastructure you want to deploy to Azure, and then use
-that file throughout the development lifecycle to repeatedly deploy your
-infrastructure. Your resources are deployed in a consistent manner.
+deployed in a consistent manner.
 
-Some of the benefits include: \>\>\>\>\>\>\> Stashed
-changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
+Some of the benefits include:
 
 -   **Support for all resource types and API versions**: Bicep
     immediately supports all preview and GA versions for Azure services.
@@ -462,19 +450,10 @@ changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
 
 **Terraform**
 
-\<\<\<\<\<\<\< Updated
-upstream:02_IntroToMySQL/02_02_Introduction_to_Azure_resource_mgmt.md
-The benefits of IaC have been described in the paragraphs above.
-Hashicorp Terraform is an open-source tool for provisioning and managing
-cloud infrastructure. There are instances of multi-cloud deployment
-requirements. [Terraform] is adept at deploying infrastructure across
-multiple cloud providers. It enables developers to use consistent
-tooling to manage each infrastructure definition. ======= [Hashicorp
-Terraform] is an open-source tool for provisioning and managing cloud
-infrastructure. [Terraform] is adept at deploying an infrastructure
-across multiple cloud providers. It enables developers to use consistent
-tooling to manage each infrastructure definition. \>\>\>\>\>\>\> Stashed
-changes:02_IntroToMySQL/02_02_Introduction_to_Azure.md
+[Hashicorp Terraform] is an open-source tool for provisioning and
+managing cloud infrastructure. [Terraform] is adept at deploying an
+infrastructure across multiple cloud providers. It enables developers to
+use consistent tooling to manage each infrastructure definition.
 
 ### Other tips
 
@@ -521,7 +500,7 @@ backups, and meeting compliance requirements. Moreover, Azure Database
 for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it
 flexible for most migrations. (TODO:Add link for MySQL Migration Guide)
 
-For most use cases, Azure PaaS MySQL allows developers to focus on
+For most use cases, Azure Database for MySQL allows developers to focus on
 application development and deployment, instead of OS and RDBMS
 management, patching, and security.
 
@@ -534,7 +513,7 @@ For managing database objects and access controls at the server and
 database levels, standard MySQL management tools, such as [MySQL
 Workbench], still apply. This is known as the *data plane*.
 
-![This image demonstrates the control plane for Azure PaaS MySQL.]
+![This image demonstrates the control plane for Azure Database for MySQL.]
 
 ## Azure Database for MySQL deployment modes
 
@@ -700,7 +679,7 @@ for more details.
 
 ## Azure authentication
 
-As mentioned previously, Azure PaaS MySQL consists of a data plane (data
+As mentioned previously, Azure Database for MySQL consists of a data plane (data
 storage and data manipulation) and a control plane (management of the
 Azure resource). Authentication is also separated between the control
 plane and the data plane.
@@ -732,7 +711,7 @@ Code from the [Microsoft download page.]
 
 TODO: Image of VS Code.
 
-There is a [MySQL][18] extension that allows developers to organize
+There is a [MySQL][30] extension that allows developers to organize
 their database connections, administer databases, and query databases.
 Consider adding it to your Visual Studio Code workflow for MySQL.
 
@@ -956,7 +935,7 @@ Bash CLI commands.]
 
 ## ARM template
 
-Azure provides a [quickstart document][19] with a comprehensive ARM
+Azure provides a [quickstart document][31] with a comprehensive ARM
 template for a Flexible Server deployment. We have also provided a
 [sample ARM template] that just requires the `serverName`,
 `administratorLogin`, and `administratorLoginPassword` parameters to
@@ -1010,7 +989,7 @@ MySQL - Flexible Server] article.
 
 While the Azure article demonstrates how to provision a Flexible Server
 instance using the CLI, you can utilize any of the provisioning methods
-in the [Provision MySQL Flexible Server][20] section.
+in the [Provision MySQL Flexible Server][32] section.
 
 ## Instructions
 
@@ -1554,6 +1533,8 @@ will utilize the same application and database backend and what is
 needed to modify the application to support the targets. Topics will be
 discussed in the following simple to complex ordering.
 
+TODO: Links to the headers
+
 -   Classic deployment
 -   Azure VM Deployment
 -   Simple App Service Deployment with Azure Database for My SQL Single
@@ -1572,6 +1553,8 @@ development evolution and have the necessary pre-requisite items you
 need to move on to the more complex deployments.
 
 ## Classic deployment
+
+TODO: Pros and Cons
 
 In a classic deployment, you will typically set up your web server (such
 as Internet Information Services (IIS), Apache, or NGINX) on physical or
@@ -1619,7 +1602,7 @@ contrast to the relatively complex and extra work needed to enable these
 types of services on-premises.
 
 To perform an Azure VM deployment, reference the [Cloud Deployment to
-Azure VM] article.
+Azure VM][33] article.
 
 ## Simple App Service deployment with Azure Database for MySQL Single Server
 
@@ -1633,7 +1616,7 @@ However, modernizing your application and migrating them to these
 services may introduce some relatively small application changes.
 
 To implement this deployment, reference the [Cloud Deployment to Azure
-App Service] article.
+App Service][34] article.
 
 ## App Service with InApp MySQL
 
@@ -1655,7 +1638,7 @@ Flexible Server. For a list of other limitations, reference [Announcing
 Azure App Service MySQL in-app].
 
 To implement this deployment, reference the [Cloud Deployment to Azure
-App Service with MySQL InApp] article.
+App Service with MySQL InApp][35] article.
 
 ## Continous Integration (CI) and Continous Delivery (CD)
 
@@ -1670,8 +1653,10 @@ setup work to support your deployments. This typically includes creating
 credentials that can connect to your target environment and deploy the
 release artifacts.
 
+TODO: Need to replace all relative path links.
+
 To perform deployments using Azure DevOps and GitHub Actions, reference
-the [Deployment via CI/CD] article.
+the [Deployment via CI/CD][36] article.
 
 ## Containerizing your layers with Docker
 
@@ -1693,7 +1678,7 @@ can push container updates very quickly to multi-region load-balanced
 environments.
 
 To perform deployments using Docker, reference the [Migrate to Docker
-Containers] article.
+Containers][37] article.
 
 ## Azure Container Instances (ACI)
 
@@ -1706,14 +1691,14 @@ containers to keep the application, API, and data contained in the same
 resource.
 
 To implement this deployment, reference the [Migrate to Azure Container
-Instances (ACI)] article.
+Instances (ACI)][38] article.
 
 ## App Service Containers
 
 TODO
 
 To perform deployments using Azure App Service containers, reference the
-[Migrate to Azure App Service Containers] article.
+[Migrate to Azure App Service Containers][39] article.
 
 ## Azure Kubernetes Service (AKS)
 
@@ -1726,7 +1711,7 @@ Moving to Azure Kubernetes Service (AKS) will enable your application to
 inherit all the enterprise features provided by AKS.
 
 To perform deployments using AKS, reference the [Migrate to Azure
-Kubernetes Services (AKS)] article.
+Kubernetes Services (AKS)][40] article.
 
 ## AKS with MySQL Flexible Server
 
@@ -1735,7 +1720,78 @@ a VM, but not as great as removing all the operating system and software
 management components.
 
 To implement this deployment, reference the [Utilize AKS and Azure
-Database for MySQL Flexible Server] article.
+Database for MySQL Flexible Server][41] article.
+
+# Introduction to the guide sample application
+
+Instead of learning multiple sample applications, the guide was focused
+on evolving deployment strategies. Readers could learn the sample
+application structure once and focus on how the application would need
+to be modified in order fit the deployment model.
+
+## Sample application overview and story
+
+ContosoNoshNow is a delivery service and logistics company focused on
+making delicious food accessible to their customers no matter where they
+are located. The company started with a simple web application they
+could easily maintain and add features to as the business grew. A few
+years later, their CIO realized the application performance and their
+current on-premises environment were not meeting their business's
+growing demand. The application deployment process took hours, yielded
+unreliable results, and the admin team could not easily find production
+issues quickly. During the busy hours, customers complained the web
+application was slow.
+
+The development team knew moving to Azure could help with these issues.
+## Solution architecture TODO: Diagram
+
+## Site map and example default page
+
+TODO ## Prerequisites TODO ## Quick start: manual Azure set up
+instructions
+
+As you continue on with this guide, you will be able to take advantage
+of the environment automation scripts that will build and configure much
+of your environment. It is important to understand the basic Azure
+concepts before running automated scripts. Walking through each steps
+will help provide additional context and learning opportunities.
+
+TODO: Update details about the steps.
+
+-   Step 1: Log into the Azure Portal. Create Azure Web App + Flexible
+    Server database resources.
+-   Step 2: Log into App Service terminal and add Composer to project
+    directory.
+-   Step 3: Add Git Local configuration via Deployment Center and
+    capture credential information.
+-   Step 4: Clone the MS MySQL Developer Guide Sample App repo locally.
+    Configure Git project settings on your local machine. Add remote
+    Deployment Center upstream repo URL and credentials.
+-   Step 5: Push PHP app to App Service repo. Run composer update and
+    php artisan generate key.
+-   Step 6: Configure URL redirect.
+-   Step 7: Configure the environment variables.
+
+[Sample application evolution artifact repo]
+
+## What happens to my app during an Azure deployment?
+
+All the officially supported deployment methods make changes to the
+files in the /home/site/wwwroot folder of your app. These files are used
+to run your app. The web framework of your choice may use a subdirectory
+as the site root. For example, Laravel, uses the public/ subdirectory as
+the site root.
+
+TODO: add more specific information related to getting PHP/Laravel
+running in Azure.
+
+## Troubleshooting tips
+
+TODO
+
+Azure resource activity log. ## Resources
+
+[How PHP apps are detected and built.]
 
 # Deploying a Laravel app backed by a Java REST API to AKS
 
@@ -1904,7 +1960,7 @@ problem when deployed to AKS.]
 
 # MySQL migration
 
-The emphasis of this guide is how to use Azure PaaS MySQL, namely
+The emphasis of this guide is how to use Azure Database for MySQL, namely
 Flexible Server, to architect modern applications. However, many
 businesses already utilize MySQL on-premises and intend to migrate their
 MySQL databases and apps to Azure to reap its benefits. Microsoft has
@@ -1924,7 +1980,7 @@ which is **inside** the Azure resource (in this case MySQL).
 
 Azure Database for MySQL provides for the ability to monitor both of
 these types of operational activities using Azure-based tools such as
-[Azure Monitor][21], [Log Analytics], and [Azure Sentinel]. In addition
+[Azure Monitor][42], [Log Analytics], and [Azure Sentinel]. In addition
 to the Azure-based tools, security information and event management
 (SIEM) systems can be configured to consume these logs as well.
 
@@ -1969,7 +2025,7 @@ AzureMetrics
 | top 1 by TimeGenerated
 ```
 
-The table below, pulled from the [Microsoft documentation][22],
+The table below, pulled from the [Microsoft documentation][43],
 indicates the metrics exposed by Flexible Server instances:
 
   ------------------------------------------------------------------------------
@@ -2073,7 +2129,7 @@ indicates the metrics exposed by Flexible Server instances:
                                                                second
   ------------------------------------------------------------------------------
 
-> For a similar list for Single Server, consult [this document.][23]
+> For a similar list for Single Server, consult [this document.][44]
 
 ## MySQL audit logs
 
@@ -2081,7 +2137,7 @@ MySQL has a robust built-in audit log feature. By default, this [audit
 log feature is disabled] in Azure Database for MySQL. Server level
 logging can be enabled by changing the `audit_log_enabled` server
 parameter. Once enabled, logs can be accessed through [Azure
-Monitor][21] and [Log Analytics] by turning on [diagnostic logging].
+Monitor][42] and [Log Analytics] by turning on [diagnostic logging].
 
 In addition to metrics, you can also enable MySQL logs to be ingested
 into Azure Monitor. While metrics are better suited for real-time
@@ -2361,8 +2417,8 @@ environments. Consult the guides below, as Flexible Server's TLS
 enforcement status can be set through the `require_secure_transport`
 MySQL server parameter.
 
--   [Single Server][24]
--   [Flexible Server][25]
+-   [Single Server][45]
+-   [Flexible Server][46]
 
 ## Firewall
 
@@ -2479,7 +2535,7 @@ method mentioned above, the speed to failover is much faster when a
 failover layer has been implemented in the application. The application
 should only be down for a few moments during the read replica failover
 process. More details are covered in the [Business Continuity and
-Disaster Recovery] section.
+Disaster Recovery][47] section.
 
 ## Optimization checklist
 
@@ -2490,7 +2546,7 @@ Disaster Recovery] section.
 
 ## Server parameters
 
-As part of the migration, the on-premises [server parameters][26] were
+As part of the migration, the on-premises [server parameters][48] were
 likely modified to support a fast egress. Also, modifications were made
 to the Azure Database for MySQL parameters to support a fast ingress.
 The Azure server parameters should be set back to their original
@@ -2526,7 +2582,7 @@ parameters can be changed without restarting the server, while modifying
 One of the advantages of Flexible Server is its versatility over single
 server instances. Some important exposed parameters are listed below,
 and the instance's storage and compute tiers affect the possible
-parameter values. Consult the [Microsoft documentation][27] for more
+parameter values. Consult the [Microsoft documentation][49] for more
 information.
 
 -   [log_bin_trust_function_creators] is enabled by default and
@@ -2535,7 +2591,7 @@ information.
 -   [innodb_buffer_pool_size] indicates the size of the buffer pool, a
     cache for tables and indexes
 
-    > For this parameter, consult the [Microsoft documentation][28], as
+    > For this parameter, consult the [Microsoft documentation][50], as
     > database compute tier affects the parameter value range
 
 -   [innodb_file_per_table] affects where table and index data are
@@ -2553,14 +2609,14 @@ parameters.
 
 ### Flexible Server Articles
 
--   [Azure Portal][29]
--   [Azure CLI][30]
+-   [Azure Portal][51]
+-   [Azure CLI][52]
 
 ### Single Server Articles
 
--   [Azure Portal][31]
--   [Azure CLI][32]
--   [Azure PowerShell][33]
+-   [Azure Portal][53]
+-   [Azure CLI][54]
+-   [Azure PowerShell][55]
 
 ## Server Parameters Best Practices
 
@@ -2599,16 +2655,16 @@ application stability.
 
     -   Microsoft only recommends this change for database instances
         with more than 335 GB of provisioned storage
-    -   Learn more from the [Microsoft documentation][34]
+    -   Learn more from the [Microsoft documentation][56]
 
 # Business Continuity and Disaster Recovery (BCDR)
 
-## Backup and Restore
+## Backup and restore
 
-As with any mission critical system, having a backup and restore as well
+As with any mission-critical system, having a backup and restore as well
 as a disaster recovery (BCDR) strategy is an important part of your
-overall system design. If an unforseen event occurs, you should have the
-ability to restore your data to a point in time (Recovery Point
+overall system design. If an unforeseen event occurs, you should have
+the ability to restore your data to a point in time (Recovery Point
 Objective) in a reasonable amount of time (Recovery Time Objective).
 
 ### Backup
@@ -2622,14 +2678,14 @@ storage allocated.
 There are several current limitations to the database backup feature as
 described in the [Backup and restore in Azure Database for MySQL] docs
 article. It is important to understand them when deciding what
-additional strategies that should be implemented.
+additional strategies should be implemented.
 
 Some items to be aware of include:
 
 -   No direct access to the backups
 -   Tiers that allow up to 4TB have a full backup once per week,
     differential twice a day, and logs every five minutes
--   Tiers that allow up to 16TB have backups that are snapshot based
+-   Tiers that allow up to 16TB have snapshot-based backups
 
 > **Note:** [Some regions] do not yet support storage up to 16TB.
 
@@ -2645,30 +2701,30 @@ During a database restore, any supporting items outside of the database
 will also need to be restored. Review the migration process. See
 [Perform post-restore tasks] for more information.
 
-## Read Replicas
+## Read replicas
 
-[Read replicas][35] can be used to increase the MySQL read throughput,
-improve performance for regional users and to implement disaster
-recovery. When creating one or more read replicas, be aware that
-additional charges will apply for the same compute and storage as the
-primary server.
+[Read replicas][57] can be used to increase the MySQL read throughput,
+improve performance for regional users, and implement disaster recovery.
+When creating one or more read replicas, be aware that additional
+charges will apply for the same compute and storage as the primary
+server.
 
-## Deleted Servers
+## Deleted servers
 
 If an administrator or bad actor deletes the server in the Azure Portal
 or via automated methods, all backups and read replicas will also be
-deleted. It is important that [resource locks][36] are created on the
-Azure Database for MySQL resource group to add an extra layer of
-deletion prevention to the instances.
+deleted. [Resource locks][58] must be created on the Azure Database for
+MySQL resource group to add an extra layer of deletion prevention to the
+instances.
 
-## Regional Failure
+## Regional failure
 
-Although rare, if a regional failure occurs geo-redundant backups or a
+Although rare, if a regional failure occurs, geo-redundant backups or a
 read replica can be used to get the data workloads running again. It is
 best to have both geo-replication and a read replica available for the
 best protection against unexpected regional failures.
 
-> **Note** Changing the database server region also means the endpoint
+> **Note:** Changing the database server region also means the endpoint
 > will change and application configurations will need to be updated
 > accordingly.
 
@@ -2724,9 +2780,7 @@ Failover Steps:
 -   Implement a load balancing strategy for applications for quick
     failover.
 
-TODO -
-https://semaphoreci.com/blog/7-continuous-integration-tools-for-php-laravel
-\# Business Continuity and Disaster Recovery
+# Business Continuity and Disaster Recovery
 
 Businesses implement *business continuity* (BC) and *disaster recovery*
 (DR) strategies to minimize disruptions. While *business continuity*
@@ -2734,7 +2788,7 @@ emphasizes preserving business operations through policies, *disaster
 recovery* explains how IT teams will restore access to data and
 services.
 
-## High Availability
+## High availability
 
 Flexible Server implements high availability by provisioning another VM
 to serve as a standby. It is possible to provision this secondary
@@ -2767,7 +2821,7 @@ during failover.
 To learn more about HA with MySQL Flexible Server, consult the
 [documentation.]
 
-### Implementing Cross-Region High Availability
+### Implementing cross-region high availability
 
 Flexible Server does not currently support cross-region high
 availability. However, it is possible to achieve this using MySQL native
@@ -2784,7 +2838,7 @@ One disadvantage of this setup is that it is customer-managed.
 ![This image demonstrates a possible cross-region HA scenario using two
 virtual networks.]
 
-## Backup and Restore
+## Backup and restore
 
 Flexible Server takes backups of data and transaction log files. These
 backups can be stored in locally-redundant storage (replicated multiple
@@ -2809,14 +2863,14 @@ inherited from the old server, though it depends on the type of restore
 performed.
 
 Learn more about backup and restore in Flexible Server from the
-[Microsoft documentation.][37]
+[Microsoft documentation.][59]
 
-### Flexible Server Samples
+### Flexible Server samples
 
 -   [Point-in-time restore with Azure Portal]
 -   [Point-in-time restore with CLI]
 
-### Single Server Samples
+### Single Server samples
 
 -   [Restore with Azure Portal]
 -   [Restore with Azure CLI]
@@ -2828,8 +2882,9 @@ Replication in Flexible Server allows applications to scale by providing
 **read-only** replicas to serve queries while dedicating write
 operations to the main Flexible Server instance. Replication from the
 main instance to the read replicas is asynchronous: consequently, there
-is lag between the source instance and the replicas. Microsoft estimates
-that this lag typically ranges between a few seconds to a few minutes.
+is a lag between the source instance and the replicas. Microsoft
+estimates that this lag typically ranges between a few seconds to a few
+minutes.
 
 > Replication is not a high availability strategy: consult the BCDR
 > document for more details. Replication is designed to improve
@@ -2843,7 +2898,7 @@ read replica to being a read-write instance; however, that severs the
 replication link between the main instance and the former replica, as
 the former replica cannot return to being a replica.
 
-## Use Cases
+## Use cases
 
 Often, developers use load balancers, like ProxySQL, to direct read
 operations to read replicas automatically. ProxySQL can [run on an Azure
@@ -2861,20 +2916,20 @@ instance.
 ![This image demonstrates a possible microservices architecture with
 MySQL read replicas.]
 
-## Configuring Read Replicas
+## Configuring read replicas
 
 ### Flexible Server
 
--   [Azure Portal][38]
--   [Azure CLI][39]
+-   [Azure Portal][60]
+-   [Azure CLI][61]
 
 ### Single Server
 
--   [Azure Portal][40]
+-   [Azure Portal][62]
 -   [Azure CLI & REST API]
--   [Azure PowerShell][41]
+-   [Azure PowerShell][63]
 
-# Service Maintenance
+# Service maintenance
 
 Like any Azure service, Flexible Server receives patches and
 functionality upgrades from Microsoft. To ensure that planned
@@ -2885,9 +2940,9 @@ With Flexible Server, administrators can specify a custom **Day of
 week** and **Start time** for maintenance, or they can let the platform
 choose a day of week and time. If the maintenance schedule is chosen by
 the platform, maintenance will always occur between 11 PM and 7 AM in
-the region time zone.
+the region's time zone.
 
-> See [this][42] list from Microsoft to determine the physical location
+> See [this][64] list from Microsoft to determine the physical location
 > of Azure regions and thus the regional time zone.
 
 Azure always rolls out updates to servers with platform-managed
@@ -2915,31 +2970,56 @@ Single Server uses a gateway to access database instances, unlike
 Flexible Server. These gateways have public IP addresses that are
 retired and replaced, which may impede access from on-premises. Azure
 notifies customers about gateway retirements three months before. Learn
-more [here.][43]
+more [here.][65]
 
 Single Server does not support custom schedules for maintenance. Azure
 notifies administrators 72 hours before the maintenance event.
 
-## Configure Maintenance Scheduling & Alerting
+## Configure maintenance scheduling & alerting
 
 -   [Manage scheduled maintenance settings using the Azure Portal
     (Flexible Server)]
 -   [View service health notifications in the Azure Portal]
 -   [Configure resource health alerts using Azure Portal]
 
-# MySQL Architectures
+# Azure Database for MySQL upgrade process
 
-As you have progressed through this guide you have learned about various
-ways to build and deploy applications using many different services in
-Azure. Although we covered many topics, there are many other creative
-ways one could build and deploy MySQL based services.
+Since Azure Database for MySQL is a PaaS offering, administrators are
+not responsible for the management of the updates on the operating
+system or the MySQL software. However, it is important to be aware the
+upgrade process can be random and when being deployed, will stop the
+MySQL server workloads. Plan for these downtimes by rerouting the
+workloads to a read replica in the event the particular instance goes
+into maintenance mode.
+
+> **Note:** This style of failover architecture may require changes to
+> the applications data layer to support this type of failover scenario.
+> If the read replica is maintained as a read replica and is not
+> promoted, the application will only be able to read data and it may
+> fail when any operation attempts to write information to the database.
+
+The [planned maintenance notification] feature will inform resource
+owners up to 72 hours in advance of installation of an update or
+critical security patch. Database administrators may need to notify
+application users of planned and unplanned maintenance.
+
+> **Note:** Azure Database for MySQL maintenance notifications are
+> incredibly important. The database maintenance can take your database
+> and connected applications down for a period of time.
+
+# MySQL architectures
+
+As you have progressed through this guide, you have learned about
+various ways to build and deploy applications using many different
+services in Azure. Although we covered many topics, there are many other
+creative ways one could build and deploy MySQL-based services.
 
 The [Azure Architecture center] provides many different examples of how
-to create different architectures. Although some of them utlize other
-database persistence technologies, these could easily be subsituted with
-Azure Database for MySQL.
+to create different architectures. Although some of them utilize other
+database persistence technologies, these could easily be substituted
+with Azure Database for MySQL.
 
-## Sample Architectures
+## Sample architectures
 
 The following are a few examples of architectures using different
 patterns and focused on various industries from the Azure Architecture
@@ -2968,20 +3048,28 @@ Center.
 ### Scalable web and mobile applications using Azure Database for MySQL
 
 -   [Scalable web and mobile applications using Azure Database for
-    MySQL] \# Customer Stories
+    MySQL]
 
-Azure Database for MySQL is used by customers all over the world and
+# Customer stories
+
+Azure Database for MySQL is used by customers all over the world, and
 many have shared their stories on the [Microsoft Customer Stories
 portal].
 
-## Case Studies
+## Case studies
 
 The following are a set of case studies from the Microsoft Customer
 Stories page focused on the usage of Azure Database for MySQL.
 
+### Minecraft
+
+### CVS
+
 ### TODO
 
-TODO \# Zero to Hero
+TODO
+
+# Zero to Hero
 
 Now that you have read through this entire guide, you can now assess
 where you are in your application and MySQL evolution and knowledge and
@@ -2994,7 +3082,7 @@ In module 4, we explored an evolution from classic development and
 deployment to current modern methods. It is important to understand
 where you are now and where you would like to be in the future.
 
-## Summary of Tasks
+## Summary of tasks
 
 -   Have the right tools available
 -   Determine how you are going to deploy your application
@@ -3006,27 +3094,28 @@ where you are now and where you would like to be in the future.
 -   Secure your virtual networks
 -   Monitor your applications and database workloads for performance
 -   Perform regular testing
--   Ensure you have setup policies and procedures for auditing your
+-   Ensure you have set up policies and procedures for auditing your
     application and database workloads
 -   Setup backup and restore based on your RTO and RPO objectives
--   Be familiar with potential issues and how to remediate them \#
-    Summary
+-   Be familiar with potential issues and how to remediate them
+
+# Summary
 
 We hope you have found this guide insightful and rich with information
 on how to get started with developing with Azure Database for MySQL. You
-should have a nice foundation for how to get setup with the right tools
+should have a nice foundation for how to get set up with the right tools
 and how to make decisions on the target deployment model. We provided
-several sample architectures and real world customers that are using
+several sample architectures and real-world customers that are using
 Azure Database for MySQL that can be referenced in your platform
 selection decisions.
 
 Although there are several options for hosting MySQL in Azure, the
 preferred method is to utilize Azure Database for MySQL Flexible Server
-for its rich set of features and flexability.
+for its rich set of features and flexibility.
 
 # Resources
 
-## Questions and Feedback
+## Questions and feedback
 
 For any questions or suggestions about working with Azure Database for
 MySQL, send an email to the Azure Database for MySQL Team
@@ -3036,7 +3125,7 @@ address is for general questions rather than support tickets.
 In addition, consider these points of contact as appropriate:
 
 -   To contact Azure Support or fix an issue with your account, [file a
-    ticket from the Azure Portal].
+    ticket from the Azure portal].
 -   To provide feedback or to request new features, create an entry via
     [UserVoice].
 
@@ -3055,6 +3144,1883 @@ detailed real-world information:
 -   [Azure Facebook Group]
 -   [LinkedIn Azure Group]
 -   [LinkedIn Azure Developers Group]
+
+# Getting Started
+
+1.  Clone the [whitepaper GitHub repository] to your local machine.
+
+2.  Install the [PowerShell Azure module] if you do not already have it.
+
+    > [PowerShell Core] is a cross-platform tool that is useful for
+    > managing Azure resources through the `Az` module.
+
+    > Try the `-AllowClobber` flag if the install does not succeed.
+
+3.  Utilize the `Connect-AzAccount` to interactively authenticate the
+    Azure PowerShell environment with Azure.
+
+## Create a Lab Resource Group
+
+1.  Use Azure PowerShell to create a new resource group. Substitute the
+    `rgName` and `location` parameters with the name of your resource
+    group and its location, respectively.
+
+    ``` powershell
+    $rgName = ""
+    $location = ""
+    New-AzResourceGroup -Name $rgName -Location $location
+    ```
+
+## Deploy the ARM Template
+
+1.  There are two ARM templates provided with the whitepaper.
+
+    -   The secure deployment uses private endpoints to securely access
+        the MySQL database instances through private IP addresses. It
+        costs roughly ... per month.
+    -   The standard deployment routes traffic to the MySQL instances
+        over the public internet. It costs roughly ... per month.
+
+2.  If you are deploying the [secure ARM template]
+    (`template-secure.json`), edit the associated [parameters file]
+    (`template-secure.parameters.json`).
+
+    -   The `prefix` specifies a unique identifier for Azure resources
+    -   The `administratorLogin` specifies the login for the Azure
+        resources (such as MySQL and the VM)
+    -   The `administratorLoginPassword` specifies the password for the
+        deployed Azure resources
+    -   The `location` should be set to an Azure region near you
+
+3.  If you are deploying the [insecure ARM template] (`template.json`),
+    edit the associated [parameters file][66]
+    (`template.parameters.json`).
+
+    -   The `uniqueSuffix` specifies a unique identifier for Azure
+        resources
+    -   The `administratorLogin` specifies the login for the Azure
+        resources (such as MySQL and the VM)
+    -   The `administratorLoginPassword` specifies the password for the
+        deployed Azure resources
+    -   The `vmSize` specifies the VM tier
+    -   The `dnsPrefix` specifies the DNS prefix for the load balancer
+        public IP address
+
+4.  If you are deploying the secure ARM template, issue the following
+    command from the repository root.
+
+    ``` powershell
+    New-AzResourceGroupDeployment -ResourceGroupName $rgName -TemplateFile .\Artifacts\template-secure.json -TemplateParameterFile .\Artifacts\template-secure.parameters.json
+    ```
+
+    Use `template.json` and `template.parameters.json` for the insecure
+    ARM template deployment.
+
+# Classic Deployment to PHP enabled IIS server
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+
+## Test the PHP Setup
+
+1.  Open a chrome browser window
+2.  Navigate to `http://localhost:8080/default.php`, you should see
+    **Hello World** displayed.
+3.  Navigate to `http://localhost:8080/database.php`, you should see
+    **12 results** displayed.
+
+## Database Deployment
+
+1.  Run the following commands to create the database (type `yes` when
+    prompted):
+
+    ``` powershell
+    cd C:\labfiles\microsoft-mysql-developer-guide\artifacts\sample-php-app
+
+    php artisan config:clear
+
+    php artisan migrate
+
+    php artisan db:seed
+    ```
+
+2.  You should see several tables get created
+
+## Test the Store Application
+
+1.  Open a chrome browser window
+2.  Navigate to `http://localhost:8080`, you should see the store front
+    load.
+
+## Manual Deployment
+
+The above resources were deployed as part of the ARM template. You would
+need to do the following in order to get your Windows machine setup:
+
+1.  Install IIS
+2.  Install PHP Extensions
+3.  Install PHP 8.0
+4.  Copy the web application files to the `c:\inetpub\wwwroot` folder
+5.  Install MySQL
+
+# Cloud Deployment to Azure VM
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+
+The app is running in an Azure VM. The App needs to be exposed to the
+internet via port 80 in order for it you to see the results.
+
+## Test the Application #1
+
+1.  Open a browser to the Azure Portal
+2.  Navigate to the **paw-1** virtual machine
+3.  In the **Essentials** section, copy the public IP Address
+4.  Open a browser to the virtual machine ip address (ex
+    `http:\\IP_ADDRESS:8080`)
+5.  You should get a **ERR_CONNECTION_TIMED_OUT** error. This is because
+    the network security group on the virtual machine does not allow
+    port 8080 access.
+
+## Open Port 8080
+
+1.  Navigate to the **Paw-1** machine, select it
+2.  Under **Settings**, select **Networking**
+3.  Select **Add inbound port rule**
+4.  For the destination port, type **8080**
+5.  For the name, type **Port_8080**
+6.  Select **Add**
+
+## Test the Application #2
+
+1.  Retry connecting to the web application (ex
+    `http:\\IP_ADDRESS:8080`), you will get another timeout error
+
+2.  Switch back to the **paw-1** machine, run the following PowerShell:
+
+    ``` powershell
+    New-NetFirewallRule -DisplayName 'Port 8080' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8080
+    ```
+
+3.  You should see your application load
+
+4.  Open a browser to the virtual machine ip address (ex
+    `http:\\IP_ADDRESS:8080\database.php`)
+
+5.  You should see your results
+
+## Enable Port 443
+
+As part of any secured web application, you should enable SSL/TLS.
+
+1.  Setup certificate on web machine
+    -   Open IIS Manager
+    -   Select the server node
+    -   Select **Server certificates**
+    -   Select **Create self-signed certificate**
+    -   Select **OK** `<!--
+        - For the friendly name, type **paw-1**
+        - For the certificate store, select **Web Hosting**
+        - For Common name, type **PHP Dev**
+        - For Organization, type **PHP Dev**
+        - For Organizational unit, type **Dev**
+        - For City/locality, type **Redmond**
+        - For State/province, type **WA**
+        - Click **Next**
+        -->`{=html}
+2.  Setup SSL
+    -   Expand the **Sites** node
+    -   Select the **Default Web Site**
+    -   In the actions, select **Bindings**
+    -   Select **Add**
+    -   For the type, select **https**
+    -   For the SSL certificate, select **paw-1**
+    -   Select **OK**
+
+## Open Port 443
+
+1.  Navigate to the **Paw-1** machine, select it
+2.  Under **Settings**, select **Networking**
+3.  Select **Add inbound port rule**
+4.  For the destination port, type **443**
+5.  For the name, type **Port_443**
+6.  Select **Add**
+
+## Test the Application #3
+
+1.  Retry connecting to the web application (ex
+    `https:\\IP_ADDRESS:443`), you should get an error
+
+2.  Switch back to the **paw-1** machine, run the following PowerShell:
+
+    ``` powershell
+    New-NetFirewallRule -DisplayName 'Port 443' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 443
+    ```
+
+3.  Select the **Advanced** button
+
+4.  Select **Proceed to IP_ADDRESS (unsafe)**
+
+5.  You should see your application load
+
+6.  Open a browser to the virtual machine ip address (ex
+    `https:\\IP_ADDRESS:8080\database.php`)
+
+7.  You should see your results
+
+# Cloud Deployment to Azure App Service
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+The application and database must be migrated to Azure App Service and
+Azure Database for MySQL.
+
+## Basic Deployment
+
+### Deploy the Application
+
+1.  Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in
+    Visual Studio code
+
+2.  If prompted, select **Yes, I trust the authors**
+
+3.  Open a terminal window, run the following:
+
+    ``` powershell
+    Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip
+    ```
+
+4.  Deploy the zip to Azure, run the following, be sure to replace the
+    `SUFFIX`:
+
+    ``` powershell
+    Connect-AzAccount
+
+    $suffix = "SUFFIX";
+    $resourceGroupName = "RESOURCE_GROUP_NAME";
+
+    $appName = "mysqldev$suffix";
+    $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
+
+    #NOTE: you can't use this for linux based deployments
+    #Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip -force
+
+    7z a -r ./site.zip ./sample-php-app/*
+
+    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip"
+
+    az login --scope https://management.core.windows.net//.default
+
+    az webapp deploy --resource-group $resourceGroupName --name $appName --src-path "C:\labfiles\microsoft-mysql-developer-guide\site.zip" --type zip
+    ```
+
+### Update Application Settings
+
+1.  Open the Azure Portal
+
+2.  Browse to the **mysqldevSUFFIX** app service
+
+3.  Under **Development tools**, select **SSH**, then select **Go**
+
+4.  Run the following:
+
+    ``` bash
+    cp /etc/nginx/sites-available/default /home/site/default
+    ```
+
+5.  Edit the `default` file
+
+    ``` bash
+    nano /home/site/default
+    ```
+
+6.  Modify the root to be the following:
+
+    ``` bash
+    root /home/site/wwwroot/public
+    ```
+
+7.  Add the following to the `location` section after the
+    `index  index.php index.html index.htm hostingstart.html;` line:
+
+    ``` bash
+    try_files $uri $uri/ /index.php?$args;
+    ```
+
+8.  Add a startup.sh file:
+
+    ``` bash
+     nano /home/site/startup.sh
+    ```
+
+9.  Copy and paste the following:
+
+    ``` bash
+    #!/bin/bash
+
+    cp /home/site/default /etc/nginx/sites-available/default
+    service nginx reload
+    ```
+
+10. Exit the editor. Navigate to `AppServiceProvider.php`.
+
+    ``` bash
+    nano /home/site/wwwroot/app/Providers/AppServiceProvider.php
+    ```
+
+11. Uncomment the `URL::forceScheme('https');` line in the `boot()`
+    method.
+
+12. Switch back the Azure Portal and the app service, under
+    **Settings**, select **Configuration**
+
+13. Select **General settings**
+
+14. In the startup command textbox, type `/home/site/startup.sh`
+
+15. Select **Save**
+
+### Test the Application
+
+1.  Open the Azure Portal
+2.  Browse to `http://mysqldevSUFFIX.azurewebsites.net/default.php`, you
+    should see `Hello World`
+3.  Browse to `http://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get an error. This is because the connection details were
+    embedded in the php file.
+
+### Add Firewall IP Rule and Azure Access
+
+1.  Switch to the Azure Portal
+2.  Browse to the `mysqldevSUFFIX` mysql database server
+3.  Under **Settings**, select **Networking**
+4.  Select **Add current client IP address (...)**
+5.  Select the **Allow public access from any Azure Service within Azure
+    to this server** checkbox
+6.  Select **Save**
+
+### Migrate the Database
+
+1.  Use the steps in [Migrate your database] article.
+
+## Update the connection string
+
+1.  Switch to the Azure Portal
+
+2.  Browse to the **mysqldevSUFFIX** web application
+
+3.  Under **Development Tools**, select **SSH**
+
+4.  Select **Go-\>**
+
+5.  Select **Debug console-\>CMD**
+
+6.  Edit the **/home/site/wwwroot/pubic/database.php**:
+
+    ``` bash
+    nano /home/site/wwwroot/pubic/database.php
+    ```
+
+7.  Set the servername variable to
+    `mysqldevSUFFIX.mysql.database.azure.com`
+
+8.  Set the username to `s2admin`
+
+9.  Set the password to `Solliance123`
+
+10. Press Ctrl-X, then Y to save the file
+
+## Test new settings #1
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get an error about SSL settings.
+
+## Fix SSL error
+
+1.  Download the
+    `https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem`
+    certificate
+
+2.  Switch back to the SSH window, run the following:
+
+    ``` bash
+    cd /home/site/wwwroot/public
+
+    wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+    ```
+
+3.  Edit the the `database.php` file
+
+    ``` php
+    nano /home/site/wwwroot/public/database.php
+    ```
+
+4.  Update the database connection to use ssl by uncommenting the
+    `mysqli_ssl_set` method before the `mysqli_real_connect` method:
+
+    ``` php
+    mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    ```
+
+5.  Press Ctrl-X, then Y to save the file
+
+## Test new settings #2
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get your results.
+
+## Update to use Environment Variables
+
+Putting credential in the PHP files is not a best practice, it is better
+to utilize environment variables for this.
+
+1.  Switch back to the SSH window
+
+2.  Edit the **/home/site/wwwroot/pubic/database.php**:
+
+    ``` bash
+    nano /home/site/wwwroot/pubic/database.php
+    ```
+
+3.  Update the connection variables to the following:
+
+    ``` php
+    $servername = getenv("APPSETTING_DB_HOST");
+    $username = getenv("APPSETTING_DB_USERNAME");
+    $password = getenv("APPSETTING_DB_PASSWORD");
+    $dbname = getenv("APPSETTING_DB_DATABASE");
+    ```
+
+    > **NOTE** Azure App Service adds the `APPSETTING` prefix to all
+    > environment variables
+
+4.  Edit the **/home/site/wwwroot/config/database.php**:
+
+    ``` bash
+    nano /home/site/wwwroot/config/database.php
+    ```
+
+5.  Update the mysql connection to utilize the environment variables:
+
+    ``` php
+    'host' => getenv('APPSETTING_DB_HOST'),
+    'port' => getenv('APPSETTING_DB_PORT'),
+    'database' => getenv('APPSETTING_DB_DATABASE'),
+    'username' => getenv('APPSETTING_DB_USERNAME'),
+    'password' => getenv('APPSETTING_DB_PASSWORD'),
+    ```
+
+6.  Add the environment variables to the App Service:
+
+    -   Browse to the Azure Portal
+    -   Select the **mysqldevSUFFIX** app service
+    -   Under **Settings**, select **Configuration**
+    -   Select **New application setting**
+    -   Add the following:
+        -   `DB_HOST` = `mysqldevflexSUFFIX.mysql.database.azure.com`
+        -   `DB_USERNAME` = `s2admin`
+        -   `DB_PASSWORD` = `Solliance123`
+        -   `DB_DATABASE` = `contosostore`
+        -   `DB_PORT` = `3306`
+
+## Test new settings #3
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get your results.
+
+## Create Azure Key Vault values
+
+1.  Switch to the Azure Portal
+2.  Browse to the **mysqldevSUFFIX-kv** Key Vault
+3.  Under **Settings** select **Access Policies**
+4.  Select **Add Access Policy**
+5.  For the secret permission, select the dropdown, then select **All**
+6.  For the principal, select your user account
+7.  Select **Add**
+8.  Select **Save**
+9.  Under **Settings**, select **Secrets**
+10. Select **Generate/Import**
+11. For the name, type **MySQLPassword**
+12. For the value, type **Solliance123**
+13. Select **Create**
+
+## Create Managed Service Identity
+
+1.  Switch to the Azure Portal
+2.  Browse to the \*\* app service
+3.  Under **Settings**, select **Identity**
+4.  For the system assigned identity, toggle to **On**
+5.  Select **Save**, in the dialog, select **Yes**
+6.  Copy the **Object ID** for later user
+7.  Browse to the **mysqldevSUFFIX-kv** Key Vault
+8.  Under **Settings** select **Access Policies**
+9.  Select **Add Access Policy**
+10. For the secret permission, select the dropdown, then select **All**
+11. For the principal, select the new managed identity for the app
+    service (use the copied object ID)
+12. Select **Add**
+13. Select **Save**
+14. Under **Settings**, select **Secrets**
+15. Select the **MySQLPassword**
+16. Select the current version
+17. Copy the secret identifier for later use
+
+## Configure Environment Variables
+
+1.  Browse to the Azure Portal
+
+2.  Select the **mysqldevSUFFIX** app service
+
+3.  Under **Settings**, select **Configuration**
+
+4.  Select the edit button for the **MYSQL_PASSWORD** application
+    setting
+
+5.  Update it to the following:
+
+    ``` text
+    @Microsoft.KeyVault(SecretUri=https://mysqldevSUFFIX-kv.vault.azure.net/secrets/MySQLPassword/)
+    ```
+
+6.  Select **Save**, ensure that you see a green check mark.
+
+## Test new settings #4
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get your results.
+
+# Cloud Deployment to Azure App Service with MySQL InApp
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+The application and database must be migrated to Azure App Service and
+Azure Database for MySQL.
+
+## Basic Deployment
+
+### Deploy the Application
+
+1.  Open the \`\` folder in Visual Studio code
+
+2.  If prompted, select **Yes, I trust the authors**
+
+3.  Open a terminal window, run the following:
+
+    ``` powershell
+    Compress-Archive -Path .\app\*.* -DestinationPath app.zip
+    ```
+
+4.  Deploy the zip to Azure, run the following:
+
+    ``` powershell
+    Connect-AzAccount
+
+    $suffix = "SUFFIX";
+    $resourceGroupName = "RESOURCE_GROUP_NAME";
+
+    $appName = "mysqldev$suffix";
+    $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
+
+    Compress-Archive -Path .\src\*.* -DestinationPath src.zip -force
+
+    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy\src.zip"
+    ```
+
+### Test the Application
+
+1.  Open the Azure Portal
+2.  Browse to the \`\` app service
+3.  Under **Settings**, select **Configuration**
+4.  Select the **General settings** tab
+5.  For the stack, select **PHP**
+6.  For the php version, select **7.4**
+7.  Select **Save**
+8.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`,
+    you should see `Hello World`
+9.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should get an error. This is because the connection details were
+    embedded in the php file.
+
+### Export the Database
+
+1.  In the virtual machine, open the MySQL Workbench
+2.  Connect to the local instance
+3.  Export the `ContosoStore` database
+
+### Enable MySQL In App
+
+1.  Switch to the Azure Portal
+2.  Browse to the `mysqldevSUFFIX` app service
+3.  Under **Settings**, select **MySQL in App**
+4.  For the **MySQL in App** toggle, set to **On**
+5.  Set the slow query log to **On**
+6.  Set the general log to **On**
+7.  Select **Save**, take note of the connection string environment
+    variable.
+
+## Import the database
+
+1.  In the Data import and export section, select **Import/Export**
+2.  Select the **Manage** link, the `myphpadmin` panel will open
+3.  In the left navigation, select **New**
+4.  For the name, type **ContosoStore**
+5.  Select the **Import** tab
+6.  Browse to your export file, run it
+
+## Update the environment variables
+
+1.  Browse to the **mysqldevSUFFIX** web application
+
+2.  Under **Development Tools**, select **Advanced Tools**
+
+3.  Select **Go-\>**
+
+4.  Select **Debug console-\>CMD**
+
+5.  Browse to **site-.wwwroot**
+
+6.  Select the **edit** button for the `database.php` file
+
+7.  Add the following database connection code below where you set the
+    variables:
+
+    ``` php
+    foreach ($_SERVER as $key => $value)
+    {
+        if (strpos($key, "MYSQLCONNSTR_") !== 0)
+        {
+            continue;
+        }
+
+        $servername = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+        $dbname = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
+        $username = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+        $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+    }
+    ```
+
+8.  Remove the SSL settings code:
+
+    ``` php
+    mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootCA.crt.pem", NULL, NULL);
+    ```
+
+9.  Select **Save**
+
+## Test the Application
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`,
+    you should see `Hello World`
+2.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should see results.
+
+# Deployment via CI/CD
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+Both the application and database are deployed via Docker containers.
+
+## Azure DevOps Option
+
+### Create DevOps Project
+
+1.  Login to Azure Dev Ops (https://dev.azure.com)
+2.  Select **New project**
+3.  For the name, type **contosostore**
+4.  Select **Create**
+
+### Setup Git Origin and push code
+
+1.  Select **Repos**
+
+2.  In the **Push an existing repository from command line** section,
+    select the **Copy** button
+
+3.  Switch to Visual Studio code
+
+4.  In the terminal window, run the following:
+
+    ``` powershell
+    cd c:\labfiles\microsoft-mysql-developer-guide\sample-php-app
+
+    git remote remove origin
+    ```
+
+5.  In the terminal window, paste the code you copied above, press
+    **ENTER** (be sure to replace ORG_NAME)
+
+    ``` powershell
+    git remote add origin https://ORG_NAME@dev.azure.com/ORG_NAME/contosostore/_git/contosostore
+    git push -f origin main
+    ```
+
+6.  In the dialog, login using your Azure Active Directory credentials
+    for the repo. You should see the files get pushed to the repo
+
+7.  Switch back to Azure Dev Ops, refresh the repo, you should see all
+    the repo files
+
+### Create Service Connection
+
+1.  Select **Project Settings**
+
+2.  Under **Pipelines**, select **Service Connections**
+
+3.  Select **Create service connection**
+
+4.  Select **Azure Resource Manager**
+
+5.  Select **Next**
+
+6.  For the authentication, select **Service principal (automatic)**
+
+7.  Select **Next**
+
+8.  Select your lab subscription and resource group
+
+    > **NOTE** If you do not see any subscriptions displayed, open Azure
+    > Dev Ops in a in-private window and try again
+
+9.  For the service connection name, type **MySQL Dev**
+
+10. Select **Grant access permission to all pipelines** 10.Select
+    **Save**
+
+### Create Pipeline
+
+1.  Select **Pipelines**
+2.  Select **Set up build**
+3.  Select **Existing Azure Pipelines YAML file**
+4.  Select the **/azure-pipelines.yaml** file
+5.  Select **Continue**
+6.  Select **Run**
+
+### Create Release
+
+1.  Select **Releases**
+2.  Select **New pipeline**
+3.  Select the **Azure App Service Deployment**
+4.  Select **Apply**
+5.  In the **Artifacts** section, select the **Add an artifact** shape
+6.  For the project, select **contosostore**
+7.  For the source, select **contosostore**
+8.  Select **Add**
+9.  Select the **1 job, 1 task** link
+10. Select the subscription
+11. Select the **MySQL** app service
+12. Select **Save**
+
+### Commit changes
+
+1.  Run the following:
+
+    ``` powershell
+    git add -A
+    git commit -a -m "Pipeline settings"
+    git push -f origin main
+    ```
+
+### Perform the deployment
+
+1.  TODO
+
+### Test the DevOps deployment
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`,
+    you should see `Hello World`
+2.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should see results.
+
+## GitHub Option
+
+### Create Github repo
+
+1.  Browse to https://github.com
+2.  Login with your GitHub credentials
+3.  In the top right, select the **+** then select **New repository**
+4.  For the name, type **contosostore**
+5.  Select **Create repository**
+
+### Upload your application
+
+1.  Switch to Visual Studio code
+
+2.  In the terminal window, run the following:
+
+    ``` powershell
+    git remote remove origin
+    ```
+
+3.  In the terminal window, paste the code you copied above, press
+    **ENTER**
+
+    ``` powershell
+    git remote add origin https://github.com/USERNAME/contosostore.git
+    git branch -M main
+    git push -u origin main
+    ```
+
+4.  In the dialog, login using your GitHub credentials for the repo. You
+    should see the files get pushed to the repo
+
+5.  Switch back to GitHub, refresh the repo, you should see all the repo
+    files
+
+### Generate Credentials
+
+1.  Run the following commands to generate the azure credentials (be
+    sure to replace the token values for subscription and resource
+    group):
+
+    ``` powershell
+    az login
+
+    az ad sp create-for-rbac --name "MySQLDevSUFFIX" --sdk-auth --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group}
+    ```
+
+2.  Copy the json that is outputted
+
+3.  Switch back to the GitHub repository, select **Settings** then
+    select **Secrets**
+
+4.  Select **New repository secret**
+
+5.  For the name, type **AZURE_CREDENTIALS**
+
+6.  Paste the json from above as the value
+
+7.  Select **Save**
+
+### Deploy the code
+
+1.  In the GitHub browser window, select **Actions**
+2.  Select **set up a workflow yourself**
+3.  Copy and paste the `github-pipelines.yaml` into the `main.yml` file
+4.  Update the `AZURE_WEBAPP_NAME: mysqldevSUFFIX` line to replace the
+    SUFFIX
+5.  Select **Start commit**
+6.  Select **Commit new file**
+7.  Select **Actions**, then select the `Create main.yml` workflow
+    instance, you should see the `Contoso Store` job displayed, select
+    it
+8.  Review the tasks that were executed
+
+### Test the GitHub deployment
+
+1.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`,
+    you should see `Hello World`
+2.  Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`,
+    you should see results.
+
+# Migrate to Docker Containers
+
+This is a simple app that runs PHP code to connect to a MYSQL database.
+Both the application and database are deployed via Docker containers.
+
+## Migrate Application to Docker
+
+### Migrate to ENV variables
+
+1.  Open the `\public\database.php` file, update the your php MySQL
+    connection environment variables by removing the `APPSETTING_` from
+    each:
+
+    ``` php
+    $servername = getenv("MYSQL_SERVERNAME");
+    $username = getenv("MYSQL_USERNAME");
+    $password = getenv("MYSQL_PASSWORD");
+    $dbname = getenv("MYSQL_DATABASE");
+    ```
+
+### Download Docker container
+
+1.  Open Docker Desktop, if prompted, select **OK**
+
+2.  In the agreement dialog, select the checkbox and then select
+    **Accept**
+
+3.  It will take a few minutes for the Docker service to start, when
+    prompted, select **Skip tutorial**
+
+4.  Open a PowerShell window, run the following to download and start a
+    php-enabled docker container
+
+    ``` powershell
+    docker run -d php:8.0-apache
+    ```
+
+5.  In the
+    `c:\labfiles\microsoft-mysql-developer-guide\artifacts\03-00-Docker`
+    directory, create the `Dockerfile.web` with the following:
+
+    ``` text
+    # Dockerfile
+    FROM php:8.0-apache
+
+    RUN apt-get update && apt-get upgrade -y
+    RUN apt update && apt install -y zlib1g-dev libpng-dev && rm -rf /var/lib/apt/lists/*
+    RUN apt update && apt install -y curl
+    RUN apt-get install -y libcurl4-openssl-dev
+    RUN docker-php-ext-install fileinfo
+    RUN docker-php-ext-install curl
+    RUN docker-php-ext-install mysqli
+    RUN docker-php-ext-enable mysqli
+    RUN docker-php-ext-install pdo_mysql
+
+    COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+    COPY start-apache.sh /usr/local/bin
+
+    RUN a2enmod rewrite
+
+    COPY sample-php-app /var/www
+    RUN chown -R www-data:www-data /var/www
+
+    RUN chmod 755 /usr/local/bin/start-apache.sh
+
+    #CMD ["start-apache.sh"]
+
+    EXPOSE 80
+    ```
+
+6.  Run the following to create the image:
+
+    ``` powershell
+    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+
+    cd $sourcePath;
+
+    docker build -t store-web --file Dockerfile.web . 
+    ```
+
+## Migrate Database to Docker
+
+1.  Run the following to export the database:
+
+    ``` powershell
+    cd "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+
+    $username = "root";
+    $password = "";
+    $server = "localhost";
+    $database = "ContosoStore";
+
+    $mysqlPath = "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
+
+    & "$mysqlPath\mysqldump" -h $server -u $username $database > data.sql
+    ```
+
+2.  In the `c:\labfiles\microsoft-mysql-developer-guide\artifacts`
+    directory, create a new `Dockerfile.db` docker compose file:
+
+    ``` text
+    FROM mysql:5.7
+    RUN chown -R mysql:root /var/lib/mysql/
+
+    ADD data.sql /etc/mysql/data.sql
+
+    RUN cp /etc/mysql/data.sql /docker-entrypoint-initdb.d
+
+    EXPOSE 3306
+    ```
+
+3.  Build the container:
+
+    ``` powershell
+    docker build -t store-db --file Dockerfile.db .
+    ```
+
+## Run the Docker images
+
+1.  Create the following `docker-compose.yml` docker compose file:
+
+    ``` yaml
+    version: '3.8'
+    services:
+      web:
+        image: store-web
+        environment:
+          - MYSQL_DATABASE=contosostore
+          - MYSQL_USER=root
+          - MYSQL_PASSWORD=root
+          - MYSQL_PORT=3306
+          - MYSQL_SERVERNAME=db
+        ports:
+          - "8080:80"
+      db:
+        image: store-db
+        restart: always
+        environment:
+          - MYSQL_ROOT_PASSWORD=root
+        ports:
+          - "3306:3306"
+      phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8081:80'
+        restart: always
+        environment:
+            PMA_HOST: db
+        depends_on:
+            - db
+    ```
+
+2.  Run the following to create the web container:
+
+    ``` powershell
+    docker compose run web
+    ```
+
+3.  Run the following to create the db container:
+
+    ``` docker
+    stop service mysql
+
+    docker compose run db
+    ```
+
+## Migrate the database
+
+1.  Use export steps in [Migrate your database] article to export the
+    database
+2.  Open a browser to `http:\\localhost:8081` and the phpmyadmin portal
+3.  Login to using `root` and `root`
+4.  Select the **contosostore** database
+5.  Run the exported database sql to import the database and data
+6.  Run the following query, record the count
+
+``` sql
+select count(*) from `orders`
+```
+
+## Test the Docker images
+
+1.  Open a browser to `http:\\localhost:8080\index.php`
+2.  Select **START ORDER**
+
+> **NOTE** If you get an error about the application not being able to
+> connect, you can do the following to attempt to debug:
+
+-   Open a new PowerShell window, run the following to start a bash
+    shell
+
+    ``` powershell
+    docker exec -it artifacts-web-1 /bin/bash
+    ```
+
+-   Open a new PowerShell window, run the following to start a bash
+    shell. Review any errors and then resolve them.
+
+    ``` bash
+    cd /var/www
+
+    php artisian migrate
+    ```
+
+3.  Select **Breakfast**, then select **CONTINUE**
+
+4.  Select **Bacon & Eggs**, then select **ADD**
+
+5.  Select **CHECKOUT**
+
+6.  Select **COMPLETE ORDER**
+
+7.  Switch to the PowerShell window that started the containers,
+    shutdown the images, press **CTRL-X** to stop the images
+
+8.  Restart the images:
+
+    ``` powershell
+    docker compose up
+    ```
+
+9.  Attemp to re-run the query, notice that the database has no tables
+    again. This is because the container's data was lost when it was
+    stopped/removed.
+
+## Fix Storage persistence
+
+1.  Modify the `docker-compose.yml` docker compose file, notice how we
+    are creating and adding a volume to the database container. We also
+    added the phpmyadmin continer:
+
+``` yaml
+version: '3.8'
+services:
+  web:
+    image: store-web
+    environment:
+      - DB_DATABASE=contosostore
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_HOST=db
+      - DB_PORT=3306
+      - MYSQL_ATTR_SSL_CA=
+    ports:
+      - "8080:80" 
+  db:
+    image: store-db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=contosostore
+    volumes:
+      - "db-volume:/var/lib/mysql"
+    ports:
+      - "3336:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8081:80'
+    restart: always
+    environment:
+        PMA_HOST: db
+    depends_on:
+        - db
+volumes:
+  db-volume:
+    external: false
+```
+
+## Re-test the Docker images
+
+1.  Run the following:
+
+``` powershell
+stop service mysql
+
+docker compose up
+```
+
+2.  Create some more orders, restart the containers. You will notice
+    that your data is now persisted. You will need to ensure that you
+    maintain the database volume for the length of your solution. If
+    this volume is ever deleted, you will lose your data!
+
+## Save the images to Azure Container Registry (ACR)
+
+1.  Open the Azure Portal
+
+2.  Browse to the **mysqldevSUFFIX** Azure Container Registry
+
+3.  Under **Settings**, select **Access keys**
+
+4.  Copy the username and password
+
+5.  In the **paw-1** virtual machine, run the following:
+
+    ``` powershell
+    docker login {acrName}.azurecr.io -u {username} -p {password}
+
+    docker tag phpmyadmin/phpmyadmin {acrName}.azurecr.io/phpmyadmin/phpmyadmin
+
+    docker tag store-db {acrName}.azurecr.io/store-db
+
+    docker tag store-web {acrName}.azurecr.io/store-web
+
+    docker push {acrName}.azurecr.io/store-db
+
+    docker push {acrName}.azurecr.io/store-web
+
+    docker push {acrName}.azurecr.io/phpmyadmin/phpmyadmin
+    ```
+
+6.  You should now see three images in your Azure Container Registry
+    that we will use later for deployment to other container based
+    runtimes.
+
+# Migrate to Azure Container Instances (ACI)
+
+Now that you have containerized versions of your applications, you can
+host them in several places in Azure. Here we explore Azure Container
+Instances (ACI).
+
+## Push images to Azure Container Registry
+
+1.  If you haven't already, be sure to push your images to your Azure
+    Container Registry using the [Push Images to Acr] article.
+
+## Run images in ACI
+
+1.  Run the following commands to create two new container instances:
+
+    ``` powershell
+    $acrName = "mysqldevSUFFIX";
+    $resourceName = $acrName;
+    $resourceGroupName = "{RESOURCE_GROUP_NAME}";
+
+    $rg = Get-AzResourceGroup $resourceGroupName;
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+    $creds = $acr | Get-AzContainerRegistryCredential
+
+    $imageRegistryCredential = New-AzContainerGroupImageRegistryCredentialObject -Server "$acrName.azurecr.io" -Username $creds.username -Password (ConvertTo-SecureString $creds.password -AsPlainText -Force)
+
+    $storageKey = $(Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -Name $resourceName).Value[0];
+    $context = $(New-AzStorageContext -StorageAccountName $resourceName -StorageAccountKey $storageKey);
+
+    #create a new azure file share
+    New-AzureStorageShare -Name "db-volume" -Context $context
+
+    $containerName = "store-db";
+    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosostore";
+    $env2 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_ROOT_PASSWORD" -Value "root";
+    $env3 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_ROOT_HOST" -Value "%";
+    $port1 = New-AzContainerInstancePortObject -Port 3306 -Protocol TCP;
+    $volume = New-AzContainerGroupVolumeObject -Name "db-volume" -AzureFileShareName "db-volume" -AzureFileStorageAccountName $resourceName -AzureFileStorageAccountKey (ConvertTo-SecureString $storageKey -AsPlainText -Force);
+    $vMount = @{};
+    $vMount.MountPath = "/var/lib/mysql";
+    $vMount.Name = "db-volume";
+    $container = New-AzContainerInstanceObject -Name $containerName -Image "$acrName.azurecr.io/store-db" -Port @($port1) -EnvironmentVariable @($env1, $env2, $env3) -VolumeMount @($vMount);
+    New-AzContainerGroup -ResourceGroupName $resourceGroupName -Name $containerName -Container $container -OsType Linux -Location $rg.location -ImageRegistryCredential $imageRegistryCredential -IpAddressType Public -Volume $volume;
+    ```
+
+2.  Browse to the Azure Portal
+
+3.  Search for the **store-db** Container instance and select it
+
+4.  Copy the public IP address
+
+5.  Setup the web container, replace the `IP_ADDRESS` with the one
+    copied above:
+
+    ``` powershell
+    $containerName = "store-web";
+    $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "DB_DATABASE" -Value "contosostore";
+    $env2 = New-AzContainerInstanceEnvironmentVariableObject -Name "DB_USERNAME" -Value "root";
+    $env3 = New-AzContainerInstanceEnvironmentVariableObject -Name "DB_PASSWORD" -Value "root";
+    $env4 = New-AzContainerInstanceEnvironmentVariableObject -Name "DB_HOST" -Value "IP_ADDRESS";
+    $port1 = New-AzContainerInstancePortObject -Port 80 -Protocol TCP;
+    $port2 = New-AzContainerInstancePortObject -Port 8080 -Protocol TCP;
+    $container = New-AzContainerInstanceObject -Name mysql-dev-web -Image "$acrName.azurecr.io/store-web" -EnvironmentVariable @($env1, $env2, $env3, $env4) -Port @($port1, $port2);
+    New-AzContainerGroup -ResourceGroupName $resourceGroupName -Name $containerName -Container $container -OsType Linux -Location $rg.location -ImageRegistryCredential $imageRegistryCredential -IpAddressType Public;
+    ```
+
+## Test the images
+
+1.  Browse to the Azure Portal
+2.  Search for the **store-web** Container instance and select it
+3.  Copy the public IP address and then open a browser window to
+    `http://IP_ADDRESS/default.php`
+
+## Multi-container single app service deployment
+
+In the previous steps, you created a container instance for each of the
+containers, however, you can create a multi-container container instance
+where all services are encapsulated into one container instance instance
+using Azure CLI.
+
+1.  Create the following `docker-compose-contoso.yml` file, be sure to
+    replace the `SUFFIX`:
+
+    ``` yaml
+    version: '3.8'
+    services:
+    web:
+        image: mysqldevSUFFIX.azurecr.io/store-web:latest
+        environment:
+        - DB_DATABASE=contosostore
+        - DB_USERNAME=root
+        - DB_PASSWORD=root
+        - DB_HOST=db
+        - DB_PORT=3306
+        ports:
+        - "8080:80" 
+        depends_on:
+        - db 
+    db:
+        image: mysqldevSUFFIX.azurecr.io/store-db:latest
+        volumes:
+        - ${WEBAPP_STORAGE_HOME}/site/database:/var/lib/mysql
+        restart: always
+        environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=contosostore
+        ports:
+        - "3306:3306"
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8081:80'
+        restart: always
+        environment:
+            PMA_HOST: db
+        depends_on:
+          - db
+    ```
+
+2.  In a PowerShell window, run the following command:
+
+    ``` powershell
+    $acrName = "mysqldevSUFFIX";
+    $resourceName = $acrName;
+    $resourceGroupName = "{RESOURCE_GROUP_NAME}";
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+    $creds = $acr | Get-AzContainerRegistryCredential;
+
+    az login;
+
+    az webapp create --resource-group $resourceGroupName --plan $resourceName --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml;
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DOCKER_REGISTRY_SERVER_USERNAME=$($creds.Username)
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DOCKER_REGISTRY_SERVER_URL="$resourceName.azurecr.io"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DOCKER_REGISTRY_SERVER_PASSWORD=$($creds.Password)
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DB_HOST="DB"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DB_USERNAME="root"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DB_PASSWORD="root"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DB_DATABASE="ContosoStore"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DB_PORT="3306"
+
+    az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=TRUE
+
+    az webapp config container set --resource-group $resourceGroupName --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml
+    ```
+
+3.  Switch back to the Azure Portal, browse to the Azure App Service.
+    You can view the container logs by browsing to
+    `https://mysqldevmbsjnv3m.scm.azurewebsites.net/api/logs/docker`.
+    Copy the path to the docker file and paste it into a new window,
+    review the logs and fix any errors.
+
+# Migrate to Azure App Service Containers
+
+Now that you have containerized versions of your applications, you can
+host them in several places in Azure. Here we explore Azure App Service
+Containers.
+
+## Push images to Azure Container Registry
+
+1.  If you haven't already, be sure to push your images to your Azure
+    Container Registry using the [Push Images to Acr] article.
+
+## Run images in Azure App Service
+
+1.  Run the following to create the app service containers:
+
+    ``` powershell
+    $name = "mysqldev-app-web";
+    $acrName = "mysqldevSUFFIX";
+    $appPlan = "mysqldevSUFFIX-linux";
+    $image = "$acrName.azure.io/store-web";
+    $resourceGroupName = "";
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+    $creds = $acr | Get-AzContainerRegistryCredential;
+
+    New-AzWebApp -Name $name -ResourceGroupName $resourceGroupName -AppServicePlan $appPlan -ContainerImageName $image -ContainerRegistryUrl $acr.loginserver -ContainerRegistryUser $creds.username -ContainerRegistryPassword (ConvertTo-SecureString $creds.password -AsPlainText -Force) -Location $acr.location;
+
+    $config = Get-AzResource -ResourceGroupName $resourceGroupName -ResourceType Microsoft.Web/sites/config -ResourceName $name -ApiVersion 2018-02-01
+    $config.Properties.linuxFxVersion = "DOCKER|$($image):latest"
+    $config | Set-AzResource -ApiVersion 2018-02-01 -Debug -Force
+
+    $name = "mysqldev-app-db";
+    $image = "$acrName.azure.io/store-db";
+    New-AzWebApp -Name $name -ResourceGroupName $resourceGroupName -AppServicePlan $appPlan -ContainerImageName $image -ContainerRegistryUrl $acr.loginserver -ContainerRegistryUser $creds.username -ContainerRegistryPassword (ConvertTo-SecureString $creds.password -AsPlainText -Force) -Location $acr.location;
+
+    $config = Get-AzResource -ResourceGroupName $resourceGroupName -ResourceType Microsoft.Web/sites/config -ResourceName $name -ApiVersion 2018-02-01
+    $config.Properties.linuxFxVersion = "DOCKER|$($image):latest"
+    $config | Set-AzResource -ApiVersion 2018-02-01 -Debug -Force
+
+    az webapp create --resource-group $resourceGroupName --plan $appPlan --name $name --deployment-container-image-name $image
+    az webapp config set --resource-group $resourceGroupName --name $name --linux-fx-version "DOCKER|$image:latest"
+    az webapp config appsettings set --resource-group $resourceGroupName --name $name --settings WEBSITES_PORT=3306
+    ```
+
+## Test the containers
+
+1.  Browse to the Azure Portal
+2.  Select the **mysqldev-app-db** app service, record the url
+3.  
+
+# Migrate to Azure Kubernetes Services (AKS)
+
+Now that you have containerized versions of your applications, you can
+host them in several places in Azure. Here we explore Azure Kubernetes
+Service (AKS).
+
+## Push images to Azure Container Registry
+
+1.  If you haven't already, be sure to push your images to your Azure
+    Container Registry using the [Push Images to Acr] article.
+
+## Run images in Azure Kubernetes Service (AKS)
+
+1.  Ensure kubectl is installed:
+
+    ``` powershell
+    cd 04-aks
+
+    az aks install-cli
+
+    az aks get-credentials --name "mysqldevSUFFIX" --resource-group $resourceGroupName
+    ```
+
+2.  Run the following commands to deploy your containers:
+
+    ``` powershell
+    $acrName = "mysqldevSUFFIX";
+    $resourceName = "mysqldevSUFFIX";
+    $resourceGroupName = "RESOURCEGROUPNAME";
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+    $creds = $acr | Get-AzContainerRegistryCredential;
+
+    kubectl create namespace mysqldev
+
+    $ACR_REGISTRY_ID=$(az acr show --name $ACRNAME --query "id" --output tsv);
+    $SERVICE_PRINCIPAL_NAME = "acr-service-principal";
+    $PASSWORD=$(az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --scopes $ACR_REGISTRY_ID --role acrpull --query "password" --output tsv)
+    $USERNAME=$(az ad sp list --display-name $SERVICE_PRINCIPAL_NAME --query "[].appId" --output tsv)
+
+    kubectl create secret docker-registry acr-secret `
+    --namespace mysqldev `
+    --docker-server="https://$($acr.loginserver)" `
+    --docker-username=$username `
+    --docker-password=$password
+
+    #ensure that MSI is enabled
+    az aks update -g $resourceGroupName -n $resourceName --enable-managed-identity
+
+    #get the principal id
+    az aks show -g $resourceGroupName -n $resourceName --query "identity"
+    ```
+
+3.  Create a managed disk, copy its `id` for later use:
+
+``` powershell
+az disk create --resource-group $resourceGroupName --name "disk-store-db" --size-gb 200 --query id --output tsv
+```
+
+4.  Create the following `storage-db.yaml` deployment file:
+
+``` yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-data
+  namespace: mysqldev
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Gi
+```
+
+4.  Create the following `store-db.yaml` deployment file, be sure to
+    replace the `<REGISTRY_NAME>` and `ID` tokens:
+
+``` yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: store-db
+  namespace: mysqldev
+spec:
+  volumes:
+  - name: mysql-data
+    persistentVolumeClaim:
+      claimName: mysql-data
+  containers:
+    - name: store-db
+      image: <REGISTRY_NAME>.azurecr.io/store-db:latest
+      volumeMounts:
+      - mountPath: "/var/lib/mysql/"
+        name: mysql-data
+      imagePullPolicy: IfNotPresent
+      env:
+      - name: MYSQL_DATABASE
+        value: "ContosoStore"
+      - name: MYSQL_ROOT_PASSWORD
+        value: "root"
+  imagePullSecrets:
+    - name: acr-secret
+```
+
+4.  Run the deployment:
+
+    ``` powershell
+    kubectl create -f store-db.yaml
+    ```
+
+5.  Create the following `store-web.yaml` deployment file, be sure to
+    replace the `<REGISTRY_NAME>` token:
+
+``` yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: store-web
+  namespace: mysqldev
+spec:
+  containers:
+    - name: store-web
+      image: <REGISTRY_NAME>.azurecr.io/store-web:latest
+      imagePullPolicy: IfNotPresent
+      env:
+      - name: DB_DATABASE
+        value: "ContosoStore"
+      - name: DB_USERNAME
+        value: "root"
+      - name: DB_PASSWORD
+        value: "root"
+      - name: DB_HOST
+        value: "store-db"
+  imagePullSecrets:
+    - name: acr-secret
+```
+
+6.  Run the deployment:
+
+    ``` powershell
+    kubectl create -f store-web.yaml
+    ```
+
+## Add services
+
+1.  Create the following `store-db-service.yaml` yaml file:
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-db
+spec:
+  ports:
+  - port: 3306
+  selector:
+    app: store-db
+```
+
+2.  Create the following `store-web-service.yaml` yaml file:
+
+``` yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: store-web
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: store-web
+```
+
+## Test your images
+
+1.  Browse to the Azure Portal
+2.  Navigate to your AKS cluster and select it
+3.  Under **Kubernetes resources**, select **Service and ingresses**
+4.  For the **store-web-lb** service, select the external IP link. A new
+    web browser tab should open to the web front end. Ensure that you
+    can create an order without a database error.
+
+## Create a deployment
+
+Kubernetes deployments allow for you to create multiple instances of
+your pods and containers in case your nodes or pods crash
+unexpectiantly.
+
+1.  Create the following `store-deployment.yaml` file:
+
+``` yaml
+```
+
+2.  Deploy the deployment:
+
+``` powershell
+```
+
+# Utilize AKS and Azure Database for MySQL Flexible Server
+
+Rather than managing the database volumes for your MySQL Database, you
+can utilize Azure Database for MySql Flexible Server in order to use a
+platform as a service approach.
+
+## Push images to Azure Container Registry
+
+1.  If you haven't already, be sure to push your images to your Azure
+    Container Registry using the [Push Images to Acr] article.
+
+## Run images in AKS
+
+1.  TODO
+
+## Deploy to Azure Database for MySQL
+
+1.  TODO
+
+# Push images to Azure Container Registry
+
+1.  If you haven't already, be sure to push your images to your Azure
+    Container Registry.
+
+    ``` powershell
+    $acrName = "mysqldevSUFFIX";
+    $resourceGroupName = "";
+    $subscriptionName = "";
+
+    Connect-AzAccount
+
+    Select-AzSubscription $subscriptName;
+
+    $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
+
+    $creds = $acr | Get-AzContainerRegistryCredential
+
+    $acrPassword = $creds.password;
+    $acrurl = $acr.loginserver;
+
+    docker login -u $ACRNAME -p $ACRPASSWORD $ACRURL
+
+    docker tag store-web "$ACRNAME.azurecr.io/store-web"
+
+    docker tag store-db "$ACRNAME.azurecr.io/store-db"
+
+    docker push "$ACRNAME.azurecr.io/store-web"
+
+    docker push "$ACRNAME.azurecr.io/store-db"
+    ```
+
+    # Migrate the on-premises database
+
+## Export the data
+
+1.  In the virtual machine, open the MySQL Workbench
+2.  Connect to the local instance using `root` with no password
+3.  Export the `ContosoStore` database
+    1.  Select **Server-\>Data Export**
+    2.  Select the **contosostore** schema
+    3.  Select the following:
+        1.  Dump Stored Procedures and Functions
+        2.  Dump Events
+        3.  Dump Triggers
+    4.  Select **Export to Self-contained File**
+    5.  For the project folder, type `C:\temp\ContosoStore\export`
+    6.  Select **Start Export**, you should now see a single sql file in
+        the directory
+
+## Import the data
+
+### MySQL Workbench
+
+1.  Connect to the target MySQL instance
+    1.  Select **Database-\>Connect to database**
+    2.  For the hostname, type the dns of the Azure Database for MySQL
+        server (ex `mysqldevSUFFIX.mysql.database.azure.com`)
+    3.  For the username, type **wsuser\@mysqldevSUFFIX**
+    4.  For the password type **Solliance123**
+    5.  Select **OK**
+2.  Import the backup
+    1.  Select **Server-\>Data Import**
+    2.  For the project folder, type `C:\temp\ContosoStore\export`
+    3.  Select **Load folder contents**
+    4.  For the default target schema, select **New**
+    5.  For the name, type **ContosoStore**, then select **OK**
+    6.  Select **Start Import**
+
+## Import the data to Azure
+
+1.  Connect to the Azure MySQL instance
+    1.  Select **Database-\>Connect to database**
+    2.  For the hostname, type the dns of the Azure Database for MySQL
+        server (ex `mysqldevSUFFIX.mysql.database.azure.com`)
+    3.  For the username, type **wsuser\@mysqldevSUFFIX**
+    4.  For the password type **Solliance123**
+    5.  Select **OK**
+2.  Import the backup
+    1.  Select **Server-\>Data Import**
+    2.  For the project folder, type `C:\temp\ContosoStore\export`
+    3.  Select **Load folder contents**
+    4.  For the default target schema, select **New**
+    5.  For the name, type **ContosoStore**, then select **OK**
+    6.  Select **Start Import**
+
+### PhpMyAdmin
+
+```{=html}
+<p align="center">
+```
+`<a href="https://laravel.com" target="_blank">`{=html}`<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400">`{=html}`</a>`{=html}
+```{=html}
+</p>
+```
+```{=html}
+<p align="center">
+```
+`<a href="https://travis-ci.org/laravel/framework">`{=html}`<img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">`{=html}`</a>`{=html}
+```{=html}
+</p>
+```
+## About Laravel
+
+Laravel is a web application framework with expressive, elegant syntax.
+We believe development must be an enjoyable and creative experience to
+be truly fulfilling. Laravel takes the pain out of development by easing
+common tasks used in many web projects, such as:
+
+-   [Simple, fast routing engine].
+-   [Powerful dependency injection container].
+-   Multiple back-ends for [session] and [cache] storage.
+-   Expressive, intuitive [database ORM].
+-   Database agnostic [schema migrations].
+-   [Robust background job processing].
+-   [Real-time event broadcasting].
+
+Laravel is accessible, powerful, and provides tools required for large,
+robust applications.
+
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation] and video
+tutorial library of all modern web application frameworks, making it a
+breeze to get started with the framework.
+
+If you don't feel like reading, [Laracasts] can help. Laracasts contains
+over 1500 video tutorials on a range of topics including Laravel, modern
+PHP, unit testing, and JavaScript. Boost your skills by digging into our
+comprehensive video library.
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding
+Laravel development. If you are interested in becoming a sponsor, please
+visit the Laravel [Patreon page].
+
+### Premium Partners
+
+-   **[Vehikl]**
+-   **[Tighten Co.]**
+-   **[Kirschbaum Development Group]**
+-   **[64 Robots]**
+-   **[Cubet Techno Labs]**
+-   **[Cyber-Duck]**
+-   **[Many]**
+-   **[Webdock, Fast VPS Hosting]**
+-   **[DevSquad]**
+-   **[Curotec]**
+-   **[OP.GG]**
+-   **[CMS Max]**
+-   **[WebReinvent]**
+-   **[Lendio]**
+-   **[Romega Software]**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The
+contribution guide can be found in the [Laravel documentation].
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all,
+please review and abide by the [Code of Conduct][67].
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an
+e-mail to Taylor Otwell via <taylor@laravel.com>. All security
+vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT
+license].
+
+```{=html}
+<p align="center">
+```
+`<a href="https://laravel.com" target="_blank">`{=html}`<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400">`{=html}`</a>`{=html}
+```{=html}
+</p>
+```
+```{=html}
+<p align="center">
+```
+`<a href="https://travis-ci.org/laravel/framework">`{=html}`<img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version">`{=html}`</a>`{=html}
+`<a href="https://packagist.org/packages/laravel/framework">`{=html}`<img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">`{=html}`</a>`{=html}
+```{=html}
+</p>
+```
+## About Laravel
+
+Laravel is a web application framework with expressive, elegant syntax.
+We believe development must be an enjoyable and creative experience to
+be truly fulfilling. Laravel takes the pain out of development by easing
+common tasks used in many web projects, such as:
+
+-   [Simple, fast routing engine].
+-   [Powerful dependency injection container].
+-   Multiple back-ends for [session] and [cache] storage.
+-   Expressive, intuitive [database ORM].
+-   Database agnostic [schema migrations].
+-   [Robust background job processing].
+-   [Real-time event broadcasting].
+
+Laravel is accessible, powerful, and provides tools required for large,
+robust applications.
+
+## Learning Laravel
+
+Laravel has the most extensive and thorough [documentation] and video
+tutorial library of all modern web application frameworks, making it a
+breeze to get started with the framework.
+
+If you don't feel like reading, [Laracasts] can help. Laracasts contains
+over 1500 video tutorials on a range of topics including Laravel, modern
+PHP, unit testing, and JavaScript. Boost your skills by digging into our
+comprehensive video library.
+
+## Laravel Sponsors
+
+We would like to extend our thanks to the following sponsors for funding
+Laravel development. If you are interested in becoming a sponsor, please
+visit the Laravel [Patreon page].
+
+### Premium Partners
+
+-   **[Vehikl]**
+-   **[Tighten Co.]**
+-   **[Kirschbaum Development Group]**
+-   **[64 Robots]**
+-   **[Cubet Techno Labs]**
+-   **[Cyber-Duck]**
+-   **[Many]**
+-   **[Webdock, Fast VPS Hosting]**
+-   **[DevSquad]**
+-   **[Curotec]**
+-   **[OP.GG]**
+-   **[CMS Max]**
+-   **[WebReinvent]**
+-   **[Lendio]**
+-   **[Romega Software]**
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The
+contribution guide can be found in the [Laravel documentation].
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all,
+please review and abide by the [Code of Conduct][67].
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an
+e-mail to Taylor Otwell via <taylor@laravel.com>. All security
+vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT
+license].
 
   [Azure MySQL Developer Guide]: #azure-mysql-developer-guide
   [Introduction and common use cases for MySQL]: #introduction-and-common-use-cases-for-mysql
@@ -3127,6 +5093,11 @@ detailed real-world information:
   [App Service Containers]: #app-service-containers
   [Azure Kubernetes Service (AKS)]: #azure-kubernetes-service-aks
   [AKS with MySQL Flexible Server]: #aks-with-mysql-flexible-server
+  [Introduction to the guide sample application]: #introduction-to-the-guide-sample-application
+  [Sample application overview and story]: #sample-application-overview-and-story
+  [Site map and example default page]: #site-map-and-example-default-page
+  [What happens to my app during an Azure deployment?]: #what-happens-to-my-app-during-an-azure-deployment
+  [Troubleshooting tips]: #troubleshooting-tips
   [Deploying a Laravel app backed by a Java REST API to AKS]: #deploying-a-laravel-app-backed-by-a-java-rest-api-to-aks
   [App introduction]: #app-introduction
   [Provision the database]: #provision-the-database
@@ -3163,29 +5134,115 @@ detailed real-world information:
   [Tools to Set Server Parameters]: #tools-to-set-server-parameters
   [Server Parameters Best Practices]: #server-parameters-best-practices
   [Business Continuity and Disaster Recovery (BCDR)]: #business-continuity-and-disaster-recovery-bcdr
-  [Backup and Restore]: #backup-and-restore
-  [Read Replicas]: #read-replicas
-  [Deleted Servers]: #deleted-servers
-  [Regional Failure]: #regional-failure
+  [Backup and restore]: #backup-and-restore
+  [Read replicas]: #read-replicas
+  [Deleted servers]: #deleted-servers
+  [Regional failure]: #regional-failure
   [WWI Case Study]: #wwi-case-study
   [BCDR Checklist]: #bcdr-checklist
-  [High Availability]: #high-availability
+  [Business Continuity and Disaster Recovery]: #business-continuity-and-disaster-recovery
+  [High availability]: #high-availability
   [14]: #backup-and-restore-1
   [Replication]: #replication
-  [Use Cases]: #use-cases
-  [Configuring Read Replicas]: #configuring-read-replicas
-  [Service Maintenance]: #service-maintenance
+  [Use cases]: #use-cases
+  [Configuring read replicas]: #configuring-read-replicas
+  [Service maintenance]: #service-maintenance
   [Notifications]: #notifications
   [Differences for Single Server]: #differences-for-single-server
-  [Configure Maintenance Scheduling & Alerting]: #configure-maintenance-scheduling-alerting
-  [MySQL Architectures]: #mysql-architectures
-  [Sample Architectures]: #sample-architectures
-  [Case Studies]: #case-studies
+  [Configure maintenance scheduling & alerting]: #configure-maintenance-scheduling-alerting
+  [Azure Database for MySQL upgrade process]: #azure-database-for-mysql-upgrade-process
+  [MySQL architectures]: #mysql-architectures
+  [Sample architectures]: #sample-architectures
+  [Customer stories]: #customer-stories
+  [Case studies]: #case-studies
+  [Zero to Hero]: #zero-to-hero
   [Determining your evolutionary period]: #determining-your-evolutionary-period
-  [Summary of Tasks]: #summary-of-tasks
+  [Summary of tasks]: #summary-of-tasks
+  [Summary]: #summary
   [15]: #resources-3
-  [Questions and Feedback]: #questions-and-feedback
+  [Questions and feedback]: #questions-and-feedback
   [Find a partner to assist in migrating]: #find-a-partner-to-assist-in-migrating
+  [Getting Started]: #getting-started
+  [Create a Lab Resource Group]: #create-a-lab-resource-group
+  [Deploy the ARM Template]: #deploy-the-arm-template
+  [Classic Deployment to PHP enabled IIS server]: #classic-deployment-to-php-enabled-iis-server
+  [Test the PHP Setup]: #test-the-php-setup
+  [Database Deployment]: #database-deployment
+  [Test the Store Application]: #test-the-store-application
+  [Manual Deployment]: #manual-deployment
+  [Cloud Deployment to Azure VM]: #cloud-deployment-to-azure-vm
+  [Test the Application #1]: #test-the-application-1
+  [Open Port 8080]: #open-port-8080
+  [Test the Application #2]: #test-the-application-2
+  [Enable Port 443]: #enable-port-443
+  [Open Port 443]: #open-port-443
+  [Test the Application #3]: #test-the-application-3
+  [Cloud Deployment to Azure App Service]: #cloud-deployment-to-azure-app-service
+  [Basic Deployment]: #basic-deployment
+  [Update the connection string]: #update-the-connection-string
+  [Test new settings #1]: #test-new-settings-1
+  [Fix SSL error]: #fix-ssl-error
+  [Test new settings #2]: #test-new-settings-2
+  [Update to use Environment Variables]: #update-to-use-environment-variables
+  [Test new settings #3]: #test-new-settings-3
+  [Create Azure Key Vault values]: #create-azure-key-vault-values
+  [Create Managed Service Identity]: #create-managed-service-identity
+  [Configure Environment Variables]: #configure-environment-variables
+  [Test new settings #4]: #test-new-settings-4
+  [Cloud Deployment to Azure App Service with MySQL InApp]: #cloud-deployment-to-azure-app-service-with-mysql-inapp
+  [16]: #basic-deployment-1
+  [Import the database]: #import-the-database
+  [Update the environment variables]: #update-the-environment-variables
+  [Test the Application]: #test-the-application-5
+  [Deployment via CI/CD]: #deployment-via-cicd
+  [Azure DevOps Option]: #azure-devops-option
+  [GitHub Option]: #github-option
+  [Migrate to Docker Containers]: #migrate-to-docker-containers
+  [Migrate Application to Docker]: #migrate-application-to-docker
+  [Migrate Database to Docker]: #migrate-database-to-docker
+  [Run the Docker images]: #run-the-docker-images
+  [Migrate the database]: #migrate-the-database-1
+  [Test the Docker images]: #test-the-docker-images
+  [Fix Storage persistence]: #fix-storage-persistence
+  [Re-test the Docker images]: #re-test-the-docker-images
+  [Save the images to Azure Container Registry (ACR)]: #save-the-images-to-azure-container-registry-acr
+  [Migrate to Azure Container Instances (ACI)]: #migrate-to-azure-container-instances-aci
+  [Push images to Azure Container Registry]: #push-images-to-azure-container-registry
+  [Run images in ACI]: #run-images-in-aci
+  [Test the images]: #test-the-images
+  [Multi-container single app service deployment]: #multi-container-single-app-service-deployment
+  [Migrate to Azure App Service Containers]: #migrate-to-azure-app-service-containers
+  [17]: #push-images-to-azure-container-registry-1
+  [Run images in Azure App Service]: #run-images-in-azure-app-service
+  [Test the containers]: #test-the-containers
+  [Migrate to Azure Kubernetes Services (AKS)]: #migrate-to-azure-kubernetes-services-aks
+  [18]: #push-images-to-azure-container-registry-2
+  [Run images in Azure Kubernetes Service (AKS)]: #run-images-in-azure-kubernetes-service-aks
+  [Add services]: #add-services
+  [Test your images]: #test-your-images
+  [Create a deployment]: #create-a-deployment
+  [Utilize AKS and Azure Database for MySQL Flexible Server]: #utilize-aks-and-azure-database-for-mysql-flexible-server
+  [19]: #push-images-to-azure-container-registry-3
+  [Run images in AKS]: #run-images-in-aks
+  [Deploy to Azure Database for MySQL]: #deploy-to-azure-database-for-mysql
+  [20]: #push-images-to-azure-container-registry-4
+  [Export the data]: #export-the-data
+  [Import the data]: #import-the-data
+  [Import the data to Azure]: #import-the-data-to-azure
+  [About Laravel]: #about-laravel
+  [Learning Laravel]: #learning-laravel
+  [Laravel Sponsors]: #laravel-sponsors
+  [Contributing]: #contributing
+  [Code of Conduct]: #code-of-conduct
+  [Security Vulnerabilities]: #security-vulnerabilities
+  [License]: #license
+  [21]: #about-laravel-1
+  [22]: #learning-laravel-1
+  [23]: #laravel-sponsors-1
+  [24]: #contributing-1
+  [25]: #code-of-conduct-1
+  [26]: #security-vulnerabilities-1
+  [27]: #license-1
   [MySQL]: https://www.mysql.com/
   [Microsoft Azure]: https://portal.azure.com/
   [The diagram shows the progression of development evolution in the guide.]:
@@ -3214,7 +5271,7 @@ detailed real-world information:
   [free subscription]: https://azure.microsoft.com/free/search/
   [This diagram shows the cloud adoption strategy.]: media/cloud-adoption-strategies.png
     "Cloud adoption strategy"
-  [16]: https://azure.microsoft.com/services/mysql/#features
+  [28]: https://azure.microsoft.com/services/mysql/#features
   [Microsoft Learn.]: https://docs.microsoft.com/learn/modules/cmu-cloud-computing-overview/4-building-blocks
   [Azure Fundamentals Microsoft Learn Module]: https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/
   [IaaS and PaaS Azure service classification and categories]: ./media/azure-services.png
@@ -3233,7 +5290,7 @@ detailed real-world information:
     ./media/landing-zone-accelerator.png
     "Azure landing zone accelerator screenshot"
   [Azure Resource Manager]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview
-  [17]: https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli
+  [29]: https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli
   [Azure PowerShell]: https://docs.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-7.1.0
   [Azure REST API]: https://docs.microsoft.com/en-us/rest/api/azure/
   [Identity and access management (IAM)]: https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
@@ -3256,8 +5313,8 @@ detailed real-world information:
   [The picture shows an example of an ARM template JSON export.]: media/azure-template-json-example.png
     "Azure Template JSON"
   [Bicep]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview
-  [Terraform]: https://docs.microsoft.com/en-us/azure/developer/terraform/overview
   [Hashicorp Terraform]: https://www.terraform.io/
+  [Terraform]: https://docs.microsoft.com/en-us/azure/developer/terraform/overview
   [resource tags]: https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources?tabs=json
   [resource locks]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources?tabs=json
   [multiple support plans for businesses]: https://azure.microsoft.com/support/plans/
@@ -3267,8 +5324,8 @@ detailed real-world information:
   [Microsoft Learn]: https://docs.microsoft.com/learn/
   [Azure Fundamentals (AZ-900) Learning Path]: https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/
   [MySQL Workbench]: https://www.mysql.com/products/workbench/
-  [This image demonstrates the control plane for Azure PaaS MySQL.]: ./media/mysql-conceptual-diagram.png
-    "Control plane for Azure PaaS MySQL"
+  [This image demonstrates the control plane for Azure Database for MySQL.]: ./media/mysql-conceptual-diagram.png
+    "Control plane for Azure Database for MySQL"
   [Choose the right MySQL Server option in Azure]: https://docs.microsoft.com/azure/mysql/select-right-deployment-type
   [pause the Single Server offering]: https://docs.microsoft.com/azure/mysql/how-to-stop-start-server
   [SLA of 99.99%]: https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/
@@ -3286,7 +5343,7 @@ detailed real-world information:
   [Azure's comprehensive list of service and subscription limits]: https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits
   [Microsoft docs.]: https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication
   [Microsoft download page.]: https://code.visualstudio.com/download
-  [18]: https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql
+  [30]: https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql
   [Connect and Query sample for PHP]: ./03_Connect_Query_PHP.md
   [Backend libraries for mysqli and PDO_MySQL]: https://www.php.net/manual/en/mysqlinfo.library.choosing.php
   [Introduction to PDO]: https://www.php.net/manual/en/intro.pdo.php
@@ -3321,7 +5378,7 @@ detailed real-world information:
   [`flexible-server db create`]: https://docs.microsoft.com/cli/azure/mysql/flexible-server/db?view=azure-cli-latest#az_mysql_flexible_server_db_create
   [This image demonstrates the MySQL Flexible Server provisioned through Bash CLI commands.]:
     ./media/mysql-flex-params.png "CLI provisioning"
-  [19]: https://docs.microsoft.com/azure/mysql/flexible-server/quickstart-create-arm-template#review-the-template
+  [31]: https://docs.microsoft.com/azure/mysql/flexible-server/quickstart-create-arm-template#review-the-template
   [sample ARM template]: mysql-flexible-server-template.json
   [Provision MySQL Flexible Server]: 03_05_Provision_MySQL_Flexible_Server.md
   [MySQL Downloads.]: https://dev.mysql.com/downloads/workbench/
@@ -3331,7 +5388,7 @@ detailed real-world information:
     ./media/new-ssl-connection-with-ca-file.png "Add SSL CA file"
   [Quickstart: Connect and query with Azure CLI with Azure Database for MySQL - Flexible Server]:
     https://docs.microsoft.com/azure/mysql/flexible-server/connect-azure-cli#create-a-database
-  [20]: ./03_05_Provision_MySQL_Flexible_Server.md
+  [32]: ./03_05_Provision_MySQL_Flexible_Server.md
   [This image demonstrates running queries against the Flexible Server instance using the Azure CLI.]:
     ./media/analyst-query.png
     "Running an admin query from the Azure CLI"
@@ -3371,32 +5428,34 @@ detailed real-world information:
     ./media/result-set-mysql-workbench.png
     "Data persisted to Single Server"
   [Classic Deployment to PHP-enabled IIS server]: ./../artifacts/01-ClassicDeploy/README.md
-  [Cloud Deployment to Azure VM]: ./../artifacts/02-01-CloudDeploy-Vm/README.md
-  [Cloud Deployment to Azure App Service]: ./../artifacts/02-02-CloudDeploy-AppSvc/README.md
+  [33]: ./../artifacts/02-01-CloudDeploy-Vm/README.md
+  [34]: ./../artifacts/02-02-CloudDeploy-AppSvc/README.md
   [App Service Plan]: https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
   [Announcing Azure App Service MySQL in-app]: https://azure.microsoft.com/en-us/blog/mysql-in-app-preview-app-service/
-  [Cloud Deployment to Azure App Service with MySQL InApp]: ./../artifacts/02-03-CloudDeploy-InApp/README.md
-  [Deployment via CI/CD]: ./../artifacts/02-04-CloudDeploy-CICD/README.md
-  [Migrate to Docker Containers]: ./../artifacts/03-00-Docker/README.md
-  [Migrate to Azure Container Instances (ACI)]: ./../artifacts/03-01-CloudDeploy-ACI/README.md
-  [Migrate to Azure App Service Containers]: ./../artifacts/03-02-CloudDeploy-AppService-Container/README.md
-  [Migrate to Azure Kubernetes Services (AKS)]: ./../artifacts/04-AKS/README.md
-  [Utilize AKS and Azure Database for MySQL Flexible Server]: ./../artifacts/05-CloudDeploy-MySQLFlex/README.md
+  [35]: ./../artifacts/02-03-CloudDeploy-InApp/README.md
+  [36]: ./../artifacts/02-04-CloudDeploy-CICD/README.md
+  [37]: ./../artifacts/03-00-Docker/README.md
+  [38]: ./../artifacts/03-01-CloudDeploy-ACI/README.md
+  [39]: ./../artifacts/03-02-CloudDeploy-AppService-Container/README.md
+  [40]: ./../artifacts/04-AKS/README.md
+  [41]: ./../artifacts/05-CloudDeploy-MySQLFlex/README.md
+  [Sample application evolution artifact repo]: https://
+  [How PHP apps are detected and built.]: https://github.com/microsoft/Oryx/blob/main/doc/runtimes/php.md
   [Microsoft documentation]: https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet
   [This image demonstrates the IP address of the LoadBalancer service for the Laravel app.]:
     ./media/laravel-service-ip.png "Laravel service IP address"
   [This image demonstrates that the Laravel app functions without a problem when deployed to AKS.]:
     ./media/app-loads-aks.png "Laravel app loads"
   [Migrate MySQL on-premises to Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro
-  [21]: https://docs.microsoft.com/en-us/azure/azure-monitor/overview
+  [42]: https://docs.microsoft.com/en-us/azure/azure-monitor/overview
   [Log Analytics]: https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment
   [Azure Sentinel]: https://docs.microsoft.com/en-us/azure/sentinel/overview
   [Azure runbooks]: https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-runbook
   [Kusto Query Language (KQL)]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/
   [here]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet
   [Get started with log queries in Azure Monitor]: https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-queries
-  [22]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring
-  [23]: https://docs.microsoft.com/azure/mysql/concepts-monitoring
+  [43]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring
+  [44]: https://docs.microsoft.com/azure/mysql/concepts-monitoring
   [audit log feature is disabled]: https://docs.microsoft.com/en-us/azure/mysql/concepts-audit-logs
   [diagnostic logging]: https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal#set-up-diagnostic-logs
   [Single Server Audit Logs]: https://docs.microsoft.com/azure/mysql/concepts-audit-logs
@@ -3452,8 +5511,8 @@ detailed real-world information:
   [Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts
   [add double encryption]: https://docs.microsoft.com/en-us/azure/mysql/concepts-infrastructure-double-encryption
   [modify your applications]: https://docs.microsoft.com/en-us/azure/mysql/howto-configure-ssl
-  [24]: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
-  [25]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl
+  [45]: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
+  [46]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl
   [firewall rules]: https://docs.microsoft.com/en-us/azure/mysql/concepts-firewall-rules
   [restrict public access]: https://docs.microsoft.com/en-us/azure/mysql/howto-deny-public-network-access
   [Virtual Network Peering]: https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
@@ -3462,30 +5521,30 @@ detailed real-world information:
   [Query Performance Insight tool]: https://docs.microsoft.com/en-us/azure/mysql/concepts-query-performance-insight
   [Upgrade from Basic to General Purpose or Memory Optimized tiers in Azure Database for MySQL]:
     https://techcommunity.microsoft.com/t5/azure-database-for-mysql/upgrade-from-basic-to-general-purpose-or-memory-optimized-tiers/ba-p/830404
-  [Business Continuity and Disaster Recovery]: 03_BCDR.md
-  [26]: https://docs.microsoft.com/en-us/azure/mysql/concepts-server-parameters
+  [47]: 03_BCDR.md
+  [48]: https://docs.microsoft.com/en-us/azure/mysql/concepts-server-parameters
   [Minecraft migration]: https://developer.microsoft.com/en-us/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/
-  [27]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
+  [49]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
   [log_bin_trust_function_creators]: https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators
   [innodb_buffer_pool_size]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
-  [28]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-server-parameters
+  [50]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-server-parameters
   [innodb_file_per_table]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_file_per_table
   [Microsoft documentation.]: https://docs.microsoft.com/azure/mysql/concepts-server-parameters
-  [29]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal
-  [30]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli
-  [31]: https://docs.microsoft.com/azure/mysql/howto-server-parameters
-  [32]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli
-  [33]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell
+  [51]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal
+  [52]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli
+  [53]: https://docs.microsoft.com/azure/mysql/howto-server-parameters
+  [54]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli
+  [55]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell
   [This graph demonstrates the performance benefits of thread pooling for a Flexible Server instance.]:
     ./media/thread-pooling-performance.png
     "Performance benefits of thread pooling"
   [Microsoft TechCommunity post]: https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691
-  [34]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
+  [56]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
   [Backup and restore in Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/concepts-backup
   [Some regions]: https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers#storage
   [Perform post-restore tasks]: https://docs.microsoft.com/en-us/azure/mysql/concepts-backup#perform-post-restore-tasks
-  [35]: https://docs.microsoft.com/en-us/azure/mysql/concepts-read-replicas
-  [36]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
+  [57]: https://docs.microsoft.com/en-us/azure/mysql/concepts-read-replicas
+  [58]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
   [Azure Load Balancer]: https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
   [Application Gateway]: https://docs.microsoft.com/en-us/azure/application-gateway/overview
   [This image demonstrates Zone-Redundant HA for MySQL Flexible Server.]:
@@ -3498,7 +5557,7 @@ detailed real-world information:
   [This image demonstrates a possible cross-region HA scenario using two virtual networks.]:
     ./media/cross-region-ha.png "Cross-region HA scenario"
   [here.]: https://azure.microsoft.com/pricing/details/mysql/flexible-server/
-  [37]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore
+  [59]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore
   [Point-in-time restore with Azure Portal]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-portal
   [Point-in-time restore with CLI]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-cli
   [Restore with Azure Portal]: https://docs.microsoft.com/azure/mysql/howto-restore-server-portal
@@ -3509,17 +5568,18 @@ detailed real-world information:
   [This image demonstrates a possible microservices architecture with MySQL read replicas.]:
     ./media/microservices-with-replication.png
     "Possible microservices architecture"
-  [38]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
-  [39]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
-  [40]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
+  [60]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
+  [61]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
+  [62]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
   [Azure CLI & REST API]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-cli
-  [41]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell
-  [42]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
-  [43]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
+  [63]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell
+  [64]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
+  [65]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
   [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)]:
     https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal
   [View service health notifications in the Azure Portal]: https://docs.microsoft.com/azure/service-health/service-notifications
   [Configure resource health alerts using Azure Portal]: https://docs.microsoft.com/azure/service-health/resource-health-alert-monitor-guide
+  [planned maintenance notification]: https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring#planned-maintenance-notification
   [Azure Architecture center]: https://docs.microsoft.com/en-us/azure/architecture/
   [Digital marketing using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/digital-marketing-using-azure-database-for-mysql
   [Finance management apps using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/finance-management-apps-using-azure-database-for-mysql
@@ -3529,7 +5589,7 @@ detailed real-world information:
   [Scalable web and mobile applications using Azure Database for MySQL]:
     https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
   [Microsoft Customer Stories portal]: https://customers.microsoft.com/en-us/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
-  [file a ticket from the Azure Portal]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+  [file a ticket from the Azure portal]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql
   [Search for a Microsoft Partner]: https://www.microsoft.com/solution-providers/home
   [Microsoft MVP]: https://mvp.microsoft.com/MvpSearch
@@ -3538,3 +5598,41 @@ detailed real-world information:
   [Azure Facebook Group]: https://www.facebook.com/groups/MsftAzure
   [LinkedIn Azure Group]: https://www.linkedin.com/groups/2733961/
   [LinkedIn Azure Developers Group]: https://www.linkedin.com/groups/1731317/
+  [whitepaper GitHub repository]: https://github.com/solliancenet/microsoft-mysql-developer-guide.git
+  [PowerShell Azure module]: https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-6.6.0
+  [PowerShell Core]: https://github.com/PowerShell/PowerShell
+  [secure ARM template]: ../Artifacts/template-secure.json
+  [parameters file]: ../Artifacts/template-secure.parameters.json
+  [insecure ARM template]: ../Artifacts/template.json
+  [66]: ../Artifacts/template.parameters.json
+  [Migrate your database]: ./Misc/02_MigrateDatabase
+  [Push Images to Acr]: ./../Misc/01_PushImagesToAcr.md
+  [Simple, fast routing engine]: https://laravel.com/docs/routing
+  [Powerful dependency injection container]: https://laravel.com/docs/container
+  [session]: https://laravel.com/docs/session
+  [cache]: https://laravel.com/docs/cache
+  [database ORM]: https://laravel.com/docs/eloquent
+  [schema migrations]: https://laravel.com/docs/migrations
+  [Robust background job processing]: https://laravel.com/docs/queues
+  [Real-time event broadcasting]: https://laravel.com/docs/broadcasting
+  [documentation]: https://laravel.com/docs
+  [Laracasts]: https://laracasts.com
+  [Patreon page]: https://patreon.com/taylorotwell
+  [Vehikl]: https://vehikl.com/
+  [Tighten Co.]: https://tighten.co
+  [Kirschbaum Development Group]: https://kirschbaumdevelopment.com
+  [64 Robots]: https://64robots.com
+  [Cubet Techno Labs]: https://cubettech.com
+  [Cyber-Duck]: https://cyber-duck.co.uk
+  [Many]: https://www.many.co.uk
+  [Webdock, Fast VPS Hosting]: https://www.webdock.io/en
+  [DevSquad]: https://devsquad.com
+  [Curotec]: https://www.curotec.com/services/technologies/laravel/
+  [OP.GG]: https://op.gg
+  [CMS Max]: https://www.cmsmax.com/
+  [WebReinvent]: https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors
+  [Lendio]: https://lendio.com
+  [Romega Software]: https://romegasoftware.com
+  [Laravel documentation]: https://laravel.com/docs/contributions
+  [67]: https://laravel.com/docs/contributions#code-of-conduct
+  [MIT license]: https://opensource.org/licenses/MIT

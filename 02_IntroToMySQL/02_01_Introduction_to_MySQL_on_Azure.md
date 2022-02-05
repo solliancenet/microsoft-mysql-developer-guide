@@ -1,4 +1,4 @@
-# Introduction to Azure and hosting options
+# Hosting MySQL on Azure - benefits and options
 
 Now that you understand the benefits of MySQL and a few common deployment models, this section explains approaches to hosting MySQL on Azure and the advantages of the Azure platform.
 
