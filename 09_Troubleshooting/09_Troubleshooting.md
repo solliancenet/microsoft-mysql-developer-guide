@@ -2,7 +2,7 @@
 
 Inevitably, as you operate Flexible Server, you will encounter issues with your applications. This section details a few common troubleshooting steps.
 
-## Common issues
+## Common MySQL issues
 
 ### Network connectivity issues
 
@@ -22,7 +22,9 @@ Inevitably, as you operate Flexible Server, you will encounter issues with your 
 
 - Azure's periodic updates impact the availability of your applications. Flexible Server allows administrators [to set custom maintenance schedules.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance)
 
-## Troubleshoot app performance issues in Azure App Service
+## Troubleshoot app issues in Azure App Service
+
+- **Enable web logging.** Azure provides built-in diagnostics to assist with [debugging an App Service app](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs).
 - Network requests taking a long time? [Troubleshoot slow app performance issues in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-performance-degradation)
 - In Azure App Service, certain settings are available to the deployment or runtime environment as environment variables. Some of these settings can be customized when you set them manually as app settings.
 [Environment variables and app settings in Azure App Service](https://docs.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet)
