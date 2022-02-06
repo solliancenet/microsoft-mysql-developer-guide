@@ -18,6 +18,7 @@ class CreateCategoryTable extends Migration
 			$table->string('name', 32);
 			$table->string('url', 32);
 			$table->string('img', 128);
+			$table->timestamps();
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';

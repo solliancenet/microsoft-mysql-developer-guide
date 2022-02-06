@@ -21,6 +21,7 @@ class CreateItemTable extends Migration
 			$table->decimal('price', $precision = 6, $scale = 2);
 			$table->unsignedSmallInteger('cooktime');
 			$table->text('desc');
+			$table->timestamps();
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';

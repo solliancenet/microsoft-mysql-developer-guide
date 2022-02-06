@@ -17,6 +17,7 @@ class CreateCartTable extends Migration
 			$table->id();
 			$table->bigInteger('user_id')->unsigned();
 			$table->string('status', 16);
+			$table->timestamps();
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';

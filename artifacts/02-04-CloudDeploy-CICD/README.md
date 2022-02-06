@@ -156,3 +156,11 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
 2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.
+
+## Terraform
+
+TODO?
+
+## Azure Bicept
+
+TODO?
