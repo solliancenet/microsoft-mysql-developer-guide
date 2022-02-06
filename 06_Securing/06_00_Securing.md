@@ -39,6 +39,14 @@ The first line of defense for protecting the MySQL instance is to implement [fir
 
 When moving an application to Azure along with the MySQL workload, it is likely there will be multiple virtual networks set up in a hub and spoke pattern that will require [Virtual Network Peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) to be configured.
 
+## Microsoft Defender for Cloud
+
+TODO
+
+## Microsoft Sentinel
+
+TODO
+
 ## Security checklist
 
 - Use Azure AD authentication where possible.

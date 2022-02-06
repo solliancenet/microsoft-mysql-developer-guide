@@ -19,6 +19,7 @@ class CreateUserTable extends Migration
 			$table->string('address', 256);
 			$table->string('email', 128);
 			$table->string('password', 128);
+			$table->timestamps();
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';

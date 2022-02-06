@@ -18,6 +18,7 @@ class CreateCartItemsTable extends Migration
 			$table->bigInteger('cart_id')->unsigned();
 			$table->bigInteger('item_id')->unsigned();
 			$table->unsignedSmallInteger('qty');
+			$table->timestamps();
 			$table->engine = 'InnoDB';
 			$table->charset = 'utf8';
 			$table->collation = 'utf8_general_ci';
