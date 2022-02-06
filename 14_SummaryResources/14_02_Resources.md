@@ -15,7 +15,7 @@ This guide can be overwhelming, but don't fret!  There are many experts in the c
 
 You can also browse the technical forums and social groups for more detailed real-world information:
 
-- [Microsoft Community Forum](https://docs.microsoft.com/en-us/answers/topics/azure-database-mysql.html)
+- [Microsoft Community Forum](https://docs.microsoft.com/answers/topics/azure-database-mysql.html)
 - [StackOverflow for Azure MySQL](https://stackoverflow.com/questions/tagged/azure-database-mysql)
 - [Azure Facebook Group](https://www.facebook.com/groups/MsftAzure)
 - [LinkedIn Azure Group](https://www.linkedin.com/groups/2733961/)

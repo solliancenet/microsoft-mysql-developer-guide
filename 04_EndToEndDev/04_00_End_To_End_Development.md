@@ -59,7 +59,7 @@ If you have a small database that you would like to be integrated with your appl
 
 Integration is accomplished through a built-in **myphpadmin** interface in the Azure Portal.  From this admin portal, you can run any supported SQL commands to import or export your database.
 
-The limits of the MySQL instance are primarily driven by the size of your corresponding [App Service Plan](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/).  The biggest factor about limits is normally the disk space allocated to any App Services in the Plan.  App Service Plan storage sizes range from 1GB to 1TB; therefore, if you have a database that will grow past 1TB, you will need to host it in Flexible Server.  For a list of other limitations, reference [Announcing Azure App Service MySQL in-app](https://azure.microsoft.com/en-us/blog/mysql-in-app-preview-app-service/).
+The limits of the MySQL instance are primarily driven by the size of your corresponding [App Service Plan](https://azure.microsoft.com/pricing/details/app-service/windows/).  The biggest factor about limits is normally the disk space allocated to any App Services in the Plan.  App Service Plan storage sizes range from 1GB to 1TB; therefore, if you have a database that will grow past 1TB, you will need to host it in Flexible Server.  For a list of other limitations, reference [Announcing Azure App Service MySQL in-app](https://azure.microsoft.com/blog/mysql-in-app-preview-app-service/).
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service with MySQL InApp](./../artifacts/02-03-CloudDeploy-InApp/README.md) article.
 

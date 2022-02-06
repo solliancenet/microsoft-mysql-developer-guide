@@ -2,7 +2,7 @@
 
 1. Clone the [whitepaper GitHub repository](https://github.com/solliancenet/microsoft-mysql-developer-guide.git) to your local machine. 
 
-2. Install the [PowerShell Azure module](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-6.6.0) if you do not already have it.
+2. Install the [PowerShell Azure module](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0) if you do not already have it.
 
     > [PowerShell Core](https://github.com/PowerShell/PowerShell)  is a cross-platform tool that is useful for managing Azure resources through the `Az` module.
 
