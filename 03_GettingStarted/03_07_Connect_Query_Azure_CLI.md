@@ -4,7 +4,7 @@ This section explains how to perform queries against Azure Database for MySQL Fl
 
 ## Setup
 
-While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, you can utilize any of the provisioning methods in the [Provision MySQL Flexible Server](./03_05_Provision_MySQL_Flexible_Server.md) section.
+While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, you can utilize any of the provisioning methods in the [Provision Flexible Server and a database] section.
 
 ## Instructions
 

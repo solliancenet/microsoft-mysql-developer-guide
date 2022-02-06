@@ -2,7 +2,7 @@
 
 With a firm understanding of Azure and MySQL offerings available to you, it is time to review how to start using these various services. In this section, we will explore how to get your Azure subscriptions configured and ready to host your MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
 
-[Introduction to Azure Database for MySQL deployment options]
+[Introduction to Azure Database for MySQL]
 
 ## Azure free account
 

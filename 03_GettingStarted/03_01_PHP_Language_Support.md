@@ -4,7 +4,7 @@ This section describes tools to interact with Azure Database for MySQL (Single S
 
 ### Example code
 
-Refer to the [Connect and Query sample for PHP](./03_Connect_Query_PHP.md) application for examples of how to use PHP to connect to MySQL.
+Refer to the [Connect and query Azure Database for MySQL using PHP] application for examples of how to use PHP to connect to MySQL.
 
 ### Application connectors
 

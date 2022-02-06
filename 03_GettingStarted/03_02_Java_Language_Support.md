@@ -4,7 +4,7 @@ This section describes tools to interact with Azure Database for MySQL (Single S
 
 ### Example code
 
-Refer to the [Connect and Query sample for Java](./03_Connect_Query_Java_IntelliJ.md), which uses IntelliJ, Spring Boot, and Spring Data JPA.
+Refer to the [Connect and query Azure Database for MySQL using Java (Spring Boot)] document, which uses IntelliJ, Spring Boot, and Spring Data JPA.
 
 ### Application connectors
 
@@ -40,7 +40,7 @@ Eclipse is another popular IDE for Java development. It supports extensions for 
 
 Maven improves the productivity of Java developers by managing builds, dependencies, releases, documentation, and more. Maven projects are created from archetypes. Microsoft provides the Maven Plugins for Azure to help Java developers work with Azure Functions, Azure App Service, and Azure Spring Cloud from their Maven workflows.
 
-> **Note**: Application patterns with Azure Functions, Azure App Service, and Azure Spring Cloud are addressed in the [End-to-End development story.](../04_EndToEndDev/04_End_To_End_Development.md)
+> **Note**: Application patterns with Azure Functions, Azure App Service, and Azure Spring Cloud are addressed in the [End to End application development] story.
 
 **Tool-Specific Resources**
 
