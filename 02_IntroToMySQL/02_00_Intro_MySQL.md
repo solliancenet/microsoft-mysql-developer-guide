@@ -10,7 +10,7 @@ Though MySQL has a distinct set of advantages, it does compete with other common
 
 While MariaDB is compatible with the MySQL protocol, the project is not managed by Oracle, and its maintainers claim that this allows them to better compete with other proprietary databases. Although you have several options to choose from, MySQL has over twenty years of development experience backing it, and businesses appreciate the platform's maturity.
 
-Another popular open-source MySQL competitor is [PostgreSQL](https://www.postgresql.org/). MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner. Microsoft offers cloud-hosted [Azure Database for PostgreSQL](https://docs.microsoft.com/en-us/azure/postgresql/overview), which you can compare with cloud-hosted MySQL [in Microsoft Learn.](https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings)
+Another popular open-source MySQL competitor is [PostgreSQL](https://www.postgresql.org/). MySQL supports many of the advanced features of PostgreSQL, such as JSON storage, replication and failover, and partitioning, in an easy-to-use manner. Microsoft offers cloud-hosted [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/overview), which you can compare with cloud-hosted MySQL [in Microsoft Learn.](https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings)
 
 ## MySQL hosting options
 

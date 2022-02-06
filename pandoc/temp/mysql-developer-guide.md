@@ -5247,8 +5247,8 @@ license].
   [Microsoft Azure]: https://portal.azure.com/
   [The diagram shows the progression of development evolution in the guide.]:
     media/mysql-journey.png "MySQL Journey"
-  [Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/
-  [Azure Marketplace]: https://azuremarketplace.microsoft.com/en-us/marketplace/
+  [Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/
+  [Azure Marketplace]: https://azuremarketplace.microsoft.com/marketplace/
   [SQL -- Structured Query Language]: https://en.wikipedia.org/wiki/SQL
   [MySQL Documentation]: https://dev.mysql.com/doc/refman/8.0/en/features.html
   [WordPress]: https://wordpress.org/
@@ -5257,14 +5257,14 @@ license].
   [MariaDB]: https://mariadb.org/
   [Oracle purchased Sun Microsystems]: https://www.oracle.com/webfolder/college-recruiting/projects/mysql.html#.YexR-P7ML8o
   [PostgreSQL]: https://www.postgresql.org/
-  [Azure Database for PostgreSQL]: https://docs.microsoft.com/en-us/azure/postgresql/overview
+  [Azure Database for PostgreSQL]: https://docs.microsoft.com/azure/postgresql/overview
   [in Microsoft Learn.]: https://docs.microsoft.com/learn/modules/deploy-mariadb-mysql-postgresql-azure/2-describe-open-source-offerings
   [Docker image]: https://hub.docker.com/_/mysql
   [Azure Partner Builder's Program]: https://partner.microsoft.com/marketing/azure-isv-technology-partners
   [Visual Studio]: https://visualstudio.microsoft.com/
   [Azure DevOps]: https://dev.azure.com/
   [GitHub]: https://github.com/
-  [Power Apps]: https://powerapps.microsoft.com/en-us/
+  [Power Apps]: https://powerapps.microsoft.com/
   [2020 McKinsey & Company report.]: https://azure.microsoft.com/mediahandler/files/resourcefiles/developer-velocity-how-software-excellence-fuels-business-performance/Developer-Velocity-How-software-excellence-fuels-business-performance-v4.pdf
   [This image demonstrates common development tools on the Microsoft cloud platform to expedite application development.]:
     media/ISV-Tech-Builders-tools.png "Microsoft cloud tooling"
@@ -5276,50 +5276,50 @@ license].
   [Azure Fundamentals Microsoft Learn Module]: https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/
   [IaaS and PaaS Azure service classification and categories]: ./media/azure-services.png
     "Categories of Azure services"
-  [Virtual Machines (IaaS)]: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview
-  [Azure App Service (PaaS)]: https://docs.microsoft.com/en-us/azure/app-service/overview
-  [Azure Container Instances (PaaS)]: https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview
-  [Azure Kubernetes Service (PaaS)]: https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
+  [Virtual Machines (IaaS)]: https://docs.microsoft.com/azure/virtual-machines/windows/overview
+  [Azure App Service (PaaS)]: https://docs.microsoft.com/azure/app-service/overview
+  [Azure Container Instances (PaaS)]: https://docs.microsoft.com/azure/container-instances/container-instances-overview
+  [Azure Kubernetes Service (PaaS)]: https://docs.microsoft.com/azure/aks/intro-kubernetes
   [Azure Fundamentals Microsoft Learn]: https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/tour-of-azure-services
-  [Management groups]: https://docs.microsoft.com/en-us/azure/governance/management-groups/overview
-  [Resource groups]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal
+  [Management groups]: https://docs.microsoft.com/azure/governance/management-groups/overview
+  [Resource groups]: https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal
   [This image shows Azure resource scopes.]: ./media/scope-levels.png
     "fig:Azure resource scopes"
-  [Azure landing zone]: https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/
+  [Azure landing zone]: https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/
   [This image demonstrates the Azure landing zone accelerator in the Azure Portal, and how organizations can optimize Azure for their needs and innovate.]:
     ./media/landing-zone-accelerator.png
     "Azure landing zone accelerator screenshot"
-  [Azure Resource Manager]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview
-  [29]: https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli
-  [Azure PowerShell]: https://docs.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-7.1.0
-  [Azure REST API]: https://docs.microsoft.com/en-us/rest/api/azure/
-  [Identity and access management (IAM)]: https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+  [Azure Resource Manager]: https://docs.microsoft.com/azure/azure-resource-manager/management/overview
+  [29]: https://docs.microsoft.com/cli/azure/what-is-azure-cli
+  [Azure PowerShell]: https://docs.microsoft.com/powershell/azure/what-is-azure-powershell?view=azps-7.1.0
+  [Azure REST API]: https://docs.microsoft.com/rest/api/azure/
+  [Identity and access management (IAM)]: https://docs.microsoft.com/azure/role-based-access-control/overview
   [This image demonstrates how the Azure Resource Manager provides a robust, secure interface to Azure resources.]:
     media/consistent-management-layer.png
     "Azure Resource Manager explained"
   [Azure service management tool maturity progression.]: media/azure-management-tool-maturity.png
     "Azure service management tool"
-  [Azure mobile app]: https://azure.microsoft.com/en-us/get-started/azure-portal/mobile-app/
+  [Azure mobile app]: https://azure.microsoft.com/get-started/azure-portal/mobile-app/
   [The picture shows the initial Azure service list.]: media/azure-portal-services.png
     "Azure Portal Services"
   [Shows an example of the Azure CLI.]: media/azure-cli-example.png
     "Azure CLI Example"
-  [Azure command-line tool guide]: https://docs.microsoft.com/en-us/azure/developer/azure-cli/choose-the-right-azure-command-line-tool
+  [Azure command-line tool guide]: https://docs.microsoft.com/azure/developer/azure-cli/choose-the-right-azure-command-line-tool
   [Azure Cloud Shell]: shell.azure.com
   [download the CLI tools from Microsoft.]: https://docs.microsoft.com/cli/azure/install-azure-cli
   [installation document.]: https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0
-  [Infrastructure as Code (IaC)]: https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code
-  [ARM templates]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+  [Infrastructure as Code (IaC)]: https://docs.microsoft.com/devops/deliver/what-is-infrastructure-as-code
+  [ARM templates]: https://docs.microsoft.com/azure/azure-resource-manager/templates/
   [The picture shows an example of an ARM template JSON export.]: media/azure-template-json-example.png
     "Azure Template JSON"
-  [Bicep]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview
+  [Bicep]: https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview
   [Hashicorp Terraform]: https://www.terraform.io/
-  [Terraform]: https://docs.microsoft.com/en-us/azure/developer/terraform/overview
+  [Terraform]: https://docs.microsoft.com/azure/developer/terraform/overview
   [resource tags]: https://docs.microsoft.com/azure/azure-resource-manager/management/tag-resources?tabs=json
   [resource locks]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources?tabs=json
   [multiple support plans for businesses]: https://azure.microsoft.com/support/plans/
   [StackOverflow Azure Tag]: https://stackoverflow.com/questions/tagged/azure
-  [FastTrack for Azure]: https://azure.microsoft.com/en-us/programs/azure-fasttrack/
+  [FastTrack for Azure]: https://azure.microsoft.com/programs/azure-fasttrack/
   [Azure Certifications & Exams]: https://docs.microsoft.com/learn/certifications/browse/?products=azure
   [Microsoft Learn]: https://docs.microsoft.com/learn/
   [Azure Fundamentals (AZ-900) Learning Path]: https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/
@@ -5430,8 +5430,8 @@ license].
   [Classic Deployment to PHP-enabled IIS server]: ./../artifacts/01-ClassicDeploy/README.md
   [33]: ./../artifacts/02-01-CloudDeploy-Vm/README.md
   [34]: ./../artifacts/02-02-CloudDeploy-AppSvc/README.md
-  [App Service Plan]: https://azure.microsoft.com/en-us/pricing/details/app-service/windows/
-  [Announcing Azure App Service MySQL in-app]: https://azure.microsoft.com/en-us/blog/mysql-in-app-preview-app-service/
+  [App Service Plan]: https://azure.microsoft.com/pricing/details/app-service/windows/
+  [Announcing Azure App Service MySQL in-app]: https://azure.microsoft.com/blog/mysql-in-app-preview-app-service/
   [35]: ./../artifacts/02-03-CloudDeploy-InApp/README.md
   [36]: ./../artifacts/02-04-CloudDeploy-CICD/README.md
   [37]: ./../artifacts/03-00-Docker/README.md
@@ -5447,21 +5447,21 @@ license].
   [This image demonstrates that the Laravel app functions without a problem when deployed to AKS.]:
     ./media/app-loads-aks.png "Laravel app loads"
   [Migrate MySQL on-premises to Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro
-  [42]: https://docs.microsoft.com/en-us/azure/azure-monitor/overview
-  [Log Analytics]: https://docs.microsoft.com/en-us/azure/azure-monitor/platform/design-logs-deployment
-  [Azure Sentinel]: https://docs.microsoft.com/en-us/azure/sentinel/overview
-  [Azure runbooks]: https://docs.microsoft.com/en-us/azure/automation/automation-quickstart-create-runbook
-  [Kusto Query Language (KQL)]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/
-  [here]: https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet
-  [Get started with log queries in Azure Monitor]: https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/get-started-queries
+  [42]: https://docs.microsoft.com/azure/azure-monitor/overview
+  [Log Analytics]: https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment
+  [Azure Sentinel]: https://docs.microsoft.com/azure/sentinel/overview
+  [Azure runbooks]: https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook
+  [Kusto Query Language (KQL)]: https://docs.microsoft.com/azure/data-explorer/kusto/query/
+  [here]: https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet
+  [Get started with log queries in Azure Monitor]: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
   [43]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring
   [44]: https://docs.microsoft.com/azure/mysql/concepts-monitoring
-  [audit log feature is disabled]: https://docs.microsoft.com/en-us/azure/mysql/concepts-audit-logs
-  [diagnostic logging]: https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal#set-up-diagnostic-logs
+  [audit log feature is disabled]: https://docs.microsoft.com/azure/mysql/concepts-audit-logs
+  [diagnostic logging]: https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal#set-up-diagnostic-logs
   [Single Server Audit Logs]: https://docs.microsoft.com/azure/mysql/concepts-audit-logs
   [Flexible Server Audit Logs]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs
   [Configure and access audit logs for Azure Database for MySQL in the Azure Portal]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-configure-audit-logs-portal
+    https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal
   [This image demonstrates a sample query of the Activity Log from the Logs tab of the Azure Portal.]:
     ./media/activity-log-sample-query.png "Activity log sample query"
   [This image demonstrates the query results from the opened sample.]: ./media/activity-log-query-results.png
@@ -5484,50 +5484,50 @@ license].
     "AbortedConnections alert rule and ServerNotifications action group"
   [This image demonstrates the Azure Monitor alert rule sent to my email after attempting multiple failed connections.]:
     ./media/alert-rule-sent-to-email.png "Azure Monitor alert rule"
-  [Tutorial: Design an Azure Database for MySQL using PowerShell]: https://docs.microsoft.com/en-us/azure/mysql/tutorial-design-database-using-powershell
+  [Tutorial: Design an Azure Database for MySQL using PowerShell]: https://docs.microsoft.com/azure/mysql/tutorial-design-database-using-powershell
   [How to back up and restore an Azure Database for MySQL server using PowerShell]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-restore-server-powershell
+    https://docs.microsoft.com/azure/mysql/howto-restore-server-powershell
   [Configure server parameters in Azure Database for MySQL using PowerShell]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-configure-server-parameters-using-powershell
+    https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell
   [Auto grow storage in Azure Database for MySQL server using PowerShell]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-auto-grow-storage-powershell
+    https://docs.microsoft.com/azure/mysql/howto-auto-grow-storage-powershell
   [How to create and manage read replicas in Azure Database for MySQL using PowerShell]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-read-replicas-powershell
-  [Restart Azure Database for MySQL server using PowerShell]: https://docs.microsoft.com/en-us/azure/mysql/howto-restart-server-powershell
-  [log alerts]: https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-unified-log
+    https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell
+  [Restart Azure Database for MySQL server using PowerShell]: https://docs.microsoft.com/azure/mysql/howto-restart-server-powershell
+  [log alerts]: https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log
   [Azure Automation Runbooks]: https://docs.microsoft.com/azure/automation/automation-runbook-types
   [Microsoft blog]: https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/
   [scale storage to increase IOPS capacity or provision additional IOPS]:
     https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage
   [basic authentication mechanisms]: https://docs.microsoft.com/azure/mysql/howto-create-users
-  [integration with Azure Active Directory]: https://docs.microsoft.com/en-us/azure/mysql/concepts-azure-ad-authentication
-  [Configuring Active Directory integration]: https://docs.microsoft.com/en-us/azure/mysql/howto-configure-sign-in-azure-ad-authentication
-  [Azure Identity Protection]: https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
-  [Azure Threat Protection]: https://docs.microsoft.com/en-us/azure/mysql/concepts-data-access-and-security-threat-protection
+  [integration with Azure Active Directory]: https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication
+  [Configuring Active Directory integration]: https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication
+  [Azure Identity Protection]: https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection
+  [Azure Threat Protection]: https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-threat-protection
   [Microsoft Defender for open-source relational databases]: https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-introduction
   [Enable Microsoft Defender for open-source relational databases and respond to alerts]:
     https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-usage
-  [bring your own key (BYOK)]: https://docs.microsoft.com/en-us/azure/mysql/concepts-data-encryption-mysql
-  [Azure Key Vault]: https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts
-  [add double encryption]: https://docs.microsoft.com/en-us/azure/mysql/concepts-infrastructure-double-encryption
-  [modify your applications]: https://docs.microsoft.com/en-us/azure/mysql/howto-configure-ssl
+  [bring your own key (BYOK)]: https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql
+  [Azure Key Vault]: https://docs.microsoft.com/azure/key-vault/general/basic-concepts
+  [add double encryption]: https://docs.microsoft.com/azure/mysql/concepts-infrastructure-double-encryption
+  [modify your applications]: https://docs.microsoft.com/azure/mysql/howto-configure-ssl
   [45]: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
   [46]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl
-  [firewall rules]: https://docs.microsoft.com/en-us/azure/mysql/concepts-firewall-rules
-  [restrict public access]: https://docs.microsoft.com/en-us/azure/mysql/howto-deny-public-network-access
-  [Virtual Network Peering]: https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview
-  [Azure Metrics]: https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-platform-metrics
-  [Monitoring in Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring
-  [Query Performance Insight tool]: https://docs.microsoft.com/en-us/azure/mysql/concepts-query-performance-insight
+  [firewall rules]: https://docs.microsoft.com/azure/mysql/concepts-firewall-rules
+  [restrict public access]: https://docs.microsoft.com/azure/mysql/howto-deny-public-network-access
+  [Virtual Network Peering]: https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview
+  [Azure Metrics]: https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics
+  [Monitoring in Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/concepts-monitoring
+  [Query Performance Insight tool]: https://docs.microsoft.com/azure/mysql/concepts-query-performance-insight
   [Upgrade from Basic to General Purpose or Memory Optimized tiers in Azure Database for MySQL]:
     https://techcommunity.microsoft.com/t5/azure-database-for-mysql/upgrade-from-basic-to-general-purpose-or-memory-optimized-tiers/ba-p/830404
   [47]: 03_BCDR.md
-  [48]: https://docs.microsoft.com/en-us/azure/mysql/concepts-server-parameters
-  [Minecraft migration]: https://developer.microsoft.com/en-us/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/
+  [48]: https://docs.microsoft.com/azure/mysql/concepts-server-parameters
+  [Minecraft migration]: https://developer.microsoft.com/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/
   [49]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
   [log_bin_trust_function_creators]: https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators
   [innodb_buffer_pool_size]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
-  [50]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-server-parameters
+  [50]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
   [innodb_file_per_table]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_file_per_table
   [Microsoft documentation.]: https://docs.microsoft.com/azure/mysql/concepts-server-parameters
   [51]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal
@@ -5540,13 +5540,13 @@ license].
     "Performance benefits of thread pooling"
   [Microsoft TechCommunity post]: https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691
   [56]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
-  [Backup and restore in Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/concepts-backup
-  [Some regions]: https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers#storage
-  [Perform post-restore tasks]: https://docs.microsoft.com/en-us/azure/mysql/concepts-backup#perform-post-restore-tasks
-  [57]: https://docs.microsoft.com/en-us/azure/mysql/concepts-read-replicas
+  [Backup and restore in Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/concepts-backup
+  [Some regions]: https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage
+  [Perform post-restore tasks]: https://docs.microsoft.com/azure/mysql/concepts-backup#perform-post-restore-tasks
+  [57]: https://docs.microsoft.com/azure/mysql/concepts-read-replicas
   [58]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
-  [Azure Load Balancer]: https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview
-  [Application Gateway]: https://docs.microsoft.com/en-us/azure/application-gateway/overview
+  [Azure Load Balancer]: https://docs.microsoft.com/azure/load-balancer/load-balancer-overview
+  [Application Gateway]: https://docs.microsoft.com/azure/application-gateway/overview
   [This image demonstrates Zone-Redundant HA for MySQL Flexible Server.]:
     media/1-flexible-server-overview-zone-redundant-ha.png
     "Zone-Redundant HA"
@@ -5579,27 +5579,27 @@ license].
     https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal
   [View service health notifications in the Azure Portal]: https://docs.microsoft.com/azure/service-health/service-notifications
   [Configure resource health alerts using Azure Portal]: https://docs.microsoft.com/azure/service-health/resource-health-alert-monitor-guide
-  [planned maintenance notification]: https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring#planned-maintenance-notification
-  [Azure Architecture center]: https://docs.microsoft.com/en-us/azure/architecture/
-  [Digital marketing using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/digital-marketing-using-azure-database-for-mysql
-  [Finance management apps using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/finance-management-apps-using-azure-database-for-mysql
-  [Intelligent apps using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/intelligent-apps-using-azure-database-for-mysql
-  [Gaming using Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/gaming-using-azure-database-for-mysql
-  [Retail and e-commerce using Azure MySQL]: https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/retail-and-ecommerce-using-azure-database-for-mysql
+  [planned maintenance notification]: https://docs.microsoft.com/azure/mysql/concepts-monitoring#planned-maintenance-notification
+  [Azure Architecture center]: https://docs.microsoft.com/azure/architecture/
+  [Digital marketing using Azure Database for MySQL]: https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-marketing-using-azure-database-for-mysql
+  [Finance management apps using Azure Database for MySQL]: https://docs.microsoft.com/azure/architecture/solution-ideas/articles/finance-management-apps-using-azure-database-for-mysql
+  [Intelligent apps using Azure Database for MySQL]: https://docs.microsoft.com/azure/architecture/solution-ideas/articles/intelligent-apps-using-azure-database-for-mysql
+  [Gaming using Azure Database for MySQL]: https://docs.microsoft.com/azure/architecture/solution-ideas/articles/gaming-using-azure-database-for-mysql
+  [Retail and e-commerce using Azure MySQL]: https://docs.microsoft.com/azure/architecture/solution-ideas/articles/retail-and-ecommerce-using-azure-database-for-mysql
   [Scalable web and mobile applications using Azure Database for MySQL]:
-    https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
-  [Microsoft Customer Stories portal]: https://customers.microsoft.com/en-us/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
+    https://docs.microsoft.com/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
+  [Microsoft Customer Stories portal]: https://customers.microsoft.com/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
   [file a ticket from the Azure portal]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql
   [Search for a Microsoft Partner]: https://www.microsoft.com/solution-providers/home
   [Microsoft MVP]: https://mvp.microsoft.com/MvpSearch
-  [Microsoft Community Forum]: https://docs.microsoft.com/en-us/answers/topics/azure-database-mysql.html
+  [Microsoft Community Forum]: https://docs.microsoft.com/answers/topics/azure-database-mysql.html
   [StackOverflow for Azure MySQL]: https://stackoverflow.com/questions/tagged/azure-database-mysql
   [Azure Facebook Group]: https://www.facebook.com/groups/MsftAzure
   [LinkedIn Azure Group]: https://www.linkedin.com/groups/2733961/
   [LinkedIn Azure Developers Group]: https://www.linkedin.com/groups/1731317/
   [whitepaper GitHub repository]: https://github.com/solliancenet/microsoft-mysql-developer-guide.git
-  [PowerShell Azure module]: https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-6.6.0
+  [PowerShell Azure module]: https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0
   [PowerShell Core]: https://github.com/PowerShell/PowerShell
   [secure ARM template]: ../Artifacts/template-secure.json
   [parameters file]: ../Artifacts/template-secure.parameters.json

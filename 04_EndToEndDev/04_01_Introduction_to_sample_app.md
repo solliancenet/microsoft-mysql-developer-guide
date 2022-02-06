@@ -1,6 +1,6 @@
 # Introduction to the guide sample application
 
-Instead of learning multiple sample applications, the guide was focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application would need to be modified in order fit the deployment model.
+Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application would need to be modified in order fit the deployment model.
 
 ## Sample application overview and story
 
@@ -19,12 +19,27 @@ TODO
 ## Prerequisites
 
 TODO
+- Azure subscription
+- Git
+- 
 
 ## Quick start: manual Azure set up instructions
 
 As you continue with this guide, you will be able to take advantage of the environment automation scripts that will build and configure much of your environment. It is important to understand the basic Azure concepts before running automated scripts. Walking through each steps will help provide additional context and learning opportunities.
 
+>**Note:** The sample application will work with PHP 7.X or 8.0. **We recommend deploying to 8.0 environment**. Deploying to a 7.X requires a slightly different configuration as the underlying web server has changed.
+
+| PHP Version | Web Server |
+|-------------|----------------|
+| 7.3         | Apache         |
+| 7.4         | Apache         |
+| 8.0         | Nginx          |
+
+The Azure App Service uses this [Docker image](https://github.com/Azure-App-Service/nginx-fpm) for its 8.0 container builds. Outdated runtimes are periodically removed from the Web Apps Create and Configuration blades in the Portal. These runtimes are hidden from the Portal when they are deprecated by the maintaining organization or found to have significant vulnerabilities. These options are hidden to guide customers to the latest runtimes where they will be the most successful. Older Azure App Service Docker images can be found [here](https://github.com/Azure-App-Service/php).
+
 TODO: Update details about the steps.
+
+## Sample application deployment steps
 
 - Step 1: Log into the Azure Portal. Create Azure Web App + Flexible Server database resources.
 - Step 2: Log into App Service terminal and add Composer to project directory.
