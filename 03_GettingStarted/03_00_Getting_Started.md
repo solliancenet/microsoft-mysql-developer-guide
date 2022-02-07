@@ -2,8 +2,6 @@
 
 With a firm understanding of Azure and MySQL offerings available to you, it is time to review how to start using these various services. In this section, we will explore how to get your Azure subscriptions configured and ready to host your MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
 
-[Introduction to Azure Database for MySQL]
-
 ## Azure free account
 
 Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
@@ -45,3 +43,11 @@ Once you have determined your editor of choice, you will need to pick a developm
 [Python language support]
 
 [Other notable languages for MySQL apps]
+
+## Resources
+
+- [App Service overview](https://docs.microsoft.com/azure/app-service/overview)
+
+- [Azure App Service plan overview](https://docs.microsoft.com/azure/app-service/overview-hosting-plans)
+  
+- [Plan and manage costs for Azure App Service](https://docs.microsoft.com/azure/app-service/overview-manage-costs)

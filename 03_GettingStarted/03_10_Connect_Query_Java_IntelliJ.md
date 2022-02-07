@@ -112,3 +112,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 2. In the **Azure Explorer**, right-click the MySQL Single Server instance you created and select **Stop**.
 
 Congratulations. You have successfully installed IntelliJ, the Azure Explorer extension, created a MySQL Single Server instance, and securely operated an app using the Single Server.
+
+## Resources
+
+- [Deploy a Spring Boot application on AKS cluster with MySQL Flexible Server in a VNet](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet)

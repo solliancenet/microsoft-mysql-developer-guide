@@ -49,10 +49,9 @@ TODO: Update details about the steps.
 4. Clone the MS MySQL Developer Guide Sample App repo locally. Configure Git project settings on your local machine. Add remote Deployment Center upstream repo URL and credentials.
 5. Push PHP app to App Service repo.
 6. Configure Nginx default file.  Check the configuration. `nginx -t` in the SSH console.
-7. Run composer install, which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
+7. [Run composer install at your project level](https://getcomposer.org/download/), which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
 8. Run php artisan generate key in the console.
-9. Configure URL redirect.
-10. Configure the environment variables.
+9. Configure the environment variables.
 
 [Sample application evolution artifact repo](https://)
 
@@ -64,7 +63,7 @@ TODO: add more specific information related to getting PHP/Laravel running in Az
 
 ## Troubleshooting tips
 
-- Running `php -i` at the Azure App Service SSH console will provide a world of valuable configuration information.
+- Running `php -i` at the Azure App Service SSH console will provide valuable configuration information.
 - Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`
 - [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/en-us/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)
 
@@ -72,4 +71,4 @@ TODO: add more specific information related to getting PHP/Laravel running in Az
 
 ## Resources
 
-[How PHP apps are detected and built.](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/php.md)
+- [How PHP apps are detected and built.](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/php.md)

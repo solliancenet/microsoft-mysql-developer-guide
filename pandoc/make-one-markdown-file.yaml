@@ -2,6 +2,10 @@
 # Instructions for a Windows machine.  If you are running a Mac OS or Linux, you do not need do this.
 # You need to create one markdown file from the directory tree from markdown files.
 
+# Pre-Pandoc clean up.
+# Remove all of the 'en-us' references in the URLs.
+# Run spell-check and fix MD formatting issues. 
+
 # Step 1
 # Navigate to the media folder.  Delete all of the media files.  rem DEL /F/Q *.*
 # Run the Windows command below in the content base directory to produce a list of file paths to the markdown documents. 

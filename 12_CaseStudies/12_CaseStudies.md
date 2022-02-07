@@ -16,6 +16,9 @@ Minecraft also migrated its frontend servers to Azure to take advantage of Azure
 
 ### CVS
 
-### TODO
-
 TODO
+
+## Resources
+
+- [Tutorial: Deploy a Spring Boot application on AKS cluster with MySQL Flexible Server in a VNet](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet)
+- [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks)
