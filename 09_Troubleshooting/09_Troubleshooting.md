@@ -29,6 +29,8 @@ Inevitably, as you operate Flexible Server, you will encounter issues with your 
 - In Azure App Service, certain settings are available to the deployment or runtime environment as environment variables. Some of these settings can be customized when you set them manually as app settings.
 [Environment variables and app settings in Azure App Service](https://docs.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet)
 
+- [Azure App Service on Linux FAQ](https://docs.microsoft.com/azure/app-service/faq-app-service-linux)
+
 ## General issue mitigation
 
 Generally, all cloud applications should include connection [retry logic](https://docs.microsoft.com/azure/architecture/patterns/retry), which typically responds to transient issues by initiating subsequent connections after a delay.

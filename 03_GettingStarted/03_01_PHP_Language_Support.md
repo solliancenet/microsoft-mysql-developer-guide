@@ -19,6 +19,9 @@ Flexible Server and Single Server are compatible with all PHP client utilities f
 
 ### Resources
 
-1. [Backend libraries for mysqli and PDO_MySQL](https://www.php.net/manual/en/mysqlinfo.library.choosing.php)
-2. [Introduction to PDO](https://www.php.net/manual/en/intro.pdo.php)
-3. [PDO_MYSQL Reference](https://www.php.net/manual/en/ref.pdo-mysql.php)
+1. [Create a PHP web app in Azure App Service](https://aka.ms/php-qs)
+2. [Backend libraries for mysqli and PDO_MySQL](https://www.php.net/manual/en/mysqlinfo.library.choosing.php)
+3. [Introduction to PDO](https://www.php.net/manual/en/intro.pdo.php)
+4. [PDO_MYSQL Reference](https://www.php.net/manual/en/ref.pdo-mysql.php)
+5. [Configure a PHP app for Azure App Service](https://docs.microsoft.com/azure/app-service/configure-language-php?pivots=platform-linux)
+6. The [php.ini directives](https://www.php.net/manual/en/ini.list.php) allow you to set and customize configure your PHP setup.

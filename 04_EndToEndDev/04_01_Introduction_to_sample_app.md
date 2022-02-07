@@ -21,7 +21,7 @@ TODO
 TODO
 - Azure subscription
 - Git
-- 
+
 
 ## Quick start: manual Azure set up instructions
 
@@ -35,19 +35,24 @@ As you continue with this guide, you will be able to take advantage of the envir
 | 7.4         | Apache         |
 | 8.0         | Nginx          |
 
-The Azure App Service uses this [Docker image](https://github.com/Azure-App-Service/nginx-fpm) for its 8.0 container builds. Outdated runtimes are periodically removed from the Web Apps Create and Configuration blades in the Portal. These runtimes are hidden from the Portal when they are deprecated by the maintaining organization or found to have significant vulnerabilities. These options are hidden to guide customers to the latest runtimes where they will be the most successful. Older Azure App Service Docker images can be found [here](https://github.com/Azure-App-Service/php).
+The Azure App Service uses this [Docker image](https://github.com/Azure-App-Service/nginx-fpm) for its 8.0 container builds.
+
+>**Warning**: Outdated runtimes are periodically removed from the Web Apps Create and Configuration blades in the Portal. These runtimes are hidden from the Portal when they are deprecated by the maintaining organization or found to have significant vulnerabilities. These options are hidden to guide customers to the latest runtimes where they will be the most successful. Older Azure App Service Docker images can be found [here](https://github.com/Azure-App-Service/php).
 
 TODO: Update details about the steps.
 
 ## Sample application deployment steps
 
-- Step 1: Log into the Azure Portal. Create Azure Web App + Flexible Server database resources.
-- Step 2: Log into App Service terminal and add Composer to project directory.
-- Step 3: Add Git Local configuration via Deployment Center and capture credential information.
-- Step 4: Clone the MS MySQL Developer Guide Sample App repo locally. Configure Git project settings on your local machine. Add remote Deployment Center upstream repo URL and credentials.
-- Step 5: Push PHP app to App Service repo. Run composer update and php artisan generate key.
-- Step 6: Configure URL redirect.
-- Step 7: Configure the environment variables.
+1. Log into the Azure Portal. Create Azure Web App + Flexible Server database resources.
+2. Log into App Service terminal and add Composer to project directory.
+3. Add Local Git configuration via Deployment Center and capture credential information.
+4. Clone the MS MySQL Developer Guide Sample App repo locally. Configure Git project settings on your local machine. Add remote Deployment Center upstream repo URL and credentials.
+5. Push PHP app to App Service repo.
+6. Configure Nginx default file.  Check the configuration. `nginx -t` in the SSH console.
+7. Run composer install, which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
+8. Run php artisan generate key in the console.
+9. Configure URL redirect.
+10. Configure the environment variables.
 
 [Sample application evolution artifact repo](https://)
 
@@ -59,9 +64,11 @@ TODO: add more specific information related to getting PHP/Laravel running in Az
 
 ## Troubleshooting tips
 
-TODO
+- Running `php -i` at the Azure App Service SSH console will provide a world of valuable configuration information.
+- Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`
+- [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/en-us/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)
 
-Azure resource activity log.
+- [Deploying a Laravel application to Nginx server.](https://laravel.com/docs/8.x/deployment#nginx)
 
 ## Resources
 
