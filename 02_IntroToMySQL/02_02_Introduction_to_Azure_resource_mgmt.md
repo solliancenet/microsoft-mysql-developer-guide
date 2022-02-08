@@ -80,6 +80,8 @@ To use the Azure CLI, [download the CLI tools from Microsoft.](https://docs.micr
 
 To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell Gallery, as described in the [installation document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
+TODO: Azure Cloud Shell overview
+
 ### PowerShell Module
 
 The Azure portal and Windows PowerShell can be used for managing the Azure Database for MySQL. To get started with PowerShell, install the Azure PowerShell cmdlets for MySQL with the following PowerShell command:
@@ -147,3 +149,7 @@ Azure provides [multiple support plans for businesses](https://azure.microsoft.c
 - [Azure Certifications & Exams](https://docs.microsoft.com/learn/certifications/browse/?products=azure)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
   - [Azure Fundamentals (AZ-900) Learning Path](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
+
+### Resources
+
+- [Azure CLI samples for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/sample-scripts-azure-cli)

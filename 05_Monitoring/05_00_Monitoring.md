@@ -151,3 +151,9 @@ In this example, I configured an alert rule called **AbortedConnections** on the
 After initiating multiple failed connections to the Flexible Server instance, I receive the following warning on my configured notification email address.
 
 ![This image demonstrates the Azure Monitor alert rule sent to my email after attempting multiple failed connections.](./media/alert-rule-sent-to-email.png "Azure Monitor alert rule")
+
+# Azure Service Health
+
+TODO - Sai
+
+Azure Service Health notifies you about Azure service incidents and planned maintenance so you can take action to mitigate downtime. Configure customizable cloud alerts and use your personalized dashboard to analyze health issues, monitor the impact to your cloud resources, get guidance and support, and share details and updates.

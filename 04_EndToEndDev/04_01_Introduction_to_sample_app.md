@@ -44,14 +44,17 @@ TODO: Update details about the steps.
 ## Sample application deployment steps
 
 1. Log into the Azure Portal. Create Azure Web App + Flexible Server database resources.
-2. Log into App Service terminal and add Composer to project directory.
-3. Add Local Git configuration via Deployment Center and capture credential information.
-4. Clone the MS MySQL Developer Guide Sample App repo locally. Configure Git project settings on your local machine. Add remote Deployment Center upstream repo URL and credentials.
-5. Push PHP app to App Service repo.
-6. Configure Nginx default file.  Check the configuration. `nginx -t` in the SSH console.
-7. [Run composer install at your project level](https://getcomposer.org/download/), which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
-8. Run php artisan generate key in the console.
-9. Configure the environment variables.
+2. Locally run composer install.
+3. Zip project directory.
+4. 
+5. Log into App Service terminal and add Composer to project directory.
+6. Add Local Git configuration via Deployment Center and capture credential information.
+7. Clone the MS MySQL Developer Guide Sample App repo locally. Configure Git project settings on your local machine. Add remote Deployment Center upstream repo URL and credentials.
+8. Push PHP app to App Service repo.
+9. Configure Nginx default file.  Check the configuration. `nginx -t` in the SSH console.
+10. [Run composer install at your project level](https://getcomposer.org/download/), which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
+11. Run php artisan generate key in the console.
+12. Configure the environment variables.
 
 [Sample application evolution artifact repo](https://)
 

@@ -20,3 +20,7 @@ Here are some scenarios of how aggregating metrics over time generates insights.
 - If IOPS was **90%** or more of capacity (average of `io_consumption_percent` in Flexible Server) for at least **1** hour, then call a webhook
   - Excessive IO usage affects the performance of transactional workloads, so [scale storage to increase IOPS capacity or provision additional IOPS](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage)
   - See the linked CLI examples for automatic scaling based on metrics
+
+## Webhooks
+
+TODO -Sai
