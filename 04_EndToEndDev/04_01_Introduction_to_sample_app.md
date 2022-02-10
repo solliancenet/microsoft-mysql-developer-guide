@@ -66,6 +66,7 @@ TODO: add more specific information related to getting PHP/Laravel running in Az
 
 ## Troubleshooting tips
 
+- Select your App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
 - Running `php -i` at the Azure App Service SSH console will provide valuable configuration information.
 - Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`
 - [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/en-us/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)

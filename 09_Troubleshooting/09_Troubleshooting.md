@@ -12,6 +12,8 @@ Inevitably, as you operate Flexible Server, you will encounter issues with your 
 
 - Ensure that corporate firewalls do not block outbound connections to port 3306.
 
+- Use a fully qualified domain name instead of an IP address in connection strings.
+
 ### Resource issues
 
 - If your application experiences transient connectivity issues, perhaps the resources of the Flexible Server instance are constrained. Monitor resource usage and determine whether the Flexible Server instance needs to be scaled up.
