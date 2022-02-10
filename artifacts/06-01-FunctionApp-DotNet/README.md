@@ -1,4 +1,4 @@
-# Azure Function with MySQL (Python)
+# Azure Function with MySQL (.NET)
 
 https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/how-to-connect-to-azure-database-for-mysql-using-managed/ba-p/1518196
 

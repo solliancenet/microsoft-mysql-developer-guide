@@ -80,7 +80,11 @@ To use the Azure CLI, [download the CLI tools from Microsoft.](https://docs.micr
 
 To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell Gallery, as described in the [installation document.](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-6.6.0)
 
-TODO: Azure Cloud Shell overview
+#### Azure Cloud Shell
+
+The Azure Cloud Shell provides Bash and PowerShell environments for managing Azure resources imperatively. It also includes common development tools, like Visual Studio Code, and files are persisted in an Azure Files share.
+
+Launch the Cloud Shell in your browser at [shell.azure.com](shell.azure.com).
 
 ### PowerShell Module
 
