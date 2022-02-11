@@ -60,7 +60,15 @@ When you are just starting, the **Azure Portal** gives developers a quick view o
 
 Azure runs on a common framework of backend resource services and every action you take on the Azure portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
 
-Moving your workload to Azure lifts some of the administrative burdens, but not all, even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
+#### Azure Marketplace
+
+[Azure Marketplace](https://docs.microsoft.com/marketplace/azure-marketplace-overview) is an online store that contains thousands of IT software applications and services built by industry-leading technology companies. In Azure Marketplace you can find, try, buy, and deploy the software and services you need to build new solutions and manage your cloud infrastructure. The catalog includes solutions for different industries and technical areas, free trials, and also consulting services from Microsoft partners.
+
+![The picture shows an example of a Azure Marketplace search results.](media/azure-marketplace-search-results.png "Azure Marketplace Results")
+
+#### Evolving
+
+Moving your workload to Azure lifts some of the administrative burdens, but not all. Even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
 
 By using the existing command-line tools and REST APIs, you can build your own tools to automate and report on your configurations based on any organizational requirements that are required.
 
