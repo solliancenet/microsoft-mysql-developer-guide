@@ -1,6 +1,6 @@
 # Type of MySQL applications
 
-TODO - Sai
+This section explains common cloud application architectures and Azure services. While these services are not directly related to MySQL, they are often used in modern applications.
 
 ## Web Apps
 
@@ -63,9 +63,32 @@ On Azure, organizations often deploy microservices to Azure Kubernetes Service t
 
 ## API Management
 
-Azure API Management ...
+Azure API Management allows organizations to manage and securely expose their APIs hosted on diverse environments from a central service. API Management simplifies legacy API modernization, API exposure to multiple platforms, and data interchange between businesses. Applications call APIs through an *API gateway* that validates credentials, enforces quotas, serializes requests in different protocols, and more. Developers operate their API Management instances through the management plane, and they expose API documentation for internal and external users through the Developer portal.
 
-## Event driven - Azure Service Bus vs Azure Queue, Event Hub
+![This image demonstrates the control plane, management plane, and developer portal elements of API Management.](./media/api-management-components.png "API Management components")
+
+Like other Azure resources, API Management offers comprehensive RBAC support, accommodating internal administrative and development staff and external users. Moreover, as API Management integrates with APIs hosted in environments outside Azure, organizations can self-host the API gateway while retaining the Azure management plane APIs.
+
+### Resources
+
+- [About API Management](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
+- [Self-hosted gateway overview](https://docs.microsoft.com/azure/api-management/self-hosted-gateway-overview)
+
+## Event driven - Azure Service Bus vs. Azure Queue vs. Event Hub (TODO)
+
+Event-driven apps create, ingest, and process events (state changes) in real-time. Event producers and event consumers are loosely-coupled, and every consumer sees every event. Event-driven architectures can perform complex event handling, such as aggregations over time, and operate with large volumes of data produced rapidly.
+
+Event-driven apps either implement a *pub/sub* approach or an *event streaming* approach.
+
+### Azure Event Grid
+
+Azure Event Grid is a pub-sub system that integrates well with Azure and non-Azure services. Event Grid notifies subscribers of state changes: for example, if a file is updated, the event sent to subscribers will not include the file itself, but rather file metadata.
+
+### Azure Service Bus
+
+### Azure Event Hub
+
+### Azure Queue
 
 ## Batch processing – chron jobs, web jobs
 
