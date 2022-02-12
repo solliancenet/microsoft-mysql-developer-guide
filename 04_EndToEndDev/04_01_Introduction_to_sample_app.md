@@ -42,6 +42,8 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 
 ## Sample application deployment steps
 
+The deployment strategy applied in this sample application focuses on updating project environment variables instead of global environment variable configuration.
+
 1. Log into the Azure Portal. Search for and create Azure Web App + Database resources in the Marketplace.
 
    - Select the Marketplace button.
@@ -128,7 +130,7 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
     php artisan key:generate
     ```
 
-7. Update the .env file with the Azure URL.
+7. Update the .env file with the Azure URL and save your changes.
 
    ```bash
     nano /home/site/wwwroot/.env
@@ -142,20 +144,27 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 
 ## Connecting to the database
 
+At this point, you are viewing the application with some sample data. The web application is not reading or writing to the database. Let's go through the steps to configure the database configuration information.
+
+TODO - Tim
+
+
 
 ## What happens to my app during an Azure deployment?
 
 All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of your app. These files are used to run your app.  The web framework of your choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
+
+The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
 TODO: add more specific information related to getting PHP/Laravel running in Azure.
 
 ## Troubleshooting tips
 
 - Select your App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
+- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)
 - Running `php -i` at the Azure App Service SSH console will provide valuable configuration information.
 - Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`
 - [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/en-us/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)
-
 - [Deploying a Laravel application to Nginx server.](https://laravel.com/docs/8.x/deployment#nginx)
 - [Local Git deployment to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git?tabs=cli)
 

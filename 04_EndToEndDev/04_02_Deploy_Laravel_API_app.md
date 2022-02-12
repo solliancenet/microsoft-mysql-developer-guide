@@ -1,6 +1,6 @@
 # Deploying a Laravel app backed by a Java REST API to AKS
 
-## App introduction
+## Evolving the sample application
 
 In the previous stages of this developer guide, you explored how an MVC app could be deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
 
