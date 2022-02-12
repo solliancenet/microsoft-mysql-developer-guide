@@ -4,7 +4,9 @@ TODO Sai
 
 ## 3rd party Azure solutions / Azure Marketplace
 
-### CMS like WordPress  
+The [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) provides thousands of certified apps on Azure tailored to meet customer needs. Many of these apps utilize PaaS MySQL.
+
+### CMS like WordPress
 
 ### LMS like Moodle 
 
