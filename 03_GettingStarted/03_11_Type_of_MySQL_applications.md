@@ -74,21 +74,27 @@ Like other Azure resources, API Management offers comprehensive RBAC support, ac
 - [About API Management](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
 - [Self-hosted gateway overview](https://docs.microsoft.com/azure/api-management/self-hosted-gateway-overview)
 
-## Event driven - Azure Service Bus vs. Azure Queue vs. Event Hub (TODO)
+## Event driven - Azure Event Grid vs. Service Bus vs. Event Hubs
 
 Event-driven apps create, ingest, and process events (state changes) in real-time. Event producers and event consumers are loosely-coupled, and every consumer sees every event. Event-driven architectures can perform complex event handling, such as aggregations over time, and operate with large volumes of data produced rapidly.
 
-Event-driven apps either implement a *pub/sub* approach or an *event streaming* approach.
+Azure provides different services for relaying *messages* and *events*. When one system sends a message to another, it expects the receiving system to handle the message in a particular way and respond. However, with events, the publisher has no expectation about how the event is handled.
 
 ### Azure Event Grid
 
-Azure Event Grid is a pub-sub system that integrates well with Azure and non-Azure services. Event Grid notifies subscribers of state changes: for example, if a file is updated, the event sent to subscribers will not include the file itself, but rather file metadata.
+Azure Event Grid is a serverless publish-subscribe system that integrates well with Azure and non-Azure services. As an event-based system, it simply relays state changes to subscribers; it does not contain the actual data that was changed.
 
 ### Azure Service Bus
 
-### Azure Event Hub
+Azure Service Bus provides a *queue* capability to pass each message to one consumer (first-in-first-out queue). Moreover, Service Bus includes pub-sub functionality, allowing more than one consumer to receive a message.  
 
-### Azure Queue
+### Azure Event Hubs
+
+Azure Event Hubs facilitates the ingestion and replay of event data. It is optimized for processing millions of events per second. Event Hubs supports multiple consumers through *consumer groups*, which point to certain locations in the stream.
+
+### Example Solution
+
+An e-commerce site can use Service Bus to process an order, Event Hubs to capture site telemetry, and Event Grid to respond to events like an item was shipped. 
 
 ## Batch processing – chron jobs, web jobs
 
