@@ -146,17 +146,71 @@ The deployment strategy applied in this sample application focuses on updating p
 
 At this point, you are viewing the application with some sample data. The web application is not reading or writing to the database. Let's go through the steps to configure the database configuration information.
 
-TODO - Tim
+1. Capture the database connection information. Open the Azure CLI Cloud Shell and run this command.
 
+   ```cmd
+   az webapp deployment list-publishing-profiles --resource-group <enter your resource group> --name <enter the name of your app service>
+   ```
 
+2. Capture the following connection values:
+   - Host/Server
+   - User ID
+   - Password
+  
+   >**Note:** For production environments, you would be retrieving these values from Azure Key Vault.
 
+3. Navigate to the Flexible Server in your resource group and create `contosonoshnow` database.  
+
+   ![](media/create-contosonoshnow-database.png)
+
+   >**Note:** You can run these alternative commands on the App Service SSL console to create the database.
+
+   ```bash
+   mysql --host=<your host>-server.mysql.database.azure.com --user=<your user name> --password=<your password> --ssl=true
+   ```
+   ```sql
+   CREATE DATABASE contosonoshnow
+   ```
+
+   ```bash
+   exit
+   ```
+4. You have the database connection information now. Open the App Service SSH console and configure the **.env** project file.
+
+   ```bash
+   nano /home/site/wwwroot/.env
+   ```
+
+   ![Configure the database environment variables.](media/update-mysql-connection-info.png)
+
+   Update the following environment variables:
+   - DB_HOST
+   - DB_DATABASE
+   - DB_USERNAME
+   - DB_PASSWORD
+  
+5. Run the `php artisan migrate` command to create the tables in the contosonoshnow database.
+
+   ![](media/php-laravel-database-creation.png)
+
+6. Run the `php artisan db:seed` command to seed the database with sample data values.
+
+   ![](media/seeded-database.png)
+
+7. Navigate back to the web app and enter a sample order.
+
+   ![](media/sample-order.png)
+
+8. Verify your order was saved to the Flexible Server database.
+
+   ![](media/verify-order-data.png)
 ## What happens to my app during an Azure deployment?
 
 All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of your app. These files are used to run your app.  The web framework of your choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
 
-The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
-TODO: add more specific information related to getting PHP/Laravel running in Azure.
+
+The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
 ## Troubleshooting tips
 
