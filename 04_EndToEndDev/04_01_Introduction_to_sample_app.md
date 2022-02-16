@@ -163,7 +163,7 @@ At this point, you are viewing the application with some sample data. The web ap
 
    ![](media/create-contosonoshnow-database.png)
 
-   >**Note:** You can run these alternative commands on the App Service SSL console to create the database.
+   >**Note:** You can run these alternative commands in the App Service SSL terminal to create the database.
 
    ```bash
    mysql --host=<your host>-server.mysql.database.azure.com --user=<your user name> --password=<your password> --ssl=true
@@ -191,11 +191,19 @@ At this point, you are viewing the application with some sample data. The web ap
   
 5. Run the `php artisan migrate` command to create the tables in the contosonoshnow database.
 
+   ```bash
+   php artisan migrate
+   ```
+
    ![](media/php-laravel-database-creation.png)
 
 6. Run the `php artisan db:seed` command to seed the database with sample data values.
 
-   ![](media/seeded-database.png)
+   ```bash
+   php artisan db:seed
+   ```
+
+   ![Seeded database.](media/seeded-database.png)
 
 7. Navigate back to the web app and enter a sample order.
 
@@ -207,8 +215,6 @@ At this point, you are viewing the application with some sample data. The web ap
 ## What happens to my app during an Azure deployment?
 
 All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of your app. These files are used to run your app.  The web framework of your choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
-
-
 
 The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
