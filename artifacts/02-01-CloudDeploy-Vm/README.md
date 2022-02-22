@@ -9,6 +9,9 @@ The app is running in an Azure VM.  The App needs to be exposed to the internet 
 1. Open a browser to the Azure Portal
 2. Navigate to the **paw-1** virtual machine
 3. In the **Essentials** section, copy the public IP Address
+
+   ![This image demonstrates the VM IP address in the Overview tab.](./media/vm-ip-address.png "VM IP address")
+
 4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080`)
 5. You should get a **ERR_CONNECTION_TIMED_OUT** error.  This is because the network security group on the virtual machine does not allow port 8080 access.
 
@@ -21,17 +24,19 @@ The app is running in an Azure VM.  The App needs to be exposed to the internet 
 5. For the name, type **Port_8080**
 6. Select **Add**
 
+   ![This image demonstrates the added inbound security rule.](./media/nsg-rule.png "New inbound security rule")
+
 ## Test the Application #2
 
 1. Retry connecting to the web application (ex `http:\\IP_ADDRESS:8080`), you will get another timeout error
-2. Switch back to the **paw-1** machine, run the following PowerShell:
+2. Switch back to the **paw-1** machine, run the following PowerShell command:
 
    ```PowerShell
    New-NetFirewallRule -DisplayName 'Port 8080' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8080
    ```
 
 3. You should see your application load
-4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080\database.php`)
+4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080`)
 5. You should see your results
 
 ## Enable Port 443
@@ -42,8 +47,13 @@ As part of any secured web application, you should enable SSL/TLS.
    - Open IIS Manager
    - Select the server node
    - Select **Server certificates**
+
+      ![This image demonstrates the Server Certificates tab in IIS Manager.](./media/server-certificates-iis-manager.png "Server Certificates in IIS Manager")
+
    - Select **Create self-signed certificate**
-   - Select **OK**
+     - For the friendly name, type **paw-1**
+     - For the certificate store, select **Web Hosting**
+     - Select **OK**
 <!--
    - For the friendly name, type **paw-1**
    - For the certificate store, select **Web Hosting**
@@ -54,7 +64,7 @@ As part of any secured web application, you should enable SSL/TLS.
    - For State/province, type **WA**
    - Click **Next**
 -->
-2. Setup SSL
+1. Setup SSL
    - Expand the **Sites** node
    - Select the **Default Web Site**
    - In the actions, select **Bindings**
@@ -62,6 +72,8 @@ As part of any secured web application, you should enable SSL/TLS.
    - For the type, select **https**
    - For the SSL certificate, select **paw-1**
    - Select **OK**
+
+   ![This image demonstrates an HTTPS binding in IIS.](./media/site-binding-iis.png "IIS HTTPS binding")
 
 ## Open Port 443
 
@@ -84,5 +96,5 @@ As part of any secured web application, you should enable SSL/TLS.
 3. Select the **Advanced** button
 4. Select **Proceed to IP_ADDRESS (unsafe)**
 5. You should see your application load
-6. Open a browser to the virtual machine ip address (ex `https:\\IP_ADDRESS:8080\database.php`)
+6. Open a browser to the virtual machine ip address (ex `https:\\IP_ADDRESS:443`)
 7. You should see your results
