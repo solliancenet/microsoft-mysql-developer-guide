@@ -163,7 +163,7 @@ You should now be able to browse to the function endpoint and see your data (the
 https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunction?code=SOMECODE
 ```
 
-## Azure portal
+## Test the Function App in the Azure portal
 
 - Navigate to the Azure portal and select **AddCustomerFunction** from the **mysqldev[SUFFIX]-addcustomerfunction** Function App instance
 
@@ -177,3 +177,10 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
 - You should immediately see the Function App execute successfully, with logs indicating a successful connection to MySQL Flexible Server
 
     ![This image demonstrates the logs of a successful Function App invocation.](./media/function-app-logs.png "Function App invocation logs")
+
+## Troubleshooting
+
+- If your Function App works locally, but fails in the cloud, ensure that the Azure environment is configured properly:
+  - The `requirements.txt` file must reference the MySQL Python connector
+  - The Flexible Server instance must provide access to all Azure resources
+  - The Azure Function Apps instance must be using extension version `4`, as that is the what the local core tools support
