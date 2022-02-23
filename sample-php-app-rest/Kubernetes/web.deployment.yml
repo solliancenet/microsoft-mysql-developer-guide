@@ -21,10 +21,10 @@ spec:
             value: http://java-api-service:8080/api/v1
         resources:
           limits:
-            memory: "2Gi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
-            memory: "1Gi"
+            memory: "750Mi"
             cpu: "250m"
         ports:
         - containerPort: 80
