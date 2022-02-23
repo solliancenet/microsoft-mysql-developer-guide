@@ -9,7 +9,7 @@ az mysql flexible-server create `
     --location $location `
     --resource-group $resourceGroup `
     --name $serverName `
-    --public-access 0.0.0.0 `
+    --public-access all `
     --tier Burstable `
     --sku-name Standard_B1ms `
     --version 8.0.21

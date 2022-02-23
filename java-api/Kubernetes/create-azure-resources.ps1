@@ -24,13 +24,25 @@ docker image push "$acrName.azurecr.io/noshnowui:0.0.1"
 $aksName = "appaks$suffix"
 $flexServerZone = az mysql flexible-server show --resource-group $resourceGroup --name "mysqlflexapp$suffix" --query availabilityZone -o tsv 
 
-az aks create `
+if ($flexServerZone)
+{
+    az aks create `
     --name $aksName `
     --resource-group $resourceGroup `
     --location $location `
     --node-count 2 `
     --zone $flexServerZone `
     --generate-ssh-keys
+}
+else 
+{
+    az aks create `
+    --name $aksName `
+    --resource-group $resourceGroup `
+    --location $location `
+    --node-count 2 `
+    --generate-ssh-keys
+}
 
 az aks update `
     --name $aksName `
