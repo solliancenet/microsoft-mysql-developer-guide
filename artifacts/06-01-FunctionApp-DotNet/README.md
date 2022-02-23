@@ -4,11 +4,13 @@ https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/how-to-conn
 
 ## Setup
 
-You can utilize Visual Studio or Visual Studio code to create Azure Functions.  
+You can utilize Visual Studio or Visual Studio Code to create Azure Functions.  
 
 ### Visual Studio
 
-- Install the [Azure Functions core tools](https://github.com/Azure/azure-functions-core-tools)
+- Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
+  - Expand the **Download Visual Studio with .NET** dropdown for an installation package with the .NET SDK
+- Install the [Azure Functions core tools MSI](https://go.microsoft.com/fwlink/?linkid=2174087)
 
 ## Create the Function Application
 
