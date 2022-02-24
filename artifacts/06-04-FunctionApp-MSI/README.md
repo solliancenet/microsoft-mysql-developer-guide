@@ -5,7 +5,7 @@ In the previous function apps you embedded the connection information into the f
 ## Enable MySQL Azure AD Authentication
 
 - Switch to the Azure Portal
-- Browse to the Azure Database for MySQL
+- Browse to the Azure Database for MySQL Flexible Server instance
 - Select **TODO**
 
 ## Create Managed Identity
