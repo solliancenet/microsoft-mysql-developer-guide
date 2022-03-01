@@ -28,10 +28,10 @@ spec:
                 key: DB_PASSWORD
         resources:
           limits:
-            memory: "2Gi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
-            memory: "1Gi"
+            memory: "750Mi"
             cpu: "250m"
         ports:
         - containerPort: 8080

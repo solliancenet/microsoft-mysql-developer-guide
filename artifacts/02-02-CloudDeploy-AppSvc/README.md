@@ -66,6 +66,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     try_files $uri $uri/ /index.php?$args;
     ```
 
+    ![This image demonstrates the changes made to the /home/site/default file in the SSH session.](./media/web-server-config.png "Web server configuration file changes")
+
 8. Add a startup.sh file:
 
    ```bash
@@ -87,18 +89,28 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     nano /home/site/wwwroot/app/Providers/AppServiceProvider.php
     ```
 
-11. Uncomment the `URL::forceScheme('https');` line in the `boot()` method.
+11. Open the `.env` file in the text editor.
 
-12. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
-13. Select **General settings**
-14. In the startup command textbox, type `/home/site/startup.sh`
-15. Select **Save**
+    ```bash
+    nano /home/site/wwwroot/.env
+    ```
+
+12. Update the `APP_URL` parameter to the App Service URL (found on the **Overview** tab of the Azure portal). Then, set `ASSET_URL` to `APP_URL`.
+
+    ```bash
+    APP_URL=https://[APP SERVICE NAME].azurewebsites.net
+    ASSET_URL = "${APP_URL}"
+    ```
+
+13. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
+14. Select **General settings**
+15. In the startup command textbox, type `/home/site/startup.sh`
+16. Select **Save**
 
 ### Test the Application
 
 1. Open the Azure Portal
-2. Browse to `http://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-3. Browse to `http://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get an error.  This is because the connection details were embedded in the php file.
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/` to see the app load with SSL
 
 ### Add Firewall IP Rule and Azure Access
 

@@ -27,7 +27,9 @@ This is a simple app that runs PHP code to connect to a MYSQL database.
 ## Test the Store Application
 
 1. Open a chrome browser window
-2. Navigate to `http://localhost:8080`, you should see the store front load.
+2. Navigate to `http://localhost:8080`, you should see the store front load with a random user.
+
+    ![This image demonstrates the loading screen for the Contoso NoshNow app.](./media/noshnow-app-load.png "Loading screen with random user")
 
 ## Manual Deployment
 
