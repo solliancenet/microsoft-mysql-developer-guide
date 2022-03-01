@@ -60,6 +60,7 @@ jobs:
       run: |
         php artisan key:generate --force
         #php artisan migrate --force
+        #php artisan db:seed --force
       working-directory: ./sample-php-app
       continue-on-error: true
 

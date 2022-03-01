@@ -141,8 +141,69 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - Now, populate the body (TODO)
 - For the logic app, select **Save**
 
+## Configure supporting items
+
+### Add private endpoint to App Service
+
+- Browse to the **mysqldevSUFFIX-web** app service
+- Under **App Service plan**, select **App Service plan**
+- Under **Settings**, select **Scale up (App Service plan)**
+- Select **Production** tab
+- Select the **P1V2** pricing tier
+- Select **Apply**
+- Switch back to the app service
+- Under **Settings**, select **Networking**
+- In the **Inbound Traffic** section, select **Private endpoints**
+- Select **Add**
+- For the name, type **mysqldevSUFFIX-web-pe**
+- For the virtual network, select **mysqldevSUFFIX-web**
+- Select **OK**
+- Switch back to the main blade for the app service
+- Under **Settings**, select **Configuration**
+- Edit the app setting value for **DB_HOST** to **10.4.0.4**
+- Select **Save**
+
+### Add virtual network peering
+
+- Browse to the **mysqldevSUFFIX-web** virtual network
+- Under **Settings**, select **Peerings**
+- Select **+Add**
+- For the name, type **web-to-db**
+- For the peering link name, type **db-to-web**
+- For the virtual network, select **mysqldevSUFFIX-db**
+- Select **Add*, after a couple minutes the link should to **Connected**
+- Under **Settings**, select **Subnets**
+- Select **+Subnet**
+- For the name, type **vnet-web-int**
+- Select **Save**
+
+### Add VNet Integrate
+
+- Browse back to the app service
+- Under **Settings**, select **Networking**
+- Under **Outbound Traffic**, select **VNet integration**
+- Select **Add virtual network**
+- Select the **mysqldevSUFFIX-web** virtual network
+- Select the **vnet-web-int** subnet
+- Select **Add**
+
+### Add the lastOrder.txt file
+
+- Browse to the **mysqldevSUFFIX** storage account
+- Select **Containers**, then select **logicapp**
+- Upload the **lastOrder.txt** file
+
 ## Test Trigger
 
-- Browse back to the Contoso Store
+- On the **paw-1** virtual machine
+- Add the following to the hosts file:
+
+```text
+10.3.0.4 mysqldev-app-web.azurewebsites.net
+10.3.0.4 mysqldev-app-web.scm.azurewebsites.net
+```
+
+- Open a new Chrome browser window
+- Browse to the Contoso Store app service - https://mysqldev-app-web.azurewebsites.net/
 - Create a new order
-- Switch to your email (https://outlook.office.com), wait for an email to show up with the order details.
+- Switch to your email (https://outlook.office.com), wait for 5 minutes for an email to show up with the order details.

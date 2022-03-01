@@ -50,6 +50,7 @@ steps:
     php artisan config:clear
     php artisan key:generate --force
     php artisan migrate --force
+    php artisan db:seed --force
   displayName: 'Running Migrations'
   workingDirectory: $(Build.SourcesDirectory)/sample-php-app
   condition: always()
