@@ -161,6 +161,6 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 TODO?
 
-## Azure Bicept
+## Azure Bicep
 
 TODO?

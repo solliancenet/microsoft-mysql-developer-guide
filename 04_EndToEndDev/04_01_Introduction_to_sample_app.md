@@ -12,16 +12,15 @@ The development team knew moving to Azure could help with these issues.
 
 TODO: Diagram
 
-## Site map and example default page
+## Site map
 
 TODO
 
 ## Prerequisites
 
-TODO
-
 - Azure subscription
 - Git
+- MySQL Workbench
 
 ## Quick start: manual Azure set up instructions
 

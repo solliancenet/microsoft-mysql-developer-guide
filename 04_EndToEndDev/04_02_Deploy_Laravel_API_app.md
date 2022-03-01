@@ -8,7 +8,7 @@ One of the advantages of this microservices architecture is that the Java API an
 
 We recommend creating a new resource group for this exercise.
 
-```
+```bash
 az group create -n [RESOURCE GROUP NAME] -l [AZURE REGION]
 ```
 
