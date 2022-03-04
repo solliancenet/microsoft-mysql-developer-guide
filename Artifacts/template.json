@@ -83,6 +83,69 @@
         }
       },
       {
+        "type": "Microsoft.Batch/batchAccounts",
+        "apiVersion": "2021-06-01",
+        "name": "[variables('resourceName')]",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            
+        },
+        "identity": {
+            "type": "None"
+        },
+        "properties": {
+            "autoStorage": {
+                "storageAccountId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Storage/storageAccounts/', variables('resourceName'))]",
+                "authenticationMode": "StorageKeys"
+            },
+            "poolAllocationMode": "BatchService",
+            "publicNetworkAccess": "Enabled",
+            "encryption": {
+                "keySource": "Microsoft.Batch"
+            },
+            "allowedAuthenticationModes": [
+                "SharedKey",
+                "AAD",
+                "TaskAuthenticationToken"
+            ]
+        }
+    },
+    {
+        "type": "Microsoft.Batch/batchAccounts/pools",
+        "apiVersion": "2021-06-01",
+        "name": "[concat(variables('resourceName'), '/main')]",
+        "dependsOn": [
+            "[resourceId('Microsoft.Batch/batchAccounts', variables('resourceName'))]"
+        ],
+        "properties": {
+            "displayName": "main",
+            "vmSize": "A5",
+            "interNodeCommunication": "Disabled",
+            "taskSlotsPerNode": 1,
+            "taskSchedulingPolicy": {
+                "nodeFillType": "Pack"
+            },
+            "deploymentConfiguration": {
+                "cloudServiceConfiguration": {
+                    "osFamily": "6",
+                    "osVersion": "*"
+                }
+            },
+            "networkConfiguration": {
+                "publicIPAddressConfiguration": {
+                    "provision": "BatchManaged"
+                }
+            },
+            "scaleSettings": {
+                "fixedScale": {
+                    "targetDedicatedNodes": 0,
+                    "targetLowPriorityNodes": 0,
+                    "resizeTimeout": "PT15M"
+                }
+            }
+        }
+    },
+      {
         "type": "Microsoft.DataMigration/services",
         "apiVersion": "2017-11-15-privatepreview",
         "name": "[variables('resourceName')]",
@@ -404,7 +467,6 @@
             "version": "8.0.21",
             "availabilityZone": "1",
             "publicNetworkAccess": "Enabled",
-            "Network": null,
             "maintenanceWindow": {
                 "customWindow": "Disabled",
                 "dayOfWeek": 0,
@@ -1877,17 +1939,17 @@
                 "$connections": {
                     "value": {
                         "azureblob": {
-                            "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().location, '/providers/Microsoft.Web/connections/azure_blob')]",
+                            "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Web/connections/azure_blob')]",
                             "connectionName": "azureblob",
                             "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azureblob')]"
                         },
                         "mysql": {
-                          "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().location, '/providers/Microsoft.Web/connections/mysql')]",
+                          "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Web/connections/mysql')]",
                             "connectionName": "mysql",
                             "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/mysql')]"
                         },
                         "office365": {
-                          "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().location, '/providers/Microsoft.Web/connections/office365')]",
+                          "connectionId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Web/connections/office365')]",
                             "connectionName": "office365",
                             "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/office365')]"
                         }
