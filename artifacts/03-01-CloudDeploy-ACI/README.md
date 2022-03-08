@@ -1,10 +1,10 @@
 # Migrate to Azure Container Instances (ACI)
 
-Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure Container Instances (ACI).
+Now that containerized versions of the application exists, they can now be hosted in several resource types in Azure. Here, we explore Azure Container Instances (ACI).
 
 ## Push images to Azure Container Registry
 
-1. If you haven't already, be sure to push your images to your Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
+1. If they haven't been already, push the images to the Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
 
 ## Run images in ACI
 
@@ -66,7 +66,7 @@ Now that you have containerized versions of your applications, you can host them
 
 ## Multi-container single app service deployment
 
-In the previous steps, you created a container instance for each of the containers, however, you can create a multi-container container instance where all services are encapsulated into one container instance instance using Azure CLI.
+In the previous steps, a container instance was created for each of the containers, however, it is possible to create a multi-container container instance where all services are encapsulated into one container instance instance using Azure CLI.
 
 1. Create the following `docker-compose-contoso.yml` file, be sure to replace the `SUFFIX`:
 
@@ -141,4 +141,4 @@ In the previous steps, you created a container instance for each of the containe
     az webapp config container set --resource-group $resourceGroupName --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml
     ```
 
-3. Switch back to the Azure Portal, browse to the Azure App Service. You can view the container logs by browsing to `https://mysqldevmbsjnv3m.scm.azurewebsites.net/api/logs/docker`.  Copy the path to the docker file and paste it into a new window, review the logs and fix any errors.
+3. Switch back to the Azure Portal, browse to the Azure App Service. If troubleshooting is needed, view the container logs by browsing to `https://mysqldevmbsjnv3m.scm.azurewebsites.net/api/logs/docker`.  Copy the path to the docker file and paste it into a new window, review the logs and fix any errors.

@@ -39,8 +39,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 5. For the stack, select **PHP**
 6. For the php version, select **7.4**
 7. Select **Save**
-8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-9. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get an error.  This is because the connection details were embedded in the php file.
+8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+9. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, an error should occur.  This is because the connection details were embedded in the php file.
 
 ### Export the Database
 

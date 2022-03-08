@@ -6,7 +6,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Migrate to ENV variables
 
-1. Open the `\public\database.php` file, update the your php MySQL connection environment variables by removing the `APPSETTING_` from each:
+1. Open the `\public\database.php` file, update the php MySQL connection environment variables by removing the `APPSETTING_` from each:
 
     ```php
     $servername = getenv("MYSQL_SERVERNAME");
@@ -154,7 +154,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ## Migrate the database
 
-1. Use export steps in [Migrate your database](./Misc/02_MigrateDatabase) article to export the database
+1. Use export steps in [Migrate the database](./Misc/02_MigrateDatabase) article to export the database
 2. Open a browser to `http:\\localhost:8081` and the phpmyadmin portal
 3. Login to using `root` and `root`
 4. Select the **contosostore** database
@@ -170,7 +170,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 1. Open a browser to `http:\\localhost:8080\index.php`
 2. Select **START ORDER**
 
-  > **NOTE** If you get an error about the application not being able to connect, you can do the following to attempt to debug:
+  > **NOTE** If  get an error about the application not being able to connect, do the following to attempt to debug:
 
   - Open a new PowerShell window, run the following to start a bash shell
 
@@ -251,7 +251,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
   docker compose up
   ```
 
-2. Create some more orders, restart the containers.  You will notice that your data is now persisted.  You will need to ensure that you maintain the database volume for the length of your solution.  If this volume is ever deleted, you will lose your data!
+2. Create some more orders, restart the containers.  Notice that data is now persisted.  Ensure that database volume is maintained for the length of the solution.  If this volume is ever deleted, the data will be lost!
 
 ## Save the images to Azure Container Registry (ACR)
 
@@ -277,4 +277,4 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     docker push {acrName}.azurecr.io/phpmyadmin/phpmyadmin
     ```
 
-6. You should now see three images in your Azure Container Registry that we will use later for deployment to other container based runtimes.
+6. Three images should display in the Azure Container Registry that we will use later for deployment to other container based runtimes.

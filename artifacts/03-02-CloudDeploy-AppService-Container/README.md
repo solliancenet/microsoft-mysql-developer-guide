@@ -1,10 +1,10 @@
 # Migrate to Azure App Service Containers
 
-Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure App Service Containers.
+Now that a containerized version of the applications exists, it can now be hosted in several places in Azure. Here we explore Azure App Service Containers.
 
 ## Push images to Azure Container Registry
 
-1. If you haven't already, be sure to push your images to your Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
+1. If they have not been pushed already, push the images to the Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
 
 ## Run images in Azure App Service
 
@@ -43,4 +43,4 @@ Now that you have containerized versions of your applications, you can host them
 
 1. Browse to the Azure Portal
 2. Select the **mysqldev-app-db** app service, record the url
-3. 
+3. TODO

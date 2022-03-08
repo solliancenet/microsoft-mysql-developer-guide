@@ -24,7 +24,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git remote remove origin
     ```
 
-5. In the terminal window, paste the code you copied above, press **ENTER** (be sure to replace ORG_NAME)
+5. In the terminal window, paste the code copied above, press **ENTER** (be sure to replace ORG_NAME)
 
     ```powershell
     git remote add origin https://ORG_NAME@dev.azure.com/ORG_NAME/contosostore/_git/contosostore
@@ -45,7 +45,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 7. Select **Next**
 8. Select the lab subscription and resource group
 
-    > **NOTE** If you do not see any subscriptions displayed, open Azure Dev Ops in a in-private window and try again
+    > **NOTE** If no subscriptions are displayed, open Azure Dev Ops in a in-private window and try again
 
 9. For the service connection name, type **MySQL Dev**
 10. Select **Grant access permission to all pipelines**
@@ -91,20 +91,20 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Test the DevOps deployment
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, the results should display.
 
 ## GitHub Option
 
 ### Create Github repo
 
 1. Browse to https://github.com
-2. Login with your GitHub credentials
+2. Login with GitHub credentials
 3. In the top right, select the **+** then select **New repository**
 4. For the name, type **contosostore**
 5. Select **Create repository**
 
-### Upload your application
+### Upload the application
 
 1. Switch to Visual Studio code
 2. In the terminal window, run the following:
@@ -113,7 +113,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git remote remove origin
     ```
 
-3. In the terminal window, paste the code you copied above, press **ENTER**
+3. In the terminal window, paste the code copied above, press **ENTER**
 
     ```powershell
     git remote add origin https://github.com/USERNAME/contosostore.git
@@ -121,8 +121,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git push -u origin main
     ```
 
-4. In the dialog, login using your GitHub credentials for the repo.  You should see the files get pushed to the repo
-5. Switch back to GitHub, refresh the repo, you should see all the repo files
+4. In the dialog, login using GitHub credentials for the repo.  The files get pushed to the repo.
+5. Switch back to GitHub, refresh the repo, the files should display.
 
 ### Generate Credentials
 
@@ -149,13 +149,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 4. Update the `AZURE_WEBAPP_NAME: mysqldevSUFFIX` line to replace the SUFFIX
 5. Select **Start commit**
 6. Select **Commit new file**
-7. Select **Actions**, then select the `Create main.yml` workflow instance, you should see the `Contoso Store` job displayed, select it
+7. Select **Actions**, then select the `Create main.yml` workflow instance, the `Contoso Store` job should be displayed, select it
 8. Review the tasks that were executed
 
 ### Test the GitHub deployment
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should be displayed.
 
 ## Terraform
 
