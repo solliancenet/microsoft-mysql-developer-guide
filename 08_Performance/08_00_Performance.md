@@ -26,7 +26,7 @@ For an example of a script that will migrate from Basic to another server tier, 
 
 ## Scaling the server
 
-Within the tier, it is possible to scale cores and memory to the minimum and maximum limits allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, follow the steps to [scale up to meet your demand](https://techcommunity.microsoft.com/t5/azure-database-for-mysql/upgrade-from-basic-to-general-purpose-or-memory-optimized-tiers/ba-p/830404).
+Within the tier, it is possible to scale cores and memory to the minimum and maximum limits allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, follow the steps to [scale up to meet demand](https://techcommunity.microsoft.com/t5/azure-database-for-mysql/upgrade-from-basic-to-general-purpose-or-memory-optimized-tiers/ba-p/830404).
 
 ## Moving regions
 
@@ -52,7 +52,5 @@ Some parameters are not allowed to be modified in Azure Database for MySQL.
 ## Upgrade Azure Database for MySQL versions
 
 Some times just upgrading versions maybe the answer.  Upgrading from Azure Database for MySQL 5.6 to 5.7 can offer significant performance improvements. Learn from the [Minecraft migration](https://developer.microsoft.com/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/) team's experience.
-
-
 
 TODO - https://wemakewaves.medium.com/migrating-our-php-applications-to-docker-without-sacrificing-performance-1a69d81dcafb

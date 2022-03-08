@@ -34,7 +34,7 @@ Navigate to `.\java-api\Database` from a PowerShell terminal instance. Then, exe
 .\create-database.ps1 'Suffix' 'Password' 'Resource Group' 'Location'
 ```
 
-The Flexible Server instance will have 1 vCore, 2 GiB memory, 32 GiB storage, and it will allow all clients to access it. Note that this is not recommended for production scenarios; you can limit access to just Azure resources through the Azure portal or other management tools.
+The Flexible Server instance will have 1 vCore, 2 GiB memory, 32 GiB storage, and it will allow all clients to access it. Note that this is not recommended for production scenarios; access can be limited to target Azure resources through the Azure portal or other management tools.
 
 > Consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet) for information on how to configure private access for MySQL Flexible Server from Azure Kubernetes Service. This example uses public access for simplicity.
 
