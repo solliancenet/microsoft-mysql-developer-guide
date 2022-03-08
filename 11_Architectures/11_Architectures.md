@@ -1,6 +1,6 @@
 # MySQL architectures
 
-As you have progressed through this guide, you have learned about various ways to build and deploy applications using many different services in Azure.  Although we covered many topics, there are many other creative ways one could build and deploy MySQL-based services.
+By progressing through this guide, there have been various ways presented to build and deploy applications using many different services in Azure.  Although we covered many topics, there are many other creative and different ways to build and deploy MySQL-based services.
 
 The [Azure Architecture center](https://docs.microsoft.com/azure/architecture/) provides many different examples of how to create different architectures.  Although some of them utilize other database persistence technologies, these could easily be substituted with Azure Database for MySQL - Flexible Server.  
 

@@ -13,7 +13,7 @@ The app is running in an Azure VM.  The App needs to be exposed to the internet 
    ![This image demonstrates the VM IP address in the Overview tab.](./media/vm-ip-address.png "VM IP address")
 
 4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080`)
-5. You should get a **ERR_CONNECTION_TIMED_OUT** error.  This is because the network security group on the virtual machine does not allow port 8080 access.
+5. A **ERR_CONNECTION_TIMED_OUT** error should occur.  This is because the network security group on the virtual machine does not allow port 8080 access.
 
 ## Open Port 8080
 

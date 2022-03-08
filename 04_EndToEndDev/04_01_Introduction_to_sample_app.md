@@ -162,10 +162,10 @@ The application should now be available and show some sample data, however the w
 
    ![](media/create-contosonoshnow-database.png)
 
-   >**Note:** You can run these alternative commands in the App Service SSL terminal to create the database.
+   >**Note:** It is possible to alternative commands in the App Service SSL terminal to create the database.
 
    ```bash
-   mysql --host=<your host>-server.mysql.database.azure.com --user=<your user name> --password=<your password> --ssl=true
+   mysql --host=<hostname>-server.mysql.database.azure.com --user=<user name> --password=<password> --ssl=true
    ```
 
    ```sql

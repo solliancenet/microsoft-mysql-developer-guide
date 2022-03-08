@@ -31,7 +31,7 @@ Standard Azure management tools, like the Azure Portal, Azure CLI, and Azure Pow
 
 ## Server Parameters Best Practices
 
-The server parameters below may provide performance improvements for your application. However, before modifying these values in production, verify that they yield performance improvements without compromising application stability.
+The server parameters below may provide performance improvements for an application workload; however, before modifying these values in production, verify that they yield performance improvements without compromising application stability.
 
 - Enable thread pooling by setting `thread_handling` to `pool-of-threads`: Thread pooling improves concurrency by serving connections through a pool of worker threads, instead of creating a new thread to serve each connection. Enabling thread pooling improves performance for transactional workloads, as connections are short-lived
   - The degree of concurrency is set through the `thread_pool_size` parameter

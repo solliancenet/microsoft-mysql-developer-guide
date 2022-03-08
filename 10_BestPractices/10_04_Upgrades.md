@@ -6,4 +6,4 @@ Since Azure Database for MySQL is a PaaS offering, administrators are not respon
 
 The [planned maintenance notification](https://docs.microsoft.com/azure/mysql/concepts-monitoring#planned-maintenance-notification) feature will inform resource owners up to 72 hours in advance of installation of an update or critical security patch.  Database administrators may need to notify application users of planned and unplanned maintenance.
 
-> **Note:** Azure Database for MySQL maintenance notifications are incredibly important.  The database maintenance can take your database and connected applications down for a period of time.
+> **Note:** Azure Database for MySQL maintenance notifications are incredibly important.  The database maintenance can take the database and connected applications down for a period of time.

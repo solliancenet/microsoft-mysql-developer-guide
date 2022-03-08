@@ -4,7 +4,7 @@ With a firm understanding of MySQL and other offerings available in Azure, it is
 
 ## Azure free account
 
-Azure offers a [$200 free credit for developers to trial Azure](azure.microsoft.com/free) or jump right into a Pay as you Go subscription. The free account includes credits for 750 compute hours of Azure Database for MySQL - Flexible Server. [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
+Azure offers a [$200 free credit for developers to trial Azure](azure.microsoft.com/free) or jump right into a Pay-as-you-go subscription. The free account includes credits for 750 compute hours of Azure Database for MySQL - Flexible Server. [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
 
 ## Azure subscriptions and limits
 

@@ -1,22 +1,22 @@
 # Zero to Hero
 
-Now that you have read through this entire guide, you can now assess where you are in your application and MySQL evolution and knowledge and determine what things you need to do to take your application architecture to the next level.
+As we approch the end to this developer guide, hopefully it is now possible to assess where in the application and MySQL instance evolution the target environment may be and then using that waypoint, determine what things are needed to take the application architecture to the next level in the evolutionary progression.
 
-## Determining your evolutionary period
+## Determining the evolutionary waypoint
 
-In module 4, we explored an evolution from classic development and deployment to current modern methods.  It is important to understand where you are now and where you would like to be in the future.
+In module 4, we explored an evolution from classic development and deployment to current modern methods.  It is important to understand where the current position and where it will be in the future.
 
 ## Summary of tasks
 
 - Have the right tools available
-- Determine how you are going to deploy your application
+- Determine how to deploy the application
 - Utilize code repositories with CI/CD enabled
-- Ensure you have configured the target environment to support your workloads
-- Secure your application configurations
-- Secure your database configurations
-- Secure your virtual networks
-- Monitor your applications and database workloads for performance
+- Ensure the target environment is configured to support the workload(s)
+- Secure the application configurations
+- Secure the database configurations
+- Secure the virtual networks
+- Monitor the applications and database workloads for performance
 - Perform regular testing
-- Ensure you have set up policies and procedures for auditing your application and database workloads
-- Setup backup and restore based on your RTO and RPO objectives
+- Ensure up policies and procedures are setup and configured for auditing application and database workloads
+- Setup backup and restore based on RTO and RPO objectives
 - Be familiar with potential issues and how to remediate them

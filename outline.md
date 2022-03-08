@@ -124,7 +124,7 @@ End to end development
 		
 		Batch
 		
-	Guide to choose the right service to host your application
+	Guide to choose the right service to host the application
 	
 		On Prem / Cloud - Azure, non-Azure
 		

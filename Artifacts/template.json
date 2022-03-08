@@ -239,7 +239,7 @@
           "api": {
               "name": "office365",
               "displayName": "Office 365 Outlook",
-              "description": "Microsoft Office 365 is a cloud-based service that is designed to help meet your organization's needs for robust security, reliability, and user productivity.",
+              "description": "Microsoft Office 365 is a cloud-based service that is designed to help meet an organization's needs for robust security, reliability, and user productivity.",
               "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1538/1.0.1538.2621/office365/icon.png",
               "brandColor": "#0078D4",
               "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/office365')]",

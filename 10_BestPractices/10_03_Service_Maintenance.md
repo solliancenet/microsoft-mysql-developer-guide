@@ -12,7 +12,7 @@ Azure always rolls out updates to servers with platform-managed schedules before
 
 ## Notifications
 
-In most cases, irrespective of whether you configure a platform-managed or custom maintenance schedule, Azure will notify you five days before a maintenance event. The exception is critical security fixes.
+In most cases, irrespective of whether using a platform-managed or custom maintenance schedule, Azure will notify administrators five days before a maintenance event. The exception is critical security fixes.
 
 Use Azure Service Health to view upcoming infrastructure updates and set notifications. Refer to the links at the end of the document.
 
