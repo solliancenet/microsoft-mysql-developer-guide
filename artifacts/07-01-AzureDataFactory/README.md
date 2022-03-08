@@ -11,7 +11,7 @@
 - For the type, select **Azure Database for MySQL**
 - For the name, type **ContosoStore**
 - For the account selection, select **From Azure Subscription**
-- Select your subscription
+- Select the subscription
 - Select the lab MySQL server
 - For the database name, type **ContosoStore**
 - For the username, type **s2admin**
@@ -71,6 +71,6 @@
 - Select **Publish all**
 - Select **Publish**
 
-## Test your pipeline
+## Test the pipeline
 
 - TODO

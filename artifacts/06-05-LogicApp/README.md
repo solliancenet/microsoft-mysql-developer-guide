@@ -206,4 +206,4 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - Open a new Chrome browser window
 - Browse to the Contoso Store app service - https://mysqldev-app-web.azurewebsites.net/
 - Create a new order
-- Switch to your email (https://outlook.office.com), wait for 5 minutes for an email to show up with the order details.
+- Browse to Outlook Online (https://outlook.office.com), wait for 5 minutes for an email to show up with the order details.

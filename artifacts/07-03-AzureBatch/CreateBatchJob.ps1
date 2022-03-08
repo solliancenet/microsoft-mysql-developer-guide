@@ -16,7 +16,7 @@ function AddJob($jobName, $poolName)
 }
 
 $batchAccountName = "mysqldevSUFFIX";
-$batchResourceGroupName = "YOUR_RG_NAME";
+$batchResourceGroupName = "RG_NAME";
 
 $context = Get-AzBatchAccount -ResourceGroupName $batchResourceGroupName -AccountName $batchAccountName
 

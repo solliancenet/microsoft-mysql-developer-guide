@@ -13,7 +13,7 @@
       3. Dump Triggers
    4. Select **Export to Self-contained File**
    5. For the project folder, type `C:\temp\ContosoStore\export`
-   6. Select **Start Export**, you should now see a single sql file in the directory
+   6. Select **Start Export**, a single sql file should show in the directory.
 
 ## Import the data
 
@@ -51,3 +51,4 @@
 
 ### PhpMyAdmin
 
+TODO

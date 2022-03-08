@@ -2,7 +2,7 @@
 
 ## Setup
 
-- Create a `Batch Service` in Azure (one is created for you in the arm templates)
+- Create a `Batch Service` in Azure (one is created via the arm templates)
 - Set the MySQL instance to have private endpoint
 
 ## Configure Batch Service
@@ -10,7 +10,7 @@
 - Browse to the Azure Portal
 - Select the `mysqldevSUFFIX` batch service
 - Under **Features** select **Pools**
-- Ensure you have a pool called **main**
+- Ensure a pool called **main** is displayed, if not create it.
 - Under **Settings**, select **Identity**
 - Select **System assigned**
 - Select **Save**, in the dialog select **Yes**
@@ -39,7 +39,7 @@
 - Select **+Add**
 - For the name, type **app01_mysql**
 - For the version, type **1.0.0***
-- For the applciation package, browse to the zip file you just created.
+- For the applciation package, browse to the zip file that was just created.
 - Select **Submit**
 
 ## Create a Batch Task
@@ -64,11 +64,11 @@
 ## Run the Batch Job and Task
 
 - Review the status of the job
-- You should now see the results in the `stdout.txt` file
+- Review the results in the `stdout.txt` file
 
 ## Setup Managed Identity (certificate)
 
-The steps above utilize hardcoded values to gain access to the target database instance.  You can setup a managed identity with Azure Batch such that you can retrieve the credentials at runtime using a managed identity of the Azure Batch node pool.
+The steps above utilize hardcoded values to gain access to the target database instance.  It is possible to setup a managed identity with Azure Batch such that credentials can be retrieved at runtime using a managed identity of the Azure Batch node pool.
 
 - Run the following:
 
@@ -99,7 +99,7 @@ openssl pkcs12 -export -out certificate.pfx -inkey server.pem -in server.crt
 ```powershell
 Connect-AzAccount
 
-Select-AzSubscription "YOUR_SUB_NAME";
+Select-AzSubscription "SUBSCRIPTION_NAME";
 
 $certificateFilePath = "c:\temp\server.crt";
 $now = [System.DateTime]::Now;
@@ -107,7 +107,7 @@ $now = [System.DateTime]::Now;
 # Set this to the expiration date of the certificate
 $expirationDate = [System.DateTime]::now.Addyears(1);
 
-# Point the script at the cer file you created $cerCertificateFilePath = 'c:\temp\batchcertificate.cer'
+# Point the script at the cer file created $cerCertificateFilePath = 'c:\temp\batchcertificate.cer'
 $cer = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
 $cer.Import($certificateFilePath)
 
@@ -147,11 +147,11 @@ write-host "AppId: $appId"
   - Browse to the `server.pfx` file
   - Type the password, **S0lliance123**
   - Paste the thumpring into the thumbprint textbox
-  - Select **Create**, you should see a dialog showing the certificate as **Active**
+  - Select **Create**, a dialog showing the certificate as **Active** should be displayed
   - Under **Features**, select **Pools**
   - Select the **Main** pool
   - Under **Settings**, select **Certificates**
-  - For the thumbprint, select the certificate thumbprint you just created
+  - For the thumbprint, select the certificate thumbprint that was just created
   - For the store location, select **LocalMachine**
   - Select **Save**
   - Under **General**, select **Nodes**

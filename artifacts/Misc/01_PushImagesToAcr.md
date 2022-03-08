@@ -1,6 +1,6 @@
 # Push images to Azure Container Registry
 
-1. If you haven't already, be sure to push your images to your Azure Container Registry.
+1. If they haven't already, push the images to the Azure Container Registry.
 
     ```Powershell
     $acrName = "mysqldevSUFFIX";
@@ -29,3 +29,4 @@
     docker push "$ACRNAME.azurecr.io/store-db"
 
     ```
+    

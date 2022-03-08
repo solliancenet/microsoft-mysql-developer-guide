@@ -32,7 +32,7 @@ Connect-AzAccount -identity
 #$path = "C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\v4.8\MySql.Data.dll";
 #[void][System.Reflection.Assembly]::Load($path) 
 
-$server = "yourserver";
+$server = "server_name";
 $database = "contosostore";
 $user = "s2admin";
 $password = "S0lliance123";
