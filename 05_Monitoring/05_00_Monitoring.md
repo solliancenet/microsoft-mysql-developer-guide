@@ -57,6 +57,20 @@ The table below, pulled from the [Microsoft documentation](https://docs.microsof
 
 > For a similar list for Single Server, consult [this document.](https://docs.microsoft.com/azure/mysql/concepts-monitoring)
 
+## Monitoring database operations
+
+TODO
+
+## Query Performance Insights
+
+In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/concepts-query-performance-insight) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
+
+The `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can log long-running queries (default is 10 sec).
+
+## Server Logs
+
+Teams can access server logs from Flexible Server through Azure platform *resource logs*, which track data plane events. Azure can route these logs to Log Analytics workspaces, for manipulation and visualization through KQL; Event Hub, for third-party integrations; and Azure storage, for backup.
+
 ## MySQL audit logs
 
 MySQL has a robust built-in audit log feature. By default, this [audit log feature is disabled](https://docs.microsoft.com/azure/mysql/concepts-audit-logs) in Azure Database for MySQL.  Server level logging can be enabled by changing the `audit_log_enabled` server parameter. Once enabled, logs can be accessed through [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) and [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment) by turning on [diagnostic logging](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal#set-up-diagnostic-logs).
@@ -117,42 +131,13 @@ As you can see, KQL imposes a schema on logs to facilitate analysis. Consult [th
 
 - [Azure Monitor Logs Overview](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
 
-## Metrics resources
+## Error Logs
 
-### Azure CLI
+TODO - Sai
 
-Azure CLI provides the `az monitor` series of commands to manipulate action groups (`az monitor action-group`), alert rules and metrics (`az monitor metrics`), and more.
+The MySQL error log records server startup, shutdown, and anomalous operational events (e.g. a table needs repair).
 
-- [Azure CLI reference commands for Azure Monitor](https://docs.microsoft.com/cli/azure/azure-cli-reference-for-monitor)
-- [Monitor and scale an Azure Database for MySQL Flexible Server using Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale)
-
-### Azure Portal
-
-While the Azure Portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
-
-- [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
-- [Tutorial: Analyze metrics for an Azure resource](https://docs.microsoft.com/azure/azure-monitor/essentials/tutorial-metrics)
-
-### Azure Monitor REST API
-
-The REST API allows applications to access metric values for integration with other applications or data storage systems, like Azure SQL Database. It also allows applications to manipulate alert rules.
-
-To interact with the REST API, applications first need to obtain an authentication token from Azure Active Directory.
-
-- [REST API Walkthrough](https://docs.microsoft.com/azure/azure-monitor/essentials/rest-api-walkthrough)
-- [Azure Monitor REST API Reference](https://docs.microsoft.com/rest/api/monitor/)
-
-## Sample - Azure Portal
-
-In this example, I configured an alert rule called **AbortedConnections** on the Flexible Server instance I provisioned previously. It fires an alert if there were 10 or more aborted connections in the last 30 minutes, polled at a frequency of five minutes. The alert files an action group called **ServerNotifications** that sends me an email.
-
-![This image demonstrates the alert rule configuration and the configured action groups.](./media/aborted-connections-alert-rule.png "AbortedConnections alert rule and ServerNotifications action group")
-
-After initiating multiple failed connections to the Flexible Server instance, I receive the following warning on my configured notification email address.
-
-![This image demonstrates the Azure Monitor alert rule sent to my email after attempting multiple failed connections.](./media/alert-rule-sent-to-email.png "Azure Monitor alert rule")
-
-# Azure Service Health
+## Azure Service Health
 
 TODO - Sai
 

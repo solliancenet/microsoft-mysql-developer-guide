@@ -18,12 +18,6 @@ AzureDiagnostics
 | top 5 by query_time_d desc
 ```
 
-## Query Performance Insight
-
-In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/concepts-query-performance-insight) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
-
-The `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF).  The `long_query_time` server parameter can alert users for long query times (default is 10 sec).
-
 ## Upgrading the tier
 
 The Azure Portal can be used to scale between `General Purpose` and `Memory Optimized`. If a `Basic` tier is chosen, there will be no option to upgrade the tier to `General Purpose` or `Memory Optimized` later. However, it is possible to utilize other techniques to perform a migration/upgrade to a new Azure Database for MySQL instance.
