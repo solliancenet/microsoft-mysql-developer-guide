@@ -8,9 +8,9 @@ The [Azure Fundamentals Microsoft Learn Module](https://docs.microsoft.com/learn
 
 The following table outlines some of the Azure services used in application developer scenarios that will be discussed in further detail in later sections of this guide.
 
-- **[Virtual Machines (IaaS)](https://docs.microsoft.com/azure/virtual-machines/windows/overview)**: You will begin by running a PHP sample application on an Azure Windows Server Virtual Machine.
-- **[Azure App Service (PaaS)](https://docs.microsoft.com/azure/app-service/overview)**: You will deploy the PHP application to Azure App Service, a flexible, simple-to-use application hosting service.
-- **[Azure Container Instances (PaaS)](https://docs.microsoft.com/azure/container-instances/container-instances-overview)**: You will *containerize* your app on the VM to operate in an environment isolated from other development tools installed on the system. Azure Container Instances provides a managed environment to operate containers.
+- **[Virtual Machines (IaaS)](https://docs.microsoft.com/azure/virtual-machines/windows/overview)**: Begin by running a PHP sample application on an Azure Windows Server Virtual Machine.
+- **[Azure App Service (PaaS)](https://docs.microsoft.com/azure/app-service/overview)**: Deploy the PHP application to Azure App Service, a flexible, simple-to-use application hosting service.
+- **[Azure Container Instances (PaaS)](https://docs.microsoft.com/azure/container-instances/container-instances-overview)**: *Containerize* apps on the VM to operate in an environment isolated from other development tools installed on the system. Azure Container Instances provides a managed environment to operate containers.
 - **[Azure Kubernetes Service (PaaS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)**: AKS also hosts containerized apps, but it is optimized for more advanced orchestration scenarios, such as high availability.
 
 For a more comprehensive view, consult the [Azure Fundamentals Microsoft Learn](https://docs.microsoft.com/learn/modules/intro-to-azure-fundamentals/tour-of-azure-services) module.
@@ -21,14 +21,14 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
 - **[Management groups](https://docs.microsoft.com/azure/governance/management-groups/overview)**: Management groups consolidate multiple Azure subscriptions for compliance and security purposes.
 - **Subscriptions**: Subscriptions govern cost control and access management. Azure users cannot provision Azure resources without a subscription.
-- **[Resource groups](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal)**: Resource groups consolidate the individual Azure resources for a given deployment. All provisioned Azure resources belong to one resource group. In this whitepaper, you will provision a *resource group* in your *subscription* to hold the required resources.
+- **[Resource groups](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal)**: Resource groups consolidate the individual Azure resources for a given deployment. All provisioned Azure resources belong to one resource group. In this guide, it will be required to provision a *resource group* in an *subscription* to hold the required resources.
   - Resource groups have a geographic location that determines where metadata about that resource group is stored
 - **Resources**: An Azure resource is an instance of a service. An Azure resource belongs to one resource group located in one subscription.
   - Most Azure resources are provisioned in a particular region
 
   ![This image shows Azure resource scopes.](./media/scope-levels.png "Azure resource scopes")
 
-## Create your landing zone
+## Create landing zone
 
 An [Azure landing zone](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure Portal to fit the workload's needs.
 
@@ -38,13 +38,13 @@ To help organizations quickly move to Azure, Microsoft provides the Azure landin
 
 ## Automating and managing Azure services
 
-When it comes to managing Azure resources, you have many potential options. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure subscriptions. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment.
+When it comes to managing Azure resources, there are many potential options. [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) is the deployment and management service for Azure. It provides a management layer that enables users to create, update, and delete resources in Azure subscriptions. Use management features, like access control, locks, and tags, to secure and organize resources after deployment.
 
 All Azure management tools, including the [Azure CLI](https://docs.microsoft.com/cli/azure/what-is-azure-cli), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/what-is-azure-powershell?view=azps-7.1.0) module, [Azure REST API](https://docs.microsoft.com/rest/api/azure/), and browser-based Portal, interact with the Azure Resource Manager layer and as such the [Identity and access management (IAM)](https://docs.microsoft.com/azure/role-based-access-control/overview) security controls.
 
   ![This image demonstrates how the Azure Resource Manager provides a robust, secure interface to Azure resources.](media/consistent-management-layer.png "Azure Resource Manager explained")
 
-Access control to all Azure services is offered via the [Azure role-based access control (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) natively built into the management platform. Azure RBAC is a system that provides fine-grained access management of Azure resources. Using Azure RBAC, you can segregate duties within your team and grant only the amount of access to users that they need to perform their jobs.
+Access control to all Azure services is offered via the [Azure role-based access control (Azure RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) natively built into the management platform. Azure RBAC is a system that provides fine-grained access management of Azure resources. Using Azure RBAC, it is possible to segregate duties within teams and grant only the amount of access to users that they need to perform their jobs.
 
 ## Azure management tools
 
