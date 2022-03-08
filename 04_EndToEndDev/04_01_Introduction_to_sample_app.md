@@ -24,7 +24,7 @@ TODO
 
 ## Quick start: manual Azure set up instructions
 
-As you continue with this guide, you will be able to take advantage of the environment automation scripts that will build and configure much of your environment. It is important to understand the basic Azure **concepts** before running automated scripts. Walking through each steps will help provide additional context and learning opportunities. You will be able to create an environment in a few minutes.
+As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each steps will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather an requiring to to walk through lengthy setup exercises.
 
 >**Note:** The sample application has been tested with PHP version 7.4. **We recommend deploying to 7.4 environment**. Deploying to a 8.X requires a slightly different configuration as the underlying web server has changed.
 
@@ -58,19 +58,19 @@ The deployment strategy applied in this sample application focuses on updating p
 
     ![Create web app database.](media/create-web-app-database.png)
 
-   - Choose your subscription.
+   - Choose the subscription.
 
    - Create a new resource group
 
-   - Choose a region close to you.
+   - Choose a region.
 
    - Create a unique web app name.
 
-   - Select your runtime stack.  The web app has been tested with PHP 7.4.
+   - Select the runtime stack.  The web app has been tested with PHP 7.4.
 
    - Create the resources.
 
-3. After the resources have been deployed, locate your App Service.
+3. After the resources have been deployed, locate the App Service.
   
     ![App Service](media/app-service.png)
 
@@ -88,7 +88,7 @@ The deployment strategy applied in this sample application focuses on updating p
     az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
     ```
 
-   - Capture the **Git Clone Uri**. You will be pushing the application files to the Azure App Service local storage from your local machine.
+   - Capture the **Git Clone Uri**. Later exercises will be pushing the application files to the Azure App Service local storage from the development machine.
   
       ![Local Git URL example](media/local-git-url.png)
 
@@ -96,27 +96,27 @@ The deployment strategy applied in this sample application focuses on updating p
 
      ![Application Scope user and password](media/application-scope-user-password.png)
 
-4. Clone the sample application to your local machine from the Git repository. You are going to set up a remote to the Azure App Service repo.
+4. Clone the sample application to the development machine from the Git repository:
 
-   - Open the command prompt or terminal on your local machine.
+   - Open the command prompt or terminal on the development machine.
 
-   - Type
+   - Type the following:
 
    ```cmd
-   git remote add azure <your Azure App Service Git Clone URL>
+   git remote add azure <Azure App Service Git Clone URL>
    git remote -v
    git push azure master
    ```
   
-   - Enter your Application Scope credentials.
+   - Enter the Application Scope credentials.
   
       ![Git Credential Manager](media/git-credential-manager-for-windows.png)
 
-   - You should see similar output.
+   - The following output should display:
 
       ![Azure local git push example.](media/azure-local-git-push.png)
 
-5. Return to the Azure Portal. Navigate to the App Service. Find the **Deployment Tools** section. Log into App Service SSH terminal. Run the Composer update command in the wwwroot directory, which will import your packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
+5. Return to the Azure Portal. Navigate to the App Service. Find the **Deployment Tools** section. Log into App Service SSH terminal. Run the Composer update command in the wwwroot directory, which will import the packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
 
     ```bash
     cd /home/site/wwwroot
@@ -129,7 +129,7 @@ The deployment strategy applied in this sample application focuses on updating p
     php artisan key:generate
     ```
 
-7. Update the .env file with the Azure URL and save your changes.
+7. Update the .env file with the Azure URL and save the changes.
 
    ```bash
     nano /home/site/wwwroot/.env
@@ -143,12 +143,12 @@ The deployment strategy applied in this sample application focuses on updating p
 
 ## Connecting to the database
 
-At this point, you are viewing the application with some sample data. The web application is not reading or writing to the database. Let's go through the steps to configure the database configuration information.
+The application should now be available and show some sample data, however the web application is not reading or writing to the database. Let's go through the steps to configure the database configuration information.
 
 1. Capture the database connection information. Open the Azure CLI Cloud Shell and run this command.
 
    ```cmd
-   az webapp deployment list-publishing-profiles --resource-group <enter your resource group> --name <enter the name of your app service>
+   az webapp deployment list-publishing-profiles --resource-group <resource group name> --name <app service name>
    ```
 
 2. Capture the following connection values:
@@ -156,9 +156,9 @@ At this point, you are viewing the application with some sample data. The web ap
    - User ID
    - Password
   
-   >**Note:** For production environments, you would be retrieving these values from Azure Key Vault.
+   >**Note:** For production environments, values would be retrieved from Azure Key Vault.
 
-3. Navigate to the Flexible Server in your resource group and create `contosonoshnow` database.  
+3. Navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
 
    ![](media/create-contosonoshnow-database.png)
 
@@ -167,6 +167,7 @@ At this point, you are viewing the application with some sample data. The web ap
    ```bash
    mysql --host=<your host>-server.mysql.database.azure.com --user=<your user name> --password=<your password> --ssl=true
    ```
+
    ```sql
    CREATE DATABASE contosonoshnow
    ```
@@ -174,7 +175,8 @@ At this point, you are viewing the application with some sample data. The web ap
    ```bash
    exit
    ```
-4. You have the database connection information now. Open the App Service SSH console and configure the **.env** project file.
+
+4. With the database connection information in hand, open the App Service SSH console and configure the **.env** project file.
 
    ```bash
    nano /home/site/wwwroot/.env
@@ -208,18 +210,19 @@ At this point, you are viewing the application with some sample data. The web ap
 
    ![](media/sample-order.png)
 
-8. Verify your order was saved to the Flexible Server database.
+8. Verify the order was saved to the Flexible Server database.
 
    ![](media/verify-order-data.png)
+
 ## What happens to my app during an Azure deployment?
 
-All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of your app. These files are used to run your app.  The web framework of your choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
+All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of the app. These files are used to run the application. The web framework of  choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
 
 The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
 ## Troubleshooting tips
 
-- Select your App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
+- Select the App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
 - [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)
 - Running `php -i` at the Azure App Service SSH console will provide valuable configuration information.
 - Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`

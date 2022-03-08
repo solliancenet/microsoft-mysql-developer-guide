@@ -2,9 +2,9 @@
 
 ## Evolve the sample application
 
-In the previous stages of this developer guide, you explored how an MVC app could be deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
+In the previous stages of this developer guide, it was shown how an MVC app could be deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
 
-One of the advantages of this microservices architecture is that the Java API and the Laravel app can be scaled independently. Both deployments have high availability. Moreover, though this exercise does not demonstrate how to configure CI/CD for this app, you can apply the same techniques you learned previously.
+One of the advantages of this microservices architecture is that the Java API and the Laravel app can be scaled independently. Both deployments have high availability. Moreover, though this exercise does not demonstrate how to configure CI/CD for this app, but can apply the same techniques learned previously.
 
 We recommend creating a new resource group for this exercise.
 
@@ -14,12 +14,12 @@ az group create -n [RESOURCE GROUP NAME] -l [AZURE REGION]
 
 ## Download the tools
 
-To complete this document, you will need the following tools installed on your local machine or in an Azure VM:
+To complete this document, install the following tools on the development machine:
 
 - Azure CLI
-- [Apache Maven:](https://maven.apache.org/) This tool manages the build processes for the Java API. Add the Maven executable to your system's PATH variable for simpler usage.
+- [Apache Maven:](https://maven.apache.org/) This tool manages the build processes for the Java API. Add the Maven executable to the system's PATH variable for simpler usage.
 - [Docker Desktop:](https://docs.docker.com/desktop/) Docker Desktop provides an intuitive management interface for the Docker service. This guide uses the Docker CLI to create Docker images.
-- [kubectl:](https://kubernetes.io/docs/reference/kubectl/kubectl/) kubectl is a useful management tool for Kubernetes clusters. You can install it from the Azure CLI through `az aks install-cli`.
+- [kubectl:](https://kubernetes.io/docs/reference/kubectl/kubectl/) kubectl is a useful management tool for Kubernetes clusters. Install it from the Azure CLI through `az aks install-cli`.
 
 ## Provision the database
 
@@ -27,8 +27,8 @@ Navigate to `.\java-api\Database` from a PowerShell terminal instance. Then, exe
 
 - Provide a unique `Suffix` to ensure that the Flexible Server instance's name is unique
 - Provide a strong `Password` for the database admin user (`AppAdmin`)
-- Provide the name of your lab `Resource Group`
-- Provide the desired `Location` for your Azure resources
+- Provide the name of the lab `Resource Group`
+- Provide the desired `Location` for the Azure resources
 
 ```powershell
 .\create-database.ps1 'Suffix' 'Password' 'Resource Group' 'Location'
@@ -96,13 +96,13 @@ kubectl apply -f api.service.yml
 
 `api.deployment.yml` defines a deployment with two pods, created from the Java API image pushed to ACR.
 
-Open the file. Replace the two `[SUFFIX]` placeholders with the values you used when provisioning the Azure resources. Then, execute the command below:
+Open the file. Replace the two `[SUFFIX]` placeholders with the values used when provisioning the Azure resources. Then, execute the command below:
 
 ```powershell
 kubectl apply -f api.deployment.yml
 ```
 
-Congratulations. You have deployed the API to Azure Kubernetes Service and exposed it internally through a Service.
+Congratulations. The API to Azure Kubernetes Service is now deployted and exposed internally through a Service.
 
 ## Deploy the Laravel app to Azure Kubernetes Service
 
@@ -130,6 +130,6 @@ Run `kubectl get svc` to get the public IP address of `laravel-ui-service`. Copy
 
 ![This image demonstrates the IP address of the LoadBalancer service for the Laravel app.](./media/laravel-service-ip.png "Laravel service IP address")
 
-If all functions correctly, you should see the user details for a random user load.
+If all functions correctly, the user details for a random user will be displayed.
 
 ![This image demonstrates that the Laravel app functions without a problem when deployed to AKS.](./media/app-loads-aks.png "Laravel app loads")

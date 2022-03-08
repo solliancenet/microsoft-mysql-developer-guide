@@ -39,7 +39,7 @@ To perform a simulated classical deployment in Azure, reference the [Classic Dep
 
 ## Azure VM deployment
 
-An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, you are deploying to virtualized hardware in the Azure cloud.  The operating system and software will be the same as your classic deployment, but to open the system up, you'll need to modify the virtual networking to allow access to your web server. This is known as the IaaS (infrastructure as a service) approach.
+An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, deployment is to virtualized hardware in the Azure cloud.  The operating system and software will be the same as in a classic deployment, but to open the system to external apps and users, the virtual networking must be modified to allow database access to the web server. This is known as the IaaS (infrastructure as a service) approach.
 
 The advantages of using Azure to host virtual machines include the ability to enable backup and restore services, disk encryption, and scaling options that require no upfront costs and provide flexibility in configuration options with just a few clicks of the mouse.  This is in contrast to the relatively complex and extra work needed to enable these types of services on-premises.
 
@@ -65,7 +65,7 @@ To implement this deployment, reference the [Cloud Deployment to Azure App Servi
 
 ## Continous Integration (CI) and Continous Delivery (CD)
 
-Doing manual deployments every time you make a change can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  Azure DevOps and Github Actions can be used to automatically deploy code and databases each time a new commit occurs in the codebase.
+Doing manual deployments every time a change is made can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  Azure DevOps and Github Actions can be used to automatically deploy code and databases each time a new commit occurs in the codebase.
 
 Whether using Azure DevOps or Github, there will be some setup work to support the deployments.  This typically includes creating credentials that can connect to the target environment and deploy the release artifacts.
 
