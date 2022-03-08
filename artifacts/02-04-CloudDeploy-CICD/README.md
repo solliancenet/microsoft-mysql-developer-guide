@@ -31,8 +31,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     git push -f origin main
     ```
 
-6. In the dialog, login using your Azure Active Directory credentials for the repo.  You should see the files get pushed to the repo
-7. Switch back to Azure Dev Ops, refresh the repo, you should see all the repo files
+6. In the dialog, login using the Azure Active Directory credentials for the repo.  The files will get pushed to the repo.
+7. Switch back to Azure Dev Ops, refresh the repo, all the repo files should be visible.
 
 ### Create Service Connection
 
@@ -43,7 +43,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 5. Select **Next**
 6. For the authentication, select **Service principal (automatic)**
 7. Select **Next**
-8. Select your lab subscription and resource group
+8. Select the lab subscription and resource group
 
     > **NOTE** If you do not see any subscriptions displayed, open Azure Dev Ops in a in-private window and try again
 

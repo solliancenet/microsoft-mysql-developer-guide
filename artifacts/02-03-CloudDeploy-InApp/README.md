@@ -65,7 +65,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 3. In the left navigation, select **New**
 4. For the name, type **ContosoStore**
 5. Select the **Import** tab
-6. Browse to your export file, run it
+6. Browse to tje export file, run it
 
 ## Update the environment variables
 
@@ -75,7 +75,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 4. Select **Debug console->CMD**
 5. Browse to **site-.wwwroot**
 6. Select the **edit** button for the `database.php` file
-7. Add the following database connection code below where you set the variables:
+7. Add the following database connection code below where variables were set:
 
     ```php
     foreach ($_SERVER as $key => $value)
@@ -102,5 +102,5 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Test the Application
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, you should see `Hello World`
-2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should see results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should display.
+2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should display.

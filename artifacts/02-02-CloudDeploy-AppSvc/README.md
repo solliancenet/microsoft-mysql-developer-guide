@@ -25,7 +25,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     $appName = "mysqldev$suffix";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 
-    #NOTE: you can't use this for linux based deployments
+    #NOTE: This can't be used this for linux based deployments
     #Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip -force
 
     7z a -r ./site.zip ./sample-php-app/*
@@ -145,7 +145,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Test new settings #1
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get an error about SSL settings.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, an error about SSL settings should display.
 
 ## Fix SSL error
 
@@ -174,7 +174,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Test new settings #2
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get your results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should display.
 
 ## Update to use Environment Variables
 
@@ -228,7 +228,7 @@ Putting credential in the PHP files is not a best practice, it is better to util
 
 ## Test new settings #3
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get your results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should display.
 
 ## Create Azure Key Vault values
 
@@ -237,7 +237,7 @@ Putting credential in the PHP files is not a best practice, it is better to util
 3. Under **Settings** select **Access Policies**
 4. Select **Add Access Policy**
 5. For the secret permission, select the dropdown, then select **All**
-6. For the principal, select your user account
+6. For the principal, select the lab guide user account
 7. Select **Add**
 8. Select **Save**
 9. Under **Settings**, select **Secrets**
@@ -278,8 +278,8 @@ Putting credential in the PHP files is not a best practice, it is better to util
     @Microsoft.KeyVault(SecretUri=https://mysqldevSUFFIX-kv.vault.azure.net/secrets/MySQLPassword/)
     ```
 
-6. Select **Save**, ensure that you see a green check mark.
+6. Select **Save**, ensure a green check mark appears.
 
 ## Test new settings #4
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, you should get your results.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should display.

@@ -8,7 +8,7 @@ on: [push]
 
 env:
   AZURE_WEBAPP_NAME: mysqldevSUFFIX    # replace the SUFFIX part
-  AZURE_WEBAPP_PACKAGE_PATH: './sample-php-app'   # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: './sample-php-app'   # set this to the path to the web app project, defaults to the repository root
 
 jobs:
   build-and-deploy:

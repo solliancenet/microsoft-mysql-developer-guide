@@ -2,7 +2,7 @@
 
 This is a simple app that runs PHP code to connect to a MYSQL database.
 
-The app is running in an Azure VM.  The App needs to be exposed to the internet via port 80 in order for it you to see the results.
+The app is running in an Azure VM.  The App needs to be exposed to the internet via port 80 in order results to display.
 
 ## Test the Application #1
 
@@ -28,20 +28,20 @@ The app is running in an Azure VM.  The App needs to be exposed to the internet 
 
 ## Test the Application #2
 
-1. Retry connecting to the web application (ex `http:\\IP_ADDRESS:8080`), you will get another timeout error
+1. Retry connecting to the web application (ex `http:\\IP_ADDRESS:8080`), notice another timeout error
 2. Switch back to the **paw-1** machine, run the following PowerShell command:
 
    ```PowerShell
    New-NetFirewallRule -DisplayName 'Port 8080' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 8080
    ```
 
-3. You should see your application load
+3. The application should load
 4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080`)
-5. You should see your results
+5. The results should be displayed
 
 ## Enable Port 443
 
-As part of any secured web application, you should enable SSL/TLS.
+As part of any secured web application, SSL/TLS should be enabled.
 
 1. Setup certificate on web machine
    - Open IIS Manager
@@ -86,7 +86,7 @@ As part of any secured web application, you should enable SSL/TLS.
 
 ## Test the Application #3
 
-1. Retry connecting to the web application (ex `https:\\IP_ADDRESS:443`), you should get an error
+1. Retry connecting to the web application (ex `https:\\IP_ADDRESS:443`), an error should occur.
 2. Switch back to the **paw-1** machine, run the following PowerShell:
 
    ```PowerShell
@@ -95,6 +95,6 @@ As part of any secured web application, you should enable SSL/TLS.
 
 3. Select the **Advanced** button
 4. Select **Proceed to IP_ADDRESS (unsafe)**
-5. You should see your application load
+5. The application should load
 6. Open a browser to the virtual machine ip address (ex `https:\\IP_ADDRESS:443`)
-7. You should see your results
+7. The results should display
