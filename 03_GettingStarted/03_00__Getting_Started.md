@@ -4,7 +4,7 @@ With a firm understanding of MySQL and other offerings available in Azure, it is
 
 ## Azure free account
 
-Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay-as-you-go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
+Azure offers a [$200 free credit for developers to trial Azure](azure.microsoft.com/free) or jump right into a Pay as you Go subscription. The free account includes credits for 750 compute hours of Azure Database for MySQL - Flexible Server. [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
 
 ## Azure subscriptions and limits
 
@@ -20,9 +20,7 @@ As mentioned previously, Azure Database for MySQL consists of a data plane (data
 
 In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to operate against an Azure resource. Review Azure RBAC in the [Introduction to Azure resource management] section for more information.
 
-In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more.
-
-> Learn how to configure Azure Active Directory authentication for Azure Database for MySQL Single Server from the [Microsoft docs.](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication)
+In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more. Refer to the [Microsoft docs](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication) for more information.
 
 ## Development editor tools
 

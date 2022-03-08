@@ -10,9 +10,9 @@ For managing database objects and access controls at the server and database lev
 
 ![This image demonstrates the control plane for Azure Database for MySQL.](./media/mysql-conceptual-diagram.png "Control plane for Azure Database for MySQL")
 
-## Azure Database for MySQL deployment modes
+## Azure Database for MySQL deployment options
 
-Azure provides both *Single Server* and *Flexible Deployment* modes. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
+Azure Database for MySQL provides two options for deployment: Single Server and Flexible Server. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
 ### Flexible Server
 

@@ -39,7 +39,7 @@ To perform a simulated classical deployment in Azure, reference the [Classic Dep
 
 ## Azure VM deployment
 
-An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, it is deployed to virtualized hardware in the Azure cloud.  The operating system and software will be the same as in a classic deployment, but to open the system up to external users it will be required to modify the virtual networking to allow database access to the web server(s).
+An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, you are deploying to virtualized hardware in the Azure cloud.  The operating system and software will be the same as your classic deployment, but to open the system up, you'll need to modify the virtual networking to allow access to your web server. This is known as the IaaS (infrastructure as a service) approach.
 
 The advantages of using Azure to host virtual machines include the ability to enable backup and restore services, disk encryption, and scaling options that require no upfront costs and provide flexibility in configuration options with just a few clicks of the mouse.  This is in contrast to the relatively complex and extra work needed to enable these types of services on-premises.
 
@@ -81,7 +81,7 @@ Containers solve the potential issue of misconfiguration of the target environme
 
 Containerizing an application and data layer can be relatively complex, but once the build environment is setup and working, it is possible to push container updates very quickly to multi-region load-balanced environments.
 
-To perform deployments using Docker, reference the [Migrate to Docker Containers](./../artifacts/03-00-Docker/README.md) article.
+To perform deployments using Docker, reference the [Migrate to Docker Containers](./../artifacts/03-00-Docker/README.md) article. This article containerizes the Laravel sample application and its MySQL database as separate containers that communicate through the Docker runtime on the VM instance.
 
 ## Azure Container Instances (ACI)
 
@@ -89,24 +89,28 @@ After application and data layers are migrated to containers, a hosting target m
 
 Azure Container Instances can deploy one container at a time or multiple containers to keep the application, API, and data contained in the same resource.
 
-To implement this deployment, reference the [Migrate to Azure Container Instances (ACI)](./../artifacts/03-01-CloudDeploy-ACI/README.md) article.
+To implement this deployment, reference the [Migrate to Azure Container Instances (ACI)](./../artifacts/03-01-CloudDeploy-ACI/README.md) article. This article serves the Laravel app and MySQL database containers on ACI. It also utilizes an Azure File Share to persist data.
 
 ## App Service Containers
 
-TODO
+Developers can extend the benefits of App Service, like scalability, elasticity, and simple CI/CD integration, to their containerized apps using App Service for Containers. This offering supports individual containers and multi-container apps through Docker Compose files. Containers give teams added flexibility beyond the platforms supported directly by App Service.
 
-To perform deployments using Azure App Service containers, reference the [Migrate to Azure App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md) article.
+To perform deployments using Azure App Service containers, reference the [Migrate to Azure App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md) article. This example deploys both the database and web app containers to App Service for Containers.
 
 ## Azure Kubernetes Service (AKS)
 
 ACI and App Service Container hosting are effective ways to run containers, but they do not provide many enterprise features: deployment across nodes that live in multiple regions, load balancing, automatic restarts, redeployment, and more.
 
-Moving to Azure Kubernetes Service (AKS) will enable the application to inherit all the enterprise application management features provided by AKS.
+Moving to Azure Kubernetes Service (AKS) will enable your application to inherit all the enterprise features provided by AKS. Moreover, Kubernetes apps that persist data in MySQL Flexible Server unlock numerous benefits:
 
-To perform deployments using AKS, reference the [Migrate to Azure Kubernetes Services (AKS)](./../artifacts/04-AKS/README.md) article.
+- In supported regions, co-locating Flexible Server and AKS nodes in the same availability zone minimizes latency
+- Applications can host database proxies, like ProxySQL for MySQL, [on the same infrastructure as their apps](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploy-proxysql-as-a-service-on-kubernetes-using-azure-database/ba-p/1105959)
+- Teams can manage Flexible Server instances directly from AKS through the [Azure Service Operator](https://azure.github.io/azure-service-operator/)
+
+To perform deployments using AKS, reference the [Migrate to Azure Kubernetes Services (AKS)](./../artifacts/04-AKS/README.md) article to host the database and web app containers on an enterprise-ready AKS instance.
 
 ## AKS with MySQL Flexible Server
 
 Running the database layer in a container is better than running it in a VM, but not as great as removing all the operating system and software management components.
 
-To implement this deployment, reference the [Utilize AKS and Azure Database for MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md) article.
+To implement this deployment, reference the [Utilize AKS and Azure Database for MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md) article. This article extends the benefits of a PaaS database to the Contoso NoshNow application.
