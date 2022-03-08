@@ -6,9 +6,9 @@ This section demonstrates how to manipulate data in an Azure Database for MySQL 
 
 Follow one of the methods in the [Provision Flexible Server and a database] document to create a Flexible Server instance with a database.
 
-Moreover, install PHP on your system from the [downloads page.](https://windows.php.net/download/) These instructions were tested with PHP 8.0.13 (any PHP 8.0 version should work).
+Moreover, install PHP from the [downloads page.](https://windows.php.net/download/) These instructions were tested with PHP 8.0.13 (any PHP 8.0 version should work).
 
-> Your `php.ini` file needs to uncomment the `extension=mysqli` and `extension=openssl` lines for these steps to work.
+> The `php.ini` file needs to uncomment the `extension=mysqli` and `extension=openssl` lines for these steps to work.
 
 A text editor such as Visual Studio Code may also be useful.
 
@@ -53,7 +53,7 @@ mysqli_close($conn);
 ?>
 ```
 
-You should see a console output with the message `Table created`.
+A console output with the message `Table created` should be displayed.
 
 The second code snippet uses the same logic to start an SSL-secured connection and to close the connection. This time, it leverages a prepared insert statement with bound parameters.
 
@@ -88,7 +88,7 @@ mysqli_close($conn);
 ?>
 ```
 
-You should see the console output message `Insert: Affected 1 rows`.
+The console output message `Insert: Affected 1 rows` should be displayed.
 
 The third code snippet utilizes the `mysqli_query()` method, just like the first code snippet. However, it also utilizes the `mysqli_fetch_assoc()` method to parse the result set.
 
@@ -155,7 +155,7 @@ mysqli_close($conn);
 ?>
 ```
 
-After executing these commands, you should receive the message `Update: Affected 1 rows`.
+After executing these commands, the message `Update: Affected 1 rows` should be displayed.
 
 The final code snippet deletes a row from the table using the `ProductName` column value. It again uses a prepared statement with bound parameters.
 
@@ -188,4 +188,4 @@ mysqli_close($conn);
 ?>
 ```
 
-Congratulations. You successfully created an SSL-secured connection with Flexible Server, created a table (DDL), and performed CRUD operations against that table (DML).
+Congratulations. An SSL-secured connection with Flexible Server was demostrated, a table created (DDL), and some CRUD operations performed against that table (DML).

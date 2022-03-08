@@ -48,29 +48,29 @@ Access control to all Azure services is offered via the [Azure role-based access
 
 ## Azure management tools
 
-The flexibility and variety of Azure's management tools make it intuitive for any user, irrespective of their skill level with certain technologies. As your skill level and administration needs mature, Azure has the right tool to match your needs.
+The flexibility and variety of Azure's management tools make it intuitive for any user, irrespective of their skill level with certain technologies. As an individual's skill level and administration needs mature, Azure has the right tools to match those needs.
 
 ![Azure service management tool maturity progression.](media/azure-management-tool-maturity.png "Azure service management tool")
 
 ### Azure portal
 
-When you are just starting, the **Azure Portal** gives developers a quick view of the state of their Azure resources. It supports extensive user configuration and simplifies custom reporting. The **[Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/)** provides similar features for mobile users.
+As a new Azure user, the first resource a person will be exposed to is the Azure Portal.  The **Azure Portal** gives developers and architects a view of the state of their Azure resources. It supports extensive user configuration and simplifies reporting. The **[Azure mobile app](https://azure.microsoft.com/get-started/azure-portal/mobile-app/)** provides similar features for users that are away from their main desktop or laptop.
 
   ![The picture shows the initial Azure service list.](media/azure-portal-services.png "Azure portal Services")
 
-Azure runs on a common framework of backend resource services and every action you take on the Azure portal translates into a backend set of APIs developed by the respective engineering team to read, create, modify, or delete resources.
+Azure runs on a common framework of backend resource services and every action that is taken in the Azure portal translates into a call to a set of backend APIs developed by the respective engineering team to read, create, modify, or delete resources.
 
 #### Azure Marketplace
 
-[Azure Marketplace](https://docs.microsoft.com/marketplace/azure-marketplace-overview) is an online store that contains thousands of IT software applications and services built by industry-leading technology companies. In Azure Marketplace you can find, try, buy, and deploy the software and services you need to build new solutions and manage your cloud infrastructure. The catalog includes solutions for different industries and technical areas, free trials, and also consulting services from Microsoft partners.
+[Azure Marketplace](https://docs.microsoft.com/marketplace/azure-marketplace-overview) is an online store that contains thousands of IT software applications and services built by industry-leading technology companies. In Azure Marketplace it is possible to find, try, buy, and deploy the software and services needed to build new solutions and manage the cloud infrastructure. The catalog includes solutions for different industries and technical areas, free trials, and also consulting services from Microsoft partners.
 
 ![The picture shows an example of a Azure Marketplace search results.](media/azure-marketplace-search-results.png "Azure Marketplace Results")
 
 #### Evolving
 
-Moving your workload to Azure lifts some of the administrative burdens, but not all. Even though you don't have to worry about the data center, you are still responsible for how you have configured those services and the access your teams have to those resources.
+Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsiblity for how services have been configured and the access teams have to those resources.
 
-By using the existing command-line tools and REST APIs, you can build your own tools to automate and report on your configurations based on any organizational requirements that are required.
+By using the existing command-line tools and REST APIs, it is possible to build custom tools to automate and report on resource configurations that do not meet any organizational requirements that are required.
 
 ### Azure PowerShell and CLI
 
@@ -78,11 +78,11 @@ By using the existing command-line tools and REST APIs, you can build your own t
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
-Although very similar, you may find that there are some subtle differences between how each of these tools operates and the actions that can be accomplished. Use the [Azure command-line tool guide](https://docs.microsoft.com/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right tool for you.
+Although very similar, there are some subtle differences between how each of these tools operates and the actions that can be accomplished. Use the [Azure command-line tool guide](https://docs.microsoft.com/azure/developer/azure-cli/choose-the-right-azure-command-line-tool) to determine which is the right for accomplishing the target goal.
 
 ### Azure CLI
 
-It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. You can also run these tools locally.  
+It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com) but it does have some limitations. It is also possible to run these tools locally.  
 
 To use the Azure CLI, [download the CLI tools from Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
@@ -92,7 +92,7 @@ To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell
 
 The Azure Cloud Shell provides Bash and PowerShell environments for managing Azure resources imperatively. It also includes common development tools, like Visual Studio Code, and files are persisted in an Azure Files share.
 
-Launch the Cloud Shell in your browser at [shell.azure.com](shell.azure.com).
+Launch the Cloud Shell in a browser at [shell.azure.com](shell.azure.com).
 
 ### PowerShell Module
 
@@ -102,7 +102,7 @@ The Azure portal and Windows PowerShell can be used for managing the Azure Datab
 Install-Module -Name Az.MySql
 ```
 
-After the modules are installed, reference tutorials like the following to learn ways you can take advantage of scripting your management activities:
+After the modules are installed, reference tutorials such as the following to learn ways to take advantage of scripting management activities:
 
 - [Tutorial: Design an Azure Database for MySQL using PowerShell](https://docs.microsoft.com/azure/mysql/tutorial-design-database-using-powershell)
 - [How to back up and restore an Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/azure/mysql/howto-restore-server-powershell)
@@ -123,16 +123,16 @@ After the modules are installed, reference tutorials like the following to learn
 
 #### Bicep
 
-Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. In a Bicep file, you define the infrastructure you want to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy your infrastructure. Your resources are deployed in a consistent manner.
+Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed in a consistent manner.
 
 Some of the benefits include:
 
-- **Support for all resource types and API versions**: Bicep immediately supports all preview and GA versions for Azure services. As soon as a resource provider introduces new resources types and API versions, you can use them in your Bicep file. You don't have to wait for tools to be updated before using the new services.
-- **Simple syntax**: When compared to the equivalent JSON template, Bicep files are more concise and easier to read. Bicep requires no previous knowledge of programming languages. Bicep syntax is declarative and specifies which resources and resource properties you want to deploy.
-- **Authoring experience**: When you use VS Code to create your Bicep files, you get a first-class authoring experience. The editor provides rich type-safety, IntelliSense, and syntax validation.
-- **Modularity**: You can break your Bicep code into manageable parts by using modules. The module deploys a set of related resources. Modules enable you to reuse code and simplify development. Add the module to a Bicep file anytime you need to deploy those resources.
-- **No state or state files to manage**: All state is stored in Azure. Users can collaborate and have confidence their updates are handled as expected. Use the what-if operation to preview changes before deploying your template.
-- **No cost and open source**: Bicep is completely free. You don't have to pay for premium capabilities. It's also supported by Microsoft support.
+- **Support for all resource types and API versions**: Bicep immediately supports all preview and GA versions for Azure services. As soon as a resource provider introduces new resources types and API versions, they can be used in Bicep files. There is no need to wait for tools to be updated before using the new services.
+- **Simple syntax**: When compared to the equivalent JSON template, Bicep files are more concise and easier to read. Bicep requires no previous knowledge of programming languages. Bicep syntax is declarative and specifies which resources and resource properties to deploy.
+- **Authoring experience**: When using VS Code to create Bicep files, a first-class authoring experience is available. The editor provides rich type-safety, IntelliSense, and syntax validation.
+- **Modularity**: Break Bicep code into manageable parts by using modules. The module deploys a set of related resources. Modules enable for the reuse of code and simplified development. Add a module to a Bicep file anytime those resource need to be deployed.
+- **No state or state files to manage**: All state is stored in Azure. Users can collaborate and have confidence their updates are handled as expected. Use the what-if operation to preview changes before deploying the template.
+- **No cost and open source**: Bicep is completely free. No need to pay for premium capabilities. It's also supported by Microsoft support.
 
 #### Terraform
 

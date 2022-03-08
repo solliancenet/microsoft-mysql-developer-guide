@@ -6,9 +6,9 @@ This section will demonstrate how to operate a Spring Framework application that
 
 ### Prerequisites
 
-Please complete the instructions in the [Connect and query Azure Database for MySQL using MySQL Workbench] document. Utilize version 8.0.26 as you complete the guide to ensure compatibility with Single Server.
+Please complete the instructions in the [Connect and query Azure Database for MySQL using MySQL Workbench] document. When completeing the guide samples, utilize version 8.0.26 to ensure compatibility with Single Server.
 
-Optionally, download Postman, a popular http testing application. If you are more comfortable with another utility, such as `curl`, feel free to use it instead.
+Optionally, download Postman or utillize `curl`, two popular http testing tools.
 
 ### IntelliJ setup
 
@@ -16,19 +16,19 @@ Download the [IntelliJ IDEA](https://www.jetbrains.com/idea/download) IDE. The C
 
 After installing IntelliJ, install the [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) plugin. Then, authenticate with Azure, as described in [this](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/sign-in-instructions) document.
 
-Once everything is equipped, you will see an **Azure Explorer** tab on the left side of the screen. One of the available resource management options will be to manage Azure Database for MySQL Single Server instances; Flexible Server support is currently unavailable.
+Once installed, an **Azure Explorer** tab will be visible on the left side of the screen. One of the available resource management options will be to manage Azure Database for MySQL Single Server instances; Flexible Server support is currently unavailable.
 
 ![This image demonstrates the Azure Toolkit for IntelliJ plugin, with the Azure Database for MySQL node expanded.](./media/azure-explorer-intellij.png "Azure Toolkit for IntelliJ plugin installation success")
 
 ### App setup
 
-Clone the [gs-accessing-data-mysql](https://github.com/spring-guides/gs-accessing-data-mysql) repository to your local machine. This is an example app from the Spring documentation.
+Clone the [gs-accessing-data-mysql](https://github.com/spring-guides/gs-accessing-data-mysql) String documentation example app repository to the local machine:
 
 ```cmd
 git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
 ```
 
-Using IntelliJ, browse to the `complete` directory in the repository root. If you are prompted to choose between using the `Maven` configuration or the `Gradle` configuration, choose `Maven`.
+Using IntelliJ, browse to the `complete` directory in the repository root. If prompted to choose between using the `Maven` configuration or the `Gradle` configuration, choose `Maven`.
 
 ![This image shows the complete project opened in IntelliJ in the Project tab.](./media/intellij-complete-spring-boot-project.png "Complete project")
 
@@ -45,7 +45,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
       - **Resource group** (3): choose an existing resource group from the dropdown or create a new one by pressing **+**
     - **Server details**
       - **Server name** (4): provide a unique value, like `springboot-single-server-SUFFIX`
-      - **Location** (5): choose an Azure location near you
+      - **Location** (5): choose the closest Azure location
       - **Version** (6): choose `8.0`
     - **Administrator account**
       - **Admin username** (7): enter `sqlroot`
@@ -61,7 +61,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
     ![This image demonstrates Single Server MySQL connection information from the IntelliJ Azure explorer.](./media/mysql-instance-information.png "MySQL connection information")
 
-5. Create a new connection to your Azure Database for MySQL Single Server instance from MySQL Workbench. Use the following SQL statement to create a new database called `newdatabase`. This application will not function with the provided `mysql` system database.
+5. Create a new connection to the Azure Database for MySQL Single Server instance from MySQL Workbench. Use the following SQL statement to create a new database called `newdatabase`. This application will not function with the provided `mysql` system database.
 
     ```sql
     CREATE DATABASE newdatabase;
@@ -73,15 +73,15 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
     ![This image demonstrates how to edit the application.properties file.](./media/edit-application-properties.png "Editing application.properties")
 
-2. Navigate to the **Azure Explorer**, right-click the Single Server instance you provisioned, and select **Connect to Project (Preview)**.
+2. Navigate to the **Azure Explorer**, right-click the Single Server instance that was provisioned, and select **Connect to Project (Preview)**.
 
 3. In the **Azure Resource Connector** window, keep all parameters the same. Simply populate the **Password**. Then, select **OK**.
 
     ![This image demonstrates the Azure Resource Connector dialog box.](./media/azure-resource-connector-intellij.png "Azure Resource Connector")
 
-4. Replace the contents you removed from the `application.properties` file with the following. Notice how the connection information is encapsulated in environment variables.
+4. Replace the contents there were removed from the `application.properties` file with the following. Notice how the connection information is encapsulated in environment variables.
 
-    ```
+    ```text
     spring.datasource.url=${AZURE_MYSQL_URL}
     spring.datasource.username=${AZURE_MYSQL_USERNAME}
     spring.datasource.password=${AZURE_MYSQL_PASSWORD}
@@ -93,11 +93,11 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
 ## Test the app
 
-1. Open Postman, or the REST client of your choice. Make a `POST` request to `http://localhost:8080/demo/add` with the URL parameters `name` and `email`.
+1. Open Postman, or the REST client tool of choice. Make a `POST` request to `http://localhost:8080/demo/add` with the URL parameters `name` and `email`.
 
     ![This image shows how to make a POST request to the Java app endpoint.](./media/post-request-postman.png "POST to endpoint")
 
-2. Make a `GET` request to `http://localhost:8080/demo/all`. The entries that you added through the POST request will be displayed.
+2. Make a `GET` request to `http://localhost:8080/demo/all`. The entries that were added through the POST request will be displayed.
 
     ![This image shows how to make a GET request to the Java app endpoint.](./media/get-request-postman.png "GET request from Postman")
 
@@ -109,9 +109,9 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
 1. Stop the app in IntelliJ.
 
-2. In the **Azure Explorer**, right-click the MySQL Single Server instance you created and select **Stop**.
+2. In the **Azure Explorer**, right-click the MySQL Single Server instance previously created and select **Stop**.
 
-Congratulations. You have successfully installed IntelliJ, the Azure Explorer extension, created a MySQL Single Server instance, and securely operated an app using the Single Server.
+Congratulations. IntelliJ was successfully installed, the Azure Explorer extension installed, a MySQL Single Server instance created, and an app using the Single Server securely was tested.
 
 ## Resources
 

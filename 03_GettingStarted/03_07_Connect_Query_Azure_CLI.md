@@ -4,15 +4,15 @@ This section explains how to perform queries against Azure Database for MySQL Fl
 
 ## Setup
 
-While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, you can utilize any of the provisioning methods in the [Provision Flexible Server and a database] section.
+While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, any of the presented provisioning methods in the [Provision Flexible Server and a database] section are possible.
 
 ## Instructions
 
 The Azure CLI supports running queries interactively, via the `az mysql flexible-server connect` command, which is similar to running queries interactively against a MySQL instance through the MySQL CLI. It is also possible to run an individual SQL query or a SQL file using the `az mysql flexible-server execute` command.
 
-Note that these commands require the `rdbms-connect` CLI extension, which is automatically installed if it is not present. If you encounter permissions errors from the Azure Cloud Shell, execute the commands from a local installation of the Azure CLI.
+Note that these commands require the `rdbms-connect` CLI extension, which is automatically installed if it is not present. If permissions errors are encountered from the Azure Cloud Shell, execute the commands from a local installation of the Azure CLI.
 
-In addition to the queries in the document, you can run basic admin queries. The statements below create a new user `analyst` that can read data from all tables in `newdatabase`.
+In addition to the queries in the document, it is also possible to run basic admin queries. The statements below create a new user `analyst` that can read data from all tables in `newdatabase`.
 
 ```sql
 USE newdatabase;

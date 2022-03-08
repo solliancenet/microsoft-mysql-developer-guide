@@ -1,14 +1,14 @@
 # Getting Started - Setup and Tools
 
-With a firm understanding of Azure and MySQL offerings available to you, it is time to review how to start using these various services. In this section, we will explore how to get your Azure subscriptions configured and ready to host your MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
+With a firm understanding of MySQL and other offerings available in Azure, it is time to review how to start using these various services in applications. In this section, we explore how to get Azure subscriptions configured and ready to host MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
 
 ## Azure free account
 
-Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay as you Go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
+Azure offers a $200 free credit for developers to trial Azure or jump right into a Pay-as-you-go subscription.  [Innovate faster with fully managed MySQL and an Azure free account.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account/)
 
 ## Azure subscriptions and limits
 
-As explained in the [Introduction to Azure resource management], subscriptions are a critical component of the Azure hierarchy: resources cannot be provisioned without an Azure subscription, and although the cloud is highly scalable, you cannot provision an unlimited number of resources. A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits by submitting support tickets through the Azure Portal. Limit increase requests help tell Microsoft capacity planning teams to understand if they need to provide more capacity when needed.
+As explained in the [Introduction to Azure resource management], subscriptions are a critical component of the Azure hierarchy: resources cannot be provisioned without an Azure subscription, and although the cloud is highly scalable, it is not possible to provision an unlimited number of resources. A set of initial limits applies to all Azure subscriptions. However, the limits for some Azure services can be raised, assuming that the Azure subscription is not a free trial. Organizations can raise these limits by submitting support tickets through the Azure Portal. Limit increase requests help tell Microsoft capacity planning teams to understand if they need to provide more capacity when needed.
 
 Since most Azure services are provisioned in regions, some limits apply at the regional level. Developers must consider both global and regional subscription limits when developing and deploying applications.
 
@@ -30,11 +30,11 @@ Developers have a wide variety of code editor tools to choose from to complete t
 
 TODO: Image of VS Code.
 
-There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to your Visual Studio Code workflow for MySQL.
+There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code envrionment to make working with MySQL instances more efficient.
 
 ## Development languages
 
-Once you have determined your editor of choice, you will need to pick a development language or platform. Below are some quick links:
+Once an editor has been selected, the next step is to pick a development language or platform. Below are some quick links:
 
 [PHP language support]
 

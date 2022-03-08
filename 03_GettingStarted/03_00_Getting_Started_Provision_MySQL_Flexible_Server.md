@@ -1,6 +1,6 @@
 # Provision Flexible Server and a database
 
-The focus of this guide is demonstrating practical uses of MySQL Flexible Server, such as querying Flexible Server with common languages and administrative tools. This section illustrates how to deploy MySQL Flexible Server using various Azure management tools to prepare you to follow the language samples.
+The focus of this guide is demonstrating practical uses of MySQL Flexible Server, such as querying Flexible Server with common languages and administrative tools. This section illustrates how to deploy MySQL Flexible Server using various Azure management tools in preperation to follow the guide samples.
 
 ## Azure portal
 

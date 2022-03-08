@@ -8,6 +8,6 @@ Consult the [Azure documentation](https://docs.microsoft.com/azure/mysql/howto-m
 
 ## From on-premises to Flexible Server
 
-Like the migration from Single Server, migrations from sources running on-premises utilize data-in replication. You must ensure that the source databases are MySQL 5.7 or higher and that there is adequate network connectivity.
+Like the migration from Single Server, migrations from sources running on-premises utilize data-in replication. The source databases should be MySQL 5.7 or higher and adequate network connectivity should be available.
 
-Verify that your source meets the migration requirements listed in the [Azure documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-data-in-replication)
+Verify that the source system meets the migration requirements listed in the [Azure documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-data-in-replication)
