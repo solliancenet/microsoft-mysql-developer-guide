@@ -4,13 +4,13 @@ https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/how-to-conn
 
 ## Setup
 
-You can utilize Visual Studio or Visual Studio Code to create Azure Functions.  
+It is possible to utilize Visual Studio or Visual Studio Code to create Azure Functions.  
 
 ### Visual Studio
 
 - Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
   - Expand the **Download Visual Studio with .NET** dropdown for an installation package with the .NET SDK
-  - Once Visual Studio loads, sign in with your Azure account
+  - Once Visual Studio loads, sign in with an Azure account
 - Install the [Azure Functions core tools MSI](https://go.microsoft.com/fwlink/?linkid=2174087)
 
 #### Install the Azure development workload for Visual Studio
@@ -28,7 +28,7 @@ The application here is based on an Http Trigger that will then make a call into
 - Select **C#** for the language
 - Select **Next**
 - For the name, type **AddCustomerFunction**
-- Select your project path
+- Select the project path
 - Select **Create**
 
     ![This image demonstrates how to create a new Azure Function from VS 2022.](./media/vs-new-function.png "New Azure Function")
@@ -97,7 +97,7 @@ The application here is based on an Http Trigger that will then make a call into
     ```
 
 - Press **F5** to start the function
-- Open a browser window to the following. You should see a list of databases load
+- Open a browser window to the following. A list of databases should be displayed:
 
 ```text
 http://localhost:7071/api/AddCustomerFunction
@@ -105,7 +105,7 @@ http://localhost:7071/api/AddCustomerFunction
 
 ## Deploy the Function Application
 
-Now that you have the function app created and working locally, the next step is to publish the function app to Azure. 
+Now that the function app is created and working locally, the next step is to publish the function app to Azure.
 
 - Right click the project, select **Publish**
 - Select **Azure**, then select **Next**
@@ -114,12 +114,12 @@ Now that you have the function app created and working locally, the next step is
     ![This image demonstrates choosing the Azure Function App Linux deployment option.](./media/choose-linux-function-app.png "Azure Function App Linux")
 
 - Select **Next**
-- Select your account, subscription and resource group
+- Select the account, subscription and resource group
 - Select the **mysqldevSUFFIX-AddCustomerFunction** function app
 - Select **Finish**
 - Select **Publish**, and if prompted, select **OK** to update the runtime version.
 
-You should now be able to browse to the function endpoint and see your data:
+It should now be possible to browse to the function endpoint and see data:
 
 ```text
 https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunction?code=SOMECODE
@@ -132,11 +132,13 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
     ![This image demonstrates how to select the AddCustomerFunction from the Function App instance.](./media/select-function-from-portal.png "Selecting the Function")
 
 - On the **AddCustomerFunction** page, select **Code + Test**. Then, select **Test/Run** to access the built-in testing interface
-- Issue a simple GET request to the Function App endpoint. You can use a *function key*, which is scoped to an individual Function App, or a *host key*, which is scoped to an Azure Functions instance.
+- Issue a simple GET request to the Function App endpoint.
+
+    > **NOTE** It is possible to use a *function key*, which is scoped to an individual Function App, or a *host key*, which is scoped to an Azure Functions instance.
 
     ![This image demonstrates how to configure a GET request to the Function App endpoint from the Azure portal.](./media/azure-portal-function-test.png "GET request test")
 
-- You should immediately see the Function App execute successfully
+- The Function App should execute successfully
 
 ## Troubleshooting
 

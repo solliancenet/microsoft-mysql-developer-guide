@@ -4,7 +4,7 @@ https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/how-to-conn
 
 ## Setup
 
-You can utilize Visual Studio or Visual Studio Code to create Azure Functions.  
+It is possible to utilize several different tools including Visual Studio or Visual Studio Code to create Azure Functions.  
 
 ### Visual Studio Code
 
@@ -14,7 +14,7 @@ You can utilize Visual Studio or Visual Studio Code to create Azure Functions.
 
 ## Create the Function Application
 
-The application here is based on an HTTP Trigger that will then make a call into the Azure Database for MySQL instance and add some records. You can create this function by performing the following steps.
+The application here is based on an HTTP Trigger that will then make a call into the Azure Database for MySQL instance and add some records. To create this function perform the following steps.
 
 - Install the required software above
 - Open Visual Studio Code, type **Ctrl-Shift-P**
@@ -22,7 +22,7 @@ The application here is based on an HTTP Trigger that will then make a call into
 
     ![This image demonstrates how to create a new Function App project.](./media/create-function-app-vscode.png "New Function App project")
 
-- Select your project path
+- Select the project path
 - Select **Python**
 - Select the **python 3.9.x** option
 - Select the **HTTP trigger**
@@ -32,7 +32,7 @@ The application here is based on an HTTP Trigger that will then make a call into
 - For the name, type **AddCustomerFunction**
 - For the authorization level, select **Function**
 - Select **Open in current window**
-- Update the function code in `__init__.py` to the following, ensuring that you replace the connection information. This Function completes the following tasks when its HTTP endpoint receives a request:
+- Update the function code in `__init__.py` to the following, ensuring that the connection information is replaced. This Function completes the following tasks when its HTTP endpoint receives a request:
   - Connecting to the MySQL Flexible Server instance provisioned in the ARM template
   - Generating a list of databases on the MySQL instance
   - Building a formatted response
@@ -70,7 +70,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 ```
 
 - Open the terminal window
-  - Verify that you are using the virtual environment created by the Azure Functions extension (the command prompt will be prefaced by `(.venv)`)
+  - Verify that the virtual environment created by the Azure Functions extension (the command prompt will be prefaced by `(.venv)`) is being used.
     - If the virtual environment is not active, open the command palette, select `Python: Select Interpreter`, and choose the virtual environment
   - Install the MySQL connector:
 
@@ -86,7 +86,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     func start run
     ```
 
-- Open a browser window to the following. You should see a list of databases load
+- Open a browser window to the following. A list of databases should load:
 
     ```text
     http://localhost:7071/api/AddCustomerFunction
@@ -110,11 +110,11 @@ cnx = mysql.connector.connect(
 )
 ```
 
-- Call the endpoint again in your browser. The Function App should still operate
+- Call the endpoint again in a browser. The Function App should still operate
 
 ## Deploy the Function Application
 
-Now that you have the Function App created and working locally, the next step is to publish the Function App to Azure.  This will require some small changes.
+Now that the Function App is created and working locally, the next step is to publish the Function App to Azure.  This will require some small changes.
 
 - Add the following Python function:
 
@@ -145,7 +145,7 @@ mysql-connector-python
 az login
 ```
 
-- If necessary, switch to your target subscription:
+- If necessary, switch to the target subscription:
 
 ```PowerShell
 az account set --subscription 'SUBSCRIPTION NAME'
@@ -157,7 +157,7 @@ az account set --subscription 'SUBSCRIPTION NAME'
 func azure functionapp publish mysqldevSUFFIX-addcustomerfunction
 ```
 
-You should now be able to browse to the function endpoint and see your data (the output of the previous command will include this information):
+Browse to the function endpoint and see the data (the output of the previous command will include this information):
 
 ```text
 https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunction?code=SOMECODE
@@ -174,7 +174,7 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
 
     ![This image demonstrates how to configure a GET request to the Function App endpoint from the Azure portal.](./media/azure-portal-function-test.png "GET request test")
 
-- You should immediately see the Function App execute successfully, with logs indicating a successful connection to MySQL Flexible Server
+- The Function App should execute successfully, with logs indicating a successful connection to MySQL Flexible Server
 
     ![This image demonstrates the logs of a successful Function App invocation.](./media/function-app-logs.png "Function App invocation logs")
 

@@ -1,20 +1,20 @@
 # Logic Apps with MySQL
 
-Logic Apps can be used to connect to Azure Database for MySQL Flexible Server instances and perform actions such as SELECT, INSERT, DELETE and UPDATE.  However, Logic Apps do not have any direct integrations that allow for triggers that fire from MySQL DDL or DML events.  In order for the MySQL actions to connect to the MySQL instance, you will have to install a Logic Apps Gateway.  This can be done with Azure instances, but the Azure Database for MySQL will need private endpoints enabled and the gateway will need to run in a virtual machine that can access that private endpoint.
+Logic Apps can be used to connect to Azure Database for MySQL Flexible Server instances and perform actions such as SELECT, INSERT, DELETE and UPDATE.  However, Logic Apps do not have any direct integrations that allow for triggers that fire from MySQL DDL or DML events.  In order for the MySQL actions to connect to the MySQL instance, it is necessary to install a Logic Apps Gateway.  This can be done with Azure instances, but the Azure Database for MySQL will need private endpoints enabled and the gateway will need to run in a virtual machine that can access that private endpoint.
 
 ## Create a Private Endpoint Flexible Server
 
 - Open the Azure Portal
-- Browse to your lab resource group and select **+Create**
+- Browse to the lab resource group and select **+Create**
 - Search for **Azure Database for MySQL**
 - Select **Create**
 - Under **Flexible Server**, select **Create**
 
   ![This image demonstrates the first provisioning screen for Azure Database for MySQL Flexible Server.](./media/az-mysql-db-create.png "First provisioning screen for Flexible Server")
 
-- Select your subscription and your resource group
+- Select the target subscription and resource group
 - For the name, type **mysqldevflexSUFFIXpriv**
-- Select the resource group region (it must be in the region that your VNet is in)
+- Select the resource group region (it must be in the region that the VNet is in)
 - For **Workload type**, select **Development** to save costs
 - For **Availability zone**, select **No preference**
   - Co-locating the VM and the Flexible Server instance would improve network performance, but it is not strictly necessary
@@ -46,7 +46,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 
 > **NOTE** The Log App Gateway can currently only do non-SSL connections to MySQL
 
-> **NOTE** You can also use the Azure CLI [`az mysql flexible-server create`](https://docs.microsoft.com/cli/azure/mysql/flexible-server?view=azure-cli-latest#az-mysql-flexible-server-create) command to provision a Flexible Server instance in a virtual network.
+> **NOTE** It is also possible to use the Azure CLI [`az mysql flexible-server create`](https://docs.microsoft.com/cli/azure/mysql/flexible-server?view=azure-cli-latest#az-mysql-flexible-server-create) command to provision a Flexible Server instance in a virtual network.
 
 TODO: Link private DNS zone to VM (hub) VNet
 
@@ -86,8 +86,8 @@ TODO: Link private DNS zone to VM (hub) VNet
 - Install the Logic Apps Gateway by running the **gatewayinstall.exe**
 - Select **I accept the terms...** checkbox
 - Select **Install**
-- Enter your Azure user email, then select **Sign in**
-- When prompted, log in to your Azure account
+- Enter the lab user email, then select **Sign in**
+- When prompted, log in to the lab Azure account
 - Select **Register a new gateway on this computer**
 - Select **Next**
 - For the name, type **gateway-mysql**
@@ -102,7 +102,7 @@ TODO: Link private DNS zone to VM (hub) VNet
 - Select **Create a gateway in Azure**
 - Select the subscription and the resource group
 - For the name, type **logic-app-gateway**
-- Select the region you used above
+- Select the region used above
 - Select the **gateway-mysql** gateway
 - Select **Review + create**
 - Select **Create**
@@ -122,7 +122,10 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - Select **Get Rows**
 - Update the step variables:
   - For the name, type **mysqlflex**
-  - For the server, type **mysqldevflexSUFFIXpriv.mysql.database.azure.com**.  Note you may need to put the private IP address if DNS resolution does not kick in in a reasonable amount of time.
+  - For the server, type **mysqldevflexSUFFIXpriv.mysql.database.azure.com**.  
+
+  > **Note** It may be necessary to put the private IP address if DNS resolution does not kick in in a reasonable amount of time.
+
   - For the database, type **noshnowapp**
   - For username, type **s2admin**
   - For password, type **S0lliance123**
@@ -135,8 +138,8 @@ We have already created a Logic App that uses a timer trigger to check for new O
   - Leave Select Query blank
 - Search for the **Office 365 Outlook : Send an email** action
 - Select **Sign in**
-- Sign in with your lab credentials
-- For the `To`, type your lab email
+- Sign in with the lab user credentials
+- For the `To`, type the lab user email
 - For the subject, enter **New Order**
 - Now, populate the body (TODO)
 - For the logic app, select **Save**

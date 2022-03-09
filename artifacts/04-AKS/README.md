@@ -4,7 +4,7 @@ Now that you have containerized versions of your applications, you can host them
 
 ## Push images to Azure Container Registry
 
-1. If you haven't already, be sure to push your images to your Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
+1. If they haven't already, push the images to the Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
 
 ## Run images in Azure Kubernetes Service (AKS)
 
@@ -18,7 +18,7 @@ Now that you have containerized versions of your applications, you can host them
     az aks get-credentials --name "mysqldevSUFFIX" --resource-group $resourceGroupName
     ```
 
-2. Run the following commands to deploy your containers:
+2. Run the following commands to deploy the containers:
 
     ```powershell
     $acrName = "mysqldevSUFFIX";
@@ -167,23 +167,25 @@ Now that you have containerized versions of your applications, you can host them
       app: store-web
   ```
 
-## Test your images
+## Test the images
 
 1. Browse to the Azure Portal
-2. Navigate to your AKS cluster and select it
+2. Navigate to the AKS cluster and select it
 3. Under **Kubernetes resources**, select **Service and ingresses**
-4. For the **store-web-lb** service, select the external IP link. A new web browser tab should open to the web front end. Ensure that you can create an order without a database error.
+4. For the **store-web-lb** service, select the external IP link. A new web browser tab should open to the web front end. Ensure that an order can be created without a database error.
 
 ## Create a deployment
 
-Kubernetes deployments allow for you to create multiple instances of your pods and containers in case your nodes or pods crash unexpectiantly.  
+Kubernetes deployments allow for the creation of multiple instances of pods and containers in case nodes or pods crash unexpectiantly.  
 
 1. Create the following `store-deployment.yaml` file:
 
   ```yaml
+  TODO
   ```
 
 2. Deploy the deployment:
 
   ```powershell
+  TODO
   ```

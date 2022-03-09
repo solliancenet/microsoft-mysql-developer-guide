@@ -1,6 +1,6 @@
 # Utilize AKS and Azure Database for MySQL Flexible Server
 
-Rather than managing the database volumes for your MySQL Database, you can utilize Azure Database for MySql Flexible Server in order to use a platform as a service approach.
+Rather than managing the database volumes for a MySQL server instance, it is possible to utilize Azure Database for MySql Flexible Server in order to use a platform as a service approach.
 
 ## Push images to Azure Container Registry
 

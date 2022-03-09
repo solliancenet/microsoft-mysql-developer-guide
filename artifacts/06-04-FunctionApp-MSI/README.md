@@ -1,6 +1,6 @@
 # Securing Azure Function Apps
 
-In the previous function apps you embedded the connection information into the function app code.  As you saw in the traditional deployment models, you removed this information and placed it into Azure Key Vault.  Here we will utilize the features of Azure to use Managed Identities to connect to the database.
+In the previous function apps the connection information was embedded into the function app code.  As was covered in the traditional deployment models, it is a best practice to remove this information and place it into Azure Key Vault.  Here we will utilize the features of Azure to use Managed Identities to connect to the database.
 
 ## Enable MySQL Azure AD Authentication
 
@@ -22,7 +22,7 @@ In the previous function apps you embedded the connection information into the f
 ## Add Users to Database
 
 - Login to the Azure Database for MySQL using the Azure AD Adminsitrator account
-- Run the following, replace the `AZURE_APPLICATION_ID` with the one you copied from above:
+- Run the following, replace the `AZURE_APPLICATION_ID` with the one copied from above:
 
 ```sql
 SET aad_auth_validate_oids_in_tenant = OFF;
@@ -65,7 +65,7 @@ access_token = token.token
 func azure functionapp publish mysqldevSUFFIX-addcustomerfunction
 ```
 
-You should now be able to browse to the function endpoint and see your data (the output of the previous command will include this information):
+Browse to the function endpoint and see the data (the output of the previous command will include this information):
 
 ```text
 https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunction?code=SOMECODE
