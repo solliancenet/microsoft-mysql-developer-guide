@@ -73,7 +73,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
     ![This image demonstrates how to edit the application.properties file.](./media/edit-application-properties.png "Editing application.properties")
 
-2. Navigate to the **Azure Explorer**, right-click the Single Server instance that was provisioned, and select **Connect to Project (Preview)**.
+2. Navigate to the **Azure Explorer**, right-click the previouly provisioned Single Server instance, then select **Connect to Project (Preview)**.
 
 3. In the **Azure Resource Connector** window, keep all parameters the same. Simply populate the **Password**. Then, select **OK**.
 

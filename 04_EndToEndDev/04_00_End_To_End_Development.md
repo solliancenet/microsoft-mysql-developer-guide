@@ -1,4 +1,4 @@
-# End to End application development
+# 04 / End to End application development
 
 With a configured development environment available, it is time to explore the various options available when deploying an application and its corresponding MySQL database.  
 
@@ -33,7 +33,7 @@ Some web servers are relatively easier to set up than others.  The complexity de
 
 In addition to the web server, it is also necessary to install and configure the physical MySQL database server.  This includes creating the schema and the application users that will be used to access the target database(s).
 
-As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once the software has been installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
+As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once software is installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
 
 To perform a simulated classical deployment in Azure, reference the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
 

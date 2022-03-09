@@ -1,4 +1,4 @@
-# What is MySQL?
+# 02 / What is MySQL?
 
 MySQL is a relational database management system based on [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL). MySQL supports a rich set of SQL query capabilities and offers excellent performance through storage engines optimized for transactional and non-transactional workloads, in-memory processing, and robust server configuration through modules. Its low total cost of ownership  (TCO) makes it extremely popular with many organizations. Customers can use existing frameworks and languages to connect easily with MySQL databases. Reference the latest [MySQL Documentation](https://dev.mysql.com/doc/refman/8.0/en/features.html) for a more in-depth review of MySQL's features.  
 
@@ -18,9 +18,9 @@ Just like other DBMS systems, MySQL has multiple deployment options for developm
 
 ### On-premises
 
-MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and have the disadvantages of hardware/OS maintenance.
+MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and has the disadvantages of hardware/OS maintenance.
 
-One benefit to choosing a cloud-hosted environment over on-premises configurations is there are no large upfront costs. Organziations have the option to pay monthly subscription fees as pay-as-you-go or to commit to a certain usage level for discounts. Maintenance, up-to-date software, security, and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
+One benefit to choosing a cloud-hosted environment over on-premises configurations is there are no large upfront costs. Organziations can choose the option to pay monthly subscription fees as pay-as-you-go or to commit to a certain usage level for discounts. Maintenance, up-to-date software, security, and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
 
 ### Cloud IaaS (in a VM)
 

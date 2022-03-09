@@ -12,7 +12,7 @@ Moreover, install PHP from the [downloads page.](https://windows.php.net/downloa
 
 A text editor such as Visual Studio Code may also be useful.
 
-Lastly, download the [connection certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) that is used for SSL connections with the MySQL Flexible Server instance. In these snippets, the certificate was saved to `C:\Tools` on Windows. Adjust this if necessary.
+Lastly, download the [connection certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) that is used for SSL connections with the MySQL Flexible Server instance. In these snippets, the certificate is saved to `C:\Tools` on Windows. Adjust this if necessary.
 
 ## Instructions
 

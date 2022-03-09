@@ -1,4 +1,4 @@
-# Business Continuity and Disaster Recovery (BCDR)
+# 10 / Business Continuity and Disaster Recovery (BCDR)
 
 ## Backup and restore
 
@@ -60,7 +60,7 @@ WWI wanted to test the failover capabilities of read replicas so they performed 
 
 ### Failover to read replica
 
-Once a read replica has been created and has completed the replication process, it can be used for failed over. Replication will stop during a failover and make the read replica its own main instance.
+Once a read replica is created and completed the replication process, it can be used for failed over. Replication will stop during a failover and make the read replica its own main instance.
 
 Failover Steps:
 

@@ -1,4 +1,4 @@
-# Azure MySQL Developer Guide
+# 01 / Azure MySQL Developer Guide
 
 Welcome to THE comprehensive guide to developing [MySQL](https://www.mysql.com/)-based applications on [Microsoft Azure](https://portal.azure.com/)! Whether  creating a production application or improving an existing enterprise system, this guide will take developers and architects through the fundamentals of MySQL application development to more advanced architecture and design. From beginning to end, it is a content journey designed to help ensure current or future MySQL systems are performing at their best even as their usage grows and expands.
 

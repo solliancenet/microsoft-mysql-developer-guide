@@ -1,4 +1,4 @@
-# Security
+# 06 / Security
 
 Moving to a cloud-based service doesn't mean the entire internet will have access to it at all times. Azure provides best-in-class security that ensures data workloads are continually protected from bad actors and rogue programs. An additional  critical factor for many organizations is being compliant with local and industry regulations.
 

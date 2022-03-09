@@ -1,4 +1,4 @@
-# Optimization
+# 08 / Performance + Optimization
 
 ## Monitoring hardware and query performance
 

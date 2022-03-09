@@ -1,4 +1,4 @@
-# MySQL architectures
+# 11 / MySQL architectures
 
 By progressing through this guide, there have been various ways presented to build and deploy applications using many different services in Azure.  Although we covered many topics, there are many other creative and different ways to build and deploy MySQL-based services.
 

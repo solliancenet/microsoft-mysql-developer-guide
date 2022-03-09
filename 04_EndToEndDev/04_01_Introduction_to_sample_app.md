@@ -26,7 +26,7 @@ TODO
 
 As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each steps will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather an requiring to to walk through lengthy setup exercises.
 
->**Note:** The sample application has been tested with PHP version 7.4. **We recommend deploying to 7.4 environment**. Deploying to a 8.X requires a slightly different configuration as the underlying web server has changed.
+>**Note:** The sample application was tested with PHP version 7.4. **We recommend deploying to 7.4 environment**. Deploying to a 8.X requires a slightly different configuration as the underlying web server has changed.
 
 | PHP Version | Web Server |
 |-------------|----------------|

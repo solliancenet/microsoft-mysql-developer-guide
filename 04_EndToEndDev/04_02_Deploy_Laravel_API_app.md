@@ -2,7 +2,7 @@
 
 ## Evolve the sample application
 
-In the previous stages of this developer guide, it was shown how an MVC app could be deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
+In the previous stages of this developer guide, an MVC app was deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances, App Service, AKS). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
 
 One of the advantages of this microservices architecture is that the Java API and the Laravel app can be scaled independently. Both deployments have high availability. Moreover, though this exercise does not demonstrate how to configure CI/CD for this app, but can apply the same techniques learned previously.
 

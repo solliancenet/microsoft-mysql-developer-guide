@@ -1,4 +1,4 @@
-# Getting Started - Setup and Tools
+# 03 / Getting Started - Setup and Tools
 
 With a firm understanding of MySQL and other offerings available in Azure, it is time to review how to start using these various services in applications. In this section, we explore how to get Azure subscriptions configured and ready to host MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
 
@@ -32,7 +32,7 @@ There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahe
 
 ## Development languages
 
-Once an editor has been selected, the next step is to pick a development language or platform. Below are some quick links:
+Once an editor is selected, the next step is to pick a development language or platform. Below are some quick links:
 
 [PHP language support]
 

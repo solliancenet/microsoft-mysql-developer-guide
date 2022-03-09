@@ -1,4 +1,4 @@
-# Testing
+# 07 / Testing
 
 Developers need to assess their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and automating them to minimize errors (perhaps by placing tests in build processes).
 

@@ -17,7 +17,7 @@ Here are some scenarios of how aggregating metrics over time generates insights.
 - If there were **10** or more failed connections (total of `aborted_connections` in Flexible Server) in the last **30** minutes, then send an email alert
   - This may indicate incorrect credentials or an SSL issue in the application
 
-- If IOPS was **90%** or more of capacity (average of `io_consumption_percent` in Flexible Server) for at least **1** hour, then call a webhook
+- If IOPS is **90%** or more of capacity (average of `io_consumption_percent` in Flexible Server) for at least **1** hour, then call a webhook
   - Excessive IO usage affects the performance of transactional workloads, so [scale storage to increase IOPS capacity or provision additional IOPS](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage)
   - See the linked CLI examples for automatic scaling based on metrics
 

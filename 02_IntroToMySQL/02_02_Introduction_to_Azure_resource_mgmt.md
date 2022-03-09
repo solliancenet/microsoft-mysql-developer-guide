@@ -22,7 +22,7 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 - **[Management groups](https://docs.microsoft.com/azure/governance/management-groups/overview)**: Management groups consolidate multiple Azure subscriptions for compliance and security purposes.
 - **Subscriptions**: Subscriptions govern cost control and access management. Azure users cannot provision Azure resources without a subscription.
 - **[Resource groups](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal)**: Resource groups consolidate the individual Azure resources for a given deployment. All provisioned Azure resources belong to one resource group. In this guide, it will be required to provision a *resource group* in an *subscription* to hold the required resources.
-  - Resource groups have a geographic location that determines where metadata about that resource group is stored
+  - Resource groups are placed in a geographic location that determines where metadata about that resource group is stored
 - **Resources**: An Azure resource is an instance of a service. An Azure resource belongs to one resource group located in one subscription.
   - Most Azure resources are provisioned in a particular region
 
@@ -68,7 +68,7 @@ Azure runs on a common framework of backend resource services and every action t
 
 #### Evolving
 
-Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsiblity for how services have been configured and the access teams have to those resources.
+Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsiblity for how services are being configured and the access teams, users and applications are authorized with to those resources.
 
 By using the existing command-line tools and REST APIs, it is possible to build custom tools to automate and report on resource configurations that do not meet any organizational requirements that are required.
 
@@ -113,7 +113,7 @@ After the modules are installed, reference tutorials such as the following to le
 
 ### Infrastructure as Code
 
-[Infrastructure as Code (IaC)](https://docs.microsoft.com/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code is the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code has been tested, it can be versioned and saved into source code control.
+[Infrastructure as Code (IaC)](https://docs.microsoft.com/devops/deliver/what-is-infrastructure-as-code) provides a way to describe or declare what infrastructure looks like using descriptive code. The infrastructure code is the desired state. Once the code runs, the environment will be built. One of the main benefits of IaC it is human readable. Once the environment code is proven and tested, it can be versioned and saved into source code control.
 
 #### ARM templates
 

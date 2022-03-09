@@ -1,4 +1,4 @@
-# Troubleshooting
+# 09 / Troubleshooting
 
 As applications are running and executing in the cloud environment it is always a possibility that something unexpected will occur. This section details a few common troubleshooting steps.
 
