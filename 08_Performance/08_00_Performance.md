@@ -32,7 +32,7 @@ Within the tier, it is possible to scale cores and memory to the minimum and max
 
 Moving a database to a different Azure region depends on the approach and architecture.  Depending on the approach, it could cause system downtime.
 
-The recommended process is the same as utilizing read replicas for maintenance failover. However, compared to the planned maintenance method mentioned above, the speed to failover is much faster when a failover layer has been implemented in the application. The application should only be down for a few moments during the read replica failover process. More details are covered in the [Business Continuity and Disaster Recovery](03_BCDR.md) section.
+The recommended process is the same as utilizing read replicas for maintenance failover. However, compared to the planned maintenance method mentioned above, the speed to failover is much faster when a failover layer is integrated into the application. The application should only be down for a few moments during the read replica failover process. More details are covered in the [Business Continuity and Disaster Recovery](03_BCDR.md) section.
 
 ## Optimization checklist
 

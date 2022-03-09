@@ -1,6 +1,6 @@
 # Introduction to the guide sample application
 
-Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application would need to be modified in order fit the deployment model.
+Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application will need to be modified in order fit the deployment model.
 
 ## Sample application overview and story
 
@@ -66,7 +66,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
    - Create a unique web app name.
 
-   - Select the runtime stack.  The web app has been tested with PHP 7.4.
+   - Select the runtime stack.  The web app is only tested with PHP 7.4.
 
    - Create the resources.
 
@@ -156,7 +156,7 @@ The application should now be available and show some sample data, however the w
    - User ID
    - Password
   
-   >**Note:** For production environments, values would be retrieved from Azure Key Vault.
+   >**Note:** For production environments, values will be retrieved from Azure Key Vault.
 
 3. Navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
 

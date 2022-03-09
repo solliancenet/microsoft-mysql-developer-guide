@@ -32,7 +32,7 @@ IaaS lets organizations bypass the cost and complexity of buying and managing ph
 
 While much more lightweight, containers are similar to VMs, and can be started and stopped in a few seconds. Containers also offer tremendous portability, which makes them ideal for developing an application locally on a development machine and then hosting it in the cloud, in test, and later in production. Containers can even run  on-premises or in other clouds. This is possible because the environment that is used on the development machine travels with the container, so the application always runs in the same way. Containerized applications are flexible, cost-effective, and deploy quickly.
 
-MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL in customized and containerized applications. A container-based MySQL instance can persist data to the hosting environment via the container runtime which would allow for high-available across container instances and environments.
+MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL in customized and containerized applications. A container-based MySQL instance can persist data to the hosting environment via the container runtime which will allow for high-availability across container instances and environments.
 
 ### Cloud PaaS
 

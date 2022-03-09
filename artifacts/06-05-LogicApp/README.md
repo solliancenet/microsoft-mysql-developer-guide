@@ -17,7 +17,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 - Select the resource group region (it must be in the region that the VNet is in)
 - For **Workload type**, select **Development** to save costs
 - For **Availability zone**, select **No preference**
-  - Co-locating the VM and the Flexible Server instance would improve network performance, but it is not strictly necessary
+  - Co-locating the VM and the Flexible Server instance will improve network performance, but it is not strictly necessary
 - For the **MySQL Version**, select **8.0.x**
 
   ![This image demonstrates the server parameters provided to the Flexible Server instance in the Azure portal.](./media/server-details-port.png "Server parameters")

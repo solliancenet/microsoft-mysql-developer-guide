@@ -27,7 +27,7 @@ In the previous function apps the connection information was embedded into the f
 ```sql
 SET aad_auth_validate_oids_in_tenant = OFF;
 CREATE AADUSER 'mymsiuser' IDENTIFIED BY 'AZURE_APPLICATION_ID';
---I would also recommend to GRANTS necessary permission in DB
+--It is recommended to GRANTS necessary permission in DB
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```

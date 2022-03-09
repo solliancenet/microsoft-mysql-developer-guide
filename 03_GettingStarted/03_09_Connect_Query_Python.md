@@ -79,6 +79,6 @@ Deleted 1 row(s) of data.
 Done.
 ```
 
-At this point, a successfully opened connection to Flexible Server has been established, a table created (DDL), and CRUD operations performed (DML) against data in the table.
+At this point, a successfully opened connection to Flexible Server was established, a table created (DDL), and CRUD operations performed (DML) against data in the table.
 
 If a Python Virtual Environment was created, simply enter `deactivate` into the console to remove it.

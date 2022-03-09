@@ -826,7 +826,7 @@ follow the language samples.
 
 ## Azure portal
 
-Azure provides a [quickstart document] for users who would like to use
+Azure provides a [quickstart document] for users who want to use
 the Azure portal to provision Flexible Server. While this is a great
 opportunity to explore the configuration parameters of Flexible Server,
 IaC approaches, like the imperative Azure CLI or the declarative ARM
@@ -1896,7 +1896,7 @@ App Service] article.
 
 ## App Service with InApp MySQL
 
-If you have a small database that you would like to be integrated with
+If you have a small database that you want to be integrated with
 your application hosting environment, you can utilize a feature of Azure
 App Service that will allow you to deploy your database to the same App
 Service and connect through `localhost`.
@@ -2001,9 +2001,8 @@ Database for MySQL Flexible Server] article.
 # Introduction to the guide sample application
 
 Instead of learning multiple sample applications, the guide focused on
-evolving deployment strategies. Readers could learn the sample
-application structure once and focus on how the application would need
-to be modified in order fit the deployment model.
+evolving deployment strategies. Readers will learn the sample
+application structure once and focus on how the application must be modified in order fit the target deployment model.
 
 ## Sample application overview and story
 
@@ -3983,7 +3982,7 @@ architecture to the next level.
 
 In module 4, we explored an evolution from classic development and
 deployment to current modern methods. It is important to understand
-where you are now and where you would like to be in the future.
+where you are now and where you will be in the future.
 
 ## Summary of tasks
 
