@@ -139,7 +139,7 @@ azure-functions
 mysql-connector-python
 ```
 
-- Switch to the terminal window and run the following. Follow the instructions to log in to your Azure subscription:
+- Switch to the terminal window and run the following. Follow the instructions to log in to the Azure subscription:
 
 ```PowerShell
 az login
@@ -170,7 +170,9 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
     ![This image demonstrates how to select the AddCustomerFunction from the Function App instance.](./media/select-function-from-portal.png "Selecting the Function")
 
 - On the **AddCustomerFunction** page, **Code + Test**. Then, select **Test/Run** to access the built-in testing interface
-- Issue a simple GET request to the Function App endpoint. You can use a *function key*, which is scoped to an individual Function App, or a *host key*, which is scoped to an Azure Functions instance.
+- Issue a simple GET request to the Function App endpoint.
+
+> **NOTE** It is possible to use a *function key*, which is scoped to an individual Function App, or a *host key*, which is scoped to an Azure Functions instance.
 
     ![This image demonstrates how to configure a GET request to the Function App endpoint from the Azure portal.](./media/azure-portal-function-test.png "GET request test")
 
@@ -180,7 +182,7 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
 
 ## Troubleshooting
 
-- If your Function App works locally, but fails in the cloud, ensure that the Azure environment is configured properly:
+- If the Function App works locally, but fails in the cloud, ensure that the Azure environment is configured properly:
   - The `requirements.txt` file must reference the MySQL Python connector
   - The Flexible Server instance must provide access to all Azure resources
   - The Azure Function Apps instance must be using extension version `4`, as that is the what the local core tools support

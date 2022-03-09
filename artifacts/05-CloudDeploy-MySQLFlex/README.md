@@ -4,7 +4,7 @@ Rather than managing the database volumes for a MySQL server instance, it is pos
 
 ## Push images to Azure Container Registry
 
-1. If you haven't already, be sure to push your images to your Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
+1. If they haven't already, push the images to the Azure Container Registry using the [Push Images to Acr](./../Misc/01_PushImagesToAcr.md) article.
 
 ## Run images in AKS
 
@@ -13,4 +13,3 @@ Rather than managing the database volumes for a MySQL server instance, it is pos
 ## Deploy to Azure Database for MySQL
 
 1. TODO
-

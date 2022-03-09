@@ -1,6 +1,6 @@
 # Migrate to Azure Kubernetes Services (AKS)
 
-Now that you have containerized versions of your applications, you can host them in several places in Azure. Here we explore Azure Kubernetes Service (AKS).
+Now that a containerized version of the applications exists, it can now be hosted in several places in Azure. Here we explore Azure App Service Containers.
 
 ## Push images to Azure Container Registry
 

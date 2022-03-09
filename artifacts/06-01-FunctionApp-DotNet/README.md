@@ -20,7 +20,7 @@ It is possible to utilize Visual Studio or Visual Studio Code to create Azure Fu
 
 ## Create the Function Application
 
-The application here is based on an Http Trigger that will then make a call into the Azure Database for MySQL instance and add some records. You can create this function by performing the following steps.
+The application here is based on an Http Trigger that will then make a call into the Azure Database for MySQL instance and add some records. Create this function by performing the following steps.
 
 - Install the required software above
 - Open Visual Studio, select **Create a new project**
@@ -81,8 +81,6 @@ The application here is based on an Http Trigger that will then make a call into
         }
     }
 ```
-
-> **NOTE** You do not have to specify the certificate and the SslMode is set to required.
 
 - Right-click the project, select **Manage Nuget Packages**, and select **Browse**
 - Search for **MySqlConnector**, select **Install**
