@@ -49,7 +49,11 @@ For a list of the items that Microsoft Defender reviews for open source database
 
 ## Microsoft Sentinel
 
-TODO
+Many of the items discussed thus far operate in their own sphere of influence and are not designed to work directly with each other. Every secure features provided by Microsoft Azure and corresponding applications like Azure Active Directory contain on piece of the security puzzle.  Something is needed to bring all the pieces together to provide a full picture of the security posture and to allow for you to remediate issues quickly and potentially in an automated way.
+
+[Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then give you a view into how an attack may have started.
+
+Microsoft Sentinel works in conjunction with Azure Log Analytics to provide a log storage, query and alerting solution.  Through machine learning, artificial intelligence and user behavior analytics (UEBA), Microsoft Sentinel can provide you with a higher understanding of potential issues or incidents you may not have seen with a disconnected environment.
 
 ## Security checklist
 

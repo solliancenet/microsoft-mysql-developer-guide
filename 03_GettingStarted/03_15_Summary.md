@@ -1,4 +1,4 @@
-# Module summary
+# 03 / Summary
 
 This module augmented an understanding of Flexible Server through practical examples of how modern applications access Flexible Server. Flexible Server, unlike Single Server, supports all standard MySQL clients. Previously presented information Microsoft Azure deployment tools and concepts were utilized to provision a Flexible Server instance to run the included code examples.
 
