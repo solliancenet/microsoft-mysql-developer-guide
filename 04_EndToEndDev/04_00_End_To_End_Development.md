@@ -8,24 +8,32 @@ The journey will start with a typical classic deployment where the deploymost oc
 
 The following scenarios will be discussed and demonstrated as part of this Azure MySQL developer's guide.  All of the following deployments will utilize the same application and database backend and what is needed to modify the application to support the targets. Topics will be discussed in the following simple to complex ordering.
 
-TODO: Links to the headers
+- [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
+- [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
+- [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
+- [App Service with InApp MySQL](./../artifacts/02-03-CloudDeploy-InApp/README.md)
+- [Continuous Integration / Continuous Delivery](./../artifacts/02-04-CloudDeploy-CICD/README.md)
+- [Containerizing layers with Docker](./../artifacts/03-00-Docker/README.md)
+- [Azure Container Instances (ACI)](./../artifacts/01-ClassicDeploy/README.md)
+- [App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md)
+- [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
+- [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
 
-- Classic deployment
-- Azure VM Deployment
-- Simple App Service Deployment with Azure Database for MySQL Flexible Server
-- App Service with InApp MySQL
-- Continuous Integration / Continuous Delivery
-- Containerizing layers with Docker
-- Azure Container Instances (ACI)
-- App Service Containers
-- Azure Kubernetes Service (AKS)
-- AKS with MySQL Flexible Server
+Additionally, some applications are more than just a web application with database backend.  Microsoft Azure provides serveral compute engines with varying degrees of features and administrative abilities.
 
-It is recommended that each scenario is executed in the order shown so that a full picture of the steps involved in the development evolution are understood.  This will also ensure that the necessary pre-requisite items are avilable to move on to the more complex deployments.
+- [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
+  - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
+  - [Python](./../artifacts/06-02-FunctionApp-Python/README.md)
+  - [AKS](./../artifacts/06-03-FunctionApp-AKS/README.md)
+  - [Secured with MSI](./../artifacts/06-04-FunctionApp-MSI/README.md)
+- [Logic Apps](./../artifacts/06-05-LogicApp/README.md)
+- [Azure Data Factory](./../artifacts/07-01-AzureDataFactory/README.md)
+- [Azure Synapse Analytics](./../artifacts/07-02-AzureSynapseAnalytics/README.md)
+- [Azure Batch](./../artifacts/07-03-AzureBatch/README.md)
+
+It is recommended that each of the above scenarios are executed in the order shown so that a full picture of the steps involved in the development evolution are understood.  This will also ensure that the necessary pre-requisite items are avilable to move on to the more complex deployments.
 
 ## Classic deployment
-
-TODO: Pros and Cons
 
 In a classic deployment, development and operations staff will typically set up a web server (such as Internet Information Services (IIS), Apache, or NGINX) on physical or virtualized on-premises hardware.  Most applications using MySQL as the backend are using PHP as the frontend (which is the case for the sample application in this guide); as such, the web server must be configured to support PHP.  This includes configuring and enabling any PHP extensions and installing the required software to support those extensions.
 
@@ -34,6 +42,8 @@ Some web servers are relatively easier to set up than others.  The complexity de
 In addition to the web server, it is also necessary to install and configure the physical MySQL database server.  This includes creating the schema and the application users that will be used to access the target database(s).
 
 As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once software is installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
+
+The biggest advantage of a classic on-premises deployment is that you have full control of the environment.  The biggest weakness is you must maintain every aspect of the environment.
 
 To perform a simulated classical deployment in Azure, reference the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
 

@@ -41,7 +41,11 @@ When moving an application to Azure along with the MySQL workload, it is likely 
 
 ## Microsoft Defender for Cloud
 
-TODO
+When it comes to the control plane, commonly referred to as the Cloud security posture management (CSPM), the Azure Activity log has you covered, however when the data plane, commonly referred to as Cloud workload protection (CWP), is the focus of the security efforts, you will need something that will monitor the workload itself rather than the things outside the workload.
+
+[Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction) provides [workload protections for Azure Database](https://docs.microsoft.com/en-us/azure/defender-for-cloud/quickstart-enable-database-protections) workloads such as Azure Database for SQL, Postgres and MySQL.
+
+For a list of the items that Microsoft Defender reviews for open source databases, reference the [Alerts reference](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-osrdb).
 
 ## Microsoft Sentinel
 
