@@ -60,7 +60,7 @@
 | - | - | Multi-cloud | - | - | - | - | - |
 | - | - | Azure | - | - | - | - | - |
 | - | - | 3rd party | - | https://www.percona.com/blog/2021/06/24/deploy-a-dedicated-percona-server-for-mysql-8-0-in-azure/ | - | - | - |
-| - | - | TODO | - | - | - | - | - |
+| - | - | - | - | - | - | - | - |
 | - | Tutorials | - | - | - | - | - | - |
 | - | - | Azure VM | - | - | - | - | - |
 | - | - | Azure App Svc | - | - | - | - | - |

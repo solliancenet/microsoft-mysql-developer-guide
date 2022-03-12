@@ -43,9 +43,14 @@ The image below demonstrates the cluster's maximum CPU usage over a half-hour pe
 ### Apache JMeter
 
 TODO
+
 ### K6 
 
+TODO
+
 ### Selenium
+
+TODO
 
 ### Grafana & Prometheus
 
@@ -67,5 +72,3 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 ### Web
 
 ### Database
-
-### 
