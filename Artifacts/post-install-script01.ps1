@@ -21,15 +21,18 @@ function EnableIEFileDownload
 
 function ConfigurePhp($iniPath)
 {
-    $content = get-content $iniPath;
+    $content = get-content $iniPath -ea SilentlyContinue;
 
-    $content = $content.replace(";extension=curl","extension=curl");
-    $content = $content.replace(";extension=fileinfo","extension=fileinfo");
-    $content = $content.replace(";extension=mbstring","extension=mbstring");
-    $content = $content.replace(";extension=openssl","extension=openssl");
-    $content = $content.replace(";extension=pdo_mysql","extension=pdo_mysql");
+    if ($content)
+    {
+      $content = $content.replace(";extension=curl","extension=curl");
+      $content = $content.replace(";extension=fileinfo","extension=fileinfo");
+      $content = $content.replace(";extension=mbstring","extension=mbstring");
+      $content = $content.replace(";extension=openssl","extension=openssl");
+      $content = $content.replace(";extension=pdo_mysql","extension=pdo_mysql");
 
-    set-content $iniPath $content;
+      set-content $iniPath $content;
+    }
 }
 
 function AddPhpApplication($path, $port)
@@ -97,8 +100,11 @@ InstallWebPI
 
 InstallWebPIPhp
 
-$version = "8.0.8"
+$version = "8.0.16"
 InstallPhp $version;
+
+ConfigurePhp "C:\tools\php80\php.ini";
+ConfigurePhp "C:\tools\php81\php.ini";
 
 InstallMySql
 

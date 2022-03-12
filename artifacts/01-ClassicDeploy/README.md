@@ -1,19 +1,18 @@
 # Classic Deployment to PHP enabled IIS server
 
-This is a simple app that runs PHP code to connect to a MYSQL database.
-
-## Test the PHP Setup
-
-1. Open a chrome browser window
-2. Navigate to `http://localhost:8080/default.php`, **Hello World** should be displayed.
-3. Navigate to `http://localhost:8080/database.php`, **12 results** should be displayed.
+This is a simple app that runs PHP code to connect to a MYSQL database. These tasks will be performed on the **paw-1** virtual machine that was deployed via the ARM template.
 
 ## Database Deployment
 
-1. Run the following commands to create the database (type `yes` when prompted):
+1. On the **paw-1** virtual machine, open a Windows PowerShell window
+2. Run the following commands to create the database (type `yes` when prompted):
 
     ```PowerShell
     cd C:\labfiles\microsoft-mysql-developer-guide\artifacts\sample-php-app
+
+    composer update 
+    
+    composer install
 
     php artisan config:clear
     
@@ -22,7 +21,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.
     php artisan db:seed
     ```
 
-2. Several tables should get created
+3. Several tables should get created
+
+## Test the PHP Setup
+
+1. In the **paw-1** virtual machine, open a chrome browser window
+2. Navigate to `http://localhost:8080/default.php`, **Hello World** should be displayed.
+3. Navigate to `http://localhost:8080/database.php`, **12 results** should be displayed.
 
 ## Test the Store Application
 
