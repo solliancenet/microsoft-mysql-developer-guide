@@ -86,6 +86,9 @@
         "type": "Microsoft.Batch/batchAccounts",
         "apiVersion": "2021-06-01",
         "name": "[variables('resourceName')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
+      ],
         "location": "[resourceGroup().location]",
         "tags": {
             
@@ -171,38 +174,6 @@
         "tags": {},
         "properties": { "sku": { "tier": "Standard" } },
         "resources": []
-      },
-      {
-        "type": "Microsoft.Network/azureFirewalls",
-        "apiVersion": "2021-02-01",
-        "name": "[variables('resourceName')]",
-        "location": "[resourceGroup().location]",
-        "dependsOn": [
-          "[resourceId( 'Microsoft.Network/publicIpAddresses', concat(variables('resourceName'),'-fw-pip'))]",
-          "[resourceId( 'Microsoft.Network/virtualNetworks', concat(variables('resourceName'),'-web'))]",
-          "[resourceId( 'Microsoft.Network/firewallPolicies', variables('resourceName'))]"
-        ],
-        "tags": {},
-        "zones": [],
-        "properties": {
-          "ipConfigurations": [
-            {
-              "name": "[variables('resourceName')]",
-              "properties": {
-                "subnet": {
-                  "id": "[resourceId( 'Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'),'-web'), 'AzureFirewallSubnet')]"
-                },
-                "publicIpAddress": {
-                  "id": "[resourceId( 'Microsoft.Network/publicIPAddresses', concat(variables('resourceName'),'-fw-pip'))]"
-                }
-              }
-            }
-          ],
-          "sku": { "tier": "Standard" },
-          "firewallPolicy": {
-            "id": "[resourceId( 'Microsoft.Network/firewallPolicies', variables('resourceName'))]"
-          }
-        }
       },
       {
         "type": "Microsoft.Web/connectionGateways",
@@ -467,12 +438,6 @@
             "version": "8.0.21",
             "availabilityZone": "1",
             "publicNetworkAccess": "Enabled",
-            "maintenanceWindow": {
-                "customWindow": "Disabled",
-                "dayOfWeek": 0,
-                "startHour": 0,
-                "startMinute": 0
-            },
             "replicationRole": "None",
             "network": {},
             "backup": {
@@ -480,8 +445,10 @@
                 "geoRedundantBackup": "Disabled"
             },
             "highAvailability": {
-                "mode": "Disabled"
-            }
+                "mode": "Disabled",
+                "standbyAvailabilityZone": "[parameters('standbyAvailabilityZone')]"
+            },
+            "dataencryption": null
         }
     },
       {

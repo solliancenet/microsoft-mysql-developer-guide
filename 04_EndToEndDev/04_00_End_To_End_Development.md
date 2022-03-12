@@ -124,3 +124,46 @@ To perform deployments using AKS, reference the [Migrate to Azure Kubernetes Ser
 Running the database layer in a container is better than running it in a VM, but not as great as removing all the operating system and software management components.
 
 To implement this deployment, reference the [Utilize AKS and Azure Database for MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md) article. This article extends the benefits of a PaaS database to the Contoso NoshNow application.
+
+## Start the Developer Journey
+
+The first step to exploring the evolution of MySQL Application development is to get the enivornment setup.
+
+We provide two ARM template that can be deployed that will setup the environment.  One is a basic deployment of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and vnet integrations.  It also includes items like Azure Firewall and other security related configurations.
+
+The basic template is the cheaper way to go and should work without any configuration.  The secure template will have much higher costs and will require special configuration and changes to get the samples to work properly.
+
+### Step 1 - Deploy the template
+
+- [Basic Template](./../artifacts/template.json)
+- [Secure Template](./../artifacts/template-secure.json)
+
+### Step 2 - Starting from the beginning
+
+Once the template has deployed, you will see several resources that support the develop journey.  Not all of these will be used but are provided in case you decided to explore further on your own.
+
+As part of the deployment, you will see a **mysqldevSUFFIX-paw1** virtual machine that has been deployed.  You can login to this virtual machine by doing the following:
+
+- Open Azure Portal
+- Browse to your resource group
+- Select the **mysqldevSUFFIX-paw1** virtual machine
+- Select **Connect->RDP**
+- Select **Download RDP file**
+- Open the downloaded file, select **Connect**
+- For the username, type **s2admin**
+- For the password, type **S0lliance123**
+
+Once in the virtual machine, you should see that all the tools have already been installed from you as well as the github has been downloaded that includes all the artifacts needed to start the developer journey. You can find these files on the **Paw-1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
+
+To reiterate, it is best if you follow the journey from the start to finish in the following order:
+
+- [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
+- [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
+- [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
+- [App Service with InApp MySQL](./../artifacts/02-03-CloudDeploy-InApp/README.md)
+- [Continuous Integration / Continuous Delivery](./../artifacts/02-04-CloudDeploy-CICD/README.md)
+- [Containerizing layers with Docker](./../artifacts/03-00-Docker/README.md)
+- [Azure Container Instances (ACI)](./../artifacts/01-ClassicDeploy/README.md)
+- [App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md)
+- [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
+- [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
