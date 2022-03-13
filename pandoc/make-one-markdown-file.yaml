@@ -64,28 +64,34 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_01_Introduction_to_sample_app.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_02_Deploy_Laravel_API_app.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_03_CI_CD.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_04_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00_Monitoring.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_01_Alerts.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_02_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_00_Securing.md
 - D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_01_Networking.md
-- D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_Testing.md
+- D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_02_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_00_Testing.md
+- D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_00_Performance.md
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_01_Server_Parameters.md
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_02_Caching.md
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_03_Azure_Content_Delivery_Network.md
-- D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_Troubleshooting.md
+- D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_04_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_00_Troubleshooting.md
+- D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_00_BestPractices.md
 - D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_01_BCDR.md
 - D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_02_Replication.md
 - D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_03_Service_Maintenance.md
 - D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_04_Upgrades.md
+- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_05_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\11_Architectures\11_Architectures.md
 - D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_00_CaseStudies.md
 - D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_01_MySQL_in_apps.md
 - D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_ZeroToHero.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_02_Resources.md
-
 # ERROR, WARNING, or INFO
 verbosity: INFO
 log-file: log.json

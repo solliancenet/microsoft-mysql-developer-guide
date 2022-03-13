@@ -247,6 +247,42 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/create-contosonoshnow-database.png",
+        "for": "media/create-contosonoshnow-database.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/update-mysql-connection-info.png",
+        "for": "media/update-mysql-connection-info.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/php-laravel-database-creation.png",
+        "for": "media/php-laravel-database-creation.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/seeded-database.png",
+        "for": "media/seeded-database.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-order.png",
+        "for": "media/sample-order.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/verify-order-data.png",
+        "for": "media/verify-order-data.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/laravel-service-ip.png",
         "for": "./media/laravel-service-ip.png"
     },
@@ -315,6 +351,12 @@
         "verbosity": "INFO",
         "from": "./media/thread-pooling-performance.png",
         "for": "./media/thread-pooling-performance.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/cdn-overview.png",
+        "for": "./media/cdn-overview.png"
     },
     {
         "type": "LoadedResource",

@@ -30,7 +30,7 @@ Azure provides a flexible resource hierarchy to simplify cost management and sec
 
 ## Create landing zone
 
-An [Azure landing zone](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure Portal to fit the workload's needs.
+An [Azure landing zone](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) is the target environment defined as the final resting place of a cloud migration project. In most projects, the landing zone should be scripted via ARM templates for its initial setup. Finally, it should be customized with PowerShell or the Azure Portal to fit the workload's needs.  First-time Azure users need not worry about creating and deploying to DEV and TEST environments.
 
 To help organizations quickly move to Azure, Microsoft provides the Azure landing zone accelerator, which generates a landing zone ARM template according to an organization's core needs, governance requirements, and automation setup. The landing zone accelerator is available in the Azure portal.
 
@@ -74,7 +74,7 @@ By using the existing command-line tools and REST APIs, it is possible to build 
 
 ### Azure PowerShell and CLI
 
-**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both of these tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
+**Azure PowerShell** and the **Azure CLI** (for Bash shell users) are useful for automating tasks that cannot be performed in the Azure portal. Both tools follow an *imperative* approach, meaning that users must explicitly script the creation of resources in the correct order.
 
   ![Shows an example of the Azure CLI.](media/azure-cli-example.png "Azure CLI Example")
 
@@ -96,7 +96,7 @@ Launch the Cloud Shell in a browser at [shell.azure.com](shell.azure.com).
 
 ### PowerShell Module
 
-The Azure portal and Windows PowerShell can be used for managing the Azure Database for MySQL. To get started with PowerShell, install the Azure PowerShell cmdlets for MySQL with the following PowerShell command:
+The Azure portal and Windows PowerShell can be used for managing the Azure Database for MySQL. To get started with Azure PowerShell, install the [Azure PowerShell cmdlets](https://docs.microsoft.com/powershell/azure/?view=azps-7.3.0)  for MySQL with the following PowerShell command:
 
 ```PowerShell
 Install-Module -Name Az.MySql
@@ -125,14 +125,7 @@ After the modules are installed, reference tutorials such as the following to le
 
 Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed in a consistent manner.
 
-Some of the benefits include:
-
-- **Support for all resource types and API versions**: Bicep immediately supports all preview and GA versions for Azure services. As soon as a resource provider introduces new resources types and API versions, they can be used in Bicep files. There is no need to wait for tools to be updated before using the new services.
-- **Simple syntax**: When compared to the equivalent JSON template, Bicep files are more concise and easier to read. Bicep requires no previous knowledge of programming languages. Bicep syntax is declarative and specifies which resources and resource properties to deploy.
-- **Authoring experience**: When using VS Code to create Bicep files, a first-class authoring experience is available. The editor provides rich type-safety, IntelliSense, and syntax validation.
-- **Modularity**: Break Bicep code into manageable parts by using modules. The module deploys a set of related resources. Modules enable for the reuse of code and simplified development. Add a module to a Bicep file anytime those resource need to be deployed.
-- **No state or state files to manage**: All state is stored in Azure. Users can collaborate and have confidence their updates are handled as expected. Use the what-if operation to preview changes before deploying the template.
-- **No cost and open source**: Bicep is completely free. No need to pay for premium capabilities. It's also supported by Microsoft support.
+[Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
 #### Terraform
 
@@ -162,6 +155,3 @@ Azure provides [multiple support plans for businesses](https://azure.microsoft.c
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
   - [Azure Fundamentals (AZ-900) Learning Path](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
 
-### Resources
-
-- [Azure CLI samples for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/sample-scripts-azure-cli)
