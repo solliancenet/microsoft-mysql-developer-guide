@@ -1,8 +1,8 @@
 FROM mysql:8.0
 RUN chown -R mysql:root /var/lib/mysql/
 
-ADD data.sql /etc/mysql/data.sql
+ADD Artifacts/data.sql /etc/mysql/data.sql
 
 RUN cp /etc/mysql/data.sql /docker-entrypoint-initdb.d
 
-EXPOSE 3306
+EXPOSE 3306 22

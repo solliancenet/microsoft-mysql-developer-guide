@@ -15,8 +15,8 @@ RUN docker-php-ext-install mysqli
 RUN docker-php-ext-enable mysqli
 RUN docker-php-ext-install pdo_mysql
 
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-COPY start-apache.sh /usr/local/bin
+COPY Artifacts/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY Artifacts/start-apache.sh /usr/local/bin
 
 RUN a2enmod rewrite
 
@@ -34,12 +34,12 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends openssh-server \
   && echo "$SSH_PASSWD" | chpasswd 
 
-COPY sshd_config /etc/ssh/
+COPY Artifacts/sshd_config /etc/ssh/
 
-COPY init.sh /usr/local/bin/
+COPY Artifacts/init.sh /usr/local/bin/
 
 RUN chmod u+x /usr/local/bin/init.sh
 
-EXPOSE 80 2222
+EXPOSE 80 22
 
 ENTRYPOINT ["init.sh"]

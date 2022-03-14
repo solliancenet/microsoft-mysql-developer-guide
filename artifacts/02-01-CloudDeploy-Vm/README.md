@@ -37,7 +37,13 @@ The app is running in an Azure VM and the App needs to be exposed to the interne
 
 3. The application should load
 4. Open a browser to the virtual machine ip address (ex `http:\\IP_ADDRESS:8080`)
-5. The results should be displayed
+5. The results should be displayed, but some files will not be download
+
+## Edit .env file
+
+1. Open the .env file
+2. Edit the `APP_URL` to the `IP_ADDRESS` of the virtual machine.  Note that you would need to change the url to `https` in order to properly load the application over SSL.
+3. Save the file, refresh the browser window
 
 ## Enable Port 443
 

@@ -6,7 +6,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Migrate to ENV variables
 
-1. Open the `\public\database.php` file, update the php MySQL connection environment variables by removing the `APPSETTING_` from each:
+1. Switch to Visual Studio Code and the opening repo directory
+2. Open the `.\artifacts\sample-php-app\public\database.php` file, update the php MySQL connection environment variables by removing the `APPSETTING_` from each:
 
     ```php
     $servername = getenv("MYSQL_SERVERNAME");
@@ -42,12 +43,12 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     RUN docker-php-ext-enable mysqli
     RUN docker-php-ext-install pdo_mysql
     
-    COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-    COPY start-apache.sh /usr/local/bin
+    COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+    COPY ./start-apache.sh /usr/local/bin
 
     RUN a2enmod rewrite
 
-    COPY sample-php-app /var/www
+    COPY ./sample-php-app /var/www
     RUN chown -R www-data:www-data /var/www
 
     RUN chmod 755 /usr/local/bin/start-apache.sh
@@ -60,11 +61,11 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 6. Run the following to create the image:
 
     ```PowerShell
-    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+    $sourcePath = "c:\labfiles\microsoft-mysql-developer-guide";
 
     cd $sourcePath;
 
-    docker build -t store-web --file Dockerfile.web . 
+    docker build -t store-web --file artifacts\Dockerfile.web . 
     ```
 
 ## Migrate Database to Docker
@@ -72,7 +73,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 1. Run the following to export the database:
 
     ```powershell
-    cd "c:\labfiles\microsoft-mysql-developer-guide\artifacts";
+    cd "c:\labfiles\microsoft-mysql-developer-guide";
 
     $username = "root";
     $password = "";
@@ -82,12 +83,17 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     $mysqlPath = "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
 
     & "$mysqlPath\mysqldump" -h $server -u $username $database > data.sql
+
+    #remove the weird encoding...
+    $data = get-content data.sql
+
+    set-content data.sql $data
     ```
 
 2. In the `c:\labfiles\microsoft-mysql-developer-guide\artifacts` directory, create a new `Dockerfile.db` docker compose file:
 
     ```text
-    FROM mysql:5.7
+    FROM mysql:8.0
     RUN chown -R mysql:root /var/lib/mysql/
 
     ADD data.sql /etc/mysql/data.sql
@@ -141,22 +147,24 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 2. Run the following to create the web container:
 
     ```PowerShell
-    docker compose run web
+    cd Artifacts
+
+    docker compose run --service-ports web
     ```
 
 3. Run the following to create the db container:
 
-    ```docker
-    stop service mysql
+    ```powershell
+    stop-service mysql
 
-    docker compose run db
+    docker compose run --service-ports db
     ```
 
 ## Migrate the database
 
 1. Use export steps in [Migrate the database](./Misc/02_MigrateDatabase) article to export the database
 2. Open a browser to `http:\\localhost:8081` and the phpmyadmin portal
-3. Login to using `root` and `root`
+3. Login to the database using `root` and `root`
 4. Select the **contosostore** database
 5. Run the exported database sql to import the database and data
 6. Run the following query, record the count
