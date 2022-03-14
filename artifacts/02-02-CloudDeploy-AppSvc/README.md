@@ -8,16 +8,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in Visual Studio code
 2. If prompted, select **Yes, I trust the authors**
-3. Open a terminal window, run the following:
-
-    ```PowerShell
-    Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip
-    ```
-
-4. Deploy the zip to Azure, run the following, be sure to replace the `SUFFIX`:
+3. Open a terminal window, run the following to deploy the zip to Azure, be sure to replace the `SUFFIX`:
 
     ```PowerShell
     Connect-AzAccount
+
+    #if you have more than on subscription
+    Select-AzSubscription "SUBSCRIPTION_NAME";
 
     $suffix = "SUFFIX";
     $resourceGroupName = "RESOURCE_GROUP_NAME";

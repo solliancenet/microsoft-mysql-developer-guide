@@ -96,15 +96,39 @@ InstallAzureCli
 
 InstallIIs
 
+Install7z
+
 InstallWebPI
 
-InstallWebPIPhp
+InstallWebPIPhp "PHP80x64,MySQLConnector,UrlRewrite2,ARRv3_0"
 
 $version = "8.0.16"
 InstallPhp $version;
 
 ConfigurePhp "C:\tools\php80\php.ini";
 ConfigurePhp "C:\tools\php81\php.ini";
+
+$phpDirectory = "C:\tools\php80\";
+$phpPath = "$phpDirectory\php-cgi.exe";
+
+Set-WebHandler -Name "PHP_via_FastCGI" -Path "*.php" -ScriptProcessor "$phpPath"
+
+# Set the max request environment variable for PHP
+$configPath = "system.webServer/fastCgi/application[@fullPath='$php']/environmentVariables/environmentVariable"
+$config = Get-WebConfiguration $configPath
+if (!$config) {
+    $configPath = "system.webServer/fastCgi/application[@fullPath='$php']/environmentVariables"
+    Add-WebConfiguration $configPath -Value @{ 'Name' = 'PHP_FCGI_MAX_REQUESTS'; Value = 10050 }
+}
+
+# Configure the settings
+# Available settings: 
+#     instanceMaxRequests, monitorChangesTo, stderrMode, signalBeforeTerminateSeconds
+#     activityTimeout, requestTimeout, queueLength, rapidFailsPerMinute, 
+#     flushNamedPipe, protocol   
+$configPath = "system.webServer/fastCgi/application[@fullPath='$phpPath']"
+Set-WebConfigurationProperty $configPath -Name instanceMaxRequests -Value 10000
+Set-WebConfigurationProperty $configPath -Name monitorChangesTo -Value '$phpDirectory\php.ini'
 
 InstallMySql
 
@@ -115,6 +139,13 @@ choco install openssl
 
 $version = "8.0.26";
 InstallMySQLWorkbench $version;
+
+cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
+
+#setup the sql database.
+
+.\mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 's2admin'@'localhost' IDENTIFIED BY 'P@s`$w0rd123!';"
+.\mysql -u root -e "CREATE DATABASE contosostore;"
 
 $extensions = @("ms-vscode-deploy-azure.azure-deploy");
 

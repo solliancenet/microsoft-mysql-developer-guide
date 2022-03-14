@@ -2,7 +2,7 @@
 
 This is a simple app that runs PHP code to connect to a MYSQL database.
 
-The app is running in an Azure VM.  The App needs to be exposed to the internet via port 80 in order results to display.
+The app is running in an Azure VM and the App needs to be exposed to the internet via port 80 in order results to display.
 
 ## Test the Application #1
 
@@ -44,7 +44,7 @@ The app is running in an Azure VM.  The App needs to be exposed to the internet 
 As part of any secured web application, SSL/TLS should be enabled.
 
 1. Setup certificate on web machine
-   - Open IIS Manager
+   - Open Internet Information Services (IIS) Manager
    - Select the server node
    - Select **Server certificates**
 
@@ -66,7 +66,7 @@ As part of any secured web application, SSL/TLS should be enabled.
 -->
 1. Setup SSL
    - Expand the **Sites** node
-   - Select the **Default Web Site**
+   - Select the **ContosoStore** web site
    - In the actions, select **Bindings**
    - Select **Add**
    - For the type, select **https**

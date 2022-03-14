@@ -79,7 +79,7 @@
         "name": "default",
         "dependsOn": [],
         "properties": {
-          "tags": { "DeploymentId": "[parameters('uniqueSuffix')]" }
+          "tags": { "DeploymentId": "[parameters('uniqueSuffix')]", "Suffix": "[substring(parameters('uniqueSuffix'),0,8)]" }
         }
       },
       {
