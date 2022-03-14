@@ -86,6 +86,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/tip.png",
+        "for": "media/tip.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/mysql-flex-params.png",
         "for": "./media/mysql-flex-params.png"
     },
@@ -177,6 +183,18 @@
                 "<summary of when to use a service picture>"
             ]
         }
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-app-level-1-architecture.png",
+        "for": "media/sample-app-level-1-architecture.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-app-site-map.png",
+        "for": "media/sample-app-site-map.png"
     },
     {
         "type": "LoadedResource",

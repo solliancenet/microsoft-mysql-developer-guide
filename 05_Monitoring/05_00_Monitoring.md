@@ -1,14 +1,18 @@
 # 05 / Monitoring
 
-Once the application and database are deployed, the next phase is to manage the new cloud-based data workload resources. Management operations include both control plane and data plane activities. Control plane activities are related to Azure resources, versus data plane, which is **inside** the Azure resource (in this case MySQL).
+Once the application and database are deployed, the next phase is to manage the new cloud-based data workload resources. Management operations include both control plane and data plane activities. Control plane activities are related to Azure resources, versus the data plane, which is **inside** the Azure resource (in this case MySQL).
 
 Azure Database for MySQL provides for the ability to monitor both of these types of operational activities using Azure-based tools such as [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview), [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment), and [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/overview). In addition to the Azure-based tools, security information and event management (SIEM) systems can be configured to consume these logs as well.
 
-Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn Azure and database administrators of any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook) to address the event.
+Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn administrators of outages, operational performance problems, or any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook) to address the event.
 
 ## Azure Monitor
 
-Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their Flexible Server instances.
+Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources.Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances.
+
+**Define your strategy**
+
+Administrators should [plan their monitoring strategy](https://docs.microsoft.com/azure/azure-monitor/best-practices-plan) and configuration for the best results. Some data collection and features are free while others have associated costs. Focus on maximizing your applications' performance and reliability. Identify the signs of failure. See [Azure Monitor Pricing](https://azure.microsoft.com/pricing/details/monitor/).
 
 Once metric data is flowing, use the [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query language to query the various log information. Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
 
@@ -65,6 +69,8 @@ TODO
 
 In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/concepts-query-performance-insight) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
 
+Wait statistics provides a view of the wait events that occur during the execution of a specific query. Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
+
 The `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can log long-running queries (default is 10 sec).
 
 ## Server Logs
@@ -87,7 +93,7 @@ AzureDiagnostics
 | order by TimeGenerated asc
 ```
 
-Note that excessive audit logging can degrade server performance, so be mindful of the events and users configured for logging.
+> ![Warning](../Global_Media/warning.png) **Warning:** Excessive audit logging can degrade server performance, so be mindful of the events and users configured for logging.
 
 - [Single Server Audit Logs](https://docs.microsoft.com/azure/mysql/concepts-audit-logs)
 - [Flexible Server Audit Logs](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)
@@ -119,11 +125,15 @@ From the **Logs** page it is possible to query the activity log from the samples
 
 As shown above, MySQL data logs will generate a table with a specific schema of which KQL can be used to facilitate analysis. Consult [the documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs) for more information.
 
-### Helpful links - Monitoring
+### Recommended content
 
 - Flexible Server: [Configure audit logs (Azure Portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
 
 - Single Server: [Configure and access audit logs in the Azure Portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
+
+- [Azure Monitor best practices](https://docs.microsoft.com/azure/azure-monitor/best-practices)
+
+- [Cloud monitoring guide: Collect the right data](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/data-collection)
 
 - [Configure and access audit logs in the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-cli)
 

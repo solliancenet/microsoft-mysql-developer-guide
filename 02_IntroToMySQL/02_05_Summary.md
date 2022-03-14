@@ -1,4 +1,4 @@
-# 02 / Summary
+## 02 / Summary
 
 This module explained common use cases for MySQL and illustrated the typical IaaS and PaaS approaches plus addition hybrid approaches to hosting MySQL applications and databases on Microsoft Azure. Moreover, this module introduced the core approaches to managing Microsoft Azure resources including imperative tools (like the Azure CLI and Azure PowerShell) and declarative tools (like ARM templates and Terraform).
 

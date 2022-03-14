@@ -1,4 +1,4 @@
-# Introduction to Azure Database for MySQL
+## Introduction to Azure Database for MySQL
 
 As mentioned previously, developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). Though PaaS offerings do not support direct management of the OS and the database engine, they have built-in support for high availability, automating backups, and meeting compliance requirements. Moreover, Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
 
@@ -10,11 +10,11 @@ For managing database objects and access controls at the server and database lev
 
 ![This image demonstrates the control plane for Azure Database for MySQL.](./media/mysql-conceptual-diagram.png "Control plane for Azure Database for MySQL")
 
-## Azure Database for MySQL deployment options
+### Azure Database for MySQL deployment options
 
 Azure Database for MySQL provides two options for deployment: Single Server and Flexible Server. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
-### Flexible Server
+#### Flexible Server
 
 Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than Single Server.
 
@@ -36,13 +36,13 @@ Here are a few other notable advantages of Flexible Server.
 
 Some of these features are not exclusive to Flexible Server. However, as further sections of the guide demonstrate, Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.  
 
-#### Flexible Server video introduction
+##### Flexible Server video introduction
 
 Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
-> [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
+> ![](media/tip.png) Tip: [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
 
-#### Flexible Server pricing & TCO
+##### Flexible Server pricing & TCO
 
 The MySQL Flexible Server tiers offer a storage range between 20 GiB and 16 TiB and the same backup retention period range of 1-35 days. However, they differ in core count and memory per vCore. Choosing a compute tier affects the database IOPS and pricing.
 
@@ -52,7 +52,7 @@ The MySQL Flexible Server tiers offer a storage range between 20 GiB and 16 TiB 
 
 To estimate the TCO for Azure Database for MySQL, use the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). Note that the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) can be used to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center. Simply indicate the configuration of on-premises hardware and the Azure landing zone, adjust calculation parameters, like the cost of electricity, and observe the potential savings.
 
-#### Flexible Server Unsupported Features
+##### Flexible Server Unsupported Features
 
 Azure provides a [detailed list of the limitations of Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-limitations). Here are a few notable ones.
 
@@ -60,7 +60,7 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 - The DBA role and the `SUPER` privilege are unsupported
 - `SELECT ... INTO OUTFILE` statements to write query results to files are unsupported, as the filesystem is not directly exposed by the service
 
-### Single Server
+#### Single Server
 
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, high availability, and backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single Server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/). For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 

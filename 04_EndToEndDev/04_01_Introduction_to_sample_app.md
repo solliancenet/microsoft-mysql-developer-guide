@@ -10,13 +10,15 @@ The development team knew migrating to Azure could help with these issues.
 
 ## Solution architecture
 
+This is the base architecture that will be evolved in the future sample scripts.
+
 ![](media/sample-app-level-1-architecture.png)
 
 ## Site map
 
 ![](media/sample-app-site-map.png)
 
-## Prerequisites
+## Sample Application Prerequisites
 
 - Azure subscription
 - Git
@@ -100,7 +102,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
    - Open the command prompt or terminal on the development machine.
 
-   - Type the following:
+   - Type the following commands individually to configure the remote repo connection. Review the output:
 
    ```cmd
    git remote add azure <Azure App Service Git Clone URL>
@@ -108,11 +110,11 @@ The deployment strategy applied in this sample application focuses on updating p
    git push azure master
    ```
   
-   - Enter the Application Scope credentials.
+   - When you push your content to the Azure App Service, you will be prompted for the Local Git credentials. Enter the Application Scope credentials.
   
       ![Git Credential Manager](media/git-credential-manager-for-windows.png)
 
-   - The following output should display:
+   - The following output should display in the command window:
 
       ![Azure local git push example.](media/azure-local-git-push.png)
 
@@ -162,7 +164,7 @@ The application should now be available and show some sample data, however the w
 
    ![](media/create-contosonoshnow-database.png)
 
-   >**Note:** It is possible to alternative commands in the App Service SSL terminal to create the database.
+   >**Note:** It is possible to alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
 
    ```bash
    mysql --host=<hostname>-server.mysql.database.azure.com --user=<user name> --password=<password> --ssl=true
@@ -206,11 +208,13 @@ The application should now be available and show some sample data, however the w
 
    ![Seeded database.](media/seeded-database.png)
 
+   - Using MySQL Workbench, verify the tables have the seed data.
+ 
 7. Navigate back to the web app and enter a sample order.
 
    ![](media/sample-order.png)
 
-8. Verify the order was saved to the Flexible Server database.
+8. Using MySQL Workbench, verify the order was saved to the Flexible Server database.
 
    ![](media/verify-order-data.png)
 
