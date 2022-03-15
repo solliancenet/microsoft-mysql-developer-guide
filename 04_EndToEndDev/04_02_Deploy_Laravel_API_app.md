@@ -1,6 +1,6 @@
-# Deploying a Laravel app backed by a Java REST API to AKS
+## Deploying a Laravel app backed by a Java REST API to AKS
 
-## Evolve the sample application
+### Evolve the sample application
 
 In the previous stages of this developer guide, an MVC app was deployed on an Azure VM, containerized, and then hosted on various PaaS services (e.g. Azure Container Instances, App Service, AKS). The second sample app provided with this developer guide delegates database access operations (Flexible Server queries) to a Java REST API. The Laravel app calls the REST API.
 
@@ -12,7 +12,7 @@ We recommend creating a new resource group for this exercise.
 az group create -n [RESOURCE GROUP NAME] -l [AZURE REGION]
 ```
 
-## Download the tools
+### Download the tools
 
 To complete this document, install the following tools on the development machine:
 
@@ -21,7 +21,7 @@ To complete this document, install the following tools on the development machin
 - [Docker Desktop:](https://docs.docker.com/desktop/) Docker Desktop provides an intuitive management interface for the Docker service. This guide uses the Docker CLI to create Docker images.
 - [kubectl:](https://kubernetes.io/docs/reference/kubectl/kubectl/) kubectl is a useful management tool for Kubernetes clusters. Install it from the Azure CLI through `az aks install-cli`.
 
-## Provision the database
+### Provision the database
 
 Navigate to `.\java-api\Database` from a PowerShell terminal instance. Then, execute the `create-database.ps1` script, passing the parameters in the order shown below. The command will provision a new Flexible Server instance with the app database schema.
 
@@ -38,9 +38,9 @@ The Flexible Server instance will have 1 vCore, 2 GiB memory, 32 GiB storage, an
 
 > Consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet) for information on how to configure private access for MySQL Flexible Server from Azure Kubernetes Service. This example uses public access for simplicity.
 
-## Create Docker images
+### Create Docker images
 
-### API
+#### API
 
 Navigate to the `.\java-api` directory and enter the following command to create an optimized Docker image. Note that Maven does not need a Dockerfile to create this image, called `noshnowapi:0.0.1-SNAPSHOT`.
 
@@ -48,7 +48,7 @@ Navigate to the `.\java-api` directory and enter the following command to create
 mvn spring-boot:build-image
 ```
 
-### Laravel
+#### Laravel
 
 Navigate to the `.\sample-php-app-rest` directory. Create a file called `.env`. Set `APP_KEY=` as the first line in the file. Then, run `php artisan key:generate` to create an application key in the `.env` file.
 
@@ -62,7 +62,7 @@ Now, in the same directory, enter the following command to create a Docker image
 docker image build -t noshnowui:0.0.1 .
 ```
 
-## Provision Azure Kubernetes Service
+### Provision Azure Kubernetes Service
 
 Navigate to `.\java-api\Kubernetes` from a PowerShell terminal instance. Then, execute the `create-azure-resources.ps1` script, using the same parameters as the prior script. The command will provision Azure Container Registry and push the two Docker images; provision a new Azure Kubernetes Service cluster and provide it access to ACR; create the `contosonoshnow` namespace within the Kubernetes cluster.
 
@@ -72,9 +72,9 @@ Navigate to `.\java-api\Kubernetes` from a PowerShell terminal instance. Then, e
 
 Note that if the resources are deployed to an Azure region that supports Availability Zones, the script will co-locate the Flexible Server instance and the Kubernetes cluster.
 
-## Deploy the API to Azure Kubernetes Service
+### Deploy the API to Azure Kubernetes Service
 
-### Create the API Secret
+#### Create the API Secret
 
 Open the `api.secrets.yml` file in the `Kubernetes` directory. This file contains the base64-encoded password for the application user. Besides the administrative user, the database schema setup script created a less-privileged app user.
 
@@ -84,7 +84,7 @@ Run the command below from the `Kubernetes` directory to create the password sec
 kubectl apply -f api.secrets.yml
 ```
 
-### Create the API Service
+#### Create the API Service
 
 `api.service.yml` defines a Service that directs all traffic received from within the cluster on port 8080 to the pods that serve the Java API. Note that the API service is only accessible from within the cluster.
 
@@ -92,7 +92,7 @@ kubectl apply -f api.secrets.yml
 kubectl apply -f api.service.yml
 ```
 
-### Create the API Deployment
+#### Create the API Deployment
 
 `api.deployment.yml` defines a deployment with two pods, created from the Java API image pushed to ACR.
 
@@ -104,9 +104,9 @@ kubectl apply -f api.deployment.yml
 
 Congratulations. The API to Azure Kubernetes Service is now deployted and exposed internally through a Service.
 
-## Deploy the Laravel app to Azure Kubernetes Service
+### Deploy the Laravel app to Azure Kubernetes Service
 
-### Create the Laravel app Service
+#### Create the Laravel app Service
 
 Navigate to `.\sample-php-app-rest\Kubernetes`. Create a service to expose the Laravel app through a public IP address (in this case, through a Load Balancer provisioned in Azure).
 
@@ -114,7 +114,7 @@ Navigate to `.\sample-php-app-rest\Kubernetes`. Create a service to expose the L
 kubectl apply -f web.service.yml
 ```
 
-### Create the Laravel app Deployment
+#### Create the Laravel app Deployment
 
 The deployment specified in the `web.deployment.yml` file (in the same directory as the previous step) creates two pods from the Laravel app image pushed to ACR.
 
@@ -124,7 +124,7 @@ Again, replace the `[SUFFIX]` placeholder in the file. Then, create the deployme
 kubectl apply -f web.deployment.yml
 ```
 
-## Browse to the app
+### Browse to the app
 
 Run `kubectl get svc` to get the public IP address of `laravel-ui-service`. Copy the `EXTERNAL-IP` value to a browser window.
 

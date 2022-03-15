@@ -1,4 +1,4 @@
-# Server Parameters
+## Server Parameters
 
 MySQL server parameters allow database architects and developers to optimize the MySQL engine for their specific application workloads. Azure Database for MySQL exposes a small subset of the overall parameters. Some parameters that cannot be configured at the server level can be configured at the connection level. Moreover, *dynamic* parameters can be changed without restarting the server, while modifying *static* parameters warrants a restart.
 
@@ -14,22 +14,22 @@ One of the advantages of Flexible Server is its versatility over single server i
 
 Azure Database for MySQL Single Server includes support for the three server parameters listed above. For a comprehensive list of Single Server's supported parameters, consult the [Microsoft documentation.](https://docs.microsoft.com/azure/mysql/concepts-server-parameters)
 
-## Tools to Set Server Parameters
+### Tools to Set Server Parameters
 
 Standard Azure management tools, like the Azure Portal, Azure CLI, and Azure PowerShell, allow for configuring Azure Database for MySQL server parameters.
 
-### Flexible Server Articles
+#### Flexible Server Articles
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli)
 
-### Single Server Articles
+#### Single Server Articles
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-server-parameters)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli)
 - [Azure PowerShell](https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell)
 
-## Server Parameters Best Practices
+### Server Parameters Best Practices
 
 The server parameters below may provide performance improvements for an application workload; however, before modifying these values in production, verify that they yield performance improvements without compromising application stability.
 

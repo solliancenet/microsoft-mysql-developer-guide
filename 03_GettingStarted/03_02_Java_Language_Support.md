@@ -1,4 +1,4 @@
-## Java language support
+### Java language support
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Java.
 

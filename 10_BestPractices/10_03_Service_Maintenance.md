@@ -1,4 +1,4 @@
-# Service maintenance
+## Service maintenance
 
 Like any Azure service, Flexible Server receives patches and functionality upgrades from Microsoft. To ensure that planned maintenance does not blindside administrators, Azure provides them control over when patching occurs.
 
@@ -10,19 +10,19 @@ Azure always rolls out updates to servers with platform-managed schedules before
 
 > As a general rule, only set a maintenance schedule for production instances.
 
-## Notifications
+### Notifications
 
 In most cases, irrespective of whether using a platform-managed or custom maintenance schedule, Azure will notify administrators five days before a maintenance event. The exception is critical security fixes.
 
 Use Azure Service Health to view upcoming infrastructure updates and set notifications. Refer to the links at the end of the document.
 
-## Differences for Single Server
+### Differences for Single Server
 
 Single Server uses a gateway to access database instances, unlike Flexible Server. These gateways have public IP addresses that are retired and replaced, which may impede access from on-premises. Azure notifies customers about gateway retirements three months before. Learn more [here.](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture)
 
 Single Server does not support custom schedules for maintenance. Azure notifies administrators 72 hours before the maintenance event.
 
-## Configure maintenance scheduling & alerting
+### Configure maintenance scheduling & alerting
 
 - [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal)
 - [View service health notifications in the Azure Portal](https://docs.microsoft.com/azure/service-health/service-notifications)

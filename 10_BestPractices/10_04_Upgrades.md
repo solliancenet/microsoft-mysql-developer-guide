@@ -1,4 +1,4 @@
-# Azure Database for MySQL upgrade process
+## Azure Database for MySQL upgrade process
 
 Since Azure Database for MySQL is a PaaS offering, administrators are not responsible for the management of the updates on the operating system or the MySQL software. However, it is important to be aware the upgrade process can be random and when being deployed, will stop the MySQL server workloads. Plan for these downtimes by rerouting the workloads to a read replica in the event the particular instance goes into maintenance mode.
 

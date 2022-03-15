@@ -1,14 +1,14 @@
-# Connect and query Azure Database for MySQL using MySQL Workbench
+## Connect and query Azure Database for MySQL using MySQL Workbench
 
 This section explains how to perform queries against Azure Database for MySQL Flexible Server using MySQL Workbench, a UI-based management tool.
 
-## Setup
+### Setup
 
 Follow one of the methods in the [Provision Flexible Server and a database] document to create a Flexible Server instance with a database.
 
 Download MySQL Workbench from the [MySQL Downloads.](https://dev.mysql.com/downloads/workbench/)
 
-## Instructions
+### Instructions
 
 Explore the [Use MySQL Workbench with Azure Database for MySQL Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/connect-workbench) article to perform the following activities:
 

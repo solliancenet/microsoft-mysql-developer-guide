@@ -1,12 +1,12 @@
-# Connect and query Azure Database for MySQL using the Azure CLI
+## Connect and query Azure Database for MySQL using the Azure CLI
 
 This section explains how to perform queries against Azure Database for MySQL Flexible Server using the Azure CLI and the `az mysql flexible-server` utilities and references the steps in the [Quickstart: Connect and query with Azure CLI with Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/connect-azure-cli#create-a-database) article.
 
-## Setup
+#### Setup
 
 While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, any of the presented provisioning methods in the [Provision Flexible Server and a database] section are possible.
 
-## Instructions
+#### Instructions
 
 The Azure CLI supports running queries interactively, via the `az mysql flexible-server connect` command, which is similar to running queries interactively against a MySQL instance through the MySQL CLI. It is also possible to run an individual SQL query or a SQL file using the `az mysql flexible-server execute` command.
 

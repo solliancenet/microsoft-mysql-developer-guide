@@ -1,4 +1,4 @@
-# Replication
+## Replication
 
 Replication in Flexible Server allows applications to scale by providing **read-only** replicas to serve queries while dedicating write operations to the main Flexible Server instance. Replication from the main instance to the read replicas is asynchronous: consequently, there is a lag between the source instance and the replicas. Microsoft estimates that this lag typically ranges between a few seconds to a few minutes.
 
@@ -6,7 +6,7 @@ Replication in Flexible Server allows applications to scale by providing **read-
 
 Replication is only supported in the General Purpose and Memory Optimized tiers of Flexible Server. Also, it is possible to promote a read replica to being a read-write instance; however, that severs the replication link between the main instance and the former replica, as the former replica cannot return to being a replica.
 
-## Use cases
+### Use cases
 
 Often, developers use load balancers, like ProxySQL, to direct read operations to read replicas automatically. ProxySQL can [run on an Azure VM](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/load-balance-read-replicas-using-proxysql-in-azure-database-for/ba-p/880042) or [Azure Kubernetes Service.](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploy-proxysql-as-a-service-on-kubernetes-using-azure-database/ba-p/1105959)
 
@@ -16,14 +16,14 @@ Using read replicas also helps implement microservices architectures. The image 
 
 ![This image demonstrates a possible microservices architecture with MySQL read replicas.](./media/microservices-with-replication.png "Possible microservices architecture")
 
-## Configuring read replicas
+### Configuring read replicas
 
-### Flexible Server
+#### Flexible Server
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli)
 
-### Single Server
+#### Single Server
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal)
 - [Azure CLI & REST API](https://docs.microsoft.com/azure/mysql/howto-read-replicas-cli)

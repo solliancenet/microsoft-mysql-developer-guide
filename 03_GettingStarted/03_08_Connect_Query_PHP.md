@@ -1,8 +1,8 @@
-# Connect and query Azure Database for MySQL using PHP
+## Connect and query Azure Database for MySQL using PHP
 
 This section demonstrates how to manipulate data in an Azure Database for MySQL Flexible Server instance and query it using PHP and the *MySQLi* library, which is provided with PHP.
 
-## Setup
+### Setup
 
 Follow one of the methods in the [Provision Flexible Server and a database] document to create a Flexible Server instance with a database.
 
@@ -14,7 +14,7 @@ A text editor such as Visual Studio Code may also be useful.
 
 Lastly, download the [connection certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) that is used for SSL connections with the MySQL Flexible Server instance. In these snippets, the certificate is saved to `C:\Tools` on Windows. Adjust this if necessary.
 
-## Instructions
+### Instructions
 
 Microsoft's [quickstart guide](https://docs.microsoft.com/azure/mysql/flexible-server/connect-php) performs standard CRUD operations against the MySQL instance from a console app. This document modifies the code segments from the guide to provide an encrypted connection to the Flexible Server instance.
 
