@@ -2,7 +2,7 @@
 
 With a configured development environment available, it is time to explore the various options available when deploying an application and its corresponding MySQL database.  
 
-The journey will start with a typical classic deployment where the deploymost occurs with a typical web and database server on a `physical` or `virtualized` host operating system. Next, explore the evolution of the potential deployment options from a simple web app deployed to a App Service to a complex progression ending with the application running as containers in Azure Kubernetes Service (AKS) with Azure Database for MySQL hosting the database.
+The journey will start with a classic deployment to a typical web and database server on a `physical` or `virtualized` host operating system. Next, explore the evolution of the potential deployment options from a simple web app deployed to App Service through a complex progression ending with the application running as containers in Azure Kubernetes Service (AKS) with Azure Database for MySQL hosting the database.
 
 ## Development evolution
 
@@ -37,7 +37,7 @@ It is recommended that each of the above scenarios are executed in the order sho
 
 In a classic deployment, development and operations staff will typically set up a web server (such as Internet Information Services (IIS), Apache, or NGINX) on physical or virtualized on-premises hardware.  Most applications using MySQL as the backend are using PHP as the frontend (which is the case for the sample application in this guide); as such, the web server must be configured to support PHP.  This includes configuring and enabling any PHP extensions and installing the required software to support those extensions.
 
-Some web servers are relatively easier to set up than others.  The complexity depends on what the target operating system is and what features the application and database are using, for example SSL/TLS.
+Some web servers are relatively easier to set up than others.  The complexity depends on what the target operating system is and what features the application and database are using, for example, SSL/TLS.
 
 In addition to the web server, it is also necessary to install and configure the physical MySQL database server.  This includes creating the schema and the application users that will be used to access the target database(s).
 
@@ -45,7 +45,7 @@ As part of our sample application and supporting Azure Landing zone created by t
 
 The biggest advantage of a classic on-premises deployment is that you have full control of the environment.  The biggest weakness is you must maintain every aspect of the environment.
 
-To perform a simulated classical deployment in Azure, reference the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
+To perform a simulated classical deployment in Azure, go to the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
 
 ## Azure VM deployment
 
@@ -63,7 +63,7 @@ However, modernizing an application and migrating them to these aformentioned se
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service](./../artifacts/02-02-CloudDeploy-AppSvc/README.md) article.
 
-## App Service with InApp MySQL
+## App Service with In-App MySQL
 
 If the target database is relatively small, it is possible that it can be integrated with the application hosting environment.  Azure App Service provides for this integrated hosting and allows for the deployment of the database to the same App Service and connectivity is provided through the `localhost` server name.
 
@@ -73,7 +73,7 @@ The limits of the MySQL instance are primarily driven by the size of the corresp
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service with MySQL InApp](./../artifacts/02-03-CloudDeploy-InApp/README.md) article.
 
-## Continous Integration (CI) and Continous Delivery (CD)
+## Continuous Integration (CI) and Continuous Delivery (CD)
 
 Doing manual deployments every time a change is made can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  Azure DevOps and Github Actions can be used to automatically deploy code and databases each time a new commit occurs in the codebase.
 
@@ -89,7 +89,7 @@ By building the application and database with a specific target environment in m
 
 Containers solve the potential issue of misconfiguration of the target environment.  By containerizing the application and data, it will ensured that the application will run exactly as intended. Containers can also more easily be scaled using tools such as Kubernetes.
 
-Containerizing an application and data layer can be relatively complex, but once the build environment is setup and working, it is possible to push container updates very quickly to multi-region load-balanced environments.
+Containerizing an application and data layer can be relatively complex, but once the build environment is set up and working, it is possible to push container updates very quickly to multi-region load-balanced environments.
 
 To perform deployments using Docker, reference the [Migrate to Docker Containers](./../artifacts/03-00-Docker/README.md) article. This article containerizes the Laravel sample application and its MySQL database as separate containers that communicate through the Docker runtime on the VM instance.
 
