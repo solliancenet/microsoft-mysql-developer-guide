@@ -8,7 +8,7 @@ It is possible to utilize Visual Studio or Visual Studio Code to create Azure Fu
 
 ### Install pre-requisites
 
-Most of this is done for you in the setup scripts, but it provided here for reference.
+Most of this is done for you in the setup scripts, but is provided here for reference.
 
 - Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
   - Expand the **Download Visual Studio with .NET** dropdown for an installation package with the .NET SDK
@@ -56,8 +56,8 @@ The application here is based on an Http Trigger that will then make a call into
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
             {
-                Server = "mysqldevflex[SUFFIX].mysql.database.azure.com",
-                UserID = "s2admin",
+                Server = "mysqldevSUFFIX.mysql.database.azure.com",
+                UserID = "s2admin@mysqldevSUFFIX",
                 Password = "Solliance123",
                 SslMode = MySqlSslMode.Required
             };
@@ -91,7 +91,7 @@ The application here is based on an Http Trigger that will then make a call into
     ![This image demonstrates how to install the MySqlConnector NuGet package.](./media/nuget-package-install.png "MySqlConnector package")
 
 - Select **Ok** if prompted
-- At the top of `Function1.cs`, reference `MySqlConnector` by adding the following statement.
+- At the top of `Function1.cs` file, add a using reference to `MySqlConnector` by adding the following statement.
 
     ```csharp
     using MySqlConnector;
@@ -119,6 +119,9 @@ Now that the function app is created and working locally, the next step is to pu
 - Select the **mysqldevSUFFIX-AddCustomerFunction** function app
 - Select **Finish**
 - Select **Publish**, and if prompted, select **OK** to update the runtime version.
+- Navigate to the Azure portal and select **AddCustomerFunction** from the **mysqldevSUFFIX-addcustomerfunction** Function App instance
+- Under **Functions**, select **App keys**
+- Copy the function app code
 
 It should now be possible to browse to the function endpoint and see data:
 
@@ -128,7 +131,7 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
 
 ## Test the Function App in the Azure portal
 
-- Navigate to the Azure portal and select **AddCustomerFunction** from the **mysqldev[SUFFIX]-addcustomerfunction** Function App instance
+- Navigate to the Azure portal and select **AddCustomerFunction** from the **mysqldevSUFFIX-addcustomerfunction** Function App instance
 
     ![This image demonstrates how to select the AddCustomerFunction from the Function App instance.](./media/select-function-from-portal.png "Selecting the Function")
 

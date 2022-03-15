@@ -8,6 +8,8 @@ It is possible to utilize several different tools including Visual Studio or Vis
 
 ### Visual Studio Code
 
+> **Note** that these steps have already been performed in the virtual machine environment.
+
 - Install the [`Azure Functions`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) and [`Python`](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extensions
 - Install [Python 3.9.x](https://www.python.org/downloads/)
 - Install the [Azure Functions core tools MSI](https://go.microsoft.com/fwlink/?linkid=2174087)
@@ -16,20 +18,19 @@ It is possible to utilize several different tools including Visual Studio or Vis
 
 The application here is based on an HTTP Trigger that will then make a call into the Azure Database for MySQL instance and add some records. To create this function perform the following steps.
 
-- Install the required software above
 - Open Visual Studio Code, type **Ctrl-Shift-P**
 - Select **Azure Functions: Create New Project**
 
     ![This image demonstrates how to create a new Function App project.](./media/create-function-app-vscode.png "New Function App project")
 
-- Select the project path
-- Select **Python**
+- Select the project path (ex `c:\temp\python-function`)
+- For the language, select **Python**
 - Select the **python 3.9.x** option
 - Select the **HTTP trigger**
 
     ![This image demonstrates configuring the HTTP Trigger for the new Function App.](./media/http-trigger-vscode.png "Configuring HTTP Trigger")
 
-- For the name, type **AddCustomerFunction**
+- For the name, type **AddCustomerFunction**, press **ENTER**
 - For the authorization level, select **Function**
 - Select **Open in current window**
 - Update the function code in `__init__.py` to the following, ensuring that the connection information is replaced. This Function completes the following tasks when its HTTP endpoint receives a request:
