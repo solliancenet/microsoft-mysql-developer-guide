@@ -1,4 +1,4 @@
-# 06 / Summary
+## 06 / Summary
 
 Protecting the data and control plane is just another piece to the puzzle of having a robust, secure and performant application environment.
 

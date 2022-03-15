@@ -1,34 +1,34 @@
-# Introduction to the guide sample application
+## Introduction to the sample application
 
-Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application will need to be modified in order fit the deployment model.
+Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model.
 
-## Sample application overview and story
+### Sample application overview and story
 
-ContosoNoshNow is a delivery service and logistics company focused on making delicious food accessible to their customers no matter where they are located. The company started with a simple web application they could easily maintain and add features to as the business grew. A few years later, their CIO realized the application performance and their current on-premises environment were not meeting their business's growing demand. The application deployment process took hours, yielded unreliable results, and the admin team could not easily find production issues quickly. During the busy hours, customers complained the web application was slow.
+ContosoNoshNow is a delivery service and logistics company focused on making delicious food accessible to its customers no matter where they are located. The company started with a simple web application they could easily maintain and add features to as the business grew. A few years later, their CIO realized the application performance and their current on-premises environment were not meeting their business's growing demand. The application deployment process took hours, yielded unreliable results, and the admin team could not easily find production issues quickly. During the busy hours, customers complained the web application was slow.
 
 The development team knew migrating to Azure could help with these issues.
 
-## Solution architecture
+### Solution architecture
 
 This is the base architecture that will be evolved in the future sample scripts.
 
 ![](media/sample-app-level-1-architecture.png)
 
-## Site map
+### Site map
 
 ![](media/sample-app-site-map.png)
 
-## Sample Application Prerequisites
+### Sample Application Prerequisites
 
 - Azure subscription
 - Git
 - MySQL Workbench
 
-## Quick start: manual Azure set up instructions
+### Quick start: manual Azure set up instructions
 
-As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each steps will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather an requiring to to walk through lengthy setup exercises.
+As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each step will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather an requiring to to walk through lengthy setup exercises.
 
->**Note:** The sample application was tested with PHP version 7.4. **We recommend deploying to 7.4 environment**. Deploying to a 8.X requires a slightly different configuration as the underlying web server has changed.
+>**Note:** The sample application was tested with PHP version 7.4. **We recommend deploying to a 7.4 environment**. Deploying to an 8.x environment requires a slightly different configuration as the underlying web server has changed.
 
 | PHP Version | Web Server |
 |-------------|----------------|
@@ -40,8 +40,7 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 
 >**Warning**: Outdated runtimes are periodically removed from the Web Apps Create and Configuration blades in the Portal. These runtimes are hidden from the Portal when they are deprecated by the maintaining organization or found to have significant vulnerabilities. These options are hidden to guide customers to the latest runtimes where they will be the most successful. Older Azure App Service Docker images can be found [here](https://github.com/Azure-App-Service/php).
 
-
-## Sample application deployment steps
+### Sample application deployment steps
 
 The deployment strategy applied in this sample application focuses on updating project environment variables instead of global environment variable configuration.
 
@@ -218,13 +217,13 @@ The application should now be available and show some sample data, however the w
 
    ![](media/verify-order-data.png)
 
-## What happens to my app during an Azure deployment?
+### What happens to my app during an Azure deployment?
 
 All the officially supported deployment methods make changes to the files in the /home/site/wwwroot folder of the app. These files are used to run the application. The web framework of  choice may use a subdirectory as the site root. For example, Laravel, uses the public/ subdirectory as the site root.
 
 The environment variable could be set globally or at the project level. Setting the environment variables at the project level, when possible, allows for deployment independence and reduces the likelihood of dependency collision.
 
-## Troubleshooting tips
+### Troubleshooting tips
 
 - Select the App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
 - [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)

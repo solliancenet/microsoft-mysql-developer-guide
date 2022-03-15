@@ -1,16 +1,16 @@
-# Connect and query Azure Database for MySQL using Java (Spring Boot)
+## Connect and query Azure Database for MySQL using Java (Spring Boot)
 
 This section will demonstrate how to operate a Spring Framework application that queries Azure Database for MySQL through the Spring Data JPA. We will also present Azure extensions for popular Java development tools.
 
-## Setup
+### Setup
 
-### Prerequisites
+#### Prerequisites
 
 Please complete the instructions in the [Connect and query Azure Database for MySQL using MySQL Workbench] document. When completeing the guide samples, utilize version 8.0.26 to ensure compatibility with Single Server.
 
-Optionally, download Postman or utillize `curl`, two popular http testing tools.
+Optionally, download Postman or utillize `curl`, two popular HTTP testing tools.
 
-### IntelliJ setup
+#### IntelliJ setup
 
 Download the [IntelliJ IDEA](https://www.jetbrains.com/idea/download) IDE. The Community edition will suffice and comes with a custom JDK, so it is not necessary to install the JDK separately.
 
@@ -20,7 +20,7 @@ Once installed, an **Azure Explorer** tab will be visible on the left side of th
 
 ![This image demonstrates the Azure Toolkit for IntelliJ plugin, with the Azure Database for MySQL node expanded.](./media/azure-explorer-intellij.png "Azure Toolkit for IntelliJ plugin installation success")
 
-### App setup
+#### App setup
 
 Clone the [gs-accessing-data-mysql](https://github.com/spring-guides/gs-accessing-data-mysql) String documentation example app repository to the local machine:
 
@@ -32,9 +32,9 @@ Using IntelliJ, browse to the `complete` directory in the repository root. If pr
 
 ![This image shows the complete project opened in IntelliJ in the Project tab.](./media/intellij-complete-spring-boot-project.png "Complete project")
 
-### Database setup
+#### Database setup
 
-The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and will allow too provision a Single Server instance directly within the Azure Explorer.
+The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and will allow you to provision a Single Server instance directly within the Azure Explorer.
 
 1. Navigate to the **Azure Explorer** tab, right-click on **Azure Database for MySQL**, and select **+ Create**.
 
@@ -67,7 +67,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
     CREATE DATABASE newdatabase;
     ```
 
-## Run the app
+### Run the app
 
 1. Open `application.properties` from the project hierarchy: `src` > `main` > `resources`. Delete all the `spring.datasource.*` entries.
 
@@ -91,7 +91,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
     ![This image shows how to start the Spring Boot app from IntelliJ.](./media/start-app-intellij.png "Starting Spring Boot app")
 
-## Test the app
+### Test the app
 
 1. Open Postman, or the REST client tool of choice. Make a `POST` request to `http://localhost:8080/demo/add` with the URL parameters `name` and `email`.
 
@@ -105,7 +105,7 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
     ![This image shows the user data persisted to the MySQL Single Server instance with a query in MySQL Workbench.](./media/result-set-mysql-workbench.png "Data persisted to Single Server")
 
-## Stop the app
+### Stop the app
 
 1. Stop the app in IntelliJ.
 
@@ -113,6 +113,6 @@ The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and 
 
 Congratulations. IntelliJ was successfully installed, the Azure Explorer extension installed, a MySQL Single Server instance created, and an app using the Single Server securely was tested.
 
-## Resources
+### Resources
 
 - [Deploy a Spring Boot application on AKS cluster with MySQL Flexible Server in a VNet](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet)
