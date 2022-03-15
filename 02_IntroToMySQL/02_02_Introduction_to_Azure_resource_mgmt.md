@@ -64,7 +64,7 @@ Azure runs on a common framework of backend resource services and every action t
 
 [Azure Marketplace](https://docs.microsoft.com/marketplace/azure-marketplace-overview) is an online store that contains thousands of IT software applications and services built by industry-leading technology companies. In Azure Marketplace it is possible to find, try, buy, and deploy the software and services needed to build new solutions and manage the cloud infrastructure. The catalog includes solutions for different industries and technical areas, free trials, and also consulting services from Microsoft partners.
 
-![The picture shows an example of a Azure Marketplace search results.](media/azure-marketplace-search-results.png "Azure Marketplace Results")
+![The picture shows an example of Azure Marketplace search results.](media/azure-marketplace-search-results.png "Azure Marketplace Results")
 
 ##### Evolving
 
@@ -123,13 +123,13 @@ After the modules are installed, reference tutorials such as the following to le
 
 ##### Bicep
 
-Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed in a consistent manner.
+Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed consistently.
 
 [Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
 ##### Terraform
 
-[Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/azure/developer/terraform/overview) is adept at deploying an infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
+[Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/azure/developer/terraform/overview) is adept at deploying infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
 
 #### Other tips
 

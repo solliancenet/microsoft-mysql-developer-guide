@@ -79,7 +79,7 @@
         "name": "default",
         "dependsOn": [],
         "properties": {
-          "tags": { "DeploymentId": "[parameters('uniqueSuffix')]" }
+          "tags": { "DeploymentId": "[parameters('uniqueSuffix')]", "Suffix": "[substring(parameters('uniqueSuffix'),0,8)]" }
         }
       },
       {
@@ -1086,6 +1086,44 @@
             }
           ],
           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', concat(variables('resourceName'),'-sf'))]",
+          "reserved": false,
+          "isXenon": false,
+          "hyperV": false,
+          "siteConfig": {},
+          "scmSiteAlsoStopped": false,
+          "clientAffinityEnabled": true,
+          "clientCertEnabled": false,
+          "hostNamesDisabled": false,
+          "containerSize": 0,
+          "dailyMemoryTimeQuota": 0,
+          "httpsOnly": false,
+          "redundancyMode": "None"
+        }
+      },
+      {
+        "type": "Microsoft.Web/sites",
+        "apiVersion": "2020-12-01",
+        "name": "[concat(variables('resourceName'),'linux')]",
+        "location": "[variables('location')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Web/serverfarms', concat(variables('resourceName'),'-linux'))]"
+        ],
+        "kind": "app",
+        "properties": {
+          "enabled": true,
+          "hostNameSslStates": [
+            {
+              "name": "[concat(variables('resourceName'), '.azurewebsites.net')]",
+              "sslState": "Disabled",
+              "hostType": "Standard"
+            },
+            {
+              "name": "[concat(variables('resourceName'), '.scm.azurewebsites.net')]",
+              "sslState": "Disabled",
+              "hostType": "Repository"
+            }
+          ],
+          "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', concat(variables('resourceName'),'-linux'))]",
           "reserved": false,
           "isXenon": false,
           "hyperV": false,

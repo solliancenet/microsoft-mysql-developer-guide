@@ -8,21 +8,18 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in Visual Studio code
 2. If prompted, select **Yes, I trust the authors**
-3. Open a terminal window, run the following:
-
-    ```PowerShell
-    Compress-Archive -Path .\sample-php-app\* -DestinationPath site.zip
-    ```
-
-4. Deploy the zip to Azure, run the following, be sure to replace the `SUFFIX`:
+3. Open a terminal window, run the following to deploy the zip to Azure, be sure to replace the `SUFFIX`:
 
     ```PowerShell
     Connect-AzAccount
 
+    #if you have more than on subscription
+    Select-AzSubscription "SUBSCRIPTION_NAME";
+
     $suffix = "SUFFIX";
     $resourceGroupName = "RESOURCE_GROUP_NAME";
 
-    $appName = "mysqldev$suffix";
+    $appName = "mysqldev$suffix-linux";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 
     #NOTE: This can't be used this for linux based deployments
@@ -30,9 +27,11 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
     7z a -r ./site.zip ./sample-php-app/*
     
-    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip"
+    #Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip" -force
 
     az login --scope https://management.core.windows.net//.default
+
+    az account set --name "SUBSCRIPTION_NAME"
 
     az webapp deploy --resource-group $resourceGroupName --name $appName --src-path "C:\labfiles\microsoft-mysql-developer-guide\site.zip" --type zip
     ```
@@ -42,25 +41,26 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 1. Open the Azure Portal
 2. Browse to the **mysqldevSUFFIX** app service
 3. Under **Development tools**, select **SSH**, then select **Go**
-4. Run the following:
+4. Login using your lab credentials
+5. Run the following:
 
     ```bash
     cp /etc/nginx/sites-available/default /home/site/default
     ```
 
-5. Edit the `default` file
+6. Edit the `default` file
 
     ```bash
     nano /home/site/default
     ```
 
-6. Modify the root to be the following:
+7. Modify the root to be the following:
 
     ```bash
     root /home/site/wwwroot/public
     ```
 
-7. Add the following to the `location` section after the `index  index.php index.html index.htm hostingstart.html;` line:
+8. Add the following to the `location` section after the `index  index.php index.html index.htm hostingstart.html;` line:
 
     ```bash
     try_files $uri $uri/ /index.php?$args;
@@ -68,13 +68,14 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
     ![This image demonstrates the changes made to the /home/site/default file in the SSH session.](./media/web-server-config.png "Web server configuration file changes")
 
-8. Add a startup.sh file:
+9. Press **Ctrl-X**, then select **Y** to save the file
+10. Add a startup.sh file:
 
    ```bash
     nano /home/site/startup.sh
     ```
 
-9. Copy and paste the following:
+10. Copy and paste the following:
 
     ```bash
     #!/bin/bash
@@ -83,29 +84,23 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     service nginx reload
     ```
 
-10. Exit the editor. Navigate to `AppServiceProvider.php`.
-
-    ```bash
-    nano /home/site/wwwroot/app/Providers/AppServiceProvider.php
-    ```
-
-11. Open the `.env` file in the text editor.
+12. Open the `.env` file in the text editor.
 
     ```bash
     nano /home/site/wwwroot/.env
     ```
 
-12. Update the `APP_URL` parameter to the App Service URL (found on the **Overview** tab of the Azure portal). Then, set `ASSET_URL` to `APP_URL`.
+13. Update the `APP_URL` parameter to the App Service URL (found on the **Overview** tab of the Azure portal). Then, set `ASSET_URL` to `APP_URL`.
 
     ```bash
     APP_URL=https://[APP SERVICE NAME].azurewebsites.net
     ASSET_URL = "${APP_URL}"
     ```
 
-13. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
-14. Select **General settings**
-15. In the startup command textbox, type `/home/site/startup.sh`
-16. Select **Save**
+14. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
+15. Select **General settings**
+16. In the startup command textbox, type `/home/site/startup.sh`
+17. Select **Save**
 
 ### Test the Application
 
@@ -141,7 +136,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 7. Set the servername variable to `mysqldevSUFFIX.mysql.database.azure.com`
 8. Set the username to `s2admin`
 9. Set the password to `Solliance123`
-10. Press Ctrl-X, then Y to save the file
+10. Press **Ctrl-X**, then **Y** to save the file
 
 ## Test new settings #1
 

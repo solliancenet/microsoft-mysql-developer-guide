@@ -74,7 +74,7 @@ Like other Azure resources, API Management offers comprehensive RBAC support, ac
 - [About API Management](https://docs.microsoft.com/azure/api-management/api-management-key-concepts)
 - [Self-hosted gateway overview](https://docs.microsoft.com/azure/api-management/self-hosted-gateway-overview)
 
-## Event driven - Azure Event Grid vs. Service Bus vs. Event Hubs
+## Event-driven - Azure Event Grid vs. Service Bus vs. Event Hubs
 
 Event-driven apps create, ingest, and process events (state changes) in real-time. Event producers and event consumers are loosely-coupled, and every consumer sees every event. Event-driven architectures can perform complex event handling, such as aggregations over time, and operate with large volumes of data produced rapidly.
 
@@ -96,11 +96,25 @@ Azure Event Hubs facilitates the ingestion and replay of event data. It is optim
 
 An e-commerce site can use Service Bus to process an order, Event Hubs to capture site telemetry, and Event Grid to respond to events like an item was shipped. 
 
-## Batch processing – chron jobs, web jobs
+## Cron jobs
 
-## Azure Logic Apps – simple orchestration
+Developers use cron jobs to run operations on a schedule. They are often useful for administrative tasks, like taking site backups. Azure Functions and Logic Apps support cron jobs:
+
+- [Azure Functions:](https://docs.microsoft.com/azure/azure-functions/functions-bindings-timer) The timer trigger executes a function on a schedule. Azure Functions supports more complex scheduling tasks, like specifying the cron job time precision.
+- [Logic Apps:](https://docs.microsoft.com/en-us/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows) Logic Apps supports Recurrence triggers and Sliding Window triggers. Recurrence triggers run Logic Apps on a schedule, while Sliding Window triggers extend Recurrence triggers by executing occurrences that were missed (e.g. the Logic App was disabled).
+
+## WebJobs
+
+Azure WebJobs, like Azure Functions, processes events in Azure services. WebJobs executes code in an App Service instance, and it works best with the WebJobs SDK. However, WebJobs with the WebJobs SDK only supports C#.
+
+Azure Functions is built on the WebJobs SDK. It offers more developer flexibility than WebJobs and serverless execution. However, WebJobs provides more control over how events are received than what Azure Functions exposes.
 
 ## Advanced orchestration - Azure Data Factory
 
+Azure Data Factory supports serverless data integration at scale. Users author data integration *pipelines* that consist of multiple *activities*. Activities operate on *datasets* (data sources and sinks). Data Factory compute environments are known as *integration runtimes*. Integration runtimes can be hosted in Azure or on-premises.
+
+Azure Data Factory supports both Azure PaaS and generic (on-premises) MySQL instances.
+
+Developers can execute Data Factory pipelines manually, on a schedule, or in response to Azure events through the Event Grid integration.
 
 <summary of when to use a service picture>

@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  web:
+      image: mysqldevSUFFIX.azurecr.io/store-web:latest
+      environment:
+      - DB_DATABASE=contosostore
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_HOST=db
+      - DB_PORT=3306
+      ports:
+      - "8080:80" 
+      depends_on:
+      - db 
+  db:
+      image: mysqldevSUFFIX.azurecr.io/store-db:latest
+      volumes:
+      - ${WEBAPP_STORAGE_HOME}/site/database:/var/lib/mysql
+      restart: always
+      environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=contosostore
+      ports:
+      - "3306:3306"
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      ports:
+          - '8081:80'
+      restart: always
+      environment:
+          PMA_HOST: db
+      depends_on:
+        - db
