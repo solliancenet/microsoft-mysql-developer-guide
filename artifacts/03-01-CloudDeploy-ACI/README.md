@@ -26,7 +26,7 @@ Now that containerized versions of the application exists, they can now be hoste
     $context = $(New-AzStorageContext -StorageAccountName $resourceName -StorageAccountKey $storageKey);
 
     #create a new azure file share
-    New-AzureStorageShare -Name "db-volume" -Context $context
+    New-AzStorageShare -Name "db-volume" -Context $context
     
     $containerName = "store-db";
     $env1 = New-AzContainerInstanceEnvironmentVariableObject -Name "MYSQL_DATABASE" -Value "contosostore";
@@ -106,7 +106,7 @@ In the previous steps, a container instance was created for each of the containe
           - db
     ```
 
-2. In a PowerShell window, run the following command:
+2. In a PowerShell window, run the following command, be sure to replace the `SUFFIX` and other variable values:
 
     ```powershell
     $acrName = "mysqldevSUFFIX";
@@ -118,7 +118,7 @@ In the previous steps, a container instance was created for each of the containe
 
     az login;
 
-    az webapp create --resource-group $resourceGroupName --plan $resourceName --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml;
+    az webapp create --resource-group $resourceGroupName --plan "$resourceName-sf" --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml;
 
     az webapp config appsettings set --resource-group $resourceGroupName --name $resourceName --settings DOCKER_REGISTRY_SERVER_USERNAME=$($creds.Username)
 
@@ -141,4 +141,4 @@ In the previous steps, a container instance was created for each of the containe
     az webapp config container set --resource-group $resourceGroupName --name $resourceName --multicontainer-config-type compose --multicontainer-config-file docker-compose-contoso.yml
     ```
 
-3. Switch back to the Azure Portal, browse to the Azure App Service. If troubleshooting is needed, view the container logs by browsing to `https://mysqldevmbsjnv3m.scm.azurewebsites.net/api/logs/docker`.  Copy the path to the docker file and paste it into a new window, review the logs and fix any errors.
+3. Switch back to the Azure Portal, browse to the Azure App Service. If troubleshooting is needed, view the container logs by browsing to `https://mysqldevSUFFIX.scm.azurewebsites.net/api/logs/docker`.  Copy the path to the docker file and paste it into a new window, review the logs and fix any errors.

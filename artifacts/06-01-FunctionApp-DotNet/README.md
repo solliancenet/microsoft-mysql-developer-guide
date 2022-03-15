@@ -6,7 +6,9 @@ https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/how-to-conn
 
 It is possible to utilize Visual Studio or Visual Studio Code to create Azure Functions.  
 
-### Visual Studio
+### Install pre-requisites
+
+Most of this is done for you in the setup scripts, but it provided here for reference.
 
 - Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
   - Expand the **Download Visual Studio with .NET** dropdown for an installation package with the .NET SDK
@@ -15,15 +17,16 @@ It is possible to utilize Visual Studio or Visual Studio Code to create Azure Fu
 
 #### Install the Azure development workload for Visual Studio
 
-- Open the Visual Studio installer from the Start menu. Select **Modify** next to the **Visual Studio Community 2022** installation
+- Open the Visual Studio installer from the Start menu.
+- Select **Modify** next to the **Visual Studio Community 2022** installation
 - Select the **Azure development** tile below the **Web & Cloud** header. Then, select **Modify** at the lower right-hand corner of the window
 
 ## Create the Function Application
 
 The application here is based on an Http Trigger that will then make a call into the Azure Database for MySQL instance and add some records. Create this function by performing the following steps.
 
-- Install the required software above
-- Open Visual Studio, select **Create a new project**
+- Open Visual Studio, if prompted, sign in
+- Select **Create a new project**
 - Search for **Azure Functions**
 - Select **C#** for the language
 - Select **Next**

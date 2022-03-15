@@ -147,11 +147,15 @@ cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
 .\mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 's2admin'@'localhost' IDENTIFIED BY 'P@s`$w0rd123!';"
 .\mysql -u root -e "CREATE DATABASE contosostore;"
 
-$extensions = @("ms-vscode-deploy-azure.azure-deploy", "ms-azuretools.vscode-docker", "ms-python.python");
+$extensions = @("ms-vscode-deploy-azure.azure-deploy", "ms-azuretools.vscode-docker", "ms-python.python", "ms-azuretools.vscode-azurefunctions");
 
 InstallVisualStudioCode $extensions;
 
+InstallVisualStudio "community";
+
 Install7Zip;
+
+InstallFiddler;
 
 #to add the user to docker group
 $global:localusername = "wsuser";

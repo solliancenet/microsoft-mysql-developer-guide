@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ContosoCoffee";
+$dbname = "contosostore";
 
 $conn = mysqli_init();
 
