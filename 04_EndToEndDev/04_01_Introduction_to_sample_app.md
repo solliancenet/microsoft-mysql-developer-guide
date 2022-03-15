@@ -1,4 +1,4 @@
-# Introduction to the guide sample application
+# Introduction to the sample application
 
 Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application will need to be modified in order fit the deployment model.
 
