@@ -132,6 +132,8 @@ Set-WebConfigurationProperty $configPath -Name monitorChangesTo -Value '$phpDire
 
 InstallMySql
 
+InstallPython "3.9";
+
 #install composer globally
 choco install composer
 
