@@ -2,21 +2,25 @@
 
 In the previous function apps the connection information was embedded into the function app code.  As was covered in the traditional deployment models, it is a best practice to remove this information and place it into Azure Key Vault.  Here we will utilize the features of Azure to use Managed Identities to connect to the database.
 
+> **NOTE** This is currenlty only supported on Azure Database for Single Server.
+
 ## Enable MySQL Azure AD Authentication
 
 - Switch to the Azure Portal
-- Browse to the Azure Database for MySQL Flexible Server instance
-- Select **TODO**
+- Browse to the **mysqldevSUFFIX** Azure Database for MySQL Single Server instance
+- Under **Settings**, select **Active Directory admin**
+- Select **Set admin**
+- For the administrator, select your lab credentials
 
 ## Create Managed Identity
 
-- Browse to the Function App
+- Browse to the **mysqldevSUFFIX-addcustomerfunction** Function App
 - Under **Settings**, select **Identity**
 - For the **System assigned** identity, toggle to **On**
 - Select **Save**, then select **Yes**
 - Browse to the **Azure Active Directory** blade
 - Select **Enterprise Applications**
-- Search for the function application name, then select it.
+- Search for the **mysqldevSUFFIX-addcustomerfunction** function application name, then select it.
 - Copy the **Application ID** for later use
 
 ## Add Users to Database
@@ -34,7 +38,7 @@ FLUSH PRIVILEGES;
 
 ## Modify the code
 
-- Open the function app folder in Visual Studio Code
+- Open the `C:\labfiles\microsoft-mysql-developer-guide\Artifacts\06-04-FunctionApp-MSI` function app folder in Visual Studio Code
 - Add the following code to get an access token \ password for the managed identity:
 
 ```python

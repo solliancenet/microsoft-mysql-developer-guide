@@ -14,7 +14,7 @@
 - Select the subscription
 - Select the lab MySQL server
 - For the database name, type **ContosoStore**
-- For the username, type **s2admin**
+- For the username, type **wsuser**
 - For the password, type **Solliance123**
 - Select **Create**
 

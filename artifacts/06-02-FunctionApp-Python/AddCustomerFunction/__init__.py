@@ -13,9 +13,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # Connect to MySQL
     cnx = mysql.connector.connect(
-        user="s2admin", 
+        user="wsuser", 
         password='Solliance123', 
-        host="mysqldevflexmbsjnv3m.mysql.database.azure.com", 
+        host="mysqldevSUFFIXflex.mysql.database.azure.com", 
         port=3306,
         ssl_ca=crtpath,
         tls_versions=['TLSv1.2']

@@ -13,7 +13,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
   ![This image demonstrates the first provisioning screen for Azure Database for MySQL Flexible Server.](./media/az-mysql-db-create.png "First provisioning screen for Flexible Server")
 
 - Select the target subscription and resource group
-- For the name, type **mysqldevflexSUFFIXpriv**
+- For the name, type **mysqldevSUFFIXflexpriv**
 - Select the resource group region (it must be in the region that the VNet is in)
 - For **Workload type**, select **Development** to save costs
 - For **Availability zone**, select **No preference**
@@ -23,7 +23,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
   ![This image demonstrates the server parameters provided to the Flexible Server instance in the Azure portal.](./media/server-details-port.png "Server parameters")
 
 - Do not enable high availability
-- For the admin username, type **s2admin**
+- For the admin username, type **wsuser**
 - For the password, type **S0lliance123**
 - Select **Next: Networking >**
 - Select **Private access (VNet Integration)**
@@ -52,10 +52,10 @@ TODO: Link private DNS zone to VM (hub) VNet
 
 ## Configure the new Flexible Server instance
 
-- Open a command prompt window and enter the following command to initiate a connection to the Flexible Server instance. Provide `S0lliance123` as the password, when prompted.
+- Open a command prompt window and enter the following command to initiate a connection to the Flexible Server instance. Provide `S0lliance123` as the password, when prompted. Be sure to replace the `SUFFIX`:
 
   ```cmd
-  "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevflex[SUFFIX]priv.mysql.database.azure.com -u s2admin -p
+  "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevSUFFIXflexpriv.mysql.database.azure.com -u wsuser -p
   ```
 
 - Create a new database, titled `noshnowapp`. Then, create a new table for orders. It is a simplified version of the table used by the Contoso NoshNow application.
@@ -122,12 +122,12 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - Select **Get Rows**
 - Update the step variables:
   - For the name, type **mysqlflex**
-  - For the server, type **mysqldevflexSUFFIXpriv.mysql.database.azure.com**.  
+  - For the server, type **mysqldevSUFFIXflexpriv.mysql.database.azure.com**.  
 
   > **Note** It may be necessary to put the private IP address if DNS resolution does not kick in in a reasonable amount of time.
 
   - For the database, type **noshnowapp**
-  - For username, type **s2admin**
+  - For username, type **wsuser**
   - For password, type **S0lliance123**
   - For the gateway, select **gateway-mysql**
 - Select **Create**

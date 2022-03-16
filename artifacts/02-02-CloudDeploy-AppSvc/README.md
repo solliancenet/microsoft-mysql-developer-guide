@@ -134,7 +134,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     ```
 
 7. Set the servername variable to `mysqldevSUFFIX.mysql.database.azure.com`
-8. Set the username to `s2admin`
+8. Set the username to `wsuser`
 9. Set the password to `Solliance123`
 10. Press **Ctrl-X**, then **Y** to save the file
 
@@ -215,8 +215,8 @@ Putting credential in the PHP files is not a best practice, it is better to util
    - Under **Settings**, select **Configuration**
    - Select **New application setting**
    - Add the following:
-     - `DB_HOST` = `mysqldevflexSUFFIX.mysql.database.azure.com`
-     - `DB_USERNAME` = `s2admin`
+     - `DB_HOST` = `mysqldevSUFFIXflex.mysql.database.azure.com`
+     - `DB_USERNAME` = `wsuser`
      - `DB_PASSWORD` = `Solliance123`
      - `DB_DATABASE` = `contosostore`
      - `DB_PORT` = `3306`

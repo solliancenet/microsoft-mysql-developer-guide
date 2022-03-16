@@ -57,7 +57,7 @@ The application here is based on an Http Trigger that will then make a call into
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
             {
                 Server = "mysqldevSUFFIX.mysql.database.azure.com",
-                UserID = "s2admin@mysqldevSUFFIX",
+                UserID = "wsuser@mysqldevSUFFIX",
                 Password = "Solliance123",
                 SslMode = MySqlSslMode.Required
             };

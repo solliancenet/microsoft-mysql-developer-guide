@@ -48,9 +48,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
     # Connect to MySQL
     cnx = mysql.connector.connect(
-        user="s2admin", 
+        user="wsuser", 
         password='Solliance123', 
-        host="mysqldevflex[SUFFIX].mysql.database.azure.com", 
+        host="mysqldevSUFFIXflex.mysql.database.azure.com", 
         port=3306
     )
     logging.info(cnx)
@@ -70,7 +70,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     )
 ```
 
-- Open the terminal window
+- Open a terminal window (Select **Terminal->New Terminal window**)
   - Verify that the virtual environment created by the Azure Functions extension (the command prompt will be prefaced by `(.venv)`) is being used.
     - If the virtual environment is not active, open the command palette, select `Python: Select Interpreter`, and choose the virtual environment
   - Install the MySQL connector:
@@ -93,7 +93,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     http://localhost:7071/api/AddCustomerFunction
     ```
 
-- Azure recommends that Flexible Server clients use the service's public SSL certificate for secure access. Download the [Azure SSL certificate](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) to the Function App project root directory
+- You should get an error. Browse to the Azure Portal and the mysqldevSUFFIXflex flexible server
+- Under **Settings**, select **Networking**
+- Select **Add current IP address (x.x.x.x)**
+- Select **Save**
+- Retry the above url, the data will be displayed, however it is over non-SSL connection. Azure recommends that Flexible Server clients use the service's public SSL certificate for secure access. Download the [Azure SSL certificate](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) to the Function App project root directory
 - Add the following lines to the Python code to utilize the Flexible Server public certificate and support connections over TLS 1.2:
 
 ```python
@@ -102,9 +106,9 @@ crtpath = '../BaltimoreCyberTrustRoot.crt.pem'
 
 # Connect to MySQL
 cnx = mysql.connector.connect(
-    user="s2admin", 
+    user="wsuser", 
     password='Solliance123', 
-    host="mysqldevflex[SUFFIX].mysql.database.azure.com", 
+    host="mysqldevSUFFIXflex.mysql.database.azure.com", 
     port=3306,
     ssl_ca=crtpath,
     tls_versions=['TLSv1.2']
@@ -117,7 +121,7 @@ cnx = mysql.connector.connect(
 
 Now that the Function App is created and working locally, the next step is to publish the Function App to Azure.  This will require some small changes.
 
-- Add the following Python function:
+- Add the following to the Python code:
 
 ```Python
 import pathlib
@@ -133,7 +137,7 @@ def get_ssl_cert():
 ssl_ca=get_ssl_cert(),
 ```
 
-- Open the `requirements.txt` file and add the following. The Azure Functions runtime will install the dependencies in this file
+- Open the `requirements.txt` file and modify to the following. The Azure Functions runtime will install the dependencies in this file
 
 ```text
 azure-functions

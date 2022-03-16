@@ -2446,7 +2446,7 @@ machine by doing the following:
 -   Select **Connect-\>RDP**
 -   Select **Download RDP file**
 -   Open the downloaded file, select **Connect**
--   For the username, type **s2admin**
+-   For the username, type **wsuser**
 -   For the password, type **S0lliance123**
 
 Once in the virtual machine, you should see that all the tools have

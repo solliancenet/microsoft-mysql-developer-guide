@@ -23,6 +23,7 @@
       "postInstallParameters": "[concat(' -azureTenantID ', variables('azureTenantID'), ' -azureSubscriptionID ', variables('azureSubscriptionID'))]",
       "shPostInstallParameters": "[concat(variables('azureTenantID'), ' ', variables('azureSubscriptionID'))]",
       "location": "[resourceGroup().location]",
+      "databaseName": "contosostore",
       "azureSubscriptionID": "[subscription().subscriptionId]",
       "azureTenantID": "[subscription().tenantId]",
       "rgName": "[resourceGroup().name]",
@@ -134,24 +135,6 @@
                     "resizeTimeout": "PT15M"
                 }
             }
-        }
-    },
-      {
-        "type": "Microsoft.DataMigration/services",
-        "apiVersion": "2017-11-15-privatepreview",
-        "name": "[variables('resourceName')]",
-        "location": "[resourceGroup().location]",
-        "dependsOn": [
-            "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), '-hub'), 'default')]"
-        ],
-        "sku": {
-            "name": "Standard_1vCores",
-            "tier": "Standard",
-            "size": "1 vCores"
-        },
-        "kind": "Cloud",
-        "properties": {
-            "virtualSubnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), '-hub'), 'default')]"
         }
     },
       {
@@ -405,39 +388,37 @@
         },
         "identity": { "type": "SystemAssigned" }
       },
-      {
+      {        
         "type": "Microsoft.DBforMySQL/flexibleServers",
         "apiVersion": "2021-05-01",
         "name": "[concat(variables('resourceName'),'flex')]",
         "location": "[resourceGroup().location]",
-        "sku": {
-            "name": "Standard_B1ms",
-            "tier": "Burstable",
-            "capacity": 4
-        },
         "properties": {
-          "administratorLogin": "[parameters('administratorLogin')]",
-          "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+            "administratorLogin": "[parameters('administratorLogin')]",
+            "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+            "createMode": "Default",
             "storage": {
                 "storageSizeGB": 20,
                 "iops": 360,
                 "autoGrow": "Enabled"
             },
-            "version": "8.0.21",
-            "availabilityZone": "1",
-            "publicNetworkAccess": "Enabled",
-            "replicationRole": "None",
-            "network": {},
-            "backup": {
-                "backupRetentionDays": 7,
-                "geoRedundantBackup": "Disabled"
+            "sku": {
+                "name": "Standard_B1ms",
+                "tier": "Burstable"
             },
-            "highAvailability": {
-                "mode": "Disabled",
-                "standbyAvailabilityZone": "[parameters('standbyAvailabilityZone')]"
-            },
-            "dataencryption": null
-        }
+            "version": "8.0.21"
+        },
+        "resources": [
+            {
+                "type": "databases",
+                "apiVersion": "2021-05-01",
+                "name": "[variables('databaseName')]",
+                "dependsOn": [
+                    "[resourceId('Microsoft.DBforMySQL/flexibleServers', concat(variables('resourceName'),'flex'))]"
+                ],
+                "properties": {}
+            }
+        ]
     },
       {
         "type": "Microsoft.DBforMySQL/servers",
@@ -904,20 +885,6 @@
         }
       },
       {
-        "type": "Microsoft.Authorization/roleAssignments",
-        "apiVersion": "2018-09-01-preview",
-        "name": "[guid(concat(resourceGroup().id, '/', variables('storageBlobDataOwnerRoleID'), '/', variables('resourceName'), '2'))]",
-        "location": "[variables('location')]",
-        "dependsOn": [
-          "[concat('Microsoft.MachineLearningServices/workspaces/', variables('resourceName'))]"
-        ],
-        "properties": {
-          "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('storageBlobDataOwnerRoleID'))]",
-          "principalId": "[reference(concat('Microsoft.MachineLearningServices/workspaces/', variables('resourceName')), '2021-10-01', 'Full').identity.principalId]",
-          "principalType": "ServicePrincipal"
-        }
-      },
-      {
         "type": "microsoft.operationalinsights/workspaces",
         "apiVersion": "2021-06-01",
         "name": "[variables('resourceName')]",
@@ -1027,7 +994,8 @@
         "apiVersion": "2021-02-01",
         "name": "[concat(variables('resourceName'),'-web', '/vnet-web-int')]",
         "dependsOn": [
-          "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'), '-web'))]"
+          "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'), '-web'))]",
+          "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), '-web'), 'default')]"
         ],
         "properties": {
           "addressPrefix": "10.3.2.0/24",
@@ -1041,7 +1009,8 @@
         "apiVersion": "2021-02-01",
         "name": "[concat(variables('resourceName'),'-web', '/AzureFirewallSubnet')]",
         "dependsOn": [
-          "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'), '-web'))]"
+          "[resourceId('Microsoft.Network/virtualNetworks', concat(variables('resourceName'), '-web'))]",
+          "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(variables('resourceName'), '-web'), 'vnet-web-int')]"
         ],
         "properties": {
           "addressPrefix": "10.3.1.0/24",

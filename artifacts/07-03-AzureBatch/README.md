@@ -27,7 +27,7 @@
   - DB_HOST = {DB_IP}
   - DB_DATABASE = contosostore
   - DB_PORT = 3306
-  - DB_USER = s2admin
+  - DB_USER = wsuser
   - DB_PASSWORD = S0lliance123
 - Select **OK**
 
@@ -170,7 +170,7 @@ write-host "AppId: $appId"
 - Select **Generate/Import**, create the following secrets:
   - DB-PASSWORD = S0lliance123
   - DB-SERVER = localhost
-  - DB-USER = s2admin
+  - DB-USER = wsuser
   - DB-DATABASE = contosostore
 
 ### Create a new task with secure settings

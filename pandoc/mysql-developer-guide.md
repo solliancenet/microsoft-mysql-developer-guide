@@ -2638,7 +2638,7 @@ machine by doing the following:
 -   Select **Connect-\>RDP**
 -   Select **Download RDP file**
 -   Open the downloaded file, select **Connect**
--   For the username, type **s2admin**
+-   For the username, type **wsuser**
 -   For the password, type **S0lliance123**
 
 Once in the virtual machine, you should see that all the tools have
@@ -5562,7 +5562,7 @@ Azure Database for MySQL.
  ```
 
 7. Set the servername variable to `mysqldevSUFFIX.mysql.database.azure.com`
-8. Set the username to `s2admin`
+8. Set the username to `wsuser`
 9. Set the password to `Solliance123`
 10. Press **Ctrl-X**, then **Y** to save the file
 
@@ -5643,8 +5643,8 @@ Putting credential in the PHP files is not a best practice, it is better to util
 - Under **Settings**, select **Configuration**
 - Select **New application setting**
 - Add the following:
-  - `DB_HOST` = `mysqldevflexSUFFIX.mysql.database.azure.com`
-  - `DB_USERNAME` = `s2admin`
+  - `DB_HOST` = `mysqldevSUFFIXflex.mysql.database.azure.com`
+  - `DB_USERNAME` = `wsuser`
   - `DB_PASSWORD` = `Solliance123`
   - `DB_DATABASE` = `contosostore`
   - `DB_PORT` = `3306`
@@ -6818,8 +6818,8 @@ Create this function by performing the following steps.
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder
             {
-                Server = "mysqldevflex[SUFFIX].mysql.database.azure.com",
-                UserID = "s2admin",
+                Server = "mysqldevSUFFIXflex.mysql.database.azure.com",
+                UserID = "wsuser",
                 Password = "Solliance123",
                 SslMode = MySqlSslMode.Required
             };
@@ -7002,9 +7002,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
     # Connect to MySQL
     cnx = mysql.connector.connect(
-        user="s2admin", 
+        user="wsuser", 
         password='Solliance123', 
-        host="mysqldevflex[SUFFIX].mysql.database.azure.com", 
+        host="mysqldevSUFFIXflex.mysql.database.azure.com", 
         port=3306
     )
     logging.info(cnx)
@@ -7069,9 +7069,9 @@ crtpath = '../BaltimoreCyberTrustRoot.crt.pem'
 
 # Connect to MySQL
 cnx = mysql.connector.connect(
-    user="s2admin", 
+    user="wsuser", 
     password='Solliance123', 
-    host="mysqldevflex[SUFFIX].mysql.database.azure.com", 
+    host="mysqldevSUFFIXflex.mysql.database.azure.com", 
     port=3306,
     ssl_ca=crtpath,
     tls_versions=['TLSv1.2']
@@ -7320,7 +7320,7 @@ private endpoint.
 
 -   Select the target subscription and resource group
 
--   For the name, type **mysqldevflexSUFFIXpriv**
+-   For the name, type **mysqldevSUFFIXflexpriv**
 
 -   Select the resource group region (it must be in the region that the
     VNet is in)
@@ -7339,7 +7339,7 @@ private endpoint.
 
 -   Do not enable high availability
 
--   For the admin username, type **s2admin**
+-   For the admin username, type **wsuser**
 
 -   For the password, type **S0lliance123**
 
@@ -7392,7 +7392,7 @@ TODO: Link private DNS zone to VM (hub) VNet
     `S0lliance123` as the password, when prompted.
 
     ``` cmd
-    "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevflex[SUFFIX]priv.mysql.database.azure.com -u s2admin -p
+    "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevSUFFIXflexpriv.mysql.database.azure.com -u wsuser -p
     ```
 
 -   Create a new database, titled `noshnowapp`. Then, create a new table
@@ -7489,13 +7489,13 @@ for new Orders in the database and then send an email.
 
     -   For the name, type **mysqlflex**
     -   For the server, type
-        **mysqldevflexSUFFIXpriv.mysql.database.azure.com**.
+        **mysqldevSUFFIXflexpriv.mysql.database.azure.com**.
 
     > **Note** It may be necessary to put the private IP address if DNS
     > resolution does not kick in in a reasonable amount of time.
 
     -   For the database, type **noshnowapp**
-    -   For username, type **s2admin**
+    -   For username, type **wsuser**
     -   For password, type **S0lliance123**
     -   For the gateway, select **gateway-mysql**
 
@@ -7611,7 +7611,7 @@ for new Orders in the database and then send an email.
 -   Select the subscription
 -   Select the lab MySQL server
 -   For the database name, type **ContosoStore**
--   For the username, type **s2admin**
+-   For the username, type **wsuser**
 -   For the password, type **Solliance123**
 -   Select **Create**
 
@@ -7705,7 +7705,7 @@ TODO \# Azure Batch with MySQL
     -   DB_HOST = {DB_IP}
     -   DB_DATABASE = contosostore
     -   DB_PORT = 3306
-    -   DB_USER = s2admin
+    -   DB_USER = wsuser
     -   DB_PASSWORD = S0lliance123
 -   Select **OK**
 
@@ -7861,7 +7861,7 @@ write-host "AppId: $appId"
 -   Select **Generate/Import**, create the following secrets:
     -   DB-PASSWORD = S0lliance123
     -   DB-SERVER = localhost
-    -   DB-USER = s2admin
+    -   DB-USER = wsuser
     -   DB-DATABASE = contosostore
 
 ### Create a new task with secure settings

@@ -7,7 +7,7 @@ mkdir $path
 copy ./sample-php-app $path
 
 #deploy the database
-$username = "s2admin"
+$username = "wsuser"
 $password = "S2@dmins2@dmin"
 $server = "localhost"
 $database = "ContosoStore"

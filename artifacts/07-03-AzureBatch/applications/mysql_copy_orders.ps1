@@ -34,7 +34,7 @@ Connect-AzAccount -identity
 
 $server = "server_name";
 $database = "contosostore";
-$user = "s2admin";
+$user = "wsuser";
 $password = "S0lliance123";
 
 #run the queries...

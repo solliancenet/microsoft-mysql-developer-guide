@@ -146,7 +146,7 @@ cd "C:\Program Files\MySQL\MySQL Workbench 8.0 CE"
 
 #setup the sql database.
 
-.\mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 's2admin'@'localhost' IDENTIFIED BY 'P@s`$w0rd123!';"
+.\mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'wsuser'@'localhost' IDENTIFIED BY 'P@s`$w0rd123!';"
 .\mysql -u root -e "CREATE DATABASE contosostore;"
 
 $extensions = @("ms-vscode-deploy-azure.azure-deploy", "ms-azuretools.vscode-docker", "ms-python.python", "ms-azuretools.vscode-azurefunctions");
