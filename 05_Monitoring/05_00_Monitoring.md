@@ -6,13 +6,25 @@ Azure Database for MySQL provides for the ability to monitor both of these types
 
 Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn administrators of outages, operational performance problems, or any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook) to address the event.
 
+The monitoring content will be focused on these concepts:
+
+- Azure Monitor overview and strategy
+
+- Application monitoring
+
+- Database monitoring
+
 ## Azure Monitor
 
-Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources.Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances.
+Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances.
 
-**Define your strategy**
+## Define your strategy ##
 
 Administrators should [plan their monitoring strategy](https://docs.microsoft.com/azure/azure-monitor/best-practices-plan) and configuration for the best results. Some data collection and features are free while others have associated costs. Focus on maximizing your applications' performance and reliability. Identify the signs of failure. See [Azure Monitor Pricing](https://azure.microsoft.com/pricing/details/monitor/).
+
+## Monitoring database operations
+
+TODO
 
 Once metric data is flowing, use the [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query language to query the various log information. Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
 
@@ -60,10 +72,6 @@ The table below, pulled from the [Microsoft documentation](https://docs.microsof
 |Queries|queries|Count|The number of queries per second|
 
 > For a similar list for Single Server, consult [this document.](https://docs.microsoft.com/azure/mysql/concepts-monitoring)
-
-## Monitoring database operations
-
-TODO
 
 ## Query Performance Insights
 
@@ -119,13 +127,30 @@ When working through the sample, note that Log Analytics is not just limited to 
 
 From the **Logs** page it is possible to query the activity log from the samples provided.
 
+TODO: Fix broken images
+
 ![This image demonstrates a sample query of the Activity Log from the Logs tab of the Azure Portal.](./media/activity-log-sample-query.png "Activity log sample query")
 
 ![This image demonstrates the query results from the opened sample.](./media/activity-log-query-results.png "Sample query output")
 
 As shown above, MySQL data logs will generate a table with a specific schema of which KQL can be used to facilitate analysis. Consult [the documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs) for more information.
 
-### Recommended content
+## Application monitoring
+TODO
+
+## Error Logs
+
+TODO - Sai
+
+The MySQL error log records server startup, shutdown, and anomalous operational events (e.g. a table needs repair).
+
+## Azure Service Health
+
+TODO - Sai
+
+Azure Service Health notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact to cloud resources, get guidance and support, and share details and updates.
+
+## Recommended content
 
 - Flexible Server: [Configure audit logs (Azure Portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
 
@@ -141,14 +166,4 @@ As shown above, MySQL data logs will generate a table with a specific schema of 
 
 - [Azure Monitor Logs Overview](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
 
-## Error Logs
 
-TODO - Sai
-
-The MySQL error log records server startup, shutdown, and anomalous operational events (e.g. a table needs repair).
-
-## Azure Service Health
-
-TODO - Sai
-
-Azure Service Health notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact to cloud resources, get guidance and support, and share details and updates.

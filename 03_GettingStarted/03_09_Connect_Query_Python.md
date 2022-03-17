@@ -40,7 +40,7 @@ cursor.execute("SHOW STATUS LIKE 'Ssl_cipher'")
 print(cursor.fetchone())
 ```
 
-It is recommened to bind the [SSL public certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) with connections to Flexible Server. Download the public certificate to a location on the development machine (such as `C:\Tools`). Then, edit the `config` dictionary to add the `ssl_ca` key and the file path of the certificate as the value.
+It is recommended to bind the [SSL public certificate](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem) with connections to Flexible Server. Download the public certificate to a location on the development machine (such as `C:\Tools`). Then, edit the `config` dictionary to add the `ssl_ca` key and the file path of the certificate as the value.
 
 ```python
 config = {

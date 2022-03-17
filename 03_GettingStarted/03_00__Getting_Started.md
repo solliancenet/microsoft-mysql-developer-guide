@@ -28,7 +28,7 @@ Developers have a wide variety of code editor tools to choose from to complete t
 
 TODO: Image of VS Code.
 
-There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code envrionment to make working with MySQL instances more efficient.
+There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code environment to make working with MySQL instances more efficient.
 
 ## Development languages
 

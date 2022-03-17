@@ -1,6 +1,6 @@
 # 13 / Zero to Hero
 
-As we approch the end to this developer guide, hopefully it is now possible to assess where in the application and MySQL instance evolution the target environment may be and then using that waypoint, determine what things are needed to take the application architecture to the next level in the evolutionary progression.
+As we approach the end to this developer guide, hopefully it is now possible to assess where in the application and MySQL instance evolution the target environment may be and then using that waypoint, determine what things are needed to take the application architecture to the next level in the evolutionary progression.
 
 ## Determining the evolutionary waypoint
 
