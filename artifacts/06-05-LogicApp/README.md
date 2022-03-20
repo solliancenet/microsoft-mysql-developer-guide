@@ -24,7 +24,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 
 - Do not enable high availability
 - For the admin username, type **wsuser**
-- For the password, type **S0lliance123**
+- For the password, type **Solliance123**
 - Select **Next: Networking >**
 - Select **Private access (VNet Integration)**
 - Select the lab subscription
@@ -52,7 +52,7 @@ TODO: Link private DNS zone to VM (hub) VNet
 
 ## Configure the new Flexible Server instance
 
-- Open a command prompt window and enter the following command to initiate a connection to the Flexible Server instance. Provide `S0lliance123` as the password, when prompted. Be sure to replace the `SUFFIX`:
+- Open a command prompt window and enter the following command to initiate a connection to the Flexible Server instance. Provide `Solliance123` as the password, when prompted. Be sure to replace the `SUFFIX`:
 
   ```cmd
   "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevSUFFIXflexpriv.mysql.database.azure.com -u wsuser -p
@@ -128,7 +128,7 @@ We have already created a Logic App that uses a timer trigger to check for new O
 
   - For the database, type **noshnowapp**
   - For username, type **wsuser**
-  - For password, type **S0lliance123**
+  - For password, type **Solliance123**
   - For the gateway, select **gateway-mysql**
 - Select **Create**
 - For the table name, enter **noshnowapp.orders**

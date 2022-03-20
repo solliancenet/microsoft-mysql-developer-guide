@@ -151,7 +151,7 @@ As part of the deployment, you will see a **mysqldevSUFFIX-paw1** virtual machin
 - Select **Download RDP file**
 - Open the downloaded file, select **Connect**
 - For the username, type **wsuser**
-- For the password, type **S0lliance123**
+- For the password, type **Solliance123**
 
 Once in the virtual machine, you should see that all the tools have already been installed from you as well as the github has been downloaded that includes all the artifacts needed to start the developer journey. You can find these files on the **Paw-1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
 

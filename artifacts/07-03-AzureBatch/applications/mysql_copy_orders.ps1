@@ -32,10 +32,15 @@ Connect-AzAccount -identity
 #$path = "C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\v4.8\MySql.Data.dll";
 #[void][System.Reflection.Assembly]::Load($path) 
 
-$server = "server_name";
-$database = "contosostore";
-$user = "wsuser";
-$password = "S0lliance123";
+$server = $env:DB_HOST;
+$database = $env:DB_DATABASE;
+$user = $env:DB_USER;
+$password = $env:DB_PASSWORD;
+
+#$server = "server_name";
+#$database = "contosostore";
+#$user = "wsuser";
+#$password = "Solliance123";
 
 #run the queries...
 $myconnection = New-Object MySql.Data.MySqlClient.MySqlConnection

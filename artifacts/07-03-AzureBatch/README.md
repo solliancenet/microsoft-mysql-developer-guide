@@ -11,6 +11,10 @@
 - Select the `mysqldevSUFFIX` batch service
 - Under **Features** select **Pools**
 - Ensure a pool called **main** is displayed, if not create it.
+- Under **Settings**, select **Scale**
+- Modify the `Target Spot/low-priority nodes` to **1**
+- Select **Save**
+- Navigate back to the Azure Batch instance
 - Under **Settings**, select **Identity**
 - Select **System assigned**
 - Select **Save**, in the dialog select **Yes**
@@ -21,19 +25,19 @@
 - Select **+ Add**
 - For the name, type **mysql_job**
 - Select the **main** pool
-- For **ADVANCED SETTINGS**
+- For **ADVANCED SETTINGS**, select **Custom**
 - Select **Environment Settings**
 - Add the following environment variables:
-  - DB_HOST = {DB_IP}
+  - DB_HOST = {DB_IP} or {DB_DNS}
   - DB_DATABASE = contosostore
   - DB_PORT = 3306
   - DB_USER = wsuser
-  - DB_PASSWORD = S0lliance123
+  - DB_PASSWORD = Solliance123
 - Select **OK**
 
 ## Create an application
 
-- Zip the **applications** folder, notice the contents
+- Zip the `C:\labfiles\microsoft-mysql-developer-guide\Artifacts\07-03-AzureBatch\applications` folder, notice the contents
 - Switch to the Azure Portal and the Azure Batch instance
 - Under **Features** select **Applications**
 - Select **+Add**
@@ -44,10 +48,11 @@
 
 ## Create a Batch Task
 
+- Under **General** select **Jobs**
 - Select the new **mysql_job**
 - Under **General**, select **Tasks**
 - Select **+ Add**
-- For the task id, type **Main**
+- For the task id, type **main_01**
 - For the display name, type **mysql_copy_orders**
 - For the command line, type the following:
 
@@ -55,22 +60,22 @@
     powershell powershell -command ("(Get-ChildItem Env:AZ_BATCH_APP_PACKAGE_app01_mysql#1.0.0).Value" + '\applications\mysql_copy_orders.ps1')
     ```
 
-- For the **User identity**, select **Pool autouser admin**
+- For the **User identity**, select **Pool autouser, Admin**
 - Select **Application packages** link
 - Select the **app01_mysql** package and version **1.0.0**
 - Select **Select**
-- Select **Submit**
+- Select **Submit**, after a few seconds, the state will show **Running**
 
-## Run the Batch Job and Task
+## Review the job status
 
-- Review the status of the job
-- Review the results in the `stdout.txt` file
+- Select the **main_01** task
+- Review the results in the `stdout.txt` file, you should see data, if you do not see data, review the `stderr.txt` and fix any issues
 
 ## Setup Managed Identity (certificate)
 
 The steps above utilize hardcoded values to gain access to the target database instance.  It is possible to setup a managed identity with Azure Batch such that credentials can be retrieved at runtime using a managed identity of the Azure Batch node pool.
 
-- Run the following:
+- On the **paw-1** virtual machine, run the following:
 
 ```powershell
 choco install openssl -y
@@ -84,7 +89,7 @@ openssl genrsa -out server.pem 2048
 openssl req -new -key server.pem -out server.csr
 ```
 
-- Enter the requested information
+- When prompted, enter the requested information (you can make it up)
 
 ```PowerShell
 openssl x509 -req -days 365 -in server.csr -signkey server.pem -out server.crt
@@ -124,7 +129,7 @@ $newAzureAdPrincipal = New-AzADServicePrincipal -DisplayName $newAdApplication.A
 - Run the following to grant permission to the new service principal:
 
 ```PowerShell
-Set-AzKeyVaultAccessPolicy -VaultName 'mysqldevSUFFIX' -ServicePrincipalName $newAzureAdPrincipal.AppId -PermissionsToSecrets 'Get'
+Set-AzKeyVaultAccessPolicy -VaultName 'mysqldevSUFFIX-kv' -ServicePrincipalName $newAzureAdPrincipal.AppId -PermissionsToSecrets 'Get'
 ```
 
 - Get the needed information for the environment variables:
@@ -144,41 +149,46 @@ write-host "AppId: $appId"
   - Browse to the Batch instance
   - Under **Features**, select **Certificates**
   - Select **+Add**
-  - Browse to the `server.pfx` file
-  - Type the password, **S0lliance123**
-  - Paste the thumpring into the thumbprint textbox
+  - Browse to the `c:\temp\certificate.pfx` file
+  - Type the password, **Solliance123**
+  - Paste the thumprint into the thumbprint textbox
   - Select **Create**, a dialog showing the certificate as **Active** should be displayed
   - Under **Features**, select **Pools**
-  - Select the **Main** pool
+  - Select the **main** pool
   - Under **Settings**, select **Certificates**
   - For the thumbprint, select the certificate thumbprint that was just created
   - For the store location, select **LocalMachine**
   - Select **Save**
   - Under **General**, select **Nodes**
   - Select the ellipses for the single node, select **Reboot**
-
-- Create a new job with the following environment settings:
-  - Batch_Thumbprint = {THUMBPRINT}
-  - Batch_TenantId = {TENANT_ID}
-  - Batch_AppId = {APP_ID}
-  - Batch_VaultName = {KEYVAULT_NAME}
+  - Select **Reboot**, you can continue on with the next few steps
 
 ### Create Key Vault values
 
-- Browse to the `` key vault
+- Browse to the `mysqldevSUFFIX` key vault
+- Under **Settings**, select **Access Policies**
+- Select **Add Access Policy**
+- For **Key permissions**, select **Get** and **List**
+- For **Secret permissions**, select **Get**, **List** and **Set**
+- For the **Select principal**, select **None selected**
+- Add your username
+- Select **Save**
+- Select **Add**
 - Select **Secrets**
 - Select **Generate/Import**, create the following secrets:
-  - DB-PASSWORD = S0lliance123
+  - DB-PASSWORD = Solliance123
   - DB-SERVER = localhost
   - DB-USER = wsuser
   - DB-DATABASE = contosostore
 
 ### Create a new task with secure settings
 
-- Select the new **mysql_job**
+- Navigate back to the Azure Batch instance
+- Under **General**, select **Jobs**
+- Select the **mysql_job**
 - Under **General**, select **Tasks**
 - Select **+ Add**
-- For the task id, type **Main**
+- For the task id, type **main_02**
 - For the display name, type **mysql_copy_orders_secure**
 - For the command line, type the following:
 
@@ -186,8 +196,15 @@ write-host "AppId: $appId"
     powershell powershell -command ("(Get-ChildItem Env:AZ_BATCH_APP_PACKAGE_app01_mysql#1.0.0).Value" + '\applications\mysql_copy_orders_secure.ps1')
     ```
 
-- For the **User identity**, select **Pool autouser admin**
+- For the **User identity**, select **Pool autouse, Admin**
 - Select **Application packages** link
 - Select the **app01_mysql** package and version **1.0.0**
 - Select **Select**
+- Select **Environment settings**, create the following replacing the values from the PowerShell window:
+  - Batch_Thumbprint = {THUMBPRINT}
+  - Batch_TenantId = {TENANT_ID}
+  - Batch_AppId = {APP_ID}
+  - Batch_VaultName = {mysqldevSUFFIX-kv}
 - Select **Submit**
+- Select the **main_02** task
+- Review the results in the `stdout.txt` file, you should see data, if you do not see data, review the `stderr.txt` and fix any issues

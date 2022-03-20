@@ -72,6 +72,15 @@
         }
       },
       {
+        "type": "Microsoft.DataFactory/factories",
+        "apiVersion": "2018-06-01",
+        "name": "[variables('resourceName')]",
+        "location": "[resourceGroup().location]",
+        "identity": {
+          "type": "SystemAssigned"
+        }
+      },
+      {
         "type": "Microsoft.Batch/batchAccounts",
         "apiVersion": "2021-06-01",
         "name": "[variables('resourceName')]",
@@ -450,11 +459,12 @@
       {
         "type": "Microsoft.Storage/storageAccounts",
         "sku": { "name": "Standard_LRS" },
-        "kind": "Storage",
+        "kind": "StorageV2",
         "name": "[variables('resourceName')]",
         "apiVersion": "2021-04-01",
         "location": "[resourceGroup().location]",
         "properties": {
+          "isHnsEnabled": true,
           "supportsHttpsTrafficOnly": "false",
           "encryption": {
             "services": {
@@ -465,6 +475,14 @@
           }
         },
         "dependsOn": []
+      },
+      {
+        "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+        "apiVersion": "2021-06-01",
+        "name": "orders",
+        "dependsOn": [
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
+        ]
       },
       {
         "type": "Microsoft.Devices/IotHubs",
