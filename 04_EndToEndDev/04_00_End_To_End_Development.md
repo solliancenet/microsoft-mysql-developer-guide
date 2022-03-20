@@ -19,7 +19,7 @@ The following scenarios will be discussed and demonstrated as part of this Azure
 - [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
 - [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
 
-Additionally, some applications are more than just a web application with database backend.  Microsoft Azure provides serveral compute engines with varying degrees of features and administrative abilities.
+Additionally, some applications are more than just a web application with database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities.
 
 - [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
   - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
@@ -31,7 +31,7 @@ Additionally, some applications are more than just a web application with databa
 - [Azure Synapse Analytics](./../artifacts/07-02-AzureSynapseAnalytics/README.md)
 - [Azure Batch](./../artifacts/07-03-AzureBatch/README.md)
 
-It is recommended that each of the above scenarios are executed in the order shown so that a full picture of the steps involved in the development evolution are understood.  This will also ensure that the necessary pre-requisite items are avilable to move on to the more complex deployments.
+It is recommended that each of the above scenarios are executed in the order shown so that a full picture of the steps involved in the development evolution are understood.  This will also ensure that the necessary pre-requisite items are available to move on to the more complex deployments.
 
 ## Classic deployment
 
@@ -127,7 +127,7 @@ To implement this deployment, reference the [Utilize AKS and Azure Database for 
 
 ## Start the Developer Journey
 
-The first step to exploring the evolution of MySQL Application development is to get the enivornment setup.
+The first step to exploring the evolution of MySQL Application development is to get the environmentsetup.
 
 We provide two ARM template that can be deployed that will setup the environment.  One is a basic deployment of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and vnet integrations.  It also includes items like Azure Firewall and other security related configurations.
 

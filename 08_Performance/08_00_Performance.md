@@ -51,6 +51,6 @@ Some parameters are not allowed to be modified in Azure Database for MySQL.
 
 ## Upgrade Azure Database for MySQL versions
 
-Some times just upgrading versions maybe the answer.  Upgrading from Azure Database for MySQL 5.6 to 5.7 can offer significant performance improvements. Learn from the [Minecraft migration](https://developer.microsoft.com/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/) team's experience.
+Sometimes just upgrading versions maybe the answer.  Upgrading from Azure Database for MySQL 5.6 to 5.7 can offer significant performance improvements. Learn from the [Minecraft migration](https://developer.microsoft.com/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/) team's experience.
 
 TODO - https://wemakewaves.medium.com/migrating-our-php-applications-to-docker-without-sacrificing-performance-1a69d81dcafb

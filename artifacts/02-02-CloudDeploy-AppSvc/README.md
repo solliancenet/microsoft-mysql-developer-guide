@@ -153,7 +153,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     wget https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
     ```
 
-3. Edit the the `database.php` file
+3. Edit the `database.php` file
 
     ```php
     nano /home/site/wwwroot/public/database.php

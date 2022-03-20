@@ -65,7 +65,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 3. In the left navigation, select **New**
 4. For the name, type **ContosoStore**
 5. Select the **Import** tab
-6. Browse to tje export file, run it
+6. Browse to theexport file, run it
 
 ## Update the environment variables
 

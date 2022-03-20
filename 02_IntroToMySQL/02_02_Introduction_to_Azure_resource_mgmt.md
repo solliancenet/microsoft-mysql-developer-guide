@@ -68,7 +68,7 @@ Azure runs on a common framework of backend resource services and every action t
 
 ##### Evolving
 
-Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsiblity for how services are being configured and the access teams, users and applications are authorized with to those resources.
+Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsibility for how services are being configured and the access teams, users and applications are authorized with to those resources.
 
 By using the existing command-line tools and REST APIs, it is possible to build custom tools to automate and report on resource configurations that do not meet any organizational requirements that are required.
 
@@ -123,13 +123,19 @@ After the modules are installed, reference tutorials such as the following to le
 
 ##### Bicep
 
+TODO: Sample Bicep screenshot
+
 Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed consistently.
 
 [Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
+![This image demonstrates part of a sample Bicep template for provisioning PaaS MySQL.](./media/sample-bicep-template.png "PaaS MySQL sample Bicep template")
+
 ##### Terraform
 
 [Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/azure/developer/terraform/overview) is adept at deploying infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
+
+![This image demonstrates part of a sample Terraform template for provisioning PaaS MySQL.](./media/sample-terraform-template.png "PaaS MySQL sample Terraform template")
 
 #### Other tips
 

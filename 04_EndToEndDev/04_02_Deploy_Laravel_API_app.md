@@ -102,7 +102,7 @@ Open the file. Replace the two `[SUFFIX]` placeholders with the values used when
 kubectl apply -f api.deployment.yml
 ```
 
-Congratulations. The API to Azure Kubernetes Service is now deployted and exposed internally through a Service.
+Congratulations. The API to Azure Kubernetes Service is now deployed and exposed internally through a Service.
 
 ### Deploy the Laravel app to Azure Kubernetes Service
 

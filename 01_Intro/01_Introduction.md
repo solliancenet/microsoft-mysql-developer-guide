@@ -10,6 +10,6 @@ Because every company and project is unique, this guide provides insightful serv
 
 Development teams will understand best practice and efficient architecture and security practices – avoiding the problems and costs of poor design. Teams will gain the knowledge to automate builds, package, test, and deliver applications based on MySQL to various hosting environments. By leveraging continuous integration and deployment (CI/CD), costs related to manual deployment tasks can be reduced or completely removed.
 
-There are many steps in the application lifecycle that go beyound simply building and deploying an application. This guide will cover how easy it is to monitor system uptime and performance in the various Azure services. Administrators will appreciate the realistic and straightforward troubleshooting tips that help keep downtime to a minimum and users happy.
+There are many steps in the application lifecycle that go beyondsimply building and deploying an application. This guide will cover how easy it is to monitor system uptime and performance in the various Azure services. Administrators will appreciate the realistic and straightforward troubleshooting tips that help keep downtime to a minimum and users happy.
 
 The ultimate goal here is to successfully deploy a stable, performant MySQL application running securely in Microsoft Azure using cloud best practices. Let's start the journey!
