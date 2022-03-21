@@ -36,6 +36,9 @@ Using Application Insights:
 - Install a small instrumentation package (SDK) in your app
 - Or enable Application Insights by using the Application Insights agent.
 
+![](media/application-insights-overview.png)
+
+
 Instrumentation monitors your app and directs the telemetry data to an Application Insights resource by using a unique instrumentation key.
 
 Example steps to configure WordPress monitoring:
@@ -49,6 +52,9 @@ Example steps to configure WordPress monitoring:
 - Then go to **Settings** and Application Insights inside WordPress, and add the key there.
 
 - Access the website and look for details
+
+> ![Tip](../Global_Media/tip.png) **Tip:** [Connection Strings](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) are recommended over instrumentation keys.
+
 
 The free allowance is large enough to cover development, and publishing an app for a small number of users. You can set a cap to prevent more than a specified amount of data from being processed. Larger volumes of telemetry are charged by the Gb. [Manage usage and costs for Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/pricing)
 ## Monitoring database operations
