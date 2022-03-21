@@ -1,189 +1,189 @@
 [
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/mysql-journey.png\"",
-        "path": "media/mysql-journey.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-journey.png",
+        "for": "media/mysql-journey.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/ISV-Tech-Builders-tools.png\"",
-        "path": "media/ISV-Tech-Builders-tools.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/ISV-Tech-Builders-tools.png",
+        "for": "media/ISV-Tech-Builders-tools.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/cloud-adoption-strategies.png\"",
-        "path": "media/cloud-adoption-strategies.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/cloud-adoption-strategies.png",
+        "for": "media/cloud-adoption-strategies.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/azure-services.png\"",
-        "path": "./media/azure-services.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-services.png",
+        "for": "./media/azure-services.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/scope-levels.png\"",
-        "path": "./media/scope-levels.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/scope-levels.png",
+        "for": "./media/scope-levels.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/landing-zone-accelerator.png\"",
-        "path": "./media/landing-zone-accelerator.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/landing-zone-accelerator.png",
+        "for": "./media/landing-zone-accelerator.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/consistent-management-layer.png\"",
-        "path": "media/consistent-management-layer.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/consistent-management-layer.png",
+        "for": "media/consistent-management-layer.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-management-tool-maturity.png\"",
-        "path": "media/azure-management-tool-maturity.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-management-tool-maturity.png",
+        "for": "media/azure-management-tool-maturity.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-portal-services.png\"",
-        "path": "media/azure-portal-services.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-portal-services.png",
+        "for": "media/azure-portal-services.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-marketplace-search-results.png\"",
-        "path": "media/azure-marketplace-search-results.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-marketplace-search-results.png",
+        "for": "media/azure-marketplace-search-results.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-cli-example.png\"",
-        "path": "media/azure-cli-example.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-cli-example.png",
+        "for": "media/azure-cli-example.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-template-json-example.png\"",
-        "path": "media/azure-template-json-example.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-template-json-example.png",
+        "for": "media/azure-template-json-example.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/sample-bicep-template.png\"",
-        "path": "./media/sample-bicep-template.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/sample-bicep-template.png",
+        "for": "./media/sample-bicep-template.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/sample-terraform-template.png\"",
-        "path": "./media/sample-terraform-template.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/sample-terraform-template.png",
+        "for": "./media/sample-terraform-template.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/mysql-conceptual-diagram.png\"",
-        "path": "./media/mysql-conceptual-diagram.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-conceptual-diagram.png",
+        "for": "./media/mysql-conceptual-diagram.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/flexible-server.png\"",
-        "path": "./media/flexible-server.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/flexible-server.png",
+        "for": "./media/flexible-server.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/tip.png\"",
-        "path": "media/tip.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/tip.png",
+        "for": "media/tip.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/mysql-flex-params.png\"",
-        "path": "./media/mysql-flex-params.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-flex-params.png",
+        "for": "./media/mysql-flex-params.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/new-ssl-connection-with-ca-file.png\"",
-        "path": "./media/new-ssl-connection-with-ca-file.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/new-ssl-connection-with-ca-file.png",
+        "for": "./media/new-ssl-connection-with-ca-file.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/analyst-query.png\"",
-        "path": "./media/analyst-query.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/analyst-query.png",
+        "for": "./media/analyst-query.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/azure-explorer-intellij.png\"",
-        "path": "./media/azure-explorer-intellij.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-explorer-intellij.png",
+        "for": "./media/azure-explorer-intellij.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/intellij-complete-spring-boot-project.png\"",
-        "path": "./media/intellij-complete-spring-boot-project.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/intellij-complete-spring-boot-project.png",
+        "for": "./media/intellij-complete-spring-boot-project.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/intellij-create-single-server.png\"",
-        "path": "./media/intellij-create-single-server.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/intellij-create-single-server.png",
+        "for": "./media/intellij-create-single-server.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/mysql-instance-information.png\"",
-        "path": "./media/mysql-instance-information.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/mysql-instance-information.png",
+        "for": "./media/mysql-instance-information.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/edit-application-properties.png\"",
-        "path": "./media/edit-application-properties.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/edit-application-properties.png",
+        "for": "./media/edit-application-properties.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/azure-resource-connector-intellij.png\"",
-        "path": "./media/azure-resource-connector-intellij.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-resource-connector-intellij.png",
+        "for": "./media/azure-resource-connector-intellij.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/start-app-intellij.png\"",
-        "path": "./media/start-app-intellij.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/start-app-intellij.png",
+        "for": "./media/start-app-intellij.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/post-request-postman.png\"",
-        "path": "./media/post-request-postman.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/post-request-postman.png",
+        "for": "./media/post-request-postman.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/get-request-postman.png\"",
-        "path": "./media/get-request-postman.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/get-request-postman.png",
+        "for": "./media/get-request-postman.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/result-set-mysql-workbench.png\"",
-        "path": "./media/result-set-mysql-workbench.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/result-set-mysql-workbench.png",
+        "for": "./media/result-set-mysql-workbench.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/api-management-components.png\"",
-        "path": "./media/api-management-components.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/api-management-components.png",
+        "for": "./media/api-management-components.png"
     },
     {
         "type": "BlockNotRendered",
@@ -197,130 +197,130 @@
         }
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/sample-app-level-1-architecture.png\"",
-        "path": "media/sample-app-level-1-architecture.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-app-level-1-architecture.png",
+        "for": "media/sample-app-level-1-architecture.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/sample-app-site-map.png\"",
-        "path": "media/sample-app-site-map.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-app-site-map.png",
+        "for": "media/sample-app-site-map.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/market-place-button.png\"",
-        "path": "media/market-place-button.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/market-place-button.png",
+        "for": "media/market-place-button.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/microsoft-web-app-database-marketplace.png\"",
-        "path": "media/microsoft-web-app-database-marketplace.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/microsoft-web-app-database-marketplace.png",
+        "for": "media/microsoft-web-app-database-marketplace.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/create-web-app-database.png\"",
-        "path": "media/create-web-app-database.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/create-web-app-database.png",
+        "for": "media/create-web-app-database.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/app-service.png\"",
-        "path": "media/app-service.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/app-service.png",
+        "for": "media/app-service.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/local-git.png\"",
-        "path": "media/local-git.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/local-git.png",
+        "for": "media/local-git.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/local-git-url.png\"",
-        "path": "media/local-git-url.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/local-git-url.png",
+        "for": "media/local-git-url.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/application-scope-user-password.png\"",
-        "path": "media/application-scope-user-password.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/application-scope-user-password.png",
+        "for": "media/application-scope-user-password.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/git-credential-manager-for-windows.png\"",
-        "path": "media/git-credential-manager-for-windows.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/git-credential-manager-for-windows.png",
+        "for": "media/git-credential-manager-for-windows.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/azure-local-git-push.png\"",
-        "path": "media/azure-local-git-push.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-local-git-push.png",
+        "for": "media/azure-local-git-push.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/update-app-url-env.png\"",
-        "path": "media/update-app-url-env.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/update-app-url-env.png",
+        "for": "media/update-app-url-env.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/ContosoNoshNow-home-page.png\"",
-        "path": "media/ContosoNoshNow-home-page.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/ContosoNoshNow-home-page.png",
+        "for": "media/ContosoNoshNow-home-page.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/create-contosonoshnow-database.png\"",
-        "path": "media/create-contosonoshnow-database.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/create-contosonoshnow-database.png",
+        "for": "media/create-contosonoshnow-database.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/update-mysql-connection-info.png\"",
-        "path": "media/update-mysql-connection-info.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/update-mysql-connection-info.png",
+        "for": "media/update-mysql-connection-info.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/php-laravel-database-creation.png\"",
-        "path": "media/php-laravel-database-creation.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/php-laravel-database-creation.png",
+        "for": "media/php-laravel-database-creation.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/seeded-database.png\"",
-        "path": "media/seeded-database.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/seeded-database.png",
+        "for": "media/seeded-database.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/sample-order.png\"",
-        "path": "media/sample-order.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/sample-order.png",
+        "for": "media/sample-order.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/verify-order-data.png\"",
-        "path": "media/verify-order-data.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/verify-order-data.png",
+        "for": "media/verify-order-data.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/laravel-service-ip.png\"",
-        "path": "./media/laravel-service-ip.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/laravel-service-ip.png",
+        "for": "./media/laravel-service-ip.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/app-loads-aks.png\"",
-        "path": "./media/app-loads-aks.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/app-loads-aks.png",
+        "for": "./media/app-loads-aks.png"
     },
     {
         "type": "CouldNotFetchResource",
@@ -329,243 +329,237 @@
         "path": "../Global_Media/warning.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/activity-log-sample-query.png\"",
-        "path": "./media/activity-log-sample-query.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-sample-query.png",
+        "for": "./media/activity-log-sample-query.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/activity-log-query-results.png\"",
-        "path": "./media/activity-log-query-results.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/activity-log-query-results.png",
+        "for": "./media/activity-log-query-results.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/aborted-connections-alert-rule.png\"",
-        "path": "./media/aborted-connections-alert-rule.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aborted-connections-alert-rule.png",
+        "for": "./media/aborted-connections-alert-rule.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/alert-rule-sent-to-email.png\"",
-        "path": "./media/alert-rule-sent-to-email.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/alert-rule-sent-to-email.png",
+        "for": "./media/alert-rule-sent-to-email.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/vnet-concept.png\"",
-        "path": "./media/vnet-concept.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/vnet-concept.png",
+        "for": "./media/vnet-concept.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/show-private-link-overview.png\"",
-        "path": "./media/show-private-link-overview.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/show-private-link-overview.png",
+        "for": "./media/show-private-link-overview.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/container-logs-in-log-analytics.png\"",
-        "path": "./media/container-logs-in-log-analytics.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/container-logs-in-log-analytics.png",
+        "for": "./media/container-logs-in-log-analytics.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/metric-visualization.png\"",
-        "path": "./media/metric-visualization.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/metric-visualization.png",
+        "for": "./media/metric-visualization.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/grafana-dashboard.png\"",
-        "path": "./media/grafana-dashboard.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/grafana-dashboard.png",
+        "for": "./media/grafana-dashboard.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/thread-pooling-performance.png\"",
-        "path": "./media/thread-pooling-performance.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/thread-pooling-performance.png",
+        "for": "./media/thread-pooling-performance.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/cdn-overview.png\"",
-        "path": "./media/cdn-overview.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/cdn-overview.png",
+        "for": "./media/cdn-overview.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"media/1-flexible-server-overview-zone-redundant-ha.png\"",
-        "path": "media/1-flexible-server-overview-zone-redundant-ha.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/1-flexible-server-overview-zone-redundant-ha.png",
+        "for": "media/1-flexible-server-overview-zone-redundant-ha.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/flexible-server-overview-same-zone-ha.png\"",
-        "path": "./media/flexible-server-overview-same-zone-ha.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/flexible-server-overview-same-zone-ha.png",
+        "for": "./media/flexible-server-overview-same-zone-ha.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/cross-region-ha.png\"",
-        "path": "./media/cross-region-ha.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/cross-region-ha.png",
+        "for": "./media/cross-region-ha.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/microservices-with-replication.png\"",
-        "path": "./media/microservices-with-replication.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/microservices-with-replication.png",
+        "for": "./media/microservices-with-replication.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/realms-migration.png\"",
-        "path": "./media/realms-migration.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/realms-migration.png",
+        "for": "./media/realms-migration.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/php_setup.png\"",
-        "path": "./media/php_setup.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/php_setup.png",
+        "for": "./media/php_setup.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/noshnow-app-load.png\"",
-        "path": "./media/noshnow-app-load.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/noshnow-app-load.png",
+        "for": "./media/noshnow-app-load.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/vm-ip-address.png\"",
-        "path": "./media/vm-ip-address.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/vm-ip-address.png",
+        "for": "./media/vm-ip-address.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/nsg-rule.png\"",
-        "path": "./media/nsg-rule.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/nsg-rule.png",
+        "for": "./media/nsg-rule.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/server-certificates-iis-manager.png\"",
-        "path": "./media/server-certificates-iis-manager.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/server-certificates-iis-manager.png",
+        "for": "./media/server-certificates-iis-manager.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/site-binding-iis.png\"",
-        "path": "./media/site-binding-iis.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/site-binding-iis.png",
+        "for": "./media/site-binding-iis.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/web-server-config.png\"",
-        "path": "./media/web-server-config.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/web-server-config.png",
+        "for": "./media/web-server-config.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/vs-new-function.png\"",
-        "path": "./media/vs-new-function.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/vs-new-function.png",
+        "for": "./media/vs-new-function.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/nuget-package-install.png\"",
-        "path": "./media/nuget-package-install.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/nuget-package-install.png",
+        "for": "./media/nuget-package-install.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/choose-linux-function-app.png\"",
-        "path": "./media/choose-linux-function-app.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/choose-linux-function-app.png",
+        "for": "./media/choose-linux-function-app.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/select-function-from-portal.png\"",
-        "path": "./media/select-function-from-portal.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/select-function-from-portal.png",
+        "for": "./media/select-function-from-portal.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/azure-portal-function-test.png\"",
-        "path": "./media/azure-portal-function-test.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-portal-function-test.png",
+        "for": "./media/azure-portal-function-test.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/create-function-app-vscode.png\"",
-        "path": "./media/create-function-app-vscode.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/create-function-app-vscode.png",
+        "for": "./media/create-function-app-vscode.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/http-trigger-vscode.png\"",
-        "path": "./media/http-trigger-vscode.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/http-trigger-vscode.png",
+        "for": "./media/http-trigger-vscode.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/terminal-set-up.png\"",
-        "path": "./media/terminal-set-up.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/terminal-set-up.png",
+        "for": "./media/terminal-set-up.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/select-function-from-portal.png\"",
-        "path": "./media/select-function-from-portal.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/function-app-logs.png",
+        "for": "./media/function-app-logs.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/function-app-logs.png\"",
-        "path": "./media/function-app-logs.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/az-mysql-db-create.png",
+        "for": "./media/az-mysql-db-create.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/az-mysql-db-create.png\"",
-        "path": "./media/az-mysql-db-create.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/server-details-port.png",
+        "for": "./media/server-details-port.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/server-details-port.png\"",
-        "path": "./media/server-details-port.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/vnet-integration.png",
+        "for": "./media/vnet-integration.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/vnet-integration.png\"",
-        "path": "./media/vnet-integration.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/disable-secure-transport.png",
+        "for": "./media/disable-secure-transport.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/disable-secure-transport.png\"",
-        "path": "./media/disable-secure-transport.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/on-premises-data-gateway-config.png",
+        "for": "./media/on-premises-data-gateway-config.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/on-premises-data-gateway-config.png\"",
-        "path": "./media/on-premises-data-gateway-config.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/logic-apps-gateway-azure-config.png",
+        "for": "./media/logic-apps-gateway-azure-config.png"
     },
     {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/logic-apps-gateway-azure-config.png\"",
-        "path": "./media/logic-apps-gateway-azure-config.png"
-    },
-    {
-        "type": "CouldNotFetchResource",
-        "verbosity": "WARNING",
-        "message": "PandocResourceNotFound \"./media/recurrence-logic-apps-trigger.png\"",
-        "path": "./media/recurrence-logic-apps-trigger.png"
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/recurrence-logic-apps-trigger.png",
+        "for": "./media/recurrence-logic-apps-trigger.png"
     }
 ]

@@ -1446,7 +1446,7 @@ cursor.execute("SHOW STATUS LIKE 'Ssl_cipher'")
 print(cursor.fetchone())
 ```
 
-It is recommend to bind the [SSL public certificate] with connections
+It is recommended to bind the [SSL public certificate] with connections
 to Flexible Server. Download the public certificate to a location on the
 development machine (such as `C:\Tools`). Then, edit the `config`
 dictionary to add the `ssl_ca` key and the file path of the certificate
@@ -1509,12 +1509,12 @@ development tools.
 #### Prerequisites
 
 Please complete the instructions in the [Connect and query Azure
-Database for MySQL using MySQL Workbench] document. When completing  the
+Database for MySQL using MySQL Workbench] document. When completing the
 guide samples, utilize version 8.0.26 to ensure compatibility with
 Single Server.
 
-Optionally, download Postman or utilize `curl`, two popular HTTP
-testing tools.
+Optionally, download Postman or utilize `curl`, two popular HTTP testing
+tools.
 
 #### IntelliJ setup
 
@@ -1890,8 +1890,8 @@ to run the included code examples.
 
 In the next section, a sample application will be provided as a starting
 point and an entire developer journey will be explored using all
-concepts discussed thus far to show the progression of a modernization of
-how MySQL applications can be accomplished.
+concepts discussed thus far to show the progression of a modernization
+of how MySQL applications can be accomplished.
 
 # 04 / End to End application development
 
@@ -1927,7 +1927,7 @@ discussed in the following simple to complex ordering.
 -   [AKS with MySQL Flexible Server][28]
 
 Additionally, some applications are more than just a web application
-with database backend. Microsoft Azure provides several  compute engines
+with database backend. Microsoft Azure provides several compute engines
 with varying degrees of features and administrative abilities.
 
 -   [Azure Functions][29]
@@ -2182,7 +2182,7 @@ machine by doing the following:
 -   Select **Download RDP file**
 -   Open the downloaded file, select **Connect**
 -   For the username, type **wsuser**
--   For the password, type **S0lliance123**
+-   For the password, type **Solliance123**
 
 Once in the virtual machine, you should see that all the tools have
 already been installed from you as well as the github has been
@@ -2667,8 +2667,8 @@ below:
 kubectl apply -f api.deployment.yml
 ```
 
-Congratulations. The API to Azure Kubernetes Service is now deployted
-and exposed internally through a Service.
+Congratulations. The API to Azure Kubernetes Service is now deployed and
+exposed internally through a Service.
 
 ### Deploy the Laravel app to Azure Kubernetes Service
 
@@ -2832,7 +2832,7 @@ from Kubernetes.
 
 This module was designed to bring all the elements of the modernization
 and cloud adoption journey together via a progressive set of examples
-and learning paths. After completing  all of the samples in this module,
+and learning paths. After completing all of the samples in this module,
 a developer will have an understanding of where an application sits in
 the modernization process and how to take it to the next level via
 containers and container hosting environments.
@@ -3650,10 +3650,10 @@ latest version of an application operates in a second production
 environment. Developers test the most recent version in the second
 production environment, and if it functions adequately, the second
 environment begins handling user requests. If an unexpected error
-occurs, developers can roll back the application by serving requests from
-the older environment. As newer versions of an application often require
-database updates, it is recommended to update the database to support
-the new and previous versions of the software before deploying
+occurs, developers can roll back the application by serving requests
+from the older environment. As newer versions of an application often
+require database updates, it is recommended to update the database to
+support the new and previous versions of the software before deploying
 application updates to the second environment.
 
 ### Performance testing
@@ -3842,8 +3842,8 @@ MySQL.
 
 ## Upgrade Azure Database for MySQL versions
 
-Sometimes just upgrading versions maybe the answer. Upgrading from
-Azure Database for MySQL 5.6 to 5.7 can offer significant performance
+Sometimes just upgrading versions maybe the answer. Upgrading from Azure
+Database for MySQL 5.6 to 5.7 can offer significant performance
 improvements. Learn from the [Minecraft migration] team's experience.
 
 TODO -
@@ -4102,10 +4102,10 @@ TODO
 
 As with any mission-critical system, having a backup and restore as well
 as a disaster recovery (BCDR) strategy is an important part of the
-overall system design. If an unforeseen event occurs, administrators
-should have the ability to restore data to a point in time called the
-Recovery Point Objective (RPO) and in a reasonable amount of time called
-the Recovery Time Objective (RTO).
+overall system design. If an unforeseen event occurs,
+administratorsshould have the ability to restore data to a point in time
+called the Recovery Point Objective (RPO) and in a reasonable amount of
+time called the Recovery Time Objective (RTO).
 
 ### Backup
 
@@ -4647,7 +4647,7 @@ real-world customer references of using Azure Database for MySQL that
 can be referenced in platform selection decisions.
 
 As a final note, although there are several options for hosting MySQL in
-Azure, the recommend and preferred method is to utilize Azure Database
+Azure, the recommended and preferred method is to utilize Azure Database
 for MySQL Flexible Server for its rich set of features and flexibility.
 
 # Resources
@@ -6930,7 +6930,7 @@ private endpoint.
 
 -   For the admin username, type **wsuser**
 
--   For the password, type **S0lliance123**
+-   For the password, type **Solliance123**
 
 -   Select **Next: Networking >**
 
@@ -6978,7 +6978,7 @@ TODO: Link private DNS zone to VM (hub) VNet
 
 -   Open a command prompt window and enter the following command to
     initiate a connection to the Flexible Server instance. Provide
-    `S0lliance123` as the password, when prompted. Be sure to replace
+    `Solliance123` as the password, when prompted. Be sure to replace
     the `SUFFIX`:
 
     ``` cmd
@@ -7086,7 +7086,7 @@ for new Orders in the database and then send an email.
 
     -   For the database, type **noshnowapp**
     -   For username, type **wsuser**
-    -   For password, type **S0lliance123**
+    -   For password, type **Solliance123**
     -   For the gateway, select **gateway-mysql**
 
 -   Select **Create**
@@ -7193,25 +7193,35 @@ for new Orders in the database and then send an email.
 -   Switch to the Azure Portal, browse to the **mysqldevSUFFIX** Azure
     Data Factory instance
 -   Select **Open Azure Data Factory Studio**
--   Select the **Manage** tab
--   Select the **+ New** button
+-   In the left navigation, select the **Manage** tab
+-   Select **Linked servics**, select the **+ New** button
 -   For the type, select **Azure Database for MySQL**
 -   For the name, type **ContosoStore**
 -   For the account selection, select **From Azure Subscription**
 -   Select the subscription
--   Select the lab MySQL server
+-   Select the **mysqldevSUFFIX** Azure Database for MySQL server
 -   For the database name, type **ContosoStore**
--   For the username, type **wsuser**
+-   For the username, type **wsuser\@mysqldevSUFFIX**
 -   For the password, type **Solliance123**
+-   Select **Test connection**, ensure that you get a success message.
+-   Select **Create**
+-   Select **Linked servics**, select the **+ New** button
+-   For the type, select **Azure Data Lake Storage Gen2**
+-   Select **Continue**
+-   For the name type **AzStorage**
+-   Select the subscription
+-   Select the **mysqldevSUFFIXdl** storage account
 -   Select **Create**
 
 ## Create Dataset (MySQL)
 
+-   Seelct the **Author** tab
 -   Select the **+** button, then select **Data Set**
 -   For the type, select **Azure Database for MySQL**
 -   Select **Continue**
--   For the name, type **Customers**
+-   For the name, type **orders_database**
 -   For the linked service, select **ContosoStore**
+-   For the table name, select **orders**
 -   Select **Continue**
 -   For the table, select **users**
 -   Select **OK**
@@ -7220,23 +7230,28 @@ for new Orders in the database and then send an email.
 
 -   Select the **+** button, then select **Data Set**
 -   For the type, select **Azure Data Lake Storage Gen2**
+-   Select **Continue**
 -   For the data format, select **JSON**
 -   Select **Continue**
--   For the container, select **users**
+-   For the name, type **orders_storage**
+-   For the linked service, select **AzStorage**
+-   For the file system, type **orders**
 -   Select **OK**
 
 ## Create a Pipeline
 
--   Select the **+** button, then select **Pipeline**
--   For the name, type **MySQL_to_Storage**
+-   Select the **+** button, then select **Pipeline-\>Pipeline**
+-   For the name, type **mysql_to_storage**
 -   Expand **Move & transform**
 -   Drag the **Copy data** activity to the design surface
--   For the name, type **MySQL_to_Storage**
--   Select **Source**, then select the **Customers** data set
+-   In the **General** tab, for the pipeline name, type
+    **mysql_to_storage**
+-   Select **Source**, then select the **orders_database** data set
 -   For the **Use query**, select **Query**
--   For the query text, type **@"select \* from users where
-    createdate >= pipeline().parameters.LastCreateDate"**
--   Select **Sink**, then select the **Storage** data set
+-   Select **Add dynamic content**
+-   For the query text, type **select \* from orders where created_at >=
+    '@pipeline().parameters.LastCreateDate'**
+-   Select **Sink**, then select the **orders_storage** data set
 -   Select the main pipeline canvas, then select **Parameters**
 -   Select **+ New**
 -   For the name, tyep **LastCreateDate**
@@ -7261,7 +7276,16 @@ for new Orders in the database and then send an email.
 
 ## Test the pipeline
 
--   TODO \# Azure Synapse Analytics with MySQL
+-   Select the **Trigger (1)** button
+-   Select **Trigger now**
+-   Select **OK**
+-   Open a new browser window to the Azure Portal
+-   Browse to the storage account
+-   Under **Data storage**, select **Containers**
+-   Select the **orders** container
+-   You should see a new file that is the exported data.
+
+# Azure Synapse Analytics with MySQL
 
 ## Setup
 
@@ -7279,6 +7303,10 @@ TODO \# Azure Batch with MySQL
 -   Select the `mysqldevSUFFIX` batch service
 -   Under **Features** select **Pools**
 -   Ensure a pool called **main** is displayed, if not create it.
+-   Under **Settings**, select **Scale**
+-   Modify the `Target Spot/low-priority nodes` to **1**
+-   Select **Save**
+-   Navigate back to the Azure Batch instance
 -   Under **Settings**, select **Identity**
 -   Select **System assigned**
 -   Select **Save**, in the dialog select **Yes**
@@ -7289,19 +7317,21 @@ TODO \# Azure Batch with MySQL
 -   Select **+ Add**
 -   For the name, type **mysql_job**
 -   Select the **main** pool
--   For **ADVANCED SETTINGS**
+-   For **ADVANCED SETTINGS**, select **Custom**
 -   Select **Environment Settings**
 -   Add the following environment variables:
-    -   DB_HOST = {DB_IP}
+    -   DB_HOST = {DB_IP} or {DB_DNS}
     -   DB_DATABASE = contosostore
     -   DB_PORT = 3306
     -   DB_USER = wsuser
-    -   DB_PASSWORD = S0lliance123
+    -   DB_PASSWORD = Solliance123
 -   Select **OK**
 
 ## Create an application
 
--   Zip the **applications** folder, notice the contents
+-   Zip the
+    `C:\labfiles\microsoft-mysql-developer-guide\Artifacts\07-03-AzureBatch\applications`
+    folder, notice the contents
 -   Switch to the Azure Portal and the Azure Batch instance
 -   Under **Features** select **Applications**
 -   Select **+Add**
@@ -7313,13 +7343,15 @@ TODO \# Azure Batch with MySQL
 
 ## Create a Batch Task
 
+-   Under **General** select **Jobs**
+
 -   Select the new **mysql_job**
 
 -   Under **General**, select **Tasks**
 
 -   Select **+ Add**
 
--   For the task id, type **Main**
+-   For the task id, type **main_01**
 
 -   For the display name, type **mysql_copy_orders**
 
@@ -7329,7 +7361,7 @@ TODO \# Azure Batch with MySQL
     powershell powershell -command ("(Get-ChildItem Env:AZ_BATCH_APP_PACKAGE_app01_mysql#1.0.0).Value" + '\applications\mysql_copy_orders.ps1')
     ```
 
--   For the **User identity**, select **Pool autouser admin**
+-   For the **User identity**, select **Pool autouser, Admin**
 
 -   Select **Application packages** link
 
@@ -7337,12 +7369,14 @@ TODO \# Azure Batch with MySQL
 
 -   Select **Select**
 
--   Select **Submit**
+-   Select **Submit**, after a few seconds, the state will show
+    **Running**
 
-## Run the Batch Job and Task
+## Review the job status
 
--   Review the status of the job
--   Review the results in the `stdout.txt` file
+-   Select the **main_01** task
+-   Review the results in the `stdout.txt` file, you should see data, if
+    you do not see data, review the `stderr.txt` and fix any issues
 
 ## Setup Managed Identity (certificate)
 
@@ -7351,7 +7385,7 @@ database instance. It is possible to setup a managed identity with Azure
 Batch such that credentials can be retrieved at runtime using a managed
 identity of the Azure Batch node pool.
 
--   Run the following:
+-   On the **paw-1** virtual machine, run the following:
 
 ``` powershell
 choco install openssl -y
@@ -7365,7 +7399,7 @@ openssl genrsa -out server.pem 2048
 openssl req -new -key server.pem -out server.csr
 ```
 
--   Enter the requested information
+-   When prompted, enter the requested information (you can make it up)
 
 ``` powershell
 openssl x509 -req -days 365 -in server.csr -signkey server.pem -out server.crt
@@ -7405,7 +7439,7 @@ $newAzureAdPrincipal = New-AzADServicePrincipal -DisplayName $newAdApplication.A
 -   Run the following to grant permission to the new service principal:
 
 ``` powershell
-Set-AzKeyVaultAccessPolicy -VaultName 'mysqldevSUFFIX' -ServicePrincipalName $newAzureAdPrincipal.AppId -PermissionsToSecrets 'Get'
+Set-AzKeyVaultAccessPolicy -VaultName 'mysqldevSUFFIX-kv' -ServicePrincipalName $newAzureAdPrincipal.AppId -PermissionsToSecrets 'Get'
 ```
 
 -   Get the needed information for the environment variables:
@@ -7424,13 +7458,13 @@ write-host "AppId: $appId"
     -   Browse to the Batch instance
     -   Under **Features**, select **Certificates**
     -   Select **+Add**
-    -   Browse to the `server.pfx` file
-    -   Type the password, **S0lliance123**
-    -   Paste the thumpring into the thumbprint textbox
+    -   Browse to the `c:\temp\certificate.pfx` file
+    -   Type the password, **Solliance123**
+    -   Paste the thumprint into the thumbprint textbox
     -   Select **Create**, a dialog showing the certificate as
         **Active** should be displayed
     -   Under **Features**, select **Pools**
-    -   Select the **Main** pool
+    -   Select the **main** pool
     -   Under **Settings**, select **Certificates**
     -   For the thumbprint, select the certificate thumbprint that was
         just created
@@ -7438,31 +7472,39 @@ write-host "AppId: $appId"
     -   Select **Save**
     -   Under **General**, select **Nodes**
     -   Select the ellipses for the single node, select **Reboot**
--   Create a new job with the following environment settings:
-    -   Batch_Thumbprint = {THUMBPRINT}
-    -   Batch_TenantId = {TENANT_ID}
-    -   Batch_AppId = {APP_ID}
-    -   Batch_VaultName = {KEYVAULT_NAME}
+    -   Select **Reboot**, you can continue on with the next few steps
 
 ### Create Key Vault values
 
--   Browse to the \`\` key vault
+-   Browse to the `mysqldevSUFFIX` key vault
+-   Under **Settings**, select **Access Policies**
+-   Select **Add Access Policy**
+-   For **Key permissions**, select **Get** and **List**
+-   For **Secret permissions**, select **Get**, **List** and **Set**
+-   For the **Select principal**, select **None selected**
+-   Add your username
+-   Select **Save**
+-   Select **Add**
 -   Select **Secrets**
 -   Select **Generate/Import**, create the following secrets:
-    -   DB-PASSWORD = S0lliance123
+    -   DB-PASSWORD = Solliance123
     -   DB-SERVER = localhost
     -   DB-USER = wsuser
     -   DB-DATABASE = contosostore
 
 ### Create a new task with secure settings
 
--   Select the new **mysql_job**
+-   Navigate back to the Azure Batch instance
+
+-   Under **General**, select **Jobs**
+
+-   Select the **mysql_job**
 
 -   Under **General**, select **Tasks**
 
 -   Select **+ Add**
 
--   For the task id, type **Main**
+-   For the task id, type **main_02**
 
 -   For the display name, type **mysql_copy_orders_secure**
 
@@ -7472,7 +7514,7 @@ write-host "AppId: $appId"
     powershell powershell -command ("(Get-ChildItem Env:AZ_BATCH_APP_PACKAGE_app01_mysql#1.0.0).Value" + '\applications\mysql_copy_orders_secure.ps1')
     ```
 
--   For the **User identity**, select **Pool autouser admin**
+-   For the **User identity**, select **Pool autouse, Admin**
 
 -   Select **Application packages** link
 
@@ -7480,7 +7522,20 @@ write-host "AppId: $appId"
 
 -   Select **Select**
 
+-   Select **Environment settings**, create the following replacing the
+    values from the PowerShell window:
+
+    -   Batch_Thumbprint = {THUMBPRINT}
+    -   Batch_TenantId = {TENANT_ID}
+    -   Batch_AppId = {APP_ID}
+    -   Batch_VaultName = {mysqldevSUFFIX-kv}
+
 -   Select **Submit**
+
+-   Select the **main_02** task
+
+-   Review the results in the `stdout.txt` file, you should see data, if
+    you do not see data, review the `stderr.txt` and fix any issues
 
 # Push images to Azure Container Registry
 
@@ -7779,13 +7834,14 @@ TODO
   [Add a trigger]: #add-a-trigger
   [Publish]: #publish
   [Test the pipeline]: #test-the-pipeline
+  [Azure Synapse Analytics with MySQL]: #azure-synapse-analytics-with-mysql
   [14]: #setup-8
   [15]: #setup-9
   [Configure Batch Service]: #configure-batch-service
   [Create a Batch Job]: #create-a-batch-job
   [Create an application]: #create-an-application
   [Create a Batch Task]: #create-a-batch-task
-  [Run the Batch Job and Task]: #run-the-batch-job-and-task
+  [Review the job status]: #review-the-job-status
   [Setup Managed Identity (certificate)]: #setup-managed-identity-certificate
   [16]: #push-images-to-azure-container-registry-4
   [Migrate the on-premises database]: #migrate-the-on-premises-database
