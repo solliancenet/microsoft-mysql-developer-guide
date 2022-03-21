@@ -2,7 +2,7 @@
 
 In the previous function apps the connection information was embedded into the function app code.  As was covered in the traditional deployment models, it is a best practice to remove this information and place it into Azure Key Vault.  Here we will utilize the features of Azure to use Managed Identities to connect to the database.
 
-> **NOTE** This is currenlty only supported on Azure Database for Single Server.
+> **NOTE** This is currently only supported on Azure Database for Single Server.
 
 ## Enable MySQL Azure AD Authentication
 
@@ -11,6 +11,8 @@ In the previous function apps the connection information was embedded into the f
 - Under **Settings**, select **Active Directory admin**
 - Select **Set admin**
 - For the administrator, select your lab credentials
+- Select **Select**
+- Select **Save**
 
 ## Create Managed Identity
 
@@ -23,16 +25,36 @@ In the previous function apps the connection information was embedded into the f
 - Search for the **mysqldevSUFFIX-addcustomerfunction** function application name, then select it.
 - Copy the **Application ID** for later use
 
+## Login to the Azure Database with Azure AD credentials
+
+- Create a login token
+- Open a PowerShell window, run the following:
+
+```PowerShell
+$accessToken = Get-AzAccessToken -ResourceUrl https://ossrdbms-aad.database.windows.net
+
+$password = $accessToken.Token;
+```
+
+- Open the MySQL Workbench, create a new connection
+- For the name, type **azureadmysql**
+- For the hostname, type the DNS of the Azure Database for MySQL (`mysqldevSUFFIX.mysql.database.azure.com`)
+- For the username, type your user UPN (ex `user@tenant.onmicrosoft.com@mydb`)
+- Select the **Advanced** tab, check the **Enable Cleartext Authentication Plugin**
+- Select **OK**
+- Select the new connection, type the password from above
+
 ## Add Users to Database
 
-- Login to the Azure Database for MySQL using the Azure AD Adminsitrator account
 - Run the following, replace the `AZURE_APPLICATION_ID` with the one copied from above:
 
 ```sql
 SET aad_auth_validate_oids_in_tenant = OFF;
+
 CREATE AADUSER 'mymsiuser' IDENTIFIED BY 'AZURE_APPLICATION_ID';
+
 --It is recommended to GRANTS necessary permission in DB
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER ON *.* TO 'mymsiuser'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 ```
 
@@ -66,10 +88,10 @@ access_token = token.token
 - Run the following to deploy the updated Azure Function App:
 
 ```powershell
-func azure functionapp publish mysqldevSUFFIX-addcustomerfunction
+func azure functionapp publish mysqldevSUFFIX-addcustomerfunction --force --python
 ```
 
-Browse to the function endpoint and see the data (the output of the previous command will include this information):
+Browse to the function endpoint and see the data (the output of the previous command will include this information).  The function app is now running as a managed identity and connecting to the database using that identity:
 
 ```text
 https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunction?code=SOMECODE

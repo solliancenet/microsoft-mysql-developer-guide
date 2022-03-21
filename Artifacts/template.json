@@ -72,6 +72,105 @@
         }
       },
       {
+        "type": "Microsoft.Network/privateDnsZones",
+        "apiVersion": "2018-09-01",
+        "name": "mysql.database.azure.com",
+        "location": "global",
+        "tags": {
+        },
+        "properties": {
+            "maxNumberOfRecordSets": 25000,
+            "maxNumberOfVirtualNetworkLinks": 1000,
+            "maxNumberOfVirtualNetworkLinksWithRegistration": 100
+        }
+    },
+    {
+        "type": "Microsoft.Network/privateDnsZones/SOA",
+        "apiVersion": "2018-09-01",
+        "name": "mysql.database.azure.com/@",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/privateDnsZones', 'mysql.database.azure.com')]"
+        ],
+        "properties": {
+            "ttl": 3600,
+            "soaRecord": {
+                "email": "azureprivatedns-host.microsoft.com",
+                "expireTime": 2419200,
+                "host": "azureprivatedns.net",
+                "minimumTtl": 10,
+                "refreshTime": 3600,
+                "retryTime": 300,
+                "serialNumber": 1
+            }
+        }
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2018-09-01",
+      "name": "private.mysql.database.azure.com",
+      "location": "global",
+      "tags": {
+      },
+      "properties": {
+          "maxNumberOfRecordSets": 25000,
+          "maxNumberOfVirtualNetworkLinks": 1000,
+          "maxNumberOfVirtualNetworkLinksWithRegistration": 100
+      }
+  },
+  {
+      "type": "Microsoft.Network/privateDnsZones/SOA",
+      "apiVersion": "2018-09-01",
+      "name": "private.mysql.database.azure.com/@",
+      "dependsOn": [
+          "[resourceId('Microsoft.Network/privateDnsZones', 'private.mysql.database.azure.com')]"
+      ],
+      "properties": {
+          "ttl": 3600,
+          "soaRecord": {
+              "email": "azureprivatedns-host.microsoft.com",
+              "expireTime": 2419200,
+              "host": "azureprivatedns.net",
+              "minimumTtl": 10,
+              "refreshTime": 3600,
+              "retryTime": 300,
+              "serialNumber": 1
+          }
+      }
+  },
+      {
+        "type": "Microsoft.Network/privateDnsZones",
+        "apiVersion": "2018-09-01",
+        "name": "privatelink.azurewebsites.net",
+        "location": "global",
+        "tags": {
+        },
+        "properties": {
+            "maxNumberOfRecordSets": 25000,
+            "maxNumberOfVirtualNetworkLinks": 1000,
+            "maxNumberOfVirtualNetworkLinksWithRegistration": 100
+        }
+    },
+    {
+        "type": "Microsoft.Network/privateDnsZones/SOA",
+        "apiVersion": "2018-09-01",
+        "name": "privatelink.azurewebsites.net/@",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/privateDnsZones', 'privatelink.azurewebsites.net')]"
+        ],
+        "properties": {
+            "ttl": 3600,
+            "soaRecord": {
+                "email": "azureprivatedns-host.microsoft.com",
+                "expireTime": 2419200,
+                "host": "azureprivatedns.net",
+                "minimumTtl": 10,
+                "refreshTime": 3600,
+                "retryTime": 300,
+                "serialNumber": 1
+            }
+        }
+    },
+      {
         "type": "Microsoft.DataFactory/factories",
         "apiVersion": "2018-06-01",
         "name": "[variables('resourceName')]",
@@ -479,7 +578,15 @@
       {
         "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
         "apiVersion": "2021-06-01",
-        "name": "orders",
+        "name": "[format('{0}/default/{1}', variables('resourceName'), 'orders')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
+        ]
+      },
+      {
+        "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+        "apiVersion": "2021-06-01",
+        "name": "[format('{0}/default/{1}', variables('resourceName'), 'logicapp')]",
         "dependsOn": [
           "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
         ]
