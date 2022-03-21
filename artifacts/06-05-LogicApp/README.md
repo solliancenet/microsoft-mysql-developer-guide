@@ -5,7 +5,9 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 ## Create a Private Endpoint Flexible Server
 
 - Open the Azure Portal
-- Browse to the lab resource group and select **+Create**
+- Browse to the lab resource group
+- Find the **mysqldevSUFFIX-db** virtual network, take note of its region location
+- In the top navigation menu, select **+Create**
 - Search for **Azure Database for MySQL**
 - Select **Create**
 - Under **Flexible Server**, select **Create**
@@ -33,7 +35,7 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 
   ![This image demonstrates the Azure VNet integration.](./media/vnet-integration.png "Flexible Server VNet integration")
 
-- Do not alter the parameters for the **Private DNS integration**
+- Select the **private.mysql.database.azure.com** private DNS zone
 - Select **Review + create**
 - Select **Create**
 - Navigate to the new Azure Database for MySQL Flexible Server instance
@@ -48,14 +50,29 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 
 > **NOTE** It is also possible to use the Azure CLI [`az mysql flexible-server create`](https://docs.microsoft.com/cli/azure/mysql/flexible-server?view=azure-cli-latest#az-mysql-flexible-server-create) command to provision a Flexible Server instance in a virtual network.
 
-TODO: Link private DNS zone to VM (hub) VNet
+## Private DNS - Virtual network link
+
+Several private DNS Zones were created as part of the ARM template deployment, here you will link those to your virtual networks so DNS resolution of private vnet and private endpoint resources become resolvable by other resources (such as virtual machines).
+
+- Browse to the **private.mysql.database.azure.com** private dns zone
+- Under **Settings**, select **Virtual network links**, you should see a auto-created link (from the resource creation above)
+- Select the **Overview** link
+- Record the database IP Address for later use
+- It can take some time for the DNS to become available, on the **paw-1** virtual machine
+- Open the `C:\Windows\System32\drivers\etc\HOSTS` file in notepad++
+- Add the following to the file:
+
+```text
+10.4.0.6 mysqldevSUFFIXflexpriv.private.mysql.database.azure.com
+```
 
 ## Configure the new Flexible Server instance
 
+- Switch to the **paw-1** virtual machine
 - Open a command prompt window and enter the following command to initiate a connection to the Flexible Server instance. Provide `Solliance123` as the password, when prompted. Be sure to replace the `SUFFIX`:
 
   ```cmd
-  "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevSUFFIXflexpriv.mysql.database.azure.com -u wsuser -p
+  "C:\Program Files\MySQL\MySQL Workbench 8.0 CE\mysql.exe" -h mysqldevSUFFIXflexpriv.private.mysql.database.azure.com -u wsuser -p
   ```
 
 - Create a new database, titled `noshnowapp`. Then, create a new table for orders. It is a simplified version of the table used by the Contoso NoshNow application.
@@ -90,7 +107,7 @@ TODO: Link private DNS zone to VM (hub) VNet
 - When prompted, log in to the lab Azure account
 - Select **Register a new gateway on this computer**
 - Select **Next**
-- For the name, type **gateway-mysql**
+- For the name, type **gateway-mysql-SUFFIX**
 - For the recovery key, type **Solliance123**
 - Ensure that the region is the same as where the virtual network for the database instance is located
 - Select **Configure**
@@ -99,11 +116,11 @@ TODO: Link private DNS zone to VM (hub) VNet
 
 ## Configure the Logic Apps Gateway
 
-- Select **Create a gateway in Azure**
+- In the **On-premises data gateway** dialog, select **Create a gateway in Azure**
 - Select the subscription and the resource group
 - For the name, type **logic-app-gateway**
 - Select the region used above
-- Select the **gateway-mysql** gateway
+- Select the **gateway-mysql-SUFFIX** gateway
 - Select **Review + create**
 - Select **Create**
 
@@ -112,6 +129,32 @@ TODO: Link private DNS zone to VM (hub) VNet
 ## Configure the Logic App
 
 We have already created a Logic App that uses a timer trigger to check for new Orders in the database and then send an email.
+
+### Configure deployed Logic App
+
+- Browse to the **mysqldevSUFFIX-logic-app**
+- Under **Development Tools**, select **API connections**
+- Select **office365**
+- Under **General**, select **Edit API Connection**
+- Under the **Display Name** to your lab user email address
+- Select **Authorize**, login using the lab credentials
+- Select **Save**
+- Select the **azureblob** connection
+- Under **General**, select **Edit API Connection**
+- Enter the **mysqldevSUFFIX**, azure storage account name and access key
+- Select the **mysql** connection
+- Under **General**, select **Edit API Connection**
+- Enter the following information:
+  - Server : `mysqldevSUFFIXflexpriv.private.mysql.database.azure.com`
+  - Database name : `contosostore`
+  - Username : `wsuser`
+  - Password : `Solliance123`
+  - Gateway : `gateway-mysql-SUFFIX`
+- Select **Save**
+
+### Create a Logic App (Optional)
+
+This step has already been done for you, but if you'd like to create the logic app from scratch the steps are provided here.
 
 - Select **Blank template**
 - For the trigger, select **Recurrence**. Keep the default values
@@ -129,7 +172,7 @@ We have already created a Logic App that uses a timer trigger to check for new O
   - For the database, type **noshnowapp**
   - For username, type **wsuser**
   - For password, type **Solliance123**
-  - For the gateway, select **gateway-mysql**
+  - For the gateway, select **gateway-mysql-SUFFIX**
 - Select **Create**
 - For the table name, enter **noshnowapp.orders**
 - Add the **Filter Query** and the **Select Query** parameters
@@ -160,10 +203,15 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - Select **Add**
 - For the name, type **mysqldevSUFFIX-web-pe**
 - For the virtual network, select **mysqldevSUFFIX-web**
+- Select the **default** subnet
 - Select **OK**
+- Browse to the **mysqldevSUFFIX-web** virtual network, record the new IP Address of the private endpoint.
+
+### Set the Database Host
+
 - Switch back to the main blade for the app service
 - Under **Settings**, select **Configuration**
-- Edit the app setting value for **DB_HOST** to **10.4.0.4**
+- Edit the app setting value for **DB_HOST** to the ip address you recorded above.
 - Select **Save**
 
 ### Add virtual network peering
@@ -174,21 +222,21 @@ We have already created a Logic App that uses a timer trigger to check for new O
 - For the name, type **web-to-db**
 - For the peering link name, type **db-to-web**
 - For the virtual network, select **mysqldevSUFFIX-db**
-- Select **Add*, after a couple minutes the link should to **Connected**
-- Under **Settings**, select **Subnets**
-- Select **+Subnet**
-- For the name, type **vnet-web-int**
-- Select **Save**
+- Select **Add**, after a couple minutes the link should to **Connected**
+- Under **Settings**, select **Subnets**, ensure that a virtual network called **vnet-web-int**, if not create it
+  - Select **+Subnet**
+  - For the name, type **vnet-web-int**
+  - Select **Save**
 
 ### Add VNet Integrate
 
 - Browse back to the app service
 - Under **Settings**, select **Networking**
 - Under **Outbound Traffic**, select **VNet integration**
-- Select **Add virtual network**
+- Select **Add VNet**
 - Select the **mysqldevSUFFIX-web** virtual network
 - Select the **vnet-web-int** subnet
-- Select **Add**
+- Select **OK**
 
 ### Add the lastOrder.txt file
 

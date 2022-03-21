@@ -9,6 +9,9 @@ spec:
   containers:
     - name: store-db
       image: <REGISTRY_NAME>.azurecr.io/store-db:latest
+      volumeMounts:
+        - mountPath: "/var/lib/mysql/"
+          name: mysql-data
       imagePullPolicy: IfNotPresent
       ports:
       - containerPort: 3306

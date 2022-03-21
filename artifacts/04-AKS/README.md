@@ -8,17 +8,18 @@ Now that a containerized version of the applications exists, it can now be hoste
 
 ## Run images in Azure Kubernetes Service (AKS)
 
-1. Ensure kubectl is installed:
+1. Open the `C:\labfiles\microsoft-mysql-developer-guide\Artifacts\04-AKS` directory with Visual Studio Code
+2. Open a new terminal window, ensure kubectl is installed:
 
     ```powershell
-    cd 04-aks
+    $resourceGroupName = "YOUR_RESOURCEGROUP_NAME";
 
     az aks install-cli
 
     az aks get-credentials --name "mysqldevSUFFIX" --resource-group $resourceGroupName
     ```
 
-2. Run the following commands to deploy the containers:
+3. Run the following commands to deploy the containers (be sure to update the variable values):
 
     ```powershell
     $acrName = "mysqldevSUFFIX";
@@ -48,13 +49,13 @@ Now that a containerized version of the applications exists, it can now be hoste
     az aks show -g $resourceGroupName -n $resourceName --query "identity"
     ```
 
-3. Create a managed disk, copy its `id` for later use:
+4. Create a managed disk, copy its `id` for later use:
 
   ```powershell
   az disk create --resource-group $resourceGroupName --name "disk-store-db" --size-gb 200 --query id --output tsv
   ```
 
-4. Create the following `storage-db.yaml` deployment file:
+5. Open and review the following `storage-db.yaml` deployment file:
 
   ```yaml
   apiVersion: v1
@@ -70,7 +71,7 @@ Now that a containerized version of the applications exists, it can now be hoste
         storage: 200Gi
   ```
 
-4. Create the following `store-db.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` and `ID` tokens:
+6. Open and review the `store-db.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` and `ID` tokens:
 
   ```yaml
   apiVersion: v1
@@ -78,6 +79,8 @@ Now that a containerized version of the applications exists, it can now be hoste
   metadata:
     name: store-db
     namespace: mysqldev
+    labels:
+        app: store-db
   spec:
     volumes:
     - name: mysql-data
@@ -99,13 +102,15 @@ Now that a containerized version of the applications exists, it can now be hoste
       - name: acr-secret
   ```
 
-4. Run the deployment:
+7. Run the deployment:
 
     ```powershell
+    kubectl create -f storage-db.yaml
+
     kubectl create -f store-db.yaml
     ```
 
-5. Create the following `store-web.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
+8. Create the following `store-web.yaml` deployment file, be sure to replace the `<REGISTRY_NAME>` token:
 
   ```yaml
   apiVersion: v1
@@ -139,7 +144,7 @@ Now that a containerized version of the applications exists, it can now be hoste
 
 ## Add services
 
-1. Create the following `store-db-service.yaml` yaml file:
+1. Open and review the  `store-db-service.yaml` yaml file:
 
   ```yaml
   apiVersion: v1
@@ -153,7 +158,7 @@ Now that a containerized version of the applications exists, it can now be hoste
       app: store-db
   ```
 
-2. Create the following `store-web-service.yaml` yaml file:
+2. Open and review the `store-web-service.yaml` yaml file:
 
   ```yaml
   apiVersion: v1
@@ -167,6 +172,30 @@ Now that a containerized version of the applications exists, it can now be hoste
       app: store-web
   ```
 
+3. Run the deployment:
+
+    ```powershell
+    kubectl create -f store-web-service.yaml
+
+    kubectl create -f store-db-service.yaml
+    ```
+
+## Create a Loadbalancer
+
+1. Review the `store-web-lb.yaml` file:
+2. Execute the deployment:
+
+  ```powershell
+  kubectl create -f store-web-lb.yaml
+  ```
+
+3. Review the `store-db-lb.yaml` file:
+4. Execute the deployment:
+
+  ```powershell
+  kubectl create -f store-db-lb.yaml
+  ```
+
 ## Test the images
 
 1. Browse to the Azure Portal
@@ -178,14 +207,15 @@ Now that a containerized version of the applications exists, it can now be hoste
 
 Kubernetes deployments allow for the creation of multiple instances of pods and containers in case nodes or pods crash unexpectiantly.  
 
-1. Create the following `store-deployment.yaml` file:
-
-  ```yaml
-  TODO
-  ```
-
-2. Deploy the deployment:
+1. Review the `store-web-deployment.yaml` file be sure to replace the Azure Container Registry link:
 
   ```powershell
-  TODO
+  kubectl create -f store-web-deployment.yaml
+  ```
+
+2. Review the `store-db-deployment.yaml` file be sure to replace the Azure Container Registry link:
+3. Execute the deployment:
+
+  ```powershell
+  kubectl create -f store-db-deployment.yaml
   ```
