@@ -4,7 +4,7 @@ Once the application and database are deployed, the next phase is to manage the 
 
 Azure Database for MySQL provides for the ability to monitor both of these types of operational activities using Azure-based tools such as [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview), [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment), and [Azure Sentinel](https://docs.microsoft.com/azure/sentinel/overview). In addition to the Azure-based tools, security information and event management (SIEM) systems can be configured to consume these logs as well.
 
-Whichever tool is used to monitor the new cloud-based workloads, alerts will need to be created to warn administrators of outages, operational performance problems, or any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook) to address the event.
+Alerts will need to be created to warn administrators of outages, operational performance problems, or any suspicious activity. If a particular alert event has a well-defined remediation path, alerts can fire automated [Azure runbooks](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook) to address the event.
 
 The monitoring content will be focused on these concepts:
 
@@ -14,19 +14,46 @@ The monitoring content will be focused on these concepts:
 
 - Database monitoring
 
-## Azure Monitor
+## Azure Monitor overview
 
-Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances.
+Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances. Management tools, such as those in Azure Security Center and Azure Automation, also push log data to Azure Monitor. The service aggregates and stores this telemetry in a log data store that’s optimized for cost and performance.
+
+![](media/how-azure-monitor-works.png)
+
+For more information on what can be monitored, read: [What is monitored by Azure Monitor?](https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference)
 
 ## Define your strategy ##
 
 Administrators should [plan their monitoring strategy](https://docs.microsoft.com/azure/azure-monitor/best-practices-plan) and configuration for the best results. Some data collection and features are free while others have associated costs. Focus on maximizing your applications' performance and reliability. Identify the signs of failure. See [Azure Monitor Pricing](https://azure.microsoft.com/pricing/details/monitor/).
 
+## Application monitoring
+
+Once you have deployed your application, you will want to ensure the uptime, manage performance, and understand usage patterns.  [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) is a feature of Azure Monitor that provides extensible application performance management (APM) and monitoring for live web apps.
+
+It supports a wide variety of platforms, including .NET, Node.js, Java, and Python. Application monitoring is very flexible. Apps hosted on-premises, hybrid, or on any public cloud can take advantage of this powerful monitoring tool.
+
+Using Application Insights:
+- Install a small instrumentation package (SDK) in your app
+- Or enable Application Insights by using the Application Insights agent.
+
+Instrumentation monitors your app and directs the telemetry data to an Application Insights resource by using a unique instrumentation key.
+
+Example steps to configure WordPress monitoring:
+
+- Install Application Insights plugin from WordPress Plugins
+
+- Create Application Insights
+
+- Copy the Instrumentation Key from created Application Insights
+
+- Then go to **Settings** and Application Insights inside WordPress, and add the key there.
+
+- Access the website and look for details
+
+The free allowance is large enough to cover development, and publishing an app for a small number of users. You can set a cap to prevent more than a specified amount of data from being processed. Larger volumes of telemetry are charged by the Gb. [Manage usage and costs for Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/pricing)
 ## Monitoring database operations
 
-TODO
-
-Once metric data is flowing, use the [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query language to query the various log information. Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
+Log data collected by Azure Monitor can be analyzed with queries to quickly retrieve, consolidate, and analyze collected data. Create and test queries using Log Analytics in the Azure portal. Once metric data is flowing, use the [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query language to query the various log information. Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
 
 For example, to get the memory usage of the Azure Database for MySQL:
 
@@ -51,6 +78,8 @@ AzureMetrics
 | project TimeGenerated, Total, Maximum, Minimum, TimeGrain, UnitName
 | top 1 by TimeGenerated
 ```
+
+TODO: Picture of example output
 
 The table below, pulled from the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring), indicates the metrics exposed by Flexible Server instances:
 
@@ -77,7 +106,9 @@ The table below, pulled from the [Microsoft documentation](https://docs.microsof
 
 In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/concepts-query-performance-insight) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
 
-Wait statistics provides a view of the wait events that occur during the execution of a specific query. Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
+Wait statistics provides a view of the wait events that occur during the execution of a specific query.
+
+> ![Warning](../Global_Media/warning.png) **Warning:** Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
 
 The `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can log long-running queries (default is 10 sec).
 
@@ -127,16 +158,7 @@ When working through the sample, note that Log Analytics is not just limited to 
 
 From the **Logs** page it is possible to query the activity log from the samples provided.
 
-TODO: Fix broken images
-
-![This image demonstrates a sample query of the Activity Log from the Logs tab of the Azure Portal.](./media/activity-log-sample-query.png "Activity log sample query")
-
-![This image demonstrates the query results from the opened sample.](./media/activity-log-query-results.png "Sample query output")
-
 As shown above, MySQL data logs will generate a table with a specific schema of which KQL can be used to facilitate analysis. Consult [the documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs) for more information.
-
-## Application monitoring
-TODO
 
 ## Error Logs
 
@@ -166,4 +188,4 @@ Azure Service Health notifies administrators about Azure service incidents and p
 
 - [Azure Monitor Logs Overview](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
 
-
+- [Application Monitoring for Azure App Service Overview](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps)
