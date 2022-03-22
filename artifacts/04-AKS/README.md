@@ -219,3 +219,5 @@ Kubernetes deployments allow for the creation of multiple instances of pods and 
   ```powershell
   kubectl create -f store-db-deployment.yaml
   ```
+
+4. You now have a very robust deployment that will survive multiple node failures.

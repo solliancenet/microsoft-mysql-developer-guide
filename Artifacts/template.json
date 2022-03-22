@@ -555,6 +555,32 @@
             "publicNetworkAccess": "Enabled"
         }
     },
+    {
+      "type": "Microsoft.Synapse/workspaces",
+      "apiVersion": "2021-06-01",
+      "name": "[variables('resourceName')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('resourceName'), '/blobServices/default/containers/synapse')]"
+      ],
+      "identity": {
+          "type": "SystemAssigned"
+      },
+      "properties": {
+          "defaultDataLakeStorage": {
+              "accountUrl": "[concat('https://', variables('resourceName'), '.dfs.core.windows.net')]",
+              "filesystem": "synapase"
+          },
+          "encryption": {},
+          "managedResourceGroupName": "[variables('resourceName')]",
+          "sqlAdministratorLogin": "[parameters('administratorLogin')]",
+          "sqlAdministratorLoginPassword": "[parameters('administratorLoginPassword')]",
+          "privateEndpointConnections": [],
+          "publicNetworkAccess": "Enabled",
+          "azureADOnlyAuthentication": false,
+          "trustedServiceBypassEnabled": false
+      }
+  },
       {
         "type": "Microsoft.Storage/storageAccounts",
         "sku": { "name": "Standard_LRS" },
@@ -587,6 +613,14 @@
         "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
         "apiVersion": "2021-06-01",
         "name": "[format('{0}/default/{1}', variables('resourceName'), 'logicapp')]",
+        "dependsOn": [
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
+        ]
+      },
+      {
+        "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+        "apiVersion": "2021-06-01",
+        "name": "[format('{0}/default/{1}', variables('resourceName'), 'synapse')]",
         "dependsOn": [
           "[resourceId('Microsoft.Storage/storageAccounts', variables('resourceName'))]"
         ]

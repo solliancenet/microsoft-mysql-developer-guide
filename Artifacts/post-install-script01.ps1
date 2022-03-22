@@ -100,13 +100,14 @@ Install7z
 
 InstallWebPI
 
-InstallWebPIPhp "PHP80x64,MySQLConnector,UrlRewrite2,ARRv3_0"
-
 $version = "8.0.16"
 InstallPhp $version;
 
+InstallWebPIPhp "PHP80x64,MySQLConnector,UrlRewrite2,ARRv3_0"
+
 ConfigurePhp "C:\tools\php80\php.ini";
 ConfigurePhp "C:\tools\php81\php.ini";
+ConfigurePhp "C:\Program Files\PHP\v8.0\php.ini";
 
 $phpDirectory = "C:\tools\php80\";
 $phpPath = "$phpDirectory\php-cgi.exe";
@@ -158,6 +159,8 @@ InstallVisualStudio "community";
 Install7Zip;
 
 InstallFiddler;
+
+InstallPowerBI;
 
 #to add the user to docker group
 $global:localusername = "wsuser";
