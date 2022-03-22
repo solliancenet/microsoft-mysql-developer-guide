@@ -323,22 +323,34 @@
         "for": "./media/app-loads-aks.png"
     },
     {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/how-azure-monitor-works.png",
+        "for": "media/how-azure-monitor-works.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/application-insights-overview.png",
+        "for": "media/application-insights-overview.png"
+    },
+    {
+        "type": "CouldNotFetchResource",
+        "verbosity": "WARNING",
+        "message": "PandocResourceNotFound \"../Global_Media/tip.png\"",
+        "path": "../Global_Media/tip.png"
+    },
+    {
         "type": "CouldNotFetchResource",
         "verbosity": "WARNING",
         "message": "PandocResourceNotFound \"../Global_Media/warning.png\"",
         "path": "../Global_Media/warning.png"
     },
     {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/activity-log-sample-query.png",
-        "for": "./media/activity-log-sample-query.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/activity-log-query-results.png",
-        "for": "./media/activity-log-query-results.png"
+        "type": "CouldNotFetchResource",
+        "verbosity": "WARNING",
+        "message": "PandocResourceNotFound \"../Global_Media/warning.png\"",
+        "path": "../Global_Media/warning.png"
     },
     {
         "type": "LoadedResource",
