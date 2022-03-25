@@ -12,5 +12,5 @@ php -r "unlink('composer-setup.php');"
 
 echo "Copying files from /home/site/repository/* to /home/site/wwwroot"
 cp -r /home/site/repository/* /home/site/wwwroot
-cp /home/site/repository/.env.example /home/site/wwwroot/.env
+cp /home/site/repository/.env.example.azure /home/site/wwwroot/.env
 cp /home/site/repository/htaccess /home/site/wwwroot/.htaccess

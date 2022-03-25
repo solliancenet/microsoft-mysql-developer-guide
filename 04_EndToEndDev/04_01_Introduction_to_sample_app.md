@@ -28,7 +28,7 @@ This is the base architecture that will be evolved in the future sample scripts.
 
 As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each step will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather than requiring to walk through lengthy setup exercises.
 
->**Note:** The sample application was tested with PHP version 7.4. **We recommend deploying to a 7.4 environment**. Deploying to an 8.x environment requires a slightly different configuration as the underlying web server has changed.
+>**Note:** The sample application was tested with PHP version 7.4 and 8.0. Deploying to an 8.x environment requires a slightly different configuration as the underlying web server has changed.
 
 | PHP Version | Web Server |
 |-------------|----------------|
@@ -41,6 +41,8 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 >**Warning**: Outdated runtimes are periodically removed from the Web Apps Create and Configuration blades in the Portal. These runtimes are hidden from the Portal when they are deprecated by the maintaining organization or found to have significant vulnerabilities. These options are hidden to guide customers to the latest runtimes where they will be the most successful. Older Azure App Service Docker images can be found [here](https://github.com/Azure-App-Service/php).
 
 ### Sample application deployment steps
+
+**Deploying to PHP 7.4**
 
 The deployment strategy applied in this sample application focuses on updating project environment variables instead of global environment variable configuration.
 
@@ -117,20 +119,31 @@ The deployment strategy applied in this sample application focuses on updating p
 
       ![Azure local git push example.](media/azure-local-git-push.png)
 
-5. Return to the Azure Portal. Navigate to the App Service. Find the **Deployment Tools** section. Log into App Service SSH terminal. Run the Composer update command in the wwwroot directory, which will import the packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
+5. Return to the Azure Portal. Navigate to the App Service. Find the **Deployment Tools** section. Log into App Service SSH terminal.
+
+   ![](media/ssh_terminal.png)
+
+6. Verify the sample application files have been copied into the wwwroot directory.
+
+   ```bash
+   cd /home/site/wwwroot
+   ls -la
+   ```
+
+7. Run the Composer update command in the wwwroot directory, which will import the packages and create the vendor folder, along with the autoload script (../vendor/autoload.php).
 
     ```bash
-    cd /home/site/wwwroot
+    cp /home/site/repository/.env.example.azure /home/site/wwwroot/.env
     composer.phar update
     ```
   
-6. Generate Laravel application key.
+8. Generate Laravel application key. This command will update the **.env** file.
   
     ```bash
     php artisan key:generate
     ```
 
-7. Update the .env file with the Azure URL and save the changes.
+9. Update the **APP_URL** parameter in the .env file with the Azure URL and save the changes.
 
    ```bash
     nano /home/site/wwwroot/.env
@@ -138,9 +151,11 @@ The deployment strategy applied in this sample application focuses on updating p
 
     ![Update APP_URL value](media/update-app-url-env.png)
 
-8. Open a browser and view the application.
+10. Open a browser and view the application.
 
     ![ContosoNoshNow home page](media/ContosoNoshNow-home-page.png)
+
+   >**Note:** Notice the message in red at the bottom of the web page. "Site is unable to pull from database. Using JSON data instead."
 
 ## Connecting to the database
 
@@ -208,7 +223,7 @@ The application should now be available and show some sample data, however the w
    ![Seeded database.](media/seeded-database.png)
 
    - Using MySQL Workbench, verify the tables have the seed data.
- 
+
 7. Navigate back to the web app and enter a sample order.
 
    ![](media/sample-order.png)

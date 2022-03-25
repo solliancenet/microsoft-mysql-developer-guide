@@ -4,6 +4,8 @@ Developers need to assess their applications for *availability* (minimal downtim
 
 ## Approaches
 
+TODO - Missing feature/functional testing.
+
 ### Resiliency testing
 
 One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment, and if it functions adequately, the second environment begins handling user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment. As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
