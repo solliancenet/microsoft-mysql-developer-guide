@@ -29,11 +29,50 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     
     #Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip" -force
 
+    #Reference - https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git?tabs=cli
+
     az login --scope https://management.core.windows.net//.default
 
     az account set --name "SUBSCRIPTION_NAME"
 
-    az webapp deploy --resource-group $resourceGroupName --name $appName --src-path "C:\labfiles\microsoft-mysql-developer-guide\site.zip" --type zip
+    #setup local git
+    az webapp deployment source config-local-git --name $appName --resource-group $resourceGroupName;
+
+    #set the username and password
+    az webapp deployment user set --user-name "mysqldev$suffix" --password "Solliance123"
+
+    #get the github link to the azure app service
+    #$url = az webapp deployment list-publishing-profiles --resource-group $resourceGroupName --name $appName
+
+    $url = az webapp deployment list-publishing-credentials --resource-group $resourceGroupName --name $appName --query scmUri
+    $url = $url.replace("`"","") + "/$appName.git"
+
+    az webapp config appsettings set --name $appName --resource-group $resourceGroupName --settings DEPLOYMENT_BRANCH='main'
+
+    #setup git
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    git config --global http.postBuffer 524288000
+
+    #do the deployment
+    cd "C:\labfiles\microsoft-mysql-developer-guide"
+
+    #remove current git setup
+    remove-item .git -force -Recurse
+
+    cd "C:\labfiles\microsoft-mysql-developer-guide\sample-php-app"
+
+    git init
+    git remote rm origin
+    git remote rm azure
+    git remote add azure $url
+    git add .
+    git commit -m "init commit"
+    git push azure main
+
+    #only works with 7.4 PHP / Apache
+    #az webapp deploy --resource-group $resourceGroupName --name $appName --src-path "C:\labfiles\microsoft-mysql-developer-guide\site.zip" --type zip
+
     ```
 
 ### Update Application Settings
