@@ -47,6 +47,8 @@ The biggest advantage of a classic on-premises deployment is that you have full 
 
 To perform a simulated classical deployment in Azure, go to the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
 
+![This image demonstrates the classic deployment.](./media/classic-deployment-diagram.png "Classic deployment")
+
 ## Azure VM deployment
 
 An Azure VM Deployment is very similar to a classical deployment but rather than deploying to physical hardware, deployment is to virtualized hardware in the Azure cloud.  The operating system and software will be the same as in a classic deployment, but to open the system to external apps and users, the virtual networking must be modified to allow database access to the web server. This is known as the IaaS (infrastructure as a service) approach.
@@ -55,6 +57,8 @@ The advantages of using Azure to host virtual machines include the ability to en
 
 To perform an Azure VM deployment, reference the [Cloud Deployment to Azure VM](./../artifacts/02-01-CloudDeploy-Vm/README.md) article.
 
+![This image demonstrates the Azure VM deployment.](./media/azure-vm-deployment.png "Azure VM deployment")
+
 ## Simple App Service deployment with Azure Database for MySQL Flexible Server
 
 If supporting the operating system and the various other software is not a preferred approach, the next evolutionary path is to remove the operating system and web server from the list of setup and configuration steps. This can be accomplished by utilizing the Platform as a Service (PaaS) offerings of Azure App Service and Azure Database for MySQL.
@@ -62,6 +66,8 @@ If supporting the operating system and the various other software is not a prefe
 However, modernizing an application and migrating them to these aformentioned services may introduce some relatively small application changes.
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service](./../artifacts/02-02-CloudDeploy-AppSvc/README.md) article.
+
+![This image demonstrates an App Service deployment that references Flexible Server.](./media/app-svc-flex-server.png "App Service and Flexible Server deployment")
 
 ## App Service with In-App MySQL
 
@@ -73,6 +79,8 @@ The limits of the MySQL instance are primarily driven by the size of the corresp
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service with MySQL InApp](./../artifacts/02-03-CloudDeploy-InApp/README.md) article.
 
+![This image demonstrates an App Service deployment with in-app MySQL.](./media/in-app-deployment.png "App Service with in-app MySQL")
+
 ## Continuous Integration (CI) and Continuous Delivery (CD)
 
 Doing manual deployments every time a change is made can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  Azure DevOps and Github Actions can be used to automatically deploy code and databases each time a new commit occurs in the codebase.
@@ -82,6 +90,8 @@ Whether using Azure DevOps or Github, there will be some setup work to support t
 TODO: Need to replace all relative path links.
 
 To perform deployments using Azure DevOps and GitHub Actions, reference the [Deployment via CI/CD](./../artifacts/02-04-CloudDeploy-CICD/README.md) article.
+
+![This image demonstrates an App Service deployment with CI/CD.](./media/cicd-deployment.png "App Service CI/CD deployment")
 
 ## Containerizing layers with Docker
 
@@ -93,6 +103,8 @@ Containerizing an application and data layer can be relatively complex, but once
 
 To perform deployments using Docker, reference the [Migrate to Docker Containers](./../artifacts/03-00-Docker/README.md) article. This article containerizes the Laravel sample application and its MySQL database as separate containers that communicate through the Docker runtime on the VM instance.
 
+![This image demonstrates a containerized deployment.](./media/containerized-deployment.png "Containerized deployment")
+
 ## Azure Container Instances (ACI)
 
 After application and data layers are migrated to containers, a hosting target must be selected to run the containers.  A simple way to deploy a container is to use Azure Container Instances (ACI).
@@ -101,11 +113,15 @@ Azure Container Instances can deploy one container at a time or multiple contain
 
 To implement this deployment, reference the [Migrate to Azure Container Instances (ACI)](./../artifacts/03-01-CloudDeploy-ACI/README.md) article. This article serves the Laravel app and MySQL database containers on ACI. It also utilizes an Azure File Share to persist data.
 
+![This image demonstrates a deployment to Azure Container Instances.](./media/aci-deployment.png "Azure Container Instances deployment")
+
 ## App Service Containers
 
 Developers can extend the benefits of App Service, like scalability, elasticity, and simple CI/CD integration, to their containerized apps using App Service for Containers. This offering supports individual containers and multi-container apps through Docker Compose files. Containers give teams added flexibility beyond the platforms supported directly by App Service.
 
 To perform deployments using Azure App Service containers, reference the [Migrate to Azure App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md) article. This example deploys both the database and web app containers to App Service for Containers.
+
+![This image demonstrates a deployment to App Service for Containers.](./media/app-service-containers-deployment.png "App Service for Containers deployment")
 
 ## Azure Kubernetes Service (AKS)
 
@@ -119,11 +135,15 @@ Moving to Azure Kubernetes Service (AKS) will enable the application to inherit 
 
 To perform deployments using AKS, reference the [Migrate to Azure Kubernetes Services (AKS)](./../artifacts/04-AKS/README.md) article to host the database and web app containers on an enterprise-ready AKS instance.
 
+![This image demonstrates a deployment to Azure Kubernetes Service (AKS).](./media/aks-deployment.png "AKS deployment")
+
 ## AKS with MySQL Flexible Server
 
 Running the database layer in a container is better than running it in a VM, but not as great as removing all the operating system and software management components.
 
 To implement this deployment, reference the [Utilize AKS and Azure Database for MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md) article. This article extends the benefits of a PaaS database to the Contoso NoshNow application.
+
+![This image demonstrates an AKS deployment that references Flexible Server.](./media/aks-flexible-server-deployment.png "AKS with Flexible Server deployment")
 
 ## Start the Developer Journey
 
