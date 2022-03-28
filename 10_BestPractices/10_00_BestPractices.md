@@ -42,9 +42,7 @@ Although rare, if a regional failure occurs, geo-redundant backups or a read rep
 
 If the application is made up of many different instances around the world, it may not be feasible to update all of the clients. Utilize an [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) or [Application Gateway](https://docs.microsoft.com/azure/application-gateway/overview) to implement a seamless failover functionality. Although helpful and time-saving, these tools are not required for regional failover capability.
 
-## WWI Case Study
-
-WWI wanted to test the failover capabilities of read replicas so they performed the steps outlined below.
+## Configuring Read Replicas
 
 ### Creating a read replica
 
@@ -70,10 +68,3 @@ Failover Steps:
 - Select one of the read replicas.
 - Select **Stop Replication**. This will break the read replica.
 - Modify all applications connection strings to point to the new main instance.
-
-## BCDR Checklist
-
-- Modify backup frequency to meet requirements.
-- Setup read replicas for read intensive workloads and regional failover.
-- Create resource locks on resource groups.
-- Implement a load balancing strategy for applications for quick failover.

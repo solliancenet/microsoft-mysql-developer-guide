@@ -8,14 +8,15 @@ Now that a containerized version of the applications exists, it can now be hoste
 
 ## Run images in Azure App Service
 
-1. Run the following to create the app service containers:
+1. Run the following to create the app service containers, be sure to replace the `SUFFIX` and `RESOURCE_GROUP_NAME`:
 
     ```powershell
     $name = "mysqldev-app-web";
-    $acrName = "mysqldevSUFFIX";
-    $appPlan = "mysqldevSUFFIX-linux";
+    $suffix = "SUFFIX"
+    $acrName = "mysqldev$suffix";
+    $appPlan = "mysqldev$suffix-linux";
     $image = "$acrName.azure.io/store-web";
-    $resourceGroupName = "";
+    $resourceGroupName = "{RESOURCE_GROUP_NAME}";
 
     $acr = Get-AzContainerRegistry -Name $acrName -ResourceGroupName $resourceGroupName;
     $creds = $acr | Get-AzContainerRegistryCredential;

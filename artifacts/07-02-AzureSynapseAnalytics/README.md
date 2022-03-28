@@ -50,9 +50,40 @@
 - Select **OK**
 - Select **Publish all**, then select **Publish**
 
+## Create PowerBI Desktop Report (Dataset)
+
+- Open **Power BI Desktop**
+- Select **Get data**
+- Select **MySQL database**
+- Select **Connect**
+- For the servername, enter **mysqldevSUFFIX**
+- For the database, select **contosostore**
+- Select **OK**
+- Select the **Database** tab
+- For the user name, type **wsuser@mysqldevSUFFIX**
+- For the password, type **Solliance123**
+- Select **Connect**
+- Check all the checkboxes
+- Select **Load**
+- Select **File->Save as**, save the report to the desktop as **MySQL**
+- Select **Save**
+
+## Publish the PowerBI report
+
+- Select **File->Publish**
+- Select **Publish to Power BI**
+- Select the **MySQL** workspace
+- Select **Select**
+
 ## Create PowerBI Report
 
 - Select the **Develop** tab
 - Select the **+** button
 - Select **Power BI report**
-- TODO
+- Select the **MySQL** data set
+- Select **Create**
+- In the **Fields** window, expand the **contosostore users** table
+- Drag the name into the report window.
+- Select **File->Save as**
+- Save the report as **Contoso Users**
+- Select **Save**, the report should load in the synapse workspace.

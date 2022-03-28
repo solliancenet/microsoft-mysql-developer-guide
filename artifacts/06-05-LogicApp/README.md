@@ -183,8 +183,8 @@ This step has already been done for you, but if you'd like to create the logic a
 - Select **Sign in**
 - Sign in with the lab user credentials
 - For the `To`, type the lab user email
-- For the subject, enter **New Order**
-- Now, populate the body (TODO)
+- For the subject, enter **New Order Recieved**
+- For the body, select **Add dynamic content**, then select **Current item**
 - For the logic app, select **Save**
 
 ## Configure supporting items
