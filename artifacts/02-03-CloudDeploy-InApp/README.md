@@ -19,8 +19,6 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     $appName = "mysqldev$suffix";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 
-    
-    
     Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip"
     ```
 
@@ -30,17 +28,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 2. Browse to the `mysqldevSUFFIX` app service
 3. Under **Settings**, select **Configuration**
 4. Select the **General settings** tab
-5. For the stack, select **PHP**
-6. For the php version, select **7.4**
-7. Select **Save**
-8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, results should be displayed.
-9. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, an error should occur.  This is because the connection details were embedded in the php file.
+5. Notice the only available option is **7.4**
+6. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, results should be displayed.
+7. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, an error should occur.  This is because the connection details were embedded in the php file.
 
 ### Export the Database
 
-1. In the virtual machine, open the MySQL Workbench
-2. Connect to the local instance
-3. Export the `ContosoStore` database
+1. Use the steps in [Migrate your database](./Misc/02_MigrateDatabase) article to export the SQL script.
 
 ### Enable MySQL In App
 

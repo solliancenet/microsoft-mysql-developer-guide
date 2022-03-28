@@ -100,7 +100,7 @@ Install7z
 
 InstallWebPI
 
-$version = "8.0.16"
+$version = "8.0.13"
 InstallPhp $version;
 
 InstallWebPIPhp "PHP80x64,MySQLConnector,UrlRewrite2,ARRv3_0"
