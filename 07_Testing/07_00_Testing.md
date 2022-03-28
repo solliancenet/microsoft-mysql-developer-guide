@@ -4,7 +4,9 @@ Developers need to assess their applications for *availability* (minimal downtim
 
 ## Approaches
 
-TODO - Missing feature/functional testing.
+### Functional testing
+
+Functional testing ensures that an app functions as documented in the requirements. Testers do not know how software systems function; they simply ensure that systems do what they are expected to do. Functional tests validate data limits (like field lengths) and that certain actions are taken in response to triggers.
 
 ### Resiliency testing
 
@@ -44,15 +46,27 @@ The image below demonstrates the cluster's maximum CPU usage over a half-hour pe
 
 ### Apache JMeter
 
-TODO
+[Apache JMeter](https://jmeter.apache.org/) is an open source tool to test that systems function and perform well under load. It can test web applications, REST APIs, databases, and more. JMeter provides a GUI and a CLI, and it can export test results in a variety of formats, including HTML and JSON.
+
+The image below demonstrates one approach to operate JMeter at scale using Azure Container Instances. The `jmeter-load-test` pipeline manages the test infrastructure and provides the test definition to the **JMeter Controller**.
+
+![This image demonstrates how to perform a load test at scale using CI/CD, JMeter, and ACI.](./media/load-testing-pipeline-jmeter.png "Load testing at scale")
+
+It is also possible to run JMeter load tests using [Azure Load Testing Preview.](https://docs.microsoft.com/azure/load-testing/quickstart-create-and-run-load-test)
 
 ### K6 
 
-TODO
+[Grafana K6](https://k6.io/) is a load testing tool hosted locally or in the cloud. Developers script tests using ES6 JavaScript. Supporting over 20 integrations, including [Azure DevOps Pipelines](https://techcommunity.microsoft.com/t5/azure-devops/load-testing-with-azure-devops-and-k6/m-p/2489134), K6 is a popular choice for many teams.
 
 ### Selenium
 
-TODO
+[Selenium](https://www.selenium.dev/) automates functional tests for web apps. Developers author test scripts in supported languages, like Ruby, Java, Python, and C#. Then, the Selenium WebDriver executes these scripts using browser-specific APIs. Teams can operate parallel Selenium tests on different devices using [Selenium Grid](https://www.selenium.dev/documentation/grid/).
+
+To get started with Selenium, developers can install the [Selenium IDE](https://www.selenium.dev/selenium-ide/) to generate testing scripts from browser interactions. The Selenium IDE is not intended for production tests, however.
+
+Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366) The image below demonstrates screenshots from a Selenium test running in a DevOps Pipeline.
+
+![This image demonstrates screenshots from a Selenium test in Azure DevOps.](./media/selenium-test-azure-devops.png "Selenium test screenshots")
 
 ### Grafana & Prometheus
 
