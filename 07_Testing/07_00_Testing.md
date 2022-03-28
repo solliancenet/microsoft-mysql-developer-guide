@@ -54,7 +54,7 @@ The image below demonstrates one approach to operate JMeter at scale using Azure
 
 It is also possible to run JMeter load tests using [Azure Load Testing Preview.](https://docs.microsoft.com/azure/load-testing/quickstart-create-and-run-load-test)
 
-### K6 
+### K6
 
 [Grafana K6](https://k6.io/) is a load testing tool hosted locally or in the cloud. Developers script tests using ES6 JavaScript. Supporting over 20 integrations, including [Azure DevOps Pipelines](https://techcommunity.microsoft.com/t5/azure-devops/load-testing-with-azure-devops-and-k6/m-p/2489134), K6 is a popular choice for many teams.
 
@@ -84,7 +84,3 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 - [Prometheus Overview](https://prometheus.io/docs/introduction/overview)
 - [What is Grafana OSS](https://grafana.com/docs/grafana/latest/introduction/oss-details/)
 - [Store Prometheus Metrics with Thanos, Azure Storage and Azure Kubernetes Service (AKS)](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/store-prometheus-metrics-with-thanos-azure-storage-and-azure/ba-p/3067849)
-
-### Web
-
-### Database

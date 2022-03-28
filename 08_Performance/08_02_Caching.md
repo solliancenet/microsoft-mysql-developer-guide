@@ -20,8 +20,8 @@ If an application has access to local memory, you can utilize a localize pattern
 
 #### Redis Cache
 
-A common piece of software that helps with caching is called Redis cache.  As with all pieces of software, it can be run on-premises, in a virtual machine in the cloud (Iaas), or even as a platform as a service offering (PaaS).
+A common piece of software that helps with caching is called [Redis cache](https://redis.io/).  As with all pieces of software, it can be run on-premises, in a virtual machine in the cloud (Iaas), or even as a platform as a service offering (PaaS).
 
-Redis cache works by putting data into memory via key/value pairs.  The application will typically serialize the data and then hand it off to Redis for quick retrieval later.  The Redis cache should be close to the application so that it can be queries quickly and the data retrievedand then forwarded just as quickly.
+Redis cache works by putting data into memory via key/value pairs.  The application will typically serialize the data and then hand it off to Redis for quick retrieval later.  The Redis cache should be close to the application so that it can be queried quickly, the data retrieved and then forwarded just as quickly.
 
-TODO
+[Azure Cache for Redis](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview) is a platform as a service Microsoft Azure hosted Redis environment that provides several levels of service such as [Enterprise, Premium, Standard and Basic tiers](https://azure.microsoft.com/en-us/pricing/details/cache/).

@@ -11,12 +11,6 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 3. Open a terminal window, run the following:
 
     ```PowerShell
-    Compress-Archive -Path .\app\*.* -DestinationPath app.zip
-    ```
-
-4. Deploy the zip to Azure, run the following:
-
-    ```PowerShell
     Connect-AzAccount
 
     $suffix = "SUFFIX";
@@ -25,21 +19,21 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     $appName = "mysqldev$suffix";
     $app = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 
-    Compress-Archive -Path .\src\*.* -DestinationPath src.zip -force
     
-    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy\src.zip"
+    
+    Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip"
     ```
 
 ### Test the Application
 
 1. Open the Azure Portal
-2. Browse to the `` app service
+2. Browse to the `mysqldevSUFFIX` app service
 3. Under **Settings**, select **Configuration**
 4. Select the **General settings** tab
 5. For the stack, select **PHP**
 6. For the php version, select **7.4**
 7. Select **Save**
-8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+8. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, results should be displayed.
 9. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, an error should occur.  This is because the connection details were embedded in the php file.
 
 ### Export the Database
@@ -65,7 +59,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 3. In the left navigation, select **New**
 4. For the name, type **ContosoStore**
 5. Select the **Import** tab
-6. Browse to theexport file, run it
+6. Browse to the export file, run it
 
 ## Update the environment variables
 
