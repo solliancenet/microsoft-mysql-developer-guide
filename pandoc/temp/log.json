@@ -199,6 +199,66 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "./media/classic-deployment-diagram.png",
+        "for": "./media/classic-deployment-diagram.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/azure-vm-deployment.png",
+        "for": "./media/azure-vm-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/app-svc-flex-server.png",
+        "for": "./media/app-svc-flex-server.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/in-app-deployment.png",
+        "for": "./media/in-app-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/cicd-deployment.png",
+        "for": "./media/cicd-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/containerized-deployment.png",
+        "for": "./media/containerized-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aci-deployment.png",
+        "for": "./media/aci-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/app-service-containers-deployment.png",
+        "for": "./media/app-service-containers-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aks-deployment.png",
+        "for": "./media/aks-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/aks-flexible-server-deployment.png",
+        "for": "./media/aks-flexible-server-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/sample-app-level-1-architecture.png",
         "for": "media/sample-app-level-1-architecture.png"
     },
@@ -261,6 +321,12 @@
         "verbosity": "INFO",
         "from": "media/azure-local-git-push.png",
         "for": "media/azure-local-git-push.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/ssh_terminal.png",
+        "for": "media/ssh_terminal.png"
     },
     {
         "type": "LoadedResource",
@@ -387,6 +453,18 @@
         "verbosity": "INFO",
         "from": "./media/metric-visualization.png",
         "for": "./media/metric-visualization.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/load-testing-pipeline-jmeter.png",
+        "for": "./media/load-testing-pipeline-jmeter.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/selenium-test-azure-devops.png",
+        "for": "./media/selenium-test-azure-devops.png"
     },
     {
         "type": "LoadedResource",
