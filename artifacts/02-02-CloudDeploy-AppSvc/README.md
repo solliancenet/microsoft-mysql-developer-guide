@@ -4,11 +4,16 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Basic Deployment
 
-### Deploy the Application
+### Update env
 
 1. Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in Visual Studio code
 2. If prompted, select **Yes, I trust the authors**
-3. Open a terminal window, run the following to deploy the zip to Azure, be sure to replace the `SUFFIX`:
+3. Switch to the browser, browse to the **mysqldevSUFFIX** app service
+4. Select the **Overview** link, copy the **URL** for use later
+
+### Deploy the Application
+
+1. Open a terminal window, run the following to deploy the zip to Azure, be sure to replace the `SUFFIX`:
 
     ```PowerShell
     Connect-AzAccount
@@ -271,6 +276,7 @@ Putting credential in the PHP files is not a best practice, it is better to util
      - `DB_PASSWORD` = `Solliance123`
      - `DB_DATABASE` = `contosostore`
      - `DB_PORT` = `3306`
+     - `APP_URL` = `https://mysqldevSUFFIX.azurewebsites.net`
     - Select **Save**, then select **Continue**
 
 ## Test new settings #3
