@@ -6,11 +6,13 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ### Deploy the Application
 
-1. Open the `` folder in Visual Studio code
+1. Open the `C:\labfiles\microsoft-mysql-developer-guide` folder in Visual Studio code
 2. If prompted, select **Yes, I trust the authors**
 3. Open a terminal window, run the following:
 
     ```PowerShell
+    cd "c:\labfiles\microsoft-mysql-developer-guide";
+
     Connect-AzAccount
 
     $suffix = "SUFFIX";
@@ -50,10 +52,11 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 1. In the Data import and export section, select **Import/Export**
 2. Select the **Manage** link, the `myphpadmin` panel will open
-3. In the left navigation, select **New**
-4. For the name, type **ContosoStore**
+3. Login using the `root` user, no password
+4. In the left navigation, select **New**
 5. Select the **Import** tab
-6. Browse to the export file, run it
+6. Select **Choose File**, then browse to the export file
+7. Select **Go** to execute the SQL script
 
 ## Update the environment variables
 
@@ -90,5 +93,5 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 
 ## Test the Application
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should display.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, the page should display.
 2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should display.

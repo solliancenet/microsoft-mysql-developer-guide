@@ -136,23 +136,35 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     ASSET_URL = "${APP_URL}"
     ```
 
-14. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
-15. Select **General settings**
-16. In the startup command textbox, type `/home/site/startup.sh`
-17. Select **Save**
+14. Run the following commands to setup the Larvael application:
+
+    ```powershell
+    composer.phar update
+
+    php artisan config:clear
+
+    php artisan key:generate
+    ```
+
+15. Switch back the Azure Portal and the app service, under **Settings**, select **Configuration**
+16. Select **General settings**
+17. In the startup command textbox, type `/home/site/startup.sh`
+18. Select **Save**
 
 ### Test the Application
 
-1. Open the Azure Portal
-2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/` to see the app load with SSL
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/` to see the app load with SSL
 
 ### Add Firewall IP Rule and Azure Access
 
 1. Switch to the Azure Portal
-2. Browse to the `mysqldevSUFFIX` mysql database server
-3. Under **Settings**, select **Networking**
+2. Browse to the `mysqldevSUFFIX` Azure Database for MySql Single server
+3. Under **Settings**, select **Connection security**
 4. Select **Add current client IP address (...)**
+<!--
 5. Select the **Allow public access from any Azure Service within Azure to this server** checkbox
+-->
+5. Select the **Allow access to Azure services** toggle to **Yes**
 6. Select **Save**
 
 ### Migrate the Database
@@ -254,11 +266,12 @@ Putting credential in the PHP files is not a best practice, it is better to util
    - Under **Settings**, select **Configuration**
    - Select **New application setting**
    - Add the following:
-     - `DB_HOST` = `mysqldevSUFFIXflex.mysql.database.azure.com`
-     - `DB_USERNAME` = `wsuser`
+     - `DB_HOST` = `mysqldevSUFFIX.mysql.database.azure.com`
+     - `DB_USERNAME` = `wsuser@mysqldevSUFFIX`
      - `DB_PASSWORD` = `Solliance123`
      - `DB_DATABASE` = `contosostore`
      - `DB_PORT` = `3306`
+    - Select **Save**, then select **Continue**
 
 ## Test new settings #3
 
@@ -283,7 +296,7 @@ Putting credential in the PHP files is not a best practice, it is better to util
 ## Create Managed Service Identity
 
 1. Switch to the Azure Portal
-2. Browse to the ** app service
+2. Browse to the **mysqldevSUFFIX** app service
 3. Under **Settings**, select **Identity**
 4. For the system assigned identity, toggle to **On**
 5. Select **Save**, in the dialog, select **Yes**
@@ -305,14 +318,46 @@ Putting credential in the PHP files is not a best practice, it is better to util
 1. Browse to the Azure Portal
 2. Select the **mysqldevSUFFIX** app service
 3. Under **Settings**, select **Configuration**
-4. Select the edit button for the **MYSQL_PASSWORD** application setting
-5. Update it to the following:
+4. Select **New application setting**
+5. For the name, type **MYSQL_PASSWORD**
+6. Update it to the following, replace the `SUFFIX` value:
 
-    ```text
-    @Microsoft.KeyVault(SecretUri=https://mysqldevSUFFIX-kv.vault.azure.net/secrets/MySQLPassword/)
+      ```text
+      @Microsoft.KeyVault(SecretUri=https://mysqldevSUFFIX-kv.vault.azure.net/secrets/MySQLPassword/)
+      ```
+
+7. Select **OK**
+8. Select **Save**, then select **Continue**. Ensure a green check mark appears
+9. Select **Save**, ensure a green check mark appears.
+
+## Update the files
+
+1. Switch back to the SSH window
+2. Edit the **/home/site/wwwroot/pubic/database.php**:
+
+    ```bash
+    nano /home/site/wwwroot/pubic/database.php
     ```
 
-6. Select **Save**, ensure a green check mark appears.
+3. Update the connection variables to the following:
+
+    ```php
+    $password = getenv("APPSETTING_MYSQL_PASSWORD");
+    ```
+
+    > **NOTE** Azure App Service adds the `APPSETTING` prefix to all environment variables
+
+4. Edit the **/home/site/wwwroot/config/database.php**:
+
+    ```bash
+    nano /home/site/wwwroot/config/database.php
+    ```
+
+5. Update the mysql connection to utilize the environment variables:
+
+    ```php
+    'password' => getenv('APPSETTING_MYSQL_PASSWORD')
+    ```
 
 ## Test new settings #4
 
