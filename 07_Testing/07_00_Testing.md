@@ -20,12 +20,13 @@ Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsof
 
 ### Resiliency and version testing
 
-Testers can only execute so many test cases.  Users tend to execute application functionality not imagined by the development/test team. How do you allow real users to test the application while limiting deployment downtime and version risk? One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment, and if it functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment. Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
+Testers can only execute so many test cases.  Users tend to execute application functionality not imagined by the development/test team. How do you allow real users to test the application while limiting deployment downtime and version risk? One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
 
 ![](media/azure-traffic-manager-blue-green.png)
 
-
 > ![Tip](../Global_Media/tip.png) **Tip:** As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
+
+Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
 
 Blue-green deployment options and tools
 
@@ -102,3 +103,4 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 - [What are Azure Pipelines?](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target)
 
 - [What is Azure Load Testing?](https://docs.microsoft.com/en-us/azure/load-testing/overview-what-is-azure-load-testing?wt.mc_id=loadtesting_acompara4_webpage_cnl)
+

@@ -3736,18 +3736,53 @@ simply ensure that systems do what they are expected to do. Functional
 tests validate data limits (like field lengths) and that certain actions
 are taken in response to triggers.
 
-### Resiliency testing
+#### Function testing tools
 
-One strategy to test for resiliency is the blue-green method, where the
-latest version of an application operates in a second production
-environment. Developers test the most recent version in the second
-production environment, and if it functions adequately, the second
-environment begins handling user requests. If an unexpected error
-occurs, developers can roll back the application by serving requests
-from the older environment. As newer versions of an application often
-require database updates, it is recommended to update the database to
-support the new and previous versions of the software before deploying
-application updates to the second environment.
+[Selenium] automates functional tests for web apps. Developers author
+test scripts in supported languages, like Ruby, Java, Python, and C#.
+Then, the Selenium WebDriver executes these scripts using
+browser-specific APIs. Teams can operate parallel Selenium tests on
+different devices using [Selenium Grid].
+
+To get started with Selenium, developers can install the [Selenium IDE]
+to generate testing scripts from browser interactions. The Selenium IDE
+is not intended for production tests, however.
+
+Teams can place [Selenium tests in Azure DevOps.] The image below
+demonstrates screenshots from a Selenium test running in a DevOps
+Pipeline.
+
+![This image demonstrates screenshots from a Selenium test in Azure
+DevOps.]
+
+### Resiliency and version testing
+
+Testers can only execute so many test cases. Users tend to execute
+application functionality not imagined by the development/test team. How
+do you allow real users to test the application while limiting
+deployment downtime and version risk? One strategy to test for
+resiliency is the blue-green method, where the latest version of an
+application operates in a second production environment. Developers test
+the most recent version in the second production environment, and if it
+functions adequately, the second environment begins handling more
+production user requests. If an unexpected error occurs, developers can
+roll back the application by serving requests from the older
+environment. Azure has the capability to support this type of testing
+via Deployment Center, Azure Traffic Manager, and other tools.
+
+![][61]
+
+> ![Tip] **Tip:** As newer versions of an application often require
+> database updates, it is recommended to update the database to support
+> the new and previous versions of the software before deploying
+> application updates to the second environment.
+
+Blue-green deployment options and tools
+
+-   [Deployment Center example]
+-   [Azure Traffic Manager example]
+-   [Application Gateway example]
+-   Git Actions
 
 ### Performance testing
 
@@ -3766,39 +3801,7 @@ failure. Perform stress testing at different Azure service tiers and
 determine appropriate thresholds when scaling is necessary to minimize
 costs and provide a positive user experience.
 
-## Tools
-
-### Azure Monitor
-
-Azure Monitor allows developers to collect, analyze, and act on
-telemetry. *Application Insights*, a subset of Azure Monitor, tracks
-application performance, usage patterns and issues. It integrates with
-common development tools, like Visual Studio. Similarly, *Container
-insights* measures the performance of container workloads running on
-Kubernetes clusters. These powerful tools are backed by Azure Log
-Analytics workspaces and the Azure Monitor metrics store.
-
-The image below demonstrates container logs from a containerized
-deployment of the Contoso Nosh Now sample app running in AKS. These logs
-are analyzed in the cluster's Log Analytics workspace.
-
-![This image demonstrates container logs in the AKS cluster's Log
-Analytics workspace.]
-
-The image below demonstrates the cluster's maximum CPU usage over a
-half-hour period. It utilizes metrics provided by AKS, though more
-granular metrics from Container insights can also be used.
-
-![This image demonstrates the maximum CPU usage of the AKS cluster's
-nodes, a feature provided by metrics from AKS.]
-
-#### Resources
-
--   [Supported languages for Azure App Insights]
--   Comparison of *metrics* and *logs* in Azure Monitor
-    -   [Azure Monitor Metrics overview]
-    -   [Azure Monitor Logs overview]
--   [Monitoring Azure Kubernetes Service (AKS) with Azure Monitor]
+#### Performance testing tools
 
 ### Apache JMeter
 
@@ -3825,24 +3828,39 @@ Developers script tests using ES6 JavaScript. Supporting over 20
 integrations, including [Azure DevOps Pipelines], K6 is a popular choice
 for many teams.
 
-### Selenium
+## Testing data capture tools
 
-[Selenium] automates functional tests for web apps. Developers author
-test scripts in supported languages, like Ruby, Java, Python, and C#.
-Then, the Selenium WebDriver executes these scripts using
-browser-specific APIs. Teams can operate parallel Selenium tests on
-different devices using [Selenium Grid].
+### Azure Monitor
 
-To get started with Selenium, developers can install the [Selenium IDE]
-to generate testing scripts from browser interactions. The Selenium IDE
-is not intended for production tests, however.
+Azure Monitor allows developers to collect, analyze, and act on
+telemetry. *Application Insights*, a subset of Azure Monitor, tracks
+application performance, usage patterns and issues. It integrates with
+common development tools, like Visual Studio. Similarly, *Container
+insights* measures the performance of container workloads running on
+Kubernetes clusters. These powerful tools are backed by Azure Log
+Analytics workspaces and the Azure Monitor metrics store.
 
-Teams can place [Selenium tests in Azure DevOps.] The image below
-demonstrates screenshots from a Selenium test running in a DevOps
-Pipeline.
+The image below demonstrates container logs from a containerized
+deployment of the ContosoNoshNow sample app running in AKS. These logs
+are analyzed in the cluster's Log Analytics workspace.
 
-![This image demonstrates screenshots from a Selenium test in Azure
-DevOps.]
+![This image demonstrates container logs in the AKS cluster's Log
+Analytics workspace.]
+
+The image below demonstrates the cluster's maximum CPU usage over a
+half-hour period. It utilizes metrics provided by AKS, though more
+granular metrics from Container insights can also be used.
+
+![This image demonstrates the maximum CPU usage of the AKS cluster's
+nodes, a feature provided by metrics from AKS.]
+
+#### Resources
+
+-   [Supported languages for Azure App Insights]
+-   Comparison of *metrics* and *logs* in Azure Monitor
+    -   [Azure Monitor Metrics overview]
+    -   [Azure Monitor Logs overview]
+-   [Monitoring Azure Kubernetes Service (AKS) with Azure Monitor]
 
 ### Grafana & Prometheus
 
@@ -3863,13 +3881,20 @@ deployment file.
 ![This image demonstrates a dashboard in Grafana showing CPU usage for a
 pod.]
 
-#### Resources
+#### Recommended Content
 
 -   [Using Azure Kubernetes Service with Grafana and Prometheus]
+
 -   [Prometheus Overview]
+
 -   [What is Grafana OSS]
+
 -   [Store Prometheus Metrics with Thanos, Azure Storage and Azure
     Kubernetes Service (AKS)]
+
+-   [What are Azure Pipelines?]
+
+-   [What is Azure Load Testing?]
 
 ## 07 / Summary
 
@@ -3946,7 +3971,7 @@ method mentioned above, the speed to failover is much faster when a
 failover layer is integrated into the application. The application
 should only be down for a few moments during the read replica failover
 process. More details are covered in the [Business Continuity and
-Disaster Recovery][61] section.
+Disaster Recovery][62] section.
 
 ## Optimization checklist
 
@@ -3957,7 +3982,7 @@ Disaster Recovery][61] section.
 
 ## Server parameters
 
-As part of the migration, the on-premises [server parameters][62] were
+As part of the migration, the on-premises [server parameters][63] were
 likely modified to support a fast egress. Also, modifications were made
 to the Azure Database for MySQL parameters to support a fast ingress.
 The Azure server parameters should be set back to their original
@@ -4021,7 +4046,7 @@ parameters can be changed without restarting the server, while modifying
 One of the advantages of Flexible Server is its versatility over single
 server instances. Some important exposed parameters are listed below,
 and the instance's storage and compute tiers affect the possible
-parameter values. Consult the [Microsoft documentation][63] for more
+parameter values. Consult the [Microsoft documentation][64] for more
 information.
 
 -   [log_bin_trust_function_creators] is enabled by default and
@@ -4030,7 +4055,7 @@ information.
 -   [innodb_buffer_pool_size] indicates the size of the buffer pool, a
     cache for tables and indexes
 
-    > For this parameter, consult the [Microsoft documentation][63], as
+    > For this parameter, consult the [Microsoft documentation][64], as
     > database compute tier affects the parameter value range
 
 -   [innodb_file_per_table] affects where table and index data are
@@ -4039,7 +4064,7 @@ information.
 Azure Database for MySQL Single Server includes support for the three
 server parameters listed above. For a comprehensive list of Single
 Server's supported parameters, consult the [Microsoft
-documentation.][62]
+documentation.][63]
 
 ### Tools to Set Server Parameters
 
@@ -4049,13 +4074,13 @@ parameters.
 
 #### Flexible Server Articles
 
--   [Azure Portal][64]
--   [Azure CLI][65]
+-   [Azure Portal][65]
+-   [Azure CLI][66]
 
 #### Single Server Articles
 
--   [Azure Portal][66]
--   [Azure CLI][67]
+-   [Azure Portal][67]
+-   [Azure CLI][68]
 -   [Azure
     PowerShell][Configure server parameters in Azure Database for MySQL using PowerShell]
 
@@ -4096,7 +4121,7 @@ compromising application stability.
 
     -   Microsoft only recommends this change for database instances
         with more than 335 GB of provisioned storage
-    -   Learn more from the [Microsoft documentation][68] ## Caching
+    -   Learn more from the [Microsoft documentation][69] ## Caching
 
 Utilizing resources such as CPU, memory, disk (read/write access) and
 network can factor into how long an application request takes to
@@ -4225,7 +4250,7 @@ details a few common troubleshooting steps.
 ### Platform issues
 
 -   On occasion, Azure experiences outages. Use [Azure Service
-    Health][69] to determine if an Azure outage impacts MySQL workloads.
+    Health][70] to determine if an Azure outage impacts MySQL workloads.
 
 -   Azure's periodic updates can impact the availability of
     applications. Flexible Server allows administrators [to set custom
@@ -4313,7 +4338,7 @@ will also need to be restored. Review the migration process. See
 
 ## Read replicas
 
-[Read replicas][70] can be used to increase the MySQL read throughput,
+[Read replicas][71] can be used to increase the MySQL read throughput,
 improve performance for regional users, and implement disaster recovery.
 When creating one or more read replicas, be aware that additional
 charges will apply for the same compute and storage as the primary
@@ -4323,7 +4348,7 @@ server.
 
 If an administrator or bad actor deletes the server in the Azure Portal
 or via automated methods, all backups and read replicas will also be
-deleted. [Resource locks][71] must be created on the Azure Database for
+deleted. [Resource locks][72] must be created on the Azure Database for
 MySQL resource group to add an extra layer of deletion prevention to the
 instances.
 
@@ -4523,12 +4548,12 @@ MySQL read replicas.]
 
 #### Flexible Server
 
--   [Azure Portal][72]
--   [Azure CLI][73]
+-   [Azure Portal][73]
+-   [Azure CLI][74]
 
 #### Single Server
 
--   [Azure Portal][74]
+-   [Azure Portal][75]
 -   [Azure CLI & REST API]
 -   [Azure
     PowerShell][How to create and manage read replicas in Azure Database for MySQL using PowerShell]
@@ -4546,7 +4571,7 @@ choose a day of week and time. If the maintenance schedule is chosen by
 the platform, maintenance will always occur between 11 PM and 7 AM in
 the region's time zone.
 
-> See [this][75] list from Microsoft to determine the physical location
+> See [this][76] list from Microsoft to determine the physical location
 > of Azure regions and thus the regional time zone.
 
 Azure always rolls out updates to servers with platform-managed
@@ -4574,7 +4599,7 @@ Single Server uses a gateway to access database instances, unlike
 Flexible Server. These gateways have public IP addresses that are
 retired and replaced, which may impede access from on-premises. Azure
 notifies customers about gateway retirements three months before. Learn
-more [here.][76]
+more [here.][77]
 
 Single Server does not support custom schedules for maintenance. Azure
 notifies administrators 72 hours before the maintenance event.
@@ -4805,7 +4830,7 @@ MySQL, and Azure infrastructure as a service (IaaS) resources.
 
 ## GeekWire
 
-Based in Seattle, Washington, [GeekWire][77] is a rapidly growing
+Based in Seattle, Washington, [GeekWire][78] is a rapidly growing
 technology news site with a global readership. In addition to covering
 the latest innovation, GeekWire serves the Pacific Northwest tech
 community with events, a job board, startup resources, a weekly radio
@@ -4852,7 +4877,7 @@ Azure PaaS MySQL for its persistence layer.
 
 Magento is a powerful e-commerce and marketing platform suitable for
 small and large businesses. There are multiple implementations available
-on the Azure Marketplace, including [this offering][78] that provides a
+on the Azure Marketplace, including [this offering][79] that provides a
 Helm chart for a Kubernetes deployment.
 
 ## 12 / Summary
@@ -4995,7 +5020,7 @@ TODO
     -   The `location` set to an Azure environment closest to the users
 
 3.  If deploying the [insecure ARM template] (`template.json`), edit the
-    associated [parameters file][79] (`template.parameters.json`).
+    associated [parameters file][80] (`template.parameters.json`).
 
     -   The `uniqueSuffix` specifies a unique identifier for Azure
         resources
@@ -5999,7 +6024,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ## Migrate the database
 
-1.  Use export steps in [Migrate the database][80] article to export the
+1.  Use export steps in [Migrate the database][81] article to export the
     database
 2.  Open a browser to `http:\\localhost:8081` and the phpmyadmin portal
 3.  Login to the database using `root` and `root`
@@ -6916,7 +6941,7 @@ https://mysqldevSUFFIX-addcustomerfunction.azurewebsites.net/api/addcustomerfunc
 -   Enabling Application Insight logs is a useful way to debug Function
     Apps deployed to Azure. As Application Insights cannot be configured
     from the Visual Studio publish profile, consult the [Microsoft
-    documentation][81] for the manual setup steps
+    documentation][82] for the manual setup steps
 
 # Azure Function with MySQL (Python)
 
@@ -7511,7 +7536,7 @@ resolvable by other resources (such as virtual machines).
 
 ## Install the Logic Apps Gateway
 
--   [Download][82] the Logic Apps Gateway
+-   [Download][83] the Logic Apps Gateway
 
 -   Install the Logic Apps Gateway by running the **gatewayinstall.exe**
 
@@ -8335,7 +8360,7 @@ TODO
   [06 / Summary]: #summary-4
   [07 / Testing]: #testing
   [Approaches]: #approaches
-  [Tools]: #tools
+  [Testing data capture tools]: #testing-data-capture-tools
   [07 / Summary]: #summary-5
   [08 / Performance + Optimization]: #performance-optimization
   [Monitoring hardware and query performance]: #monitoring-hardware-and-query-performance
@@ -8372,14 +8397,14 @@ TODO
   [12 / Customer stories]: #customer-stories
   [Case studies]: #case-studies
   [GeekWire]: #geekwire
-  [3]: #resources-13
+  [3]: #resources-12
   [Common MySQL Apps]: #common-mysql-apps
   [12 / Summary]: #summary-10
   [13 / Zero to Hero]: #zero-to-hero
   [Determining the evolutionary waypoint]: #determining-the-evolutionary-waypoint
   [Summary of tasks]: #summary-of-tasks
   [14 / Summary]: #summary-11
-  [4]: #resources-14
+  [4]: #resources-13
   [Questions and feedback]: #questions-and-feedback
   [Find a partner to assist in migrating]: #find-a-partner-to-assist-in-migrating
   [Appendix]: #appendix
@@ -8923,7 +8948,23 @@ TODO
   [hub and spoke configuration.]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli
   [Security and Compliance document]: 03_MySQL_Security_Compliance.md
   [General Azure Networking Best Practices]: https://docs.microsoft.com/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking
+  [Selenium]: https://www.selenium.dev/
+  [Selenium Grid]: https://www.selenium.dev/documentation/grid/
+  [Selenium IDE]: https://www.selenium.dev/selenium-ide/
+  [Selenium tests in Azure DevOps.]: https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366
+  [This image demonstrates screenshots from a Selenium test in Azure DevOps.]:
+    ./media/selenium-test-azure-devops.png "Selenium test screenshots"
+  [61]: media/azure-traffic-manager-blue-green.png
+  [Deployment Center example]: https://docs.microsoft.com/azure/app-service/deploy-github-actions?tabs=applevel
+  [Azure Traffic Manager example]: https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/
+  [Application Gateway example]: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/upgrading-aks-version-with-blue-green-deployment-i/ba-p/2527145
   [Event Hub throughput by tier]: https://docs.microsoft.com/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers
+  [Apache JMeter]: https://jmeter.apache.org/
+  [This image demonstrates how to perform a load test at scale using CI/CD, JMeter, and ACI.]:
+    ./media/load-testing-pipeline-jmeter.png "Load testing at scale"
+  [Azure Load Testing Preview.]: https://docs.microsoft.com/azure/load-testing/quickstart-create-and-run-load-test
+  [Grafana K6]: https://k6.io/
+  [Azure DevOps Pipelines]: https://techcommunity.microsoft.com/t5/azure-devops/load-testing-with-azure-devops-and-k6/m-p/2489134
   [This image demonstrates container logs in the AKS cluster's Log Analytics workspace.]:
     ./media/container-logs-in-log-analytics.png
     "AKS cluster container logs"
@@ -8932,18 +8973,6 @@ TODO
   [Supported languages for Azure App Insights]: https://docs.microsoft.com/azure/azure-monitor/app/platforms
   [Azure Monitor Metrics overview]: https://docs.microsoft.com/azure/azure-monitor/essentials/data-platform-metrics
   [Monitoring Azure Kubernetes Service (AKS) with Azure Monitor]: https://docs.microsoft.com/azure/aks/monitor-aks#scope-of-the-scenario
-  [Apache JMeter]: https://jmeter.apache.org/
-  [This image demonstrates how to perform a load test at scale using CI/CD, JMeter, and ACI.]:
-    ./media/load-testing-pipeline-jmeter.png "Load testing at scale"
-  [Azure Load Testing Preview.]: https://docs.microsoft.com/azure/load-testing/quickstart-create-and-run-load-test
-  [Grafana K6]: https://k6.io/
-  [Azure DevOps Pipelines]: https://techcommunity.microsoft.com/t5/azure-devops/load-testing-with-azure-devops-and-k6/m-p/2489134
-  [Selenium]: https://www.selenium.dev/
-  [Selenium Grid]: https://www.selenium.dev/documentation/grid/
-  [Selenium IDE]: https://www.selenium.dev/selenium-ide/
-  [Selenium tests in Azure DevOps.]: https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366
-  [This image demonstrates screenshots from a Selenium test in Azure DevOps.]:
-    ./media/selenium-test-azure-devops.png "Selenium test screenshots"
   [This image demonstrates a dashboard in Grafana showing CPU usage for a pod.]:
     ./media/grafana-dashboard.png "Pod CPU usage in Grafana"
   [Using Azure Kubernetes Service with Grafana and Prometheus]: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/using-azure-kubernetes-service-with-grafana-and-prometheus/ba-p/3020459
@@ -8951,36 +8980,38 @@ TODO
   [What is Grafana OSS]: https://grafana.com/docs/grafana/latest/introduction/oss-details/
   [Store Prometheus Metrics with Thanos, Azure Storage and Azure Kubernetes Service (AKS)]:
     https://techcommunity.microsoft.com/t5/apps-on-azure-blog/store-prometheus-metrics-with-thanos-azure-storage-and-azure/ba-p/3067849
+  [What are Azure Pipelines?]: https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target
+  [What is Azure Load Testing?]: https://docs.microsoft.com/en-us/azure/load-testing/overview-what-is-azure-load-testing?wt.mc_id=loadtesting_acompara4_webpage_cnl
   [Azure Metrics]: https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-metrics
   [Upgrade from Basic to General Purpose or Memory Optimized tiers in Azure Database for MySQL]:
     https://techcommunity.microsoft.com/t5/azure-database-for-mysql/upgrade-from-basic-to-general-purpose-or-memory-optimized-tiers/ba-p/830404
-  [61]: 03_BCDR.md
-  [62]: https://docs.microsoft.com/azure/mysql/concepts-server-parameters
+  [62]: 03_BCDR.md
+  [63]: https://docs.microsoft.com/azure/mysql/concepts-server-parameters
   [Minecraft migration]: https://developer.microsoft.com/games/blog/how-minecraft-realms-moved-its-databases-from-aws-to-azure/
   [PHPBench tool]: https://github.com/phpbench/phpbench
   [DBT2 Benchmark]: https://downloads.mysql.com/source/dbt2-0.37.50.16.tar.gz
   [SysBench Benchmark Tool]: https://downloads.mysql.com/source/sysbench-0.4.12.16.tar.gz
   [TPC-H]: https://www.tpc.org/tpch/
   [types of tests]: https://www.tpc.org/information/benchmarks5.asp
-  [63]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
+  [64]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
   [log_bin_trust_function_creators]: https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators
   [innodb_buffer_pool_size]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
   [innodb_file_per_table]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_file_per_table
-  [64]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal
-  [65]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli
-  [66]: https://docs.microsoft.com/azure/mysql/howto-server-parameters
-  [67]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli
+  [65]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal
+  [66]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli
+  [67]: https://docs.microsoft.com/azure/mysql/howto-server-parameters
+  [68]: https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-cli
   [This graph demonstrates the performance benefits of thread pooling for a Flexible Server instance.]:
     ./media/thread-pooling-performance.png
     "Performance benefits of thread pooling"
   [Microsoft TechCommunity post]: https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691
-  [68]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
+  [69]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
   [Redis cache]: https://redis.io/
   [Azure Cache for Redis]: https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview
   [Enterprise, Premium, Standard and Basic tiers]: https://azure.microsoft.com/en-us/pricing/details/cache/
   [This image demonstrates how Azure CDN POPs optimize content delivery.]:
     ./media/cdn-overview.png "Azure CDN POP static content delivery"
-  [69]: https://azure.microsoft.com/features/service-health/
+  [70]: https://azure.microsoft.com/features/service-health/
   [debugging an App Service app]: https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
   [Troubleshoot slow app performance issues in Azure App Service]: https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-performance-degradation
   [Environment variables and app settings in Azure App Service]: https://docs.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet
@@ -8991,8 +9022,8 @@ TODO
   [Backup and restore in Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/concepts-backup
   [Some regions]: https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage
   [Perform post-restore tasks]: https://docs.microsoft.com/azure/mysql/concepts-backup#perform-post-restore-tasks
-  [70]: https://docs.microsoft.com/azure/mysql/concepts-read-replicas
-  [71]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
+  [71]: https://docs.microsoft.com/azure/mysql/concepts-read-replicas
+  [72]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
   [Azure Load Balancer]: https://docs.microsoft.com/azure/load-balancer/load-balancer-overview
   [Application Gateway]: https://docs.microsoft.com/azure/application-gateway/overview
   [This image demonstrates Zone-Redundant HA for MySQL Flexible Server.]:
@@ -9015,12 +9046,12 @@ TODO
   [This image demonstrates a possible microservices architecture with MySQL read replicas.]:
     ./media/microservices-with-replication.png
     "Possible microservices architecture"
-  [72]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
-  [73]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
-  [74]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
+  [73]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
+  [74]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
+  [75]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
   [Azure CLI & REST API]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-cli
-  [75]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
-  [76]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
+  [76]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
+  [77]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
   [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)]:
     https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal
   [View service health notifications in the Azure Portal]: https://docs.microsoft.com/azure/service-health/service-notifications
@@ -9041,12 +9072,12 @@ TODO
   [Linked Brain]: https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan
   [T-Systems]: https://customers.microsoft.com/en-us/story/724200-deutsche-telekom-telecommunications-azure
   [Children's Mercy Kansas City]: https://customers.microsoft.com/en-us/story/860516-childrens-mercy-health-provider-azure
-  [77]: https://customers.microsoft.com/en-us/story/geekwire
+  [78]: https://customers.microsoft.com/en-us/story/geekwire
   [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server]:
     https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks
   [one from WordPress]: https://azuremarketplace.microsoft.com/marketplace/apps/WordPress.WordPress?tab=Overview
   [this offering]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview
-  [78]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
+  [79]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql
   [Search for a Microsoft Partner]: https://www.microsoft.com/solution-providers/home
   [Microsoft MVP]: https://mvp.microsoft.com/MvpSearch
@@ -9060,7 +9091,7 @@ TODO
   [secure ARM template]: ../Artifacts/template-secure.json
   [parameters file]: ../Artifacts/template-secure.parameters.json
   [insecure ARM template]: ../Artifacts/template.json
-  [79]: ../Artifacts/template.parameters.json
+  [80]: ../Artifacts/template.parameters.json
   [This screen shot shows the results of the above commands.]: ./media/php_setup.png
     "Powershell window with results displayed"
   [This image demonstrates the loading screen for the Contoso NoshNow app.]:
@@ -9077,7 +9108,7 @@ TODO
   [This image demonstrates the changes made to the /home/site/default file in the SSH session.]:
     ./media/web-server-config.png
     "Web server configuration file changes"
-  [80]: ./Misc/02_MigrateDatabase
+  [81]: ./Misc/02_MigrateDatabase
   [Push Images to Acr]: ./../Misc/01_PushImagesToAcr.md
   [Visual Studio 2022 Community Edition]: https://visualstudio.microsoft.com/downloads/
   [Azure Functions core tools MSI]: https://go.microsoft.com/fwlink/?linkid=2174087
@@ -9091,7 +9122,7 @@ TODO
     ./media/select-function-from-portal.png "Selecting the Function"
   [This image demonstrates how to configure a GET request to the Function App endpoint from the Azure portal.]:
     ./media/azure-portal-function-test.png "GET request test"
-  [81]: https://docs.microsoft.com/azure/azure-functions/configure-monitoring?tabs=v2#enable-application-insights-integration
+  [82]: https://docs.microsoft.com/azure/azure-functions/configure-monitoring?tabs=v2#enable-application-insights-integration
   [`Azure Functions`]: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions
   [`Python`]: https://marketplace.visualstudio.com/items?itemName=ms-python.python
   [This image demonstrates how to create a new Function App project.]: ./media/create-function-app-vscode.png
@@ -9115,7 +9146,7 @@ TODO
     ./media/disable-secure-transport.png "Disable SSL transport"
   [`az mysql flexible-server create`]: https://docs.microsoft.com/cli/azure/mysql/flexible-server?view=azure-cli-latest#az-mysql-flexible-server-create
   [Download]: https://go.microsoft.com/fwlink/?LinkId=278885
-  [82]: https://www.microsoft.com/en-us/download/details.aspx?id=53127
+  [83]: https://www.microsoft.com/en-us/download/details.aspx?id=53127
   [This image demonstrates the configuration for the on-premises data gateway.]:
     ./media/on-premises-data-gateway-config.png
     "On-premises data gateway configuration"
