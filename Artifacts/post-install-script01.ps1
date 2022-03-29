@@ -98,6 +98,8 @@ InstallIIs
 
 Install7z
 
+InstallGithubDesktop
+
 InstallWebPI
 
 $version = "8.0.13"

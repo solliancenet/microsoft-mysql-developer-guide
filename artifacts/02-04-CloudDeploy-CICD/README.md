@@ -22,6 +22,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     cd c:\labfiles\microsoft-mysql-developer-guide\sample-php-app
 
     git remote remove origin
+    git remote remove azure
     ```
 
 5. In the terminal window, paste the code copied above, press **ENTER** (be sure to replace ORG_NAME)
@@ -54,11 +55,15 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 ### Create Pipeline
 
 1. Select **Pipelines**
-2. Select **Set up build**
-3. Select **Existing Azure Pipelines YAML file**
-4. Select the **/azure-pipelines.yaml** file
-5. Select **Continue**
-6. Select **Run**
+2. Select **Create Pipeline**
+3. Select **Azure Repos Git**
+4. Select the **ContosoStore** repo
+5. Select **Existing Azure Pipelines YAML file**
+6. Select the **/azure-pipelines.yaml** file
+7. Select **Continue**
+8. Select **Run**
+
+> **NOTE** Check that your Dev Ops repo is setup with the appropriate branch (`master` vs `main`).  Update the YAML and supporting steps accordingly.
 
 ### Create Release
 
@@ -70,10 +75,12 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 6. For the project, select **contosostore**
 7. For the source, select **contosostore**
 8. Select **Add**
-9. Select the **1 job, 1 task** link
-10. Select the subscription
-11. Select the **MySQL** app service
-12. Select **Save**
+9. Select the **Lighting** icon to add an trigger
+10. Select **Enabled** for the `Creates a release every time a new build is avaiable`
+11. Select the **1 job, 1 task** link
+12. Select the **My SQL Dev** connection
+13. Select the **mysqldevSUFFIX** app service
+14. Select **Save**, in the dialog, select **OK**
 
 ### Commit changes
 
@@ -87,11 +94,16 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Perform the deployment
 
-1. TODO
+1. Select **Pipelines**
+2. Select the **contosostore** pipeline, then select **Run pipeline**
+3. Select **Run**
+4. Select **Releases**
+5. Select the **MySQL Dev** pipeline
+6. You should see the release being deployed, wait for the pipeline to complete execution
 
 ### Test the DevOps deployment
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, the site should be displayed.
 2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, the results should display.
 
 ## GitHub Option
@@ -154,7 +166,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Test the GitHub deployment
 
-1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, `Hello World` should be displayed.
+1. Browse to `https://mysqldevSUFFIX.azurewebsites.net/default.php`, the application should be displayed.
 2. Browse to `https://mysqldevSUFFIX.azurewebsites.net/database.php`, results should be displayed.
 
 <!--
