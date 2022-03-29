@@ -26,7 +26,7 @@ In the data plane, the built-in MySQL account management system governs access f
 
 Developers have a wide variety of code editor tools to choose from to complete their IT projects. Commercial organizations and OSS communities have produced tools and plug-ins making Azure application development efficient and rapid. A very popular tool is Visual Studio Code (VS Code). VS Code is an open-source, cross-platform text editor. It offers useful utilities for various languages through extensions. Download VS Code from the [Microsoft download page.](https://code.visualstudio.com/download)
 
-TODO: Image of VS Code.
+![A simple screen shot of Visual Studio Code.](media/VSCode_screenshot.png "Visual Studio Code")
 
 There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code environment to make working with MySQL instances more efficient.
 
