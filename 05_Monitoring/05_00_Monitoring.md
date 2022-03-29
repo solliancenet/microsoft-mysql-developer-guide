@@ -85,7 +85,7 @@ AzureMetrics
 | top 1 by TimeGenerated
 ```
 
-TODO: Picture of example output
+!["The results from an Azure Metrics query is displayed"](./media/AzureMetrics_query_cpu.png "The results from an Azure Metrics query is displayed")
 
 The table below, pulled from the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring), indicates the metrics exposed by Flexible Server instances:
 
