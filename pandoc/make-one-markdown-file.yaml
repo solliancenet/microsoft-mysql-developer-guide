@@ -29,6 +29,7 @@
 
 # Step 3
 # Run this command with the defaults.yaml file in the pandoc directory.
+# cd pandoc
 # EXAMPLE:  pandoc --defaults=make-one-markdown-file
 # xcopy .\media\*.png .\temp\media /Y
 # xcopy .\*.md .\temp /Y

@@ -84,3 +84,4 @@ D:\data\projects\microsoft-mysql-developer-guide\pandoc\mysql-developer-guide.md
 D:\data\projects\microsoft-mysql-developer-guide\pandoc\temp\mysql-developer-guide.md
 D:\data\projects\microsoft-mysql-developer-guide\sample-php-app\readme.md
 D:\data\projects\microsoft-mysql-developer-guide\sample-php-app-rest\readme.md
+D:\data\projects\microsoft-mysql-developer-guide\sample-php-app-win-74\readme.md
