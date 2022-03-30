@@ -16,7 +16,9 @@ The monitoring content will be focused on these concepts:
 
 ## Azure Monitor overview
 
-Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances. Management tools, such as those in Azure Security Center and Azure Automation, also push log data to Azure Monitor. The service aggregates and stores this telemetry in a log data store that’s optimized for cost and performance.
+Azure Monitor is the Azure native platform service that provides a single source for monitoring Azure resources. It monitors all layers of the stack, starting with tenant services, such as Azure Active Directory Domain Services, and subscription-level events and Azure Service Health.
+
+It also monitors infrastructure resources, such as VMs, storage, and network resources. At the top layer, it monitors your application. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their stack layers, including Flexible Server instances. Management tools, such as those in Azure Security Center and Azure Automation, also push log data to Azure Monitor. The service aggregates and stores this telemetry in a log data store that’s optimized for cost and performance.
 
 ![](media/how-azure-monitor-works.png)
 
@@ -165,17 +167,9 @@ From the **Logs** page it is possible to query the activity log from the samples
 
 As shown above, MySQL data logs will generate a table with a specific schema of which KQL can be used to facilitate analysis. Consult [the documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs) for more information.
 
-## Error Logs
-
-TODO - Sai
-
-The MySQL error log records server startup, shutdown, and anomalous operational events (e.g. a table needs repair).
-
 ## Azure Service Health
 
-TODO - Sai
-
-Azure Service Health notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact to cloud resources, get guidance and support, and share details and updates.
+[Azure Service Health](https://azure.microsoft.com/features/service-health/) notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact to cloud resources, get guidance and support, and share details and updates.
 
 ## Recommended content
 

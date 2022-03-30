@@ -32,7 +32,6 @@ As part of this guide, there are environment automation setup scripts provided t
 
 | PHP Version | Web Server |
 |-------------|----------------|
-| 7.3         | Apache         |
 | 7.4         | Apache         |
 | 8.0         | Nginx          |
 
@@ -42,7 +41,7 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 
 ### Sample application deployment steps
 
-**Deploying to PHP 7.4**
+**Deploying to PHP 8.0**
 
 The deployment strategy applied in this sample application focuses on updating project environment variables instead of global environment variable configuration.
 
@@ -59,7 +58,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
 2. Create a web application and database.
 
-    ![Create web app database.](media/create-web-app-database.png)
+    ![Create web app database.](media/create-web-app-database.png "Create Web App + Database")
 
    - Choose the subscription.
 
@@ -69,14 +68,12 @@ The deployment strategy applied in this sample application focuses on updating p
 
    - Create a unique web app name.
 
-   - Select the runtime stack.  The web app is only tested with PHP 7.4.
+   - Select the runtime stack.  The web app is only tested with PHP 8.0.
 
    - Create the resources.
 
-3. After the resources have been deployed, locate the App Service.
+3. After the resources have been deployed, locate the App Service in the Resource Group.
   
-    ![App Service](media/app-service.png)
-
    - Select the **Deployment Center** and capture the configuration settings.
 
    - In the Settings tab, choose Local Git.
@@ -95,11 +92,13 @@ The deployment strategy applied in this sample application focuses on updating p
   
       ![Local Git URL example](media/local-git-url.png)
 
-   - Capture the Application Scope user and password.
+   - Capture the Application Scope user and password to be used later. Make sure to capture only the user name.
 
      ![Application Scope user and password](media/application-scope-user-password.png)
 
-4. Clone the sample application to the development machine from the Git repository:
+4. Clone the sample **ContosoNoshNow** application to the local development machine from the Microsoft Git repository:
+
+TODO: Get the MS repo.
 
    - Open the command prompt or terminal on the development machine.
 
@@ -114,6 +113,8 @@ The deployment strategy applied in this sample application focuses on updating p
    - When pushing content to the Azure App Service, the sytems will prompt for the Local Git credentials. Enter the Application Scope credentials.
   
       ![Git Credential Manager](media/git-credential-manager-for-windows.png)
+
+      If you make a mistake entering the credentials, you will have to open Credential Manager to update the credentials.
 
    - The following output should display in the command window:
 
@@ -151,7 +152,32 @@ The deployment strategy applied in this sample application focuses on updating p
 
     ![Update APP_URL value](media/update-app-url-env.png)
 
-10. Open a browser and view the application.
+10. Copy the Nginx default to the home default. By default, App Service set WEBSITES_ENABLE_APP_SERVICE_STORAGE = true.  Files stored in /home path are persisted in an Azure Storage file share, which can survive restart and shared across scale instances. So we need to save your own Nginx configure file under /home path.
+
+      ```bash
+      cp /etc/nginx/sites-enabled/default /home/default
+      ```
+
+11. Update the Nginx home default.
+      
+      ```bash
+      nano /home/default
+      ```
+
+12. Your configuration needs to survive a App Service restart. Update the App Service Startup Command.
+
+       - Navigate to the **Settings** section.
+       - Select **Configuration**.
+       - Select the **General settings**.
+       - Enter the following command in the **Startup Command**:
+  
+      ```bash
+      cp /home/default /etc/nginx/sites-enabled/default; service nginx restart
+      ```
+
+      ![](media/general-settings-startup-command.png)
+
+13. Open a browser and view the application.
 
     ![ContosoNoshNow home page](media/ContosoNoshNow-home-page.png)
 
@@ -174,11 +200,13 @@ The application should now be available and show some sample data, however the w
   
    >**Note:** For production environments, values will be retrieved from Azure Key Vault.
 
-3. Navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
+3. Using the Azure Portal, navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
 
    ![](media/create-contosonoshnow-database.png)
 
    >**Note:** It is possible to alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
+
+   Alternative commands:
 
    ```bash
    mysql --host=<hostname>-server.mysql.database.azure.com --user=<user name> --password=<password> --ssl=true
@@ -248,6 +276,6 @@ The environment variable could be set globally or at the project level. Setting 
 - [Deploying a Laravel application to Nginx server.](https://laravel.com/docs/8.x/deployment#nginx)
 - [Local Git deployment to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git?tabs=cli)
 
-## Resources
+## Recommended content
 
 - [How PHP apps are detected and built.](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/php.md)

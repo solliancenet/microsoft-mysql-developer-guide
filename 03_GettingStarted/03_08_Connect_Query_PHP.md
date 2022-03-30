@@ -188,4 +188,4 @@ mysqli_close($conn);
 ?>
 ```
 
-Congratulations. An SSL-secured connection with Flexible Server was demostrated, a table created (DDL), and some CRUD operations performed against that table (DML).
+Congratulations. An SSL-secured connection with Flexible Server was demonstrated, a table created (DDL), and some CRUD operations performed against that table (DML).

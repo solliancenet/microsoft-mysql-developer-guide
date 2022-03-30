@@ -1,6 +1,6 @@
 # 06 / Security
 
-Moving to a cloud-based service doesn't mean the entire internet will have access to it at all times. Azure provides best-in-class security that ensures data workloads are continually protected from bad actors and rogue programs. An additional  critical factor for many organizations is being compliant with local and industry regulations.
+Moving to a cloud-based service doesn't mean the entire internet will have access to it at all times. Azure provides best-in-class security that ensures data workloads are continually protected from bad actors and rogue programs. An additional critical factor for many organizations is being compliant with local and industry regulations.
 
 Organizations must take proactive security measures to protect their workloads and Azure simplifies through the following best practices.
 
@@ -10,6 +10,8 @@ Azure Database for MySQL supports the [basic authentication mechanisms](https://
 
 This tight integration allows administrators and applications to take advantage of the enhanced security features of [Azure Identity Protection](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection) to further surface any identity issues.
 
+TODO: Diagram
+
 > **Note:** This security feature is supported by MySQL 5.7 and later.  Most [application drivers](https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication) are supported as long as the `clear-text` option is provided.
 
 ## Threat protection
@@ -17,6 +19,7 @@ This tight integration allows administrators and applications to take advantage 
 If user or application credentials are compromised, logs are not likely to reflect any failed login attempts.  Compromised credentials can allow bad actors to access and download the data. [Azure Threat Protection](https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-threat-protection) and [Microsoft Defender for open-source relational databases](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-introduction) can watch for anomalies in logins (such as unusual locations, rare users, or brute force attacks) and other suspicious activities.  Administrators can be notified in the event something does not `look` right which can then assist with patching vulnerabilities. Microsoft Defender for open-source relational databases can be enabled by following the [Enable Microsoft Defender for open-source relational databases and respond to alerts](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-usage) article.
 
 ## Encryption
+TODO - Add some picture
 
 Both Azure Database for MySQL offerings, Single Server and Flexible Server, offers various encryption features including encryption for data, backups, and temporary files created during query execution.
 
