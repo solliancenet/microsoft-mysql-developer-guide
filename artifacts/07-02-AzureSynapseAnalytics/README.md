@@ -16,7 +16,7 @@
 - For the database name, type **ContosoStore**
 - For the username, type **wsuser@mysqldevSUFFIX**
 - For the password, type **Solliance123**
-- Select **Test connection**, ensure that you get a success message.
+- Select **Test connection**, ensure a success message is displayed.
 - Select **Create**
 
 ## Create PowerBI Workspace

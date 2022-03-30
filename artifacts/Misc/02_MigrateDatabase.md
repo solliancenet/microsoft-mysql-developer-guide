@@ -24,7 +24,7 @@
    2. For the hostname, type the dns of the Azure Database for MySQL single server (ex `mysqldevSUFFIX.mysql.database.azure.com`)
    3. For the username, type **wsuser@mysqldevSUFFIX**
    4. For the password type **Solliance123**
-   5. Select **OK**, you should get an error
+   5. Select **OK**, an error should occur
    6. Browse to the Azure Portal, select the Azure Database for MySQL single server
    7. Select **Add client IP**
    8. Select **Save**
@@ -33,7 +33,7 @@
    1. Select **Server->Data Import**
    2. Select **Import from Self-Contained File**
    3. Select the `C:\temp\ContosoStore\export.sql` file
-   4. Select **Start Import**, you should now have the database imported into Azure MySQL
+   4. Select **Start Import**, after a few momemts, the database will be imported into Azure MySQL
 
 ### Using PhpMyAdmin (InApp)
 

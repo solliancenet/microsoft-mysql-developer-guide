@@ -52,10 +52,10 @@ Logic Apps can be used to connect to Azure Database for MySQL Flexible Server in
 
 ## Private DNS - Virtual network link
 
-Several private DNS Zones were created as part of the ARM template deployment, here you will link those to your virtual networks so DNS resolution of private vnet and private endpoint resources become resolvable by other resources (such as virtual machines).
+Several private DNS Zones were created as part of the ARM template deployment, here it will be necessary to link those to the virtual networks so DNS resolution of private vnet and private endpoint resources become resolvable by other resources (such as virtual machines).
 
 - Browse to the **private.mysql.database.azure.com** private dns zone
-- Under **Settings**, select **Virtual network links**, you should see a auto-created link (from the resource creation above)
+- Under **Settings**, select **Virtual network links**, notice an auto-created link (from the resource creation above)
 - Select the **Overview** link
 - Record the database IP Address for later use
 - It can take some time for the DNS to become available, on the **paw-1** virtual machine
@@ -211,7 +211,7 @@ This step has already been done for you, but if you'd like to create the logic a
 
 - Switch back to the main blade for the app service
 - Under **Settings**, select **Configuration**
-- Edit the app setting value for **DB_HOST** to the ip address you recorded above.
+- Edit the app setting value for **DB_HOST** to the ip address recorded above.
 - Select **Save**
 
 ### Add virtual network peering

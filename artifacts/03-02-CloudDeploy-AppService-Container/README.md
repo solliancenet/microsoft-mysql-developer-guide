@@ -50,7 +50,7 @@ Now that a containerized version of the applications exists, it can now be hoste
 6. For **Days**, type **7**
 7. Select **Save**
 8. Under **Settings**, select **Configuration**
-9. Select **New application setting**, add the following, replace the `DB_URL` with the one you just recorded from the database container, replace the `APP_URL` with the one you just recorded for the application web:
+9. Select **New application setting**, add the following, replace the `DB_URL` with the one recorded previously from the database container, replace the `APP_URL` with the one  recorded for the application web:
      - `MYSQL_ROOT_PASSWORD` = `Solliance123`
      - `WEBSITES_PORT` = `3306`
 10. Select **Save**, then select **Continue**
@@ -61,7 +61,7 @@ Now that a containerized version of the applications exists, it can now be hoste
 15. For **Days**, type **7**
 16. Select **Save**
 17. Under **Settings**, select **Configuration**
-18. Select **New application setting**, add the following, replace the `DB_URL` with the one you just recorded from the database container, replace the `APP_URL` with the one you just recorded for the application web:
+18. Select **New application setting**, add the following, replace the `DB_URL` with the one recorded previously from the database container, replace the `APP_URL` with the one recorded for the application web:
      - `DB_HOST` = {DB_URL}
      - `DB_USERNAME` = `root`
      - `DB_PASSWORD` = `Solliance123`
@@ -69,7 +69,7 @@ Now that a containerized version of the applications exists, it can now be hoste
      - `DB_PORT` = `3306`
      - `APP_URL` = {APP_URL}
 
-> **NOTE** You can also select **Advanced edit** and then copy the below values in, be sure to replace the `SUFFIX`
+    > **NOTE** It is possible to edit multiple by selecting  **Advanced edit** and then copying the below values in, be sure to replace the `SUFFIX`
 
     ```text
     {
@@ -104,14 +104,14 @@ Now that a containerized version of the applications exists, it can now be hoste
     }
     ```
 
-19. Select **Save**
-20. Browse to the **mysqldevSUFFIX-app-web** app service url, you should see the web site load but it has database errors.
+19.  Select **Save**
+20.  Browse to the **mysqldevSUFFIX-app-web** app service url, the web site will load but it has database errors.
 
 ## Troubleshooting
 
-1. If you do not see any results, you can review the logs for each container instance
+1. If no results are displayed, review the logs for each container instance
    1. Browse to the app service
    2. Under **Monitoring**, select **Log stream**
-   3. Review the startup logs, you should notice that the database instance did not respond to an HTTP request on port 3306.  This is because an app service container will only work with HTTP based container images unless it is a multicontainer deployment.
+   3. Review the startup logs, notice that the database instance did not respond to an HTTP request on port 3306.  This is because an app service container will only work with HTTP based container images unless it is a multicontainer deployment.
 2. Change the application settings for the web container to point to the Azure Database for MySQL Single Server instance
 3. Refresh the web site, it should now load successfully.

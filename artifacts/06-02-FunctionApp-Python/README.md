@@ -93,7 +93,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     http://localhost:7071/api/AddCustomerFunction
     ```
 
-- You should get an error. Browse to the Azure Portal and the mysqldevSUFFIXflex flexible server
+- An error should occur. Browse to the Azure Portal and the mysqldevSUFFIXflex flexible server
 - Under **Settings**, select **Networking**
 - Select **Add current IP address (x.x.x.x)**
 - Select **Save**

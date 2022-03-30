@@ -9,7 +9,7 @@ Function apps can be containerized and deployed to AKS.  These steps will walk t
 ## Setup AKS (KEDA)
 
 - Open a new Visual Studio Code window to the `C:\labfiles\microsoft-mysql-developer-guide\Artifacts\06-03-FunctionApp-AKS` folder
-- Open a new terminal window, ensure that you have an AKS connection:
+- Open a new terminal window, ensure that an AKS connection is present:
 
 ```Powershell
 $resourceGroupName = "YOUR_RESOURCEGROUP_NAME";

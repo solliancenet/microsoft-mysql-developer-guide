@@ -69,7 +69,7 @@
 ## Review the job status
 
 - Select the **main_01** task
-- Review the results in the `stdout.txt` file, you should see data, if you do not see data, review the `stderr.txt` and fix any issues
+- Review the results in the `stdout.txt` file, it should contain data, if no data is present, review the `stderr.txt` and fix any issues
 
 ## Setup Managed Identity (certificate)
 
@@ -89,7 +89,7 @@ openssl genrsa -out server.pem 2048
 openssl req -new -key server.pem -out server.csr
 ```
 
-- When prompted, enter the requested information (you can make it up)
+- When prompted, enter the requested information (press `ENTER` to select all the defaults)
 
 ```PowerShell
 openssl x509 -req -days 365 -in server.csr -signkey server.pem -out server.crt
@@ -161,7 +161,7 @@ write-host "AppId: $appId"
   - Select **Save**
   - Under **General**, select **Nodes**
   - Select the ellipses for the single node, select **Reboot**
-  - Select **Reboot**, you can continue on with the next few steps
+  - Select **Reboot**, continue on with the next few steps
 
 ### Create Key Vault values
 
@@ -207,4 +207,4 @@ write-host "AppId: $appId"
   - Batch_VaultName = {mysqldevSUFFIX-kv}
 - Select **Submit**
 - Select the **main_02** task
-- Review the results in the `stdout.txt` file, you should see data, if you do not see data, review the `stderr.txt` and fix any issues
+- Review the results in the `stdout.txt` file, data should be present, if there is no data, review the `stderr.txt` and fix any issues

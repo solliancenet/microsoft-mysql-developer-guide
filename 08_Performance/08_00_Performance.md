@@ -48,15 +48,15 @@ Sometimes just upgrading versions maybe the answer.  Upgrading from Azure Databa
 
 ## Customizing the runtime
 
-Choosing a platform to run your MySQL and PHP containerized applications plays an important part with the performance you will get.  In most cases, creating your own custom PHP container can improve performance up to 6x over the out of box offical PHP containers.  As a developer, you will need to determine if the effort of building your own image will provide you with the performance you are looking for.  Also keep in mind that later version of PHP tend to perform better than older versions.
+Choosing a platform to run your MySQL and PHP containerized applications plays an important part in how much performance will be acheived.  In most cases, creating a custom PHP container can improve performance up to 6x over the out of box offical PHP containers.  As a developer, it is important to determine if the effort of building a custom image will be worth the performance gain from the work.  Also keep in mind that later version of PHP tend to perform better than older versions.
 
-You can test these custom environments by running various benchmarks using the [PHPBench tool](https://github.com/phpbench/phpbench).
+Custom environments can be tested against standard workloads by running various benchmarks using the [PHPBench tool](https://github.com/phpbench/phpbench).
 
 ## Running MySQL Benchmarks
 
-There are several tools that can be used to test your MySQL environment. Here are a few that you can use to determine who well your instance is running:
+There are several tools that can be used to benchmark MySQL environments. Here are a few that can be used to determine how well an instance is performing:
 
 - [DBT2 Benchmark](https://downloads.mysql.com/source/dbt2-0.37.50.16.tar.gz) - DBT2 is an open source benchmark that mimics an OLTP application for a company owning large amounts of warehouses. It contains transactions to handle New Orders, Order Entry, Order Status, Payment and Stock handling
 - [SysBench Benchmark Tool](https://downloads.mysql.com/source/sysbench-0.4.12.16.tar.gz) - Sysbench is a popular open source benchmark to test open source DBMSs.
 
-More Common sets of tests typically utilize TPC benchmarks such as [TPC-H](https://www.tpc.org/tpch/) but as you can see there are many more [types of tests](https://www.tpc.org/information/benchmarks5.asp) that can be run against the MySQL environment as well.
+More Common sets of tests typically utilize TPC benchmarks such as [TPC-H](https://www.tpc.org/tpch/) but there are many more [types of tests](https://www.tpc.org/information/benchmarks5.asp) that can be run against the MySQL environment to test against specific workloads and patterns.

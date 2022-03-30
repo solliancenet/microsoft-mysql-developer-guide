@@ -16,7 +16,7 @@
 - For the database name, type **ContosoStore**
 - For the username, type **wsuser@mysqldevSUFFIX**
 - For the password, type **Solliance123**
-- Select **Test connection**, ensure that you get a success message.
+- Select **Test connection**, ensure that a success message is displayed.
 - Select **Create**
 - Select **Linked servics**, select the **+ New** button
 - For the type, select **Azure Data Lake Storage Gen2**
@@ -94,4 +94,4 @@
 - Browse to the storage account
 - Under **Data storage**, select **Containers**
 - Select the **orders** container
-- You should see a new file that is the exported data.
+- Notice that a new file is created that contains the exported data.

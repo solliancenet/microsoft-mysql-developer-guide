@@ -8,7 +8,7 @@ It is possible to utilize Visual Studio or Visual Studio Code to create Azure Fu
 
 ### Install pre-requisites
 
-Most of this is done for you in the setup scripts, but is provided here for reference.
+Most of this is done already in the lab setup scripts, but is provided here for reference.
 
 - Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/downloads/)
   - Expand the **Download Visual Studio with .NET** dropdown for an installation package with the .NET SDK
