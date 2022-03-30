@@ -2981,7 +2981,9 @@ The free allowance is large enough to cover development, and publishing
 an app for a small number of users. You can set a cap to prevent more
 than a specified amount of data from being processed. Larger volumes of
 telemetry are charged by the Gb. [Manage usage and costs for Application
-Insights] ## Monitoring database operations
+Insights]
+
+## Monitoring database operations
 
 Log data collected by Azure Monitor can be analyzed with queries to
 quickly retrieve, consolidate, and analyze collected data. Create and
