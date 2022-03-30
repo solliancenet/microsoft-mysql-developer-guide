@@ -18,7 +18,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     ```PowerShell
     Connect-AzAccount
 
-    #if you have more than on subscription
+    #if more than on subscription
     Select-AzSubscription "SUBSCRIPTION_NAME";
 
     $suffix = "SUFFIX";

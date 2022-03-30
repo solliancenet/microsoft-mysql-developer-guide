@@ -20,7 +20,7 @@ Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsof
 
 ### Resiliency and version testing
 
-Testers can only execute so many test cases.  Users tend to execute application functionality not imagined by the development/test team. How do you allow real users to test the application while limiting deployment downtime and version risk? One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
+Testers can only execute so many test cases within a set period of time.  Users tend to execute application functionality not imagined by the development/test team. Allowing real users to test the application while limiting deployment downtime and version risk can be difficult. One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
 
 ![](media/azure-traffic-manager-blue-green.png)
 

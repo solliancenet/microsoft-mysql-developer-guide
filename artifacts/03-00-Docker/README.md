@@ -202,7 +202,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     php artisian migrate
     ```
 
-3. Once you have the connection working, refresh the page then select **START ORDER**
+3. Once the connection is working, refresh the page then select **START ORDER**
 4. Select **Breakfast**, then select **CONTINUE**
 5. Select **Bacon & Eggs**, then select **ADD**
 6. Select **CHECKOUT**
@@ -214,7 +214,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
     docker compose up
     ```
 
-10. Switch back to the phpmyadmin window.  Attemp to re-run the query, notice that the database has the same orders as when you started it before.  This is because the container's data was lost when it was stopped/removed.
+10. Switch back to the phpmyadmin window.  Attemp to re-run the query, notice that the database has the same orders as when it was started before.  This is because the container's data was lost when it was stopped/removed.
 
 ## Fix Storage persistence
 

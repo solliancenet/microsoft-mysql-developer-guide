@@ -220,4 +220,4 @@ Kubernetes deployments allow for the creation of multiple instances of pods and 
   kubectl create -f store-db-deployment.yaml
   ```
 
-4. You now have a very robust deployment that will survive multiple node failures.
+4. This deployment is now very robust and will survive multiple node failures.

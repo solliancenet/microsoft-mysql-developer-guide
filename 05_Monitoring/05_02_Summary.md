@@ -1,6 +1,6 @@
 ## 05 / Summary
 
-Monitoring the performance of your environment is a vital final step after deployment.  This section showed you the various tools Microsoft Azure provides to do exactly that.
+Monitoring the performance of your environment is a vital final step after deployment.  This section described the various tools Microsoft Azure provides to do exactly that such as Azure Monitor and Log Analtyics.
 
 Both the control and data plane should be considered in your monitoring activities with alerting setup to notify platform administrators and database administratorsof issues before or when they start to happen.
 
