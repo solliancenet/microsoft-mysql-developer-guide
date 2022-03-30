@@ -43,7 +43,7 @@ In addition to the web server, it is also necessary to install and configure the
 
 As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once software is installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
 
-The biggest advantage of a classic on-premises deployment is that you have full control of the environment.  The biggest weakness is you must maintain every aspect of the environment.
+The biggest advantage of a classic on-premises deployment is the infrastructure team will have full control of the environment.  The biggest weakness is they must also maintain every aspect of the environment as well.
 
 To perform a simulated classical deployment in Azure, go to the [Classic Deployment to PHP-enabled IIS server](./../artifacts/01-ClassicDeploy/README.md) article.
 
@@ -160,9 +160,9 @@ The basic template is the cheaper way to go and should work without any configur
 
 ### Step 2 - Starting from the beginning
 
-Once the template has deployed, you will see several resources that support the develop journey.  Not all of these will be used but are provided in case you decided to explore further on your own.
+Once the template has deployed, several resources will be deployed to support the developer journey.  Not all of these will be used but are provided in case other paths would like to be explored.
 
-As part of the deployment, you will see a **mysqldevSUFFIX-paw1** virtual machine that has been deployed.  You can login to this virtual machine by doing the following:
+As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine that has been deployed that will be used to perform all the activities.  Login to this virtual machine by doing the following:
 
 - Open Azure Portal
 - Browse to your resource group
@@ -173,9 +173,9 @@ As part of the deployment, you will see a **mysqldevSUFFIX-paw1** virtual machin
 - For the username, type **wsuser**
 - For the password, type **Solliance123**
 
-Once in the virtual machine, you should see that all the tools have already been installed from you as well as the github has been downloaded that includes all the artifacts needed to start the developer journey. You can find these files on the **Paw-1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
+Once in the virtual machine, notice that all the necessary development tools have already been installed.  Additionally, the supporting github repository has been downloaded that includes all the artifacts needed to start the developer journey. These files can be found on the **mysqldevSUFFIX-paw1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
 
-To reiterate, it is best if you follow the journey from the start to finish in the following order:
+To reiterate, it is recommended to follow the developer journey from start to finish in the following order:
 
 - [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
 - [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)

@@ -35,13 +35,6 @@ Moving a database to a different Azure region depends on the approach and archit
 
 The recommended process is the same as utilizing read replicas for maintenance failover. However, compared to the planned maintenance method mentioned above, the speed to failover is much faster when a failover layer is integrated into the application. The application should only be down for a few moments during the read replica failover process. More details are covered in the [Business Continuity and Disaster Recovery](03_BCDR.md) section.
 
-## Optimization checklist
-
-- Monitor for slow queries.
-- Periodically review the Performance Insight dashboard.
-- Utilize monitoring to drive tier upgrades and scale decisions.
-- Consider moving regions if the users or application needs change.
-
 ## Server parameters
 
 As part of the migration, the on-premises [server parameters](https://docs.microsoft.com/azure/mysql/concepts-server-parameters) were likely modified to support a fast egress. Also, modifications were made to the Azure Database for MySQL parameters to support a fast ingress. The Azure server parameters should be set back to their original on-premises workload-optimized values after the migration.

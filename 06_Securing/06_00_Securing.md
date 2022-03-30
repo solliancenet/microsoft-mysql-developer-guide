@@ -57,16 +57,3 @@ Many of the items discussed thus far operate in their own sphere of influence an
 [Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then give you a view into how an attack may have started.
 
 Microsoft Sentinel works in conjunction with Azure Log Analytics to provide a log storage, query and alerting solution.  Through machine learning, artificial intelligence and user behavior analytics (UEBA), Microsoft Sentinel can provide you with a higher understanding of potential issues or incidents you may not have seen with a disconnected environment.
-
-## Security checklist
-
-- Use Azure AD authentication where possible.
-- Enable Advanced Threat Protection and Microsoft Defender.
-- Enable all auditing features.
-- Consider a Bring-Your-Own-Key (BYOK) strategy.
-- Implement firewall rules.
-- Utilize private endpoints for workloads that do not travel over the Internet.
-
-## Recommended content
-
-TODO: Additional links for more  information.

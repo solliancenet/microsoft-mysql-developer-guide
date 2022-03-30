@@ -5,3 +5,10 @@ This module was designed to bring all the elements of the modernization and clou
 Although this guide did not go into detail of how to host applications across multiplecloud providers, this would be the next logical step in the evolution of MySQL applications and databases.  Several Microsoft partners and vendors (such as Hashicorp), provide tools and services that help facilitate this final step.
 
 As the world of microservices continues to change and evolve itself through more innovative technologies (such as blockchain), other patterns and steps may emerge in the future that will change the evolutionary course of your architecture(s).
+
+### Checklist
+
+- Understand the phases in the developer evolution journey.
+- Be able to evaluate where your application sites in the journey.
+- Be congnizant of the changes that are needed to applications to move to the next state.
+- Utilize modern development and deployment methodoligies.

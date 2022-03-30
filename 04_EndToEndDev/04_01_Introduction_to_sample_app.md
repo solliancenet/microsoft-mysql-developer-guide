@@ -110,7 +110,7 @@ TODO: Get the MS repo.
    git push azure master
    ```
   
-   - When you push your content to the Azure App Service, you will be prompted for the Local Git credentials. Enter the Application Scope credentials.
+   - When pushing content to the Azure App Service, the sytems will prompt for the Local Git credentials. Enter the Application Scope credentials.
   
       ![Git Credential Manager](media/git-credential-manager-for-windows.png)
 

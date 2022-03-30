@@ -34,7 +34,7 @@ Using IntelliJ, browse to the `complete` directory in the repository root. If pr
 
 #### Database setup
 
-The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and will allow you to provision a Single Server instance directly within the Azure Explorer.
+The IntelliJ Azure explorer supports Azure Database for MySQL Single Server and will allow for the provisioning of a Single Server instance directly within the Azure Explorer.
 
 1. Navigate to the **Azure Explorer** tab, right-click on **Azure Database for MySQL**, and select **+ Create**.
 
