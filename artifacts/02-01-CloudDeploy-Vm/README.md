@@ -42,7 +42,7 @@ The app is running in an Azure VM and the App needs to be exposed to the interne
 ## Edit .env file
 
 1. Open the .env file
-2. Edit the `APP_URL` to the `IP_ADDRESS` of the virtual machine.  Note that you would need to change the url to `https` in order to properly load the application over SSL.
+2. Edit the `APP_URL` to the `IP_ADDRESS` of the virtual machine.  Note that the url must change to `https` in order to properly load the application over SSL.
 3. Save the file, refresh the browser window
 
 ## Enable Port 443

@@ -44,7 +44,7 @@ When moving an application to Azure along with the MySQL workload, it is likely 
 
 ## Microsoft Defender for Cloud
 
-When it comes to the control plane, commonly referred to as the Cloud security posture management (CSPM), the Azure Activity log has you covered, however when the data plane, commonly referred to as Cloud workload protection (CWP), is the focus of the security efforts, you will need something that will monitor the workload itself rather than the things outside the workload.
+When it comes to the control plane, commonly referred to as the Cloud security posture management (CSPM), the Azure Activity log has the control plane covered, however when working with the data plane, commonly referred to as Cloud workload protection (CWP), is the focus of the security efforts, something else will be needed to monitor the workload itself rather than the things outside the workload.
 
 [Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction) provides [workload protections for Azure Database](https://docs.microsoft.com/en-us/azure/defender-for-cloud/quickstart-enable-database-protections) workloads such as Azure Database for SQL, Postgres and MySQL.
 
@@ -52,8 +52,8 @@ For a list of the items that Microsoft Defender reviews for open source database
 
 ## Microsoft Sentinel
 
-Many of the items discussed thus far operate in their own sphere of influence and are not designed to work directly with each other. Every secure features provided by Microsoft Azure and corresponding applications like Azure Active Directory contain on piece of the security puzzle.  Something is needed to bring all the pieces together to provide a full picture of the security posture and to allow for you to remediate issues quickly and potentially in an automated way.
+Many of the items discussed thus far operate in their own sphere of influence and are not designed to work directly with each other. Every secure features provided by Microsoft Azure and corresponding applications like Azure Active Directory contain on piece of the security puzzle.  Something is needed to bring all the pieces together to provide a full picture of the security posture and to allow the quick remediation of issues potentially in an automated way.
 
-[Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then give you a view into how an attack may have started.
+[Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then provide a view into how an attack may have started.
 
-Microsoft Sentinel works in conjunction with Azure Log Analytics to provide a log storage, query and alerting solution.  Through machine learning, artificial intelligence and user behavior analytics (UEBA), Microsoft Sentinel can provide you with a higher understanding of potential issues or incidents you may not have seen with a disconnected environment.
+Microsoft Sentinel works in conjunction with Azure Log Analytics to provide a log storage, query and alerting solution.  Through machine learning, artificial intelligence and user behavior analytics (UEBA), Microsoft Sentinel can provide a higher understanding of potential issues or incidents that may not have seen with a disconnected environment.

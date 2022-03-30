@@ -99,7 +99,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 3. Select **Run**
 4. Select **Releases**
 5. Select the **MySQL Dev** pipeline
-6. You should see the release being deployed, wait for the pipeline to complete execution
+6. The release should show as being deployed, wait for the pipeline to complete execution
 
 ### Test the DevOps deployment
 
