@@ -8,8 +8,8 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/ISV-Tech-Builders-tools.png",
-        "for": "media/ISV-Tech-Builders-tools.png"
+        "from": "media/ISV-Tech-Builders-tools-white.png",
+        "for": "media/ISV-Tech-Builders-tools-white.png"
     },
     {
         "type": "LoadedResource",
@@ -100,6 +100,12 @@
         "verbosity": "INFO",
         "from": "media/tip.png",
         "for": "media/tip.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/VSCode_screenshot.png",
+        "for": "media/VSCode_screenshot.png"
     },
     {
         "type": "LoadedResource",
@@ -289,12 +295,6 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/app-service.png",
-        "for": "media/app-service.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
         "from": "media/local-git.png",
         "for": "media/local-git.png"
     },
@@ -333,6 +333,12 @@
         "verbosity": "INFO",
         "from": "media/update-app-url-env.png",
         "for": "media/update-app-url-env.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/general-settings-startup-command.png",
+        "for": "media/general-settings-startup-command.png"
     },
     {
         "type": "LoadedResource",
@@ -407,6 +413,12 @@
         "path": "../Global_Media/tip.png"
     },
     {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/AzureMetrics_query_cpu.png",
+        "for": "./media/AzureMetrics_query_cpu.png"
+    },
+    {
         "type": "CouldNotFetchResource",
         "verbosity": "WARNING",
         "message": "PandocResourceNotFound \"../Global_Media/warning.png\"",
@@ -445,14 +457,20 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/container-logs-in-log-analytics.png",
-        "for": "./media/container-logs-in-log-analytics.png"
+        "from": "./media/selenium-test-azure-devops.png",
+        "for": "./media/selenium-test-azure-devops.png"
     },
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/metric-visualization.png",
-        "for": "./media/metric-visualization.png"
+        "from": "media/azure-traffic-manager-blue-green.png",
+        "for": "media/azure-traffic-manager-blue-green.png"
+    },
+    {
+        "type": "CouldNotFetchResource",
+        "verbosity": "WARNING",
+        "message": "PandocResourceNotFound \"../Global_Media/tip.png\"",
+        "path": "../Global_Media/tip.png"
     },
     {
         "type": "LoadedResource",
@@ -463,8 +481,14 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/selenium-test-azure-devops.png",
-        "for": "./media/selenium-test-azure-devops.png"
+        "from": "./media/container-logs-in-log-analytics.png",
+        "for": "./media/container-logs-in-log-analytics.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/metric-visualization.png",
+        "for": "./media/metric-visualization.png"
     },
     {
         "type": "LoadedResource",

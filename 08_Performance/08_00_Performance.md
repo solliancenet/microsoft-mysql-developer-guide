@@ -1,4 +1,5 @@
 # 08 / Performance + Optimization
+TODO - Add Overview
 
 ## Monitoring hardware and query performance
 

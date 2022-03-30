@@ -24,16 +24,15 @@ Testers can only execute so many test cases.  Users tend to execute application 
 
 ![](media/azure-traffic-manager-blue-green.png)
 
-> ![Tip](../Global_Media/tip.png) **Tip:** As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
+> ![Tip](../Global_Media/tip.png "Tip") **Tip:** As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
 
 Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
 
-Blue-green deployment options and tools
+Blue-green deployment options
 
 - [Deployment Center example](https://docs.microsoft.com/azure/app-service/deploy-github-actions?tabs=applevel)
 - [Azure Traffic Manager example](https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/)
 - [Application Gateway example](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/upgrading-aks-version-with-blue-green-deployment-i/ba-p/2527145)
-- Git Actions
 
 ### Performance testing
 #### Load testing
@@ -93,7 +92,7 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 
 ![This image demonstrates a dashboard in Grafana showing CPU usage for a pod.](./media/grafana-dashboard.png "Pod CPU usage in Grafana")
 
-#### Recommended Content
+### Recommended Content
 
 - [Using Azure Kubernetes Service with Grafana and Prometheus](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/using-azure-kubernetes-service-with-grafana-and-prometheus/ba-p/3020459)
 - [Prometheus Overview](https://prometheus.io/docs/introduction/overview)
@@ -103,4 +102,3 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 - [What are Azure Pipelines?](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target)
 
 - [What is Azure Load Testing?](https://docs.microsoft.com/en-us/azure/load-testing/overview-what-is-azure-load-testing?wt.mc_id=loadtesting_acompara4_webpage_cnl)
-

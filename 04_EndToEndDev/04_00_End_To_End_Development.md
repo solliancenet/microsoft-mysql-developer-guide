@@ -63,7 +63,7 @@ To perform an Azure VM deployment, reference the [Cloud Deployment to Azure VM](
 
 If supporting the operating system and the various other software is not a preferred approach, the next evolutionary path is to remove the operating system and web server from the list of setup and configuration steps. This can be accomplished by utilizing the Platform as a Service (PaaS) offerings of Azure App Service and Azure Database for MySQL.
 
-However, modernizing an application and migrating them to these aformentioned services may introduce some relatively small application changes.
+However, modernizing an application and migrating them to these aforementioned services may introduce some relatively small application changes.
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service](./../artifacts/02-02-CloudDeploy-AppSvc/README.md) article.
 
@@ -147,7 +147,7 @@ To implement this deployment, reference the [Utilize AKS and Azure Database for 
 
 ## Start the Developer Journey
 
-The first step to exploring the evolution of MySQL Application development is to get the environmentsetup.
+The first step to exploring the evolution of MySQL Application development is to get the environment setup.
 
 We provide two ARM template that can be deployed that will setup the environment.  One is a basic deployment of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and vnet integrations.  It also includes items like Azure Firewall and other security related configurations.
 
