@@ -8,6 +8,14 @@ If the data is vital, important and business critical, you should do everything 
 
 This section showed you many tools Microsoft Azure provided to give you peace of mind that your cloud-based workload will be just as secure as if you were running it on-premises.
 
-### Checklist
+## Security checklist
 
--
+- Utilize the strongest possible authentication mechanisms such as Azure Active Directory
+- Enable Advanced Threat Protection and Microsoft Defender for Cloud.
+- Enable all auditing features.
+- Enable encryption at every layer that supports it
+- Consider a Bring-Your-Own-Key (BYOK) strategy.
+- Implement firewall rules.
+- Utilize private endpoints for workloads that do not travel over the Internet.
+- Integrate Microsoft Sentinel for advanced SIEM and SOAR
+- Utilize private endpoints and virtual network integration where possible
