@@ -43,8 +43,3 @@ The hospital and research institute had an existing relationship with Microsoft,
 ## GeekWire
 
 Based in Seattle, Washington, [GeekWire](https://customers.microsoft.com/en-us/story/geekwire) is a rapidly growing technology news site with a global readership. In addition to covering the latest innovation, GeekWire serves the Pacific Northwest tech community with events, a job board, startup resources, a weekly radio show, and more. As its popularity and site traffic increased, so did performance concerns. To gain better scalability and performance, GeekWire decided to migrate its WordPress site to the Microsoft Azure platform. By taking advantage of fully managed services like Azure Database for MySQL, the company can scale on-demand while cutting costs 45 percent.
-
-## Resources
-
-- [Tutorial: Deploy a Spring Boot application on AKS cluster with MySQL Flexible Server in a VNet](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet)
-- [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks)
