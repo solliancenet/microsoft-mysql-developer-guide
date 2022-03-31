@@ -159,10 +159,15 @@ TODO: Get the MS repo.
       ```
 
 11. Update the Nginx home default.
-      
+
       ```bash
       nano /home/default
       ```
+
+      - absolute_redirect off
+      - root /home/site/wwwroot/public
+
+      ![](media/nginx-home-default-update.png)
 
 12. Your configuration needs to survive a App Service restart. Update the App Service Startup Command.
 
