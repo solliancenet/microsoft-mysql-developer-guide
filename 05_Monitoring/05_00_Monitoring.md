@@ -57,8 +57,28 @@ Example steps to configure WordPress monitoring:
 
 > ![Tip](../Global_Media/tip.png) **Tip:** [Connection Strings](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) are recommended over instrumentation keys.
 
+### Azure Metric Counters
+
+Azure makes is makes it easy to capture performance counters for resources. For example, if wanted to capture performance counters for a PHP App Service, there are some simple steps to follow.
+
+- Navigate to the App Service in the Azure Portal.
+- In the **Monitoring** section, select the **Metrics** item.
+- Select your **Metric** from the dropdown.
+
+![](media/mysql-guide-metric-counters.png)
+
+- Select your chart choice.
+
+![](media/mysql-guide-request-count-metric.png)
+
+### Cost
+
 The free allowance is large enough to cover development, and publishing an app for a small number of users. Setting a limit can prevent more data than necessary from being processed and keep costs low. Larger volumes of telemetry are charged by the Gb. [Manage usage and costs for Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/pricing)
 ## Monitoring database operations
+
+Azure Metrics can be configured to monitor the database as well.
+
+![](media/mysql-guide-database-metric-example.png)
 
 Log data collected by Azure Monitor can be analyzed with queries to quickly retrieve, consolidate, and analyze collected data. Create and test queries using Log Analytics in the Azure portal. Once metric data is flowing, use the [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query language to query the various log information. Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
 

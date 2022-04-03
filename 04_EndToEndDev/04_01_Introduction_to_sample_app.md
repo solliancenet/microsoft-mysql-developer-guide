@@ -104,11 +104,11 @@ TODO: Get the MS repo.
 
    - Type the following commands individually to configure the remote repo connection. Review the output:
 
-   ```cmd
-   git remote add azure <Azure App Service Git Clone URL>
-   git remote -v
-   git push azure master
-   ```
+      ```cmd
+      git remote add azure <Azure App Service Git Clone URL>
+      git remote -v
+      git push azure master
+      ```
   
    - When pushing content to the Azure App Service, the sytems will prompt for the Local Git credentials. Enter the Application Scope credentials.
   
@@ -209,7 +209,7 @@ The application should now be available and show some sample data, however the w
 
    ![](media/create-contosonoshnow-database.png)
 
-   >**Note:** It is possible to alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
+   >**Note:** It is possible to execute alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
 
    Alternative commands:
 
