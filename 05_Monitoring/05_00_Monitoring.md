@@ -57,19 +57,31 @@ Example steps to configure WordPress monitoring:
 
 > ![Tip](../Global_Media/tip.png) **Tip:** [Connection Strings](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) are recommended over instrumentation keys.
 
-### Azure Metric Counters
+### Azure Metrics Explorer
 
-Azure makes is makes it easy to capture performance counters for resources. For example, if wanted to capture performance counters for a PHP App Service, there are some simple steps to follow.
+[Azure Metrics Explorer](https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-getting-started) makes is makes it easy to capture performance counters for resources quickly without having to instrument your code.
 
-- Navigate to the App Service in the Azure Portal.
+![](media/azure-metrics-workflow.png)
+
+For example, if we wanted to capture performance counters for a PHP App Service resource, there are some simple steps to follow.
+
+- Determine your scope. Navigate to the App Service in the Azure Portal.
 - In the **Monitoring** section, select the **Metrics** item.
+- Select your time range.
+
+  ![](media/azure-metric-time-range.png)
+
 - Select your **Metric** from the dropdown.
 
-![](media/mysql-guide-metric-counters.png)
+  ![](media/mysql-guide-metric-counters.png)
 
-- Select your chart choice.
+- Select your chart choice for the chosen metric.
 
-![](media/mysql-guide-request-count-metric.png)
+  ![](media/mysql-guide-request-count-metric.png)
+
+- Create a rule by selecting **New alert rule**.
+  
+  ![](media/azure-metric-new-alert-rule.png)
 
 ### Cost
 
