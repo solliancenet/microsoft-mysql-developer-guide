@@ -37,9 +37,28 @@ Given that cloud environments are more likely to encounter transient faults, lik
 
 Applications must first determine if a fault is transient or more persistent. Typically, API responses indicate the nature of the issue, sometimes even specifying a retry interval. If the fault is transient, applications must retry requests without consuming excessive resources. Common retry strategies including sending requests at regular intervals, exponential intervals, or random intervals. If a given number of retry requests fail, applications consider the operation failed.
 
-TODO - MySQL Connectors that support retry
+Azure SDKs typically provide native support for retrying service requests. Consult the documentation's [list of per-service retry recommendations.](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific)
 
-### 6. Size database compute resources adequately (TODO)
+For some ORMs that are commonly used with MySQL databases, like PHP's **PDO MySQL**, it may be necessary to write custom retry code that retries database connections if particular MySQL error codes are thrown.
+
+### 6. Size database compute resources adequately
+
+Teams must be diligent with sizing their Flexible Server instances to be cost-effective while maintaining sufficient application performance. There are [three different tiers of Flexible Server instances](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage), each with different intended use cases and memory configurations.
+
+- **Burstable**:
+  - Up to **2 GiB** memory per vCore
+  - Intended for workloads that do not use the CPU continuously
+  - Cost-effective for smaller web applications and development workloads
+- **General Purpose**:
+  - **4 GiB** per vCore
+  - Intended for applications that require more throughput
+- **Memory Optimized**:
+  - **8 GiB** per vCore
+  - Intended for high-throughput transactional and analytical workloads, like real-time data processing
+
+Flexible Server instances can be resized after creation. Azure stops database VM instances and needs up to 120 seconds to scale compute resources.
+
+Use Azure Monitor Metrics to determine if you need to scale your Flexible Server instance. Monitor metrics like **Host CPU percent**, **Active Connections**, **IO percent**, and **Host Memory Percent** to make your scaling decisions. To test database performance under realistic application load, consider utilities like [sysbench.](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/benchmarking-azure-database-for-mysql-flexible-server-using/ba-p/3108799)
 
 ## Backup and restore
 
