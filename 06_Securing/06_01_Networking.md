@@ -22,14 +22,14 @@ Review a set of potential [security baseline](https://docs.microsoft.com/azure/m
 
 #### Configuring Public Access Guides
 
-- Single Server
-  - [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
-  - [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
-  - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
 - Flexible Server
   - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal)
   - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/flexibleservers/firewallrules?tabs=json)
+- Single Server
+  - [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
+  - [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
+  - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
 
 #### Private Access
 

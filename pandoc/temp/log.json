@@ -337,6 +337,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/nginx-home-default-update.png",
+        "for": "media/nginx-home-default-update.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/general-settings-startup-command.png",
         "for": "media/general-settings-startup-command.png"
     },
@@ -411,6 +417,42 @@
         "verbosity": "WARNING",
         "message": "PandocResourceNotFound \"../Global_Media/tip.png\"",
         "path": "../Global_Media/tip.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-metrics-workflow.png",
+        "for": "media/azure-metrics-workflow.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-metric-time-range.png",
+        "for": "media/azure-metric-time-range.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-guide-metric-counters.png",
+        "for": "media/mysql-guide-metric-counters.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-guide-request-count-metric.png",
+        "for": "media/mysql-guide-request-count-metric.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-metric-new-alert-rule.png",
+        "for": "media/azure-metric-new-alert-rule.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-guide-database-metric-example.png",
+        "for": "media/mysql-guide-database-metric-example.png"
     },
     {
         "type": "LoadedResource",

@@ -86,6 +86,7 @@ For example, if we wanted to capture performance counters for a PHP App Service 
 ### Cost
 
 The free allowance is large enough to cover development, and publishing an app for a small number of users. Setting a limit can prevent more data than necessary from being processed and keep costs low. Larger volumes of telemetry are charged by the Gb. [Manage usage and costs for Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/pricing)
+
 ## Monitoring database operations
 
 Azure Metrics can be configured to monitor the database as well.
@@ -118,7 +119,7 @@ AzureMetrics
 | top 1 by TimeGenerated
 ```
 
-!["The results from an Azure Metrics query is displayed"](./media/AzureMetrics_query_cpu.png "The results from an Azure Metrics query is displayed")
+!["The results from an Azure Metrics query are displayed"](./media/AzureMetrics_query_cpu.png "The results from an Azure Metrics query are displayed")
 
 The table below, pulled from the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring), indicates the metrics exposed by Flexible Server instances:
 

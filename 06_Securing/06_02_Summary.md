@@ -6,7 +6,7 @@ Deciding what risks the organization can accept will typically help guide what s
 
 If the data is vital, important and business critical, everything possible should be done to ensure its protected and secure.
 
-This section discussed many tools Microsoft Azure provided to give an organziation peace of mind that the cloud-based workload will be just as secure as if running it on-premises.
+This section discussed many tools Microsoft Azure provided to give an organization peace of mind that the cloud-based workload will be just as secure as if running it on-premises.
 
 ## Security checklist
 

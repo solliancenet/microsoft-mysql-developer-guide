@@ -43,7 +43,7 @@ Azure Logic Apps interface with external systems through *managed connectors*. M
 
 ##### Resources
 
-- [What is Azure Logic Apps?](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)
+- [What is a Azure Logic App?](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)
 - [Compare Azure Functions and Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs#compare-azure-functions-and-azure-logic-apps)
 - [Logic Apps with MySQL]
 

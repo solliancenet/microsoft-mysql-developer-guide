@@ -10,5 +10,5 @@ As the world of microservices continues to change and evolve itself through more
 
 - Understand the phases in the developer evolution journey.
 - Be able to evaluate where your application sites in the journey.
-- Be congnizant of the changes that are needed to applications to move to the next state.
-- Utilize modern development and deployment methodoligies.
+- Be cognizant of the changes that are needed to applications to move to the next state.
+- Utilize modern development and deployment methodologies.

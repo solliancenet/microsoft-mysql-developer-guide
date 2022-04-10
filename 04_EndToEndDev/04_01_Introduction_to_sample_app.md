@@ -1,6 +1,6 @@
 ## Introduction to the sample application
 
-Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers could learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model.
+Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers should learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model.
 
 ### Sample application overview and story
 
@@ -110,7 +110,7 @@ TODO: Get the MS repo.
       git push azure master
       ```
   
-   - When pushing content to the Azure App Service, the sytems will prompt for the Local Git credentials. Enter the Application Scope credentials.
+   - When pushing content to the Azure App Service, the systems will prompt for the Local Git credentials. Enter the Application Scope credentials.
   
       ![Git Credential Manager](media/git-credential-manager-for-windows.png)
 
@@ -144,7 +144,7 @@ TODO: Get the MS repo.
     php artisan key:generate
     ```
 
-9. Update the **APP_URL** parameter in the .env file with the Azure URL and save the changes.
+9. Update the **APP_URL** parameter in the .env file with the Azure App Service URL and save the changes.
 
    ```bash
     nano /home/site/wwwroot/.env
@@ -169,7 +169,7 @@ TODO: Get the MS repo.
 
       ![](media/nginx-home-default-update.png)
 
-12. Your configuration needs to survive a App Service restart. Update the App Service Startup Command.
+12. Your configuration needs to survive an App Service restart. Update the App Service Startup Command.
 
        - Navigate to the **Settings** section.
        - Select **Configuration**.

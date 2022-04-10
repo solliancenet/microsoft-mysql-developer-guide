@@ -1,6 +1,6 @@
 ## 12 / Summary
 
-Similiar to reference architecture, case studies provide a view into how other organizations are building applications using MySQL that could be appropriate and similiar to how a developer may be thinking of building their own application.  Although they may not go into as much depth as reference architectures, they certainly provide a means of generating ideas.
+Similar to reference architecture, case studies provide a view into how other organizations are building applications using MySQL that could be appropriate and similar to how a developer may be thinking of building their own application.  Although they may not go into as much depth as reference architectures, they certainly provide a means of generating ideas.
 
 ### Checklist
 
