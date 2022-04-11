@@ -24,9 +24,7 @@ It also monitors infrastructure resources, such as VMs, storage, and network res
 
 For more information on what can be monitored, read: [What is monitored by Azure Monitor?](https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference)
 
-Monitoring your MySQL Flexible Server instances allows you to understand database resource constraints, connectivity patterns, causes of application failures, and more.
-
-![This image reiterates the benefits of monitoring.](./media/benefits-of-monitoring.png "Monitoring benefits")
+Monitoring your MySQL Flexible Server instances allows you to understand database resource constraints, connectivity patterns, causes of application failures, and more. Administrator monitoring complements Azure internal monitoring, improving the availability of your applications.
 
 Once you specify the data that your Azure resources should monitor (varies based on the service), you need to direct that data to Azure Monitor. For example, with MySQL Flexible Server instances, you can use the **Diagnostic setting** tab of the Azure portal to route MySQL slow query logs and audit logs to Log Analytics workspaces (Azure Monitor Logs).
 

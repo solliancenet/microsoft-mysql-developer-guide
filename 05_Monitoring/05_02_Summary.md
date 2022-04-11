@@ -8,4 +8,9 @@ With cloud-based systems, being proactive is a better strategy then being reacti
 
 ### Checklist
 
-- TODO
+- Define a monitoring strategy to provide useful insights without deteriorating application performance and incurring excessive costs
+  - For example, storing slow query logs on Flexible Server instances without proper management consumes storage space, affecting database performance
+- Configure your Azure resources to emit strategic logs (like MySQL Flexible Server slow query logs) and route them to Azure destinations, like Log Analytics workspaces
+- Develop KQL queries to record and visualize database performance, query performance, and DDL/DML activity
+- If necessary, configure alert rules for metrics and logs
+  - Azure can automatically respond to fired alerts through Azure Automation runbooks

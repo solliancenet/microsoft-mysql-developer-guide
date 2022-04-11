@@ -67,7 +67,9 @@ My alert rule aggregates the total number of rows returned by this query over a 
 
 ![This image demonstrates the query logic for a log alert.](./media/log-alerts-logic.png "Log alert query logic")
 
-Like metric alerts, log alerts support action groups. After executing a slow query against my MySQL instance, I receive an email on my configured action group email account.
+Like metric alerts, log alerts support action groups. After executing a slow query against my MySQL instance, I receive an email on my configured action group email account. Two slow queries occurred over the 15 minute aggregation interval.
+
+![This image demonstrates the fired email alert.](./media/email-alert-log.png "Fired email alert")
 
 Note that it is possible to convert logs to metrics using KQL queries, and then create alerts against those metrics. Read more about this approach on the [Microsoft TechCommunity.](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/alert-based-on-log-to-metrics-feature-on-azure-monitor/ba-p/2749971)
 
