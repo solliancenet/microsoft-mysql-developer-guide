@@ -15,6 +15,9 @@ TODO - Enhance ...
 
 - Use a fully qualified domain name instead of an IP address in connection strings.
 
+- Use [Azure Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) to debug traffic flows in virtual networks. Note that it does not support PaaS services, but it is still a useful tool for IaaS configurations
+  - Network Watcher works well with other networking utilities, like the Unix `traceroute` tool
+
 ### Resource issues
 
 - If the application experiences transient connectivity issues, perhaps the resources of the Flexible Server instance are constrained. Monitor resource usage and determine whether the Flexible Server instance needs to be scaled up.
@@ -24,6 +27,9 @@ TODO - Enhance ...
 - On occasion, Azure experiences outages. Use [Azure Service Health](https://azure.microsoft.com/features/service-health/) to determine if an Azure outage impacts MySQL workloads.
 
 - Azure's periodic updates can impact the availability of applications. Flexible Server allows administrators [to set custom maintenance schedules.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance)
+
+- Implement retry logic to mitigate transient connectivity issues
+  - To provide resiliency against more severe failures, like Azure service outages, implement the [circuit breaker pattern](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker) to avoid wasting application resources on operations that are likely to fail
 
 ## Troubleshoot app issues in Azure App Service
 
