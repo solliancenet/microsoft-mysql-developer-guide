@@ -12,7 +12,7 @@ Public access allows hosts, including Azure services, to access the PaaS MySQL i
 
 ### Private Link
 
-Both MySQL PaaS offerings support public connectivity, which permits certain hosts to access the instance over the public internet.  However most organization will want to utilize private connectivity which limits access to an Azure virtual network deployment. The difference between public and private access is addressed in the [network security document.](./06_01_Networking.md)
+Both MySQL PaaS offerings support public connectivity, which permits certain hosts to access the instance over the public internet.  However, most organizations will want to utilize private connectivity which limits access to an Azure virtual network deployment. The difference between public and private access is addressed in the [network security document.](./06_01_Networking.md)
 
 To limit access to the Azure Database for MySQL to internal Azure resources, enable [Private Link](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link).  Private Link will ensure that the MySQL instance will be assigned a private IP rather than a public IP address.
 
@@ -70,8 +70,6 @@ Flexible Server supports deployment into a virtual network for secure access. Sp
 Private Access from Single Server can be accomplished through (1) *Service Endpoints* or (2) *Private Link*; Single Server does not natively support virtual networks like Flexible Server. Both of these methods require the General Purpose or Memory Optimized tier.
 
 Service Endpoints only allow traffic from a given virtual network to access MySQL Single Server. Service endpoints are intended for Azure resources without public IPs, like VMs deployed in a virtual network, to access PaaS services securely. However, traffic leaves the virtual network, as shown in the image below, and access still occurs through the service public endpoint. In this image, `HDISubnet` and `BackEndSubnet` have been configured for access by ACLs in the Single Server instances, but `FrontEndSubnet` has not.
-
-TODO: Broken images
 
 ![This image demonstrates how VNet service endpoints allow access to Single Server, but data leaves the virtual network.](./media/vnet-concept.png "Service endpoints and Single Server")
 
