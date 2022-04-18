@@ -3,7 +3,7 @@
 As applications are running and executing in cloud environments it is always a possibility that something unexpected will occur. This section details a few common troubleshooting steps.
 
 ## Common MySQL issues
-TODO - Enhance ...
+Debugging operational support issues can be really time consuming. Setting up the right monitoring and alerting can help provide useful error messages and clues to the problem areas.
 
 ### Network connectivity issues
 
@@ -24,7 +24,7 @@ TODO - Enhance ...
 
 ### Platform issues
 
-- On occasion, Azure experiences outages. Use [Azure Service Health](https://azure.microsoft.com/features/service-health/) to determine if an Azure outage impacts MySQL workloads.
+- On occasion, Azure experiences outages. Use [Azure Service Health](https://azure.microsoft.com/features/service-health/) to determine if an Azure outage impacts MySQL workloads in your region or datacenter.
 
 - Azure's periodic updates can impact the availability of applications. Flexible Server allows administrators [to set custom maintenance schedules.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance)
 
@@ -46,6 +46,11 @@ Generally, all cloud applications should include connection [retry logic](https:
 
 If none of the above resolve the issue with the MySQL instance, [send a support request from the Azure portal.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
-### Other resources
+## Recommended content
+
+[Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)
+
 
 [Azure Community Support](https://azure.microsoft.com/support/community/) Ask questions, get answers, and connect with Microsoft engineers and Azure community experts
+
+[Troubleshoot data encryption in Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-data-encryption-troubleshoot)
