@@ -86,9 +86,17 @@ Following software development best practices makes your code simpler to develop
 
 ## General issue mitigation
 
-Generally, all cloud applications should include connection [retry logic](https://docs.microsoft.com/azure/architecture/patterns/retry), which typically responds to transient issues by initiating subsequent connections after a delay.
+- Generally, all cloud applications should include connection [retry logic](https://docs.microsoft.com/azure/architecture/patterns/retry), which typically responds to transient issues by initiating subsequent connections after a delay.
 
-If none of the above resolve the issue with the MySQL instance, [send a support request from the Azure portal.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
+- In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Flexible Server instance for suggestions regarding common connectivity, performance, and availability issues.
+
+  ![This image demonstrates the Diagnose and solve problems tab of a Flexible Server instance in the Azure portal.](./media/troubleshoot-problems-portal.png "Diagnose and solve problems")
+
+  This experience integrates with Azure Resource Health to demonstrate how Azure outages affect your provisioned resources.
+
+  ![This image demonstrates how Azure Resource Health correlates Azure service outages with the customer's provisioned resources.](./media/resource-health-integration.png "Azure Resource Health integration")
+
+- If none of the above resolve the issue with the MySQL instance, [send a support request from the Azure portal.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
 ## Recommended content
 
