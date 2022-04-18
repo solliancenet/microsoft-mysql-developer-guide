@@ -5,7 +5,33 @@ As applications are running and executing in cloud environments it is always a p
 ## Common MySQL issues
 Debugging operational support issues can be really time consuming. Setting up the right monitoring and alerting can help provide useful error messages and clues to the problem areas.
 
-### Network connectivity issues
+### Unsupported MySQL features
+
+Operating in a PaaS environment means that certain features that function on-premises are incompatible with cloud MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of the limitations.
+
+- PaaS MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
+  - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
+    - **Resolution**: Azure suggest setting the `log_bin_trust_function_creators` parameter to `1`, as Azure insulates against threats that exploit the binary log.
+  - [Error 1227](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error): This error occurs when creating stored procedures or views with `DEFINER` statements.
+    - **Resolution**: If you encounter this error while migrating schema objects from an on-premises MySQL instance, remove the `DEFINER` statements manually from the database dump.
+
+- Direct file system access is not available to clients. This means that `SELECT ... INTO OUTFILE` commands are unsupported.
+
+- Only the `InnoDB` and `MEMORY` storage engines are supported. This may affect older data warehousing and web applications based on the non-transactional `MyISAM` engine. Consult the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/converting-tables-to-innodb.html) to learn how to convert your MyISAM tables to InnoDB and make them run optimally.
+
+### Connectivity issues
+
+Both server misconfiguration issues and network access issues can prevent clients from connecting to a PaaS MySQL instance.
+
+#### Misconfiguration
+
+- [Error 1184](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_new_aborting_connection): This error occurs after a user authenticates with the database instance, but before they execute SQL statements. The `init_connect` server parameter includes statements that execute before sessions are initiated. Consequently, erroneous SQL statements in `init_connect` prevent clients from connecting.
+  - **Resolution**: Reset the value of `init_connect` using the Azure portal or SQL.
+
+- Administrators use the database admin user specified during server creation to create new databases and add new users. If the admin user credentials were not recorded, administrators can easily reset the admin password using the Azure portal.
+  - Logging in with the administrator account can help debug other access issues, like confirming if a given user exists.
+
+#### Network access issues
 
 - By default, Flexible Server only supports encrypted connections through the TLS 1.2 protocol; clients using TLS 1.0 or 1.1 will be unable to connect unless explicitly enabled. If it is not possible to change the TLS protocol used by an application, then [change the Flexible Server instance's supported TLS versions.](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl)
 
@@ -14,6 +40,8 @@ Debugging operational support issues can be really time consuming. Setting up th
 - Ensure that corporate firewalls do not block outbound connections to port 3306.
 
 - Use a fully qualified domain name instead of an IP address in connection strings.
+
+  This is especially important with MySQL Single Server instances, which use gateways to route incoming requests to database servers. It is possible to use the gateway public IP address in your applications. However, as Microsoft plans to [retire older gateways](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture#azure-database-for-mysql-gateway-ip-addresses), you are responsible for updating the gateway IP address in your applications. It is less error-prone to work with the FQDN.
 
 - Use [Azure Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) to debug traffic flows in virtual networks. Note that it does not support PaaS services, but it is still a useful tool for IaaS configurations
   - Network Watcher works well with other networking utilities, like the Unix `traceroute` tool
