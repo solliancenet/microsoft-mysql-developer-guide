@@ -212,6 +212,8 @@ As shown above, MySQL data logs will generate a table with a specific schema of 
 
 ## Recommended content
 
+- [Best practices for alerting on metrics with Azure Database for MySQL monitoring](https://azure.microsoft.com/en-us/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/)
+
 - Flexible Server: [Configure audit logs (Azure Portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
 
 - Single Server: [Configure and access audit logs in the Azure Portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal)
