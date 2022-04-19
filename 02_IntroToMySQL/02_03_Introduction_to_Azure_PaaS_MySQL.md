@@ -40,7 +40,7 @@ Some of these features are not exclusive to Flexible Server. However, as further
 
 Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
-> ![](media/tip.png) Tip: [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
+> ![Tip](media/tip.png "Tip") **Tip**: [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
 
 ##### Flexible Server pricing & TCO
 

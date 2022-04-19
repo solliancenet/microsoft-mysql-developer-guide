@@ -24,7 +24,7 @@ Testers can only execute so many test cases within a set period of time.  Users 
 
 ![](media/azure-traffic-manager-blue-green.png)
 
-> ![Tip](../Global_Media/tip.png "Tip") **Tip:** As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
+> ![Tip](media/tip.png "Tip") **Tip**: As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
 
 Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
 

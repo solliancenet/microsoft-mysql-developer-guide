@@ -16,7 +16,7 @@ Lastly, download the [connection certificate](https://dl.cacerts.digicert.com/Di
 
 ### Instructions
 
-Microsoft's [quickstart guide](https://docs.microsoft.com/azure/mysql/flexible-server/connect-php) performs standard CRUD operations against the MySQL instance from a console app. This document modifies the code segments from the guide to provide an encrypted connection to the Flexible Server instance.
+Microsoft's [Quickstart guide](https://docs.microsoft.com/azure/mysql/flexible-server/connect-php) performs standard CRUD operations against the MySQL instance from a console app. This document modifies the code segments from the guide to provide an encrypted connection to the Flexible Server instance.
 
 The first code snippet creates a table called `Products` with four columns, including a primary key. Adjust the `host`, `username` (most likely `sqlroot`), `password`, and `db_name` (most likely `newdatabase`) parameters to the values used during provisioning. Moreover, adjust the certificate path in the `mysqli_ssl_set()` method.
 

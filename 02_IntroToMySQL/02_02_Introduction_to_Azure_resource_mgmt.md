@@ -125,13 +125,13 @@ After the modules are installed, reference tutorials such as the following to le
 
 Reading, updating, and managing the ARM template JSON code can be difficult for a reasonably sized environment. What if there was a tool that translates simple declarative statements into ARM templates? Better yet, what if there was a tool that took existing ARM templates and translated them into a simple configuration? [Bicep](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview) is a domain-specific language (DSL) that uses declarative syntax to deploy Azure resources. Bicep files define the infrastructure to deploy to Azure, and then use that file throughout the development lifecycle to repeatedly deploy infrastructure changes. This ensures that resources are deployed consistently.
 
-By using the Azure CLI it is possible to decompile ARM templates to Bicept using the following:
+By using the Azure CLI it is possible to decompile ARM templates to Bicep using the following:
 
 ```powershell
 az bicep decompile --file template.json
 ```
 
-Additionally, the [Bicept playground](https://aka.ms/bicepdemo) tool can perform a similar decompilation of ARM templates.
+Additionally, the [Bicep playground](https://aka.ms/bicepdemo) tool can perform a similar decompilation of ARM templates.
 
 [Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 

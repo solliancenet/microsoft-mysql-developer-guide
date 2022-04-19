@@ -94,4 +94,4 @@ The [MySQL Performance Schema](https://docs.microsoft.com/en-us/azure/mysql/howt
 
 TODO: Tim finish.
 
->[Warning](../Global_Media/warning.png "Warning"): The Performance Schema avoids using mutexes to collect or produce data, so there are no guarantees of consistency and results can sometimes be incorrect. Event values in performance_schema tables are nondeterministic and nonrepeatable.
+>![Warning](media/warning.png "Warning") **Warning**: The Performance Schema avoids using mutexes to collect or produce data, so there are no guarantees of consistency and results can sometimes be incorrect. Event values in performance_schema tables are nondeterministic and nonrepeatable.

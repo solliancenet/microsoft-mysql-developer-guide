@@ -61,7 +61,7 @@ Example steps to configure WordPress monitoring:
 
 - Access the website and look for details
 
-> ![Tip](../Global_Media/tip.png) **Tip:** [Connection Strings](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) are recommended over instrumentation keys.
+> ![Tip](media/tip.png "Tip") **Tip**: [Connection Strings](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) are recommended over instrumentation keys.
 
 ### Azure Metrics Explorer
 
@@ -154,7 +154,7 @@ In addition to the basic server monitoring aspects, Azure provides tools to moni
 
 Wait statistics provides a view of the wait events that occur during the execution of a specific query.
 
-> ![Warning](../Global_Media/warning.png) **Warning:** Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
+>![Warning](media/warning.png "Warning") **Warning**: Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
 
 The `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can log long-running queries (default is 10 sec).
 
@@ -178,7 +178,7 @@ AzureDiagnostics
 | order by TimeGenerated asc
 ```
 
-> ![Warning](../Global_Media/warning.png) **Warning:** Excessive audit logging can degrade server performance, so be mindful of the events and users configured for logging.
+>![Warning](media/warning.png "Warning") **Warning**: Excessive audit logging can degrade server performance, so be mindful of the events and users configured for logging.
 
 - [Single Server Audit Logs](https://docs.microsoft.com/azure/mysql/concepts-audit-logs)
 - [Flexible Server Audit Logs](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)
