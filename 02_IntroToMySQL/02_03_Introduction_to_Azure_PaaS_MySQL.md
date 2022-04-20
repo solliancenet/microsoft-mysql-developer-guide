@@ -1,14 +1,16 @@
 ## Introduction to Azure Database for MySQL
 
-As mentioned previously, developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). Though PaaS offerings do not support direct management of the OS and the database engine, they have built-in support for high availability, automating backups, and meeting compliance requirements. Moreover, Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
+Developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). PaaS offers high availability, automated backups, and meets compliance requirements. Operational administrators do not have the operational overhead of managing the OS and the DB engine. They do not need to worry about OS patching, database backups, or server security. Administrators only need to manage the applications and data. Developers can focus on schema design, building queries, and optimizing query performance.
 
-For most use cases, Azure Database for MySQL is the preferred offering that allows developers to focus on application development and deployment, instead of OS and RDBMS management, patching, and security.
+Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
 
+**Control Plane**
 As the image below demonstrates, Azure Resource Manager handles resource configuration, meaning that standard Azure management tools, such as the CLI, PowerShell, and ARM templates, are still applicable. This is commonly referred to as the *control plane*.
 
+**Data Plane**
 For managing database objects and access controls at the server and database levels, standard MySQL management tools, such as [MySQL Workbench](https://www.mysql.com/products/workbench/), still apply. This is known as the *data plane*.
 
-![This image demonstrates the control plane for Azure Database for MySQL.](./media/mysql-conceptual-diagram.png "Control plane for Azure Database for MySQL")
+![This image demonstrates the control and data plane for Azure Database for MySQL.](./media/mysql-conceptual-diagram.png "Control plane for Azure Database for MySQL")
 
 ### Azure Database for MySQL deployment options
 
@@ -26,13 +28,21 @@ Cost management is one of the major advantages of Flexible Server: it supports a
 
 Here are a few other notable advantages of Flexible Server.
 
-- [User-scheduled service maintenance:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance) Flexible Server allows database administrators to set a day of the week and a time for Azure to perform service maintenance and upgrades. Providing notifications five days before a planned maintenance event, Flexible Server caters to the needs of IT operations personnel.
+- [User-scheduled service maintenance:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance) Flexible Server allows database administrators to set a day of the week and a time for Azure to perform service maintenance and upgrades, **per server**. Providing notifications five days before a planned maintenance event, Flexible Server caters to the needs of IT operations personnel.
+
+  ![](media/custom_maintenance_schedule.png)
 
 - [Network security:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-networking) Applications access Flexible Server through the public Internet (though access is governed by firewall ACLs), or through private IP addresses in an Azure Virtual Network. Moreover, TLS support keeps traffic encrypted, irrespective of the chosen network access model.
 
 - [Automatic backups:](https://docs.microsoft.com/azure/mysql/flexible-server/overview) Azure automates database backups, encrypts them, and stores them for a configurable period.
 
+  ![](media/mysql_backup_configuration.png)
+
 - [Read replicas:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas) Read replicas help teams scale their applications by providing read-only copies of the data updated on the master node. Often, applications that run on elastic, autoscaling services, like Azure App Service, couple well with read replicas.
+  
+- [Input output operations per second (IOPS):](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
+
+  ![](media/mysql_iops_configuration.png)
 
 Some of these features are not exclusive to Flexible Server. However, as further sections of the guide demonstrate, Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.  
 

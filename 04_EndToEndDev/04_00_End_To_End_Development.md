@@ -147,6 +147,8 @@ To implement this deployment, reference the [Utilize AKS and Azure Database for 
 
 ## Start the Developer Journey
 
+
+
 The first step to exploring the evolution of MySQL Application development is to get the environment setup.
 
 We provide two ARM template that can be deployed that will setup the environment.  One is a basic deployment of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and vnet integrations.  It also includes items like Azure Firewall and other security related configurations.

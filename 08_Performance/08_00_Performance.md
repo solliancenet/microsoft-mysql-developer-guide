@@ -39,7 +39,7 @@ AzureDiagnostics
 
 ## Upgrading the tier
 
-The Azure portal and the CLI can be used to scale between the `Burstable`, `General Purpose`, and `Memory Optimized` tiers. Tier scaling requires restarting the Flexible Server instance, causing 60-120 seconds of downtime.
+The Azure portal and the CLI can be used to scale between the `Burstable`, `General Purpose`, and `Memory Optimized` tiers. Tier scaling requires restarting the Flexible Server instance, causing 60-120 seconds of downtime. If your application does not require a significant compute, use the `Burstable` SKU. When your application requires more performance during certain times, Azure Database for MySQL can increase performance automatically and reduce when you do not need it. Organizations can save operational costs.
 
 ## Scaling the server
 
@@ -62,6 +62,8 @@ Geo-restore can be used to recover from a service outage in the primary region. 
 To minimize downtime, Flexible Server configuration settings, like VNet or firewall ACLs, can be kept intact.
 
 ## Server parameters
+
+![](media/server_parameters.png)
 
 As part of the migration, the on-premises [server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters) were likely modified to support a fast egress. Also, modifications were made to the Azure Database for MySQL Flexible Server parameters to support a fast ingress. The Azure server parameters should be set back to their original on-premises workload-optimized values after the migration.
 

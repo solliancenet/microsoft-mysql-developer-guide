@@ -1,8 +1,8 @@
-### Python language support
+### Python
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Python.
 
-### Example code
+#### Example code
 
 Refer to the [Connect and query Azure Database for MySQL using Python] sample.
 

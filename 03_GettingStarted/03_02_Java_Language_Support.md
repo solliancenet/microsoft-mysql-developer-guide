@@ -1,10 +1,10 @@
-### Java language support
+### Java
 
-This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through Java.
+This section describes tools to interact with Azure Database for MySQL Flexible Server through Java.
 
-### Example code
+#### Example code
 
-Refer to the [Connect and query Azure Database for MySQL using Java (Spring Boot)] document, which uses IntelliJ, Spring Boot, and Spring Data JPA.
+Refer to the [Quickstart: Use Java and JDBC with Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/connect-java)
 
 ### Application connectors
 
@@ -18,14 +18,17 @@ Flexible Server is compatible with all Java client utilities for MySQL Community
 
 1. [MySQL Connector/J Introduction](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-overview.html)
 2. MySQL Connector/J Microsoft Samples
-    - [Single Server](https://docs.microsoft.com/azure/mysql/connect-java)
     - [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/connect-java)
+    - [Single Server](https://docs.microsoft.com/azure/mysql/connect-java)
+
 3. [Introduction to Spring Data JPA](https://www.baeldung.com/the-persistence-layer-with-spring-data-jpa)
 4. [Hibernate ORM](https://hibernate.org/orm/)
 
 ### Tooling
 
-The Connect and Query sample leverages IntelliJ, which is one of the most widely used Java IDEs. This section provides resources for other common tools.
+#### IntelliJ IDEA
+
+Flexible server supported in the future.
 
 #### Eclipse
 
@@ -44,7 +47,8 @@ Maven improves the productivity of Java developers by managing builds, dependenc
 
 **Tool-Specific Resources**
 
-1. [Maven Introduction](https://maven.apache.org/guides/getting-started/index.html)
-2. [Develop Java web app on Azure using Maven (App Service)](https://docs.microsoft.com/learn/modules/publish-web-app-with-maven-plugin-for-azure-app-service/)
-3. [Deploy Spring microservices to Azure (Spring Cloud)](https://docs.microsoft.com/learn/modules/azure-spring-cloud-workshop/)
-4. [Develop Java serverless Functions on Azure using Maven](https://docs.microsoft.com/learn/modules/develop-azure-functions-app-with-maven-plugin/)
+1. [Azure for Java developer documentation](https://docs.microsoft.com/en-us/azure/developer/java/?view=azure-java-stable)
+2. [Maven Introduction](https://maven.apache.org/guides/getting-started/index.html)
+3. [Develop Java web app on Azure using Maven (App Service)](https://docs.microsoft.com/learn/modules/publish-web-app-with-maven-plugin-for-azure-app-service/)
+4. [Deploy Spring microservices to Azure (Spring Cloud)](https://docs.microsoft.com/learn/modules/azure-spring-cloud-workshop/)
+5. [Develop Java serverless Functions on Azure using Maven](https://docs.microsoft.com/learn/modules/develop-azure-functions-app-with-maven-plugin/)

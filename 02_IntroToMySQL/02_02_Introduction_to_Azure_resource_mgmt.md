@@ -105,11 +105,6 @@ Install-Module -Name Az.MySql
 After the modules are installed, reference tutorials such as the following to learn ways to take advantage of scripting management activities:
 
 - [Tutorial: Design an Azure Database for MySQL using PowerShell](https://docs.microsoft.com/azure/mysql/tutorial-design-database-using-powershell)
-- [How to back up and restore an Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/azure/mysql/howto-restore-server-powershell)
-- [Configure server parameters in Azure Database for MySQL using PowerShell](https://docs.microsoft.com/azure/mysql/howto-configure-server-parameters-using-powershell)
-- [Auto grow storage in Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/azure/mysql/howto-auto-grow-storage-powershell)
-- [How to create and manage read replicas in Azure Database for MySQL using PowerShell](https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell)
-- [Restart Azure Database for MySQL server using PowerShell](https://docs.microsoft.com/azure/mysql/howto-restart-server-powershell)
 
 #### Infrastructure as Code
 

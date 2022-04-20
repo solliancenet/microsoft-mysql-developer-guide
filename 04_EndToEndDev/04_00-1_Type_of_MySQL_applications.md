@@ -1,6 +1,6 @@
-## Type of MySQL applications
+## Azure development services 
 
-This section explains common cloud application architectures and Azure services. While these services are not directly related to MySQL, they are often used in modern applications.
+This section explains common cloud application architectures and Azure services. While these services are not directly related to MySQL, they are often used in modern Azure applications.
 
 ### Web Apps
 
@@ -13,13 +13,11 @@ Developers can deploy MySQL-backed apps to Azure on a Windows or Linux environme
   - Manual deployment: [Introduction to the guide sample application]
   - Scripted deployment: [Cloud Deployment to Azure App Service]
 
-### Azure Functions, Azure Logic Apps
-
-#### Serverless Compute
+### Serverless Compute
 
 [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) and [Azure Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview) are serverless platforms, meaning that customers are billed only for the execution time of their code. Azure automatically scales compute resources up and down in response to demand.
 
-#### Azure Functions
+### Azure Functions
 
 An Azure Functions instance consists of individual functions that execute in response to a *trigger*, like a cron job or an HTTP request. These functions interface with other Azure resources, like Cosmos DB, through bindings, though resources without default bindings, like Azure PaaS MySQL, can be accessed through language-specific connectors.
 
@@ -27,7 +25,7 @@ Like Azure App Service, Function Apps support multiple programming languages. De
 
 For long-running, stateful serverless architectures, such as when human intervention is necessary, Azure provides the Durable Functions extension. Consult the [documentation](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) for more information about architectures with Durable Functions.
 
-##### Resources
+#### Resources
 
 - [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)
 - [Azure Functions hosting options](https://docs.microsoft.com/azure/azure-functions/functions-scale)
@@ -35,13 +33,13 @@ For long-running, stateful serverless architectures, such as when human interven
   - .NET: [Azure Function with MySQL (.NET)]
   - Python: [Azure Function with MySQL (Python)]
 
-#### Azure Logic Apps
+### Azure Logic Apps
 
 Azure Logic Apps provide integration services for enterprises, connecting applications that reside on-premises and in the cloud. Azure Logic Apps *workflows* execute *actions* after a *trigger* is fired.
 
 Azure Logic Apps interface with external systems through *managed connectors*. Microsoft provides a managed connector for MySQL databases, but this connector cannot easily be used for Azure PaaS MySQL, as the MySQL managed connector accesses local MySQL databases through a data gateway.
 
-##### Resources
+#### Resources
 
 - [What is a Azure Logic App?](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)
 - [Compare Azure Functions and Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs#compare-azure-functions-and-azure-logic-apps)
@@ -94,7 +92,7 @@ Azure Event Hubs facilitates the ingestion and replay of event data. It is optim
 
 #### Example Solution
 
-An e-commerce site can use Service Bus to process an order, Event Hubs to capture site telemetry, and Event Grid to respond to events like an item was shipped. 
+An e-commerce site can use Service Bus to process an order, Event Hubs to capture site telemetry, and Event Grid to respond to events like an item was shipped.
 
 ### Cron jobs
 
@@ -117,4 +115,4 @@ Azure Data Factory supports both Azure PaaS and generic (on-premises) MySQL inst
 
 Developers can execute Data Factory pipelines manually, on a schedule, or in response to Azure events through the Event Grid integration.
 
-<summary of when to use a service picture>
+TODO: summary of when to use a service picture
