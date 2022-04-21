@@ -17,8 +17,8 @@ Some parameters that cannot be configured at the server level can be configured 
 
 Standard Azure management tools, like the Azure portal, Azure CLI, and Azure PowerShell, allow for configuring server parameters.
 
-- [Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
-- [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli)
+- [Use Azure portal to configure server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
+- [User Azure CLI to configure server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli)
 
 ### Server Parameters Best Practices
 
