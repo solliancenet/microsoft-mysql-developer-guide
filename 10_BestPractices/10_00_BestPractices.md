@@ -66,7 +66,11 @@ As with any mission-critical system, having a backup and restore as well as a di
 
 ### Backup
 
-Azure Database for MySQL supports automatic backups for 7 days by default. It may be appropriate to modify this to the current maximum of 35 days. It is important to be aware that if the value is changed to 35 days, there will be charges for any extra backup storage over 1x of the storage allocated.
+Azure Database for MySQL takes automatic backups of data and transaction log files. These backups can be stored in locally-redundant storage (replicated multiple times in a datacenter); zone-redundant storage (multiple copies are stored in two separate availability zones in a region); and geo-redundant storage (multiple copies are stored in two separate Azure regions).
+
+Azure Database for MySQL supports automatic backups for 7 days by default. It may be appropriate to modify this to the current maximum of 35 days. It is important to be aware that if the value is changed to 35 days, there will be charges for any extra backup storage over 1x of the storage allocated. Data file backups are taken once daily, while transaction log backups are taken every five minutes.
+
+Find additional storage pricing details for Flexible Server [here.](https://azure.microsoft.com/pricing/details/mysql/flexible-server/)
 
 There are several current limitations to the database backup feature as described in the [Backup and restore in Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-backup) docs article. It is important to understand them when deciding what additional strategies should be implemented.
 
@@ -83,6 +87,10 @@ Some items to be aware of include:
 Redundancy (local or geo) must be configured during server creation. However, a geo-restore can be performed and allows the modification of these options during the restore process. Performing a restore operation will temporarily stop connectivity and any applications will be down during the restore process.
 
 During a database restore, any supporting items outside of the database will also need to be restored.  Review the migration process. See [Perform post-restore tasks](https://docs.microsoft.com/azure/mysql/concepts-backup#perform-post-restore-tasks) for more information.
+
+Lastly, note that performing a restore from a backup provisions a new Flexible Server instance. Most of the new server's configuration is inherited from the old server, though it depends on the type of restore performed.
+
+Learn more about backup and restore in Flexible Server from the [Microsoft documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore)
 
 ## Read replicas
 
