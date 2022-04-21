@@ -1,18 +1,8 @@
-# 06 / Security
+# 06 / Networking and Security
 
 Moving to cloud-based services doesn't mean the entire internet will have access to it at all times. Azure provides best-in-class security that ensures data workloads are continually protected from bad actors and rogue programs. Additionally, Azure provides several certifications that ensure your resources are compliant with local and industry regulations, an important factor for many organizations today.
 
 In today's geopolitical environment, organizations must take proactive security measures to protect their workloads.  Azure simplifies many of these complex tasks and requirements through the various security and compliance resources provided out of the box.  This section will focus on many of these tools
-
-## Authentication
-
-Azure Database for MySQL supports the [basic authentication mechanisms](https://docs.microsoft.com/azure/mysql/howto-create-users) for MySQL user connectivity but also supports [integration with Azure Active Directory](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication). Azure security integration works by issuing tokens that act like passwords during the MySQL login process.  [Configuring Active Directory integration](https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication) is incredibly simple to do and supports not only users but AAD groups as well.
-
-This tight integration allows administrators and applications to take advantage of the enhanced security features of [Azure Identity Protection](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection) to further surface any identity issues.
-
-TODO: Diagram
-
-> **Note:** This security feature is supported by MySQL 5.7 and later.  Most [application drivers](https://docs.microsoft.com/azure/mysql/howto-configure-sign-in-azure-ad-authentication) are supported as long as the `clear-text` option is provided.
 
 ## Threat protection
 
@@ -51,16 +41,6 @@ When moving an application to Azure along with the MySQL workload, it is likely 
   - [Create and manage Azure Database for MySQL firewall rules by using the Azure portal](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal)
   - [Create and manage Azure Database for MySQL firewall rules by using the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
-
-## Microsoft Defender for Cloud
-
-There are two levels at which you can monitor activities; the control plane and the data plane. The control plane is commonly referred to as Cloud security posture management (CSPM) where as the data plane is equivaent to Cloud workload protection (CWP).
-
- In terms of the control place, the Azure Activity log is what keeps track of the changes in Azure (such as creating or modifiying a new resource).  However when working with the data plane, which tends to be the majority of the focus of cloud security efforts, something else will be needed to monitor the workload itself rather than the things outside the workload in the cloud hosting environment.
-
-[Microsoft Defender for Cloud](https://docs.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction) provides [workload protections for Azure Database](https://docs.microsoft.com/en-us/azure/defender-for-cloud/quickstart-enable-database-protections) workloads such as Azure Database for SQL, Postgres and MySQL.
-
-For a list of the items that Microsoft Defender reviews for open source databases, reference the [Alerts reference](https://docs.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-osrdb).
 
 ## Microsoft Sentinel
 

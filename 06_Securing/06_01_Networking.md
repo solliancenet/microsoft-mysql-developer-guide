@@ -18,8 +18,6 @@ Firewall rules are set at the server level, meaning that they govern network acc
 
 As just discussed, Azure Databsae for MySQL offerings support public connectivity by default, however, most organizations will want to utilize private connectivity which limits access to Azure virtual networks and resources.
 
-To limit access to an Azure Database for MySQL instance to internal Azure resources, enable [Private Link](https://docs.microsoft.com/azure/mysql/concepts-data-access-security-private-link) on the instance.  Private Link will ensure that the MySQL instance will be assigned a private IP rather than a public IP address and will only be accessible to Azure connected resources.
-
 > **Note:** There are many other [basic Azure Networking considerations](https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-vnet) that must be taken into account that are not the focus of this guide.
 
 ### Virtual Network Hierarchy
@@ -53,29 +51,6 @@ For more information on configuring Private Access for Flexible Server, referenc
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli)
-
-#### Single Server
-
-Private Access from Single Server can be accomplished through (1) *Service Endpoints* or (2) *Private Link*; Single Server does not natively support virtual networks like Flexible Server. Both of these methods require the General Purpose or Memory Optimized tier.
-
-Service Endpoints only allow traffic from a given virtual network to access MySQL Single Server. Service endpoints are intended for Azure resources without public IPs, like VMs deployed in a virtual network, to access PaaS services securely. However, traffic leaves the virtual network, as shown in the image below, and access still occurs through the service public endpoint. In this image, `HDISubnet` and `BackEndSubnet` have been configured for access by ACLs in the Single Server instances, but `FrontEndSubnet` has not.
-
-![This image demonstrates how VNet service endpoints allow access to Single Server, but data leaves the virtual network.](./media/vnet-concept.png "Service endpoints and Single Server")
-
-Private Link uses *Private Endpoints* to replace public resource endpoints with private network interfaces accessible through private IP addresses. Unlike Service Endpoints, all network traffic is contained within the virtual network.
-
-In the image below, since public access is disabled, access can only occur through the private endpoint in the `PGVMNET-EUS` virtual network. Other Azure virtual networks, including those in other regions, like `VMNET-WUS`, can be peered to the virtual network with the private endpoint. On-premises networks can also be joined to Azure virtual networks, as explained previously.
-
-![This image explains how private endpoints work to bring PaaS services into virtual networks.](./media/show-private-link-overview.png "Private endpoints")
-
-For more information on configuring Single Server, reference the following:
-
-- Service Endpoints
-  - [Portal](https://docs.microsoft.com/azure/mysql/howto-manage-vnet-using-portal)
-  - [CLI](https://docs.microsoft.com/azure/mysql/howto-manage-vnet-using-cli)
-- Private Link
-  - [Portal](https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-portal)
-  - [CLI](https://docs.microsoft.com/azure/mysql/howto-configure-privatelink-cli)
 
 ### Networking Best Practices for Flexible Server
 
