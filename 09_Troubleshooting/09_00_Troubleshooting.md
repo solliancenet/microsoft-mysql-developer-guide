@@ -86,9 +86,9 @@ Following software development best practices makes your code simpler to develop
 
 - Write tests to ensure that applications function as intended when code is modified. Review the [07 / Testing] document for more information about different testing strategies. Tests should be included in automated release processes.
 
-## General issue mitigation
-
 - Generally, all cloud applications should include connection [retry logic](https://docs.microsoft.com/azure/architecture/patterns/retry), which typically responds to transient issues by initiating subsequent connections after a delay.
+
+## Additional support
 
 - In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Flexible Server instance for suggestions regarding common connectivity, performance, and availability issues.
 

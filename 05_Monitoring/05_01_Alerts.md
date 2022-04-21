@@ -37,39 +37,11 @@ Metric alerts assess metric time-series according to defined conditions and take
 
 - **Alert processing rules** is a *preview* feature that filters alerts as they are generated to modify the actions taken in response to that alert (i.e. by disabling action groups)
 
-The image below demonstrates an Alert Rule and an Action Group configured to send an email message when 10 or more connections are aborted within a 30 minute period.
-
-![This image demonstrates the alert rule configuration and the configured action groups.](./media/aborted-connections-alert-rule.png "AbortedConnections alert rule and ServerNotifications action group")
-
-After initiating multiple failed connections to the Flexible Server instance, I receive the following warning on my configured notification email address.
-
-![This image demonstrates the Azure Monitor alert rule sent to my email after attempting multiple failed connections.](./media/alert-rule-sent-to-email.png "Azure Monitor alert rule")
+Refer to [Microsoft's tutorial](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric) explaining the configuration of a metric alert for a Flexible Server instance.
 
 #### Log alerts
 
-Once KQL queries have been created to identify problems, the next step is to create [log alerts](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) from these queries. Log alerts periodically evaluate KQL queries and either use the number of records returned by the query or the results of a calculation based on the values of a column in the result set to fire an alert.
-
-The alert I created uses the following KQL query, scoped to my Flexible Server instance, to poll the slow query log for queries longer than 10 seconds.
-
-```kql
-AzureDiagnostics
-| where Category == 'MySqlSlowLogs'
-| project
-    TimeGenerated,
-    event_class_s,
-    start_time_t,
-    query_time_d,
-    sql_text_s 
-| where query_time_d > 10
-```
-
-My alert rule aggregates the total number of rows returned by this query over a 15 minute period (**Aggregation granularity**). If one or more rows are returned, then the alert is fired. Azure Monitor evaluates this alert every 15 minutes (**Frequency of evaluation**).
-
-![This image demonstrates the query logic for a log alert.](./media/log-alerts-logic.png "Log alert query logic")
-
-Like metric alerts, log alerts support action groups. After executing a slow query against my MySQL instance, I receive an email on my configured action group email account. Two slow queries occurred over the 15 minute aggregation interval.
-
-![This image demonstrates the fired email alert.](./media/email-alert-log.png "Fired email alert")
+Once KQL queries have been created to identify problems, the next step is to create [log alerts](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) from these queries. Log alerts periodically evaluate KQL queries and either use the number of records returned by the query or the results of a calculation based on the values in a column in the result set to fire an alert. Microsoft offers an [Azure Monitor tutorial](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-log) demonstrating how to map KQL queries to log alerts.
 
 Note that it is possible to convert logs to metrics using KQL queries, and then create alerts against those metrics. Read more about this approach on the [Microsoft TechCommunity.](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/alert-based-on-log-to-metrics-feature-on-azure-monitor/ba-p/2749971)
 
@@ -100,8 +72,6 @@ Azure CLI provides the `az monitor` series of commands to manipulate action grou
 #### Azure Portal
 
 While the Azure Portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
-
-
 
 - [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
 - [Tutorial: Analyze metrics for an Azure resource](https://docs.microsoft.com/azure/azure-monitor/essentials/tutorial-metrics)

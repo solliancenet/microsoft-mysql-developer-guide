@@ -14,3 +14,21 @@ With cloud-based systems, being proactive is a better strategy then being reacti
 - Develop KQL queries to record and visualize database performance, query performance, and DDL/DML activity
 - If necessary, configure alert rules for metrics and logs
   - Azure can automatically respond to fired alerts through Azure Automation runbooks
+
+## Recommended content
+
+- [Best practices for alerting on metrics with Azure Database for MySQL monitoring](https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/)
+
+- [Configure audit logs (Azure portal)](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit)
+
+- [Azure Monitor best practices](https://docs.microsoft.com/azure/azure-monitor/best-practices)
+
+- [Cloud monitoring guide: Collect the right data](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/data-collection)
+
+- [Configure and access audit logs in the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-cli)
+
+- [Write your first query with Kusto Query Language (Microsoft Learn)](https://docs.microsoft.com/learn/modules/write-first-query-kusto-query-language/)
+
+- [Azure Monitor Logs Overview](https://docs.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
+
+- [Application Monitoring for Azure App Service Overview](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps)
