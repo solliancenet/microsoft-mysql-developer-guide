@@ -1,26 +1,28 @@
 # 07 / Testing
 
-Developers need to assess their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and automating them to minimize errors (perhaps by placing tests in build processes).
+Testing is a cruical part to the application development lifecycle. Architects, developers and administrators should continually assess and evaluate their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and highly suggests automating them to minimize any errors in the process or setup.  These tests can be done at any point in the application deployment process, potentially the build and deploy pipelines, and even after the application has been deployed.
+
+This section discusses the various types of tests your Azure database for MySQL application and database can be utilized to ensure the optimal performance of your application and database deployments.
 
 ## Approaches
 
 ### Functional testing
 
-Functional testing ensures that an app functions as documented in the requirements. Testers do not know how software systems function; they simply ensure that systems do what they are expected to do. Functional tests validate data limits (like field lengths) and that certain actions are taken in response to triggers.
+Functional testing ensures that an app functions as documented in the user and business requirements. Testers do not know how software systems function; they simply ensure that systems do what they are expected to do. Functional tests validate things like data limits (field lengths and validation) and that specific actions are taken in response to various triggers.
 
 #### Function testing tools
 
-[Selenium](https://www.selenium.dev/) automates functional tests for web apps. Developers author test scripts in supported languages, like Ruby, Java, Python, and C#. Then, the Selenium WebDriver executes these scripts using browser-specific APIs. Teams can operate parallel Selenium tests on different devices using [Selenium Grid](https://www.selenium.dev/documentation/grid/).
+[Selenium](https://www.selenium.dev/) automates functional tests for web apps. Developers author web application test scripts in several supported languages, like Ruby, Java, Python, and C#. Once scripts are developed, the Selenium WebDriver executes the scripts using browser-specific APIs. Teams can operate parallel Selenium tests on different devices using [Selenium Grid](https://www.selenium.dev/documentation/grid/).
 
-To get started with Selenium, developers can install the [Selenium IDE](https://www.selenium.dev/selenium-ide/) to generate testing scripts from browser interactions. The Selenium IDE is not intended for production tests, however.
+To get started with Selenium, developers can install the [Selenium IDE](https://www.selenium.dev/selenium-ide/) to generate testing scripts from browser interactions. The Selenium IDE is not intended for production tests but can speed up the development of your test script development tasks.
 
-Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366) The image below demonstrates screenshots from a Selenium test running in a DevOps Pipeline.
+Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366). The screenshot below demonstrates a Selenium test running in a DevOps Pipeline.
 
 ![This image demonstrates screenshots from a Selenium test in Azure DevOps.](./media/selenium-test-azure-devops.png "Selenium test screenshots")
 
 ### Resiliency and version testing
 
-Testers can only execute so many test cases within a set period of time.  Users tend to execute application functionality not imagined by the development/test team. Allowing real users to test the application while limiting deployment downtime and version risk can be difficult. One strategy to test for resiliency is the blue-green method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
+Testers can only execute so many test cases within a set period of time.  Users tend to execute application functionality not imagined by the development or test teams. Allowing real users to test the application while limiting deployment downtime and version risk can be difficult. One strategy to test for resiliency is the `blue-green` method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
 
 ![](media/azure-traffic-manager-blue-green.png)
 
@@ -28,7 +30,7 @@ Testers can only execute so many test cases within a set period of time.  Users 
 
 Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
 
-Blue-green deployment options
+The following links provide resources on Blue-green deployment options:
 
 - [Deployment Center example](https://docs.microsoft.com/azure/app-service/deploy-github-actions?tabs=applevel)
 - [Azure Traffic Manager example](https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/)
@@ -38,11 +40,11 @@ Blue-green deployment options
 
 #### Load testing
 
-Load testing determines an application's performance as load increases. Load testing tools typically simulate users or requests, and they help companies meet their SLAs. Proper load testing requires knowledge of the load a production system normally experiences and potential Azure service limits (e.g. [Event Hub throughput by tier](https://docs.microsoft.com/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers)).
+Load testing determines an application's performance as load increases. Load testing tools typically simulate users or requests, and they help companies meet their user and business SLAs. Proper load testing requires knowledge of the load a production system normally experiences and potential Azure service limits (e.g. [Event Hub throughput by tier](https://docs.microsoft.com/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers)).
 
 #### Stress testing
 
-Stress testing determines the maximum load a system can handle before failure. Perform stress testing at different Azure service tiers and determine appropriate thresholds when scaling is necessary to minimize costs and provide a positive user experience.
+Stress testing determines the maximum load a system can handle before failure. A proper stress testing approach would be to perform stress testing at different Azure service tiers and determine appropriate thresholds when scaling within those tiers.  This will give administrators an idea of how to build alerts for monitoring if the application starts to approach these known limits.  Knowing your low and high stress levels is necessary to minimize costs (by selecting the appropriate tier and scaling) and thereby provide a positive user experience.
 
 #### Performance testing tools
 
@@ -92,11 +94,16 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 
 ![This image demonstrates a dashboard in Grafana showing CPU usage for a pod.](./media/grafana-dashboard.png "Pod CPU usage in Grafana")
 
-### Recommended Content
+### Additional Recommended Content
+
+The following resources are helpful for exploring various approaches to using the previously mentioned tools and concepts.
 
 - [Using Azure Kubernetes Service with Grafana and Prometheus](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/using-azure-kubernetes-service-with-grafana-and-prometheus/ba-p/3020459)
+
 - [Prometheus Overview](https://prometheus.io/docs/introduction/overview)
+
 - [What is Grafana OSS](https://grafana.com/docs/grafana/latest/introduction/oss-details/)
+
 - [Store Prometheus Metrics with Thanos, Azure Storage and Azure Kubernetes Service (AKS)](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/store-prometheus-metrics-with-thanos-azure-storage-and-azure/ba-p/3067849)
 
 - [What are Azure Pipelines?](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target)
