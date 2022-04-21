@@ -1,13 +1,14 @@
 # 09 / Troubleshooting
 
-As applications are running and executing in cloud environments it is always a possibility that something unexpected will occur. This section details a few common troubleshooting steps.
+As applications are running and executing in cloud environments it is always a possibility that something unexpected can occur. This section details a few common issues and the troubleshooting steps for each.
 
 ## Common MySQL issues
-Debugging operational support issues can be really time consuming. Setting up the right monitoring and alerting can help provide useful error messages and clues to the problem areas.
+
+Debugging operational support issues can be time consuming. As previous discussed, configuring the right monitoring and alerting can help provide useful error messages and clues to the potential problem area(s).
 
 ### Unsupported MySQL features
 
-Operating in a PaaS environment means that certain features that function on-premises are incompatible with cloud MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of the limitations.
+Operating in a PaaS environment means that certain features that function on-premises are incompatible with cloud MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of any limitations.
 
 - PaaS MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
   - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
@@ -21,7 +22,7 @@ Operating in a PaaS environment means that certain features that function on-pre
 
 ### Connectivity issues
 
-Both server misconfiguration issues and network access issues can prevent clients from connecting to a PaaS MySQL instance.
+Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance.
 
 #### Misconfiguration
 
@@ -39,9 +40,7 @@ Both server misconfiguration issues and network access issues can prevent client
 
 - Ensure that corporate firewalls do not block outbound connections to port 3306.
 
-- Use a fully qualified domain name instead of an IP address in connection strings.
-
-  This is especially important with MySQL Single Server instances, which use gateways to route incoming requests to database servers. It is possible to use the gateway public IP address in your applications. 
+- Use a fully qualified domain name instead of an IP address in connection strings. This is especially important with Azure Database for MySQL Single Server instances, which use gateways to route incoming requests to database servers. It is possible to use the gateway public IP address in your applications.
   
   >![Warning](media/warning.png "Warning") **Warning:** However, as Microsoft plans to [retire older gateways](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture#azure-database-for-mysql-gateway-ip-addresses), you are responsible for updating the gateway IP address in your applications. It is less error-prone to work with the FQDN.
 
@@ -50,7 +49,7 @@ Both server misconfiguration issues and network access issues can prevent client
 
 ### Resource issues
 
-- If the application experiences transient connectivity issues, perhaps the resources of the Flexible Server instance are constrained. Monitor resource usage and determine whether the Flexible Server instance needs to be scaled up.
+If the application experiences transient connectivity issues, perhaps the resources of the Azure Database for MySQL instance are constrained. Monitor resource usage and determine whether the instance needs to be scaled up.
 
 ### Platform issues
 
@@ -58,7 +57,8 @@ Both server misconfiguration issues and network access issues can prevent client
 
 - Azure's periodic updates can impact the availability of applications. Flexible Server allows administrators [to set custom maintenance schedules.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance)
 
-- Implement retry logic to mitigate transient connectivity issues
+- Implement retry logic in your applications to mitigate transient connectivity issues:
+  
   - To provide resiliency against more severe failures, like Azure service outages, implement the [circuit breaker pattern](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker) to avoid wasting application resources on operations that are likely to fail
 
 ## Troubleshoot app issues in Azure App Service
@@ -77,6 +77,7 @@ Following software development best practices makes your code simpler to develop
 - Use logging utilities wisely to help troubleshoot failures without impairing app performance. Structured logging utilities, like PHP's native logging functions or third-party tools, such as [KLogger](https://github.com/katzgrau/KLogger), can write logs to the console, to files, or to central repositories. Monitoring tools can parse these logs and alert anomalies.
 
 - In development environments, remote debugging tools like [XDebug](https://xdebug.org/docs/) may be useful. You can set breakpoints and step through code execution. [Apps running on Azure App Service PHP and Container instances can take advantage of XDebug.](https://azureossd.github.io/2020/05/05/debugging-php-application-on-azure-app-service-linux/)
+  
   - Users of Visual Studio Code can install XDebug's [PHP Debug extension](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug).
 
 - To debug slow PHP applications, consider using Application Performance Monitoring solutions like [Azure Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview), which integrates with Azure Monitor. Here are a few common culprits for low-performing PHP apps.
@@ -90,7 +91,7 @@ Following software development best practices makes your code simpler to develop
 
 ## Additional support
 
-- In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Flexible Server instance for suggestions regarding common connectivity, performance, and availability issues.
+- In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Azure Databse for MySQL instance for suggestions regarding common connectivity, performance, and availability issues.
 
   ![This image demonstrates the Diagnose and solve problems tab of a Flexible Server instance in the Azure portal.](./media/troubleshoot-problems-portal.png "Diagnose and solve problems")
 

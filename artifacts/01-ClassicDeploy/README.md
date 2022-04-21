@@ -44,6 +44,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database. These ta
 
 The above resources were deployed as part of the ARM template and supporting scripts.  In order to setup a developer machine, do the following in order to get the machine setup:
 
+### Windows Setup
+
 1. Install Composer
 2. Install OpenSSL
 3. Install Docker Desktop
@@ -57,3 +59,17 @@ The above resources were deployed as part of the ARM template and supporting scr
 11. Copy the web application files to the `c:\inetpub\wwwroot` folder
 12. Create an IIS web application that points to the web app directory
 13. Install MySQL and create the `contosostore` database
+
+### Linux Setup
+
+1. Update the operating system
+2. Install nginx
+3. Install PHP 8.0
+4. Install Composer
+5. Install OpenSSL
+6. Install Docker
+7. Install PHP Extensions (mysql, mbstring, xml, bcmath, etc)
+8. Configure PHP 8.0
+9. Copy the web application files to the `/var/www/mydomain/htdocs/public` folder
+10. Update the nginx conf file for redirects
+11. Install MySQL and create the `contosostore` database
