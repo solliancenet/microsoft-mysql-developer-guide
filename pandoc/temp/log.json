@@ -416,30 +416,6 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/aborted-connections-alert-rule.png",
-        "for": "./media/aborted-connections-alert-rule.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/alert-rule-sent-to-email.png",
-        "for": "./media/alert-rule-sent-to-email.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/log-alerts-logic.png",
-        "for": "./media/log-alerts-logic.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/email-alert-log.png",
-        "for": "./media/email-alert-log.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
         "from": "./media/vnet-concept.png",
         "for": "./media/vnet-concept.png"
     },
