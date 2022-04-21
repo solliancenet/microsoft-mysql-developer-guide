@@ -45,7 +45,9 @@ The Azure App Service uses this [Docker image](https://github.com/Azure-App-Serv
 
 The deployment strategy applied in this sample application focuses on updating project environment variables instead of global environment variable configuration.
 
-1. Log into the Azure Portal. Search for and create Azure Web App + Database resources in the Marketplace.
+1. Log into the Azure Portal.
+2. Search for Marketplace.
+3. While in the Marketplace, search for and create Azure Web App + Database resources in the Marketplace.
 
    - Select the Marketplace button.
   
@@ -56,7 +58,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
       ![Web app + database search result.](media/microsoft-web-app-database-marketplace.png)
 
-2. Create a web application and database.
+3. Create a web application and database.
 
     ![Create web app database.](media/create-web-app-database.png "Create Web App + Database")
 
@@ -72,7 +74,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
    - Create the resources.
 
-3. After the resources have been deployed, locate the App Service in the Resource Group.
+4. After the resources have been deployed, locate the App Service in the Resource Group.
   
    - Select the **Deployment Center** and capture the configuration settings.
 
@@ -96,7 +98,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
      ![Application Scope user and password](media/application-scope-user-password.png)
 
-4. Clone the sample **ContosoNoshNow** application to the local development machine from the Microsoft Git repository:
+5. Clone the sample **ContosoNoshNow** application to the local development machine from the Microsoft Git repository:
 
 TODO: Get the MS repo.
 
@@ -166,10 +168,17 @@ TODO: Get the MS repo.
 
       - absolute_redirect off
       - root /home/site/wwwroot/public
-
+      - try_files $uri $uri/ /index.php$is_args$args;
+  
       ![](media/nginx-home-default-update.png)
 
-12. Your configuration needs to survive an App Service restart. Update the App Service Startup Command.
+12. Restart the service.
+
+      ```bash
+      service nginx restart
+      ```
+
+13. Your configuration needs to survive an App Service restart. Update the App Service Startup Command.
 
        - Navigate to the **Settings** section.
        - Select **Configuration**.
@@ -182,7 +191,7 @@ TODO: Get the MS repo.
 
       ![](media/general-settings-startup-command.png)
 
-13. Open a browser and view the application.
+14. Open a browser and view the application.
 
     ![ContosoNoshNow home page](media/ContosoNoshNow-home-page.png)
 

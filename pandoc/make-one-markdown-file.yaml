@@ -58,10 +58,10 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_07_Connect_Query_Azure_CLI.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_08_Connect_Query_PHP.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_09_Connect_Query_Python.md
-- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_10_Connect_Query_Java_IntelliJ.md
-- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_11_Type_of_MySQL_applications.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_15_Summary.md
+#- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\REMOVED - 03_10_Connect_Query_Java_IntelliJ.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00_End_To_End_Development.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-1_Type_of_MySQL_applications.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_01_Introduction_to_sample_app.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_02_Deploy_Laravel_API_app.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_03_CI_CD.md
@@ -95,29 +95,7 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_ZeroToHero.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_SummaryResources\14_02_Resources.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\00_Appendix_Header.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\Template_Deployment_Instructions.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\01-ClassicDeploy\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\02-01-CloudDeploy-Vm\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\02-02-CloudDeploy-AppSvc\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\02-03-CloudDeploy-InApp\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\02-04-CloudDeploy-CICD\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\03-00-Docker\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\03-01-CloudDeploy-ACI\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\03-02-CloudDeploy-AppService-Container\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\04-AKS\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\05-CloudDeploy-MySQLFlex\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\06-01-FunctionApp-DotNet\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\06-02-FunctionApp-Python\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\06-03-FunctionApp-AKS\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\06-04-FunctionApp-MSI\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\06-05-LogicApp\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\07-01-AzureDataFactory\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\07-02-AzureSynapseAnalytics\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\07-03-AzureBatch\README.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\Misc\01_PushImagesToAcr.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\Misc\02_MigrateDatabase.md
-- D:\data\projects\microsoft-mysql-developer-guide\Artifacts\Misc\03_CreateFlexibleServer.md
+
 
 # ERROR, WARNING, or INFO
 verbosity: INFO

@@ -98,6 +98,24 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/custom_maintenance_schedule.png",
+        "for": "media/custom_maintenance_schedule.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql_backup_configuration.png",
+        "for": "media/mysql_backup_configuration.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql_iops_configuration.png",
+        "for": "media/mysql_iops_configuration.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/tip.png",
         "for": "media/tip.png"
     },
@@ -124,83 +142,6 @@
         "verbosity": "INFO",
         "from": "./media/analyst-query.png",
         "for": "./media/analyst-query.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/azure-explorer-intellij.png",
-        "for": "./media/azure-explorer-intellij.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/intellij-complete-spring-boot-project.png",
-        "for": "./media/intellij-complete-spring-boot-project.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/intellij-create-single-server.png",
-        "for": "./media/intellij-create-single-server.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/mysql-instance-information.png",
-        "for": "./media/mysql-instance-information.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/edit-application-properties.png",
-        "for": "./media/edit-application-properties.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/azure-resource-connector-intellij.png",
-        "for": "./media/azure-resource-connector-intellij.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/start-app-intellij.png",
-        "for": "./media/start-app-intellij.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/post-request-postman.png",
-        "for": "./media/post-request-postman.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/get-request-postman.png",
-        "for": "./media/get-request-postman.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/result-set-mysql-workbench.png",
-        "for": "./media/result-set-mysql-workbench.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/api-management-components.png",
-        "for": "./media/api-management-components.png"
-    },
-    {
-        "type": "BlockNotRendered",
-        "verbosity": "INFO",
-        "contents": {
-            "t": "RawBlock",
-            "c": [
-                "html",
-                "<summary of when to use a service picture>"
-            ]
-        }
     },
     {
         "type": "LoadedResource",
@@ -261,6 +202,12 @@
         "verbosity": "INFO",
         "from": "./media/aks-flexible-server-deployment.png",
         "for": "./media/aks-flexible-server-deployment.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "./media/api-management-components.png",
+        "for": "./media/api-management-components.png"
     },
     {
         "type": "LoadedResource",
@@ -541,6 +488,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/server_parameters.png",
+        "for": "media/server_parameters.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/thread-pooling-performance.png",
         "for": "./media/thread-pooling-performance.png"
     },
@@ -591,143 +544,5 @@
         "verbosity": "INFO",
         "from": "./media/realms-migration.png",
         "for": "./media/realms-migration.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/php_setup.png",
-        "for": "./media/php_setup.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/noshnow-app-load.png",
-        "for": "./media/noshnow-app-load.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/vm-ip-address.png",
-        "for": "./media/vm-ip-address.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/nsg-rule.png",
-        "for": "./media/nsg-rule.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/server-certificates-iis-manager.png",
-        "for": "./media/server-certificates-iis-manager.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/site-binding-iis.png",
-        "for": "./media/site-binding-iis.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/web-server-config.png",
-        "for": "./media/web-server-config.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/vs-new-function.png",
-        "for": "./media/vs-new-function.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/nuget-package-install.png",
-        "for": "./media/nuget-package-install.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/choose-linux-function-app.png",
-        "for": "./media/choose-linux-function-app.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/select-function-from-portal.png",
-        "for": "./media/select-function-from-portal.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/azure-portal-function-test.png",
-        "for": "./media/azure-portal-function-test.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/create-function-app-vscode.png",
-        "for": "./media/create-function-app-vscode.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/http-trigger-vscode.png",
-        "for": "./media/http-trigger-vscode.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/terminal-set-up.png",
-        "for": "./media/terminal-set-up.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/function-app-logs.png",
-        "for": "./media/function-app-logs.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/az-mysql-db-create.png",
-        "for": "./media/az-mysql-db-create.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/server-details-port.png",
-        "for": "./media/server-details-port.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/vnet-integration.png",
-        "for": "./media/vnet-integration.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/disable-secure-transport.png",
-        "for": "./media/disable-secure-transport.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/on-premises-data-gateway-config.png",
-        "for": "./media/on-premises-data-gateway-config.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/logic-apps-gateway-azure-config.png",
-        "for": "./media/logic-apps-gateway-azure-config.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/recurrence-logic-apps-trigger.png",
-        "for": "./media/recurrence-logic-apps-trigger.png"
     }
 ]
