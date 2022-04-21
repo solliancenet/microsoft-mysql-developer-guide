@@ -17,8 +17,3 @@ The Moodle LMS supports thousands of educational institutions and organizations,
 #### e-commerce like Magento
 
 Magento is a powerful e-commerce and marketing platform suitable for small and large businesses. There are multiple implementations available on the Azure Marketplace, including [this offering](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview) that provides a Helm chart for a Kubernetes deployment.
-
-## Resources
-
-- [Tutorial: Deploy a Spring Boot application on AKS cluster with MySQL Flexible Server in a VNet](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-springboot-on-aks-vnet)
-- [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks)
