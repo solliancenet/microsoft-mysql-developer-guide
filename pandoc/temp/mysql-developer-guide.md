@@ -1006,7 +1006,7 @@ compatible with Single Server.
 
 #### IntelliJ IDEA
 
-Flexible server supported in the future.
+Flexible server will be supported in the future.
 
 #### Eclipse
 
@@ -2146,7 +2146,11 @@ The deployment strategy applied in this sample application focuses on
 updating project environment variables instead of global environment
 variable configuration.
 
-1.  Log into the Azure Portal. Search for and create Azure Web App +
+1.  Log into the Azure Portal.
+
+2.  Search for Marketplace.
+
+3.  While in the Marketplace, search for and create Azure Web App +
     Database resources in the Marketplace.
 
     -   Select the Marketplace button.
@@ -2159,7 +2163,7 @@ variable configuration.
 
         ![Web app + database search result.]
 
-2.  Create a web application and database.
+4.  Create a web application and database.
 
     ![Create web app database.]
 
@@ -2176,7 +2180,7 @@ variable configuration.
 
     -   Create the resources.
 
-3.  After the resources have been deployed, locate the App Service in
+5.  After the resources have been deployed, locate the App Service in
     the Resource Group.
 
     -   Select the **Deployment Center** and capture the configuration
@@ -2205,7 +2209,7 @@ variable configuration.
 
         ![Application Scope user and password]
 
-4.  Clone the sample **ContosoNoshNow** application to the local
+6.  Clone the sample **ContosoNoshNow** application to the local
     development machine from the Microsoft Git repository:
 
 TODO: Get the MS repo.
@@ -2290,10 +2294,17 @@ TODO: Get the MS repo.
 
     -   absolute_redirect off
     -   root /home/site/wwwroot/public
+    -   try_files \$uri $uri/ /index.php$is_args\$args;
 
     ![][25]
 
-12. Your configuration needs to survive an App Service restart. Update
+12. Restart the service.
+
+    ``` bash
+    service nginx restart
+    ```
+
+13. Your configuration needs to survive an App Service restart. Update
     the App Service Startup Command.
 
     -   Navigate to the **Settings** section.
@@ -2307,7 +2318,7 @@ TODO: Get the MS repo.
 
     ![][26]
 
-13. Open a browser and view the application.
+14. Open a browser and view the application.
 
     ![ContosoNoshNow home page]
 
@@ -5148,6 +5159,8 @@ Stories page focused on the usage of Azure Database for MySQL.
 
 ### Minecraft
 
+![][74]
+
 Minecraft migrated from AWS Aurora to Azure Database for MySQL for its
 Realms service to improve performance and reduce costs. Minecraft moved
 over 1 TB of data, distributed across 13 databases, serving over 6k
@@ -5175,6 +5188,8 @@ read replica to support the reporting needs of the business.
 
 ### Linked Brain
 
+![][75]
+
 In November 2019, a Microsoft gaming industry representative visited
 [Linked Brain] to explain Microsoft Azure services and FastTrack for
 Azure. Features fitted perfectly with Linked Brain's goal of building
@@ -5188,6 +5203,8 @@ accumulates. Azure also offers regional disaster recovery as a standard
 benefit---an option which requires another instance fee on Amazon RDS."
 
 ### T-Systems
+
+![][76]
 
 In the Internet of Things (IoT) age, organizations must share
 proprietary data quickly while maintaining control, security, and
@@ -5209,6 +5226,8 @@ to maintain a database operations infrastructure.
 
 ### Children's Mercy Hospital
 
+![][77]
+
 [Children's Mercy Kansas City], an award-winning hospital and research
 institute, manages one of the leading genome sequencing centers in the
 United States. To better support researchers, Children's Mercy is
@@ -5224,18 +5243,19 @@ the CMRI datacenter's storage limits, the organization chose to support
 its genomic data platform with Microsoft Genomics, Azure Database for
 MySQL, and Azure infrastructure as a service (IaaS) resources.
 
-## GeekWire
+### GeekWire
 
-Based in Seattle, Washington, [GeekWire][74] is a rapidly growing
-technology news site with a global readership. In addition to covering
-the latest innovation, GeekWire serves the Pacific Northwest tech
-community with events, a job board, startup resources, a weekly radio
-show, and more. As its popularity and site traffic increased, so did
-performance concerns. To gain better scalability and performance,
-GeekWire decided to migrate its WordPress site to the Microsoft Azure
-platform. By taking advantage of fully managed services like Azure
-Database for MySQL, the company can scale on-demand while cutting costs
-45 percent.
+![][78]
+
+Based in Seattle, Washington, [GeekWire] is a rapidly growing technology
+news site with a global readership. In addition to covering the latest
+innovation, GeekWire serves the Pacific Northwest tech community with
+events, a job board, startup resources, a weekly radio show, and more.
+As its popularity and site traffic increased, so did performance
+concerns. To gain better scalability and performance, GeekWire decided
+to migrate its WordPress site to the Microsoft Azure platform. By taking
+advantage of fully managed services like Azure Database for MySQL, the
+company can scale on-demand while cutting costs 45 percent.
 
 ## Common MySQL Apps
 
@@ -5266,7 +5286,7 @@ Azure PaaS MySQL for its persistence layer.
 
 Magento is a powerful e-commerce and marketing platform suitable for
 small and large businesses. There are multiple implementations available
-on the Azure Marketplace, including [this offering][75] that provides a
+on the Azure Marketplace, including [this offering][79] that provides a
 Helm chart for a Kubernetes deployment.
 
 ## Resources
@@ -5482,7 +5502,6 @@ real-world information:
   [11 / Summary]: #summary-9
   [12 / Customer stories]: #customer-stories
   [Case studies]: #case-studies
-  [GeekWire]: #geekwire
   [Common MySQL Apps]: #common-mysql-apps
   [4]: #resources-10
   [12 / Summary]: #summary-10
@@ -6063,15 +6082,20 @@ real-world information:
   [Scalable web and mobile applications using Azure Database for MySQL:]:
     https://docs.microsoft.com/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
   [Microsoft Customer Stories portal]: https://customers.microsoft.com/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
+  [74]: media/minecraft-logo.png
   [This image demonstrates the Minecraft Realms service running in Azure, accessing Azure Database for MySQL.]:
     ./media/realms-migration.png "Minecraft Realms migration to Azure"
+  [75]: media/linked-brain-logo.png
   [Linked Brain]: https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan
+  [76]: media/t-systems-logo.png
   [T-Systems]: https://customers.microsoft.com/en-us/story/724200-deutsche-telekom-telecommunications-azure
+  [77]: media/children-mercy-logo.png
   [Children's Mercy Kansas City]: https://customers.microsoft.com/en-us/story/860516-childrens-mercy-health-provider-azure
-  [74]: https://customers.microsoft.com/en-us/story/geekwire
+  [78]: media/geekwire.png
+  [GeekWire]: https://customers.microsoft.com/en-us/story/geekwire
   [one from WordPress]: https://azuremarketplace.microsoft.com/marketplace/apps/WordPress.WordPress?tab=Overview
   [this offering]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview
-  [75]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
+  [79]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
   [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server]:
     https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql

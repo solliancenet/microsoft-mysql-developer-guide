@@ -542,7 +542,37 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/minecraft-logo.png",
+        "for": "media/minecraft-logo.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/realms-migration.png",
         "for": "./media/realms-migration.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/linked-brain-logo.png",
+        "for": "media/linked-brain-logo.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/t-systems-logo.png",
+        "for": "media/t-systems-logo.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/children-mercy-logo.png",
+        "for": "media/children-mercy-logo.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/geekwire.png",
+        "for": "media/geekwire.png"
     }
 ]

@@ -1,341 +1,3 @@
-- [01 / Azure MySQL Developer Guide](#01--azure-mysql-developer-guide)
-- [02 / What is MySQL?](#02--what-is-mysql)
-  - [Comparison with other RDBMS offerings](#comparison-with-other-rdbms-offerings)
-  - [MySQL hosting options](#mysql-hosting-options)
-    - [On-premises](#on-premises)
-    - [Cloud IaaS (in a VM)](#cloud-iaas-in-a-vm)
-    - [Containers](#containers)
-    - [Cloud PaaS](#cloud-paas)
-  - [Hosting MySQL on Azure - benefits and options](#hosting-mysql-on-azure---benefits-and-options)
-    - [Advantages of choosing Azure](#advantages-of-choosing-azure)
-    - [MySQL on Azure hosting options](#mysql-on-azure-hosting-options)
-      - [IaaS (VMs)](#iaas-vms)
-      - [IaaS (Containers)](#iaas-containers)
-      - [PaaS (DBaaS)](#paas-dbaas)
-      - [PaaS (Containers)](#paas-containers)
-      - [Video reference](#video-reference)
-  - [Introduction to Azure resource management](#introduction-to-azure-resource-management)
-    - [The Azure resource management hierarchy](#the-azure-resource-management-hierarchy)
-    - [Create landing zone](#create-landing-zone)
-    - [Automating and managing Azure services](#automating-and-managing-azure-services)
-    - [Azure management tools](#azure-management-tools)
-      - [Azure portal](#azure-portal)
-        - [Azure Marketplace](#azure-marketplace)
-        - [Evolving](#evolving)
-      - [Azure PowerShell and CLI](#azure-powershell-and-cli)
-      - [Azure CLI](#azure-cli)
-        - [Azure Cloud Shell](#azure-cloud-shell)
-      - [PowerShell Module](#powershell-module)
-      - [Infrastructure as Code](#infrastructure-as-code)
-        - [ARM templates](#arm-templates)
-        - [Bicep](#bicep)
-        - [Terraform](#terraform)
-      - [Other tips](#other-tips)
-    - [Azure deployment resources](#azure-deployment-resources)
-      - [Support](#support)
-      - [Training](#training)
-  - [Introduction to Azure Database for MySQL](#introduction-to-azure-database-for-mysql)
-    - [Azure Database for MySQL deployment options](#azure-database-for-mysql-deployment-options)
-      - [Flexible Server](#flexible-server)
-        - [Flexible Server video introduction](#flexible-server-video-introduction)
-        - [Flexible Server pricing & TCO](#flexible-server-pricing--tco)
-        - [Flexible Server Unsupported Features](#flexible-server-unsupported-features)
-      - [Single Server](#single-server)
-  - [Migrate to Flexible Server](#migrate-to-flexible-server)
-    - [From Single Server to Flexible Server](#from-single-server-to-flexible-server)
-    - [From on-premises to Flexible Server](#from-on-premises-to-flexible-server)
-  - [02 / Summary](#02--summary)
-- [03 / Getting Started - Setup and Tools](#03--getting-started---setup-and-tools)
-  - [Azure free account](#azure-free-account)
-  - [Azure subscriptions and limits](#azure-subscriptions-and-limits)
-  - [Azure authentication](#azure-authentication)
-  - [Development editor tools](#development-editor-tools)
-  - [Development languages](#development-languages)
-  - [Resources](#resources)
-  - [Create a Flexible Server database](#create-a-flexible-server-database)
-    - [Azure portal](#azure-portal-1)
-    - [Azure CLI](#azure-cli-1)
-    - [ARM template](#arm-template)
-  - [Language support](#language-support)
-    - [PHP](#php)
-      - [Example code](#example-code)
-    - [Application connectors](#application-connectors)
-    - [Resources](#resources-1)
-    - [Java](#java)
-      - [Example code](#example-code-1)
-    - [Application connectors](#application-connectors-1)
-    - [Resources](#resources-2)
-    - [Tooling](#tooling)
-      - [IntelliJ IDEA](#intellij-idea)
-      - [Eclipse](#eclipse)
-      - [Maven](#maven)
-    - [Python](#python)
-      - [Example code](#example-code-2)
-    - [Application connectors](#application-connectors-2)
-    - [Resources](#resources-3)
-  - [Other notable languages for MySQL apps](#other-notable-languages-for-mysql-apps)
-    - [.NET](#net)
-    - [Ruby](#ruby)
-  - [Connect and query Azure Database for MySQL using MySQL Workbench](#connect-and-query-azure-database-for-mysql-using-mysql-workbench)
-    - [Setup](#setup)
-    - [Instructions](#instructions)
-  - [Connect and query Azure Database for MySQL using the Azure CLI](#connect-and-query-azure-database-for-mysql-using-the-azure-cli)
-    - [Setup](#setup-1)
-    - [Instructions](#instructions-1)
-  - [Connect and query Azure Database for MySQL using PHP](#connect-and-query-azure-database-for-mysql-using-php)
-    - [Setup](#setup-2)
-    - [Instructions](#instructions-2)
-  - [Connect and query Azure Database for MySQL using Python](#connect-and-query-azure-database-for-mysql-using-python)
-    - [Setup](#setup-3)
-    - [Instructions](#instructions-3)
-  - [03 / Summary](#03--summary)
-- [04 / End to End application development](#04--end-to-end-application-development)
-  - [Development evolution](#development-evolution)
-  - [Classic deployment](#classic-deployment)
-  - [Azure VM deployment](#azure-vm-deployment)
-  - [Simple App Service deployment with Azure Database for MySQL Flexible Server](#simple-app-service-deployment-with-azure-database-for-mysql-flexible-server)
-  - [App Service with In-App MySQL](#app-service-with-in-app-mysql)
-  - [Continuous Integration (CI) and Continuous Delivery (CD)](#continuous-integration-ci-and-continuous-delivery-cd)
-  - [Containerizing layers with Docker](#containerizing-layers-with-docker)
-  - [Azure Container Instances (ACI)](#azure-container-instances-aci)
-  - [App Service Containers](#app-service-containers)
-  - [Azure Kubernetes Service (AKS)](#azure-kubernetes-service-aks)
-  - [AKS with MySQL Flexible Server](#aks-with-mysql-flexible-server)
-  - [Start the Developer Journey](#start-the-developer-journey)
-    - [Step 1 - Deploy the template](#step-1---deploy-the-template)
-    - [Step 2 - Starting from the beginning](#step-2---starting-from-the-beginning)
-  - [Azure development services](#azure-development-services)
-    - [Web Apps](#web-apps)
-      - [Resources](#resources-4)
-    - [Serverless Compute](#serverless-compute)
-    - [Azure Functions](#azure-functions)
-      - [Resources](#resources-5)
-    - [Azure Logic Apps](#azure-logic-apps)
-      - [Resources](#resources-6)
-    - [Microservices](#microservices)
-      - [Resources](#resources-7)
-    - [API Management](#api-management)
-      - [Resources](#resources-8)
-    - [Event-driven - Azure Event Grid vs. Service Bus vs. Event Hubs](#event-driven---azure-event-grid-vsservice-bus-vsevent-hubs)
-      - [Azure Event Grid](#azure-event-grid)
-      - [Azure Service Bus](#azure-service-bus)
-      - [Azure Event Hubs](#azure-event-hubs)
-      - [Example Solution](#example-solution)
-    - [Cron jobs](#cron-jobs)
-    - [WebJobs](#webjobs)
-    - [Advanced orchestration - Azure Data Factory](#advanced-orchestration---azure-data-factory)
-  - [Introduction to the sample application](#introduction-to-the-sample-application)
-    - [Sample application overview and story](#sample-application-overview-and-story)
-    - [Solution architecture](#solution-architecture)
-    - [Site map](#site-map)
-    - [Sample Application Prerequisites](#sample-application-prerequisites)
-    - [Quick start: manual Azure set up instructions](#quick-start-manual-azure-set-up-instructions)
-    - [Sample application deployment steps](#sample-application-deployment-steps)
-  - [Connecting to the database](#connecting-to-the-database)
-    - [What happens to my app during an Azure deployment?](#what-happens-to-my-app-during-an-azure-deployment)
-    - [Troubleshooting tips](#troubleshooting-tips)
-  - [Recommended content](#recommended-content)
-  - [Deploying a Laravel app backed by a Java REST API to AKS](#deploying-a-laravel-app-backed-by-a-java-rest-api-to-aks)
-    - [Evolve the sample application](#evolve-the-sample-application)
-    - [Download the tools](#download-the-tools)
-    - [Provision the database](#provision-the-database)
-    - [Create Docker images](#create-docker-images)
-      - [API](#api)
-      - [Laravel](#laravel)
-    - [Provision Azure Kubernetes Service](#provision-azure-kubernetes-service)
-    - [Deploy the API to Azure Kubernetes Service](#deploy-the-api-to-azure-kubernetes-service)
-      - [Create the API Secret](#create-the-api-secret)
-      - [Create the API Service](#create-the-api-service)
-      - [Create the API Deployment](#create-the-api-deployment)
-    - [Deploy the Laravel app to Azure Kubernetes Service](#deploy-the-laravel-app-to-azure-kubernetes-service)
-      - [Create the Laravel app Service](#create-the-laravel-app-service)
-      - [Create the Laravel app Deployment](#create-the-laravel-app-deployment)
-    - [Browse to the app](#browse-to-the-app)
-  - [Application continuous integration and deployment](#application-continuous-integration-and-deployment)
-    - [Local Git](#local-git)
-    - [App Service Deployment Center and Slots](#app-service-deployment-center-and-slots)
-      - [Deployment Slots](#deployment-slots)
-      - [Deployment Center](#deployment-center)
-    - [GitHub Actions](#github-actions)
-    - [Azure DevOps](#azure-devops)
-    - [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)
-  - [04 / Summary](#04--summary)
-    - [Checklist](#checklist)
-- [05 / Monitoring](#05--monitoring)
-  - [Azure Monitor overview](#azure-monitor-overview)
-  - [Define your strategy](#define-your-strategy)
-  - [Application monitoring](#application-monitoring)
-    - [Azure Metrics Explorer](#azure-metrics-explorer)
-    - [Cost](#cost)
-  - [Monitoring database operations](#monitoring-database-operations)
-  - [Query Performance Insights](#query-performance-insights)
-  - [Server Logs](#server-logs)
-  - [MySQL audit logs](#mysql-audit-logs)
-    - [Enabling audit logs](#enabling-audit-logs)
-    - [Notes about the Flexible Server portal example](#notes-about-the-flexible-server-portal-example)
-  - [Azure Service Health](#azure-service-health)
-  - [Recommended content](#recommended-content-1)
-  - [Alerting](#alerting)
-    - [Azure alerting concepts](#azure-alerting-concepts)
-      - [Metric alerts](#metric-alerts)
-      - [Log alerts](#log-alerts)
-    - [Best Practices with Alerting Metrics](#best-practices-with-alerting-metrics)
-    - [Webhooks](#webhooks)
-    - [Metrics resources](#metrics-resources)
-      - [Azure CLI](#azure-cli-2)
-      - [Azure Portal](#azure-portal-2)
-      - [Azure Monitor REST API](#azure-monitor-rest-api)
-  - [05 / Summary](#05--summary)
-    - [Checklist](#checklist-1)
-- [06 / Security](#06--security)
-  - [Authentication](#authentication)
-  - [Threat protection](#threat-protection)
-  - [Encryption](#encryption)
-  - [Firewall](#firewall)
-  - [Microsoft Defender for Cloud](#microsoft-defender-for-cloud)
-  - [Microsoft Sentinel](#microsoft-sentinel)
-  - [Networking and connectivity options](#networking-and-connectivity-options)
-    - [Public vs. Private Access](#public-vsprivate-access)
-      - [Public Access](#public-access)
-    - [Private Link](#private-link)
-      - [Configuring Public Access Guides](#configuring-public-access-guides)
-      - [Private Access](#private-access)
-        - [Virtual Network Hierarchy](#virtual-network-hierarchy)
-          - [More Information on Virtual Networks](#more-information-on-virtual-networks)
-        - [Flexible Server](#flexible-server-1)
-          - [Configuring Private Access for Flexible Server](#configuring-private-access-for-flexible-server)
-        - [Single Server](#single-server-1)
-          - [Configuring Private Access for Single Server](#configuring-private-access-for-single-server)
-    - [Networking Best Practices for Flexible Server](#networking-best-practices-for-flexible-server)
-  - [06 / Summary](#06--summary)
-  - [Security checklist](#security-checklist)
-- [07 / Testing](#07--testing)
-  - [Approaches](#approaches)
-    - [Functional testing](#functional-testing)
-      - [Function testing tools](#function-testing-tools)
-    - [Resiliency and version testing](#resiliency-and-version-testing)
-    - [Performance testing](#performance-testing)
-      - [Load testing](#load-testing)
-      - [Stress testing](#stress-testing)
-      - [Performance testing tools](#performance-testing-tools)
-    - [Apache JMeter](#apache-jmeter)
-    - [K6](#k6)
-  - [Testing data capture tools](#testing-data-capture-tools)
-    - [Azure Monitor](#azure-monitor)
-      - [Resources](#resources-9)
-    - [Grafana & Prometheus](#grafana--prometheus)
-    - [Recommended Content](#recommended-content-2)
-  - [07 / Summary](#07--summary)
-    - [Checklist](#checklist-2)
-- [08 / Performance + Optimization](#08--performance--optimization)
-  - [General performance tips](#general-performance-tips)
-  - [Monitoring hardware and query performance](#monitoring-hardware-and-query-performance)
-  - [Upgrading the tier](#upgrading-the-tier)
-  - [Scaling the server](#scaling-the-server)
-  - [Azure Database for MySQL Memory Recommendations](#azure-database-for-mysql-memory-recommendations)
-  - [Moving regions](#moving-regions)
-  - [Server parameters](#server-parameters)
-  - [Upgrade Azure Database for MySQL versions](#upgrade-azure-database-for-mysql-versions)
-  - [Customizing the runtime](#customizing-the-runtime)
-  - [Running MySQL Benchmarks](#running-mysql-benchmarks)
-  - [Instrumenting vital server resources](#instrumenting-vital-server-resources)
-  - [Server Parameters](#server-parameters-1)
-    - [Tools to Set Server Parameters](#tools-to-set-server-parameters)
-    - [Server Parameters Best Practices](#server-parameters-best-practices)
-  - [Caching](#caching)
-    - [Disk cache](#disk-cache)
-    - [Memory cache](#memory-cache)
-      - [Local memory](#local-memory)
-      - [Redis Cache](#redis-cache)
-  - [Azure Content Delivery Network](#azure-content-delivery-network)
-    - [Using Azure CDN in Web Apps](#using-azure-cdn-in-web-apps)
-  - [08 / Summary](#08--summary)
-    - [Checklist](#checklist-3)
-- [09 / Troubleshooting](#09--troubleshooting)
-  - [Common MySQL issues](#common-mysql-issues)
-    - [Unsupported MySQL features](#unsupported-mysql-features)
-    - [Connectivity issues](#connectivity-issues)
-      - [Misconfiguration](#misconfiguration)
-      - [Network access issues](#network-access-issues)
-    - [Resource issues](#resource-issues)
-    - [Platform issues](#platform-issues)
-  - [Troubleshoot app issues in Azure App Service](#troubleshoot-app-issues-in-azure-app-service)
-  - [App debugging](#app-debugging)
-  - [General issue mitigation](#general-issue-mitigation)
-  - [Recommended content](#recommended-content-3)
-  - [09 / Summary](#09--summary)
-    - [Checklist](#checklist-4)
-- [10 / Business Continuity and Disaster Recovery (BCDR)](#10--business-continuity-and-disaster-recovery-bcdr)
-  - [Best practices for MySQL Flexible Server apps](#best-practices-for-mysql-flexible-server-apps)
-    - [1. Colocate resources](#1-colocate-resources)
-    - [2. Implement connection pooling](#2-implement-connection-pooling)
-    - [3. Size containers adequately](#3-size-containers-adequately)
-    - [4. Implement network isolation & SSL connectivity](#4-implement-network-isolation--ssl-connectivity)
-    - [5. Retry on transient faults](#5-retry-on-transient-faults)
-    - [6. Size database compute resources adequately](#6-size-database-compute-resources-adequately)
-  - [Backup and restore](#backup-and-restore)
-    - [Backup](#backup)
-    - [Restore](#restore)
-  - [Read replicas](#read-replicas)
-  - [Deleted servers](#deleted-servers)
-  - [Regional failure](#regional-failure)
-    - [Load Balancers](#load-balancers)
-  - [Configuring Read Replicas](#configuring-read-replicas)
-    - [Creating a read replica](#creating-a-read-replica)
-    - [Failover to read replica](#failover-to-read-replica)
-  - [Business Continuity and Disaster Recovery](#business-continuity-and-disaster-recovery)
-    - [High availability](#high-availability)
-      - [Implementing cross-region high availability](#implementing-cross-region-high-availability)
-    - [Backup and restore](#backup-and-restore-1)
-      - [Flexible Server samples](#flexible-server-samples)
-      - [Single Server samples](#single-server-samples)
-  - [Replication](#replication)
-    - [Use cases](#use-cases)
-    - [Configuring read replicas](#configuring-read-replicas-1)
-      - [Flexible Server](#flexible-server-2)
-      - [Single Server](#single-server-2)
-  - [Service maintenance](#service-maintenance)
-    - [Notifications](#notifications)
-    - [Differences for Single Server](#differences-for-single-server)
-    - [Configure maintenance scheduling & alerting](#configure-maintenance-scheduling--alerting)
-  - [Azure Database for MySQL upgrade process](#azure-database-for-mysql-upgrade-process)
-  - [10 / Summary](#10--summary)
-    - [Checklist](#checklist-5)
-- [11 / MySQL architectures](#11--mysql-architectures)
-  - [Sample architectures](#sample-architectures)
-    - [Digital marketing using Azure Database for MySQL](#digital-marketing-using-azure-database-for-mysql)
-    - [Finance management apps using Azure Database for MySQL](#finance-management-apps-using-azure-database-for-mysql)
-    - [Intelligent apps using Azure Database for MySQL](#intelligent-apps-using-azure-database-for-mysql)
-    - [Gaming using Azure Database for MySQL](#gaming-using-azure-database-for-mysql)
-    - [Retail and e-commerce using Azure MySQL](#retail-and-e-commerce-using-azure-mysql)
-    - [Scalable web and mobile applications using Azure Database for MySQL](#scalable-web-and-mobile-applications-using-azure-database-for-mysql)
-  - [11 / Summary](#11--summary)
-    - [Checklist](#checklist-6)
-- [12 / Customer stories](#12--customer-stories)
-  - [Case studies](#case-studies)
-    - [Minecraft](#minecraft)
-    - [Automobile Retail](#automobile-retail)
-    - [Linked Brain](#linked-brain)
-    - [T-Systems](#t-systems)
-    - [Children's Mercy Hospital](#childrens-mercy-hospital)
-  - [GeekWire](#geekwire)
-  - [Common MySQL Apps](#common-mysql-apps)
-    - [3rd party Azure solutions / Azure Marketplace](#3rd-party-azure-solutions--azure-marketplace)
-      - [CMS like WordPress](#cms-like-wordpress)
-      - [LMS like Moodle](#lms-like-moodle)
-      - [e-commerce like Magento](#e-commerce-like-magento)
-  - [Resources](#resources-10)
-  - [12 / Summary](#12--summary)
-    - [Checklist](#checklist-7)
-- [13 / Zero to Hero](#13--zero-to-hero)
-  - [Determining the evolutionary waypoint](#determining-the-evolutionary-waypoint)
-  - [Summary of tasks](#summary-of-tasks)
-- [14 / Summary](#14--summary)
-- [Resources](#resources-11)
-  - [Questions and feedback](#questions-and-feedback)
-  - [Find a partner to assist in migrating](#find-a-partner-to-assist-in-migrating)
-
-
 # 01 / Azure MySQL Developer Guide
 
 Welcome to THE comprehensive guide to developing [MySQL]-based
@@ -1344,7 +1006,7 @@ compatible with Single Server.
 
 #### IntelliJ IDEA
 
-Flexible server supported in the future.
+Flexible server will be supported in the future.
 
 #### Eclipse
 
@@ -2484,7 +2146,11 @@ The deployment strategy applied in this sample application focuses on
 updating project environment variables instead of global environment
 variable configuration.
 
-1.  Log into the Azure Portal. Search for and create Azure Web App +
+1.  Log into the Azure Portal.
+
+2.  Search for Marketplace.
+
+3.  While in the Marketplace, search for and create Azure Web App +
     Database resources in the Marketplace.
 
     -   Select the Marketplace button.
@@ -2497,7 +2163,7 @@ variable configuration.
 
         ![Web app + database search result.]
 
-2.  Create a web application and database.
+4.  Create a web application and database.
 
     ![Create web app database.]
 
@@ -2514,7 +2180,7 @@ variable configuration.
 
     -   Create the resources.
 
-3.  After the resources have been deployed, locate the App Service in
+5.  After the resources have been deployed, locate the App Service in
     the Resource Group.
 
     -   Select the **Deployment Center** and capture the configuration
@@ -2543,7 +2209,7 @@ variable configuration.
 
         ![Application Scope user and password]
 
-4.  Clone the sample **ContosoNoshNow** application to the local
+6.  Clone the sample **ContosoNoshNow** application to the local
     development machine from the Microsoft Git repository:
 
 TODO: Get the MS repo.
@@ -2628,10 +2294,17 @@ TODO: Get the MS repo.
 
     -   absolute_redirect off
     -   root /home/site/wwwroot/public
+    -   try_files \$uri $uri/ /index.php$is_args\$args;
 
     ![][25]
 
-12. Your configuration needs to survive an App Service restart. Update
+12. Restart the service.
+
+    ``` bash
+    service nginx restart
+    ```
+
+13. Your configuration needs to survive an App Service restart. Update
     the App Service Startup Command.
 
     -   Navigate to the **Settings** section.
@@ -2645,7 +2318,7 @@ TODO: Get the MS repo.
 
     ![][26]
 
-13. Open a browser and view the application.
+14. Open a browser and view the application.
 
     ![ContosoNoshNow home page]
 
@@ -5486,6 +5159,8 @@ Stories page focused on the usage of Azure Database for MySQL.
 
 ### Minecraft
 
+![][74]
+
 Minecraft migrated from AWS Aurora to Azure Database for MySQL for its
 Realms service to improve performance and reduce costs. Minecraft moved
 over 1 TB of data, distributed across 13 databases, serving over 6k
@@ -5513,6 +5188,8 @@ read replica to support the reporting needs of the business.
 
 ### Linked Brain
 
+![][75]
+
 In November 2019, a Microsoft gaming industry representative visited
 [Linked Brain] to explain Microsoft Azure services and FastTrack for
 Azure. Features fitted perfectly with Linked Brain's goal of building
@@ -5526,6 +5203,8 @@ accumulates. Azure also offers regional disaster recovery as a standard
 benefit---an option which requires another instance fee on Amazon RDS."
 
 ### T-Systems
+
+![][76]
 
 In the Internet of Things (IoT) age, organizations must share
 proprietary data quickly while maintaining control, security, and
@@ -5547,6 +5226,8 @@ to maintain a database operations infrastructure.
 
 ### Children's Mercy Hospital
 
+![][77]
+
 [Children's Mercy Kansas City], an award-winning hospital and research
 institute, manages one of the leading genome sequencing centers in the
 United States. To better support researchers, Children's Mercy is
@@ -5562,18 +5243,19 @@ the CMRI datacenter's storage limits, the organization chose to support
 its genomic data platform with Microsoft Genomics, Azure Database for
 MySQL, and Azure infrastructure as a service (IaaS) resources.
 
-## GeekWire
+### GeekWire
 
-Based in Seattle, Washington, [GeekWire][74] is a rapidly growing
-technology news site with a global readership. In addition to covering
-the latest innovation, GeekWire serves the Pacific Northwest tech
-community with events, a job board, startup resources, a weekly radio
-show, and more. As its popularity and site traffic increased, so did
-performance concerns. To gain better scalability and performance,
-GeekWire decided to migrate its WordPress site to the Microsoft Azure
-platform. By taking advantage of fully managed services like Azure
-Database for MySQL, the company can scale on-demand while cutting costs
-45 percent.
+![][78]
+
+Based in Seattle, Washington, [GeekWire] is a rapidly growing technology
+news site with a global readership. In addition to covering the latest
+innovation, GeekWire serves the Pacific Northwest tech community with
+events, a job board, startup resources, a weekly radio show, and more.
+As its popularity and site traffic increased, so did performance
+concerns. To gain better scalability and performance, GeekWire decided
+to migrate its WordPress site to the Microsoft Azure platform. By taking
+advantage of fully managed services like Azure Database for MySQL, the
+company can scale on-demand while cutting costs 45 percent.
 
 ## Common MySQL Apps
 
@@ -5604,7 +5286,7 @@ Azure PaaS MySQL for its persistence layer.
 
 Magento is a powerful e-commerce and marketing platform suitable for
 small and large businesses. There are multiple implementations available
-on the Azure Marketplace, including [this offering][75] that provides a
+on the Azure Marketplace, including [this offering][79] that provides a
 Helm chart for a Kubernetes deployment.
 
 ## Resources
@@ -5820,7 +5502,6 @@ real-world information:
   [11 / Summary]: #summary-9
   [12 / Customer stories]: #customer-stories
   [Case studies]: #case-studies
-  [GeekWire]: #geekwire
   [Common MySQL Apps]: #common-mysql-apps
   [4]: #resources-10
   [12 / Summary]: #summary-10
@@ -6401,15 +6082,20 @@ real-world information:
   [Scalable web and mobile applications using Azure Database for MySQL:]:
     https://docs.microsoft.com/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
   [Microsoft Customer Stories portal]: https://customers.microsoft.com/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
+  [74]: media/minecraft-logo.png
   [This image demonstrates the Minecraft Realms service running in Azure, accessing Azure Database for MySQL.]:
     ./media/realms-migration.png "Minecraft Realms migration to Azure"
+  [75]: media/linked-brain-logo.png
   [Linked Brain]: https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan
+  [76]: media/t-systems-logo.png
   [T-Systems]: https://customers.microsoft.com/en-us/story/724200-deutsche-telekom-telecommunications-azure
+  [77]: media/children-mercy-logo.png
   [Children's Mercy Kansas City]: https://customers.microsoft.com/en-us/story/860516-childrens-mercy-health-provider-azure
-  [74]: https://customers.microsoft.com/en-us/story/geekwire
+  [78]: media/geekwire.png
+  [GeekWire]: https://customers.microsoft.com/en-us/story/geekwire
   [one from WordPress]: https://azuremarketplace.microsoft.com/marketplace/apps/WordPress.WordPress?tab=Overview
   [this offering]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview
-  [75]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
+  [79]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
   [Tutorial: Deploy WordPress app on AKS with Azure Database for MySQL - Flexible Server]:
     https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-deploy-wordpress-on-aks
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql
