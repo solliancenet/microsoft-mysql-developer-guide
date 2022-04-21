@@ -1,8 +1,8 @@
 ## Alerting
 
-Once the monitoring rules have been created, alerts should be created. The operations team will want to know as quickly as possible when a pending outage or system issue is developing. Understanding the symptoms is critical. *"You can't fix what you don't know is broken."*
+Once monitoring data is configured to flow into Azure Monitor or Log Analytics, the next step would to be to create alerts when certain sets of troubling logs are generated. The operations team will want to know as quickly as possible when a pending outage or system issue is developing. Understanding the symptoms is critical. *"You can't fix what you don't know is broken."*
 
-Alert creation will take fine tuning. Focus less on integrating monitoring with IT Service Management (ITSM) systems for Incident Management, and seize new opportunities that let cloud automation replace more expensive service management processes, thereby eliminating incidents.
+Alert creation and remediation will take fine tuning to ensure that alert fatigue doesn't set in. Focus less on integrating monitoring with IT Service Management (ITSM) systems for Incident Management, and seize on opportunities to let cloud automation replace more expensive service management processes, thereby eliminating time spent on easily automatically resolvable alerts and incidents.
 
 **Consider the following principles for determining whether a symptom is an appropriate candidate for alerting:**
 
@@ -78,9 +78,9 @@ While the Azure Portal does not provide automation capabilities like the CLI or 
 
 #### Azure Monitor REST API
 
-The REST API allows applications to access metric values for integration with other applications or data storage systems, like Azure SQL Database. It also allows applications to manipulate alert rules.
+The REST API allows applications to access metric values for integration with other monitoring systems like external SIEM systems. It also allows applications to manipulate alert rules externally.
 
-To interact with the REST API, applications first need to obtain an authentication token from Azure Active Directory.
+To interact with the REST API, applications first need to obtain an authentication token from Azure Active Directory and then use that token in API requests.
 
 - [REST API Walkthrough](https://docs.microsoft.com/azure/azure-monitor/essentials/rest-api-walkthrough)
 - [Azure Monitor REST API Reference](https://docs.microsoft.com/rest/api/monitor/)

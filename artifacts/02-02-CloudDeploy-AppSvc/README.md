@@ -16,6 +16,8 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 1. Open a terminal window, run the following to deploy the zip to Azure, be sure to replace the `SUFFIX`:
 
     ```PowerShell
+    cd "C:\labfiles\microsoft-mysql-developer-guide"
+
     Connect-AzAccount
 
     #if more than on subscription
