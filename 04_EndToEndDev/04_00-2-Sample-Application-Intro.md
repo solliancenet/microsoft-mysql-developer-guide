@@ -1,0 +1,25 @@
+## Introduction to the Sample Application
+
+Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers should learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model and architecture evolution.
+
+### Sample Application overview and story
+
+Contoso NoshNow is a delivery service and logistics company focused on making delicious food accessible to its customers no matter where they are located. The company started with a simple web application they could easily maintain and add features to as the business grew. A few years later, their CIO realized the application performance and their current on-premises environment were not meeting their business's growing demand. The application deployment process took hours, yielded unreliable results, and the admin team could not easily find production issues quickly. During the busy hours, customers complained the web application was slow.
+
+The development team knew migrating to Azure could help with these issues.
+
+### Solution architecture
+
+This is the base architecture that will be evolved in the future sample scripts.
+
+![](media/sample-app-level-1-architecture.png)
+
+### Site map
+
+![](media/sample-app-site-map.png)
+
+### Running the sample lab
+
+You will find the steps to run the lab in the artifacts repo here: [Sample application tutorial](./../artifacts/00-Sample-App/README.md)
+
+TODO: Replace MS repo link

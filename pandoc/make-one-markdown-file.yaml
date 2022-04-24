@@ -59,11 +59,11 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_08_Connect_Query_PHP.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_09_Connect_Query_Python.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_15_Summary.md
-#- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\REMOVED - 03_10_Connect_Query_Java_IntelliJ.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00_End_To_End_Development.md
-- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-1_Type_of_MySQL_applications.md
-- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_01_Introduction_to_sample_app.md
-- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_02_Deploy_Laravel_API_app.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-1_Common-Azure-development-services-overview.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-2-Sample-Application-Intro.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-3-Deployment-evolution-options.md
+- D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-4-Start-the-hands-on-tutorial.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_03_CI_CD.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_04_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00_Monitoring.md
