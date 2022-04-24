@@ -1,6 +1,6 @@
 ## Introduction to the Sample Application
 
-Instead of learning multiple sample applications, the guide focused on evolving deployment strategies. Readers should learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model and architecture evolution.
+Instead of learning multiple sample applications, the guide focused on evolving architecture and deployment strategies. Readers should learn the sample application structure once and focus on how the application will need to be modified to fit the deployment model and architecture evolution.
 
 ### Sample Application overview and story
 
@@ -15,6 +15,8 @@ This is the base architecture that will be evolved in the future sample scripts.
 ![](media/sample-app-level-1-architecture.png)
 
 ### Site map
+
+The web application is simple, but covers the fundamentals.
 
 ![](media/sample-app-site-map.png)
 
