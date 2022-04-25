@@ -53,9 +53,9 @@ mysqli_close($conn);
 ?>
 ```
 
-A console output with the message `Table created` should be displayed.
+Console output with the message `Table created` should be displayed.
 
-The second code snippet uses the same logic to start an SSL-secured connection and to close the connection. This time, it leverages a prepared insert statement with bound parameters.
+The second code snippet uses the same logic to start and close an SSL-secured connection. This time, it leverages a prepared insert statement with bound parameters.
 
 ```php
 <?php
@@ -188,4 +188,4 @@ mysqli_close($conn);
 ?>
 ```
 
-Congratulations. An SSL-secured connection with Flexible Server was demonstrated, a table created (DDL), and some CRUD operations performed against that table (DML).
+Congratulations. An SSL-secured connection with Flexible Server was demonstrated, a table was created (DDL), and some CRUD operations were performed against that table (DML).

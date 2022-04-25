@@ -10,8 +10,8 @@ The following scenarios will be discussed and demonstrated as part of this Azure
 - [Classic deployment]
 - [Azure VM Deployment]
 - [Simple App Service deployment with Azure Database for MySQL Flexible Server]
-- [App Service with InApp MySQL]
-- [Continuous Integration / Continuous Delivery]
+- [App Service with In-App MySQL]
+- [Continuous Integration (CI) and Continuous Delivery (CD)]
 - [Containerizing layers with Docker]
 - [Azure Container Instances (ACI)]
 - [App Service Containers]
@@ -26,7 +26,7 @@ Some web servers are relatively easier to set up than others.  The complexity de
 
 In addition to the web server, it is also necessary to install and configure the physical MySQL database server.  This includes creating the schema and the application users that will be used to access the target database(s).
 
-As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once software is installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
+As part of our sample application and supporting Azure Landing zone created by the ARM templates, most of this gets set up automatically.  Once the software is installed and configured, it is up to the developer to deploy the application and database on the system.  Classical deployments tend to be manual such that the files are copied to the target production web server and then deploy the database schema and supported data via MySQL tools or the MySQL Workbench.
 
 The biggest advantage of a classic on-premises deployment is the infrastructure team will have full control of the environment.  The biggest weakness is they must also maintain every aspect of the environment as well.
 
@@ -56,11 +56,11 @@ To implement this deployment, reference the [Cloud Deployment to Azure App Servi
 
 ## App Service with In-App MySQL
 
-If the target database is relatively small, it is possible that it can be integrated with the application hosting environment.  Azure App Service provides for this integrated hosting and allows for the deployment of the database to the same App Service and connectivity is provided through the `localhost` server name.
+If the target database is relatively small, it can be integrated with the application-hosting environment.  Azure App Service provides for this integrated hosting and allows for the deployment of the database to the same App Service and connectivity is provided through the `localhost` server name.
 
-Administration and integration is accomplished through a built-in **myphpadmin** interface in the Azure Portal.  From this admin portal, it is possible to run any supported SQL commands to import or export the database.
+Administration and integration are accomplished through a built-in **myphpadmin** interface in the Azure Portal.  From this admin portal, it is possible to run any supported SQL commands to import or export the database.
 
-The limits of the MySQL instance are primarily driven by the size of the corresponding [App Service Plan](https://azure.microsoft.com/pricing/details/app-service/windows/).  The biggest factor about limits is normally the disk space allocated to any App Services in the Plan.  App Service Plan storage sizes range from 1GB to 1TB; therefore, if a database will grow past 1TB, it cannot be hosted as InApp and it will need to be hosted it in Flexible Server.  For a list of other limitations, reference [Announcing Azure App Service MySQL in-app](https://azure.microsoft.com/blog/mysql-in-app-preview-app-service/).
+The limits of the MySQL instance are primarily driven by the size of the corresponding [App Service Plan](https://azure.microsoft.com/pricing/details/app-service/windows/).  The biggest factor about limits is normally the disk space allocated to any App Services in the Plan.  App Service Plan storage sizes range from 1GB to 1TB; therefore, if a database will grow past 1TB, it cannot be hosted as InApp and it will need to be hosted in Flexible Server.  For a list of other limitations, reference [Announcing Azure App Service MySQL in-app](https://azure.microsoft.com/blog/mysql-in-app-preview-app-service/).
 
 To implement this deployment, reference the [Cloud Deployment to Azure App Service with MySQL InApp](./../artifacts/02-03-CloudDeploy-InApp/README.md) article.
 
@@ -82,7 +82,7 @@ To perform deployments using Azure DevOps and GitHub Actions, reference the [Dep
 
 By building the application and database with a specific target environment in mind, it will need to be assumed that the operations team will have deployed and configured that same environment to support the application and data workload.  If they missed any items, the application will either not load or may error during runtime.
 
-Containers solve the potential issue of misconfiguration of the target environment.  By containerizing the application and data, it will ensured that the application will run exactly as intended. Containers can also more easily be scaled using tools such as Kubernetes.
+Containers solve the potential issue of misconfiguration of the target environment.  By containerizing the application and data, the application will run exactly as intended. Containers can also more easily be scaled using tools such as Kubernetes.
 
 Containerizing an application and data layer can be relatively complex, but once the build environment is set up and working, it is possible to push container updates very quickly to multi-region load-balanced environments.
 
