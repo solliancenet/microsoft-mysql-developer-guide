@@ -17,7 +17,7 @@ Below are two methods of deploying an ARM template:
 **Azure Portal**
 
 - Login into the Azure Portal and choose a valid Subscription.
-- Seach for 'Deploy a custom template'.
+- Searchfor 'Deploy a custom template'.
 
 ![](media/search-for-custom-template.png)
 
