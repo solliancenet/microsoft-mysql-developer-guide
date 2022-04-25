@@ -66,8 +66,11 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-4-Start-the-hands-on-tutorial.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_03_CI_CD.md
 - D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_04_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00_Monitoring.md
-- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_01_Alerts.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00_Monitoring_Overview.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00-0_Azure_Monitoring_Options.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00-1_Application_Monitoring.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00-2_Database_Monitoriing.md
+- D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_01_Alerting_Guidelines.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_02_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_00_Securing.md
 - D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_01_Networking.md

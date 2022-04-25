@@ -10,7 +10,7 @@ Developers can deploy MySQL-backed apps to Azure on a Windows or Linux environme
 
 - [App Service overview](https://docs.microsoft.com/azure/app-service/overview)
 - PHP & MySQL Flexible Server sample app:
-  - Manual deployment: [Introduction to the guide sample application]
+  - Manual deployment: [Running the sample application]
   - Scripted deployment: [Cloud Deployment to Azure App Service]
 
 ### Serverless Compute

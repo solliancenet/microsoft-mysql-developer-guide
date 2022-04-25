@@ -9,7 +9,6 @@ As the world of microservices continues to change and evolve through more innova
 ### Checklist
 
 - Understand the basic Azure fundamental services.
--  
 - Understand the phases in the developer evolution journey.
 - Be able to evaluate where your application architecture fits in the journey.
 - Be cognizant of the changes that are needed for applications to move to the next state.

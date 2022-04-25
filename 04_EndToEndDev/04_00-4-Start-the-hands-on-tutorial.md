@@ -69,7 +69,9 @@ Once in the virtual machine, notice that all the necessary development tools hav
 To reiterate, it is recommended to follow the developer journey from start to finish in the following order:
 
 ##### Deployment option tutorial lab links
+
 TODO: Replace MS repo links
+
 - [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
 - [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
 - [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
@@ -85,7 +87,7 @@ TODO: Replace MS repo links
 
 Additionally, some applications are more than just a web application with a database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities. 
 
-It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure that the necessary pre-requisite items are available to move on to the more complex deployments.
+It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure the necessary pre-requisite Azure services and resources are available for the reader to progress to the more complex deployment examples.
 
 - [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
   - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
@@ -99,8 +101,7 @@ It is recommended that each of the above scenarios is executed in the order show
 
 ### Sample Application evolution
 
-
-The sample application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/en-us/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/en-us/azure/architecture/microservices/design/patterns). 
+The Sample Application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/en-us/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/en-us/azure/architecture/microservices/design/patterns).
 
 After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture. See: [Deploying a Laravel app backed by a Java REST API to AKS](./../artifacts/00-Sample-App/README.md).
 
