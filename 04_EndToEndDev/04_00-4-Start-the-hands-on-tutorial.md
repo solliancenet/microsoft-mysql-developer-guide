@@ -2,11 +2,11 @@
 
 ### Development environment setup
 
-The first step to exploring the evolution of MySQL Application development is to get the environment setup and configure the infrastructure.
+The first step to exploring the evolution of MySQL Application development is to get the environment set up and configure the infrastructure.
 
-We provided two ARM templates that can be deployed that will setup the environment.  The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. In the template, you specify the resources to deploy and the properties for those resources.
+We provided two ARM templates that can be deployed that will set up the environment.  The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. In the template, you specify the resources to deploy and the properties for those resources.
 
-One is a **basic deployment** of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and vnet integrations.  It also includes items like Azure Firewall and other security related configurations.
+One is a **basic deployment** of services that are exposed to the internet and the other is a more secure environment that utilizes private endpoints and VNet integrations.  It also includes items like Azure Firewall and other security-related configurations.
 
 The basic template is the cheaper way to go and should work without any configuration.  The **secure template** will have much higher costs and will require special configuration and changes to get the samples to work properly.
 
@@ -17,11 +17,11 @@ Below are two methods of deploying an ARM template:
 **Azure Portal**
 
 - Login into the Azure Portal and choose a valid Subscription.
-- Searchfor 'Deploy a custom template'.
+- Search for 'Deploy a custom template'.
 
 ![](media/search-for-custom-template.png)
 
-- Select 'Build your own custom template in the editor'.
+- Select 'Build your own template in the editor'.
 
 ![](media/build-your-own-custom-template.png)
 
@@ -38,7 +38,7 @@ Below are two methods of deploying an ARM template:
 - Select the **Review + create** button.
 - Check for validation errors. For example, you may have exceeded your quota for that subscription and region.
 
-Another option for deploying infrastructure using a template, is to use Azure CLI or PowerShell.  Here is a tutorial guide:
+Another option for deploying infrastructure using a template is to use Azure CLI or PowerShell.  Here is a tutorial guide:
 
 [Tutorial: Deploy a local ARM template](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-tutorial-local-template?tabs=azure-cli)
 
@@ -49,9 +49,9 @@ Another option for deploying infrastructure using a template, is to use Azure CL
 
 #### Step 2 - Explore the development environment
 
-Once the template has deployed, several resources will be deployed to support the developer journey.  Not all of these will be used but are provided in case other paths would like to be explored.
+Once the template has been deployed, several resources will be deployed to support the developer journey.  Not all of these will be used but are provided in case other paths would like to be explored.
 
-As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine that has been deployed that will be used to perform all the activities.  Login to this virtual machine by doing the following:
+As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine has been deployed that will be used to perform all the activities.  Login to this virtual machine by doing the following:
 
 - Open Azure Portal
 - Browse to your resource group
@@ -62,7 +62,7 @@ As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine that has be
 - For the username, type **wsuser**
 - For the password, type **Solliance123**
 
-Once in the virtual machine, notice that all the necessary development tools have already been installed.  Additionally, the supporting github repository has been downloaded that includes all the artifacts needed to start the developer journey. These files can be found on the **mysqldevSUFFIX-paw1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
+Once in the virtual machine, notice that all the necessary development tools have already been installed.  Additionally, the supporting GitHub repository has been downloaded that includes all the artifacts needed to start the developer journey. These files can be found on the **mysqldevSUFFIX-paw1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
 
 #### Step 3 - Learn and try the architecture and deployment options
 
@@ -83,9 +83,9 @@ TODO: Replace MS repo links
 
 ##### Compute and orchestration tutorial lab links
 
-Additionally, some applications are more than just a web application with database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities. 
+Additionally, some applications are more than just a web application with a database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities. 
 
-It is recommended that each of the above scenarios are executed in the order shown so that a full picture of the steps involved in the development evolution are understood.  This will also ensure that the necessary pre-requisite items are available to move on to the more complex deployments.
+It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure that the necessary pre-requisite items are available to move on to the more complex deployments.
 
 - [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
   - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
