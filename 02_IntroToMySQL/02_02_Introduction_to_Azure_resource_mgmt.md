@@ -68,7 +68,7 @@ Azure runs on a common framework of backend resource services and every action t
 
 ##### Evolving
 
-Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsibility for how services are being configured and the access teams, users and applications are authorized with to those resources.
+Moving workloads to Azure alleviates some of the administrative burdens, but not all. Even though there is no need to worry about the data center, there is still responsibility for how services are being configured and the access teams, users, and applications are authorized with to those resources.
 
 By using the existing command-line tools and REST APIs, it is possible to build custom tools to automate and report on resource configurations that do not meet any organizational requirements that are required.
 
@@ -126,7 +126,7 @@ By using the Azure CLI it is possible to decompile ARM templates to Bicep using 
 az bicep decompile --file template.json
 ```
 
-Additionally, the [Bicep playground](https://aka.ms/bicepdemo) tool can perform a similar decompilation of ARM templates.
+Additionally, the [Bicep playground](https://aka.ms/bicepdemo) tool can perform similar decompilation of ARM templates.
 
 [Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
@@ -153,7 +153,7 @@ To develop an effective organizational hierarchy of resources, Azure administrat
 Azure provides [multiple support plans for businesses](https://azure.microsoft.com/support/plans/), depending on their business continuity requirements. There is also a large user community:
 
 - [StackOverflow Azure Tag](https://stackoverflow.com/questions/tagged/azure)
-- [@Azure on Twitter](https://twitter.com/azure)
+- [Azure on Twitter](https://twitter.com/azure)
 - Move to Azure efficiently with customized guidance from Azure engineers. [FastTrack for Azure](https://azure.microsoft.com/programs/azure-fasttrack/)
 
 #### Training

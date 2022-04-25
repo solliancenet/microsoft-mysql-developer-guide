@@ -40,7 +40,7 @@ Here are a few other notable advantages of Flexible Server.
 
 - [Read replicas:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas) Read replicas help teams scale their applications by providing read-only copies of the data updated on the master node. Often, applications that run on elastic, autoscaling services, like Azure App Service, couple well with read replicas.
   
-- [Input output operations per second (IOPS):](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
+- [Input-output operations per second (IOPS):](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
 
   ![](media/mysql_iops_configuration.png)
 

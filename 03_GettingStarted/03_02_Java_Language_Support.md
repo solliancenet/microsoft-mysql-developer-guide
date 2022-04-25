@@ -4,7 +4,7 @@ This section describes tools to interact with Azure Database for MySQL Flexible 
 
 #### Example code
 
-Refer to the [Quickstart: Use Java and JDBC with Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/connect-java)
+Refer to the [Quickstart: Use Java and JDBC with Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/connect-java)
 
 ### Application connectors
 
@@ -28,7 +28,7 @@ Flexible Server is compatible with all Java client utilities for MySQL Community
 
 #### IntelliJ IDEA
 
-Flexible server will be supported in the future.
+Flexible Server will be supported in the future.
 
 #### Eclipse
 

@@ -28,7 +28,7 @@ Because IaaS MySQL hosting gives greater control over the MySQL database engine 
 
 #### IaaS (Containers)
 
-Although VMs are typically considered the primary IaaS approach, containerizing MySQL instances and applications can also be included in this approach.  Modernizing applications allows for more opportunities for deployment and management with Kubernetes and container hosting environments coming into the picture.  Azure provides Azure Kubernetes Service (AKS) and as explored about below, several other PaaS based approaches to hosting MySQL and application containers.
+Although VMs are typically considered the primary IaaS approach, containerizing MySQL instances and applications can also be included in this approach.  Modernizing applications allows for more opportunities for deployment and management with Kubernetes and container hosting environments coming into the picture.  Azure provides Azure Kubernetes Service (AKS) and as explored below, several other PaaS-based approaches to hosting MySQL and application containers.
 
 #### PaaS (DBaaS)
 
@@ -40,7 +40,7 @@ The Azure DBaaS MySQL offering is [Azure Database for MySQL](https://azure.micro
 
 #### PaaS (Containers)
 
-In addition to the IaaS and Paas options mentioned above, it is possible to choose to host container based instances inside PaaS based services such as Azure Container Instances and Azure App Services.
+In addition to the IaaS and PaaS options mentioned above, it is possible to choose to host container based instances inside PaaS-based services such as Azure Container Instances and Azure App Services.
 
 #### Video reference
 

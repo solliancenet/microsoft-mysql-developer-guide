@@ -18,7 +18,7 @@ Just like other DBMS systems, MySQL has multiple deployment options for developm
 
 ### On-premises
 
-MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and has the disadvantages of hardware/OS maintenance.
+MySQL is a cross-platform offering, and corporations can utilize their on-premises hardware to deploy highly-available MySQL configurations. MySQL on-premises deployments are highly configurable, but they require significant upfront hardware capital expenditure and have the disadvantages of hardware/OS maintenance.
 
 One benefit to choosing a cloud-hosted environment over on-premises configurations is there are no large upfront costs. Organizations can choose the option to pay monthly subscription fees as pay-as-you-go or to commit to a certain usage level for discounts. Maintenance, up-to-date software, security, and support all fall into the responsibility of the cloud provider so IT staff are not required to utilize precious time troubleshooting hardware or software issues.
 
@@ -37,7 +37,7 @@ One benefit to choosing a cloud-hosted environment over on-premises configuratio
 
 Migrating an organization's infrastructure to an IaaS solution helps reduce maintenance of on-premises data centers, save money on hardware costs, and gain real-time business insights. IaaS solutions give the flexibility to scale IT resources up and down with demand. They also help to quickly provision new applications and increase the reliability of the existing underlying infrastructure.
 
-IaaS lets organizations bypass the cost and complexity of buying and managing physical servers and datacenter infrastructure. Each resource is offered as a separate service component, and only requires for paying for resources for as long as they are needed. A cloud computing service provider like Microsoft Azure manages the infrastructure, while organizations purchase, install, configure, and manage their own software—including operating systems, middleware, and applications.
+IaaS lets organizations bypass the cost and complexity of buying and managing physical servers and datacenter infrastructure. Each resource is offered as a separate service component and only requires paying for resources for as long as they are needed. A cloud computing service provider like Microsoft Azure manages the infrastructure, while organizations purchase, install, configure, and manage their own software—including operating systems, middleware, and applications.
 
 **Pros**
 
@@ -51,9 +51,9 @@ IaaS lets organizations bypass the cost and complexity of buying and managing ph
 
 ### Containers
 
-While much more lightweight, containers are similar to VMs, and can be started and stopped in a few seconds. Containers also offer tremendous portability, which makes them ideal for developing an application locally on a development machine and then hosting it in the cloud, in test, and later in production. Containers can even run  on-premises or in other clouds. This is possible because the environment that is used on the development machine travels with the container, so the application always runs in the same way. Containerized applications are flexible, cost-effective, and deploy quickly.
+While much more lightweight, containers are similar to VMs and can be started and stopped in a few seconds. Containers also offer tremendous portability, which makes them ideal for developing an application locally on a development machine and then hosting it in the cloud, in test, and later in production. Containers can even run  on-premises or in other clouds. This is possible because the environment that is used on the development machine travels with the container, so the application always runs in the same way. Containerized applications are flexible, cost-effective, and deploy quickly.
 
-MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL in customized and containerized applications. A container-based MySQL instance can persist data to the hosting environment via the container runtime which will allow for high-availability across container instances and environments.
+MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL in customized and containerized applications. A container-based MySQL instance can persist data to the hosting environment via the container runtime which will allow for high availability across container instances and environments.
 
 **Pros**
 
@@ -69,4 +69,4 @@ MySQL offers a [Docker image](https://hub.docker.com/_/mysql) to operate MySQL i
 
 ### Cloud PaaS
 
-MySQL databases can be deployed on public cloud platforms by utilizing VMs, container runtimes and Kubernetes. However, these platforms require a middle ground of customer management.  If a fully managed environment is required, cloud providers offer their own managed MySQL products, such as Amazon RDS for MySQL and Google Cloud SQL for MySQL.  Microsoft Azure offers Azure Database for MySQL.
+MySQL databases can be deployed on public cloud platforms by utilizing VMs, container runtimes, and Kubernetes. However, these platforms require a middle ground of customer management.  If a fully managed environment is required, cloud providers offer their own managed MySQL products, such as Amazon RDS for MySQL and Google Cloud SQL for MySQL.  Microsoft Azure offers Azure Database for MySQL.

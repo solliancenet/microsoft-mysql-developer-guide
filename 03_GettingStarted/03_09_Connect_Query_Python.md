@@ -4,7 +4,7 @@ This section will demonstrate how to query Azure Database for MySQL Flexible Ser
 
 ### Setup
 
-Follow one of the methods in the [Provision Flexible Server and a database] document to create a Flexible Server instance with a database.
+Follow one of the methods in the [Create a Flexible Server database] document to create a Flexible Server instance with a database.
 
 Moreover, install Python 3.7 or above from the [Downloads page](https://www.python.org/downloads/). This sample was tested using Python 3.8.
 
@@ -21,7 +21,7 @@ python -m venv venv
 
 This section is based on [Microsoft's sample](https://docs.microsoft.com/azure/mysql/flexible-server/connect-python).
 
-The first code snippet creates a table, `inventory`, with three columns. It uses raw queries to create the `inventory` table and insert three rows. If the snippet succeeds, an output like the one below will be displayed.
+The first code snippet creates a table, `inventory`, with three columns. It uses raw queries to create the `inventory` table and insert three rows. If the snippet succeeds, the following output will be displayed.
 
 ```
 Connection established
@@ -79,6 +79,6 @@ Deleted 1 row(s) of data.
 Done.
 ```
 
-At this point, a successfully opened connection to Flexible Server was established, a table created (DDL), and CRUD operations performed (DML) against data in the table.
+At this point, a successfully opened connection to Flexible Server was established, a table was created (DDL), and CRUD operations were performed (DML) against data in the table.
 
 If a Python Virtual Environment was created, simply enter `deactivate` into the console to remove it.

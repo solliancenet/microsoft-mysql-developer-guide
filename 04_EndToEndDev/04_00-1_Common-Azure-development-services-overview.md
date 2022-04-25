@@ -1,6 +1,6 @@
 ## Common Azure development services overview
 
-This section explains common cloud application architectures and Azure services. While these services are not directly related to MySQL, they are often used in modern Azure applications. This content provides the fundamental understanding of the common Azure development resources. Subsequent material will reference these Azure services heavily.
+This section explains common cloud application architectures and Azure services. While these services are not directly related to MySQL, they are often used in modern Azure applications. This content provides a fundamental understanding of the common Azure development resources. Subsequent material will reference these Azure services heavily.
 
 ### Web Apps
 
@@ -61,7 +61,7 @@ On Azure, organizations often deploy microservices to Azure Kubernetes Service t
 
 ### API Management
 
-Azure API Management allows organizations to manage and securely expose their APIs hosted on diverse environments from a central service. API Management simplifies legacy API modernization, API exposure to multiple platforms, and data interchange between businesses. Applications call APIs through an *API gateway* that validates credentials, enforces quotas, serializes requests in different protocols, and more. Developers operate their API Management instances through the management plane, and they expose API documentation for internal and external users through the Developer portal.
+Azure API Management allows organizations to manage and securely expose their APIs hosted in diverse environments from a central service. API Management simplifies legacy API modernization, API exposure to multiple platforms, and data interchange between businesses. Applications call APIs through an *API gateway* that validates credentials, enforces quotas, serializes requests in different protocols, and more. Developers operate their API Management instances through the management plane, and they expose API documentation for internal and external users through the Developer portal.
 
 ![This image demonstrates the control plane, management plane, and developer portal elements of API Management.](./media/api-management-components.png "API Management components")
 
@@ -76,7 +76,7 @@ Like other Azure resources, API Management offers comprehensive RBAC support, ac
 
 Event-driven apps create, ingest, and process events (state changes) in real-time. Event producers and event consumers are loosely-coupled, and every consumer sees every event. Event-driven architectures can perform complex event handling, such as aggregations over time, and operate with large volumes of data produced rapidly.
 
-Azure provides different services for relaying *messages* and *events*. When one system sends a message to another, it expects the receiving system to handle the message in a particular way and respond. However, with events, the publisher has no expectation about how the event is handled.
+Azure provides different services for relaying *messages* and *events*. When one system sends a message to another, it expects the receiving system to handle the message in a particular way and respond. However, with events, the publisher does not care how the event is handled.
 
 #### Azure Event Grid
 
