@@ -20,6 +20,12 @@ Azure Database for MySQL provides two options for deployment: Single Server and 
 
 Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than Single Server.
 
+Learn how you can develop applications faster with Azure Database for MySQL Flexible Server. 
+
+![](media/develop-app-faster-youtube.png)
+
+Watch: [Develop applications faster with Azure Database for MySQL – Flexible Server | Data Exposed](https://www.youtube.com/watch?v=RZXbwscC9FU&t=266s)
+
 Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
 > *Locally-redundant storage* replicates data within a single *availability zone*. *Availability zones* are present within a single Azure region (such as East US) and are geographically isolated. All Azure regions that support availability zones have at least three.

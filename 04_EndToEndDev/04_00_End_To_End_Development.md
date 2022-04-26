@@ -7,3 +7,4 @@ With a configured development environment available, it is time to explore the v
 This chapter focuses on these subjects:
 
 ![](media/end-to-end-deployment-chapter-steps.png)
+

@@ -1,25 +1,80 @@
 ## Monitoring database operations
 
-Azure can be configured to monitor the database as well.  As you can see from the following screenshot, there are many metrics available out of the box that can be monitored:
+Azure can be configured to monitor the Flexible server database as well.  
 
-![](media/mysql-guide-database-metric-example.png)
+### Azure Database for MySQL overview
 
-Monitoring your Azure Database for MySQL Flexible Server instances allows you to understand database resource constraints, connectivity patterns, causes of application failures, and more.
+The Azure Portal resource overview provides a great overview of the MySQL metrics. This high-level dashboard provides insight on the typical database monitoring counters, like CPU, IO, Query Count, etc.
 
-Once you specify the data that your Azure resource(s) should monitor (varies based on the service), you need to direct that data to a place that Azure Monitor can monitor. For example, with MySQL Flexible Server instances, you can use the **Diagnostic setting** tab of the Azure portal to route MySQL slow query logs and audit logs to Log Analytics workspaces (Azure Monitor Logs).
+![](media/azure-portal-mysql-overview.png)
 
-![This image demonstrates the Diagnostic setting tab of Azure portal to set the destination for logs.](./media/diagnostic-setting-tab.png "Log destination")
+### Metrics
 
+For more specific metrics, navigate to the **Monitoring** section. Select **Metrics**. More custom granular metrics can be configured and displayed.
 
-In addition to the views in Azure Monitor, log data collected can be sent to Log Analytics workspaces and then analyzed with [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) queries to quickly retrieve, consolidate, and analyze collected data.
+![](media/mysql-azure-portal-metrics.png)
 
-Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
+### Diagnostic settings
 
+Diagnostic settings allow you to continuously route platform logs and metrics to other storage and ingestion endpoints.
 
+See: [Supported metrics with Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-supported)
 
+![](media/mysql-diagnostic-settings.png)
 
+### Log Analytics
 
-## Query Performance Insights
+Once you configure your Diagnostic Settings, you can navigate to the Log Analytics workspace. You can perform specific filtered queries on interesting categories. Are you looking for slow queries?
+
+![](media/azure-diagnostic-query.png)
+
+Now, you can review the results from your query. There is a wealth of information about the category.
+
+![](media/azure-diagnostic-query-result.png)
+
+MySQL audit log information is also available.
+
+![](media/mysql-log-analytics-audit-log-query.png)
+
+### Workbooks
+
+As mentioned previously, Workbooks is a simple canvas to visualize data from different sources, like Log Analytics workspace. It is possible to view performance and storage metrics all in a single pane.
+
+![](media/workbook-example.png)
+
+You access Query Performance Insight.
+
+![](media/query-performance-insight.png)
+
+### Resource health
+
+It is important to know if the MySQL service has experience a downtime and the related details.  Resource health can assist with this information. If you need additional assistance, there is a helpful contact support link available.
+
+![](media/resource-health-example.png)
+
+### Activity logs
+
+This area captures the administrative events captured over a period of time.
+
+![](media/activity-logs-example.png)
+
+The event details can be viewed as well. This can be extremely helpful when troubleshooting.
+
+![](media/activity-log-example-detail.png)
+
+### Creating alerts
+
+You can create alerts a couple of ways.  Navigate to the **Alerts** menu item in the portal and create it manually.
+
+![](media/create-alert.png)
+
+You can also create alerts from the Metrics section.
+
+![](media/configure-alert-example.png)
+
+Once the alert has been configured, you can create an action group to send a notification the operations team.
+
+### Query Performance Insights
 
 In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
 
@@ -29,13 +84,13 @@ In addition to the query performance insight tool, `Wait statistics` provides a 
 
 Finally, the `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can be used to log long-running queries (default long query time is 10 sec).
 
-## Server Logs
+### Server Logs
 
 Server logs from Azure Databse for MySQL can also be extracted through the Azure platform *resource logs*, which track data plane events. Azure can route these logs to Log Analytics workspaces for manipulation and visualization through KQL.
 
 In addition to Log Analytics, the data can also be routed to Event Hubs for third-party integrations and Azure storage for long term backup.
 
-## MySQL audit logs
+### MySQL audit logs
 
 MySQL has a robust built-in audit log feature. By default, this [audit log feature is disabled](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs) in Azure Database for MySQL.  Server level logging can be enabled by changing the `audit_log_enabled` server parameter. Once enabled, logs can be accessed through [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) and [Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/design-logs-deployment) by turning on [diagnostic logging](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics).
 
@@ -53,3 +108,8 @@ Audit logging is controlled by the `audit_log_enabled` server parameter in Flexi
 > For more details about the logging server parameters, including the type of events that can be logged, consult [the documentation.](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs)
 
 Reference [Configure and access audit logs for Azure Database for MySQL in the Azure Portal](https://docs.microsoft.com/azure/mysql/howto-configure-audit-logs-portal) for more information.
+
+
+In addition to the views in Azure Monitor, log data collected can be sent to Log Analytics workspaces and then analyzed with [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) queries to quickly retrieve, consolidate, and analyze collected data.
+
+Administrators unfamiliar with KQL can find a SQL to KQL cheat sheet [here](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet) or the [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries) page.
