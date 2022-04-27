@@ -136,3 +136,7 @@ Failover Steps:
 - Select one of the read replicas.
 - Select **Stop Replication**. This will break the read replica.
 - Modify all applications connection strings to point to the new main instance.
+
+### Use fully qualified domain names in connection strings
+
+- Use a fully qualified domain name instead of an IP address in connection strings. If network changes are made causing IP addresses change, your application should be operationally. Administrators do not have locate and change dependent application configuration.
