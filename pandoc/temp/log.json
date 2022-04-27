@@ -146,6 +146,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/develop-app-faster-youtube.png",
+        "for": "media/develop-app-faster-youtube.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/end-to-end-deployment-chapter-steps.png",
         "for": "media/end-to-end-deployment-chapter-steps.png"
     },
@@ -254,14 +260,44 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/azure-monitor-overview-topics.png",
+        "for": "media/azure-monitor-overview-topics.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/how-azure-monitor-works.png",
         "for": "media/how-azure-monitor-works.png"
     },
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/diagnostic-setting-tab.png",
-        "for": "./media/diagnostic-setting-tab.png"
+        "from": "media/azure-metric-icon.png",
+        "for": "media/azure-metric-icon.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/activity-logs.png",
+        "for": "media/activity-logs.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/log-analytics-icon.png",
+        "for": "media/log-analytics-icon.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/workbooks-icon.png",
+        "for": "media/workbooks-icon.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/resource-health.png",
+        "for": "media/resource-health.png"
     },
     {
         "type": "LoadedResource",
@@ -302,14 +338,80 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/mysql-guide-database-metric-example.png",
-        "for": "media/mysql-guide-database-metric-example.png"
+        "from": "media/azure-portal-mysql-overview.png",
+        "for": "media/azure-portal-mysql-overview.png"
     },
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/AzureMetrics_query_cpu.png",
-        "for": "./media/AzureMetrics_query_cpu.png"
+        "from": "media/mysql-azure-portal-metrics.png",
+        "for": "media/mysql-azure-portal-metrics.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-diagnostic-settings.png",
+        "for": "media/mysql-diagnostic-settings.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-diagnostic-query.png",
+        "for": "media/azure-diagnostic-query.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-diagnostic-query-result.png",
+        "for": "media/azure-diagnostic-query-result.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/mysql-log-analytics-audit-log-query.png",
+        "for": "media/mysql-log-analytics-audit-log-query.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/workbook-example.png",
+        "for": "media/workbook-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/query-performance-insight.png",
+        "for": "media/query-performance-insight.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/resource-health-example.png",
+        "for": "media/resource-health-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/activity-logs-example.png",
+        "for": "media/activity-logs-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/activity-log-example-detail.png",
+        "for": "media/activity-log-example-detail.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/create-alert.png",
+        "for": "media/create-alert.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/configure-alert-example.png",
+        "for": "media/configure-alert-example.png"
     },
     {
         "type": "LoadedResource",

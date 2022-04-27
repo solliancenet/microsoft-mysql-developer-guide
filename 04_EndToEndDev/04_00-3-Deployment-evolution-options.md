@@ -7,16 +7,16 @@ The following scenarios will be discussed and demonstrated as part of this Azure
 
 ### Deployment option TOC
 
-- [Classic deployment]
-- [Azure VM Deployment]
-- [Simple App Service deployment with Azure Database for MySQL Flexible Server]
-- [App Service with In-App MySQL]
-- [Continuous Integration (CI) and Continuous Delivery (CD)]
-- [Containerizing layers with Docker]
-- [Azure Container Instances (ACI)]
-- [App Service Containers]
-- [Azure Kubernetes Service (AKS)]
-- [AKS with MySQL Flexible Server]
+1. [Classic deployment]
+2. [Azure VM Deployment]
+3. [Simple App Service deployment with Azure Database for MySQL Flexible Server]
+4. [App Service with In-App MySQL]
+5. [Continuous Integration (CI) and Continuous Delivery (CD)]
+6. [Containerizing layers with Docker]
+7. [Azure Container Instances (ACI)]
+8. [App Service Containers]
+9. [Azure Kubernetes Service (AKS)]
+10. [AKS with MySQL Flexible Server]
 
 ## Classic deployment
 

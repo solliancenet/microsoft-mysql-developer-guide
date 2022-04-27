@@ -64,7 +64,7 @@ As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine has been de
 
 Once in the virtual machine, notice that all the necessary development tools have already been installed.  Additionally, the supporting GitHub repository has been downloaded that includes all the artifacts needed to start the developer journey. These files can be found on the **mysqldevSUFFIX-paw1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
 
-#### Step 3 - Learn and try the architecture and deployment options
+#### Step 3 - Start your journey!
 
 To reiterate, it is recommended to follow the developer journey from start to finish in the following order:
 
@@ -72,16 +72,18 @@ To reiterate, it is recommended to follow the developer journey from start to fi
 
 TODO: Replace MS repo links
 
-- [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
-- [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
-- [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
-- [App Service with InApp MySQL](./../artifacts/02-03-CloudDeploy-InApp/README.md)
-- [Continuous Integration / Continuous Delivery](./../artifacts/02-04-CloudDeploy-CICD/README.md)
-- [Containerizing layers with Docker](./../artifacts/03-00-Docker/README.md)
-- [Azure Container Instances (ACI)](./../artifacts/01-ClassicDeploy/README.md)
-- [App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md)
-- [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
-- [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
+Click the links to complete each journey before going to the next
+
+1. [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
+2. [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
+3. [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
+4. [App Service with InApp MySQL](./../artifacts/02-03-CloudDeploy-InApp/README.md)
+5. [Continuous Integration / Continuous Delivery](./../artifacts/02-04-CloudDeploy-CICD/README.md)
+6. [Containerizing layers with Docker](./../artifacts/03-00-Docker/README.md)
+7. [Azure Container Instances (ACI)](./../artifacts/01-ClassicDeploy/README.md)
+8. [App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md)
+9. [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
+10. [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
 
 ##### Compute and orchestration tutorial lab links
 
