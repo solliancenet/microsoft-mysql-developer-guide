@@ -4,23 +4,25 @@ Moving to cloud-based services doesn't mean the entire internet will have access
 
 In today's geopolitical environment, organizations must take proactive security measures to protect their workloads.  Azure simplifies many of these complex tasks and requirements through the various security and compliance resources provided out of the box.  This section will focus on many of these tools.
 
-## Threat protection
+## Enterprise-grade Security, Compliance, and Privacy that comes with Azure
+
+### Threat protection
 
 In the event that a user or application credential is compromised, logs are not likely to reflect any failed login attempts.  Compromised credentials can allow bad actors to access and download the data. [Azure Threat Protection](https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-threat-protection) and [Microsoft Defender for open-source relational databases](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-introduction) can watch for anomalies in logins (such as unusual locations, rare users, or brute force attacks) and other suspicious activities.  Administrators can be notified in the event something does not `look` right which can then assist with patching vulnerabilities. Microsoft Defender for open-source relational databases can be enabled by following the [Enable Microsoft Defender for open-source relational databases and respond to alerts](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-usage) article.
 
-## Encryption
+### Encryption
 
 TODO - Add some picture
 
-Both Azure Database for MySQL offerings, Single Server and Flexible Server, offers various encryption features including encryption for data, backups, and temporary files created during query execution.
+Azure Database for MySQL offers various encryption features including encryption for data, backups, and temporary files created during query execution.
 
-Data stored in the Azure Database for MySQL instances are encrypted at rest by default. Any automated backups are also encrypted to prevent potential leakage of data to unauthorized parties. This encryption is typically performed with a key generated when the Azure Database for MySQL instance is created. In addition to this default service encryption key, administrators have the option to [bring your own key (BYOK)](https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql) for added security. 
+Data stored in the Azure Database for MySQL instances are encrypted at rest by default. Any automated backups are also encrypted to prevent potential leakage of data to unauthorized parties. This encryption is typically performed with a key generated when the Azure Database for MySQL instance is created. In addition to this default service encryption key, administrators have the option to [bring your own key (BYOK)](https://docs.microsoft.com/azure/mysql/concepts-data-encryption-mysql) for added security.
 
 >**Note:** This feature is only supported in the General Purpose and Memory Optimized tiers.
 
-When using a customer-managed key strategy, it is vital to understand responsibilities around key lifecycle management. Customer keys are stored in an [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/basic-concepts) and then accessed via policies. 
+When using a customer-managed key strategy, it is vital to understand responsibilities around key lifecycle management. Customer keys are stored in an [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/basic-concepts) and then accessed via policies.
 
->![Warning](media/warning.png "Warning")It is vital to follow all recommendations for key management, as the loss of the encryption key equates to the loss of data access.
+>![Warning](media/warning.png "Warning") **Warning:** It is vital to follow all recommendations for key management, as the loss of the encryption key equates to the loss of data access.
 
 In addition to customer-managed keys, use service-level keys to [add double encryption](https://docs.microsoft.com/azure/mysql/concepts-infrastructure-double-encryption).  Implementing this feature will provide highly encrypted data at rest, but it does come with encryption performance penalties. Testing should be performed to ensure an acceptable level of performance is maintained.
 
@@ -29,7 +31,7 @@ In addition to be encrypted at rest, data can be encrypted during transit using 
 - [Single Server](https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security)
 - [Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl)
 
-## Microsoft Sentinel
+### Microsoft Sentinel
 
 Many of the items discussed thus far operate in their own sphere of influence and are not designed to work directly with each other. Every secure feature provided by Microsoft Azure and corresponding applications like Azure Active Directory contain a piece of the security puzzle.  
 
@@ -39,8 +41,8 @@ With all the disparate components, something is needed to bring all the pieces t
 
 Microsoft Sentinel works in conjunction with Azure Log Analytics and other Microsoft security services to provide a log storage, query and alerting solution.  Through machine learning, artificial intelligence and user behavior analytics (UEBA), Microsoft Sentinel can provide a higher understanding of potential issues or incidents that may not have seen with a disconnected environment.
 
-## Microsoft Purview
+### Microsoft Purview
 
-Data privacy has evolved to be a big focused for organization over the past few years.  Determining where sensitive information lives across your data estate is a requirement in today's privacy centered society.
+Data privacy has evolved to be a big focused for organization over the past few years. Determining where sensitive information lives across your data estate is a requirement in today's privacy centered society.
 
 [Microsoft Purview](https://docs.microsoft.com/en-us/azure/purview/overview) can scan your data estate, including your Azure Database for MySQL instances, to find personally identifiable information or other sensitive information types.  This data can then be analyzed, classified and lineage defined across your cloud based resources.

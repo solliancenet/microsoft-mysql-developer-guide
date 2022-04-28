@@ -99,7 +99,7 @@ Launch the Cloud Shell in a browser at [shell.azure.com](shell.azure.com).
 The Azure portal and Windows PowerShell can be used for managing the Azure Database for MySQL. To get started with Azure PowerShell, install the [Azure PowerShell cmdlets](https://docs.microsoft.com/powershell/azure/?view=azps-7.3.0)  for MySQL with the following PowerShell command:
 
 ```PowerShell
-Install-Module -Name Az.MySql
+Install-Module -Name Az.MySQL
 ```
 
 After the modules are installed, reference tutorials such as the following to learn ways to take advantage of scripting management activities:

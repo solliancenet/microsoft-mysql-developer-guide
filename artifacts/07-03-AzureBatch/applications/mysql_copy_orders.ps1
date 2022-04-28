@@ -23,13 +23,13 @@ choco install mysql-cli
 
 #install .net connector
 choco install mysql-connector -y
-#Install-package MySql.Data
+#Install-package MySQL.Data
 
 Connect-AzAccount -identity
 
-[void][System.Reflection.Assembly]::LoadWithPartialName("MySql.Data") 
+[void][System.Reflection.Assembly]::LoadWithPartialName("MySQL.Data") 
 
-#$path = "C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\v4.8\MySql.Data.dll";
+#$path = "C:\Program Files (x86)\MySQL\MySQL Connector Net 8.0.28\Assemblies\v4.8\MySQL.Data.dll";
 #[void][System.Reflection.Assembly]::Load($path) 
 
 $server = $env:DB_HOST;
@@ -43,13 +43,13 @@ $password = $env:DB_PASSWORD;
 #$password = "Solliance123";
 
 #run the queries...
-$myconnection = New-Object MySql.Data.MySqlClient.MySqlConnection
+$myconnection = New-Object MySQL.Data.MySqlClient.MySqlConnection
 
 $myconnection.ConnectionString = "server=$server;user id=$user;password=$password;database=$database;pooling=false"
 
 $myconnection.Open()
 
-$mycommand = New-Object MySql.Data.MySqlClient.MySqlCommand
+$mycommand = New-Object MySQL.Data.MySqlClient.MySqlCommand
 $mycommand.Connection = $myconnection
 $mycommand.CommandText = "SHOW DATABASES"
 $myreader = $mycommand.ExecuteReader();

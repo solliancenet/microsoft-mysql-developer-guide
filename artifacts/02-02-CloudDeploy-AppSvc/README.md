@@ -165,7 +165,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
 ### Add Firewall IP Rule and Azure Access
 
 1. Switch to the Azure Portal
-2. Browse to the `mysqldevSUFFIX` Azure Database for MySql Single server
+2. Browse to the `mysqldevSUFFIX` Azure Database for MySQL Single server
 3. Under **Settings**, select **Connection security**
 4. Select **Add current client IP address (...)**
 <!--

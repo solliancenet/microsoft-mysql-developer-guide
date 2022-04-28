@@ -481,7 +481,7 @@ the [Azure PowerShell cmdlets] for MySQL with the following PowerShell
 command:
 
 ``` powershell
-Install-Module -Name Az.MySql
+Install-Module -Name Az.MySQL
 ```
 
 After the modules are installed, reference tutorials such as the
@@ -3199,7 +3199,7 @@ access. When enabling virutal network integration, the target virtual
 network subnet must be *delegated*, meaning that it can only contain
 Flexible Server instances. Because Flexible Server is deployed in a
 subnet, it will receive a private IP address. In order to resolve the
-DNS names of Azure Database for MySql instances, the virtual networks
+DNS names of Azure Database for MySQL instances, the virtual networks
 are integrated with a private DNS zone to support domain name resolution
 for the Flexible Server instances.
 

@@ -23,7 +23,7 @@ choco install mysql-cli
 
 #install .net connector
 choco install mysql-connector -y
-#Install-package MySql.Data
+#Install-package MySQL.Data
 
 #get environment variables
 $vaultName = $env:Batch_VaultName;
@@ -34,7 +34,7 @@ $TenantId = $env:Batch_TenantId;
 #login to azure using certificatre
 Connect-AzAccount -ServicePrincipal -CertificateThumbprint $Thumbprint -ApplicationId $ApplicationId -TenantId $TenantId
 
-[void][System.Reflection.Assembly]::LoadWithPartialName("MySql.Data") 
+[void][System.Reflection.Assembly]::LoadWithPartialName("MySQL.Data") 
 
 $server = Get-AzKeyVaultSecret -VaultName $vaultName -Name "DB-SERVER" -AsPlainText;
 $database = Get-AzKeyVaultSecret -VaultName $vaultName -Name "DB-DATABASE" -AsPlainText;
@@ -42,13 +42,13 @@ $user = Get-AzKeyVaultSecret -VaultName $vaultName -Name "DB-USER" -AsPlainText;
 $password = Get-AzKeyVaultSecret -VaultName $vaultName -Name "DB-PASSWORD" -AsPlainText;
 
 #run the queries...
-$myconnection = New-Object MySql.Data.MySqlClient.MySqlConnection
+$myconnection = New-Object MySQL.Data.MySqlClient.MySqlConnection
 
 $myconnection.ConnectionString = "server=$server;user id=$user;password=$password;database=$database;pooling=false"
 
 $myconnection.Open()
 
-$mycommand = New-Object MySql.Data.MySqlClient.MySqlCommand
+$mycommand = New-Object MySQL.Data.MySqlClient.MySqlCommand
 $mycommand.Connection = $myconnection
 $mycommand.CommandText = "SHOW DATABASES"
 $myreader = $mycommand.ExecuteReader();

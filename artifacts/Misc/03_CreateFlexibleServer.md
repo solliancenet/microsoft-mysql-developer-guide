@@ -15,7 +15,7 @@ az deployment group create --resource-group [RESOURCE GROUP] --template-file ./m
 - Browse to the Azure Portal
 - Select your lab resource group
 - Select **Create**
-- Search for **MySQL**, then select **Azure Database for MySql**
+- Search for **MySQL**, then select **Azure Database for MySQL**
 - Select **Create**
 - In the drop down, select **Flexible Server**
 - Select **Create**
