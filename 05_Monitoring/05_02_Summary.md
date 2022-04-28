@@ -40,4 +40,5 @@ With cloud-based systems, being proactive is a better strategy then being reacti
 - [SQL Kusto cheat sheet](https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet)
 - [Get started with log queries in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
 
-- [Monitor Azure Database for MySQL using Percona Monitoring and Management (PMM)](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/monitor-azure-database-for-mysql-using-percona-monitoring-and/ba-p/2568545)
+- [Monitor Azure Database for MySQL using Percona Monitoring and Management (PMM)](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/monitor-azure-database-for-mysql-using-percona-monito
+ring-and/ba-p/2568545)

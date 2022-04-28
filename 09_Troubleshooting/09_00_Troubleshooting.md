@@ -101,6 +101,14 @@ Following software development best practices makes your code simpler to develop
 
 - If none of the above resolve the issue with the MySQL instance, [send a support request from the Azure portal.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
+## Opening a support ticket
+
+![](media/open-support-ticket.png)
+
+If you need immediate assistance with an issue, [open a support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.
+
+![](media/open-a-support%20ticket.png)
+
 ## Recommended content
 
 [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)

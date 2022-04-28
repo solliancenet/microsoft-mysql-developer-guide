@@ -93,8 +93,8 @@ More Common sets of tests typically utilize TPC benchmarks such as [TPC-H](https
 
 ## Instrumenting vital server resources
 
-The [MySQL Performance Schema](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema) provides a way to inspect internal server execution events at runtime.
+The [MySQL Performance Schema](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema) **sys_schema** provides a way to inspect internal server execution events at runtime. The MySQL performance_schema provides instrumentation for many vital server resources such as memory allocation, stored programs, metadata locking, etc. However, the performance_schema contains more than 80 tables, and getting the necessary information often requires joining tables within the performance_schema, and tables from the information_schema. Building on both performance_schema and information_schema, the sys_schema provides a powerful collection of user-friendly views in a read-only database and is fully enabled in Azure Database for MySQL version 5.7.
 
-TODO: Tim finish.
+![](media/employee-query-full-table-scan.png)
 
 >![Warning](media/warning.png "Warning") **Warning**: The Performance Schema avoids using mutexes to collect or produce data, so there are no guarantees of consistency and results can sometimes be incorrect. Event values in performance_schema tables are nondeterministic and nonrepeatable.

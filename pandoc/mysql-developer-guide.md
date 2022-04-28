@@ -632,7 +632,7 @@ tier and is optimized for workloads that do not continually use the CPU.
 how Flexible Server works for a non-high availability arrangement.
 
 > *Locally-redundant storage* replicates data within a single
-> *availability zone*. *Availability zones* are present within a single
+> [availability zone]. *Availability zones* are present within a single
 > Azure region (such as East US) and are geographically isolated. All
 > Azure regions that support availability zones have at least three.
 
@@ -1780,11 +1780,11 @@ issues.
 
 This is the base application that will be evolved in the future sample
 scripts. This PaaS architecture is a couple of steps ahead of the
-Classic architecture. The Classic architecture example is meant to
-provide an example of an existing on-premises environment that might be
-migrated to the Azure cloud. If you have a new application, you most
-likely we start with the PaaS architecture depicted below. This is the
-easiest path for a user looking to understand the Azure basics.
+Classic architecture. The Classic architecture is meant to be an example
+of an existing on-premises environment that might be migrated to the
+Azure cloud. If you have a new application, you most likely will start
+with the PaaS architecture depicted below. This is the easiest path for
+a user looking to understand the Azure basics.
 
 ![][13]
 
@@ -2503,7 +2503,7 @@ host reboot or degraded host hardware that is predicted to fail after a
 specified time window).
 
 Resource Health provides additional details about the event and the
-recovery process. **It also enables you to contact Microsoft Support
+recovery process. **It also enables you to contact Microsoft Support,
 even if you don't have an active support agreement.**
 
 Resource issue examples:
@@ -2816,7 +2816,7 @@ from different members of the team.
 
 Consider automating the remediation steps in Azure.
 
-For more information: [Successful alerting strategy]
+See: [Successful alerting strategy]
 
 ### Azure alerting concepts
 
@@ -2975,7 +2975,9 @@ being reactive.
 -   [Get started with log queries in Azure Monitor]
 
 -   [Monitor Azure Database for MySQL using Percona Monitoring and
-    Management (PMM)] \# 06 / Networking and Security
+    Management (PMM)]
+
+# 06 / Networking and Security
 
 Moving to cloud-based services doesn't mean the entire internet will
 have access to it at all times. Azure provides best-in-class security
@@ -2988,9 +2990,11 @@ In today's geopolitical environment, organizations must take proactive
 security measures to protect their workloads. Azure simplifies many of
 these complex tasks and requirements through the various security and
 compliance resources provided out of the box. This section will focus on
-many of these tools
+many of these tools.
 
-## Threat protection
+## Enterprise-grade Security, Compliance, and Privacy that comes with Azure
+
+### Threat protection
 
 In the event that a user or application credential is compromised, logs
 are not likely to reflect any failed login attempts. Compromised
@@ -3004,13 +3008,13 @@ Defender for open-source relational databases can be enabled by
 following the [Enable Microsoft Defender for open-source relational
 databases and respond to alerts] article.
 
-## Encryption
+### Encryption
 
 TODO - Add some picture
 
-Both Azure Database for MySQL offerings, Single Server and Flexible
-Server, offers various encryption features including encryption for
-data, backups, and temporary files created during query execution.
+Azure Database for MySQL offers various encryption features including
+encryption for data, backups, and temporary files created during query
+execution.
 
 Data stored in the Azure Database for MySQL instances are encrypted at
 rest by default. Any automated backups are also encrypted to prevent
@@ -3018,14 +3022,18 @@ potential leakage of data to unauthorized parties. This encryption is
 typically performed with a key generated when the Azure Database for
 MySQL instance is created. In addition to this default service
 encryption key, administrators have the option to [bring your own key
-(BYOK)] for added secuerity. This feature is only supported in the
-General Purpose and Memory Optimized tiers.
+(BYOK)] for added security.
+
+> **Note:** This feature is only supported in the General Purpose and
+> Memory Optimized tiers.
 
 When using a customer-managed key strategy, it is vital to understand
 responsibilities around key lifecycle management. Customer keys are
-stored in an [Azure Key Vault] and then accessed via policies. It is
-vital to follow all recommendations for key management, as the loss of
-the encryption key equates to the loss of data access.
+stored in an [Azure Key Vault] and then accessed via policies.
+
+> ![Warning] **Warning:** It is vital to follow all recommendations for
+> key management, as the loss of the encryption key equates to the loss
+> of data access.
 
 In addition to customer-managed keys, use service-level keys to [add
 double encryption]. Implementing this feature will provide highly
@@ -3033,31 +3041,74 @@ encrypted data at rest, but it does come with encryption performance
 penalties. Testing should be performed to ensure an acceptable level of
 performance is maintained.
 
-In additon to be encrypted at rest, data can be encrypted during transit
-using SSL/TLS and is enabled by default. As previously discussed, it may
-be necessary to [modify the applications] to support this change and
-also configure the appropriate TLS validation settings. It is possible
-to allow insecure connections for legacy applications or enforce a
-minimum TLS version for connections but this should be used sparingly
-and in highly network-protected environments. Consult the guides below,
-as Flexible Server's TLS enforcement status can be set through the
-`require_secure_transport` MySQL server parameter.
+In addition to be encrypted at rest, data can be encrypted during
+transit using SSL/TLS and is enabled by default. As previously
+discussed, it may be necessary to [modify the applications] to support
+this change and also configure the appropriate TLS validation settings.
+It is possible to allow insecure connections for legacy applications or
+enforce a minimum TLS version for connections but this should be used
+sparingly and in highly network-protected environments. Consult the
+guides below, as Flexible Server's TLS enforcement status can be set
+through the `require_secure_transport` MySQL server parameter.
 
 -   [Single Server]
 -   [Flexible Server][47]
 
-## Firewall
+### Microsoft Sentinel
 
-Once users are set up and the data is encrypted at rest, the migration
-team should review the network data flows. Azure Database for MySQL
-provides several mechanisms to secure the networking layers by limiting
-access to only authorized users, applications, and devices.
+Many of the items discussed thus far operate in their own sphere of
+influence and are not designed to work directly with each other. Every
+secure feature provided by Microsoft Azure and corresponding
+applications like Azure Active Directory contain a piece of the security
+puzzle.
+
+With all the disparate components, something is needed to bring all the
+pieces together to provide a full picture of the security posture and to
+allow the quick remediation of issues potentially in an automated way.
+
+[Microsoft Sentinel] is the security tool that provides the needed
+connectors to bring all your security log data into one place and then
+provide a view into how an attack may have started.
+
+Microsoft Sentinel works in conjunction with Azure Log Analytics and
+other Microsoft security services to provide a log storage, query and
+alerting solution. Through machine learning, artificial intelligence and
+user behavior analytics (UEBA), Microsoft Sentinel can provide a higher
+understanding of potential issues or incidents that may not have seen
+with a disconnected environment.
+
+### Microsoft Purview
+
+Data privacy has evolved to be a big focused for organization over the
+past few years. Determining where sensitive information lives across
+your data estate is a requirement in today's privacy centered society.
+
+[Microsoft Purview] can scan your data estate, including your Azure
+Database for MySQL instances, to find personally identifiable
+information or other sensitive information types. This data can then be
+analyzed, classified and lineage defined across your cloud based
+resources.
+
+## Networking and connectivity options
+
+As mentioned previously, the Azure Database for MySQL network
+configuration can adversely affect security, application performance
+(latency), and compliance. This section explains the fundamentals of
+Azure Database for MySQL networking concepts.
+
+### Firewall
+
+Azure Database for MySQL provides several mechanisms to secure the
+networking layers by limiting access to only authorized users,
+applications, and devices.
 
 The first line of defense for protecting the MySQL instance access is to
 implement [firewall rules]. IP addresses can be limited to only valid
 locations when accessing the instance via internal or external IPs. If
 the MySQL instance is destined to only serve internal applications, then
 [restrict public access].
+
+![][48]
 
 When moving an application to Azure along with the MySQL workload, it is
 likely there will be multiple virtual networks set up in a hub and spoke
@@ -3074,54 +3125,12 @@ pattern that will require [Virtual Network Peering] to be configured.
         using the Azure portal]
     -   [Create and manage Azure Database for MySQL firewall rules by
         using the Azure CLI]
-    -   [ARM Reference for Firewall Rules][48]
-
-## Microsoft Sentinel
-
-Many of the items discussed thus far operate in their own sphere of
-influence and are not designed to work directly with each other. Every
-secure feature provided by Microsoft Azure and corresponding
-applications like Azure Active Directory contain a piece of the security
-puzzle.
-
-With all the disparete components, something is needed to bring all the
-pieces together to provide a full picture of the security posture and to
-allow the quick remediation of issues potentially in an automated way.
-
-[Microsoft Sentinel][49] is the security tool that provides the needed
-connectors to bring all your security log data into one place and then
-provide a view into how an attack may have started.
-
-Microsoft Sentinel works in conjunction with Azure Log Analytics and
-other Microsoft security services to provide a log storage, query and
-alerting solution. Through machine learning, artificial intelligence and
-user behavior analytics (UEBA), Microsoft Sentinel can provide a higher
-understanding of potential issues or incidents that may not have seen
-with a disconnected environment.
-
-## Microsoft Purview
-
-Data privacy has evolved to be a big focused for organziation over the
-past few years. Determining where sensitive information lives across
-your data estate is a requirement in today's privacy centered society.
-
-[Microsoft Purview][50] can scan your data estate, including your Azure
-Database for MySQL instances, to find personally identifiable
-information or other sensitive information types. This data can then be
-analyized, classified and lineage defined across your cloud based
-resources.
-
-## Networking and connectivity options
-
-As mentioned previously, the Azure Database for MySQL network
-configuration can adversly affect security, application performance
-(latency), and compliance. This section explains the fundamentals of
-Azure Database for MySQL networking concepts.
+    -   [ARM Reference for Firewall Rules][49]
 
 ### Public vs. Private Access
 
 As with any cloud based resources, it can be exposed to the internet or
-be locked down to only be accessbile by Azure connections resources.
+be locked down to only be accessible by Azure connections resources.
 However, it doesn't have to be just Azure based resources. VPNs and
 Express route circuits can be used to provide access to Azure resources
 from on-premises environments as well. The next section describes the
@@ -3130,9 +3139,9 @@ instances for network connectivity.
 
 #### Public Access
 
-By default, when you create a Azure Databse for MySQL, it allows access
+By default, when you create a Azure Database for MySQL, it allows access
 to internet based clients, including other Azure services. If this is an
-undesriable state, firewall access control lists (ACLs) can limit access
+undesirable state, firewall access control lists (ACLs) can limit access
 to hosts that fall within the allowed trusted IP address ranges.
 
 Firewall rules are set at the server level, meaning that they govern
@@ -3143,13 +3152,14 @@ Azure resources. This is useful for Azure services without fixed public
 IP addresses, such as [Azure Functions] that use public networks to
 access the server and databases.
 
-> Restricting access to Azure public IP addresses still provides network
-> access to the instance to public IPs owned by other Azure customers.
+> **Note:** Restricting access to Azure public IP addresses still
+> provides network access to the instance to public IPs owned by other
+> Azure customers.
 
 #### Private Access
 
-As just discussed, Azure Databsae for MySQL offerings support public
-connectivity by default, however, most organizations will want to
+As just discussed, Azure Database for MySQL offerings support public
+connectivity by default. However, most organizations will want to
 utilize private connectivity which limits access to Azure virtual
 networks and resources.
 
@@ -3195,7 +3205,7 @@ For more Information on Virtual Networks, reference the following:
 #### Flexible Server
 
 Flexible Server supports deployment into a virtual network for secure
-access. When enabling virutal network integration, the target virtual
+access. When enabling virtual network integration, the target virtual
 network subnet must be *delegated*, meaning that it can only contain
 Flexible Server instances. Because Flexible Server is deployed in a
 subnet, it will receive a private IP address. In order to resolve the
@@ -3208,20 +3218,29 @@ for the Flexible Server instances.
 > Flexible Server must also be integrated with the peered virtual
 > network.
 
+> **Note**: Private DNS zone names must end with
+> mysql.database.azure.com. If you are connecting to the Azure Database
+> for MySQL - Flexible sever with SSL and are using an option to perform
+> full verification (sslmode=VERTIFY_IDENTITY) with certificate subject
+> name, use `<servername>`{=html}.mysql.database.azure.com in your
+> connection string.
+
+See: [Private DNS zone overview]
+
 For more information on configuring Private Access for Flexible Server,
 reference the following:
 
 -   [Azure Portal]
--   [Azure CLI][51]
+-   [Azure CLI][50]
 
-### Networking Best Practices for Flexible Server
+### Networking best practices for Flexible Server
 
 -   If deploying an application in an Azure region that supports
     *Availability Zones*, deploy the application and the Flexible Server
     instance in the same zone to minimize latency
 
 > For a review of availability zones, consult the [Introduction to Azure
-> Database for MySQL][52] document.
+> Database for MySQL][51] document.
 
 -   Organize the components of the application into multiple virtual
     networks, such as in a [hub and spoke configuration.] Employ virtual
@@ -3240,7 +3259,7 @@ reference the following:
 
 ### Security baselines
 
-In addition to all the topics discussed above, the Azure Databsae for
+In addition to all the topics discussed above, the Azure Database for
 MySQL [security baseline] is a basic set of potential tasks that can be
 implemented on your Azure Database for MySQL instances to further
 solidify your security posture.
@@ -3337,7 +3356,7 @@ begins handling more production user requests. If an unexpected error
 occurs, developers can roll back the application by serving requests
 from the older environment.
 
-![][53]
+![][52]
 
 > ![Tip] **Tip**: As newer versions of an application often require
 > database updates, it is recommended to update the database to support
@@ -3618,9 +3637,9 @@ or firewall ACLs, can be kept intact.
 
 ## Server parameters
 
-![][54]
+![][53]
 
-As part of the migration, the on-premises [server parameters][55] were
+As part of the migration, the on-premises [server parameters][54] were
 likely modified to support a fast egress. Also, modifications were made
 to the Azure Database for MySQL Flexible Server parameters to support a
 fast ingress. The Azure server parameters should be set back to their
@@ -3679,10 +3698,18 @@ the MySQL environment to test against specific workloads and patterns.
 
 ## Instrumenting vital server resources
 
-The [MySQL Performance Schema] provides a way to inspect internal server
-execution events at runtime.
+The [MySQL Performance Schema] **sys_schema** provides a way to inspect
+internal server execution events at runtime. The MySQL
+performance_schema provides instrumentation for many vital server
+resources such as memory allocation, stored programs, metadata locking,
+etc. However, the performance_schema contains more than 80 tables, and
+getting the necessary information often requires joining tables within
+the performance_schema, and tables from the information_schema. Building
+on both performance_schema and information_schema, the sys_schema
+provides a powerful collection of user-friendly views in a read-only
+database and is fully enabled in Azure Database for MySQL version 5.7.
 
-TODO: Tim finish.
+![][55]
 
 > ![Warning] **Warning**: The Performance Schema avoids using mutexes to
 > collect or produce data, so there are no guarantees of consistency and
@@ -3696,7 +3723,7 @@ optimize the MySQL engine for their specific application workloads. One
 of the advantages of Flexible Server is the large number of server
 parameters exposed by the service. Some important exposed parameters are
 listed below, but storage and compute tiers affect the possible
-parameter values. Consult the [Microsoft documentation][55] for more
+parameter values. Consult the [Microsoft documentation][54] for more
 information.
 
 Some parameters that cannot be configured at the server level can be
@@ -3710,7 +3737,7 @@ parameters warrants a restart.
 -   [innodb_buffer_pool_size] indicates the size of the buffer pool, a
     cache for tables and indexes
 
-    > For this parameter, consult the [Microsoft documentation][55], as
+    > For this parameter, consult the [Microsoft documentation][54], as
     > database compute tier affects the parameter value range
 
 -   [innodb_file_per_table] affects where table and index data are
@@ -4334,6 +4361,13 @@ Failover Steps:
 -   Modify all applications connection strings to point to the new main
     instance.
 
+### Use fully qualified domain names in connection strings
+
+-   Use a fully qualified domain name instead of an IP address in
+    connection strings. If network changes are made causing IP addresses
+    change, your application should be operationally. Administrators do
+    not have locate and change dependent application configuration.
+
 ## Business Continuity and Disaster Recovery
 
 Businesses implement *business continuity* (BC) and *disaster recovery*
@@ -4856,9 +4890,9 @@ As a final note, although there are several options for hosting MySQL in
 Azure, the recommended and preferred method is to utilize Azure Database
 for MySQL Flexible Server for its rich set of features and flexibility.
 
-# Resources
+## Resources
 
-## Questions and feedback
+### Questions and feedback
 
 For any questions or suggestions about working with Azure Database for
 MySQL, send an email to the Azure Database for MySQL Team
@@ -4873,7 +4907,7 @@ In addition, consider these points of contact as appropriate:
 -   To provide feedback or to request new features, create an entry via
     [UserVoice].
 
-## Find a partner to assist in migrating
+### Find a partner to assist in migrating
 
 This guide can be overwhelming, but don't fret! There are many experts
 in the community with a proven migration track record. [Search for a
@@ -4940,11 +4974,9 @@ real-world information:
   [Alerting guidelines]: #alerting-guidelines
   [05 / Summary]: #summary-3
   [Recommended content]: #recommended-content
-  [Threat protection]: #threat-protection
-  [Encryption]: #encryption
-  [Firewall]: #firewall
-  [Microsoft Sentinel]: #microsoft-sentinel
-  [Microsoft Purview]: #microsoft-purview
+  [06 / Networking and Security]: #networking-and-security
+  [Enterprise-grade Security, Compliance, and Privacy that comes with Azure]:
+    #enterprise-grade-security-compliance-and-privacy-that-comes-with-azure
   [Networking and connectivity options]: #networking-and-connectivity-options
   [06 / Summary]: #summary-4
   [Security checklist]: #security-checklist
@@ -4999,8 +5031,6 @@ real-world information:
   [Summary of tasks]: #summary-of-tasks
   [13 / Final Summary]: #final-summary
   [3]: #resources-10
-  [Questions and feedback]: #questions-and-feedback
-  [Find a partner to assist in migrating]: #find-a-partner-to-assist-in-migrating
   [MySQL]: https://www.mysql.com/
   [Microsoft Azure]: https://portal.azure.com/
   [The diagram shows the progression of development evolution in the guide.]:
@@ -5102,6 +5132,7 @@ real-world information:
     "Control plane for Azure Database for MySQL"
   [Choose the right MySQL Server option in Azure]: https://docs.microsoft.com/azure/mysql/select-right-deployment-type
   [Flexible Server instances can also be paused]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli
+  [availability zone]: https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
   [This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.]:
     ./media/flexible-server.png "Operation of MySQL Flexible Server"
   [User-scheduled service maintenance:]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance
@@ -5359,7 +5390,7 @@ real-world information:
   [SQL Kusto cheat sheet]: https://docs.microsoft.com/azure/data-explorer/kusto/query/sqlcheatsheet
   [Get started with log queries in Azure Monitor]: https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries
   [Monitor Azure Database for MySQL using Percona Monitoring and Management (PMM)]:
-    https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/monitor-azure-database-for-mysql-using-percona-monitoring-and/ba-p/2568545
+    https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/monitor-azure-database-for-mysql-using-percona-monito%20ring-and/ba-p/2568545
   [Azure Threat Protection]: https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-threat-protection
   [Microsoft Defender for open-source relational databases]: https://docs.microsoft.com/azure/defender-for-cloud/defender-for-databases-introduction
   [Enable Microsoft Defender for open-source relational databases and respond to alerts]:
@@ -5370,8 +5401,11 @@ real-world information:
   [modify the applications]: https://docs.microsoft.com/azure/mysql/howto-configure-ssl
   [Single Server]: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
   [47]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl
+  [Microsoft Sentinel]: https://docs.microsoft.com/en-us/azure/sentinel/overview
+  [Microsoft Purview]: https://docs.microsoft.com/en-us/azure/purview/overview
   [firewall rules]: https://docs.microsoft.com/azure/mysql/concepts-firewall-rules
   [restrict public access]: https://docs.microsoft.com/azure/mysql/howto-deny-public-network-access
+  [48]: media/firewall-rule-diagram.png
   [Virtual Network Peering]: https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview
   [Manage firewall rules for Azure Database for MySQL - Flexible Server using the Azure portal]:
     https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal
@@ -5382,9 +5416,7 @@ real-world information:
     https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal
   [Create and manage Azure Database for MySQL firewall rules by using the Azure CLI]:
     https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli
-  [48]: https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json
-  [49]: https://docs.microsoft.com/en-us/azure/sentinel/overview
-  [50]: https://docs.microsoft.com/en-us/azure/purview/overview
+  [49]: https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json
   [basic Azure Networking considerations]: https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-vnet
   [RFC 1918.]: https://datatracker.ietf.org/doc/html/rfc1918
   [Introduction to Azure]: ../02_IntroToMySQL/02_02_Introduction_to_Azure.md
@@ -5395,9 +5427,10 @@ real-world information:
   [PowerShell]: https://docs.microsoft.com/azure/virtual-network/quick-create-powershell
   [CLI]: https://docs.microsoft.com/azure/virtual-network/quick-create-cli
   [ARM Template]: https://docs.microsoft.com/azure/virtual-network/quick-create-template
+  [Private DNS zone overview]: https://docs.microsoft.com/azure/dns/private-dns-overview
   [Azure Portal]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal
-  [51]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli
-  [52]: ../02_IntroToMySQL/02_03_Azure_MySQL.md
+  [50]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli
+  [51]: ../02_IntroToMySQL/02_03_Azure_MySQL.md
   [hub and spoke configuration.]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli
   [Security and Compliance document]: 03_MySQL_Security_Compliance.md
   [General Azure Networking Best Practices]: https://docs.microsoft.com/azure/cloud-adoption-framework/migrate/azure-best-practices/migrate-best-practices-networking
@@ -5408,7 +5441,7 @@ real-world information:
   [Selenium tests in Azure DevOps.]: https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366
   [This image demonstrates screenshots from a Selenium test in Azure DevOps.]:
     ./media/selenium-test-azure-devops.png "Selenium test screenshots"
-  [53]: media/azure-traffic-manager-blue-green.png
+  [52]: media/azure-traffic-manager-blue-green.png
   [Deployment Center example]: https://docs.microsoft.com/azure/app-service/deploy-github-actions?tabs=applevel
   [Azure Traffic Manager example]: https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/
   [Application Gateway example]: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/upgrading-aks-version-with-blue-green-deployment-i/ba-p/2527145
@@ -5441,8 +5474,8 @@ real-world information:
   [limits]: https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers
   [MySQL DB Metrics]: https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring#metrics
   [paired Azure region]: https://docs.microsoft.com/azure/availability-zones/cross-region-replication-azure
-  [54]: media/server_parameters.png
-  [55]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
+  [53]: media/server_parameters.png
+  [54]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters
   [Microsoft documentation]: https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/08-data-migration
   [PHPBench tool]: https://github.com/phpbench/phpbench
   [DBT2 Benchmark]: https://downloads.mysql.com/source/dbt2-0.37.50.16.tar.gz
@@ -5450,6 +5483,7 @@ real-world information:
   [TPC-H]: https://www.tpc.org/tpch/
   [types of tests]: https://www.tpc.org/information/benchmarks5.asp
   [MySQL Performance Schema]: https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema
+  [55]: media/employee-query-full-table-scan.png
   [log_bin_trust_function_creators]: https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators
   [innodb_buffer_pool_size]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size
   [innodb_file_per_table]: https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_file_per_table
