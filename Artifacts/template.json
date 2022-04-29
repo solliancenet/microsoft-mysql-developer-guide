@@ -254,25 +254,6 @@
         "properties": { "sku": { "tier": "Standard" } },
         "resources": []
       },
-      {
-        "type": "Microsoft.Web/connectionGateways",
-        "apiVersion": "2016-06-01",
-        "name": "logic-app-gateway",
-        "location": "[resourceGroup().location]",
-        "tags": {
-        },
-        "properties": {
-              "connectionGatewayInstallation": {
-                "location": "[resourceGroup().location]",
-                "name": "ede58f73-1e1b-4de8-b657-8cf0a4201714",
-                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/connectionGatewayInstallations/ede58f73-1e1b-4de8-b657-8cf0a4201714')]",
-                "type": "Microsoft.Web/locations/connectionGatewayInstallations"
-            },
-            "displayName": "gateway-mysql",
-            "machineName": "paw-1",
-            "backendUri": "https://WABI-WEST-US-redirect.analysis.windows.net"
-        }
-    },
     {
       "type": "Microsoft.Web/connections",
       "apiVersion": "2016-06-01",
@@ -310,12 +291,7 @@
             "nonSecretParameterValues": {
                 "server": "10.4.0.4",
                 "database": "contosostore",
-                "authType": "basic",
-                "gateway": {
-                    "name": "logic-app-gateway",
-                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Web/connectionGateways/logic-app-gateway')]",
-                    "type": "Microsoft.Web/connectionGateways"
-                }
+                "authType": "basic"
             },
             "api": {
                 "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/mysql')]"

@@ -41,6 +41,8 @@
     - The `vmSize` specifies the VM tier
     - The `dnsPrefix` specifies the DNS prefix for the load balancer public IP address
 
+    > NOTE:  Because of some automation account mapping settings, these templates are designed to only be deployed to `eastus2`, `eastus`, `southcentralus`, `westcentralus`, `westus2`, `westus`, `northcentralus`
+
 4. If deploying the secure ARM template, issue the following command from the repository root.
 
     ```powershell
