@@ -6,7 +6,7 @@ This section describes tools to interact with Azure Database for MySQL (Single S
 
 Refer to the [Connect and query Azure Database for MySQL using Python] sample.
 
-### Application connectors
+#### Application connectors
 
 *MySQL Connector/Python* offers a Python Database API specification-compatible driver for MySQL database access (PEP 249). It does not depend on a MySQL client library. The Python Connect and Query sample utilizes *MySQL Connector/Python*.
 
@@ -16,7 +16,7 @@ Django is a popular web application framework for Python. The Django ORM officia
 
 Flexible Server is compatible with all Python client utilities for MySQL Community Edition. However, Microsoft has only validated *MySQL Connector/Python* and *PyMySQL* for use with Single Server due to its network connectivity setup. Refer to [this](https://docs.microsoft.com/azure/mysql/concepts-compatibility) document for more information about drivers compatible with Single Server.
 
-### Resources
+#### Resources
 
 1. [Introduction to MySQL Connector/Python](https://dev.mysql.com/doc/connector-python/en/connector-python-introduction.html)
 2. [PyMySQL Samples](https://pymysql.readthedocs.io/en/latest/user/examples.html)

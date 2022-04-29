@@ -32,18 +32,6 @@ There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahe
 
 When you are done developing for the day, you can stop Flexible Server. This feature helps keep the organizational costs low.
 
-## Development languages
-
-Once an editor is selected, the next step is to pick a development language or platform. Below are some quick links:
-
-[PHP]
-
-[Java]
-
-[Python]
-
-[Other notable languages for MySQL apps]
-
 ## Resources
 
 - [App Service overview](https://docs.microsoft.com/azure/app-service/overview)

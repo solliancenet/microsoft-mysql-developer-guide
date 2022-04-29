@@ -1,6 +1,6 @@
 ## Introduction to Azure Database for MySQL
 
-Developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). PaaS offers high availability, automated backups, and meets compliance requirements. Operational administrators do not have the operational overhead of managing the OS and the DB engine. They do not need to worry about OS patching, database backups, or server security. Administrators only need to manage the applications and data. Developers can focus on schema design, building queries, and optimizing query performance.
+Developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). Azure database for MySQL offers high availability, automated backups, and meets compliance requirements. Operational administrators do not have the operational overhead of managing the OS and the DB engine. They do not need to worry about OS patching, database backups, or server security. Administrators only need to manage the applications and data. Developers can focus on schema design, building queries, and optimizing query performance.
 
 Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
 
@@ -20,7 +20,11 @@ Azure Database for MySQL provides two options for deployment: Single Server and 
 
 Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than Single Server.
 
-Learn how you can develop applications faster with Azure Database for MySQL Flexible Server. 
+##### Flexible Server video introduction
+
+![](media/top3-reasons-video.png)
+
+Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
 Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
@@ -47,12 +51,6 @@ Here are a few other notable advantages of Flexible Server.
   ![](media/mysql_iops_configuration.png)
 
 Some of these features are not exclusive to Flexible Server. However, as further sections of the guide demonstrate, Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.  
-
-##### Flexible Server video introduction
-
-Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
-
-> ![Tip](media/tip.png "Tip") **Tip**: [Data Exposed](https://docs.microsoft.com/shows/data-exposed/) touches on a wide range of Azure data content. It is a good resource for developers.
 
 ##### Flexible Server pricing & TCO
 

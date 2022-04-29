@@ -878,7 +878,7 @@ language or platform. Below are some quick links:
 
 -   [Plan and manage costs for Azure App Service]
 
-## Create a Flexible Server database
+## Create a Flexible Server with database
 
 The focus of this guide is on demonstrating practical uses of MySQL
 Flexible Server, such as querying Flexible Server with common languages
@@ -1118,7 +1118,7 @@ MySQL Flexible Server using MySQL Workbench, a UI-based management tool.
 
 ### Setup
 
-Follow one of the methods in the [Create a Flexible Server database]
+Follow one of the methods in the [Create a Flexible Server with database]
 document to create a Flexible Server instance with a database.
 
 Download MySQL Workbench from the [MySQL Downloads.]
@@ -1153,7 +1153,7 @@ MySQL - Flexible Server] article.
 
 While the Azure article demonstrates how to provision a Flexible Server
 instance using the CLI, any of the presented provisioning methods in the
-[Create a Flexible Server database] section are possible.
+[Create a Flexible Server with database] section are possible.
 
 ### Instructions
 
@@ -1416,7 +1416,7 @@ Flexible Server using the `mysql-connector-python` library on Python 3.
 
 ### Setup
 
-Follow one of the methods in the [Create a Flexible Server database]
+Follow one of the methods in the [Create a Flexible Server with database]
 document to create a Flexible Server instance with a database.
 
 Moreover, install Python 3.7 or above from the [Downloads page]. This
@@ -2728,7 +2728,7 @@ sec).
 
 ### Server Logs
 
-Server logs from Azure Databse for MySQL can also be extracted through
+Server logs from Azure Database for MySQL can also be extracted through
 the Azure platform *resource logs*, which track data plane events. Azure
 can route these logs to Log Analytics workspaces for manipulation and
 visualization through KQL.
@@ -4078,7 +4078,7 @@ application issues.
 ## Additional support
 
 -   In the Azure portal, navigate to the **Diagnose and solve problems**
-    tab of your Azure Databse for MySQL instance for suggestions
+    tab of your Azure Database for MySQL instance for suggestions
     regarding common connectivity, performance, and availability issues.
 
     ![This image demonstrates the Diagnose and solve problems tab of a
@@ -4092,6 +4092,15 @@ application issues.
 
 -   If none of the above resolve the issue with the MySQL instance,
     [send a support request from the Azure portal.]
+
+## Opening a support ticket
+
+![][58]
+
+If you need immediate assistance with an issue, [open a support
+ticket][send a support request from the Azure portal.] with Microsoft.
+
+![][59]
 
 ## Recommended content
 
@@ -4296,7 +4305,7 @@ Learn more about backup and restore in Flexible Server from the
 
 ## Read replicas
 
-[Read replicas][58] can be used to increase the MySQL read throughput,
+[Read replicas][60] can be used to increase the MySQL read throughput,
 improve performance for regional users, and implement disaster recovery.
 When creating one or more read replicas, be aware that additional
 charges will apply for the same compute and storage as the primary
@@ -4306,7 +4315,7 @@ server.
 
 If an administrator or bad actor deletes the server in the Azure Portal
 or via automated methods, all backups and read replicas will also be
-deleted. [Resource locks][59] must be created on the Azure Database for
+deleted. [Resource locks][61] must be created on the Azure Database for
 MySQL resource group to add an extra layer of deletion prevention to the
 instances.
 
@@ -4485,14 +4494,14 @@ MySQL read replicas.]
 
 #### Flexible Server
 
--   [Azure Portal][60]
--   [Azure CLI][61]
+-   [Azure Portal][62]
+-   [Azure CLI][63]
 
 #### Single Server
 
--   [Azure Portal][62]
+-   [Azure Portal][64]
 -   [Azure CLI & REST API]
--   [Azure PowerShell][63]
+-   [Azure PowerShell][65]
 
 ## Service maintenance
 
@@ -4535,7 +4544,7 @@ Single Server uses a gateway to access database instances, unlike
 Flexible Server. These gateways have public IP addresses that are
 retired and replaced, which may impede access from on-premises. Azure
 notifies customers about gateway retirements three months before. Learn
-more [here.][64]
+more [here.][66]
 
 Single Server does not support custom schedules for maintenance. Azure
 notifies administrators 72 hours before the maintenance event.
@@ -4698,7 +4707,7 @@ Stories page focused on the usage of Azure Database for MySQL.
 
 ### Minecraft
 
-![][65]
+![][67]
 
 Minecraft migrated from AWS Aurora to Azure Database for MySQL for its
 Realms service to improve performance and reduce costs. Minecraft moved
@@ -4727,7 +4736,7 @@ read replica to support the reporting needs of the business.
 
 ### Linked Brain
 
-![][66]
+![][68]
 
 In November 2019, a Microsoft gaming industry representative visited
 [Linked Brain] to explain Microsoft Azure services and FastTrack for
@@ -4743,7 +4752,7 @@ benefit---an option which requires another instance fee on Amazon RDS."
 
 ### T-Systems
 
-![][67]
+![][69]
 
 In the Internet of Things (IoT) age, organizations must share
 proprietary data quickly while maintaining control, security, and
@@ -4765,7 +4774,7 @@ to maintain a database operations infrastructure.
 
 ### Children's Mercy Hospital
 
-![][68]
+![][70]
 
 [Children's Mercy Kansas City], an award-winning hospital and research
 institute, manages one of the leading genome sequencing centers in the
@@ -4784,7 +4793,7 @@ MySQL, and Azure infrastructure as a service (IaaS) resources.
 
 ### GeekWire
 
-![][69]
+![][71]
 
 Based in Seattle, Washington, [GeekWire] is a rapidly growing technology
 news site with a global readership. In addition to covering the latest
@@ -4825,7 +4834,7 @@ Azure PaaS MySQL for its persistence layer.
 
 Magento is a powerful e-commerce and marketing platform suitable for
 small and large businesses. There are multiple implementations available
-on the Azure Marketplace, including [this offering][70] that provides a
+on the Azure Marketplace, including [this offering][72] that provides a
 Helm chart for a Kubernetes deployment.
 
 ## 12 / Summary
@@ -4939,7 +4948,7 @@ real-world information:
   [Development editor tools]: #development-editor-tools
   [Development languages]: #development-languages
   [Resources]: #resources
-  [Create a Flexible Server database]: #create-a-flexible-server-database
+  [Create a Flexible Server with database]: #create-a-flexible-server-database
   [Language support]: #language-support
   [Other notable languages for MySQL apps]: #other-notable-languages-for-mysql-apps
   [Connect and query Azure Database for MySQL using MySQL Workbench]: #connect-and-query-azure-database-for-mysql-using-mysql-workbench
@@ -5005,6 +5014,7 @@ real-world information:
   [Troubleshoot app issues in Azure App Service]: #troubleshoot-app-issues-in-azure-app-service
   [App debugging]: #app-debugging
   [Additional support]: #additional-support
+  [Opening a support ticket]: #opening-a-support-ticket
   [2]: #recommended-content-1
   [09 / Summary]: #summary-7
   [10 / Business Continuity and Disaster Recovery (BCDR)]: #business-continuity-and-disaster-recovery-bcdr
@@ -5524,6 +5534,8 @@ real-world information:
     ./media/resource-health-integration.png
     "Azure Resource Health integration"
   [send a support request from the Azure portal.]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+  [58]: media/open-support-ticket.png
+  [59]: media/open-a-support%20ticket.png
   [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL]:
     https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors
   [Azure Community Support]: https://azure.microsoft.com/support/community/
@@ -5540,8 +5552,8 @@ real-world information:
   [Some regions]: https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers#storage
   [Perform post-restore tasks]: https://docs.microsoft.com/azure/mysql/concepts-backup#perform-post-restore-tasks
   [Microsoft documentation.]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore
-  [58]: https://docs.microsoft.com/azure/mysql/concepts-read-replicas
-  [59]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
+  [60]: https://docs.microsoft.com/azure/mysql/concepts-read-replicas
+  [61]: https://docs.microsoft.com/azure/azure-resource-manager/management/lock-resources
   [Azure Load Balancer]: https://docs.microsoft.com/azure/load-balancer/load-balancer-overview
   [Application Gateway]: https://docs.microsoft.com/azure/application-gateway/overview
   [This image demonstrates Zone-Redundant HA for MySQL Flexible Server.]:
@@ -5563,13 +5575,13 @@ real-world information:
   [This image demonstrates a possible microservices architecture with MySQL read replicas.]:
     ./media/microservices-with-replication.png
     "Possible microservices architecture"
-  [60]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
-  [61]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
-  [62]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
+  [62]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal
+  [63]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli
+  [64]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal
   [Azure CLI & REST API]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-cli
-  [63]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell
+  [65]: https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell
   [this]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
-  [64]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
+  [66]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
   [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)]:
     https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal
   [View service health notifications in the Azure Portal]: https://docs.microsoft.com/azure/service-health/service-notifications
@@ -5585,20 +5597,20 @@ real-world information:
   [Scalable web and mobile applications using Azure Database for MySQL:]:
     https://docs.microsoft.com/azure/architecture/solution-ideas/articles/scalable-web-and-mobile-applications-using-azure-database-for-mysql
   [Microsoft Customer Stories portal]: https://customers.microsoft.com/search?sq=%22Azure%20Database%20for%20MySQL%22&ff=&p=2&so=story_publish_date%20desc
-  [65]: media/minecraft-logo.png
+  [67]: media/minecraft-logo.png
   [This image demonstrates the Minecraft Realms service running in Azure, accessing Azure Database for MySQL.]:
     ./media/realms-migration.png "Minecraft Realms migration to Azure"
-  [66]: media/linked-brain-logo.png
+  [68]: media/linked-brain-logo.png
   [Linked Brain]: https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan
-  [67]: media/t-systems-logo.png
+  [69]: media/t-systems-logo.png
   [T-Systems]: https://customers.microsoft.com/en-us/story/724200-deutsche-telekom-telecommunications-azure
-  [68]: media/children-mercy-logo.png
+  [70]: media/children-mercy-logo.png
   [Children's Mercy Kansas City]: https://customers.microsoft.com/en-us/story/860516-childrens-mercy-health-provider-azure
-  [69]: media/geekwire.png
+  [71]: media/geekwire.png
   [GeekWire]: https://customers.microsoft.com/en-us/story/geekwire
   [one from WordPress]: https://azuremarketplace.microsoft.com/marketplace/apps/WordPress.WordPress?tab=Overview
   [this offering]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview
-  [70]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
+  [72]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview
   [UserVoice]: https://feedback.azure.com/forums/597982-azure-database-for-mysql
   [Search for a Microsoft Partner]: https://www.microsoft.com/solution-providers/home
   [Microsoft MVP]: https://mvp.microsoft.com/MvpSearch

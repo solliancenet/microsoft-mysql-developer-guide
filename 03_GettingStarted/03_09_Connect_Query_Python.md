@@ -4,7 +4,7 @@ This section will demonstrate how to query Azure Database for MySQL Flexible Ser
 
 ### Setup
 
-Follow one of the methods in the [Create a Flexible Server database] document to create a Flexible Server instance with a database.
+Follow one of the methods in the [Create a Flexible Server with database] document to create a Flexible Server instance with a database.
 
 Moreover, install Python 3.7 or above from the [Downloads page](https://www.python.org/downloads/). This sample was tested using Python 3.8.
 

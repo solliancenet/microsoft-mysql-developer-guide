@@ -1,6 +1,6 @@
 # 08 / Performance + Optimization
 
-After organizations migrate their MySQL workloads to Azure, they unlock turnkey performance monitoring solutions, scalability, and the benefits of Azure's global footprint. Operation teams must establish performance baselines before fine-tuning their MySQL instances to ensure that changes, especially those that require application downtime, are worth doing.
+After organizations migrate their MySQL workloads to Azure, they unlock turnkey performance monitoring solutions, scalability, and the benefits of Azure's global footprint. Operation teams must establish performance baselines before fine-tuning their MySQL instances to ensure that changes, especially those that require application downtime, are worth doing. If you can, simulate your workload in a test environment and make adjustments there first before implementing changes in a production environment.
 
 Before jumping into specific and time consuming performance enhancements, there are some general tips that can improve performance in your environment that this section will explore.
 
@@ -39,11 +39,13 @@ AzureDiagnostics
 
 ## Upgrading the tier
 
-The Azure portal and the CLI can be used to scale between the `Burstable`, `General Purpose`, and `Memory Optimized` tiers. Tier scaling requires restarting the Flexible Server instance, causing 60-120 seconds of downtime. If your application does not require a significant compute, use the `Burstable` SKU. When your application requires more performance during certain times, Azure Database for MySQL can increase performance automatically and reduce when you do not need it. Organizations can save operational costs.
+*Know your workload!* The Azure portal and the CLI can be used to scale between the `Burstable`, `General Purpose`, and `Memory Optimized` tiers. Tier scaling requires restarting the Flexible Server instance, causing 60-120 seconds of downtime. If your application does not require a significant compute, use the `Burstable` SKU. When your application requires more performance during certain times, Azure Database for MySQL can increase performance automatically and reduce when you do not need it. Organizations can save operational costs.
 
 ## Scaling the server
 
-Within the tier, it is possible to scale cores and memory to the minimum and maximum [limits](https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers) allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, scale up to meet demand. You can use an [Azure CLI script](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale) to monitor relevant metrics and scale the server.
+Within the tier, it is possible to scale cores and memory to the minimum and maximum [limits](https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers) allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, scale up to meet demand.
+
+You can also adjust the IOPS for better transactions per second (TPS) performance. You can use an [Azure CLI script](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale) to monitor relevant metrics and scale the server.
 
 ## Azure Database for MySQL Memory Recommendations
 

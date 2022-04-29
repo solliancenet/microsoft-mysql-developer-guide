@@ -46,9 +46,17 @@ As mentioned previously, Workbooks is a simple canvas to visualize data from dif
 
 ![](media/workbook-example.png)
 
-You access Query Performance Insight.
+CPU, IOPS, and other common monitoring metrics are available. You can also access Query Performance Insight.
 
 ![](media/query-performance-insight.png)
+
+In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
+
+In addition to the query performance insight tool, `Wait statistics` provides a view of the wait events that occur during the execution of a specific query.
+
+>![Warning](media/warning.png "Warning") **Warning**: Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
+
+Finally, the `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can be used to log long-running queries (default long query time is 10 sec).
 
 See: [Monitor Azure Database for MySQL Flexible Server by using Azure Monitor workbooks](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-workbooks)
 
@@ -82,19 +90,9 @@ Once the alert has been configured, you can create an action group to send a not
 
 See: [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/how-to-alert-on-metric)
 
-### Query Performance Insights
-
-In addition to the basic server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights) to analyze the longest-running queries and determine if it is possible to cache those items if they are deterministic within a set period, or modify the queries to increase their performance.
-
-In addition to the query performance insight tool, `Wait statistics` provides a view of the wait events that occur during the execution of a specific query.
-
->![Warning](media/warning.png "Warning") **Warning**: Wait statistics are meant for troubleshooting query performance issues. It is recommended to be turned on only for troubleshooting purposes.
-
-Finally, the `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can be used to log long-running queries (default long query time is 10 sec).
-
 ### Server Logs
 
-Server logs from Azure Databse for MySQL can also be extracted through the Azure platform *resource logs*, which track data plane events. Azure can route these logs to Log Analytics workspaces for manipulation and visualization through KQL.
+Server logs from Azure Database for MySQL can also be extracted through the Azure platform *resource logs*, which track data plane events. Azure can route these logs to Log Analytics workspaces for manipulation and visualization through KQL.
 
 In addition to Log Analytics, the data can also be routed to Event Hubs for third-party integrations and Azure storage for long term backup.
 

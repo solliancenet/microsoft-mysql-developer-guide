@@ -1,6 +1,6 @@
 ## Connect and query Azure Database for MySQL using PHP
 
-This section demonstrates how to manipulate data in an Azure Database for MySQL Flexible Server instance and query it using PHP and the *MySQLi* library, which is provided with PHP.
+Running SQL statements from an application is quite common. This section demonstrates how to manipulate data in an Azure Database for MySQL Flexible Server instance and query it using PHP and the *MySQLi* library, which is provided with PHP.
 
 ### Setup
 

@@ -1,5 +1,15 @@
 ## Language support
 
+Once an editor is selected, the next step is to pick a development language or platform. Below are some quick links:
+
+[PHP]
+
+[Java]
+
+[Python]
+
+[Other notable languages for MySQL apps]
+
 ### PHP
 
 This section describes tools to interact with Azure Database for MySQL (Single Server and Flexible Server) through PHP.
@@ -8,7 +18,7 @@ This section describes tools to interact with Azure Database for MySQL (Single S
 
 Refer to the [Connect and query Azure Database for MySQL using PHP] application for examples of how to use PHP to connect to MySQL.
 
-### Application connectors
+#### Application connectors
 
 There are two major APIs to interact with MySQL in PHP:
 
@@ -19,7 +29,7 @@ There are two major APIs to interact with MySQL in PHP:
 
 Flexible Server and Single Server are compatible with all PHP client utilities for MySQL Community Edition.
 
-### Resources
+#### Resources
 
 1. [Create a PHP web app in Azure App Service](https://aka.ms/php-qs)
 2. [Backend libraries for mysqli and PDO_MySQL](https://www.php.net/manual/en/mysqlinfo.library.choosing.php)

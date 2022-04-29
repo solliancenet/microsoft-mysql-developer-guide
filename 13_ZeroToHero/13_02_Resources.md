@@ -1,13 +1,24 @@
 ## Resources
 
-### Questions and feedback
+### Call to Action
 
-For any questions or suggestions about working with Azure Database for MySQL, send an email to the Azure Database for MySQL Team (AskAzureDBforMySQL@service.microsoft.com). Please note that this address is for general questions rather than support tickets.
+[Review homepage](https://aka.ms/mysql)
+[Documentation](http://aka.ms/mysqldocs)
+[Get started for free with an Azure free account!](https://azure.microft.com/free/mysql)
+[Tutorial](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account)
+[Azure Pricing Calculator, TCO Calculator](https://azure.microsoft.com/pricing)
+[Migrate your workloads to Azure DB for MySQL](https://docs.microsoft.com/azure/mysql/migrate)
 
-In addition, consider these points of contact as appropriate:
+### Stay tuned for latest updates and announcements
 
-- To contact Azure Support or fix an issue with an account, [file a ticket from the Azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
-- To provide feedback or to request new features, create an entry via [UserVoice](https://feedback.azure.com/forums/597982-azure-database-for-mysql).
+[What’s new in Flexible Server?](https://docs.microsoft.com/azure/mysql/flexible-server/whats-new)
+[Tech Community Blog](https://aka.ms/azure-db-mysql-blog)
+
+### Follow Azure Database for MySQL on 
+
+[Twitter](https://twitter.com/AzureDBMySQL)
+[LinkedIn](https://www.linkedin.com/company/azure-database-for-mysql/)
+Email us at AskAzureDBforMySQL@service.microsoft.com  
 
 ### Find a partner to assist in migrating
 

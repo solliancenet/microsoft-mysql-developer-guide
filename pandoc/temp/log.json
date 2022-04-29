@@ -422,6 +422,23 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/firewall-rule-diagram.png",
+        "for": "media/firewall-rule-diagram.png"
+    },
+    {
+        "type": "InlineNotRendered",
+        "verbosity": "INFO",
+        "contents": {
+            "t": "RawInline",
+            "c": [
+                "html",
+                "<servername>"
+            ]
+        }
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/selenium-test-azure-devops.png",
         "for": "./media/selenium-test-azure-devops.png"
     },
@@ -464,6 +481,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/employee-query-full-table-scan.png",
+        "for": "media/employee-query-full-table-scan.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/thread-pooling-performance.png",
         "for": "./media/thread-pooling-performance.png"
     },
@@ -484,6 +507,18 @@
         "verbosity": "INFO",
         "from": "./media/resource-health-integration.png",
         "for": "./media/resource-health-integration.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/open-support-ticket.png",
+        "for": "media/open-support-ticket.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/open-a-support ticket.png",
+        "for": "media/open-a-support ticket.png"
     },
     {
         "type": "LoadedResource",

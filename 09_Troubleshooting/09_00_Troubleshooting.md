@@ -91,7 +91,7 @@ Following software development best practices makes your code simpler to develop
 
 ## Additional support
 
-- In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Azure Databse for MySQL instance for suggestions regarding common connectivity, performance, and availability issues.
+- In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Azure Database for MySQL instance for suggestions regarding common connectivity, performance, and availability issues.
 
   ![This image demonstrates the Diagnose and solve problems tab of a Flexible Server instance in the Azure portal.](./media/troubleshoot-problems-portal.png "Diagnose and solve problems")
 
