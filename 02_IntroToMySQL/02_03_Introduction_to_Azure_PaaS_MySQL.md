@@ -22,11 +22,9 @@ Flexible Server is also a PaaS service fully managed by the Azure platform, but 
 
 ##### Flexible Server video introduction
 
-![](media/top3-reasons-video.png)
-
 Watch [this video by Data Exposed](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
-Cost management is one of the major advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
+Cost management is one of the advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
 > *Locally-redundant storage* replicates data within a single [availability zone](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview). *Availability zones* are present within a single Azure region (such as East US) and are geographically isolated. All Azure regions that support availability zones have at least three.
 
@@ -50,7 +48,7 @@ Here are a few other notable advantages of Flexible Server.
 
   ![](media/mysql_iops_configuration.png)
 
-Some of these features are not exclusive to Flexible Server. However, as further sections of the guide demonstrate, Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.  
+**Some of these features are not exclusive to Flexible Server. Further guide sections demonstrate Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.**  
 
 ##### Flexible Server pricing & TCO
 
@@ -60,7 +58,12 @@ The MySQL Flexible Server tiers offer a storage range between 20 GiB and 16 TiB 
 - **General Purpose**: This tier corresponds to a Ddsv4-series Azure VM. Instances provisioned in this tier have 2-64 vCores and 4 GiB memory per vCore. It is ideal for most enterprise applications requiring a strong balance between memory and vCore count.
 - **Memory Optimized**: This tier corresponds to an Edsv4-series Azure VM. Instances provisioned in this tier have 2-64 vCores and 8 GiB memory per vCore. It is ideal for high-performance or real-time workloads that depend on in-memory processing.
 
-To estimate the TCO for Azure Database for MySQL, use the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). Note that the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) can be used to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center. Simply indicate the configuration of on-premises hardware and the Azure landing zone, adjust calculation parameters, like the cost of electricity, and observe the potential savings.
+To estimate the TCO for Azure Database for MySQL:
+
+1. Use the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/).
+
+   >**Note:** that the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) can be used to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center.
+2. Indicate the configuration of on-premises hardware and the Azure landing zone, adjust calculation parameters, like the cost of electricity, and observe the potential savings.
 
 ##### Flexible Server Unsupported Features
 

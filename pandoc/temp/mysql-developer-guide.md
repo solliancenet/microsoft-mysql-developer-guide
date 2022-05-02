@@ -148,13 +148,13 @@ software---including operating systems, middleware, and applications.
 
 **Cons**
 
--   OS and middle-ware administration costs
+-   OS and middleware administration costs
 
 ### Containers
 
 While much more lightweight, containers are similar to VMs and can be
 started and stopped in a few seconds. Containers also offer tremendous
-portability, which makes them ideal for developing an application
+portability, making them ideal for developing an application
 locally on a development machine and then hosting it in the cloud, in
 test, and later in production. Containers can even run on-premises or in
 other clouds. This is possible because the environment that is used on
@@ -4746,7 +4746,7 @@ Microsoft Azure.
 
 We learned Flexible Server could scale up and down without stoppages,
 offer backup capabilities, and deliver I/O capacity proportionate to
-storage size, which makes it easy to boost performance as data
+storage size, making it easy to boost performance as data
 accumulates. Azure also offers regional disaster recovery as a standard
 benefit---an option which requires another instance fee on Amazon RDS."
 

@@ -28,7 +28,7 @@ The MySQL database was modernized with Azure Database for MySQL with a read repl
 
 In November 2019, a Microsoft gaming industry representative visited [Linked Brain](https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan) to explain Microsoft Azure services and FastTrack for Azure. Features fitted perfectly with Linked Brain’s goal of building game systems with PaaS, and the company decided to officially adopt Microsoft Azure.
 
-We learned Flexible Server could scale up and down without stoppages, offer backup capabilities, and deliver I/O capacity proportionate to storage size, which makes it easy to boost performance as data accumulates. Azure also offers regional disaster recovery as a standard benefit—an option which requires another instance fee on Amazon RDS.”
+We learned Flexible Server could scale up and down without stoppages, offer backup capabilities, and deliver I/O capacity proportionate to storage size, making it easy to boost performance as data accumulates. Azure also offers regional disaster recovery as a standard benefit—an option which requires another instance fee on Amazon RDS.”
 
 ### T-Systems
 

@@ -4,7 +4,7 @@ Now that the benefits of MySQL and a few common deployment models have been pres
 
 ### Advantages of choosing Azure
 
-The Azure platform is trusted by millions of customers around the world, and there are over 90,000 Cloud Solution Providers (CSPs) partnered with Microsoft to add extra benefits and services to the Azure platform. By leveraging Azure, organizations can easily modernize their applications, expedite application development, and adapt application requirements to meet the demands of their users.
+Millions of customers worldwide trust the Azure platform, and there are over 90,000 Cloud Solution Providers (CSPs) partnered with Microsoft to add extra benefits and services to the Azure platform. By leveraging Azure, organizations can easily modernize their applications, expedite application development, and adapt application requirements to meet the demands of their users.
 
 By offering solutions on Azure, ISVs can access one of the largest B2B markets in the world. Through the [Azure Partner Builder's Program](https://partner.microsoft.com/marketing/azure-isv-technology-partners), Microsoft assists ISVs with the tools and platform to offer their solutions for customers to evaluate, purchase, and deploy with just a few clicks of the mouse.
 
@@ -16,25 +16,25 @@ To facilitate developers' adoption of Azure, Microsoft offers a [free subscripti
 
 ### MySQL on Azure hosting options
 
-The concepts Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) typically define the responsibilities of the public cloud provider and the enterprise customer when it comes to managing their cloud resources. Both approaches are common ways to host MySQL on Azure.
+The concepts Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) typically define the public cloud provider and the enterprise customer resource responsibilities. Both approaches are common ways to host MySQL on Azure.
 
 ![This diagram shows the cloud adoption strategy.](media/cloud-adoption-strategies.png "Cloud adoption strategy")
 
 #### IaaS (VMs)
 
-In the IaaS model, organizations deploy MySQL on Azure Virtual Machines. This provides the customer with the flexibility to choose when to patch the VM OS, the MySQL engine, and install other software such as antivirus utilities when required. Microsoft is responsible for the underlying VM hardware that constitutes the Azure infrastructure. Customers are responsible for all other maintenance.
+In the IaaS model, organizations deploy MySQL on Azure Virtual Machines. This model allows the customer to choose when to patch the VM OS, the MySQL engine, and install other software such as antivirus utilities when required. Microsoft is responsible for the underlying VM hardware that constitutes the Azure infrastructure. Customers are responsible for all other maintenance.
 
-Because IaaS MySQL hosting gives greater control over the MySQL database engine and the OS, many organizations choose it to lift and shift on-premises solutions while minimizing capital expenditure.
+Because IaaS MySQL hosting gives greater control over the MySQL database engine and the OS, many organizations choose to lift and shift on-premises solutions while minimizing capital expenditure.
 
 #### IaaS (Containers)
 
-Although VMs are typically considered the primary IaaS approach, containerizing MySQL instances and applications can also be included in this approach.  Modernizing applications allows for more opportunities for deployment and management with Kubernetes and container hosting environments coming into the picture.  Azure provides Azure Kubernetes Service (AKS) and as explored below, several other PaaS-based approaches to hosting MySQL and application containers.
+Although VMs are typically considered the primary IaaS approach, containerizing MySQL instances and applications can also be included in this approach.  Modernizing applications allows for more opportunities for deployment and management with Kubernetes and container hosting environments coming into the picture.  Azure provides Azure Kubernetes Service (AKS) and, as explored below, several other PaaS-based approaches to hosting MySQL and application containers.
 
 #### PaaS (DBaaS)
 
 In the PaaS model, organizations deploy a fully managed MySQL environment on Azure. Unlike IaaS, they cede control over patching the MySQL engine and OS to the Azure platform, and Azure automates many administrative tasks, like providing high availability, backups, and protecting data.
 
-Like IaaS, customers are still responsible for managing query performance, database access, and database objects, such as indexes. PaaS is suitable for applications where the MySQL configuration exposed by Azure is sufficient and access to the OS and filesystem is unnecessary.
+Like IaaS, customers are still responsible for managing query performance, database access, and database objects, such as indexes. PaaS is suitable for applications where the MySQL configuration exposed by Azure is sufficient, and access to the OS and filesystem is unnecessary.
 
 The Azure DBaaS MySQL offering is [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/#features), which is based on MySQL community edition and supports common administration tools and programming languages.
 
