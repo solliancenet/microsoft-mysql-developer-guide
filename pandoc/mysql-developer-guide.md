@@ -878,7 +878,7 @@ language or platform. Below are some quick links:
 
 -   [Plan and manage costs for Azure App Service]
 
-## Create a Flexible Server with database
+## Create a Flexible Server database
 
 The focus of this guide is on demonstrating practical uses of MySQL
 Flexible Server, such as querying Flexible Server with common languages
@@ -1118,7 +1118,7 @@ MySQL Flexible Server using MySQL Workbench, a UI-based management tool.
 
 ### Setup
 
-Follow one of the methods in the [Create a Flexible Server with database]
+Follow one of the methods in the [Create a Flexible Server database]
 document to create a Flexible Server instance with a database.
 
 Download MySQL Workbench from the [MySQL Downloads.]
@@ -1153,7 +1153,7 @@ MySQL - Flexible Server] article.
 
 While the Azure article demonstrates how to provision a Flexible Server
 instance using the CLI, any of the presented provisioning methods in the
-[Create a Flexible Server with database] section are possible.
+[Create a Flexible Server database] section are possible.
 
 ### Instructions
 
@@ -1416,7 +1416,7 @@ Flexible Server using the `mysql-connector-python` library on Python 3.
 
 ### Setup
 
-Follow one of the methods in the [Create a Flexible Server with database]
+Follow one of the methods in the [Create a Flexible Server database]
 document to create a Flexible Server instance with a database.
 
 Moreover, install Python 3.7 or above from the [Downloads page]. This
@@ -4948,7 +4948,7 @@ real-world information:
   [Development editor tools]: #development-editor-tools
   [Development languages]: #development-languages
   [Resources]: #resources
-  [Create a Flexible Server with database]: #create-a-flexible-server-database
+  [Create a Flexible Server database]: #create-a-flexible-server-database
   [Language support]: #language-support
   [Other notable languages for MySQL apps]: #other-notable-languages-for-mysql-apps
   [Connect and query Azure Database for MySQL using MySQL Workbench]: #connect-and-query-azure-database-for-mysql-using-mysql-workbench

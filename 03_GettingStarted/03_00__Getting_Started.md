@@ -1,6 +1,6 @@
 # 03 / Getting Started - Setup and Tools
 
-With a firm understanding of MySQL and other offerings available in Azure, it is time to review how to start using these various services in applications. In this section, we explore how to get Azure subscriptions configured and ready to host MySQL applications as well as how to get started developing typical MySQL application types and the various tools to simplify their deployment.
+With a firm understanding of MySQL and other offerings available in Azure, it is time to review how to start using these various services in applications. In this chapter, we explore how to get Azure subscriptions configured and ready to host MySQL applications. Common MySQL application types and the various tools to simplify their deployment will reviewed. Sample code will make it easier to get started faster and understand high-level concepts.
 
 ## Azure free account
 
@@ -16,19 +16,19 @@ Consult [Azure's comprehensive list of service and subscription limits](https://
 
 ## Azure authentication
 
-As mentioned previously, Azure Database for MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is also separated between the control plane and the data plane.
+As mentioned previously, Azure Database for MySQL consists of a data plane (data storage and data manipulation) and a control plane (management of the Azure resource). Authentication is separated between the control plane and the data plane as well.
 
 In the control plane, Azure Active Directory authenticates users and determines whether users are authorized to operate against an Azure resource. Review Azure RBAC in the [Introduction to Azure resource management] section for more information.
 
-In the data plane, the built-in MySQL account management system governs access for administrator and non-administrator users. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more. Refer to the [Microsoft docs](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication) for more information.
+The built-in MySQL account management system governs access for administrator and non-administrator users in the data plane. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more. Refer to the [Microsoft docs](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication) for more information.
 
 ## Development editor tools
 
-Developers have a wide variety of code editor tools to choose from to complete their IT projects. Commercial organizations and OSS communities have produced tools and plug-ins making Azure application development efficient and rapid. A very popular tool is Visual Studio Code (VS Code). VS Code is an open-source, cross-platform text editor. It offers useful utilities for various languages through extensions. Download VS Code from the [Microsoft download page.](https://code.visualstudio.com/download)
+Developers have various code editor tools to choose from to complete their IT projects. Commercial organizations and OSS communities have produced tools and plug-ins making Azure application development efficient and rapid. A very popular tool is Visual Studio Code (VS Code). VS Code is an open-source, cross-platform text editor. It offers useful utilities for various languages through extensions. Download VS Code from the [Microsoft download page.](https://code.visualstudio.com/download)
 
 ![A simple screenshot of Visual Studio Code.](media/VSCode_screenshot.png "Visual Studio Code")
 
-There is a [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension that allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code environment to make working with MySQL instances more efficient.
+The [MySQL](https://marketplace.visualstudio.com/items?itemName=formulahendry.vscode-mysql) extension allows developers to organize their database connections, administer databases, and query databases. Consider adding it to Visual Studio Code environment to make working with MySQL instances more efficient.
 
 When you are done developing for the day, you can stop Flexible Server. This feature helps keep the organizational costs low.
 

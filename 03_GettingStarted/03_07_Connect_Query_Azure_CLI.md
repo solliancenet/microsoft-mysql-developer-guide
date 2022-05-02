@@ -4,7 +4,7 @@ Workbench is not the only method of running queries against your MySQL database.
 
 ### Setup
 
-While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, any of the presented provisioning methods in the [Create a Flexible Server with database] section are possible.
+While the Azure article demonstrates how to provision a Flexible Server instance using the CLI, any of the presented provisioning methods in the [Create a Flexible Server database] section are possible.
 
 ### Instructions
 
