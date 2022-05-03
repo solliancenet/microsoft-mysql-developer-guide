@@ -535,7 +535,7 @@ decompilation of ARM templates.
 [Explore the Bicep template benefits]
 
 ![This image demonstrates part of a sample Bicep template for
-provisioning PaaS MySQL.]
+provisioning Azure Database for MySQL.]
 
 ##### Terraform
 
@@ -545,7 +545,7 @@ infrastructure across multiple cloud providers. It enables developers to
 use consistent tooling to manage each infrastructure definition.
 
 ![This image demonstrates part of a sample Terraform template for
-provisioning PaaS MySQL.]
+provisioning Azure Database for MySQL.]
 
 #### Other tips
 

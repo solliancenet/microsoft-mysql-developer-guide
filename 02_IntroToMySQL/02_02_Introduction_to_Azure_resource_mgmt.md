@@ -130,13 +130,13 @@ Additionally, the [Bicep playground](https://aka.ms/bicepdemo) tool can perform 
 
 [Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
-![This image demonstrates part of a sample Bicep template for provisioning PaaS MySQL.](./media/sample-bicep-template.png "PaaS MySQL sample Bicep template")
+![This image demonstrates part of a sample Bicep template for provisioning Azure Database for MySQL.](./media/sample-bicep-template.png "Azure Database for MySQL sample Bicep template")
 
 ##### Terraform
 
 [Hashicorp Terraform](https://www.terraform.io/) is an open-source tool for provisioning and managing cloud infrastructure. [Terraform](https://docs.microsoft.com/azure/developer/terraform/overview) is adept at deploying infrastructure across multiple cloud providers. It enables developers to use consistent tooling to manage each infrastructure definition.
 
-![This image demonstrates part of a sample Terraform template for provisioning PaaS MySQL.](./media/sample-terraform-template.png "PaaS MySQL sample Terraform template")
+![This image demonstrates part of a sample Terraform template for provisioning Azure Database for MySQL.](./media/sample-terraform-template.png "Azure Database for MySQL sample Terraform template")
 
 #### Other tips
 

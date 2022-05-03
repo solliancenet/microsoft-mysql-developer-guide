@@ -4,7 +4,7 @@ This section documents common MySQL-based products and their third-party impleme
 
 ### 3rd party Azure solutions / Azure Marketplace
 
-The [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) provides thousands of certified apps on Azure tailored to meet customer needs. Many of these apps utilize PaaS MySQL.
+The [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) provides thousands of certified apps on Azure tailored to meet customer needs. Many of these apps utilize Azure Database for MySQL.
 
 #### CMS like WordPress
 
@@ -12,7 +12,7 @@ The WordPress CMS, based on PHP and MySQL, is the most popular CMS, powering mil
 
 #### LMS like Moodle
 
-The Moodle LMS supports thousands of educational institutions and organizations, numbering 213 million users as of June 2020. There are a plethora of Azure Marketplace Moodle offerings; [this offering](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview) uses Azure PaaS MySQL for its persistence layer.
+The Moodle LMS supports thousands of educational institutions and organizations, numbering 213 million users as of June 2020. There are a plethora of Azure Marketplace Moodle offerings; [this offering](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview) uses Azure Database for MySQL for its persistence layer.
 
 #### e-commerce like Magento
 

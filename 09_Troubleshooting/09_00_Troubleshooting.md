@@ -8,9 +8,9 @@ Debugging operational support issues can be time consuming. As previous discusse
 
 ### Unsupported MySQL features
 
-Operating in a PaaS environment means that certain features that function on-premises are incompatible with cloud MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of any limitations.
+Operating in a cloud environment means that certain features that function on-premises are incompatible with Azure Database for MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of any limitations.
 
-- PaaS MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
+- Azure Database for MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
   - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
     - **Resolution**: Azure suggest setting the `log_bin_trust_function_creators` parameter to `1`, as Azure insulates against threats that exploit the binary log.
   - [Error 1227](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error): This error occurs when creating stored procedures or views with `DEFINER` statements.
@@ -112,7 +112,6 @@ If you need immediate assistance with an issue, [open a support ticket](https://
 ## Recommended content
 
 [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)
-
 
 [Azure Community Support](https://azure.microsoft.com/support/community/) Ask questions, get answers, and connect with Microsoft engineers and Azure community experts
 

@@ -1,4 +1,4 @@
-## 11 / Summary
+## 12 / Summary
 
 From basic two-tier and three-tier architectures to more advanced container based and event-driven architectures, there are many ways a developer can build a MySQL based application.  
 

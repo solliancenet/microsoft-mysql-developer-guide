@@ -50,7 +50,7 @@ Here are a few other notable advantages of Flexible Server.
 
   ![](media/mysql_iops_configuration.png)
 
-**Some of these features are not exclusive to Flexible Server. Further guide sections demonstrate Flexible Server exposes far more versatility and is the preferred PaaS MySQL choice in Azure for new and existing apps.**  
+**Some of these features are not exclusive to Flexible Server. Further guide sections demonstrate Flexible Server exposes far more versatility and is the preferred Azure Database for MySQL choice in Azure for new and existing apps.**  
 
 ##### Flexible Server pricing & TCO
 
