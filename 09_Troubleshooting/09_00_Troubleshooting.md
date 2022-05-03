@@ -6,23 +6,9 @@ As applications are running and executing in cloud environments it is always a p
 
 Debugging operational support issues can be time consuming. As previous discussed, configuring the right monitoring and alerting can help provide useful error messages and clues to the potential problem area(s).
 
-### Unsupported MySQL features
-
-Operating in a cloud environment means that certain features that function on-premises are incompatible with Azure Database for MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of any limitations.
-
-- Azure Database for MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
-  - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
-    - **Resolution**: Azure suggest setting the `log_bin_trust_function_creators` parameter to `1`, as Azure insulates against threats that exploit the binary log.
-  - [Error 1227](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error): This error occurs when creating stored procedures or views with `DEFINER` statements.
-    - **Resolution**: If you encounter this error while migrating schema objects from an on-premises MySQL instance, remove the `DEFINER` statements manually from the database dump.
-
-- Direct file system access is not available to clients. This means that `SELECT ... INTO OUTFILE` commands are unsupported.
-
-- Only the `InnoDB` and `MEMORY` storage engines are supported. This may affect older data warehousing and web applications based on the non-transactional `MyISAM` engine. Consult the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/converting-tables-to-innodb.html) to learn how to convert your MyISAM tables to InnoDB and make them run optimally.
-
 ### Connectivity issues
 
-Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance.
+Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance. For some helpful connectivity suggestions, reference the [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues) and [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/concepts-connectivity) articles.
 
 #### Misconfiguration
 
@@ -50,6 +36,20 @@ Both server misconfiguration issues and network access issues can prevent client
 ### Resource issues
 
 If the application experiences transient connectivity issues, perhaps the resources of the Azure Database for MySQL instance are constrained. Monitor resource usage and determine whether the instance needs to be scaled up.
+
+### Unsupported MySQL features
+
+Operating in a cloud environment means that certain features that function on-premises are incompatible with Azure Database for MySQL instances. While Flexible Server has better feature parity with on-premises MySQL than Single Server, it is important to be aware of any limitations.
+
+- Azure Database for MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
+  - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
+    - **Resolution**: Azure suggest setting the `log_bin_trust_function_creators` parameter to `1`, as Azure insulates against threats that exploit the binary log.
+  - [Error 1227](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error): This error occurs when creating stored procedures or views with `DEFINER` statements.
+    - **Resolution**: If you encounter this error while migrating schema objects from an on-premises MySQL instance, remove the `DEFINER` statements manually from the database dump.
+
+- Direct file system access is not available to clients. This means that `SELECT ... INTO OUTFILE` commands are unsupported.
+
+- Only the `InnoDB` and `MEMORY` storage engines are supported. This may affect older data warehousing and web applications based on the non-transactional `MyISAM` engine. Consult the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/converting-tables-to-innodb.html) to learn how to convert your MyISAM tables to InnoDB and make them run optimally.
 
 ### Platform issues
 
@@ -89,7 +89,7 @@ Following software development best practices makes your code simpler to develop
 
 - Generally, all cloud applications should include connection [retry logic](https://docs.microsoft.com/azure/architecture/patterns/retry), which typically responds to transient issues by initiating subsequent connections after a delay.
 
-## Additional support
+### Additional support
 
 - In the Azure portal, navigate to the **Diagnose and solve problems** tab of your Azure Database for MySQL instance for suggestions regarding common connectivity, performance, and availability issues.
 
@@ -101,18 +101,20 @@ Following software development best practices makes your code simpler to develop
 
 - If none of the above resolve the issue with the MySQL instance, [send a support request from the Azure portal.](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview)
 
-## Opening a support ticket
+### Opening a support ticket
 
-![](media/open-support-ticket.png)
-
-If you need immediate assistance with an issue, [open a support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.
+If you need assistance with an Azure Database for MySQL issue, [open an Azure support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.  Be sure to select the correct product and provide as much information as possible so the proper resources is assigned to your ticket.
 
 ![](media/open-a-support%20ticket.png)
 
-## Recommended content
+### Recommended content
 
-[Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)
+- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)
 
-[Azure Community Support](https://azure.microsoft.com/support/community/) Ask questions, get answers, and connect with Microsoft engineers and Azure community experts
+- [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/concepts-connectivity)
 
-[Troubleshoot data encryption in Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-data-encryption-troubleshoot)
+- [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)
+
+- [Troubleshoot data encryption in Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-data-encryption-troubleshoot)
+
+- [Azure Community Support](https://azure.microsoft.com/support/community/) Ask questions, get answers, and connect with Microsoft engineers and Azure community experts

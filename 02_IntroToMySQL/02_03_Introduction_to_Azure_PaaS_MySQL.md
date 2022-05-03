@@ -81,4 +81,4 @@ Single Server is suitable when apps do not need extensive database customization
 
 > **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option.
 
-> **Note:** This guide will be focused on Flexible Server and will not explore Single Server.
+> **Note:** This guide will focus primarily on Flexible Server and will not explore Single Server in depth.
