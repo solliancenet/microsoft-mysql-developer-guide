@@ -113,14 +113,14 @@ troubleshooting hardware or software issues.
 
 **Pros**
 
--   Highly configurable environment
+- Highly configurable environment
 
 **Cons**
 
--   Upfront capital expenditures
--   OS and hardware maintenance
--   Increased operation center and labor costs
--   Time to deploy and scale new solutions
+- Upfront capital expenditures
+- OS and hardware maintenance
+- Increased operation center and labor costs
+- Time to deploy and scale new solutions
 
 ### Cloud IaaS (in a VM)
 
@@ -141,13 +141,13 @@ software---including operating systems, middleware, and applications.
 
 **Pros**
 
--   Highly configurable environment
--   Fast deployment of additional servers
--   Reduction in operation center costs
+- Highly configurable environment
+- Fast deployment of additional servers
+- Reduction in operation center costs
 
 **Cons**
 
--   OS and middleware administration costs
+- OS and middleware administration costs
 
 ### Containers
 
@@ -168,15 +168,15 @@ high availability across container instances and environments.
 
 **Pros**
 
--   Application scalability
--   Portability between environments
--   Automated light-weight fast deployments
--   Reduced operating costs
+- Application scalability
+- Portability between environments
+- Automated light-weight fast deployments
+- Reduced operating costs
 
 **Cons**
 
--   Networking and configuration complexity
--   Container monitoring
+- Networking and configuration complexity
+- Container monitoring
 
 ### Cloud PaaS
 
@@ -305,15 +305,15 @@ The following table outlines some of the Azure services used in
 application developer scenarios that will be discussed in further detail
 in later sections of this guide.
 
--   **[Virtual Machines (IaaS)]**: Begin by running a PHP sample
+- **[Virtual Machines (IaaS)]**: Begin by running a PHP sample
     application on an Azure Windows Server Virtual Machine.
--   **[Azure App Service (PaaS)]**: Deploy the PHP application to Azure
+- **[Azure App Service (PaaS)]**: Deploy the PHP application to Azure
     App Service, a flexible, simple-to-use application hosting service.
--   **[Azure Container Instances (PaaS)]**: *Containerize* apps on the
+- **[Azure Container Instances (PaaS)]**: *Containerize* apps on the
     VM to operate in an environment isolated from other development
     tools installed on the system. Azure Container Instances provides a
     managed environment to operate containers.
--   **[Azure Kubernetes Service (PaaS)]**: AKS also hosts containerized
+- **[Azure Kubernetes Service (PaaS)]**: AKS also hosts containerized
     apps, but it is optimized for more advanced orchestration scenarios,
     such as high availability.
 
@@ -325,22 +325,22 @@ Learn] module.
 Azure provides a flexible resource hierarchy to simplify cost management
 and security. This hierarchy consists of four levels:
 
--   **[Management groups]**: Management groups consolidate multiple
+- **[Management groups]**: Management groups consolidate multiple
     Azure subscriptions for compliance and security purposes.
--   **Subscriptions**: Subscriptions govern cost control and access
+- **Subscriptions**: Subscriptions govern cost control and access
     management. Azure users cannot provision Azure resources without a
     subscription.
--   **[Resource groups]**: Resource groups consolidate the individual
+- **[Resource groups]**: Resource groups consolidate the individual
     Azure resources for a given deployment. All provisioned Azure
     resources belong to one resource group. In this guide, it will be
     required to provision a *resource group* in an *subscription* to
     hold the required resources.
-    -   Resource groups are placed in a geographic location that
+    - Resource groups are placed in a geographic location that
         determines where metadata about that resource group is stored.
--   **Resources**: An Azure resource is an instance of a service. An
+- **Resources**: An Azure resource is an instance of a service. An
     Azure resource belongs to one resource group located in one
     subscription.
-    -   Most Azure resources are provisioned in a particular region.
+    - Most Azure resources are provisioned in a particular region.
 
     ![This image shows Azure resource scopes.]
 
@@ -484,7 +484,7 @@ Install-Module -Name Az.MySQL
 After the modules are installed, reference tutorials to learn how to
 take advantage of scripting management activities:
 
--   [Tutorial: Design an Azure Database for MySQL using PowerShell]
+- [Tutorial: Design an Azure Database for MySQL using PowerShell]
 
 #### Infrastructure as Code
 
@@ -551,12 +551,12 @@ and security personnel to develop an effective organizational hierarchy
 of resources. Here are some best practices to follow for Azure
 deployments.
 
--   **Utilize Management Groups** Create at least three levels of
+- **Utilize Management Groups** Create at least three levels of
     management groups.
--   **Adopt a naming convention:** Names in Azure should include
+- **Adopt a naming convention:** Names in Azure should include
     business details, such as the organization department, and
     operational details for IT personnel, like the workload.
--   **Adopt other Azure governance tools:** Azure provides mechanisms
+- **Adopt other Azure governance tools:** Azure provides mechanisms
     such as [resource tags] and [resource locks] to facilitate
     compliance, cost management, and security.
 
@@ -568,16 +568,16 @@ Azure provides [multiple support plans for businesses], depending on
 their business continuity requirements. There is also a large user
 community:
 
--   [StackOverflow Azure Tag]
--   [Azure on Twitter]
--   Move to Azure efficiently with customized guidance from Azure
+- [StackOverflow Azure Tag]
+- [Azure on Twitter]
+- Move to Azure efficiently with customized guidance from Azure
     engineers. [FastTrack for Azure]
 
 #### Training
 
--   [Azure Certifications & Exams]
--   [Microsoft Learn]
-    -   [Azure Fundamentals (AZ-900) Learning Path]
+- [Azure Certifications & Exams]
+- [Microsoft Learn]
+    - [Azure Fundamentals (AZ-900) Learning Path]
 
 ## Introduction to Azure Database for MySQL
 
@@ -643,7 +643,7 @@ storage, and backup storage.]
 
 Here are a few other notable advantages of Flexible Server.
 
--   [User-scheduled service maintenance:] Flexible Server allows
+- [User-scheduled service maintenance:] Flexible Server allows
     database administrators to set a day of the week and a time for
     Azure to perform service maintenance and upgrades, **per server**.
     Providing notifications five days before a planned maintenance
@@ -652,23 +652,23 @@ Here are a few other notable advantages of Flexible Server.
 
     ![][5]
 
--   [Network security:] Applications access Flexible Server through the
+- [Network security:] Applications access Flexible Server through the
     public Internet (though access is governed by firewall ACLs), or
     through private IP addresses in an Azure Virtual Network. Moreover,
     TLS support keeps traffic encrypted, irrespective of the chosen
     network access model.
 
--   [Automatic backups:] Azure automates database backups, encrypts
+- [Automatic backups:] Azure automates database backups, encrypts
     them, and stores them for a configurable period.
 
     ![][6]
 
--   [Read replicas:] Read replicas help teams scale their applications
+- [Read replicas:] Read replicas help teams scale their applications
     by providing read-only copies of the data updated on the master
     node. Often, applications that run on elastic, autoscaling services,
     like Azure App Service, couple well with read replicas.
 
--   [Input-output operations per second (IOPS):] IOPS can be configured
+- [Input-output operations per second (IOPS):] IOPS can be configured
     based on your performance needs.
 
     ![][7]
@@ -685,14 +685,14 @@ The MySQL Flexible Server tiers offer a storage range between 20 GiB and
 they differ in core count and memory per vCore. Choosing a compute tier
 affects the database IOPS and pricing.
 
--   **Burstable**: This tier corresponds to a B-series Azure VM.
+- **Burstable**: This tier corresponds to a B-series Azure VM.
     Instances provisioned in this tier have 1-2 vCores. It is ideal for
     applications that do not utilize the CPU consistently.
--   **General Purpose**: This tier corresponds to a Ddsv4-series Azure
+- **General Purpose**: This tier corresponds to a Ddsv4-series Azure
     VM. Instances provisioned in this tier have 2-64 vCores and 4 GiB
     memory per vCore. It is ideal for most enterprise applications
     requiring a strong balance between memory and vCore count.
--   **Memory Optimized**: This tier corresponds to an Edsv4-series Azure
+- **Memory Optimized**: This tier corresponds to an Edsv4-series Azure
     VM. Instances provisioned in this tier have 2-64 vCores and 8 GiB
     memory per vCore. It is ideal for high-performance or real-time
     workloads that depend on in-memory processing.
@@ -714,10 +714,10 @@ To estimate the TCO for Azure Database for MySQL:
 Azure provides a [detailed list of the limitations of Flexible Server].
 Here are a few notable ones.
 
--   Support for only the InnoDB and MEMORY storage engines; MyISAM is
+- Support for only the InnoDB and MEMORY storage engines; MyISAM is
     unsupported
--   The DBA role and the `SUPER` privilege are unsupported
--   `SELECT ... INTO OUTFILE` statements to write query results to files
+- The DBA role and the `SUPER` privilege are unsupported
+- `SELECT ... INTO OUTFILE` statements to write query results to files
     are unsupported, as the filesystem is not directly exposed by the
     service
 
@@ -863,11 +863,11 @@ This feature helps keep the organizational costs low.
 
 ## Resources
 
--   [App Service overview][Azure App Service (PaaS)]
+- [App Service overview][Azure App Service (PaaS)]
 
--   [Azure App Service plan overview]
+- [Azure App Service plan overview]
 
--   [Plan and manage costs for Azure App Service]
+- [Plan and manage costs for Azure App Service]
 
 ## Create a Flexible Server database
 
@@ -931,9 +931,9 @@ Download MySQL Workbench from the [MySQL Downloads.]
 Explore the [Use MySQL Workbench with Azure Database for MySQL Flexible
 Server] article to perform the following activities:
 
--   Create a new database in the Flexible Server instance
--   Create, query, and update data in a table (inventory)
--   Delete records from the table
+- Create a new database in the Flexible Server instance
+- Create, query, and update data in a table (inventory)
+- Delete records from the table
 
 Note that MySQL Workbench can automatically initiate an SSL-secured
 connection to Azure Database for MySQL. However, it is recommended to
@@ -971,9 +971,9 @@ application for examples of how to use PHP to connect to MySQL.
 
 There are two major APIs to interact with MySQL in PHP:
 
--   *MySQLi*, *MySQLi* is an improvement over the earlier *MySQL* API,
+- *MySQLi*, *MySQLi* is an improvement over the earlier *MySQL* API,
     which does not meet the security needs of modern applications.
--   *PDO*, or *PHP Data Objects*, allows applications to access
+- *PDO*, or *PHP Data Objects*, allows applications to access
     databases in PHP through abstractions, standardizing data access for
     different databases. PDO works with a database-specific driver, like
     *PDO_MYSQL*.
@@ -1033,8 +1033,8 @@ compatible with Single Server.
 
 1.  [MySQL Connector/J Introduction]
 2.  MySQL Connector/J Microsoft Samples
-    -   [Flexible Server]
-    -   [Single
+    - [Flexible Server]
+    - [Single
         Server][Quickstart: Use Java and JDBC with Azure Database for MySQL]
 3.  [Introduction to Spring Data JPA]
 4.  [Hibernate ORM]
@@ -1575,10 +1575,10 @@ many enterprise apps.
 
 #### Resources
 
--   [App Service overview][Azure App Service (PaaS)]
--   PHP & MySQL Flexible Server sample app:
-    -   Manual deployment: \[Running the sample application\]
-    -   Scripted deployment: \[Cloud Deployment to Azure App Service\]
+- [App Service overview][Azure App Service (PaaS)]
+- PHP & MySQL Flexible Server sample app:
+    - Manual deployment: \[Running the sample application\]
+    - Scripted deployment: \[Cloud Deployment to Azure App Service\]
 
 ### Serverless Compute
 
@@ -1607,11 +1607,11 @@ architectures with Durable Functions.
 
 #### Resources
 
--   [Introduction to Azure Functions][Azure Functions]
--   [Azure Functions hosting options]
--   Azure Functions with MySQL Flexible Server samples:
-    -   .NET: \[Azure Function with MySQL (.NET)\]
-    -   Python: \[Azure Function with MySQL (Python)\]
+- [Introduction to Azure Functions][Azure Functions]
+- [Azure Functions hosting options]
+- Azure Functions with MySQL Flexible Server samples:
+    - .NET: \[Azure Function with MySQL (.NET)\]
+    - Python: \[Azure Function with MySQL (Python)\]
 
 ### Azure Logic Apps
 
@@ -1627,9 +1627,9 @@ data gateway.
 
 #### Resources
 
--   [What is a Azure Logic App?][Azure Logic Apps]
--   [Compare Azure Functions and Azure Logic Apps]
--   \[Logic Apps with MySQL\]
+- [What is a Azure Logic App?][Azure Logic Apps]
+- [Compare Azure Functions and Azure Logic Apps]
+- \[Logic Apps with MySQL\]
 
 ### Microservices
 
@@ -1649,9 +1649,9 @@ Service through CI/CD platforms, such as GitHub Actions.
 
 #### Resources
 
--   [Build microservices on Azure]
--   [Using domain analysis to model microservices]
--   \[Deploying a Laravel app backed by a Java REST API to AKS\]
+- [Build microservices on Azure]
+- [Using domain analysis to model microservices]
+- \[Deploying a Laravel app backed by a Java REST API to AKS\]
 
 ### API Management
 
@@ -1676,8 +1676,8 @@ gateway while retaining the Azure management plane APIs.
 
 #### Resources
 
--   [About API Management]
--   [Self-hosted gateway overview]
+- [About API Management]
+- [Self-hosted gateway overview]
 
 ### Event-driven - Azure Event Grid vs. Service Bus vs. Event Hubs
 
@@ -1725,10 +1725,10 @@ Developers use cron jobs to run operations on a schedule. They are often
 useful for administrative tasks, like taking site backups. Azure
 Functions and Logic Apps support cron jobs:
 
--   [Azure Functions:] The timer trigger executes a function on a
+- [Azure Functions:] The timer trigger executes a function on a
     schedule. Azure Functions supports more complex scheduling tasks,
     like specifying the cron job time precision.
--   [Logic Apps:] Logic Apps supports Recurrence triggers and Sliding
+- [Logic Apps:] Logic Apps supports Recurrence triggers and Sliding
     Window triggers. Recurrence triggers run Logic Apps on a schedule,
     while Sliding Window triggers extend Recurrence triggers by
     executing occurrences that were missed (e.g. the Logic App was
@@ -2033,11 +2033,11 @@ inherit all the enterprise features provided by AKS. Moreover,
 Kubernetes apps that persist data in MySQL Flexible Server unlock
 numerous benefits:
 
--   In supported regions, co-locating Flexible Server and AKS nodes in
+- In supported regions, co-locating Flexible Server and AKS nodes in
     the same availability zone minimizes latency
--   Applications can host database proxies, like ProxySQL for MySQL, [on
+- Applications can host database proxies, like ProxySQL for MySQL, [on
     the same infrastructure as their apps]
--   Teams can manage Flexible Server instances directly from AKS through
+- Teams can manage Flexible Server instances directly from AKS through
     the [Azure Service Operator]
 
 To perform deployments using AKS, reference the [Migrate to Azure
@@ -2090,27 +2090,27 @@ Below are two methods of deploying an ARM template:
 
 **Azure Portal**
 
--   Login into the Azure Portal and choose a valid Subscription.
--   Search for 'Deploy a custom template'.
+- Login into the Azure Portal and choose a valid Subscription.
+- Search for 'Deploy a custom template'.
 
 ![][14]
 
--   Select 'Build your own template in the editor'.
+- Select 'Build your own template in the editor'.
 
 ![][15]
 
--   Load the ARM template file from your local drive.
+- Load the ARM template file from your local drive.
 
 ![][16]
 
--   Navigate to the **template.json** file.
--   Save the template.
+- Navigate to the **template.json** file.
+- Save the template.
 
 ![][17]
 
--   Enter the template parameters.
--   Select the **Review + create** button.
--   Check for validation errors. For example, you may have exceeded your
+- Enter the template parameters.
+- Select the **Review + create** button.
+- Check for validation errors. For example, you may have exceeded your
     quota for that subscription and region.
 
 Another option for deploying infrastructure using a template is to use
@@ -2120,8 +2120,8 @@ Azure CLI or PowerShell. Here is a tutorial guide:
 
 #### Step 1 - Build the development environment - deploy one of the templates below:
 
--   [Basic Template]
--   [Secure Template]
+- [Basic Template]
+- [Secure Template]
 
 #### Step 2 - Explore the development environment
 
@@ -2133,14 +2133,14 @@ As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine has
 been deployed that will be used to perform all the activities. Login to
 this virtual machine by doing the following:
 
--   Open Azure Portal
--   Browse to your resource group
--   Select the **mysqldevSUFFIX-paw1** virtual machine
--   Select **Connect-\>RDP**
--   Select **Download RDP file**
--   Open the downloaded file, select **Connect**
--   For the username, type **wsuser**
--   For the password, type **Solliance123**
+- Open Azure Portal
+- Browse to your resource group
+- Select the **mysqldevSUFFIX-paw1** virtual machine
+- Select **Connect-\>RDP**
+- Select **Download RDP file**
+- Open the downloaded file, select **Connect**
+- For the username, type **wsuser**
+- For the password, type **Solliance123**
 
 Once in the virtual machine, notice that all the necessary development
 tools have already been installed. Additionally, the supporting GitHub
@@ -2188,15 +2188,15 @@ development evolution is understood. This will also ensure the necessary
 pre-requisite Azure services and resources are available for the reader
 to progress to the more complex deployment examples.
 
--   [Azure Functions][18]
-    -   [Dotnet]
-    -   [Python][19]
-    -   [AKS]
-    -   [Secured with MSI]
--   [Logic Apps]
--   [Azure Data Factory]
--   [Azure Synapse Analytics]
--   [Azure Batch]
+- [Azure Functions][18]
+    - [Dotnet]
+    - [Python][19]
+    - [AKS]
+    - [Secured with MSI]
+- [Logic Apps]
+- [Azure Data Factory]
+- [Azure Synapse Analytics]
+- [Azure Batch]
 
 ### Sample Application evolution
 
@@ -2224,19 +2224,19 @@ deployment processes to minimize application errors and the time to
 release new features. This practice is often termed CI/CD. Below are the
 common terms and definitions:
 
--   **Continuous Integration (CI):** CI tools automatically build, test,
+- **Continuous Integration (CI):** CI tools automatically build, test,
     and merge code that developers push to version control systems. CI
     pipelines run code analysis tools to enforce style guidelines, unit
     tests, integration tests, and more. By constantly merging
     developers' contributions to a shared branch, CI tools improve
     developer efficiency.
 
--   **Continuous Delivery (CD):** Continuous delivery tools package
+- **Continuous Delivery (CD):** Continuous delivery tools package
     applications in a format that operations teams can deploy to
     production. This typically involves pushing a container image to a
     container registry.
 
--   **Continuous Deployment (CD):** Continuous deployment automates the
+- **Continuous Deployment (CD):** Continuous deployment automates the
     production deployment process; it does not require an operations
     team to intervene. Continuous deployment processes extend continuous
     delivery.
@@ -2300,19 +2300,19 @@ flexibility.
 Azure DevOps includes multiple tools to improve team collaboration and
 automate building, testing, and deploying apps.
 
--   [Azure Boards:] Azure Boards helps teams plan and track work items.
+- [Azure Boards:] Azure Boards helps teams plan and track work items.
     It supports multiple [processes.]
--   [Azure Pipelines:] Azure Pipelines is Microsoft's CI/CD pipeline
+- [Azure Pipelines:] Azure Pipelines is Microsoft's CI/CD pipeline
     platform. It supports deployment to PaaS services, virtual machines,
     and container registries in Azure, other cloud platforms, and
     on-premises. Azure Pipelines integrates with common version control
     systems, like GitHub, GitLab, and Azure Repos.
--   [Azure Test Plans:] Azure Test Plans allows development teams to
+- [Azure Test Plans:] Azure Test Plans allows development teams to
     create manual tests, for feedback from developers and stakeholders,
     and automated tests, which are necessary for any CI/CD pipeline.
--   [Azure Repos:] Azure Repos provides Microsoft-hosted public and
+- [Azure Repos:] Azure Repos provides Microsoft-hosted public and
     private Git repositories.
--   [Azure Artifacts:] Azure Artifacts allows organizations to share
+- [Azure Artifacts:] Azure Artifacts allows organizations to share
     packages, such as NuGet and npm packages, internally and publicly.
     Azure Artifacts integrates with Azure Pipelines.
 
@@ -2363,13 +2363,13 @@ of your architecture(s).
 
 ### Checklist
 
--   Understand the basic Azure fundamental services.
--   Understand the phases in the developer evolution journey.
--   Be able to evaluate where your application architecture fits in the
+- Understand the basic Azure fundamental services.
+- Understand the phases in the developer evolution journey.
+- Be able to evaluate where your application architecture fits in the
     journey.
--   Be cognizant of the changes that are needed for applications to move
+- Be cognizant of the changes that are needed for applications to move
     to the next state.
--   Utilize modern development and deployment methodologies.
+- Utilize modern development and deployment methodologies.
 
 # 05 / Monitoring
 
@@ -2383,11 +2383,11 @@ level.
 
 Proper monitoring management helps with the following:
 
--   Understanding the resource utilization
--   Workload connection metric analysis
--   Failure analysis and remediation
--   Environment performance analysis and scaling adjustments
--   Historical performance review
+- Understanding the resource utilization
+- Workload connection metric analysis
+- Failure analysis and remediation
+- Environment performance analysis and scaling adjustments
+- Historical performance review
 
 Azure has the ability to monitor all of these types of operational
 activities using tools such as [Azure Monitor], [Log Analytics], and
@@ -2402,13 +2402,13 @@ event has a well-defined remediation path, alerts can fire automated
 
 This chapter will be focused on these monitoring concepts:
 
--   Azure Monitor overview and strategy
+- Azure Monitor overview and strategy
 
--   Application monitoring
+- Application monitoring
 
--   Database monitoring
+- Database monitoring
 
--   Alerts and strategies
+- Alerts and strategies
 
 ![][20]
 
@@ -2465,8 +2465,8 @@ when a resource is modified or when a virtual machine is started.
 
 Event examples:
 
--   Start or stop a VM.
--   Start or stop an App Service.
+- Start or stop a VM.
+- Start or stop an App Service.
 
 [Azure Activity log]
 
@@ -2480,9 +2480,9 @@ data. Users can create charts in the portal.
 
 Query examples:
 
--   HTTP URL requests in the last hour.
--   HTTP status codes in the two days.
--   Call duration and result code.
+- HTTP URL requests in the last hour.
+- HTTP status codes in the two days.
+- Call duration and result code.
 
 [Overview of Log Analytics in Azure Monitor]
 
@@ -2517,9 +2517,9 @@ even if you don't have an active support agreement.**
 
 Resource issue examples:
 
--   Unplanned events, for example an unexpected host reboot
--   Planned events, like scheduled host OS updates
--   Events triggered by user actions, for example a user rebooting a
+- Unplanned events, for example an unexpected host reboot
+- Planned events, like scheduled host OS updates
+- Events triggered by user actions, for example a user rebooting a
     virtual machine
 
 [Resource Health overview]
@@ -2538,8 +2538,8 @@ application can take advantage of this powerful monitoring tool.
 
 Using Application Insights:
 
--   Install a small instrumentation package (SDK) in your app
--   Or enable Application Insights by using the Application Insights
+- Install a small instrumentation package (SDK) in your app
+- Or enable Application Insights by using the Application Insights
     agent in Azure.
 
 ![][27]
@@ -2549,16 +2549,16 @@ Insights resource by using a unique instrumentation key and URL.
 
 Example steps to configure WordPress monitoring:
 
--   Install Application Insights plugin from WordPress Plugins
+- Install Application Insights plugin from WordPress Plugins
 
--   Create Application Insights
+- Create Application Insights
 
--   Copy the Instrumentation Key from created Application Insights
+- Copy the Instrumentation Key from created Application Insights
 
--   Then go to **Settings** and Application Insights inside WordPress,
+- Then go to **Settings** and Application Insights inside WordPress,
     and add the key there.
 
--   Access the website and look for details
+- Access the website and look for details
 
 > ![Tip] **Tip**: [Connection Strings] are recommended over
 > instrumentation keys.
@@ -2575,24 +2575,24 @@ resource and metric and then apply your filters:
 For example, if we wanted to capture performance counters for a PHP App
 Service resource, there are some simple steps to follow.
 
--   Determine your scope. Navigate to the App Service in the Azure
+- Determine your scope. Navigate to the App Service in the Azure
     Portal.
 
--   In the **Monitoring** section, select the **Metrics** item.
+- In the **Monitoring** section, select the **Metrics** item.
 
--   Select your time range.
+- Select your time range.
 
     ![][29]
 
--   Select your **Metric** from the dropdown.
+- Select your **Metric** from the dropdown.
 
     ![][30]
 
--   Select your chart choice for the chosen metric.
+- Select your chart choice for the chosen metric.
 
     ![][31]
 
--   Create a rule by selecting **New alert rule**.
+- Create a rule by selecting **New alert rule**.
 
     ![][32]
 
@@ -2795,7 +2795,7 @@ automatically resolvable alerts and incidents.
 **Consider the following principles for determining whether a symptom is
 an appropriate candidate for alerting:**
 
--   Does it matter? Is the issue symptomatic of a real problem or issue
+- Does it matter? Is the issue symptomatic of a real problem or issue
     influencing the overall health of the application? For example, does
     it matter whether the CPU utilization is high on the resource? Or
     that a particular SQL query running on a SQL database instance on
@@ -2806,13 +2806,13 @@ an appropriate candidate for alerting:**
     condition in the first place. Alerting and notifying on the SQL
     query process utilization issue is both relevant and actionable.
 
--   Is it urgent? Is the issue real, and does it need urgent attention?
+- Is it urgent? Is the issue real, and does it need urgent attention?
     If so, the responsible team should be immediately notified.
 
--   Are your customers affected? Are users of the service or application
+- Are your customers affected? Are users of the service or application
     affected as a result of the issue?
 
--   Are other dependent systems affected? Are there alerts from
+- Are other dependent systems affected? Are there alerts from
     dependencies that are interrelated, and that can possibly be
     correlated to avoid notifying different teams all working on the
     same problem?
@@ -2833,21 +2833,21 @@ See: [Successful alerting strategy]
 Metric alerts assess metric time-series according to defined conditions
 and take action. They consist of the following parts:
 
--   **Alert rules** define the alert conditions. They require the
+- **Alert rules** define the alert conditions. They require the
     following information:
 
-    -   The metric to monitor (e.g. `aborted_connections`)
-    -   An aggregation for the selected metric (e.g. `total`)
-    -   A threshold for the aggregated value (e.g. `10 connections`)
-    -   A time window for the aggregation (e.g. `30 minutes`)
-    -   A polling frequency to determine if the previous conditions are
+    - The metric to monitor (e.g. `aborted_connections`)
+    - An aggregation for the selected metric (e.g. `total`)
+    - A threshold for the aggregated value (e.g. `10 connections`)
+    - A time window for the aggregation (e.g. `30 minutes`)
+    - A polling frequency to determine if the previous conditions are
         met (e.g. `5 minutes`)
 
--   **Action groups** define notification actions, such as emailing or
+- **Action groups** define notification actions, such as emailing or
     texting an administrator, and other actions to take, like calling a
     webhook or [Azure Automation Runbooks]
 
--   **Alert processing rules** is a *preview* feature that filters
+- **Alert processing rules** is a *preview* feature that filters
     alerts as they are generated to modify the actions taken in response
     to that alert (i.e. by disabling action groups)
 
@@ -2859,18 +2859,18 @@ alert for a Flexible Server instance.
 Here are some scenarios of how aggregating metrics over time generates
 insights. Read the [Microsoft blog] for more examples.
 
--   If there were **10** or more failed connections (total of
+- If there were **10** or more failed connections (total of
     `aborted_connections` in Flexible Server) in the last **30**
     minutes, then send an email alert
-    -   This may indicate incorrect credentials or an SSL issue in the
+    - This may indicate incorrect credentials or an SSL issue in the
         application
--   If IOPS is **90%** or more of capacity (average of
+- If IOPS is **90%** or more of capacity (average of
     `io_consumption_percent` in Flexible Server) for at least **1**
     hour, then call a webhook
-    -   Excessive IO usage affects the performance of transactional
+    - Excessive IO usage affects the performance of transactional
         workloads, so [scale storage to increase IOPS capacity or
         provision additional IOPS]
-    -   See the linked CLI examples for automatic scaling based on
+    - See the linked CLI examples for automatic scaling based on
         metrics
 
 ### Webhooks
@@ -2889,8 +2889,8 @@ Azure CLI provides the `az monitor` series of commands to manipulate
 action groups (`az monitor action-group`), alert rules and metrics
 (`az monitor metrics`), and more.
 
--   [Azure CLI reference commands for Azure Monitor]
--   [Monitor and scale an Azure Database for MySQL Flexible Server using
+- [Azure CLI reference commands for Azure Monitor]
+- [Monitor and scale an Azure Database for MySQL Flexible Server using
     Azure CLI]
 
 #### Azure Portal
@@ -2899,9 +2899,9 @@ While the Azure Portal does not provide automation capabilities like the
 CLI or the REST API, it does support configurable dashboards and
 provides a strong introduction to monitoring metrics in MySQL.
 
--   [Set up alerts on metrics for Azure Database for MySQL - Flexible
+- [Set up alerts on metrics for Azure Database for MySQL - Flexible
     Server][Microsoft's tutorial]
--   [Tutorial: Analyze metrics for an Azure resource]
+- [Tutorial: Analyze metrics for an Azure resource]
 
 #### Azure Monitor REST API
 
@@ -2913,8 +2913,8 @@ To interact with the REST API, applications first need to obtain an
 authentication token from Azure Active Directory and then use that token
 in API requests.
 
--   [REST API Walkthrough]
--   [Azure Monitor REST API Reference]
+- [REST API Walkthrough]
+- [Azure Monitor REST API Reference]
 
 ### Azure Service Health
 
@@ -2940,49 +2940,49 @@ being reactive.
 
 ### Checklist
 
--   Define a monitoring strategy to provide useful insights without
+- Define a monitoring strategy to provide useful insights without
     deteriorating application performance and incurring excessive costs
-    -   For example, storing slow query logs on Flexible Server
+    - For example, storing slow query logs on Flexible Server
         instances without proper management consumes storage space,
         affecting database performance
--   Configure your Azure resources to emit strategic logs (like MySQL
+- Configure your Azure resources to emit strategic logs (like MySQL
     Flexible Server slow query logs) and route them to Azure
     destinations, like Log Analytics workspaces
--   Develop KQL queries to record and visualize database performance,
+- Develop KQL queries to record and visualize database performance,
     query performance, and DDL/DML activity
--   If necessary, configure alert rules for metrics and logs
-    -   Azure can automatically respond to fired alerts through Azure
+- If necessary, configure alert rules for metrics and logs
+    - Azure can automatically respond to fired alerts through Azure
         Automation runbooks
 
 ## Recommended content
 
--   [Best practices for alerting on metrics with Azure Database for
+- [Best practices for alerting on metrics with Azure Database for
     MySQL monitoring][Microsoft blog]
 
--   [Configure audit logs (Azure portal)]
+- [Configure audit logs (Azure portal)]
 
--   [Azure Monitor best practices]
+- [Azure Monitor best practices]
 
--   [Cloud monitoring guide: Collect the right data]
+- [Cloud monitoring guide: Collect the right data]
 
--   [Configure and access audit logs in the Azure CLI]
+- [Configure and access audit logs in the Azure CLI]
 
--   [Write your first query with Kusto Query Language (Microsoft Learn)]
+- [Write your first query with Kusto Query Language (Microsoft Learn)]
 
--   [Azure Monitor Logs Overview]
+- [Azure Monitor Logs Overview]
 
--   [Application Monitoring for Azure App Service Overview]
+- [Application Monitoring for Azure App Service Overview]
 
--   [Configure and access audit logs for Azure Database for MySQL in the
+- [Configure and access audit logs for Azure Database for MySQL in the
     Azure Portal]
 
--   [Kusto Query Language (KQL)]
+- [Kusto Query Language (KQL)]
 
--   [SQL Kusto cheat sheet]
+- [SQL Kusto cheat sheet]
 
--   [Get started with log queries in Azure Monitor]
+- [Get started with log queries in Azure Monitor]
 
--   [Monitor Azure Database for MySQL using Percona Monitoring and
+- [Monitor Azure Database for MySQL using Percona Monitoring and
     Management (PMM)]
 
 ## 06 / Networking and Security
@@ -3033,18 +3033,18 @@ access the server and databases.
 > provides network access to the instance to public IPs owned by other
 > Azure customers.
 
--   Flexible Server
-    -   [Manage firewall rules for Azure Database for MySQL - Flexible
+- Flexible Server
+    - [Manage firewall rules for Azure Database for MySQL - Flexible
         Server using the Azure portal]
-    -   [Manage firewall rules for Azure Database for MySQL - Flexible
+    - [Manage firewall rules for Azure Database for MySQL - Flexible
         Server using Azure CLI]
-    -   [ARM Reference for Firewall Rules]
--   Single Server
-    -   [Create and manage Azure Database for MySQL firewall rules by
+    - [ARM Reference for Firewall Rules]
+- Single Server
+    - [Create and manage Azure Database for MySQL firewall rules by
         using the Azure portal]
-    -   [Create and manage Azure Database for MySQL firewall rules by
+    - [Create and manage Azure Database for MySQL firewall rules by
         using the Azure CLI]
-    -   [ARM Reference for Firewall Rules][47]
+    - [ARM Reference for Firewall Rules][47]
 
 #### Private Access
 
@@ -3088,12 +3088,12 @@ private connection to Azure through a service provider.
 
 For more Information on Virtual Networks, reference the following:
 
--   [Introduction to Azure Virtual Networks]
--   Creating virtual networks
-    -   [Portal]
-    -   [PowerShell]
-    -   [CLI]
-    -   [ARM Template]
+- [Introduction to Azure Virtual Networks]
+- Creating virtual networks
+    - [Portal]
+    - [PowerShell]
+    - [CLI]
+    - [ARM Template]
 
 #### Flexible Server
 
@@ -3123,31 +3123,31 @@ See: [Private DNS zone overview]
 For more information on configuring Private Access for Flexible Server,
 reference the following:
 
--   [Azure Portal]
--   [Azure CLI][48]
+- [Azure Portal]
+- [Azure CLI][48]
 
 ### Networking best practices for Flexible Server
 
--   If deploying an application in an Azure region that supports
+- If deploying an application in an Azure region that supports
     *Availability Zones*, deploy the application and the Flexible Server
     instance in the same zone to minimize latency
 
 > For a review of availability zones, consult the [Introduction to Azure
 > Database for MySQL][49] document.
 
--   Organize the components of the application into multiple virtual
+- Organize the components of the application into multiple virtual
     networks, such as in a [hub and spoke configuration.] Employ virtual
     network peering or VPN Gateways to join the application's virtual
     networks.
 
--   Configure data protection at rest and in motion (see the [Security
+- Configure data protection at rest and in motion (see the [Security
     and Compliance document]).
 
--   [General Azure Networking Best Practices]
+- [General Azure Networking Best Practices]
 
-    -   Determine IP addressing & subnetting
-    -   Determine DNS setup and whether forwarders are needed
-    -   Employ tools like network security groups to secure traffic
+    - Determine IP addressing & subnetting
+    - Determine DNS setup and whether forwarders are needed
+    - Employ tools like network security groups to secure traffic
         within and between subnets
 
 ### Security
@@ -3187,8 +3187,8 @@ sparingly and in highly network-protected environments. Consult the
 guides below, as Flexible Server's TLS enforcement status can be set
 through the `require_secure_transport` MySQL server parameter.
 
--   [Flexible Server][50]
--   [Single Server]
+- [Flexible Server][50]
+- [Single Server]
 
 #### Microsoft Sentinel
 
@@ -3251,17 +3251,17 @@ secure as if running it on-premises.
 
 ## Security checklist
 
--   Utilize the strongest possible authentication mechanisms such as
+- Utilize the strongest possible authentication mechanisms such as
     Azure Active Directory
--   Enable Advanced Threat Protection and Microsoft Defender for Cloud.
--   Enable all auditing features.
--   Enable encryption at every layer that supports it
--   Consider a Bring-Your-Own-Key (BYOK) strategy.
--   Implement firewall rules.
--   Utilize private endpoints for workloads that do not travel over the
+- Enable Advanced Threat Protection and Microsoft Defender for Cloud.
+- Enable all auditing features.
+- Enable encryption at every layer that supports it
+- Consider a Bring-Your-Own-Key (BYOK) strategy.
+- Implement firewall rules.
+- Utilize private endpoints for workloads that do not travel over the
     Internet.
--   Integrate Microsoft Sentinel for advanced SIEM and SOAR
--   Utilize private endpoints and virtual network integration where
+- Integrate Microsoft Sentinel for advanced SIEM and SOAR
+- Utilize private endpoints and virtual network integration where
     possible
 
 # 07 / Testing
@@ -3336,9 +3336,9 @@ Center, Azure Traffic Manager, and other tools.
 
 The following links provide resources on Blue-green deployment options:
 
--   [Deployment Center example]
--   [Azure Traffic Manager example]
--   [Application Gateway example]
+- [Deployment Center example]
+- [Azure Traffic Manager example]
+- [Application Gateway example]
 
 ### Performance testing
 
@@ -3418,11 +3418,11 @@ nodes, a feature provided by metrics from AKS.]
 
 #### Resources
 
--   [Supported languages for Azure App Insights]
--   Comparison of *metrics* and *logs* in Azure Monitor
-    -   [Azure Monitor Metrics overview]
-    -   [Azure Monitor Logs overview]
--   [Monitoring Azure Kubernetes Service (AKS) with Azure Monitor]
+- [Supported languages for Azure App Insights]
+- Comparison of *metrics* and *logs* in Azure Monitor
+    - [Azure Monitor Metrics overview]
+    - [Azure Monitor Logs overview]
+- [Monitoring Azure Kubernetes Service (AKS) with Azure Monitor]
 
 ### Grafana & Prometheus
 
@@ -3448,18 +3448,18 @@ pod.]
 The following resources are helpful for exploring various approaches to
 using the previously mentioned tools and concepts.
 
--   [Using Azure Kubernetes Service with Grafana and Prometheus]
+- [Using Azure Kubernetes Service with Grafana and Prometheus]
 
--   [Prometheus Overview]
+- [Prometheus Overview]
 
--   [What is Grafana OSS]
+- [What is Grafana OSS]
 
--   [Store Prometheus Metrics with Thanos, Azure Storage and Azure
+- [Store Prometheus Metrics with Thanos, Azure Storage and Azure
     Kubernetes Service (AKS)]
 
--   [What are Azure Pipelines?]
+- [What are Azure Pipelines?]
 
--   [What is Azure Load Testing?]
+- [What is Azure Load Testing?]
 
 ## 07 / Summary
 
@@ -3479,11 +3479,11 @@ looking for when designing microservices.
 
 ### Checklist
 
--   Perform functional testing on applications and databases.
--   Perform performance testing on applications and databases.
--   Utilize industry standard tools and benchmarks to ensure accurate
+- Perform functional testing on applications and databases.
+- Perform performance testing on applications and databases.
+- Utilize industry standard tools and benchmarks to ensure accurate
     and comparable results.
--   Integrate reporting tools such as Azure Monitor, Grafana or
+- Integrate reporting tools such as Azure Monitor, Grafana or
     Promethus into your testing suites.
 
 # 08 / Performance + Optimization
@@ -3507,25 +3507,25 @@ The following are some basic tips for how to increase or ensure
 performance of your Azure Database for MySQL applications and database
 workloads:
 
--   Ensure the input/output operations per second (IOPS) are sufficient
+- Ensure the input/output operations per second (IOPS) are sufficient
     for the application needs. Keep the IO latency low.
--   Create and tune the table indexes. Avoid full table scans.
--   Performance regular database maintenance.
--   Make sure the application/clients (e.g. App Service) are physically
+- Create and tune the table indexes. Avoid full table scans.
+- Performance regular database maintenance.
+- Make sure the application/clients (e.g. App Service) are physically
     located as close as possible to the database. Reduce network
     latency.
--   Use accelerated networking for the application server if you are
+- Use accelerated networking for the application server if you are
     using Azure virtual machine, Azure Kubernetes, or App Services.
--   Use connection pooling when possible. Avoid creating new connections
+- Use connection pooling when possible. Avoid creating new connections
     for each application request. Use ProxySQL which provides built-in
     connection pooling and load balance your workload to multiple read
     replicas as required on demand with any changes in application code.
--   Set timeouts when creating transactions.
--   Set up a [read replica] for read only queries and analytics.
--   Consider using a query caching solutions like Heimdall Data Proxy.
+- Set timeouts when creating transactions.
+- Set up a [read replica] for read only queries and analytics.
+- Consider using a query caching solutions like Heimdall Data Proxy.
     Limit connections based on per user and per database. Protect the
     database from being overwhelmed by a single application or feature.
--   Temporarily scale your Azure Database for MySQL resources for taxing
+- Temporarily scale your Azure Database for MySQL resources for taxing
     tasks. Once your task is complete, scale it down.
 
 See [Best practices for optimal performance of your Azure Database for
@@ -3656,12 +3656,12 @@ There are several tools that can be used to benchmark MySQL
 environments. Here are a few that can be used to determine how well an
 instance is performing:
 
--   [DBT2 Benchmark] - DBT2 is an open source benchmark that mimics an
+- [DBT2 Benchmark] - DBT2 is an open source benchmark that mimics an
     OLTP application for a company owning large amounts of warehouses.
     It contains transactions to handle New Orders, Order Entry, Order
     Status, Payment and Stock handling
 
--   [SysBench Benchmark Tool] - Sysbench is a popular open source
+- [SysBench Benchmark Tool] - Sysbench is a popular open source
     benchmark to test open source DBMSs.
 
 More Common sets of tests typically utilize TPC benchmarks such as
@@ -3703,16 +3703,16 @@ configured at the connection level. Moreover, *dynamic* parameters can
 be changed without restarting the server, while modifying *static*
 parameters warrants a restart.
 
--   [log_bin_trust_function_creators] is enabled by default and
+- [log_bin_trust_function_creators] is enabled by default and
     indicates whether users can create triggers
 
--   [innodb_buffer_pool_size] indicates the size of the buffer pool, a
+- [innodb_buffer_pool_size] indicates the size of the buffer pool, a
     cache for tables and indexes
 
     > For this parameter, consult the [Microsoft documentation][53], as
     > database compute tier affects the parameter value range
 
--   [innodb_file_per_table] affects where table and index data are
+- [innodb_file_per_table] affects where table and index data are
     stored
 
 ### Tools to Set Server Parameters
@@ -3720,8 +3720,8 @@ parameters warrants a restart.
 Standard Azure management tools, like the Azure portal, Azure CLI, and
 Azure PowerShell, allow for configuring server parameters.
 
--   [Use Azure portal to configure server parameters]
--   [User Azure CLI to configure server parameters]
+- [Use Azure portal to configure server parameters]
+- [User Azure CLI to configure server parameters]
 
 ### Server Parameters Best Practices
 
@@ -3730,16 +3730,16 @@ application workload; however, before modifying these values in
 production, verify that they yield performance improvements without
 compromising application stability.
 
--   Enable thread pooling by setting `thread_handling` to
+- Enable thread pooling by setting `thread_handling` to
     `pool-of-threads`: Thread pooling improves concurrency by serving
     connections through a pool of worker threads, instead of creating a
     new thread to serve each connection. Enabling thread pooling
     improves performance for transactional workloads, as connections are
     short-lived
 
-    -   The degree of concurrency is set through the `thread_pool_size`
+    - The degree of concurrency is set through the `thread_pool_size`
         parameter
-    -   Only supported in MySQL 8.0
+    - Only supported in MySQL 8.0
 
     ![This graph demonstrates the performance benefits of thread pooling
     for a Flexible Server instance.]
@@ -3750,16 +3750,16 @@ compromising application stability.
     represents the number of queries served per second (QPS). Read the
     associated [Microsoft TechCommunity post] for more details
 
--   Enable InnoDB buffer pool warmup by setting
+- Enable InnoDB buffer pool warmup by setting
     `innodb_buffer_pool_dump_at_shutdown` to `ON`: InnoDB buffer pool
     warmup loads data files from disk after a restart and before
     receiving queries on that data. This improves the latency of the
     first queries executed against the database after a restart, but it
     does increase the server's start-up time
 
-    -   Microsoft only recommends this change for database instances
+    - Microsoft only recommends this change for database instances
         with more than 335 GB of provisioned storage
-    -   Learn more from the [Microsoft documentation][55]
+    - Learn more from the [Microsoft documentation][55]
 
 ## Caching
 
@@ -3861,13 +3861,13 @@ cache and costs.
 
 ### Checklist
 
--   Monitor for slow queries.
--   Periodically review the Performance Insight dashboard.
--   Utilize monitoring to drive tier upgrades and scale decisions.
--   Consider moving regions if the users' or application's needs change.
--   Adjust server parameters for the running workload.
--   Utilize caching techniques to increase performance.
--   Get data closer to users by implementing content delivery networks.
+- Monitor for slow queries.
+- Periodically review the Performance Insight dashboard.
+- Utilize monitoring to drive tier upgrades and scale decisions.
+- Consider moving regions if the users' or application's needs change.
+- Adjust server parameters for the running workload.
+- Utilize caching techniques to increase performance.
+- Get data closer to users by implementing content delivery networks.
 
 # 09 / Troubleshooting
 
@@ -3892,35 +3892,35 @@ errors and connect efficiently to Azure Database for MySQL] articles.
 
 #### Misconfiguration
 
--   [Error 1184][]: This error occurs after a user authenticates with
+- [Error 1184][]: This error occurs after a user authenticates with
     the database instance, but before they execute SQL statements. The
     `init_connect` server parameter includes statements that execute
     before sessions are initiated. Consequently, erroneous SQL
     statements in `init_connect` prevent clients from connecting.
-    -   **Resolution**: Reset the value of `init_connect` using the
+    - **Resolution**: Reset the value of `init_connect` using the
         Azure portal or SQL.
--   Administrators use the database admin user specified during server
+- Administrators use the database admin user specified during server
     creation to create new databases and add new users. If the admin
     user credentials were not recorded, administrators can easily reset
     the admin password using the Azure portal.
-    -   Logging in with the administrator account can help debug other
+    - Logging in with the administrator account can help debug other
         access issues, like confirming if a given user exists.
 
 #### Network access issues
 
--   By default, Flexible Server only supports encrypted connections
+- By default, Flexible Server only supports encrypted connections
     through the TLS 1.2 protocol; clients using TLS 1.0 or 1.1 will be
     unable to connect unless explicitly enabled. If it is not possible
     to change the TLS protocol used by an application, then [change the
     Flexible Server instance's supported TLS versions.][50]
 
--   If connecting to Flexible Server via public access, ensure that
+- If connecting to Flexible Server via public access, ensure that
     firewall ACLs permit access from the client.
 
--   Ensure that corporate firewalls do not block outbound connections to
+- Ensure that corporate firewalls do not block outbound connections to
     port 3306.
 
--   Use a fully qualified domain name instead of an IP address in
+- Use a fully qualified domain name instead of an IP address in
     connection strings. This is especially important with Azure Database
     for MySQL Single Server instances, which use gateways to route
     incoming requests to database servers. It is possible to use the
@@ -3931,11 +3931,11 @@ errors and connect efficiently to Azure Database for MySQL] articles.
     > address in your applications. It is less error-prone to work with
     > the FQDN.
 
--   Use [Azure Network Watcher] to debug traffic flows in virtual
+- Use [Azure Network Watcher] to debug traffic flows in virtual
     networks. Note that it does not support PaaS services, but it is
     still a useful tool for IaaS configurations
 
-    -   Network Watcher works well with other networking utilities, like
+    - Network Watcher works well with other networking utilities, like
         the Unix `traceroute` tool
 
 ### Resource issues
@@ -3953,26 +3953,26 @@ instances. While Flexible Server has better feature parity with
 on-premises MySQL than Single Server, it is important to be aware of any
 limitations.
 
--   Azure Database for MySQL does not support the MySQL `SUPER`
+- Azure Database for MySQL does not support the MySQL `SUPER`
     privilege and the `DBA` role. This may affect how some applications
     operate.
 
-    -   [Error 1419][]: By default, MySQL instances with binary logging
+    - [Error 1419][]: By default, MySQL instances with binary logging
         enabled for replication require function creators to have the
         `SUPER` privilege to avoid privilege escalation attacks.
-        -   **Resolution**: Azure suggest setting the
+        - **Resolution**: Azure suggest setting the
             `log_bin_trust_function_creators` parameter to `1`, as Azure
             insulates against threats that exploit the binary log.
-    -   [Error 1227][]: This error occurs when creating stored
+    - [Error 1227][]: This error occurs when creating stored
         procedures or views with `DEFINER` statements.
-        -   **Resolution**: If you encounter this error while migrating
+        - **Resolution**: If you encounter this error while migrating
             schema objects from an on-premises MySQL instance, remove
             the `DEFINER` statements manually from the database dump.
 
--   Direct file system access is not available to clients. This means
+- Direct file system access is not available to clients. This means
     that `SELECT ... INTO OUTFILE` commands are unsupported.
 
--   Only the `InnoDB` and `MEMORY` storage engines are supported. This
+- Only the `InnoDB` and `MEMORY` storage engines are supported. This
     may affect older data warehousing and web applications based on the
     non-transactional `MyISAM` engine. Consult the [MySQL
     documentation][56] to learn how to convert your MyISAM tables to
@@ -3980,36 +3980,36 @@ limitations.
 
 ### Platform issues
 
--   On occasion, Azure experiences outages. Use [Azure Service Health]
+- On occasion, Azure experiences outages. Use [Azure Service Health]
     to determine if an Azure outage impacts MySQL workloads in your
     region or datacenter.
 
--   Azure's periodic updates can impact the availability of
+- Azure's periodic updates can impact the availability of
     applications. Flexible Server allows administrators [to set custom
     maintenance schedules.][User-scheduled service maintenance:]
 
--   Implement retry logic in your applications to mitigate transient
+- Implement retry logic in your applications to mitigate transient
     connectivity issues:
 
-    -   To provide resiliency against more severe failures, like Azure
+    - To provide resiliency against more severe failures, like Azure
         service outages, implement the [circuit breaker pattern] to
         avoid wasting application resources on operations that are
         likely to fail
 
 ## Troubleshoot app issues in Azure App Service
 
--   **Enable web logging.** Azure provides built-in diagnostics to
+- **Enable web logging.** Azure provides built-in diagnostics to
     assist with [debugging an App Service app].
 
--   Network requests taking a long time? [Troubleshoot slow app
+- Network requests taking a long time? [Troubleshoot slow app
     performance issues in Azure App Service]
 
--   In Azure App Service, certain settings are available to the
+- In Azure App Service, certain settings are available to the
     deployment or runtime environment as environment variables. Some of
     these settings can be customized when configuring the app settings.
     [Environment variables and app settings in Azure App Service]
 
--   [Azure App Service on Linux FAQ]
+- [Azure App Service on Linux FAQ]
 
 ## App debugging
 
@@ -4017,44 +4017,44 @@ Following software development best practices makes your code simpler to
 develop, test, debug, and deploy. Here are some strategies to resolve
 application issues.
 
--   Use logging utilities wisely to help troubleshoot failures without
+- Use logging utilities wisely to help troubleshoot failures without
     impairing app performance. Structured logging utilities, like PHP's
     native logging functions or third-party tools, such as [KLogger],
     can write logs to the console, to files, or to central repositories.
     Monitoring tools can parse these logs and alert anomalies.
 
--   In development environments, remote debugging tools like [XDebug]
+- In development environments, remote debugging tools like [XDebug]
     may be useful. You can set breakpoints and step through code
     execution. [Apps running on Azure App Service PHP and Container
     instances can take advantage of XDebug.]
 
-    -   Users of Visual Studio Code can install XDebug's [PHP Debug
+    - Users of Visual Studio Code can install XDebug's [PHP Debug
         extension].
 
--   To debug slow PHP applications, consider using Application
+- To debug slow PHP applications, consider using Application
     Performance Monitoring solutions like [Azure Application
     Insights][Application Insights], which integrates with Azure
     Monitor. Here are a few common culprits for low-performing PHP apps.
 
-    -   Executing database queries against tables that are indexed
+    - Executing database queries against tables that are indexed
         inefficiently
-    -   Configuring web servers poorly, such as by choosing a suboptimal
+    - Configuring web servers poorly, such as by choosing a suboptimal
         number of worker processes to serve user requests
-    -   Disabling [opcode caching], requiring PHP to compile code files
+    - Disabling [opcode caching], requiring PHP to compile code files
         to opcodes every request
 
--   Write tests to ensure that applications function as intended when
+- Write tests to ensure that applications function as intended when
     code is modified. Review the [07 / Testing] document for more
     information about different testing strategies. Tests should be
     included in automated release processes.
 
--   Generally, all cloud applications should include connection [retry
+- Generally, all cloud applications should include connection [retry
     logic], which typically responds to transient issues by initiating
     subsequent connections after a delay.
 
 ### Additional support
 
--   In the Azure portal, navigate to the **Diagnose and solve problems**
+- In the Azure portal, navigate to the **Diagnose and solve problems**
     tab of your Azure Database for MySQL instance for suggestions
     regarding common connectivity, performance, and availability issues.
 
@@ -4067,7 +4067,7 @@ application issues.
     ![This image demonstrates how Azure Resource Health correlates Azure
     service outages with the customer's provisioned resources.]
 
--   If none of the above resolve the issue with the MySQL instance,
+- If none of the above resolve the issue with the MySQL instance,
     [send a support request from the Azure portal.]
 
 ### Opening a support ticket
@@ -4082,17 +4082,17 @@ ticket.
 
 ### Recommended content
 
--   [Troubleshoot connection issues to Azure Database for MySQL]
+- [Troubleshoot connection issues to Azure Database for MySQL]
 
--   [Handle transient errors and connect efficiently to Azure Database
+- [Handle transient errors and connect efficiently to Azure Database
     for MySQL]
 
--   [Troubleshoot errors commonly encountered during or post migration
+- [Troubleshoot errors commonly encountered during or post migration
     to Azure Database for MySQL]
 
--   [Troubleshoot data encryption in Azure Database for MySQL]
+- [Troubleshoot data encryption in Azure Database for MySQL]
 
--   [Azure Community Support] Ask questions, get answers, and connect
+- [Azure Community Support] Ask questions, get answers, and connect
     with Microsoft engineers and Azure community experts
 
 ## 09 / Summary
@@ -4103,13 +4103,13 @@ included items from connectivity, deployment and performance.
 
 ### Checklist
 
--   Understand the OSI model and how it can help troubleshoot issues
--   Start at the bottom of the OSI model and work your way up
--   Network connectivity issues can exist anywhere between client and
+- Understand the OSI model and how it can help troubleshoot issues
+- Start at the bottom of the OSI model and work your way up
+- Network connectivity issues can exist anywhere between client and
     server
--   Be sure a clear plan of attack has been developed for resolving
+- Be sure a clear plan of attack has been developed for resolving
     issues
--   Utilize logging to assist in troubleshooting activities
+- Utilize logging to assist in troubleshooting activities
 
 ## 10 / Business Continuity and Disaster Recovery
 
@@ -4220,7 +4220,7 @@ best protection against unexpected regional failures.
 
 #### Use fully qualified domain names in connection strings
 
--   Use a fully qualified domain name instead of an IP address in
+- Use a fully qualified domain name instead of an IP address in
     connection strings. If network changes are made causing IP addresses
     change, your application should be operationally. Administrators do
     not have locate and change dependent application configuration.
@@ -4254,8 +4254,8 @@ MySQL read replicas.]
 
 ### Flexible Server resources
 
--   [Azure Portal][60]
--   [Azure CLI][61]
+- [Azure Portal][60]
+- [Azure CLI][61]
 
 ## Backup and restore
 
@@ -4291,10 +4291,10 @@ additional strategies should be implemented.
 
 Some items to be aware of include:
 
--   No direct access to the backups
--   Tiers that allow up to 4TB have a full backup once per week,
+- No direct access to the backups
+- Tiers that allow up to 4TB have a full backup once per week,
     differential twice a day, and logs every five minutes
--   Tiers that allow up to 16TB have snapshot-based backups
+- Tiers that allow up to 16TB have snapshot-based backups
 
 > **Note:** [Some regions] do not yet support storage up to 16TB.
 
@@ -4320,9 +4320,9 @@ Learn more about backup and restore in Flexible Server from the
 
 #### Flexible Server resources
 
--   [Point-in-time restore with Azure Portal]
--   [Point-in-time restore with CLI]
--   [Azure CLI samples for Azure Database for MySQL - Flexible Server]
+- [Point-in-time restore with Azure Portal]
+- [Point-in-time restore with CLI]
+- [Azure CLI samples for Azure Database for MySQL - Flexible Server]
     ## Service maintenance
 
 Like any Azure service, Flexible Server receives patches and
@@ -4371,10 +4371,10 @@ notifies administrators 72 hours before the maintenance event.
 
 ### Configure maintenance scheduling & alerting
 
--   [Manage scheduled maintenance settings using the Azure Portal
+- [Manage scheduled maintenance settings using the Azure Portal
     (Flexible Server)]
--   [View service health notifications in the Azure Portal]
--   [Configure resource health alerts using Azure Portal]
+- [View service health notifications in the Azure Portal]
+- [Configure resource health alerts using Azure Portal]
 
 ## Azure Database for MySQL upgrade process
 
@@ -4415,16 +4415,16 @@ when users attempt to perform write based activities.
 
 ### Checklist
 
--   Perform backups regularly, ensure the backup frequency meets
+- Perform backups regularly, ensure the backup frequency meets
     requirements.
--   Setup read replicas for read intensive workloads and regional
+- Setup read replicas for read intensive workloads and regional
     failover.
--   Use resource locks to prevent accidental deletions.
--   Create resource locks on resource groups.
--   Implement a load balancing strategy for applications for quick
+- Use resource locks to prevent accidental deletions.
+- Create resource locks on resource groups.
+- Implement a load balancing strategy for applications for quick
     failover.
--   Be aware that service outages will occur and plan appropriatly.
--   Setup maintenance notifications.
+- Be aware that service outages will occur and plan appropriatly.
+- Setup maintenance notifications.
 
 # 11 / Best Practices
 
@@ -4456,8 +4456,8 @@ recommends the ProxySQL connection pooling solution, hosted on
 application servers or container orchestrators, like Azure Kubernetes
 Service (AKS).
 
--   [ProxySQL on a VM]
--   [ProxySQL on AKS][on the same infrastructure as their apps]
+- [ProxySQL on a VM]
+- [ProxySQL on AKS][on the same infrastructure as their apps]
 
 ### 3. Size containers adequately
 
@@ -4515,17 +4515,17 @@ There are [three different tiers of Flexible Server
 instances][scale storage to increase IOPS capacity or provision additional IOPS],
 each with different intended use cases and memory configurations.
 
--   **Burstable**:
-    -   Up to **2 GiB** memory per vCore
-    -   Intended for workloads that do not use the CPU continuously
-    -   Cost-effective for smaller web applications and development
+- **Burstable**:
+    - Up to **2 GiB** memory per vCore
+    - Intended for workloads that do not use the CPU continuously
+    - Cost-effective for smaller web applications and development
         workloads
--   **General Purpose**:
-    -   **4 GiB** per vCore
-    -   Intended for applications that require more throughput
--   **Memory Optimized**:
-    -   **8 GiB** per vCore
-    -   Intended for high-throughput transactional and analytical
+- **General Purpose**:
+    - **4 GiB** per vCore
+    - Intended for applications that require more throughput
+- **Memory Optimized**:
+    - **8 GiB** per vCore
+    - Intended for high-throughput transactional and analytical
         workloads, like real-time data processing
 
 Flexible Server instances can be resized after creation. Azure stops
@@ -4568,7 +4568,7 @@ Center.
 
 ### Digital marketing using Azure Database for MySQL
 
--   [Digital marketing using Azure Database for MySQL:] In this
+- [Digital marketing using Azure Database for MySQL:] In this
     architecture, corporations serve digital marketing campaigns through
     content management systems, like WordPress or Drupal, running on
     Azure App Service. These CMS offerings access user data in Azure
@@ -4578,7 +4578,7 @@ Center.
 
 ### Finance management apps using Azure Database for MySQL
 
--   [Finance management apps using Azure Database for MySQL:] This
+- [Finance management apps using Azure Database for MySQL:] This
     architecture demonstrates a three-tier app, coupled with advanced
     analytics served by Power BI. Tier-3 clients, like mobile
     applications, access tier-2 APIs, which reference tier-1 Azure
@@ -4588,7 +4588,7 @@ Center.
 
 ### Intelligent apps using Azure Database for MySQL
 
--   [Intelligent apps using Azure Database for MySQL:] This solution
+- [Intelligent apps using Azure Database for MySQL:] This solution
     demonstrates an innovative app that utilizes serverless computing
     (Azure Function Apps), machine learning (Azure Machine Learning
     Studio & Cognitive Services APIs), Azure Database for MySQL, and
@@ -4596,7 +4596,7 @@ Center.
 
 ### Gaming using Azure Database for MySQL
 
--   [Gaming using Azure Database for MySQL:] This architecture
+- [Gaming using Azure Database for MySQL:] This architecture
     demonstrates how to develop apps that must process API requests at
     scale, such as gaming backends. It utilizes Azure Traffic Manager,
     to geographically distribute traffic; Azure API Management, to
@@ -4607,7 +4607,7 @@ Center.
 
 ### Retail and e-commerce using Azure MySQL
 
--   [Retail and e-commerce using Azure MySQL:] This application
+- [Retail and e-commerce using Azure MySQL:] This application
     architecture focuses on processing transactions quickly and creating
     tailored customer experiences. It consists of Azure App Service,
     Azure Database for MySQL (for storing product and session
@@ -4615,7 +4615,7 @@ Center.
 
 ### Scalable web and mobile applications using Azure Database for MySQL
 
--   [Scalable web and mobile applications using Azure Database for
+- [Scalable web and mobile applications using Azure Database for
     MySQL:] This generic architecture utilizes the scaling capabilities
     (vertical and horizontal) of Azure App Service and MySQL Flexible
     Server.
@@ -4634,9 +4634,9 @@ start from.
 
 ### Checklist
 
--   Reference architectures can provide ideas on how to use a product.
--   Utilize the knowledge others have to build your own applications.
--   Implement common proven patterns in your architectures.
+- Reference architectures can provide ideas on how to use a product.
+- Utilize the knowledge others have to build your own applications.
+- Implement common proven patterns in your architectures.
 
 # 13 / Customer stories
 
@@ -4793,10 +4793,10 @@ ideas.
 
 ### Checklist
 
--   Understand the most common uses of a product
--   Do look for references of other customers
--   Use case studies as basis for justification of your designs
--   Attend conferences to learn how others are using the product(s)
+- Understand the most common uses of a product
+- Do look for references of other customers
+- Use case studies as basis for justification of your designs
+- Attend conferences to learn how others are using the product(s)
 
 # 14 / Zero to Hero
 
@@ -4815,20 +4815,20 @@ your waypoint.
 
 ## Summary of tasks
 
--   Have the right tools available
--   Determine how best to deploy the application
--   Utilize code repositories with CI/CD enabled
--   Ensure the target environment is configured to support the
+- Have the right tools available
+- Determine how best to deploy the application
+- Utilize code repositories with CI/CD enabled
+- Ensure the target environment is configured to support the
     workload(s)
--   Secure the application configurations
--   Secure the database configurations
--   Secure the virtual networks
--   Monitor the applications and database workloads for performance
--   Perform regular testing
--   Ensure up policies and procedures are setup and configured for
+- Secure the application configurations
+- Secure the database configurations
+- Secure the virtual networks
+- Monitor the applications and database workloads for performance
+- Perform regular testing
+- Ensure up policies and procedures are setup and configured for
     auditing application and database workloads
--   Setup backup and restore based on RTO and RPO objectives
--   Be familiar with potential issues and how to troubleshoot and
+- Setup backup and restore based on RTO and RPO objectives
+- Be familiar with potential issues and how to troubleshoot and
     remediate them
 
 # 14 / Final Summary
@@ -4855,23 +4855,23 @@ developer guide. We encourage to to continue your learning by reviewing
 the following links to documentation pages and creating a free azure
 account to practice with.
 
--   [Review homepage]
--   [Documentation][69]
--   [Get started for free with an Azure free account!]
--   [Tutorial]
--   [Azure Pricing Calculator, TCO Calculator]
--   [Migrate your workloads to Azure DB for MySQL]
+- [Review homepage]
+- [Documentation][69]
+- [Get started for free with an Azure free account!]
+- [Tutorial]
+- [Azure Pricing Calculator, TCO Calculator]
+- [Migrate your workloads to Azure DB for MySQL]
 
 ### Stay tuned for latest updates and announcements
 
--   [What's new in Flexible Server?]
--   [Tech Community Blog]
+- [What's new in Flexible Server?]
+- [Tech Community Blog]
 
 ### Follow Azure Database for MySQL on social platforms
 
--   [Twitter]
--   [LinkedIn]
--   Email the Azure Database for MySQL at
+- [Twitter]
+- [LinkedIn]
+- Email the Azure Database for MySQL at
     AskAzureDBforMySQL\@service.microsoft.com
 
 ### Find a partner to assist in migrating
@@ -4887,11 +4887,11 @@ with finding the most appropriate migration strategy.
 Browse the technical forums and social groups for more detailed
 real-world information:
 
--   [Microsoft Community Forum]
--   [StackOverflow for Azure MySQL]
--   [Azure Facebook Group]
--   [LinkedIn Azure Group]
--   [LinkedIn Azure Developers Group]
+- [Microsoft Community Forum]
+- [StackOverflow for Azure MySQL]
+- [Azure Facebook Group]
+- [LinkedIn Azure Group]
+- [LinkedIn Azure Developers Group]
 
   [01 / Azure MySQL Developer Guide]: #azure-mysql-developer-guide
   [02 / What is MySQL?]: #what-is-mysql

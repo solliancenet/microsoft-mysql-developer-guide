@@ -1,8 +1,8 @@
 ## Alerting guidelines
 
-Once monitoring data is configured to flow into Azure Monitor or Log Analytics, the next step would to be to create alerts when certain sets of troubling logs are generated. The operations team will want to know as quickly as possible when a pending outage or system issue is developing. Understanding the symptoms is critical. *"You can't fix what you don't know is broken."*
+Once monitoring data is configured to flow into Azure Monitor or Log Analytics, the next step would to be to create alerts when issue data is generated. The operations team will want to know as quickly as possible when a pending outage or system issue is developing. Understanding the symptoms is critical. *"You can't fix what you don't know is broken."*
 
-Alert creation and remediation will take fine tuning to ensure that alert fatigue doesn't set in. Focus less on integrating monitoring with IT Service Management (ITSM) systems for Incident Management, and seize on opportunities to let cloud automation replace more expensive service management processes, thereby eliminating time spent on easily automatically resolvable alerts and incidents.
+Alert creation and remediation will take fine-tuning to ensure that alert fatigue does not set in. Focus less on integrating monitoring with IT Service Management (ITSM) systems for Incident Management, and seize on opportunities to let cloud automation replace more expensive service management processes, thereby eliminating time spent on easily automatically resolvable alerts and incidents.
 
 **Consider the following principles for determining whether a symptom is an appropriate candidate for alerting:**
 
@@ -12,9 +12,9 @@ Alert creation and remediation will take fine tuning to ensure that alert fatigu
 
 - Are your customers affected? Are users of the service or application affected as a result of the issue?
 
-- Are other dependent systems affected? Are there alerts from dependencies that are interrelated, and that can possibly be correlated to avoid notifying different teams all working on the same problem?
+- Are other dependent systems affected? Are there alerts from dependencies that are interrelated and that can possibly be correlated to avoid notifying different teams all working on the same problem?
 
-Test and validate the assumptions in a nonproduction environment, and then deploy into production. Monitoring configurations are derived from known failure modes, test results of simulated failures, and experience from different members of the team.
+Test and validate the assumptions in a nonproduction environment, and then deploy them into production. Monitoring configurations are derived from known failure modes, test results of simulated failures, and experiences from different members of the team.
 
 Consider automating the remediation steps in Azure.
 
@@ -81,4 +81,4 @@ To interact with the REST API, applications first need to obtain an authenticati
 
 ### Azure Service Health
 
-[Azure Service Health](https://azure.microsoft.com/features/service-health/) notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact to cloud resources, get guidance and support, and share details and updates.
+[Azure Service Health](https://azure.microsoft.com/features/service-health/) notifies administrators about Azure service incidents and planned maintenance so actions can be taken to mitigate downtime. Configure customizable cloud alerts and use personalized dashboards to analyze health issues, monitor the impact on cloud resources, get guidance and support, and share details and updates.
