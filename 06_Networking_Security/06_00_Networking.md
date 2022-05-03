@@ -1,16 +1,24 @@
-## Networking and connectivity options
+## 06 / Networking and Security
 
 As mentioned previously, the Azure Database for MySQL network configuration can adversely affect security, application performance (latency), and compliance. This section explains the fundamentals of Azure Database for MySQL networking concepts.
 
-### Firewall
-
 Azure Database for MySQL provides several mechanisms to secure the networking layers by limiting access to only authorized users, applications, and devices.  
+
+### Public vs. Private Access
+
+As with any cloud based resources, it can be exposed to the internet or be locked down to only be accessible by Azure connections resources. However, it doesn't have to be just Azure based resources.  VPNs and Express route circuits can be used to provide access to Azure resources from on-premises environments as well.  The next section describes the two different ways you can configure your Azure Database for MySQL instances for network connectivity.
+
+#### Public Access
+
+By default, when you create a Azure Database for MySQL, it allows access to internet based clients, including other Azure services. If this is an undesirable state, firewall access control lists (ACLs) can limit access to hosts that fall within the allowed trusted IP address ranges.
 
 The first line of defense for protecting the MySQL instance access is to implement [firewall rules](https://docs.microsoft.com/azure/mysql/concepts-firewall-rules). IP addresses can be limited to only valid locations when accessing the instance via internal or external IPs. If the MySQL instance is destined to only serve internal applications, then [restrict public access](https://docs.microsoft.com/azure/mysql/howto-deny-public-network-access).
 
 ![](media/firewall-rule-diagram.png)
 
-When moving an application to Azure along with the MySQL workload, it is likely there will be multiple virtual networks set up in a hub and spoke pattern that will require [Virtual Network Peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) to be configured.
+Firewall rules are set at the server level, meaning that they govern network access to all databases on the server instance. While it is best practice to create rules that allow specific IP addresses or ranges to access the instance, developers can also enable network access from all Azure resources. This is useful for Azure services without fixed public IP addresses, such as [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) that use public networks to access the server and databases.
+
+>**Note:** Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
 
 - Flexible Server
   - [Manage firewall rules for Azure Database for MySQL - Flexible Server using the Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal)
@@ -21,25 +29,11 @@ When moving an application to Azure along with the MySQL workload, it is likely 
   - [Create and manage Azure Database for MySQL firewall rules by using the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
 
-### Public vs. Private Access
-
-As with any cloud based resources, it can be exposed to the internet or be locked down to only be accessible by Azure connections resources. However, it doesn't have to be just Azure based resources.  VPNs and Express route circuits can be used to provide access to Azure resources from on-premises environments as well.  The next section describes the two different ways you can configure your Azure Database for MySQL instances for network connectivity.
-
-#### Public Access
-
-By default, when you create a Azure Database for MySQL, it allows access to internet based clients, including other Azure services. If this is an undesirable state, firewall access control lists (ACLs) can limit access to hosts that fall within the allowed trusted IP address ranges.
-
-Firewall rules are set at the server level, meaning that they govern network access to all databases on the server instance. While it is best practice to create rules that allow specific IP addresses or ranges to access the instance, developers can also enable network access from all Azure resources. This is useful for Azure services without fixed public IP addresses, such as [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) that use public networks to access the server and databases.
-
->**Note:** Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
-
 #### Private Access
 
 As just discussed, Azure Database for MySQL offerings support public connectivity by default. However, most organizations will want to utilize private connectivity which limits access to Azure virtual networks and resources.
 
 > **Note:** There are many other [basic Azure Networking considerations](https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-vnet) that must be taken into account that are not the focus of this guide.
-
-
 
 ### Virtual Network Hierarchy
 
@@ -49,7 +43,7 @@ An Azure virtual network is similar to a network deployed on-premises: it provid
 
 Each virtual network is further segmented into subnets. Subnets improve virtual network organization and security, just as they do on-premises.
 
-Virtual networks are joined through *peering*. The peered virtual networks can reside in the same or different Azure regions.
+When moving an application to Azure along with the MySQL workload, it is likely there will be multiple virtual networks set up in a hub and spoke pattern that will require [Virtual Network Peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) to be configured. Virtual networks are joined through *peering*. The peered virtual networks can reside in the same or different Azure regions.
 
 Lastly, note that it is possible to access resources in a virtual network from on-premises. Some organizations opt to use VPN connections through [Azure VPN Gateway](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways), which sends encrypted traffic over the Internet. Others opt for [Azure ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction), which establishes a private connection to Azure through a service provider.
 
@@ -91,7 +85,3 @@ For more information on configuring Private Access for Flexible Server, referenc
   - Determine IP addressing & subnetting
   - Determine DNS setup and whether forwarders are needed
   - Employ tools like network security groups to secure traffic within and between subnets
-
-### Security baselines
-
-In addition to all the topics discussed above, the Azure Database for MySQL [security baseline](https://docs.microsoft.com/azure/mysql/security-baseline) is a basic set of potential tasks that can be implemented on your Azure Database for MySQL instances to further solidify your security posture.

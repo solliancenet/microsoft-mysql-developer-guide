@@ -22,6 +22,8 @@ In the control plane, Azure Active Directory authenticates users and determines 
 
 The built-in MySQL account management system governs access for administrator and non-administrator users in the data plane. Moreover, Single Server supports security principals in Azure Active Directory, like users and groups, for data-plane access management. Using AAD data-plane access management allows organizations to enforce credential policies, specify authentication modes, and more. Refer to the [Microsoft docs](https://docs.microsoft.com/azure/mysql/concepts-azure-ad-authentication) for more information.
 
+> **Note:** Flexible Server does not support Azure Active Directory principal authentication.
+
 ## Development editor tools
 
 Developers have various code editor tools to choose from to complete their IT projects. Commercial organizations and OSS communities have produced tools and plug-ins making Azure application development efficient and rapid. A very popular tool is Visual Studio Code (VS Code). VS Code is an open-source, cross-platform text editor. It offers useful utilities for various languages through extensions. Download VS Code from the [Microsoft download page.](https://code.visualstudio.com/download)

@@ -22,9 +22,3 @@ Using read replicas also helps implement microservices architectures. The image 
 
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-read-replicas-cli)
-
-#### Single Server
-
-- [Azure Portal](https://docs.microsoft.com/azure/mysql/howto-read-replicas-portal)
-- [Azure CLI & REST API](https://docs.microsoft.com/azure/mysql/howto-read-replicas-cli)
-- [Azure PowerShell](https://docs.microsoft.com/azure/mysql/howto-read-replicas-powershell)

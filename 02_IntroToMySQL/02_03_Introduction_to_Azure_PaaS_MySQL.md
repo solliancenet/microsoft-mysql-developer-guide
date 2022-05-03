@@ -16,6 +16,8 @@ For managing database objects and access controls at the server and database lev
 
 Azure Database for MySQL provides two options for deployment: Single Server and Flexible Server. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
+> **Note:** This guide will be focused on Flexible Server and will not explore Single Server.
+
 #### Flexible Server
 
 Flexible Server is also a PaaS service fully managed by the Azure platform, but it exposes more control to the user than Single Server.
@@ -78,3 +80,5 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, high availability, and backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single Server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/). For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 > **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option.
+
+> **Note:** This guide will be focused on Flexible Server and will not explore Single Server.
