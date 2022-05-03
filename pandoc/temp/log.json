@@ -116,12 +116,6 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/tip.png",
-        "for": "media/tip.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
         "from": "media/VSCode_screenshot.png",
         "for": "media/VSCode_screenshot.png"
     },
@@ -136,6 +130,12 @@
         "verbosity": "INFO",
         "from": "./media/new-ssl-connection-with-ca-file.png",
         "for": "./media/new-ssl-connection-with-ca-file.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/tip.png",
+        "for": "media/tip.png"
     },
     {
         "type": "LoadedResource",
@@ -386,6 +386,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/warning.png",
+        "for": "media/warning.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/resource-health-example.png",
         "for": "media/resource-health-example.png"
     },
@@ -412,12 +418,6 @@
         "verbosity": "INFO",
         "from": "media/configure-alert-example.png",
         "for": "media/configure-alert-example.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "media/warning.png",
-        "for": "media/warning.png"
     },
     {
         "type": "LoadedResource",
@@ -507,12 +507,6 @@
         "verbosity": "INFO",
         "from": "./media/resource-health-integration.png",
         "for": "./media/resource-health-integration.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "media/open-support-ticket.png",
-        "for": "media/open-support-ticket.png"
     },
     {
         "type": "LoadedResource",

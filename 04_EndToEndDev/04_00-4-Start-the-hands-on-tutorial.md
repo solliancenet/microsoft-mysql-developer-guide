@@ -72,7 +72,7 @@ To reiterate, it is recommended to follow the developer journey from start to fi
 
 TODO: Replace MS repo links
 
-Click the links to complete each journey before going to the next
+Click the links to complete each journey before going to the next.
 
 1. [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
 2. [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)

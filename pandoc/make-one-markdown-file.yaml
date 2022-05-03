@@ -50,11 +50,11 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_05_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00__Getting_Started.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00_Getting_Started_Provision_MySQL_Flexible_Server.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00-1_Query_MySQL_Workbench.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_01_PHP_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_02_Java_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_03_Python_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_04_Other_Language_Support.md
-- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_06_Query_MySQL_Workbench.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_07_Connect_Query_Azure_CLI.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_08_Connect_Query_PHP.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_09_Connect_Query_Python.md
@@ -72,9 +72,9 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_00-2_Database_Monitoriing.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_01_Alerting_Guidelines.md
 - D:\data\projects\microsoft-mysql-developer-guide\05_Monitoring\05_02_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_00_Securing.md
-- D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_01_Networking.md
-- D:\data\projects\microsoft-mysql-developer-guide\06_Securing\06_02_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\06_Networking_Security\06_00_Networking.md
+- D:\data\projects\microsoft-mysql-developer-guide\06_Networking_Security\06_01_Securing.md
+- D:\data\projects\microsoft-mysql-developer-guide\06_Networking_Security\06_02_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_00_Testing.md
 - D:\data\projects\microsoft-mysql-developer-guide\07_Testing\07_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_00_Performance.md
@@ -84,21 +84,20 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\08_Performance\08_04_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_00_Troubleshooting.md
 - D:\data\projects\microsoft-mysql-developer-guide\09_Troubleshooting\09_01_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_00_BestPractices.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_01_BCDR.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_02_Replication.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_03_Service_Maintenance.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_04_Upgrades.md
-- D:\data\projects\microsoft-mysql-developer-guide\10_BestPractices\10_05_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\11_Architectures\11_00_Architectures.md
-- D:\data\projects\microsoft-mysql-developer-guide\11_Architectures\11_01_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_00_CaseStudies.md
-- D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_01_MySQL_in_apps.md
-- D:\data\projects\microsoft-mysql-developer-guide\12_CaseStudies\12_02_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_00_ZeroToHero.md
-- D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_01_Summary.md
-- D:\data\projects\microsoft-mysql-developer-guide\13_ZeroToHero\13_02_Resources.md
-
+- D:\data\projects\microsoft-mysql-developer-guide\10_BCDR\10_01_BCDR.md
+- D:\data\projects\microsoft-mysql-developer-guide\10_BCDR\10_02_Service_Maintenance.md
+- D:\data\projects\microsoft-mysql-developer-guide\10_BCDR\10_03_Upgrades.md
+- D:\data\projects\microsoft-mysql-developer-guide\10_BCDR\10_04_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\11_BestPractices\11_00_BestPractices.md
+- D:\data\projects\microsoft-mysql-developer-guide\11_BestPractices\11_01_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\12_Architectures\12_00_Architectures.md
+- D:\data\projects\microsoft-mysql-developer-guide\12_Architectures\12_01_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\13_CaseStudies\13_00_CaseStudies.md
+- D:\data\projects\microsoft-mysql-developer-guide\13_CaseStudies\13_01_MySQL_in_apps.md
+- D:\data\projects\microsoft-mysql-developer-guide\13_CaseStudies\13_02_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_00_ZeroToHero.md
+- D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_01_Summary.md
+- D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_02_Resources.md
 
 # ERROR, WARNING, or INFO
 verbosity: INFO
