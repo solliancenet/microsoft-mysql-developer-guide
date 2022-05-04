@@ -19,20 +19,20 @@ Below are two methods of deploying an ARM template:
 - Login into the Azure Portal and choose a valid Subscription.
 - Search for 'Deploy a custom template'.
 
-![](media/search-for-custom-template.png)
+![This image shows how to enter the Deploy a custom template wizard in the Azure portal.](media/search-for-custom-template.png "Entering the Deploy a custom template wizard")
 
 - Select 'Build your own template in the editor'.
 
-![](media/build-your-own-custom-template.png)
+![This image shows the Build your own template in the editor button.](media/build-your-own-custom-template.png "Build your own template in the editor")
 
 - Load the ARM template file from your local drive.
 
-![](media/load-local-arm-template.png)
+![This image shows how to load the ARM template from the local drive.](media/load-local-arm-template.png "Loading the ARM template")
 
 - Navigate to the **template.json** file.
 - Save the template.
 
-![](media/save-the-template.png)
+![This image shows how to save the ARM template in the editor.](media/save-the-template.png "Saving the ARM template in the Azure editor")
 
 - Enter the template parameters.
 - Select the **Review + create** button.

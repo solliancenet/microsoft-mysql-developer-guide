@@ -28,7 +28,7 @@ Flexible Server is compatible with all Java client utilities for MySQL Community
 
 ##### IntelliJ IDEA
 
-Currently, Single-Server is supported.
+Currently, Single Server is supported.
 
 ##### Eclipse
 

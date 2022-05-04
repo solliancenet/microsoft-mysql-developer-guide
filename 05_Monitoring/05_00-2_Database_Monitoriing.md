@@ -6,13 +6,13 @@ Azure can be configured to monitor the Flexible server database as well.
 
 The Azure Portal resource overview excellent overview of the MySQL metrics. This high-level dashboard provides insight into the typical database monitoring counters, like CPU, IO, Query Count, etc.
 
-![](media/azure-portal-mysql-overview.png)
+![This image shows MySQL metrics in the Azure portal.](media/azure-portal-mysql-overview.png "MySQL metrics in the Azure portal")
 
 ### Metrics
 
 For more specific metrics, navigate to the **Monitoring** section. Select **Metrics**. More custom granular metrics can be configured and displayed.
 
-![](media/mysql-azure-portal-metrics.png)
+![This image shows Metrics on the Monitoring tab in the Azure portal.](media/mysql-azure-portal-metrics.png "Monitoring tab in the Azure portal")
 
 See: [Monitor Azure Database for MySQL Flexible Servers with built-in metrics](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-monitoring)
 
@@ -20,7 +20,7 @@ See: [Monitor Azure Database for MySQL Flexible Servers with built-in metrics](h
 
 Diagnostic settings allow you to route platform logs and metrics continuously to other storage and ingestion endpoints.
 
-![](media/mysql-diagnostic-settings.png)
+![This image shows how to graph metrics in the Azure portal Monitoring tab.](media/mysql-diagnostic-settings.png "Graphing metrics in the Azure portal")
 
 See: [Set up diagnostics](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics)
 
@@ -28,15 +28,15 @@ See: [Set up diagnostics](https://docs.microsoft.com/en-us/azure/mysql/flexible-
 
 Once you configure your Diagnostic Settings, you can navigate to the Log Analytics workspace. You can perform specific filtered queries on interesting categories. Are you looking for slow queries?
 
-![](media/azure-diagnostic-query.png)
+![This image shows a KQL query.](media/azure-diagnostic-query.png "Sample KQL query")
 
 Now, you can review the results from your query. There is a wealth of information about the category.
 
-![](media/azure-diagnostic-query-result.png)
+![This image shows KQL query results.](media/azure-diagnostic-query-result.png "Sample KQL query results")
 
 MySQL audit log information is also available.
 
-![](media/mysql-log-analytics-audit-log-query.png)
+![This image shows a KQL query that polls the MySQL audit log.](media/mysql-log-analytics-audit-log-query.png "KQL query for the MySQL audit log")
 
 See: [View query insights by using Log Analytics](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-query-performance-insights#view-query-insights-by-using-log-analytics)
 
@@ -44,11 +44,11 @@ See: [View query insights by using Log Analytics](https://docs.microsoft.com/en-
 
 As mentioned previously, Workbooks is a simple canvas to visualize data from different sources, like Log Analytics workspace. It is possible to view performance and storage metrics all in a single pane.
 
-![](media/workbook-example.png)
+![This image shows Azure Monitor Workbooks visualizations.](media/workbook-example.png "Visualizations in Azure Monitor Workbooks")
 
 CPU, IOPS, and other common monitoring metrics are available. You can also access Query Performance Insight.
 
-![](media/query-performance-insight.png)
+![This image shows QPI in the Azure portal.](media/query-performance-insight.png "Azure portal QPI configuration")
 
 In addition to the fundamental server monitoring aspects, Azure provides tools to monitor application query performance.  Correcting or improving queries can lead to significant increases in the query throughput. Use the [Query Performance Insight tool](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights) to:
 
@@ -67,27 +67,27 @@ See: [Monitor Azure Database for MySQL Flexible Server by using Azure Monitor wo
 
 It is essential to know if the MySQL service has experienced a downtime and the related details. Resource health can assist with this information. If you need additional assistance, a helpful contact support link available.
 
-![](media/resource-health-example.png)
+![This image shows Azure Resource Health.](media/resource-health-example.png "Azure Resource Health")
 
 ### Activity logs
 
 This area captures the administrative events captured over a period of time.
 
-![](media/activity-logs-example.png)
+![This image shows administrative events in the Azure Activity Log.](media/activity-logs-example.png "Administrative events")
 
 The event details can be viewed as well. These details can be extremely helpful when troubleshooting.
 
-![](media/activity-log-example-detail.png)
+![This image shows the details of an Activity Log event.](media/activity-log-example-detail.png "Activity Log event details")
 
 ### Creating alerts
 
 You can create alerts in a couple of ways.  Navigate to the **Alerts** menu item in the portal and create it manually.
 
-![](media/create-alert.png)
+![This image shows how to create resource alerts in the Azure portal.](media/create-alert.png "Creating resource alerts")
 
 You can also create alerts from the Metrics section.
 
-![](media/configure-alert-example.png)
+![This image shows how to create resource alerts from the Metrics section in the Azure portal.](media/configure-alert-example.png "Creating resource alerts from the Metrics section")
 
 Once the alert has been configured, you can create an action group to send a notification to the operations team.
 

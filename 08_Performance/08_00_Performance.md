@@ -65,7 +65,7 @@ To minimize downtime, Flexible Server configuration settings, like VNet or firew
 
 ## Server parameters
 
-![](media/server_parameters.png)
+![This image shows MySQL server parameters in the Azure portal.](media/server_parameters.png "MySQL server parameters")
 
 As part of the migration, the on-premises [server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters) were likely modified to support a fast egress. Also, modifications were made to the Azure Database for MySQL Flexible Server parameters to support a fast ingress. The Azure server parameters should be set back to their original on-premises workload-optimized values after the migration.
 
@@ -97,6 +97,6 @@ More Common sets of tests typically utilize TPC benchmarks such as [TPC-H](https
 
 The [MySQL Performance Schema](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema) **sys_schema** provides a way to inspect internal server execution events at runtime. The MySQL performance_schema provides instrumentation for many vital server resources such as memory allocation, stored programs, metadata locking, etc. However, the performance_schema contains more than 80 tables, and getting the necessary information often requires joining tables within the performance_schema, and tables from the information_schema. Building on both performance_schema and information_schema, the sys_schema provides a powerful collection of user-friendly views in a read-only database and is fully enabled in Azure Database for MySQL version 5.7.
 
-![](media/employee-query-full-table-scan.png)
+![This image shows how to use tables in the sys schema to optimize MySQL queries.](media/employee-query-full-table-scan.png "Using tables in the sys schema to optimize MySQL queries")
 
 >![Warning](media/warning.png "Warning") **Warning**: The Performance Schema avoids using mutexes to collect or produce data, so there are no guarantees of consistency and results can sometimes be incorrect. Event values in performance_schema tables are nondeterministic and nonrepeatable.

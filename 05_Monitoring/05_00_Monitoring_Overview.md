@@ -26,7 +26,7 @@ This chapter will be focused on these monitoring concepts:
   
 - Alerts and strategies
 
-![](media/azure-monitor-overview-topics.png)
+![This image explains the Azure Monitor workflow.](media/azure-monitor-overview-topics.png "Azure Monitor workflow")
 
 
 ### Azure Monitor overview
@@ -35,7 +35,7 @@ Azure Monitor is the Azure native platform service that provides a centralized a
 
 At the lower levels, it monitors infrastructure resources, such as VMs, storage, and network resources. Administrators and developers employ Azure Monitor to consolidate metrics about the performance and reliability of their various cloud layers, including Azure Database for MySQL Flexible Server instances. Management tools, such as Microsoft Defender for Cloud and Azure Automation, also push log data to Azure Monitor. The service aggregates and stores this telemetry in a log data store optimized for cost and performance.
 
-![](media/how-azure-monitor-works.png)
+![This image clarifies how Azure Monitor integrates with various Azure data sources and management tools.](media/how-azure-monitor-works.png "Azure Monitor integrations")
 
 For more information on what can be monitored, read: [What is monitored by Azure Monitor?](https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference)
 
