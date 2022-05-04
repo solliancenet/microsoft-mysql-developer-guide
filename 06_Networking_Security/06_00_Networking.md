@@ -1,14 +1,14 @@
-## 06 / Networking and Security
+# 06 / Networking and Security
 
 As mentioned previously, the Azure Database for MySQL network configuration can adversely affect security, application performance (latency), and compliance. This section explains the fundamentals of Azure Database for MySQL networking concepts.
 
 Azure Database for MySQL provides several mechanisms to secure the networking layers by limiting access to only authorized users, applications, and devices.  
 
-### Public vs. Private Access
+## Public vs. Private Access
 
 As with any cloud based resources, it can be exposed to the internet or be locked down to only be accessible by Azure connections resources. However, it doesn't have to be just Azure based resources.  VPNs and Express route circuits can be used to provide access to Azure resources from on-premises environments as well.  The next section describes the two different ways you can configure your Azure Database for MySQL instances for network connectivity.
 
-#### Public Access
+### Public Access
 
 By default, when you create a Azure Database for MySQL, it allows access to internet based clients, including other Azure services. If this is an undesirable state, firewall access control lists (ACLs) can limit access to hosts that fall within the allowed trusted IP address ranges.
 
@@ -29,13 +29,13 @@ Firewall rules are set at the server level, meaning that they govern network acc
   - [Create and manage Azure Database for MySQL firewall rules by using the Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli)
   - [ARM Reference for Firewall Rules](https://docs.microsoft.com/azure/templates/microsoft.dbformysql/servers/firewallrules?tabs=json)
 
-#### Private Access
+### Private Access
 
 As just discussed, Azure Database for MySQL offerings support public connectivity by default. However, most organizations will want to utilize private connectivity which limits access to Azure virtual networks and resources.
 
 > **Note:** There are many other [basic Azure Networking considerations](https://docs.microsoft.com/azure/mysql/concepts-data-access-and-security-vnet) that must be taken into account that are not the focus of this guide.
 
-### Virtual Network Hierarchy
+## Virtual Network Hierarchy
 
 An Azure virtual network is similar to a network deployed on-premises: it provides network isolation for workloads. Each virtual network has a private IP allocation block. Choosing an allocation block is an important consideration, especially if the environment requires multiple virtual networks to be joined: the allocation blocks of the virtual networks cannot overlap. It is best practice to choose allocation blocks from [RFC 1918.](https://datatracker.ietf.org/doc/html/rfc1918)
 
@@ -56,7 +56,7 @@ For more Information on Virtual Networks, reference the following:
   - [CLI](https://docs.microsoft.com/azure/virtual-network/quick-create-cli)
   - [ARM Template](https://docs.microsoft.com/azure/virtual-network/quick-create-template)
 
-#### Flexible Server
+### Flexible Server
 
 Flexible Server supports deployment into a virtual network for secure access. When enabling virtual network integration, the target virtual network subnet must be *delegated*, meaning that it can only contain Flexible Server instances. Because Flexible Server is deployed in a subnet, it will receive a private IP address. In order to resolve the DNS names of Azure Database for MySQL instances, the virtual networks are integrated with a private DNS zone to support domain name resolution for the Flexible Server instances.
 
@@ -71,7 +71,7 @@ For more information on configuring Private Access for Flexible Server, referenc
 - [Azure Portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-portal)
 - [Azure CLI](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-virtual-network-cli)
 
-### Networking best practices for Flexible Server
+## Networking best practices for Flexible Server
 
 - If deploying an application in an Azure region that supports *Availability Zones*, deploy the application and the Flexible Server instance in the same zone to minimize latency
 

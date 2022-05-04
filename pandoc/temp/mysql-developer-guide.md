@@ -2158,7 +2158,7 @@ start to finish in the following order:
 
 TODO: Replace MS repo links
 
-Click the links to complete each journey before going to the next
+Click the links to complete each journey before going to the next.
 
 1.  [Classic deployment][Classic Deployment to PHP-enabled IIS server]
 2.  [Azure VM Deployment][Cloud Deployment to Azure VM]
@@ -2389,16 +2389,16 @@ Proper monitoring management helps with the following:
 -   Environment performance analysis and scaling adjustments
 -   Historical performance review
 
-Azure has the ability to monitor all of these types of operational
-activities using tools such as [Azure Monitor], [Log Analytics], and
-[Azure Sentinel]. In addition to the Azure-based tools, external
-security information and event management (SIEM) systems can be
-configured to consume these logs as well.
+Azure can to monitor all of these types of operational activities using
+tools such as [Azure Monitor], [Log Analytics], and [Azure Sentinel]. In
+addition to the Azure-based tools, external security information and
+event management (SIEM) systems can be configured to consume these logs
+as well.
 
 Alerts should be created to warn administrators of outages, operational
-performance problems, or any suspicious activity. If a particular alert
-event has a well-defined remediation path, alerts can fire automated
-[Azure runbooks] to address and resolve the event automatically.
+performance problems, or suspicious activities. If a particular alert
+event has a well-defined remediation path, alerts can automatically fire
+[Azure runbooks] to address and resolve the event.
 
 This chapter will be focused on these monitoring concepts:
 
@@ -2417,16 +2417,16 @@ This chapter will be focused on these monitoring concepts:
 Azure Monitor is the Azure native platform service that provides a
 centralized area for monitoring your Azure resources. It monitors all
 layers of the Azure stack, starting with tenant services, such as Azure
-Active Directory, subscription-level events and Azure Service Health.
+Active Directory, subscription-level events, and Azure Service Health.
 
 At the lower levels, it monitors infrastructure resources, such as VMs,
 storage, and network resources. Administrators and developers employ
 Azure Monitor to consolidate metrics about the performance and
 reliability of their various cloud layers, including Azure Database for
-MySQL Flexible Server instances. Management tools, such as those in
-Microsoft Defender for Cloud and Azure Automation, also push log data to
-Azure Monitor. The service aggregates and stores this telemetry in a log
-data store that's optimized for cost and performance.
+MySQL Flexible Server instances. Management tools, such as Microsoft
+Defender for Cloud and Azure Automation, also push log data to Azure
+Monitor. The service aggregates and stores this telemetry in a log data
+store optimized for cost and performance.
 
 ![][21]
 
@@ -2437,7 +2437,7 @@ by Azure Monitor?]
 
 Administrators should [plan their monitoring strategy] and resource
 configuration for the best results. Some data collection and features
-are free while others have associated costs. Focus on maximizing your
+are free, while others have associated costs. Focus on maximizing your
 applications' performance and reliability. Identify the data and logs
 that indicate the highest potential signs of failure to optimize costs.
 See [Azure Monitor Pricing] for more information on planning monitoring
@@ -2448,20 +2448,20 @@ costs.
 ![][22]
 
 Azure Monitor Metrics is a feature of Azure Monitor that collects
-numeric data from monitored resources into a time series database.
+numeric data from monitored resources into a time-series database.
 Metrics in Azure Monitor are lightweight and capable of supporting near
-real-time scenarios, so they're useful for alerting and fast detection
-of issues. You can analyze them interactively by using Metrics Explorer,
-be proactively notified with an alert when a value crosses a threshold,
-or visualize them in a workbook or dashboard.
+real-time scenarios, so they are helpful for alerting and detecting
+issues. You can analyze them interactively by using Metrics Explorer, be
+proactively notified with an alert when a value crosses a threshold, or
+visualize them in a workbook or dashboard.
 
 [Azure Monitor Metrics overview]
 
 ![][23]
 
 The Activity log is a [platform log] in Azure that provides insight into
-subscription-level events. Activity log includes such information as
-when a resource is modified or when a virtual machine is started.
+subscription-level events. The Activity log includes information like
+when a resource is modified or when a virtual machine was started.
 
 Event examples:
 
@@ -2474,9 +2474,10 @@ Event examples:
 
 Log Analytics is a tool in the Azure portal used to edit and run log
 queries with data in Azure Monitor Logs. You can use Log Analytics
-queries to retrieve records that match particular criteria, identify
-trends, analyze patterns, and provide a variety of insights into your
-data. Users can create charts in the portal.
+queries to retrieve records that match particular criteria. Use the
+query results to identify trends, analyze patterns, and provide
+insights. Users can create charts to visualize important data in the
+portal.
 
 Query examples:
 
@@ -2492,9 +2493,8 @@ Query examples:
 
 Workbooks provide a flexible canvas for data analysis and the creation
 of rich visual reports within the Azure portal. They allow you to tap
-into multiple data sources from across Azure, and combine them into
-unified interactive experiences. Visualize data in one interactive
-report.
+into multiple Azure data sources and combine them into unified
+interactive experiences. Visualize data in one interactive report.
 
 [Azure Monitor Workbooks]
 
@@ -2505,11 +2505,10 @@ problems that affect your Azure resources. It reports on the current and
 past health of your resources. Resource Health can help you diagnose the
 root event causes.
 
-Platform events are triggered by multiple components of the Azure
-infrastructure. They include both scheduled actions (for example,
-planned maintenance) and unexpected incidents (for example, an unplanned
-host reboot or degraded host hardware that is predicted to fail after a
-specified time window).
+Multiple Azure infrastructure components can trigger Platform events.
+The events include both scheduled actions (planned maintenance) and
+unexpected incidents (unplanned host reboot or degraded hosted hardware
+that is predicted to fail after a specified time window).
 
 Resource Health provides additional details about the event and the
 recovery process. **It also enables you to contact Microsoft Support,
@@ -2526,10 +2525,10 @@ Resource issue examples:
 
 ## Application monitoring
 
-Once an application has been deployed, it is important to start to
-monitor the uptime and performance as well as understand usage patterns.
-[Application Insights] is a feature that provides extensible application
-performance management (APM) and monitoring for web-based applications.
+It is important to monitor the uptime, performance, and understand usage
+patterns once an application has been deployed. [Application Insights]
+is a feature that provides extensible application performance management
+(APM) and monitoring for web-based applications.
 
 Application insights monitoring is very flexible in that it supports a
 wide variety of platforms, including .NET, Node.js, Java, and Python as
@@ -2549,16 +2548,16 @@ Insights resource by using a unique instrumentation key and URL.
 
 Example steps to configure WordPress monitoring:
 
--   Install Application Insights plugin from WordPress Plugins
+-   Install Application Insights plugin from WordPress Plugins.
 
--   Create Application Insights
+-   Create Application Insights.
 
--   Copy the Instrumentation Key from created Application Insights
+-   Copy the Instrumentation Key from created Application Insights.
 
 -   Then go to **Settings** and Application Insights inside WordPress,
     and add the key there.
 
--   Access the website and look for details
+-   Access the website and look for details.
 
 > ![Tip] **Tip**: [Connection Strings] are recommended over
 > instrumentation keys.
@@ -2566,14 +2565,14 @@ Example steps to configure WordPress monitoring:
 ### Azure Metrics Explorer
 
 [Azure Metrics Explorer] makes it easy to capture performance counters
-for resources quickly without having to add instrumentation to your
-application code. As the following diagram shows, you simply select the
-resource and metric and then apply your filters:
+for resources quickly without adding instrumentation to your application
+code. As the following diagram shows, you simply select the resource and
+metric and then apply your filters:
 
 ![][28]
 
-For example, if we wanted to capture performance counters for a PHP App
-Service resource, there are some simple steps to follow.
+For example, to capture performance counters for a PHP App Service
+resource, simply follow these steps.
 
 -   Determine your scope. Navigate to the App Service in the Azure
     Portal.
@@ -2599,9 +2598,10 @@ Service resource, there are some simple steps to follow.
 ### Application Insights cost management
 
 Application Insights comes with a free allowance that tends to be
-relatively large enough to cover development and publishing an app for a
-small number of users. As a best practice, setting a limit can prevent
-more data than necessary from being processed and keep costs low.
+relatively large enough to cover the development and publishing of an
+app for a small number of users. As a best practice, setting a limit can
+prevent more data than necessary from being processed and keep costs
+low.
 
 Larger volumes of telemetry are charged by the gigabyte and should be
 monitored closely to ensure your finance department does not get a
@@ -2614,8 +2614,8 @@ Azure can be configured to monitor the Flexible server database as well.
 
 ### Azure Database for MySQL overview
 
-The Azure Portal resource overview provides a great overview of the
-MySQL metrics. This high-level dashboard provides insight on the typical
+The Azure Portal resource overview excellent overview of the MySQL
+metrics. This high-level dashboard provides insight into the typical
 database monitoring counters, like CPU, IO, Query Count, etc.
 
 ![][33]
@@ -2633,8 +2633,8 @@ metrics]
 
 ### Diagnostic settings
 
-Diagnostic settings allow you to continuously route platform logs and
-metrics to other storage and ingestion endpoints.
+Diagnostic settings allow you to route platform logs and metrics
+continuously to other storage and ingestion endpoints.
 
 ![][35]
 
@@ -2672,13 +2672,15 @@ also access Query Performance Insight.
 
 ![][40]
 
-In addition to the basic server monitoring aspects, Azure provides tools
-to monitor application query performance. Correcting or improving
+In addition to the fundamental server monitoring aspects, Azure provides
+tools to monitor application query performance. Correcting or improving
 queries can lead to significant increases in the query throughput. Use
-the [Query Performance Insight tool] to analyze the longest-running
-queries and determine if it is possible to cache those items if they are
-deterministic within a set period, or modify the queries to increase
-their performance.
+the [Query Performance Insight tool] to:
+
+-   Analyze the longest-running queries and determine if it is possible
+    to cache those items.
+-   If they are deterministic within a set period, modify the queries to
+    increase their performance.
 
 In addition to the query performance insight tool, `Wait statistics`
 provides a view of the wait events that occur during the execution of a
@@ -2698,10 +2700,10 @@ Monitor workbooks]
 
 ### Resource health
 
-It is important to know if the MySQL service has experience a downtime
+It is essential to know if the MySQL service has experienced a downtime
 and the related details. Resource health can assist with this
-information. If you need additional assistance, there is a helpful
-contact support link available.
+information. If you need additional assistance, a helpful contact
+support link available.
 
 ![][41]
 
@@ -2712,15 +2714,15 @@ time.
 
 ![][42]
 
-The event details can be viewed as well. This can be extremely helpful
-when troubleshooting.
+The event details can be viewed as well. These details can be extremely
+helpful when troubleshooting.
 
 ![][43]
 
 ### Creating alerts
 
-You can create alerts a couple of ways. Navigate to the **Alerts** menu
-item in the portal and create it manually.
+You can create alerts in a couple of ways. Navigate to the **Alerts**
+menu item in the portal and create it manually.
 
 ![][44]
 
@@ -2729,7 +2731,7 @@ You can also create alerts from the Metrics section.
 ![][45]
 
 Once the alert has been configured, you can create an action group to
-send a notification the operations team.
+send a notification to the operations team.
 
 See: [Set up alerts on metrics for Azure Database for MySQL - Flexible
 Server]
@@ -2742,12 +2744,12 @@ can route these logs to Log Analytics workspaces for manipulation and
 visualization through KQL.
 
 In addition to Log Analytics, the data can also be routed to Event Hubs
-for third-party integrations and Azure storage for long term backup.
+for third-party integrations and Azure storage for long-term backup.
 
 ### MySQL audit logs
 
-MySQL has a robust built-in audit log feature. By default, this [audit
-log feature is disabled] in Azure Database for MySQL. Server level
+MySQL has a robust built-in audit log feature. This [audit log feature
+is disabled] in Azure Database for MySQL by default. Server level
 logging can be enabled by changing the `audit_log_enabled` server
 parameter. Once enabled, logs can be accessed through [Azure Monitor]
 and [Log Analytics] by turning on [diagnostic logging].
@@ -2768,9 +2770,9 @@ can impact performance.
 
 Audit logging is controlled by the `audit_log_enabled` server parameter
 in Flexible Server. Azure provides granularity over the events logged
-(`audit_log_events`), the database users subject to logging
-(`audit_log_include_users`), and an explicit list of the database users
-exempt from logging (`audit_log_exclude_users`).
+(`audit_log_events`). User fields include the database users subject to
+logging (`audit_log_include_users`), and an explicit list of the
+database users exempt from logging (`audit_log_exclude_users`).
 
 > For more details about the logging server parameters, including the
 > type of events that can be logged, consult [the
@@ -2779,14 +2781,13 @@ exempt from logging (`audit_log_exclude_users`).
 ## Alerting guidelines
 
 Once monitoring data is configured to flow into Azure Monitor or Log
-Analytics, the next step would to be to create alerts when certain sets
-of troubling logs are generated. The operations team will want to know
-as quickly as possible when a pending outage or system issue is
-developing. Understanding the symptoms is critical. *"You can't fix what
-you don't know is broken."*
+Analytics, the next step would to be to create alerts when issue data is
+generated. The operations team will want to know as quickly as possible
+when a pending outage or system issue is developing. Understanding the
+symptoms is critical. *"You can't fix what you don't know is broken."*
 
-Alert creation and remediation will take fine tuning to ensure that
-alert fatigue doesn't set in. Focus less on integrating monitoring with
+Alert creation and remediation will take fine-tuning to ensure that
+alert fatigue does not set in. Focus less on integrating monitoring with
 IT Service Management (ITSM) systems for Incident Management, and seize
 on opportunities to let cloud automation replace more expensive service
 management processes, thereby eliminating time spent on easily
@@ -2813,14 +2814,14 @@ an appropriate candidate for alerting:**
     affected as a result of the issue?
 
 -   Are other dependent systems affected? Are there alerts from
-    dependencies that are interrelated, and that can possibly be
+    dependencies that are interrelated and that can possibly be
     correlated to avoid notifying different teams all working on the
     same problem?
 
 Test and validate the assumptions in a nonproduction environment, and
-then deploy into production. Monitoring configurations are derived from
-known failure modes, test results of simulated failures, and experience
-from different members of the team.
+then deploy them into production. Monitoring configurations are derived
+from known failure modes, test results of simulated failures, and
+experiences from different members of the team.
 
 Consider automating the remediation steps in Azure.
 
@@ -2921,19 +2922,18 @@ in API requests.
 [Azure Service Health] notifies administrators about Azure service
 incidents and planned maintenance so actions can be taken to mitigate
 downtime. Configure customizable cloud alerts and use personalized
-dashboards to analyze health issues, monitor the impact to cloud
+dashboards to analyze health issues, monitor the impact on cloud
 resources, get guidance and support, and share details and updates.
 
 ## 05 / Summary
 
 Monitoring the performance of your environment is a vital final step
-after deployment. This section described the various tools Microsoft
-Azure provides to do exactly that such as Azure Monitor and Log
-Analytics.
+after deployment. This section described how Azure Monitor and Log
+Analytics are essential tools to assist in monitoring your applications.
 
 Both the control and data plane should be considered in your monitoring
-activities with alerting setup to notify platform administrators and
-database administrators of issues before or when they start to happen.
+activities. Platform administrators and database administrators should
+be notified of issues before or when they start to happen.
 
 With cloud-based systems, being proactive is a better strategy then
 being reactive.
@@ -2941,18 +2941,19 @@ being reactive.
 ### Checklist
 
 -   Define a monitoring strategy to provide useful insights without
-    deteriorating application performance and incurring excessive costs
-    -   For example, storing slow query logs on Flexible Server
-        instances without proper management consumes storage space,
-        affecting database performance
+    deteriorating application performance and incurring excessive costs.
+    For example, storing slow query logs on Flexible Server instances
+    without proper management consumes storage space, affects database
+    performance.
 -   Configure your Azure resources to emit strategic logs (like MySQL
     Flexible Server slow query logs) and route them to Azure
-    destinations, like Log Analytics workspaces
--   Develop KQL queries to record and visualize database performance,
-    query performance, and DDL/DML activity
--   If necessary, configure alert rules for metrics and logs
-    -   Azure can automatically respond to fired alerts through Azure
-        Automation runbooks
+    destinations, like Log Analytics workspaces.
+-   Develop KQL queries to record database performance, query
+    performance, and DDL/DML activity.
+-   If necessary, configure alert rules for metrics and logs. Azure can
+    automatically respond to fired alerts through Azure Automation
+    runbooks.
+-   Visualize data in Workbooks.
 
 ## Recommended content
 
@@ -2985,7 +2986,7 @@ being reactive.
 -   [Monitor Azure Database for MySQL using Percona Monitoring and
     Management (PMM)]
 
-## 06 / Networking and Security
+# 06 / Networking and Security
 
 As mentioned previously, the Azure Database for MySQL network
 configuration can adversely affect security, application performance
@@ -2996,7 +2997,7 @@ Azure Database for MySQL provides several mechanisms to secure the
 networking layers by limiting access to only authorized users,
 applications, and devices.
 
-### Public vs. Private Access
+## Public vs. Private Access
 
 As with any cloud based resources, it can be exposed to the internet or
 be locked down to only be accessible by Azure connections resources.
@@ -3006,7 +3007,7 @@ from on-premises environments as well. The next section describes the
 two different ways you can configure your Azure Database for MySQL
 instances for network connectivity.
 
-#### Public Access
+### Public Access
 
 By default, when you create a Azure Database for MySQL, it allows access
 to internet based clients, including other Azure services. If this is an
@@ -3046,7 +3047,7 @@ access the server and databases.
         using the Azure CLI]
     -   [ARM Reference for Firewall Rules][47]
 
-#### Private Access
+### Private Access
 
 As just discussed, Azure Database for MySQL offerings support public
 connectivity by default. However, most organizations will want to
@@ -3056,7 +3057,7 @@ networks and resources.
 > **Note:** There are many other [basic Azure Networking considerations]
 > that must be taken into account that are not the focus of this guide.
 
-### Virtual Network Hierarchy
+## Virtual Network Hierarchy
 
 An Azure virtual network is similar to a network deployed on-premises:
 it provides network isolation for workloads. Each virtual network has a
@@ -3095,7 +3096,7 @@ For more Information on Virtual Networks, reference the following:
     -   [CLI]
     -   [ARM Template]
 
-#### Flexible Server
+### Flexible Server
 
 Flexible Server supports deployment into a virtual network for secure
 access. When enabling virtual network integration, the target virtual
@@ -3126,7 +3127,7 @@ reference the following:
 -   [Azure Portal]
 -   [Azure CLI][48]
 
-### Networking best practices for Flexible Server
+## Networking best practices for Flexible Server
 
 -   If deploying an application in an Azure region that supports
     *Availability Zones*, deploy the application and the Flexible Server
@@ -3150,7 +3151,7 @@ reference the following:
     -   Employ tools like network security groups to secure traffic
         within and between subnets
 
-### Security
+## Security
 
 Moving to cloud-based services doesn't mean the entire internet will
 have access to it at all times. Azure provides best-in-class security
@@ -3165,7 +3166,7 @@ these complex tasks and requirements through the various security and
 compliance resources provided out of the box. This section will focus on
 many of these tools.
 
-#### Encryption
+### Encryption
 
 Azure Database for MySQL offers various encryption features including
 encryption for data, backups, and temporary files created during query
@@ -3190,7 +3191,7 @@ through the `require_secure_transport` MySQL server parameter.
 -   [Flexible Server][50]
 -   [Single Server]
 
-#### Microsoft Sentinel
+### Microsoft Sentinel
 
 Many of the items discussed thus far operate in their own sphere of
 influence and are not designed to work directly with each other. Every
@@ -3213,7 +3214,7 @@ user behavior analytics (UEBA), Microsoft Sentinel can provide a higher
 understanding of potential issues or incidents that may not have seen
 with a disconnected environment.
 
-#### Microsoft Purview
+### Microsoft Purview
 
 Data privacy has evolved to be a big focused for organization over the
 past few years. Determining where sensitive information lives across
@@ -3225,7 +3226,7 @@ information or other sensitive information types. This data can then be
 analyzed, classified and lineage defined across your cloud based
 resources.
 
-#### Security baselines
+### Security baselines
 
 In addition to all the topics discussed above, the Azure Database for
 MySQL [security baseline] is a basic set of potential tasks that can be
@@ -4111,7 +4112,7 @@ included items from connectivity, deployment and performance.
     issues
 -   Utilize logging to assist in troubleshooting activities
 
-## 10 / Business Continuity and Disaster Recovery
+# 10 / Business Continuity and Disaster Recovery
 
 Businesses implement *business continuity* (BC) and *disaster recovery*
 (DR) strategies to minimize disruptions. While *business continuity*
@@ -4119,7 +4120,7 @@ emphasizes preserving business operations through policies, *disaster
 recovery* explains how IT teams will restore access to data and
 services.
 
-### High availability
+## High availability
 
 Flexible Server implements high availability by provisioning another VM
 to serve as a standby. It is possible to provision this secondary
@@ -4152,7 +4153,7 @@ during failover.
 To learn more about HA with MySQL Flexible Server, consult the
 [documentation.]
 
-#### Implementing cross-region high availability
+### Implementing cross-region high availability
 
 Flexible Server does not currently support cross-region high
 availability. However, it is possible to achieve this using MySQL native
@@ -4169,7 +4170,7 @@ One disadvantage of this setup is that it is customer-managed.
 ![This image demonstrates a possible cross-region HA scenario using two
 virtual networks.]
 
-### Replication
+## Replication
 
 Replication in Flexible Server allows applications to scale by providing
 **read-only** replicas to serve queries while dedicating write
@@ -4199,7 +4200,7 @@ When creating one or more read replicas, be aware that additional
 charges will apply for the same compute and storage as the primary
 server.
 
-### Deleted servers
+## Deleted servers
 
 If an administrator or bad actor deletes the server in the Azure Portal
 or via automated methods, all backups and read replicas will also be
@@ -4207,7 +4208,7 @@ deleted. [Resource locks][59] must be created on the Azure Database for
 MySQL resource group to add an extra layer of deletion prevention to the
 instances.
 
-### Regional failure
+## Regional failure
 
 Although rare, if a regional failure occurs, geo-redundant backups or a
 read replica can be used to get the data workloads running again. It is
@@ -4218,14 +4219,14 @@ best protection against unexpected regional failures.
 > will change and application configurations will need to be updated
 > accordingly.
 
-#### Use fully qualified domain names in connection strings
+### Use fully qualified domain names in connection strings
 
 -   Use a fully qualified domain name instead of an IP address in
     connection strings. If network changes are made causing IP addresses
     change, your application should be operationally. Administrators do
     not have locate and change dependent application configuration.
 
-### Load Balancers
+## Load Balancers
 
 If the application is made up of many different instances around the
 world, it may not be feasible to update all of the clients. Utilize an
@@ -4233,7 +4234,7 @@ world, it may not be feasible to update all of the clients. Utilize an
 failover functionality. Although helpful and time-saving, these tools
 are not required for regional failover capability.
 
-### Use cases
+## Use cases
 
 Often, developers use load balancers, like ProxySQL, to direct read
 operations to read replicas automatically. ProxySQL can [run on an Azure
@@ -4252,7 +4253,7 @@ instance.
 ![This image demonstrates a possible microservices architecture with
 MySQL read replicas.]
 
-### Flexible Server resources
+## Flexible Server resources
 
 -   [Azure Portal][60]
 -   [Azure CLI][61]
@@ -4318,12 +4319,13 @@ performed.
 Learn more about backup and restore in Flexible Server from the
 [Microsoft documentation.]
 
-#### Flexible Server resources
+### Flexible Server resources
 
 -   [Point-in-time restore with Azure Portal]
 -   [Point-in-time restore with CLI]
 -   [Azure CLI samples for Azure Database for MySQL - Flexible Server]
-    ## Service maintenance
+
+## Service maintenance
 
 Like any Azure service, Flexible Server receives patches and
 functionality upgrades from Microsoft. To ensure that planned
@@ -4831,7 +4833,7 @@ your waypoint.
 -   Be familiar with potential issues and how to troubleshoot and
     remediate them
 
-# 14 / Final Summary
+## 14 / Final Summary
 
 This guide was designed to provide insightful and rich sets of
 information on how to get started with developing applications with
@@ -4943,6 +4945,10 @@ real-world information:
   [05 / Summary]: #summary-3
   [Recommended content]: #recommended-content
   [06 / Networking and Security]: #networking-and-security
+  [Public vs. Private Access]: #public-vs.-private-access
+  [Virtual Network Hierarchy]: #virtual-network-hierarchy
+  [Networking best practices for Flexible Server]: #networking-best-practices-for-flexible-server
+  [Security]: #security
   [06 / Summary]: #summary-4
   [Security checklist]: #security-checklist
   [07 / Testing]: #testing
@@ -4971,8 +4977,16 @@ real-world information:
   [App debugging]: #app-debugging
   [09 / Summary]: #summary-7
   [10 / Business Continuity and Disaster Recovery]: #business-continuity-and-disaster-recovery
+  [High availability]: #high-availability
+  [Replication]: #replication
   [Read replicas]: #read-replicas
+  [Deleted servers]: #deleted-servers
+  [Regional failure]: #regional-failure
+  [Load Balancers]: #load-balancers
+  [Use cases]: #use-cases
+  [Flexible Server resources]: #flexible-server-resources
   [Backup and restore]: #backup-and-restore
+  [Service maintenance]: #service-maintenance
   [Azure Database for MySQL upgrade process]: #azure-database-for-mysql-upgrade-process
   [10 / Summary]: #summary-8
   [11 / Best Practices]: #best-practices
