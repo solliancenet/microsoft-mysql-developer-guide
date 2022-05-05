@@ -3017,7 +3017,7 @@ Watch: [Networking and Security \[6 of 16\] \| Azure Database for MySQL
 
 ## Public vs. Private Access
 
-As with any cloud based resources, it can be exposed to the internet or
+As with any cloud-based resources, it can be exposed to the internet or
 be locked down to only be accessible by Azure connections resources.
 However, it doesn't have to be just Azure based resources. VPNs and
 Express route circuits can be used to provide access to Azure resources
@@ -3242,7 +3242,7 @@ your data estate is a requirement in today's privacy centered society.
 [Microsoft Purview] can scan your data estate, including your Azure
 Database for MySQL instances, to find personally identifiable
 information or other sensitive information types. This data can then be
-analyzed, classified and lineage defined across your cloud based
+analyzed, classified and lineage defined across your cloud-based
 resources.
 
 ### Security baselines

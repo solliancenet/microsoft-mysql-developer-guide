@@ -10,12 +10,12 @@ This section discussed many tools Microsoft Azure provided to give an organizati
 
 ## Security checklist
 
-- Utilize the strongest possible authentication mechanisms such as Azure Active Directory
+- Utilize the most robust possible authentication mechanisms such as Azure Active Directory.
 - Enable Advanced Threat Protection and Microsoft Defender for Cloud.
 - Enable all auditing features.
-- Enable encryption at every layer that supports it
-- Consider a Bring-Your-Own-Key (BYOK) strategy.
+- Enable encryption at every layer that supports it.
+- Consider a Bring-Your-Own-Key (BYOK) strategy, where supported.
 - Implement firewall rules.
 - Utilize private endpoints for workloads that do not travel over the Internet.
-- Integrate Microsoft Sentinel for advanced SIEM and SOAR
-- Utilize private endpoints and virtual network integration where possible
+- Integrate Microsoft Sentinel for advanced SIEM and SOAR.
+- Utilize private endpoints and virtual network integration where possible.

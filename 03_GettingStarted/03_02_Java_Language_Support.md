@@ -2,7 +2,7 @@
 
 This section describes tools to interact with Azure Database for MySQL Flexible Server through Java.
 
-#### Example code
+#### Connect and query
 
 Refer to the [Quickstart: Use Java and JDBC with Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/connect-java)
 
