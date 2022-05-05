@@ -110,7 +110,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  Both th
 
 ### Create Github repo
 
-1. Browse to https://github.com
+1. Browse to `https://github.com`
 2. Login with GitHub credentials
 3. In the top right, select the **+** then select **New repository**
 4. For the name, type **contosostore**

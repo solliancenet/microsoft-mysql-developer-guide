@@ -12,13 +12,13 @@ The development team knew migrating to Azure could help with these issues.
 
 This is the base application that will be evolved in the future sample scripts. This PaaS architecture is a couple of steps ahead of the Classic architecture. The Classic architecture is meant to be an example of an existing on-premises environment that might be migrated to the Azure cloud. If you have a new application, you most likely will start with the PaaS architecture depicted below. This is the easiest path for a user looking to understand the Azure basics.
 
-![](media/sample-app-level-1-architecture.png)
+![This image shows a sample architecture involving a PHP App Service instance and a Flexible Server instance.](media/sample-app-level-1-architecture.png "Basic Azure deployment architecture")
 
 ### Site map
 
 The web application is simple, but covers the fundamentals.
 
-![](media/sample-app-site-map.png)
+![This image shows the sample app site map.](media/sample-app-site-map.png "Sample app site map")
 
 ### Running the sample lab
 

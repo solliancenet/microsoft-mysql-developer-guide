@@ -4,7 +4,7 @@ Instead of learning multiple sample applications, the guide focused on evolving 
 
 ### Site map
 
-![](media/sample-app-site-map.png)
+![This image shows the sample app site map.](media/sample-app-site-map.png "Sample app site map")
 
 ### Sample Application Prerequisites
 
@@ -112,7 +112,7 @@ TODO: Get the MS repo.
 
 5. Return to the Azure Portal. Navigate to the App Service. Find the **Deployment Tools** section. Log into App Service SSH terminal.
 
-   ![](media/ssh_terminal.png)
+   ![This image shows how to access the App Service SSH prompt from the Azure portal.](media/ssh_terminal.png "Accessing the App Service SSH prompt")
 
 6. Verify the sample application files have been copied into the wwwroot directory.
 
@@ -158,7 +158,7 @@ TODO: Get the MS repo.
       - root /home/site/wwwroot/public
       - try_files $uri $uri/ /index.php$is_args$args;
   
-      ![](media/nginx-home-default-update.png)
+      ![This image shows the needed modifications to the /home/default file.](media/nginx-home-default-update.png "Modifications to the /home/default file")
 
 12. Restart the service.
 
@@ -177,7 +177,7 @@ TODO: Get the MS repo.
       cp /home/default /etc/nginx/sites-enabled/default; service nginx restart
       ```
 
-      ![](media/general-settings-startup-command.png)
+      ![This image shows how to configure the App Service startup command in the Azure portal.](media/general-settings-startup-command.png "App Service startup command")
 
 14. Open a browser and view the application.
 
@@ -204,7 +204,7 @@ The application should now be available and show some sample data, however the w
 
 3. Using the Azure Portal, navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
 
-   ![](media/create-contosonoshnow-database.png)
+   ![This image shows how to create the contosonoshnow database in the new Flexible Server instance.](media/create-contosonoshnow-database.png "Creating the contosonoshnow database")
 
    >**Note:** It is possible to execute alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
 
@@ -242,7 +242,7 @@ The application should now be available and show some sample data, however the w
    php artisan migrate
    ```
 
-   ![](media/php-laravel-database-creation.png)
+   ![This image shows how to create PHP migrations.](media/php-laravel-database-creation.png "Creating PHP migrations")
 
 6. Run the `php artisan db:seed` command to seed the database with sample data values.
 
@@ -256,11 +256,11 @@ The application should now be available and show some sample data, however the w
 
 7. Navigate back to the web app and enter a sample order.
 
-   ![](media/sample-order.png)
+   ![This image shows how to create a sample order from the Laravel app.](media/sample-order.png "Creating a sample order from the Laravel app")
 
 8. Using MySQL Workbench, verify the order was saved to the Flexible Server database.
 
-   ![](media/verify-order-data.png)
+   ![This image shows the output of a SQL query that demonstrates the new order.](media/verify-order-data.png "New order in SQL query results")
 
 ### What happens to my app during an Azure deployment?
 

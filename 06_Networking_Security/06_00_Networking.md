@@ -18,7 +18,7 @@ By default, when you create a Azure Database for MySQL, it allows access to inte
 
 The first line of defense for protecting the MySQL instance access is to implement [firewall rules](https://docs.microsoft.com/azure/mysql/concepts-firewall-rules). IP addresses can be limited to only valid locations when accessing the instance via internal or external IPs. If the MySQL instance is destined to only serve internal applications, then [restrict public access](https://docs.microsoft.com/azure/mysql/howto-deny-public-network-access).
 
-![](media/firewall-rule-diagram.png)
+![This image shows how MySQL Flexible Server instances evaluate firewall rules.](media/firewall-rule-diagram.png "Firewall rule evaluation")
 
 Firewall rules are set at the server level, meaning that they govern network access to all databases on the server instance. While it is best practice to create rules that allow specific IP addresses or ranges to access the instance, developers can also enable network access from all Azure resources. This is useful for Azure services without fixed public IP addresses, such as [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) that use public networks to access the server and databases.
 

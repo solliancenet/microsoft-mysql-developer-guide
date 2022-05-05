@@ -105,7 +105,7 @@ Following software development best practices makes your code simpler to develop
 
 If you need assistance with an Azure Database for MySQL issue, [open an Azure support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.  Be sure to select the correct product and provide as much information as possible so the proper resources is assigned to your ticket.
 
-![](media/open-a-support%20ticket.png)
+![This image shows how to open a detailed support ticket for Microsoft from the Azure portal.](media/open-a-support%20ticket.png "Opening a detailed support ticket for Microsoft")
 
 ### Recommended content
 

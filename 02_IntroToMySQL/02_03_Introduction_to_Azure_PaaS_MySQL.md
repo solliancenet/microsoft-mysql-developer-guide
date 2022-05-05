@@ -38,19 +38,19 @@ Here are a few other notable advantages of Flexible Server.
 
 - [User-scheduled service maintenance:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance) Flexible Server allows database administrators to set a day of the week and a time for Azure to perform service maintenance and upgrades, **per server**. Providing notifications five days before a planned maintenance event, Flexible Server caters to the needs of IT operations personnel.
 
-  ![](media/custom_maintenance_schedule.png)
+  ![This image demonstrates how to set a custom maintenance schedule in Flexible Server.](media/custom_maintenance_schedule.png "Setting a custom maintenance schedule")
 
 - [Network security:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-networking) Applications access Flexible Server through the public Internet (though access is governed by firewall ACLs), or through private IP addresses in an Azure Virtual Network. Moreover, TLS support keeps traffic encrypted, irrespective of the chosen network access model.
 
 - [Automatic backups:](https://docs.microsoft.com/azure/mysql/flexible-server/overview) Azure automates database backups, encrypts them, and stores them for a configurable period.
 
-  ![](media/mysql_backup_configuration.png)
+  ![This image demonstrates how to configure Flexible Server automatic backups.](media/mysql_backup_configuration.png "Configuring automatic backups")
 
 - [Read replicas:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas) Read replicas help teams scale their applications by providing read-only copies of the data updated on the master node. Often, applications that run on elastic, autoscaling services, like Azure App Service, couple well with read replicas.
   
 - [Input-output operations per second (IOPS):](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
 
-  ![](media/mysql_iops_configuration.png)
+  ![This image demonstrates server IOPS configuration.](media/mysql_iops_configuration.png "Configuring server IOPS")
 
 **Some of these features are not exclusive to Flexible Server. Further guide sections demonstrate Flexible Server exposes far more versatility and is the preferred Azure Database for MySQL choice in Azure for new and existing apps.**  
 

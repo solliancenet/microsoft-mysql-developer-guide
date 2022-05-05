@@ -63,8 +63,6 @@ On Azure, organizations often deploy microservices to Azure Kubernetes Service t
 
 Azure API Management allows organizations to manage and securely expose their APIs hosted in diverse environments from a central service. API Management simplifies legacy API modernization, API exposure to multiple platforms, and data interchange between businesses. Applications call APIs through an *API gateway* that validates credentials, enforces quotas, serializes requests in different protocols, and more. Developers operate their API Management instances through the management plane, and they expose API documentation for internal and external users through the Developer portal.
 
-![This image demonstrates the control plane, management plane, and developer portal elements of API Management.](./media/api-management-components.png "API Management components")
-
 Like other Azure resources, API Management offers comprehensive RBAC support, accommodating internal administrative and development staff and external users. Moreover, as API Management integrates with APIs hosted in environments outside Azure, organizations can self-host the API gateway while retaining the Azure management plane APIs.
 
 #### Resources
