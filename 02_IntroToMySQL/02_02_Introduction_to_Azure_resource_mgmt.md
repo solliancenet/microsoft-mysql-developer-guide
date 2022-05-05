@@ -128,7 +128,7 @@ az bicep decompile --file template.json
 
 Additionally, the [Bicep playground](https://aka.ms/bicepdemo) tool can perform similar decompilation of ARM templates.
 
-[Explore the Bicep template benefits](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep)
+[Explore the Bicep template benefits](https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 
 ![This image demonstrates part of a sample Bicep template for provisioning Azure Database for MySQL.](./media/sample-bicep-template.png "Azure Database for MySQL sample Bicep template")
 
@@ -158,7 +158,7 @@ Azure provides [multiple support plans for businesses](https://azure.microsoft.c
 
 #### Training
 
-- [Azure Certifications & Exams](https://docs.microsoft.com/learn/certifications/browse/?products=azure)
+- [Azure Certifications and Exams](https://docs.microsoft.com/learn/certifications/browse/?products=azure)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
   - [Azure Fundamentals (AZ-900) Learning Path](https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/)
 

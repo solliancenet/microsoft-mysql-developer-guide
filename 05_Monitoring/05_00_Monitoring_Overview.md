@@ -37,7 +37,7 @@ At the lower levels, it monitors infrastructure resources, such as VMs, storage,
 
 ![This image clarifies how Azure Monitor integrates with various Azure data sources and management tools.](media/how-azure-monitor-works.png "Azure Monitor integrations")
 
-For more information on what can be monitored, read: [What is monitored by Azure Monitor?](https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference)
+For more information on what can be monitored, read: [What is monitored by Azure Monitor?](https://docs.microsoft.com/azure/azure-monitor/monitor-reference)
 
 ## Define your monitoring strategy
 

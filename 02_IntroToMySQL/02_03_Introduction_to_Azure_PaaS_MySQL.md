@@ -2,7 +2,7 @@
 
 Developers can deploy MySQL on Azure through Virtual Machines (IaaS) or Azure Database for MySQL (PaaS). Azure database for MySQL offers high availability, automated backups, and meets compliance requirements. Operational administrators do not have the operational overhead of managing the OS and the DB engine. They do not need to worry about OS patching, database backups, or server security. Administrators only need to manage the applications and data. Developers can focus on schema design, building queries, and optimizing query performance.
 
-Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
+Azure Database for MySQL supports MySQL Community Editions 5.6, 5.7, and 8.0, making it flexible for most migrations. Reference the [Migrating to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro) guide for in-depth information and examples on how to successfully migrate to Microsoft Azure.
 
 **Control Plane**
 As the image below demonstrates, Azure Resource Manager handles resource configuration, meaning that standard Azure management tools, such as the CLI, PowerShell, and ARM templates, are still applicable. This is commonly referred to as the *control plane*.
@@ -24,13 +24,13 @@ Flexible Server is also a PaaS service fully managed by the Azure platform, but 
 
 ##### Flexible Server video introduction
 
-![](media/top3-reasons-video.png)
+![The graphic shows the thumbnail for the Top3 Reasons for Azure Database for MySQL](media/top3-reasons-video.png "Top3 Reasons for Azure Database for MySQL")
 
-Watch: [Top 3 Reasons to consider Azure Database for MySQL](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages. 
+Watch: [Top 3 Reasons to consider Azure Database for MySQL](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
 Cost management is one of the advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
-> *Locally-redundant storage* replicates data within a single [availability zone](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview). *Availability zones* are present within a single Azure region (such as East US) and are geographically isolated. All Azure regions that support availability zones have at least three.
+> *Locally-redundant storage* replicates data within a single [availability zone](https://docs.microsoft.com/azure/availability-zones/az-overview). *Availability zones* are present within a single Azure region (such as East US) and are geographically isolated. All Azure regions that support availability zones have at least three.
 
 ![This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.](./media/flexible-server.png "Operation of MySQL Flexible Server")
 
@@ -48,7 +48,7 @@ Here are a few other notable advantages of Flexible Server.
 
 - [Read replicas:](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas) Read replicas help teams scale their applications by providing read-only copies of the data updated on the master node. Often, applications that run on elastic, autoscaling services, like Azure App Service, couple well with read replicas.
   
-- [Input-output operations per second (IOPS):](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
+- [Input-output operations per second (IOPS):](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage#iops) IOPS can be configured based on your performance needs.
 
   ![This image demonstrates server IOPS configuration.](media/mysql_iops_configuration.png "Configuring server IOPS")
 
@@ -82,5 +82,4 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, high availability, and backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single Server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/). For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
 > **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option.
-
 > **Note:** This guide will focus primarily on Flexible Server and will not explore Single Server in depth.

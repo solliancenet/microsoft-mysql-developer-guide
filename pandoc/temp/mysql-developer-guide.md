@@ -5103,7 +5103,7 @@ real-world information:
     "Azure Template JSON"
   [Bicep]: https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview
   [Bicep playground]: https://aka.ms/bicepdemo
-  [Explore the Bicep template benefits]: https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep
+  [Explore the Bicep template benefits]: https://docs.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep
   [This image demonstrates part of a sample Bicep template for provisioning Azure Database for MySQL.]:
     ./media/sample-bicep-template.png
     "Azure Database for MySQL sample Bicep template"
@@ -5121,7 +5121,7 @@ real-world information:
   [Azure Certifications & Exams]: https://docs.microsoft.com/learn/certifications/browse/?products=azure
   [Microsoft Learn]: https://docs.microsoft.com/learn/
   [Azure Fundamentals (AZ-900) Learning Path]: https://docs.microsoft.com/learn/paths/az-900-describe-cloud-concepts/
-  [Migrating to Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro
+  [Migrating to Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/migrate/mysql-on-premises-azure-db/01-mysql-migration-guide-intro
   [MySQL Workbench]: https://www.mysql.com/products/workbench/
   [This image demonstrates the control and data plane for Azure Database for MySQL.]:
     ./media/mysql-conceptual-diagram.png
@@ -5130,7 +5130,7 @@ real-world information:
   [5]: media/top3-reasons-video.png
   [Top 3 Reasons to consider Azure Database for MySQL]: https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/
   [Flexible Server instances can also be paused]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli
-  [availability zone]: https://docs.microsoft.com/en-us/azure/availability-zones/az-overview
+  [availability zone]: https://docs.microsoft.com/azure/availability-zones/az-overview
   [This image demonstrates how MySQL Flexible Server works, with compute, storage, and backup storage.]:
     ./media/flexible-server.png "Operation of MySQL Flexible Server"
   [User-scheduled service maintenance:]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-maintenance
@@ -5142,7 +5142,7 @@ real-world information:
   [This image demonstrates how to configure Flexible Server automatic backups.]:
     media/mysql_backup_configuration.png "Configuring automatic backups"
   [Read replicas:]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-read-replicas
-  [Input-output operations per second (IOPS):]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-compute-storage#iops
+  [Input-output operations per second (IOPS):]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-compute-storage#iops
   [This image demonstrates server IOPS configuration.]: media/mysql_iops_configuration.png
     "Configuring server IOPS"
   [Azure Pricing Calculator]: https://azure.microsoft.com/pricing/calculator/
@@ -5202,7 +5202,7 @@ real-world information:
   [Hibernate ORM]: https://hibernate.org/orm/
   [Installing the Azure Toolkit for Eclipse]: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/installation
   [Create a Hello World web app for Azure App Service using Eclipse]: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app
-  [Azure for Java developer documentation]: https://docs.microsoft.com/en-us/azure/developer/java/?view=azure-java-stable
+  [Azure for Java developer documentation]: https://docs.microsoft.com/azure/developer/java/?view=azure-java-stable
   [Maven Introduction]: https://maven.apache.org/guides/getting-started/index.html
   [Develop Java web app on Azure using Maven (App Service)]: https://docs.microsoft.com/learn/modules/publish-web-app-with-maven-plugin-for-azure-app-service/
   [Deploy Spring microservices to Azure (Spring Cloud)]: https://docs.microsoft.com/learn/modules/azure-spring-cloud-workshop/
@@ -5237,7 +5237,7 @@ real-world information:
   [About API Management]: https://docs.microsoft.com/azure/api-management/api-management-key-concepts
   [Self-hosted gateway overview]: https://docs.microsoft.com/azure/api-management/self-hosted-gateway-overview
   [Azure Functions:]: https://docs.microsoft.com/azure/azure-functions/functions-bindings-timer
-  [Logic Apps:]: https://docs.microsoft.com/en-us/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows
+  [Logic Apps:]: https://docs.microsoft.com/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows
   [This image shows a sample architecture involving a PHP App Service instance and a Flexible Server instance.]:
     media/sample-app-level-1-architecture.png
     "Basic Azure deployment architecture"
@@ -5293,7 +5293,7 @@ real-world information:
   [Tutorial: Deploy a local ARM template]: https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-tutorial-local-template?tabs=azure-cli
   [Basic Template]: ./../artifacts/template.json
   [Secure Template]: ./../artifacts/template-secure.json
-  [8]: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+  [8]: https://docs.microsoft.com/azure/azure-functions/functions-overview
   [Dotnet]: ./../artifacts/06-01-FunctionApp-DotNet/README.md
   [9]: ./../artifacts/06-02-FunctionApp-Python/README.md
   [AKS]: ./../artifacts/06-03-FunctionApp-AKS/README.md
@@ -5302,8 +5302,8 @@ real-world information:
   [Azure Data Factory]: ./../artifacts/07-01-AzureDataFactory/README.md
   [Azure Synapse Analytics]: ./../artifacts/07-02-AzureSynapseAnalytics/README.md
   [Azure Batch]: ./../artifacts/07-03-AzureBatch/README.md
-  [microservice]: https://azure.microsoft.com/en-us/solutions/microservice-applications/#solution-architectures
-  [Design patterns for microservices]: https://docs.microsoft.com/en-us/azure/architecture/microservices/design/patterns
+  [microservice]: https://azure.microsoft.com/solutions/microservice-applications/#solution-architectures
+  [Design patterns for microservices]: https://docs.microsoft.com/azure/architecture/microservices/design/patterns
   [YAML.]: yaml.org
   [Azure Boards:]: https://docs.microsoft.com/azure/devops/boards/get-started/what-is-azure-boards?view=azure-devops
   [processes.]: https://docs.microsoft.com/azure/devops/boards/work-items/guidance/choose-process?view=azure-devops&tabs=basic-process
@@ -5322,7 +5322,7 @@ real-world information:
     "Azure Monitor workflow"
   [This image clarifies how Azure Monitor integrates with various Azure data sources and management tools.]:
     media/how-azure-monitor-works.png "Azure Monitor integrations"
-  [What is monitored by Azure Monitor?]: https://docs.microsoft.com/en-us/azure/azure-monitor/monitor-reference
+  [What is monitored by Azure Monitor?]: https://docs.microsoft.com/azure/azure-monitor/monitor-reference
   [plan their monitoring strategy]: https://docs.microsoft.com/azure/azure-monitor/best-practices-plan
   [Azure Monitor Pricing]: https://azure.microsoft.com/pricing/details/monitor/
   [This image shows the Azure Monitor Metrics icon.]: media/azure-metric-icon.png
@@ -5330,18 +5330,18 @@ real-world information:
   [Azure Monitor Metrics overview]: https://docs.microsoft.com/azure/azure-monitor/essentials/data-platform-metrics
   [This image shows the Activity Logs icon.]: media/activity-logs.png
     "Activity logs icon"
-  [platform log]: https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/platform-logs-overview
-  [Azure Activity log]: https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log
+  [platform log]: https://docs.microsoft.com/azure/azure-monitor/essentials/platform-logs-overview
+  [Azure Activity log]: https://docs.microsoft.com/azure/azure-monitor/essentials/activity-log
   [This image shows the Azure Log Analytics icon.]: media/log-analytics-icon.png
     "Azure Log Analytics icon"
-  [Overview of Log Analytics in Azure Monitor]: https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
-  [Log Analytics tutorial]: https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial
+  [Overview of Log Analytics in Azure Monitor]: https://docs.microsoft.com/azure/azure-monitor/logs/log-analytics-overview
+  [Log Analytics tutorial]: https://docs.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial
   [This image shows the Azure Monitor Workbooks icon.]: media/workbooks-icon.png
     "Azure Monitor Workbooks icon"
-  [Azure Monitor Workbooks]: https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+  [Azure Monitor Workbooks]: https://docs.microsoft.com/azure/azure-monitor/visualize/workbooks-overview
   [This image shows the Azure Resource Health icon.]: media/resource-health.png
     "Azure Resource Health icon"
-  [Resource Health overview]: https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview
+  [Resource Health overview]: https://docs.microsoft.com/azure/service-health/resource-health-overview
   [Application Insights]: https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview
   [10]: media/application-insights-overview.png
   [Connection Strings]: https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net
@@ -5358,18 +5358,18 @@ real-world information:
     media/mysql-azure-portal-metrics.png
     "Monitoring tab in the Azure portal"
   [Monitor Azure Database for MySQL Flexible Servers with built-in metrics]:
-    https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-monitoring
+    https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring
   [This image shows how to graph metrics in the Azure portal Monitoring tab.]:
     media/mysql-diagnostic-settings.png
     "Graphing metrics in the Azure portal"
-  [Set up diagnostics]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics
+  [Set up diagnostics]: https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics
   [This image shows a KQL query.]: media/azure-diagnostic-query.png
     "Sample KQL query"
   [This image shows KQL query results.]: media/azure-diagnostic-query-result.png
     "Sample KQL query results"
   [This image shows a KQL query that polls the MySQL audit log.]: media/mysql-log-analytics-audit-log-query.png
     "KQL query for the MySQL audit log"
-  [View query insights by using Log Analytics]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/tutorial-query-performance-insights#view-query-insights-by-using-log-analytics
+  [View query insights by using Log Analytics]: https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights#view-query-insights-by-using-log-analytics
   [This image shows Azure Monitor Workbooks visualizations.]: media/workbook-example.png
     "Visualizations in Azure Monitor Workbooks"
   [This image shows QPI in the Azure portal.]: media/query-performance-insight.png
@@ -5377,7 +5377,7 @@ real-world information:
   [Query Performance Insight tool]: https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights
   [Warning]: media/warning.png "Warning"
   [Monitor Azure Database for MySQL Flexible Server by using Azure Monitor workbooks]:
-    https://docs.microsoft.com/en-us/azure/mysql/flexible-server/concepts-workbooks
+    https://docs.microsoft.com/azure/mysql/flexible-server/concepts-workbooks
   [This image shows Azure Resource Health.]: media/resource-health-example.png
     "Azure Resource Health"
   [This image shows administrative events in the Azure Activity Log.]: media/activity-logs-example.png
@@ -5390,10 +5390,10 @@ real-world information:
     media/configure-alert-example.png
     "Creating resource alerts from the Metrics section"
   [Set up alerts on metrics for Azure Database for MySQL - Flexible Server]:
-    https://docs.microsoft.com/en-us/azure/mysql/flexible-server/how-to-alert-on-metric
+    https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric
   [audit log feature is disabled]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-audit-logs
   [diagnostic logging]: https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics
-  [Successful alerting strategy]: https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy
+  [Successful alerting strategy]: https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy
   [Azure Automation Runbooks]: https://docs.microsoft.com/azure/automation/automation-runbook-types
   [Microsoft's tutorial]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric
   [Microsoft blog]: https://azure.microsoft.com/blog/best-practices-for-alerting-on-metrics-with-azure-database-for-mysql-monitoring/
@@ -5461,8 +5461,8 @@ real-world information:
   [modify the applications]: https://docs.microsoft.com/azure/mysql/howto-configure-ssl
   [21]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-connect-tls-ssl
   [Single Server]: https://docs.microsoft.com/azure/mysql/concepts-ssl-connection-security
-  [Microsoft Sentinel]: https://docs.microsoft.com/en-us/azure/sentinel/overview
-  [Microsoft Purview]: https://docs.microsoft.com/en-us/azure/purview/overview
+  [Microsoft Sentinel]: https://docs.microsoft.com/azure/sentinel/overview
+  [Microsoft Purview]: https://docs.microsoft.com/azure/purview/overview
   [security baseline]: https://docs.microsoft.com/azure/mysql/security-baseline
   [Selenium]: https://www.selenium.dev/
   [Selenium Grid]: https://www.selenium.dev/documentation/grid/
@@ -5474,7 +5474,7 @@ real-world information:
     media/azure-traffic-manager-blue-green.png
     "Azure Traffic Manager Blue/Green test"
   [Deployment Center example]: https://docs.microsoft.com/azure/app-service/deploy-github-actions?tabs=applevel
-  [Azure Traffic Manager example]: https://azure.microsoft.com/en-us/blog/blue-green-deployments-using-azure-traffic-manager/
+  [Azure Traffic Manager example]: https://azure.microsoft.com/blog/blue-green-deployments-using-azure-traffic-manager/
   [Application Gateway example]: https://techcommunity.microsoft.com/t5/apps-on-azure-blog/upgrading-aks-version-with-blue-green-deployment-i/ba-p/2527145
   [Event Hub throughput by tier]: https://docs.microsoft.com/azure/event-hubs/event-hubs-quotas#basic-vs-standard-vs-premium-vs-dedicated-tiers
   [Apache JMeter]: https://jmeter.apache.org/
@@ -5497,13 +5497,13 @@ real-world information:
   [What is Grafana OSS]: https://grafana.com/docs/grafana/latest/introduction/oss-details/
   [Store Prometheus Metrics with Thanos, Azure Storage and Azure Kubernetes Service (AKS)]:
     https://techcommunity.microsoft.com/t5/apps-on-azure-blog/store-prometheus-metrics-with-thanos-azure-storage-and-azure/ba-p/3067849
-  [What are Azure Pipelines?]: https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target
-  [What is Azure Load Testing?]: https://docs.microsoft.com/en-us/azure/load-testing/overview-what-is-azure-load-testing?wt.mc_id=loadtesting_acompara4_webpage_cnl
+  [What are Azure Pipelines?]: https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops#:~:text=Azure%20Pipelines%20automatically%20builds%20and,ship%20it%20to%20any%20target
+  [What is Azure Load Testing?]: https://docs.microsoft.com/azure/load-testing/overview-what-is-azure-load-testing?wt.mc_id=loadtesting_acompara4_webpage_cnl
   [read replica]: https://dev.mysql.com/doc/refman/5.7/en/replication-features.html
   [Best practices for optimal performance of your Azure Database for MySQL]:
-    https://docs.microsoft.com/en-us/azure/mysql/concept-performance-best-practices
-  [limits]: https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers
-  [MySQL DB Metrics]: https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring#metrics
+    https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
+  [limits]: https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers
+  [MySQL DB Metrics]: https://docs.microsoft.com/azure/mysql/concepts-monitoring#metrics
   [paired Azure region]: https://docs.microsoft.com/azure/availability-zones/cross-region-replication-azure
   [This image shows MySQL server parameters in the Azure portal.]: media/server_parameters.png
     "MySQL server parameters"
@@ -5514,7 +5514,7 @@ real-world information:
   [SysBench Benchmark Tool]: https://downloads.mysql.com/source/sysbench-0.4.12.16.tar.gz
   [TPC-H]: https://www.tpc.org/tpch/
   [types of tests]: https://www.tpc.org/information/benchmarks5.asp
-  [MySQL Performance Schema]: https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema
+  [MySQL Performance Schema]: https://docs.microsoft.com/azure/mysql/howto-troubleshoot-sys-schema
   [This image shows how to use tables in the sys schema to optimize MySQL queries.]:
     media/employee-query-full-table-scan.png
     "Using tables in the sys schema to optimize MySQL queries"
@@ -5529,13 +5529,13 @@ real-world information:
   [Microsoft TechCommunity post]: https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691
   [23]: https://docs.microsoft.com/azure/mysql/concept-performance-best-practices
   [Redis cache]: https://redis.io/
-  [Azure Cache for Redis]: https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview
-  [Enterprise, Premium, Standard, and Basic tiers]: https://azure.microsoft.com/en-us/pricing/details/cache/
+  [Azure Cache for Redis]: https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview
+  [Enterprise, Premium, Standard, and Basic tiers]: https://azure.microsoft.com/pricing/details/cache/
   [This image demonstrates how Azure CDN POPs optimize content delivery.]:
     ./media/cdn-overview.png "Azure CDN POP static content delivery"
-  [Troubleshoot connection issues to Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues
+  [Troubleshoot connection issues to Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues
   [Handle transient errors and connect efficiently to Azure Database for MySQL]:
-    https://docs.microsoft.com/en-us/azure/mysql/concepts-connectivity
+    https://docs.microsoft.com/azure/mysql/concepts-connectivity
   [Error 1184]: https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_new_aborting_connection
   [retire older gateways]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture#azure-database-for-mysql-gateway-ip-addresses
   [Azure Network Watcher]: https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview
@@ -5543,8 +5543,8 @@ real-world information:
   [Error 1227]: https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error
   [24]: https://dev.mysql.com/doc/refman/8.0/en/converting-tables-to-innodb.html
   [circuit breaker pattern]: https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker
-  [debugging an App Service app]: https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
-  [Troubleshoot slow app performance issues in Azure App Service]: https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-performance-degradation
+  [debugging an App Service app]: https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs
+  [Troubleshoot slow app performance issues in Azure App Service]: https://docs.microsoft.com/azure/app-service/troubleshoot-performance-degradation
   [Environment variables and app settings in Azure App Service]: https://docs.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet
   [Azure App Service on Linux FAQ]: https://docs.microsoft.com/azure/app-service/faq-app-service-linux
   [KLogger]: https://github.com/katzgrau/KLogger
@@ -5565,8 +5565,8 @@ real-world information:
     media/open-a-support%20ticket.png
     "Opening a detailed support ticket for Microsoft"
   [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL]:
-    https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors
-  [Troubleshoot data encryption in Azure Database for MySQL]: https://docs.microsoft.com/en-us/azure/mysql/howto-data-encryption-troubleshoot
+    https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-errors
+  [Troubleshoot data encryption in Azure Database for MySQL]: https://docs.microsoft.com/azure/mysql/howto-data-encryption-troubleshoot
   [Azure Community Support]: https://azure.microsoft.com/support/community/
   [This image demonstrates Zone-Redundant HA for MySQL Flexible Server.]:
     media/1-flexible-server-overview-zone-redundant-ha.png
@@ -5594,7 +5594,7 @@ real-world information:
   [Microsoft documentation.]: https://docs.microsoft.com/azure/mysql/flexible-server/concepts-backup-restore
   [Point-in-time restore with Azure Portal]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-portal
   [Point-in-time restore with CLI]: https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restore-server-cli
-  [Azure CLI samples for Azure Database for MySQL - Flexible Server]: https://docs.microsoft.com/en-us/azure/mysql/flexible-server/sample-scripts-azure-cli
+  [Azure CLI samples for Azure Database for MySQL - Flexible Server]: https://docs.microsoft.com/azure/mysql/flexible-server/sample-scripts-azure-cli
   [this]: https://azure.microsoft.com/global-infrastructure/data-residency/#select-geography
   [29]: https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture
   [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)]:
@@ -5625,16 +5625,16 @@ real-world information:
     ./media/realms-migration.png "Minecraft Realms migration to Azure"
   [This image shows the LinkedBrain logo.]: media/linked-brain-logo.png
     "LinkedBrain logo"
-  [Linked Brain]: https://customers.microsoft.com/en-us/story/1418505453083122843-linked-brain-en-japan
+  [Linked Brain]: https://customers.microsoft.com/story/1418505453083122843-linked-brain-en-japan
   [This image shows the T-Systems logo.]: media/t-systems-logo.png
     "T-Systems logo"
-  [T-Systems]: https://customers.microsoft.com/en-us/story/724200-deutsche-telekom-telecommunications-azure
+  [T-Systems]: https://customers.microsoft.com/story/724200-deutsche-telekom-telecommunications-azure
   [This image shows the logo of Children's Mercy Kansas City.]: media/children-mercy-logo.png
     "Children's Mercy Kansas City logo"
-  [Children's Mercy Kansas City]: https://customers.microsoft.com/en-us/story/860516-childrens-mercy-health-provider-azure
+  [Children's Mercy Kansas City]: https://customers.microsoft.com/story/860516-childrens-mercy-health-provider-azure
   [This image shows the GeekWire logo.]: media/geekwire.png
     "GeekWire logo"
-  [GeekWire]: https://customers.microsoft.com/en-us/story/geekwire
+  [GeekWire]: https://customers.microsoft.com/story/geekwire
   [one from WordPress]: https://azuremarketplace.microsoft.com/marketplace/apps/WordPress.WordPress?tab=Overview
   [this offering]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.moodle-frontend-manageddb-multitier?tab=Overview
   [30]: https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.magento-chart?tab=Overview

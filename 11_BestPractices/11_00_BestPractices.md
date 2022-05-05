@@ -23,7 +23,7 @@ To ensure that containerized applications function optimally, verify that applic
 
 Developers can identify container resource issues through monitoring utilities, like [Container insights,](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview) which supports Azure Kubernetes Service, Azure Container Instances, on-premises Kubernetes clusters, and more.
 
-### 4. Implement network isolation & SSL connectivity
+### 4. Implement network isolation and SSL connectivity
 
 MySQL Flexible Server natively supports connectivity through Azure Virtual Networks, meaning that the database endpoint does not face the public Internet, and database traffic remains within Azure. Consider the [Networking and connectivity options] document for more information regarding public and private access.
 

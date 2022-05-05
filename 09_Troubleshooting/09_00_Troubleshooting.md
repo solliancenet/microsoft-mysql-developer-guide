@@ -8,7 +8,7 @@ Debugging operational support issues can be time consuming. As previous discusse
 
 ### Connectivity issues
 
-Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance. For some helpful connectivity suggestions, reference the [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues) and [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/concepts-connectivity) articles.
+Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance. For some helpful connectivity suggestions, reference the [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues) and [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-connectivity) articles.
 
 #### Misconfiguration
 
@@ -63,8 +63,8 @@ Operating in a cloud environment means that certain features that function on-pr
 
 ## Troubleshoot app issues in Azure App Service
 
-- **Enable web logging.** Azure provides built-in diagnostics to assist with [debugging an App Service app](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs).
-- Network requests taking a long time? [Troubleshoot slow app performance issues in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-performance-degradation)
+- **Enable web logging.** Azure provides built-in diagnostics to assist with [debugging an App Service app](https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs).
+- Network requests taking a long time? [Troubleshoot slow app performance issues in Azure App Service](https://docs.microsoft.com/azure/app-service/troubleshoot-performance-degradation)
 - In Azure App Service, certain settings are available to the deployment or runtime environment as environment variables. Some of these settings can be customized when configuring the app settings.
 [Environment variables and app settings in Azure App Service](https://docs.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet)
 
@@ -109,12 +109,12 @@ If you need assistance with an Azure Database for MySQL issue, [open an Azure su
 
 ### Recommended content
 
-- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)
+- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues)
 
-- [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/concepts-connectivity)
+- [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-connectivity)
 
-- [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-errors)
+- [Troubleshoot errors commonly encountered during or post migration to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-errors)
 
-- [Troubleshoot data encryption in Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-data-encryption-troubleshoot)
+- [Troubleshoot data encryption in Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-data-encryption-troubleshoot)
 
 - [Azure Community Support](https://azure.microsoft.com/support/community/) Ask questions, get answers, and connect with Microsoft engineers and Azure community experts

@@ -31,7 +31,7 @@ Example steps to configure WordPress monitoring:
 
 [Azure Metrics Explorer](https://docs.microsoft.com/azure/azure-monitor/essentials/metrics-getting-started) makes it easy to capture performance counters for resources quickly without adding instrumentation to your application code. As the following diagram shows, you simply select the resource and metric and then apply your filters:
 
-![](media/azure-metrics-workflow.png)
+![The Azure Metrics workflow is displayed.](media/azure-metrics-workflow.png "Azure Metrics workflow")
 
 For example, to capture performance counters for a PHP App Service resource, simply follow these steps.
 
@@ -39,19 +39,19 @@ For example, to capture performance counters for a PHP App Service resource, sim
 - In the **Monitoring** section, select the **Metrics** item.
 - Select your time range.
 
-  ![](media/azure-metric-time-range.png)
+  ![The picture shows the time frame options for metric filtering.](media/azure-metric-time-range.png "Metric time-frame filtering")
 
 - Select your **Metric** from the dropdown.
 
-  ![](media/mysql-guide-metric-counters.png)
+  ![The picture shows the Metric category filter options.](media/mysql-guide-metric-counters.png "Metric category filter options")
 
 - Select your chart choice for the chosen metric.
 
-  ![](media/mysql-guide-request-count-metric.png)
+  ![The Azure Metric request count example is displayed.](media/mysql-guide-request-count-metric.png "Metrics request count")
 
 - Create a rule by selecting **New alert rule**.
   
-  ![](media/azure-metric-new-alert-rule.png)
+  ![The Azure Metrics new alert rule is displayed.](media/azure-metric-new-alert-rule.png "Metrics alert rule example")
 
 ### Application Insights cost management
 

@@ -99,7 +99,7 @@ Several private DNS Zones were created as part of the ARM template deployment, h
 
 ## Install the Logic Apps Gateway
 
-- [Download](https://www.microsoft.com/en-us/download/details.aspx?id=53127) the Logic Apps Gateway
+- [Download](https://www.microsoft.com/download/details.aspx?id=53127) the Logic Apps Gateway
 - Install the Logic Apps Gateway by running the **gatewayinstall.exe**
 - Select **I accept the terms...** checkbox
 - Select **Install**

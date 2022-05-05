@@ -8,14 +8,14 @@ Azure Monitor Metrics is a feature of Azure Monitor that collects numeric data f
 
 ![This image shows the Activity Logs icon.](media/activity-logs.png "Activity logs icon")
 
-The Activity log is a [platform log](https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/platform-logs-overview) in Azure that provides insight into subscription-level events. The Activity log includes  information like when a resource is modified or when a virtual machine was started.
+The Activity log is a [platform log](https://docs.microsoft.com/azure/azure-monitor/essentials/platform-logs-overview) in Azure that provides insight into subscription-level events. The Activity log includes  information like when a resource is modified or when a virtual machine was started.
 
 Event examples:
 
 - Start or stop a VM.
 - Start or stop an App Service.
 
-[Azure Activity log](https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log)
+[Azure Activity log](https://docs.microsoft.com/azure/azure-monitor/essentials/activity-log)
 
 ![This image shows the Azure Log Analytics icon.](media/log-analytics-icon.png "Azure Log Analytics icon")
 
@@ -27,15 +27,15 @@ Query examples:
 - HTTP status codes in the two days.
 - Call duration and result code.
 
-[Overview of Log Analytics in Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
+[Overview of Log Analytics in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/logs/log-analytics-overview)
 
-[Log Analytics tutorial](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial)
+[Log Analytics tutorial](https://docs.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial)
 
 ![This image shows the Azure Monitor Workbooks icon.](media/workbooks-icon.png "Azure Monitor Workbooks icon")
 
 Workbooks provide a flexible canvas for data analysis and the creation of rich visual reports within the Azure portal. They allow you to tap into multiple Azure data sources and combine them into unified interactive experiences. Visualize data in one interactive report.
 
-[Azure Monitor Workbooks](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)
+[Azure Monitor Workbooks](https://docs.microsoft.com/azure/azure-monitor/visualize/workbooks-overview)
 
 ![This image shows the Azure Resource Health icon.](media/resource-health.png "Azure Resource Health icon")
 
@@ -51,4 +51,4 @@ Resource issue examples:
 - Planned events, like scheduled host OS updates
 - Events triggered by user actions, for example a user rebooting a virtual machine
 
-[Resource Health overview](https://docs.microsoft.com/en-us/azure/service-health/resource-health-overview)
+[Resource Health overview](https://docs.microsoft.com/azure/service-health/resource-health-overview)

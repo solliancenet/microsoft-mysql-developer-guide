@@ -36,7 +36,7 @@ This is a simple app that runs PHP code to connect to a MYSQL database.  The app
     
     #Publish-AzWebApp -WebApp $app -ArchivePath "C:\labfiles\microsoft-mysql-developer-guide\site.zip" -force
 
-    #Reference - https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git?tabs=cli
+    #Reference - https://docs.microsoft.com/azure/app-service/deploy-local-git?tabs=cli
 
     az login --scope https://management.core.windows.net//.default
 

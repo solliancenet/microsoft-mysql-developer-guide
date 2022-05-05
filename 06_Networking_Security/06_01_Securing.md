@@ -21,7 +21,7 @@ Many of the items discussed thus far operate in their sphere of influence and ar
 
 Disparate components require a holistic solution to provide a complete picture of the security posture and the automated event remediation options.  
 
-[Microsoft Sentinel](https://docs.microsoft.com/en-us/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then provide a view into how an attack may have started.
+[Microsoft Sentinel](https://docs.microsoft.com/azure/sentinel/overview) is the security tool that provides the needed connectors to bring all your security log data into one place and then provide a view into how an attack may have started.
 
 Microsoft Sentinel works with Azure Log Analytics and other Microsoft security services to provide a log storage, query, and alerting solution.  Through machine learning, artificial intelligence, and user behavior analytics (UEBA), Microsoft Sentinel provides a higher understanding of potential issues or incidents that may not have seen with a disconnected environment.
 
@@ -29,7 +29,7 @@ Microsoft Sentinel works with Azure Log Analytics and other Microsoft security s
 
 Data privacy has evolved into a organizational priority over the past few years. Determining where sensitive information lives across your data estate is a requirement in today's privacy-centered society.
 
-[Microsoft Purview](https://docs.microsoft.com/en-us/azure/purview/overview) can scan your data estate, including your Azure Database for MySQL instances, to find personally identifiable information or other sensitive information types.  This data can then be analyzed, classified and lineage defined across your cloud-based resources.
+[Microsoft Purview](https://docs.microsoft.com/azure/purview/overview) can scan your data estate, including your Azure Database for MySQL instances, to find personally identifiable information or other sensitive information types.  This data can then be analyzed, classified and lineage defined across your cloud-based resources.
 
 ### Security baselines
 

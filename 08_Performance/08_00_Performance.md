@@ -19,7 +19,7 @@ The following are some basic tips for how to increase or ensure performance of y
 - Consider using a query caching solutions like Heimdall Data Proxy. Limit connections based on per user and per database. Protect the database from being overwhelmed by a single application or feature.
 - Temporarily scale your Azure Database for MySQL resources for taxing tasks. Once your task is complete, scale it down.
 
-See [Best practices for optimal performance of your Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/concept-performance-best-practices)
+See [Best practices for optimal performance of your Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concept-performance-best-practices)
 
 ## Monitoring hardware and query performance
 
@@ -43,7 +43,7 @@ AzureDiagnostics
 
 ## Scaling the server
 
-Within the tier, it is possible to scale cores and memory to the minimum and maximum [limits](https://docs.microsoft.com/en-us/azure/mysql/concepts-pricing-tiers) allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, scale up to meet demand.
+Within the tier, it is possible to scale cores and memory to the minimum and maximum [limits](https://docs.microsoft.com/azure/mysql/concepts-pricing-tiers) allowed in that tier. If monitoring shows a continual maxing out of CPU or memory, scale up to meet demand.
 
 You can also adjust the IOPS for better transactions per second (TPS) performance. You can use an [Azure CLI script](https://docs.microsoft.com/azure/mysql/flexible-server/scripts/sample-cli-monitor-and-scale) to monitor relevant metrics and scale the server.
 
@@ -53,7 +53,7 @@ An Azure Database for MySQL performance best practice is to allocate enough RAM 
 
 As previously discussed, set up alerts on such numbers to ensure that as the servers reaches limits you can take prompt actions to fix it. Based on the limits defined, check if scaling up the database SKU—either to higher compute size or to better pricing tier, which results in a dramatic increase in performance.
 
-Scale up until your performance numbers no longer drops dramatically after a scaling operation. For information on monitoring a DB instance's metrics, see [MySQL DB Metrics](https://docs.microsoft.com/en-us/azure/mysql/concepts-monitoring#metrics).
+Scale up until your performance numbers no longer drops dramatically after a scaling operation. For information on monitoring a DB instance's metrics, see [MySQL DB Metrics](https://docs.microsoft.com/azure/mysql/concepts-monitoring#metrics).
 
 ## Moving regions
 
@@ -95,7 +95,7 @@ More Common sets of tests typically utilize TPC benchmarks such as [TPC-H](https
 
 ## Instrumenting vital server resources
 
-The [MySQL Performance Schema](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-sys-schema) **sys_schema** provides a way to inspect internal server execution events at runtime. The MySQL performance_schema provides instrumentation for many vital server resources such as memory allocation, stored programs, metadata locking, etc. However, the performance_schema contains more than 80 tables, and getting the necessary information often requires joining tables within the performance_schema, and tables from the information_schema. Building on both performance_schema and information_schema, the sys_schema provides a powerful collection of user-friendly views in a read-only database and is fully enabled in Azure Database for MySQL version 5.7.
+The [MySQL Performance Schema](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-sys-schema) **sys_schema** provides a way to inspect internal server execution events at runtime. The MySQL performance_schema provides instrumentation for many vital server resources such as memory allocation, stored programs, metadata locking, etc. However, the performance_schema contains more than 80 tables, and getting the necessary information often requires joining tables within the performance_schema, and tables from the information_schema. Building on both performance_schema and information_schema, the sys_schema provides a powerful collection of user-friendly views in a read-only database and is fully enabled in Azure Database for MySQL version 5.7.
 
 ![This image shows how to use tables in the sys schema to optimize MySQL queries.](media/employee-query-full-table-scan.png "Using tables in the sys schema to optimize MySQL queries")
 

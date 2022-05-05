@@ -271,12 +271,12 @@ The environment variable could be set globally or at the project level. Setting 
 ### Troubleshooting tips
 
 - Select the App Service in the Azure Portal. In the **Monitoring** section, select **Log Stream**.
-- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/en-us/azure/mysql/howto-troubleshoot-common-connection-issues)
+- [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues)
 - Running `php -i` at the Azure App Service SSH console will provide valuable configuration information.
 - Azure App Service 8.0 php.ini location - `cat /usr/local/etc/php/php.ini-production`
-- [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/en-us/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)
+- [Configure a PHP app for Azure App Service - Access diagnostic logs](https://docs.microsoft.com/azure/app-service/configure-language-php?pivots=platform-linux#access-diagnostic-logs)
 - [Deploying a Laravel application to Nginx server.](https://laravel.com/docs/8.x/deployment#nginx)
-- [Local Git deployment to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git?tabs=cli)
+- [Local Git deployment to Azure App Service](https://docs.microsoft.com/azure/app-service/deploy-local-git?tabs=cli)
 
 ## Recommended content
 

@@ -47,7 +47,7 @@ Maven improves the productivity of Java developers by managing builds, dependenc
 
 **Tool-Specific Resources**
 
-1. [Azure for Java developer documentation](https://docs.microsoft.com/en-us/azure/developer/java/?view=azure-java-stable)
+1. [Azure for Java developer documentation](https://docs.microsoft.com/azure/developer/java/?view=azure-java-stable)
 2. [Maven Introduction](https://maven.apache.org/guides/getting-started/index.html)
 3. [Develop Java web app on Azure using Maven (App Service)](https://docs.microsoft.com/learn/modules/publish-web-app-with-maven-plugin-for-azure-app-service/)
 4. [Deploy Spring microservices to Azure (Spring Cloud)](https://docs.microsoft.com/learn/modules/azure-spring-cloud-workshop/)

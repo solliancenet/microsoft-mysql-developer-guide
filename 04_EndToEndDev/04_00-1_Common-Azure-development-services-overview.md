@@ -9,7 +9,7 @@ Developers can deploy MySQL-backed apps to Azure on a Windows or Linux environme
 #### Resources
 
 - [App Service overview](https://docs.microsoft.com/azure/app-service/overview)
-- PHP & MySQL Flexible Server sample app:
+- PHP and MySQL Flexible Server sample app:
   - Manual deployment: [Running the sample application]
   - Scripted deployment: [Cloud Deployment to Azure App Service]
 
@@ -97,7 +97,7 @@ An e-commerce site can use Service Bus to process an order, Event Hubs to captur
 Developers use cron jobs to run operations on a schedule. They are often useful for administrative tasks, like taking site backups. Azure Functions and Logic Apps support cron jobs:
 
 - [Azure Functions:](https://docs.microsoft.com/azure/azure-functions/functions-bindings-timer) The timer trigger executes a function on a schedule. Azure Functions supports more complex scheduling tasks, like specifying the cron job time precision.
-- [Logic Apps:](https://docs.microsoft.com/en-us/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows) Logic Apps supports Recurrence triggers and Sliding Window triggers. Recurrence triggers run Logic Apps on a schedule, while Sliding Window triggers extend Recurrence triggers by executing occurrences that were missed (e.g. the Logic App was disabled).
+- [Logic Apps:](https://docs.microsoft.com/azure/logic-apps/concepts-schedule-automated-recurring-tasks-workflows) Logic Apps supports Recurrence triggers and Sliding Window triggers. Recurrence triggers run Logic Apps on a schedule, while Sliding Window triggers extend Recurrence triggers by executing occurrences that were missed (e.g. the Logic App was disabled).
 
 ### WebJobs
 

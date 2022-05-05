@@ -18,7 +18,7 @@ Test and validate the assumptions in a nonproduction environment, and then deplo
 
 Consider automating the remediation steps in Azure.
 
-See: [Successful alerting strategy](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy)
+See: [Successful alerting strategy](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy)
 
 ### Azure alerting concepts
 

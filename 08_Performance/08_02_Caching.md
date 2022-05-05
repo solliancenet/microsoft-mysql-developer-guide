@@ -24,4 +24,4 @@ A common piece of software that helps with caching is called [Redis cache](https
 
 Redis cache works by putting data into memory via key/value pairs.  The application will typically serialize the data and then hand it off to Redis for quick retrieval later.  The Redis cache should be close to the application so that it can be queried, retrieved, and forwarded quickly.
 
-[Azure Cache for Redis](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview) is a platform as a service Microsoft Azure hosted Redis environment that provides several levels of service such as [Enterprise, Premium, Standard, and Basic tiers](https://azure.microsoft.com/en-us/pricing/details/cache/).
+[Azure Cache for Redis](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-overview) is a platform as a service Microsoft Azure hosted Redis environment that provides several levels of service such as [Enterprise, Premium, Standard, and Basic tiers](https://azure.microsoft.com/pricing/details/cache/).

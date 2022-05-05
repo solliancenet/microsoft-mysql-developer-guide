@@ -64,7 +64,7 @@ As part of the deployment, a **mysqldevSUFFIX-paw1** virtual machine has been de
 
 Once in the virtual machine, notice that all the necessary development tools have already been installed.  Additionally, the supporting GitHub repository has been downloaded that includes all the artifacts needed to start the developer journey. These files can be found on the **mysqldevSUFFIX-paw1** machine in the `C:\labfiles\microsoft-mysql-developer-guide` folder.  
 
-#### Step 3 - Start your journey!
+#### Step 3 - Start your journey
 
 To reiterate, it is recommended to follow the developer journey from start to finish in the following order:
 
@@ -91,7 +91,7 @@ Additionally, some applications are more than just a web application with a data
 
 It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure the necessary pre-requisite Azure services and resources are available for the reader to progress to the more complex deployment examples.
 
-- [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
+- [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)
   - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
   - [Python](./../artifacts/06-02-FunctionApp-Python/README.md)
   - [AKS](./../artifacts/06-03-FunctionApp-AKS/README.md)
@@ -103,7 +103,7 @@ It is recommended that each of the above scenarios is executed in the order show
 
 ### Sample Application evolution
 
-The Sample Application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/en-us/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/en-us/azure/architecture/microservices/design/patterns).
+The Sample Application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/azure/architecture/microservices/design/patterns).
 
 After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture. See: [Deploying a Laravel app backed by a Java REST API to AKS](./../artifacts/00-Sample-App/README.md).
 

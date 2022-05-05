@@ -22,7 +22,7 @@ Single Server uses a gateway to access database instances, unlike Flexible Serve
 
 Single Server does not support custom schedules for maintenance. Azure notifies administrators 72 hours before the maintenance event.
 
-### Configure maintenance scheduling & alerting
+### Configure maintenance scheduling and alerting
 
 - [Manage scheduled maintenance settings using the Azure Portal (Flexible Server)](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-maintenance-portal)
 - [View service health notifications in the Azure Portal](https://docs.microsoft.com/azure/service-health/service-notifications)
