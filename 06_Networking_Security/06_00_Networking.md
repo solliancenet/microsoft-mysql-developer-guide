@@ -2,7 +2,11 @@
 
 As mentioned previously, the Azure Database for MySQL network configuration can adversely affect security, application performance (latency), and compliance. This section explains the fundamentals of Azure Database for MySQL networking concepts.
 
-Azure Database for MySQL provides several mechanisms to secure the networking layers by limiting access to only authorized users, applications, and devices.  
+Azure Database for MySQL provides several mechanisms to secure the networking layers by limiting access to only authorized users, applications, and devices.
+
+![](media/network-and-security-6-16-beginning-series.png)
+
+Watch: [Networking and Security [6 of 16] | Azure Database for MySQL - Beginners Series](https://www.youtube.com/watch?v=LSNV5BW-g-U&list=PLlrxD0HtieHghqeFLMwaGxfxPbndt52Ap&index=6) 
 
 ## Public vs. Private Access
 

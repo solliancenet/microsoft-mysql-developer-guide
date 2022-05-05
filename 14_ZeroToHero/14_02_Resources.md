@@ -6,8 +6,8 @@ Thanks for downloading and reading this Azure Database for MySQL developer guide
 
 - [Review homepage](https://aka.ms/mysql)
 - [Documentation](http://aka.ms/mysqldocs)
-- [Get started for free with an Azure free account!](https://azure.microft.com/free/mysql)
 - [Tutorial](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-deploy-on-azure-free-account)
+- [Get started for free with an Azure free account!](https://azure.microft.com/free/mysql)
 - [Azure Pricing Calculator, TCO Calculator](https://azure.microsoft.com/pricing)
 - [Migrate your workloads to Azure DB for MySQL](https://docs.microsoft.com/azure/mysql/migrate)
 
@@ -20,7 +20,7 @@ Thanks for downloading and reading this Azure Database for MySQL developer guide
 
 - [Twitter](https://twitter.com/AzureDBMySQL)
 - [LinkedIn](https://www.linkedin.com/company/azure-database-for-mysql/)
-- Email the Azure Database for MySQL at AskAzureDBforMySQL@service.microsoft.com  
+- Email the Azure Database for MySQL team at AskAzureDBforMySQL@service.microsoft.com  
 
 ### Find a partner to assist in migrating
 

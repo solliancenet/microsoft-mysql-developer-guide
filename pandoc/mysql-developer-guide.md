@@ -48,7 +48,7 @@ The ultimate goal is to successfully deploy a stable, performant MySQL
 application running securely in Microsoft Azure using cloud best
 practices. Let's start the journey!
 
-# 02 / What is MySQL?
+# 02 / Introduction to Azure Database for MySQL
 
 MySQL is a relational database management system based on [Structured
 Query Language (SQL)]. MySQL supports a rich set of SQL query
@@ -4896,7 +4896,7 @@ real-world information:
 -   [LinkedIn Azure Developers Group]
 
   [01 / Azure MySQL Developer Guide]: #azure-mysql-developer-guide
-  [02 / What is MySQL?]: #what-is-mysql
+  [02 / Introduction to Azure Database for MySQL]: #what-is-mysql
   [Comparison with other RDBMS offerings]: #comparison-with-other-rdbms-offerings
   [MySQL hosting options]: #mysql-hosting-options
   [Hosting MySQL on Azure - benefits and options]: #hosting-mysql-on-azure---benefits-and-options
