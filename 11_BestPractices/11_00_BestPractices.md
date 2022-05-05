@@ -6,7 +6,7 @@ Organizations developing cloud apps backed by Azure Database for MySQL Flexible 
 
 Consult the [Azure Well-Architected Framework](https://docs.microsoft.com/azure/architecture/framework/) for more information regarding the core principles of efficient cloud workloads. You can assess your existing Azure workloads for Well-Architected Framework compliance with the [Azure Well-Architected Review utility.](https://docs.microsoft.com/assessments/?id=azure-architecture-review&mode=pre-assessment)
 
-### 1. Colocate resources
+### 1. Co-locate resources
 
 Locating Azure services in the same region minimizes network traffic costs and network latency. Flexible Server not only supports colocation in the same region, but also colocation in the same Availability Zone for [regions that support Availability Zones.](https://docs.microsoft.com/azure/availability-zones/az-region) MySQL Flexible Server couples well with zonal services, like Virtual Machines.
 

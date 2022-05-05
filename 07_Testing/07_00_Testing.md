@@ -1,6 +1,6 @@
 # 07 / Testing
 
-Testing is a cruical part to the application development lifecycle. Architects, developers and administrators should continually assess and evaluate their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and highly suggests automating them to minimize any errors in the process or setup.  These tests can be done at any point in the application deployment process, potentially the build and deploy pipelines, and even after the application has been deployed.
+Testing is a crucial part to the application development lifecycle. Architects, developers and administrators should continually assess and evaluate their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and highly suggests automating them to minimize any errors in the process or setup.  These tests can be done at any point in the application deployment process, potentially the build and deploy pipelines, and even after the application has been deployed.
 
 This section discusses the various types of tests your Azure database for MySQL application and database can be utilized to ensure the optimal performance of your application and database deployments.
 

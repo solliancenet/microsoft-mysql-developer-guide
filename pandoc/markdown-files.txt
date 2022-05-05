@@ -13,15 +13,14 @@ D:\data\projects\microsoft-mysql-developer-guide\02_IntroToMySQL\02_05_Summary.m
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00__Getting_Started.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00_Getting_Started_Provision_MySQL_Flexible_Server.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00-1_Query_MySQL_Workbench.md
+D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00-2_Connect_Query_Azure_CLI.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_01_PHP_Language_Support.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_02_Java_Language_Support.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_03_Python_Language_Support.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_04_Other_Language_Support.md
-D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_07_Connect_Query_Azure_CLI.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_08_Connect_Query_PHP.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_09_Connect_Query_Python.md
 D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_15_Summary.md
-D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\REMOVED - 03_10_Connect_Query_Java_IntelliJ.md
 D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00_End_To_End_Development.md
 D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-1_Common-Azure-development-services-overview.md
 D:\data\projects\microsoft-mysql-developer-guide\04_EndToEndDev\04_00-2-Sample-Application-Intro.md
@@ -61,6 +60,7 @@ D:\data\projects\microsoft-mysql-developer-guide\13_CaseStudies\13_02_Summary.md
 D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_00_ZeroToHero.md
 D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_01_Summary.md
 D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_02_Resources.md
+D:\data\projects\microsoft-mysql-developer-guide\archived\REMOVED - 03_10_Connect_Query_Java_IntelliJ.md
 D:\data\projects\microsoft-mysql-developer-guide\Artifacts\00_Appendix_Header.md
 D:\data\projects\microsoft-mysql-developer-guide\Artifacts\Template_Deployment_Instructions.md
 D:\data\projects\microsoft-mysql-developer-guide\Artifacts\00-Sample-App\README.md

@@ -92,6 +92,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/top3-reasons-video.png",
+        "for": "media/top3-reasons-video.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "./media/flexible-server.png",
         "for": "./media/flexible-server.png"
     },
@@ -134,14 +140,14 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/tip.png",
-        "for": "media/tip.png"
+        "from": "./media/analyst-query.png",
+        "for": "./media/analyst-query.png"
     },
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/analyst-query.png",
-        "for": "./media/analyst-query.png"
+        "from": "media/tip.png",
+        "for": "media/tip.png"
     },
     {
         "type": "LoadedResource",
@@ -154,12 +160,6 @@
         "verbosity": "INFO",
         "from": "media/end-to-end-deployment-chapter-steps.png",
         "for": "media/end-to-end-deployment-chapter-steps.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "./media/api-management-components.png",
-        "for": "./media/api-management-components.png"
     },
     {
         "type": "LoadedResource",
@@ -418,6 +418,12 @@
         "verbosity": "INFO",
         "from": "media/configure-alert-example.png",
         "for": "media/configure-alert-example.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/network-and-security-6-16-beginning-series.png",
+        "for": "media/network-and-security-6-16-beginning-series.png"
     },
     {
         "type": "LoadedResource",

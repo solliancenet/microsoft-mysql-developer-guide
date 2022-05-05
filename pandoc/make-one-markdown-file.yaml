@@ -51,11 +51,11 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00__Getting_Started.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00_Getting_Started_Provision_MySQL_Flexible_Server.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00-1_Query_MySQL_Workbench.md
+- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_00-2_Connect_Query_Azure_CLI.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_01_PHP_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_02_Java_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_03_Python_Language_Support.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_04_Other_Language_Support.md
-- D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_07_Connect_Query_Azure_CLI.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_08_Connect_Query_PHP.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_09_Connect_Query_Python.md
 - D:\data\projects\microsoft-mysql-developer-guide\03_GettingStarted\03_15_Summary.md
@@ -98,6 +98,7 @@ input-files:
 - D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_00_ZeroToHero.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_01_Summary.md
 - D:\data\projects\microsoft-mysql-developer-guide\14_ZeroToHero\14_02_Resources.md
+
 
 # ERROR, WARNING, or INFO
 verbosity: INFO
