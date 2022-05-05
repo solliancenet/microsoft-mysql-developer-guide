@@ -1,4 +1,4 @@
-# 08 / Performance + Optimization
+# 08 / Performance and Optimization
 
 After organizations migrate their MySQL workloads to Azure, they unlock turnkey performance monitoring solutions, scalability, and the benefits of Azure's global footprint. Operation teams must establish performance baselines before fine-tuning their MySQL instances to ensure that changes, especially those that require application downtime, are worth doing. If you can, simulate your workload in a test environment and make adjustments there first before implementing changes in a production environment.
 

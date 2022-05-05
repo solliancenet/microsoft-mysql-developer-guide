@@ -4978,7 +4978,7 @@ real-world information:
   [Approaches]: #approaches
   [Testing data capture tools]: #testing-data-capture-tools
   [07 / Summary]: #summary-5
-  [08 / Performance + Optimization]: #performance-optimization
+  [08 / Performance and Optimization]: #performance-optimization
   [General performance tips]: #general-performance-tips
   [Monitoring hardware and query performance]: #monitoring-hardware-and-query-performance
   [Upgrading the tier]: #upgrading-the-tier

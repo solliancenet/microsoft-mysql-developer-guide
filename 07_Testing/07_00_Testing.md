@@ -1,32 +1,34 @@
 # 07 / Testing
 
-Testing is a crucial part to the application development lifecycle. Architects, developers and administrators should continually assess and evaluate their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and highly suggests automating them to minimize any errors in the process or setup.  These tests can be done at any point in the application deployment process, potentially the build and deploy pipelines, and even after the application has been deployed.
+Testing is a crucial part of the application development lifecycle. Architects, developers, and administrators should continually assess and evaluate their applications for *availability* (minimal downtime) and *resiliency* (recovery from failure). Microsoft recommends performing tests regularly and highly suggests automating them to minimize any errors in the process or setup.  Tests can be run in the application build or deployment process. 
 
-This section discusses the various types of tests your Azure database for MySQL application and database can be utilized to ensure the optimal performance of your application and database deployments.
+This chapter discusses the various types of tests you can run against Azure database for MySQL application and database.  Running tests ensures the optimal performance of your application and database deployments.
 
 ## Approaches
 
+Let's discuss the types of approaches and tools.
+
 ### Functional testing
 
-Functional testing ensures that an app functions as documented in the user and business requirements. Testers do not know how software systems function; they simply ensure that systems do what they are expected to do. Functional tests validate things like data limits (field lengths and validation) and that specific actions are taken in response to various triggers.
+Functional testing ensures that an app functions as documented in the user and business requirements. Testers do not know how software systems function; they ensure systems perform the business functions specified in the documentation. Functional tests validate things like data limits (field lengths and validation) and that specific actions are taken in response to various triggers. The tests usually involve some type of application user interface. It is usually the most complete type of testing for UI applications.
 
 #### Function testing tools
 
-[Selenium](https://www.selenium.dev/) automates functional tests for web apps. Developers author web application test scripts in several supported languages, like Ruby, Java, Python, and C#. Once scripts are developed, the Selenium WebDriver executes the scripts using browser-specific APIs. Teams can operate parallel Selenium tests on different devices using [Selenium Grid](https://www.selenium.dev/documentation/grid/).
+[Selenium](https://www.selenium.dev/) automates functional tests for web apps. Developers can create web application test scripts in several supported languages, like Ruby, Java, Python, and C#. Once scripts are developed, the Selenium WebDriver executes the scripts using browser-specific APIs. Teams can operate parallel Selenium tests on different devices using [Selenium Grid](https://www.selenium.dev/documentation/grid/).
 
-To get started with Selenium, developers can install the [Selenium IDE](https://www.selenium.dev/selenium-ide/) to generate testing scripts from browser interactions. The Selenium IDE is not intended for production tests but can speed up the development of your test script development tasks.
+To get started with Selenium, developers can install the [Selenium IDE](https://www.selenium.dev/selenium-ide/) to generate testing scripts from browser interactions. The Selenium IDE is not intended for production tests. Still, it  can speed up the development of your test script development tasks.
 
-Teams can place [Selenium tests in Azure DevOps.](https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366). The screenshot below demonstrates a Selenium test running in a DevOps Pipeline.
+Teams can include [Selenium tests in Azure DevOps.](https://techcommunity.microsoft.com/t5/testingspot-blog/continuous-testing-with-selenium-and-azure-devops/ba-p/3143366). The screenshot below demonstrates a Selenium test running in a DevOps Pipeline.
 
 ![This image demonstrates screenshots from a Selenium test in Azure DevOps.](./media/selenium-test-azure-devops.png "Selenium test screenshots")
 
 ### Resiliency and version testing
 
-Testers can only execute so many test cases within a set period of time.  Users tend to execute application functionality not imagined by the development or test teams. Allowing real users to test the application while limiting deployment downtime and version risk can be difficult. One strategy to test for resiliency is the `blue-green` method, where the latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. If an unexpected error occurs, developers can roll back the application by serving requests from the older environment.
+Testers can only execute so many test cases within a time period.  Users tend to test application functionality not imagined by the development or test teams. Allowing real users to test the application while limiting deployment downtime and version risk can be difficult. One strategy to test for resiliency is the `blue-green` method. The latest version of an application operates in a second production environment. Developers test the most recent version in the second production environment by adding some production users to the new version. If the new version functions adequately, the second environment begins handling more production user requests. Developers can roll back the application by serving requests from the older environment if an unexpected error occurs.
 
 ![This image shows how to implement a Blue/Green test using Azure Traffic Manager.](media/azure-traffic-manager-blue-green.png "Azure Traffic Manager Blue/Green test")
 
-> ![Tip](media/tip.png "Tip") **Tip**: As newer versions of an application often require database updates, it is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
+> ![Tip](media/tip.png "Tip") **Tip**: Newer versions of an application often require database updates. It is recommended to update the database to support the new and previous versions of the software before deploying application updates to the second environment.
 
 Azure has the capability to support this type of testing via Deployment Center, Azure Traffic Manager, and other tools.
 
@@ -44,7 +46,7 @@ Load testing determines an application's performance as load increases. Load tes
 
 #### Stress testing
 
-Stress testing determines the maximum load a system can handle before failure. A proper stress testing approach would be to perform stress testing at different Azure service tiers and determine appropriate thresholds when scaling within those tiers.  This will give administrators an idea of how to build alerts for monitoring if the application starts to approach these known limits.  Knowing your low and high stress levels is necessary to minimize costs (by selecting the appropriate tier and scaling) and thereby provide a positive user experience.
+Stress testing determines the maximum load a system can handle before failure. A proper stress testing approach would be to perform stress testing at different Azure service tiers and determine appropriate thresholds when scaling within those tiers.  This will give administrators an idea of how to build alerts for monitoring if the application starts to approach these known limits.  Knowing your acceptable low and high stress range levels is necessary to minimize costs (by selecting the appropriate tier and scaling) and thereby provide a positive user experience.
 
 #### Performance testing tools
 
@@ -52,7 +54,7 @@ Stress testing determines the maximum load a system can handle before failure. A
 
 [Apache JMeter](https://jmeter.apache.org/) is an open source tool to test that systems function and perform well under load. It can test web applications, REST APIs, databases, and more. JMeter provides a GUI and a CLI, and it can export test results in a variety of formats, including HTML and JSON.
 
-The image below demonstrates one approach to operate JMeter at scale using Azure Container Instances. The `jmeter-load-test` pipeline manages the test infrastructure and provides the test definition to the **JMeter Controller**.
+The image below demonstrates one approach to operating JMeter at scale using Azure Container Instances. The `jmeter-load-test` pipeline manages the test infrastructure and provides the test definition to the **JMeter Controller**.
 
 ![This image demonstrates how to perform a load test at scale using CI/CD, JMeter, and ACI.](./media/load-testing-pipeline-jmeter.png "Load testing at scale")
 
@@ -66,7 +68,7 @@ It is also possible to run JMeter load tests using [Azure Load Testing Preview.]
 
 ### Azure Monitor
 
-Azure Monitor allows developers to collect, analyze, and act on telemetry. *Application Insights*, a subset of Azure Monitor, tracks application performance, usage patterns and issues. It integrates with common development tools, like Visual Studio. Similarly, *Container insights* measures the performance of container workloads running on Kubernetes clusters. These powerful tools are backed by Azure Log Analytics workspaces and the Azure Monitor metrics store.
+Azure Monitor allows developers to collect, analyze, and act on telemetry. *Application Insights*, a subset of Azure Monitor, tracks application performance, usage patterns, and issues. It integrates with common development tools, like Visual Studio. Similarly, *Container insights* measures the performance of container workloads running on Kubernetes clusters. These powerful tools are backed by Azure Log Analytics workspaces and the Azure Monitor metrics store.
 
 The image below demonstrates container logs from a containerized deployment of the ContosoNoshNow sample app running in AKS. These logs are analyzed in the cluster's Log Analytics workspace.
 
@@ -94,7 +96,7 @@ The image below demonstrates two charts in Grafana demonstrating the CPU usage o
 
 ![This image demonstrates a dashboard in Grafana showing CPU usage for a pod.](./media/grafana-dashboard.png "Pod CPU usage in Grafana")
 
-### Additional Recommended Content
+### Recommended content
 
 The following resources are helpful for exploring various approaches to using the previously mentioned tools and concepts.
 

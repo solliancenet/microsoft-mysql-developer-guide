@@ -4,7 +4,9 @@ This module was designed to bring all the elements of the modernization and clou
 
 Although this guide did not go into detail about how to host applications across multiple cloud providers, this would be the next logical step in the evolution of MySQL applications and databases.  Several Microsoft partners and vendors (such as Hashicorp), provide tools and services that help facilitate this final step.
 
-As the world of microservices continues to change and evolve through more innovative technologies (such as blockchain), other patterns and steps may emerge in the future that will change the evolutionary course of your architecture(s).
+As the world of microservices continues to change and evolve through more innovative technologies (such as blockchain, other patterns and steps may emerge in the future that will change the evolutionary course of your architecture(s).
+
+By using containers, developers can be assured the code will run consistently for specific target environments.However, when multiple containers are involved or are moved from one environment to another (such as AKS to Azure Service Fabric or some other container cloud provider), resources may not run well or at all. The management plane may not be configured properly to support the containers.  Following the approaches defined in this section will help developers understand the tools available and what they should be looking for when designing microservices.
 
 ### Checklist
 
