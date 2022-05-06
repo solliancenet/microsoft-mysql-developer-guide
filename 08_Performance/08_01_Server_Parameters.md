@@ -9,7 +9,7 @@ Some parameters that cannot be configured at the server level can be configured 
 
 - [innodb_buffer_pool_size](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size) indicates the size of the buffer pool, a cache for tables and indexes
 
-    > For this parameter, consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters), as database compute tier affects the parameter value range
+    > For this parameter, consult the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-server-parameters), as the database compute tier affects the parameter value range
 
 - [innodb_file_per_table](https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html#sysvar_innodb_file_per_table) affects where table and index data are stored
 
@@ -20,18 +20,18 @@ Standard Azure management tools, like the Azure portal, Azure CLI, and Azure Pow
 - [Use Azure portal to configure server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-portal)
 - [User Azure CLI to configure server parameters](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-configure-server-parameters-cli)
 
-### Server Parameters Best Practices
+### Server Parameters best practices
 
 The server parameters below may provide performance improvements for an application workload; however, before modifying these values in production, verify that they yield performance improvements without compromising application stability.
 
-- Enable thread pooling by setting `thread_handling` to `pool-of-threads`: Thread pooling improves concurrency by serving connections through a pool of worker threads, instead of creating a new thread to serve each connection. Enabling thread pooling improves performance for transactional workloads, as connections are short-lived
+- Enable thread pooling by setting `thread_handling` to `pool-of-threads`. Thread pooling improves concurrency by serving connections through a pool of worker threads, instead of creating a new thread to serve each connection. Enabling thread pooling improves performance for transactional workloads, as connections are short-lived
   - The degree of concurrency is set through the `thread_pool_size` parameter
   - Only supported in MySQL 8.0
 
   ![This graph demonstrates the performance benefits of thread pooling for a Flexible Server instance.](./media/thread-pooling-performance.png "Performance benefits of thread pooling")
 
-  The graph above demonstrates the performance improvements of thread pooling for a 16 vCore, 64 GiB memory Flexible Server instance. The x-axis represents the number of connections, and the y-axis represents the number of queries served per second (QPS). Read the associated [Microsoft TechCommunity post](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691) for more details
+  The graph above reflects the performance improvements of thread pooling for a 16 vCore, 64 GiB memory Flexible Server instance. The x-axis represents the number of connections, and the y-axis represents the number of queries served per second (QPS). Read the associated [Microsoft TechCommunity post](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/achieve-up-to-a-50-performance-boost-in-azure-database-for-mysql/ba-p/2909691) for more details
 
-- Enable InnoDB buffer pool warmup by setting `innodb_buffer_pool_dump_at_shutdown` to `ON`: InnoDB buffer pool warmup loads data files from disk after a restart and before receiving queries on that data. This improves the latency of the first queries executed against the database after a restart, but it does increase the server's start-up time
+- Enable InnoDB buffer pool warmup by setting `innodb_buffer_pool_dump_at_shutdown` to `ON`: InnoDB buffer pool warmup loads data files from disk after a restart and before receiving queries on that data. This change improves the latency of the first queries executed against the database after a restart, but it does increase the server's start-up time
   - Microsoft only recommends this change for database instances with more than 335 GB of provisioned storage
   - Learn more from the [Microsoft documentation](https://docs.microsoft.com/azure/mysql/concept-performance-best-practices)

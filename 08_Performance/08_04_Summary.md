@@ -1,8 +1,8 @@
 ## 08 / Summary
 
-After developers benchmark their MySQL Flexible Server environments, they can tune server parameters, scale compute tiers, and optimize their application containers to improve performance. Through Azure Monitor and KQL queries, teams monitor the performance of their workloads.
+After developers benchmark their MySQL Flexible Server workloads, they can tune server parameters, scale compute tiers, and optimize their application containers to improve performance. Through Azure Monitor and KQL queries, teams monitor the performance of their workloads.
 
-Caching is a very common way to increase the performance of applications. Through a disk- or memory-based cache, a developer and architect should always be on the lookout for deterministic areas that can be cached. Azure CDN provides caching via POP servers to users of global-scale web apps.
+Caching is a very common way to increase the performance of applications. Through disk or memory-based cache, a developer and architect should always be on the lookout for deterministic areas that can be cached. Azure CDN provides caching via POP servers to users of global-scale web apps.
 
 Lastly, an important balance should be struck between performance of the cache and costs.
 
