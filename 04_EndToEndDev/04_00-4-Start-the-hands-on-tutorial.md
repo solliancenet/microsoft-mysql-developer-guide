@@ -42,10 +42,12 @@ Another option for deploying infrastructure using a template is to use Azure CLI
 
 [Tutorial: Deploy a local ARM template](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-tutorial-local-template?tabs=azure-cli)
 
-#### Step 1 - Build the development environment - deploy one of the templates below:
+#### Step 1 - Build the development environment - deploy one of the templates below
 
-- [Basic Template](./../artifacts/template.json)
-- [Secure Template](./../artifacts/template-secure.json)
+This is an optional step if you have your development environment already set up. You will need to install the basic Azure development packages. 
+
+- [Basic Template](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-0-create-development-vm/basic-template/template.json)
+- [Secure Template](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-0-create-development-vm/secure-template/template-secure.json)
 
 #### Step 2 - Explore the development environment
 
@@ -70,20 +72,18 @@ To reiterate, it is recommended to follow the developer journey from start to fi
 
 ##### Deployment option tutorial lab links
 
-TODO: Replace MS repo links
-
 Click the links to complete each journey before going to the next.
 
-1. [Classic deployment](./../artifacts/01-ClassicDeploy/README.md)
-2. [Azure VM Deployment](./../artifacts/02-01-CloudDeploy-Vm/README.md)
-3. [Simple App Service Deployment with Azure Database for MySQL Flexible Server](./../artifacts/02-02-CloudDeploy-AppSvc/README.md)
-4. [App Service with InApp MySQL](./../artifacts/02-03-CloudDeploy-InApp/README.md)
-5. [Continuous Integration / Continuous Delivery](./../artifacts/02-04-CloudDeploy-CICD/README.md)
-6. [Containerizing layers with Docker](./../artifacts/03-00-Docker/README.md)
-7. [Azure Container Instances (ACI)](./../artifacts/01-ClassicDeploy/README.md)
-8. [App Service Containers](./../artifacts/03-02-CloudDeploy-AppService-Container/README.md)
-9. [Azure Kubernetes Service (AKS)](./../artifacts/04-AKS/README.md)
-10. [AKS with MySQL Flexible Server](./../artifacts/05-CloudDeploy-MySQLFlex/README.md)
+1. [Classic deployment](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/01-ClassicDeploy)
+2. [Azure VM Deployment](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-01-CloudDeploy-Vm)
+3. [Simple App Service Deployment with Azure Database for MySQL Flexible Server](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-02-CloudDeploy-AppSvc)
+4. [App Service with InApp MySQL](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-03-CloudDeploy-InApp)
+5. [Continuous Integration / Continuous Delivery](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-04-CloudDeploy-CICD)
+6. [Containerizing layers with Docker](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/03-00-Docker)
+7. [Azure Container Instances (ACI)](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/03-01-CloudDeploy-ACI)
+8. [App Service Containers](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/03-02-CloudDeploy-AppService-Container)
+9. [Azure Kubernetes Service (AKS)](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/04-AKS)
+10. [AKS with MySQL Flexible Server](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/05-CloudDeploy-MySQLFlex)
 
 ##### Compute and orchestration tutorial lab links
 
@@ -92,19 +92,17 @@ Additionally, some applications are more than just a web application with a data
 It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure the necessary pre-requisite Azure services and resources are available for the reader to progress to the more complex deployment examples.
 
 - [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)
-  - [Dotnet](./../artifacts/06-01-FunctionApp-DotNet/README.md)
-  - [Python](./../artifacts/06-02-FunctionApp-Python/README.md)
-  - [AKS](./../artifacts/06-03-FunctionApp-AKS/README.md)
-  - [Secured with MSI](./../artifacts/06-04-FunctionApp-MSI/README.md)
-- [Logic Apps](./../artifacts/06-05-LogicApp/README.md)
-- [Azure Data Factory](./../artifacts/07-01-AzureDataFactory/README.md)
-- [Azure Synapse Analytics](./../artifacts/07-02-AzureSynapseAnalytics/README.md)
-- [Azure Batch](./../artifacts/07-03-AzureBatch/README.md)
+  - [Dotnet](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-01-FunctionApp-DotNet)
+  - [Python](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-02-FunctionApp-Python)
+  - [AKS](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-03-FunctionApp-AKS)
+  - [Secured with MSI](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-04-FunctionApp-MSI)
+- [Logic Apps](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-05-LogicApp)
+- [Azure Data Factory](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/07-01-AzureDataFactory)
+- [Azure Synapse Analytics](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/07-02-AzureSynapseAnalytics)
+- [Azure Batch](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/07-03-AzureBatch)
 
 ### Sample Application evolution
 
 The Sample Application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/azure/architecture/microservices/design/patterns).
 
-After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture. See: [Deploying a Laravel app backed by a Java REST API to AKS](./../artifacts/00-Sample-App/README.md).
-
-TODO: Replace MS repo link
+After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture. See: [Deploying a Laravel app backed by a Java REST API to AKS](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-1-sample-apps/sample-php-app-rest).

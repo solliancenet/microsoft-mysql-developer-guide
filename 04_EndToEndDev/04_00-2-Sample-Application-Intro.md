@@ -22,6 +22,5 @@ The web application is simple, but covers the fundamentals.
 
 ### Running the sample lab
 
-You will find the steps to run the lab in the artifacts repo here: [Sample application tutorial](./../artifacts/00-Sample-App/README.md)
+You will find the steps to run the lab in the artifacts repo here: [Sample application tutorial](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-1-sample-apps)
 
-TODO: Replace MS repo link

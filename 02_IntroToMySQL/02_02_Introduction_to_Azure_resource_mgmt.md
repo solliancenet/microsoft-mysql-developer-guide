@@ -82,7 +82,7 @@ There are subtle differences between how each of these tools operates and the ac
 
 #### Azure CLI
 
-It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](shell.azure.com), but it does have some limitations. It is also possible to run these tools locally.  
+It is possible to run the Azure CLI and Azure PowerShell from the [Azure Cloud Shell](https://shell.azure.com), but it does have some limitations. It is also possible to run these tools locally.  
 
 To use the Azure CLI, [download the CLI tools from Microsoft.](https://docs.microsoft.com/cli/azure/install-azure-cli)
 
@@ -92,7 +92,7 @@ To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell
 
 The Azure Cloud Shell provides Bash and PowerShell environments for managing Azure resources imperatively. It also includes standard development tools, like Visual Studio Code, and files are persisted in an Azure Files share.
 
-Launch the Cloud Shell in a browser at [shell.azure.com](shell.azure.com).
+Launch the Cloud Shell in a browser at [shell.azure.com](https://shell.azure.com).
 
 #### PowerShell Module
 

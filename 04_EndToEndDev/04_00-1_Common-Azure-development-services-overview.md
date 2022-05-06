@@ -113,4 +113,4 @@ Azure Data Factory supports both Azure PaaS and generic (on-premises) MySQL inst
 
 Developers can execute Data Factory pipelines manually, on a schedule, or in response to Azure events through the Event Grid integration.
 
-TODO: summary of when to use a service picture
+See: [Copy activity performance and scalability guide](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
