@@ -1,14 +1,22 @@
-# 11 / Best Practices
+# 11 / Best practices
 
 ## Best practices for MySQL Flexible Server apps
 
-Organizations developing cloud apps backed by Azure Database for MySQL Flexible Server should consider implementing the following best practices. Note that this list is not comprehensive.
+Organizations developing cloud apps backed by Azure Database for MySQL Flexible Server should consider implementing the following best practices. Note, that this list is not comprehensive.
+
+Readers should review additional guide chapters for a more comprehensive understanding.
+
+- [05 / Monitoring]
+- [06 / Networking and Security]
+- [07 / Testing]
+- [08 / Performance and Optimization]
+- [10 / Business Continuity and Disaster Recovery]
 
 Consult the [Azure Well-Architected Framework](https://docs.microsoft.com/azure/architecture/framework/) for more information regarding the core principles of efficient cloud workloads. You can assess your existing Azure workloads for Well-Architected Framework compliance with the [Azure Well-Architected Review utility.](https://docs.microsoft.com/assessments/?id=azure-architecture-review&mode=pre-assessment)
 
 ### 1. Co-locate resources
 
-Locating Azure services in the same region minimizes network traffic costs and network latency. Flexible Server not only supports colocation in the same region, but also colocation in the same Availability Zone for [regions that support Availability Zones.](https://docs.microsoft.com/azure/availability-zones/az-region) MySQL Flexible Server couples well with zonal services, like Virtual Machines.
+Locating Azure services in the same region minimizes network traffic costs and network latency. Flexible Server supports co-location in the same region and co-location in the same Availability Zone for [regions that support Availability Zones.](https://docs.microsoft.com/azure/availability-zones/az-region) MySQL Flexible Server couples well with zonal services, like Virtual Machines.
 
 ### 2. Implement connection pooling
 
@@ -17,11 +25,17 @@ Developers can significantly improve application performance by reducing the num
 - [ProxySQL on a VM](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/setting-up-proxysql-as-a-connection-pool-for-azure-database-for/ba-p/2589350)
 - [ProxySQL on AKS](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploy-proxysql-as-a-service-on-kubernetes-using-azure-database/ba-p/1105959)
 
-### 3. Size containers adequately
+### 3. Monitor and size containers adequately
 
 To ensure that containerized applications function optimally, verify that application containers are allocated sufficient resources. It may be necessary to adjust application parameters for container environments, like Java heap size parameters.
 
-Developers can identify container resource issues through monitoring utilities, like [Container insights,](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview) which supports Azure Kubernetes Service, Azure Container Instances, on-premises Kubernetes clusters, and more.
+Developers can identify container resource issues using monitoring utilities, like [Container insights,](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview) which supports Azure Kubernetes Service, Azure Container Instances, on-premises Kubernetes clusters, and more.
+
+- Identify AKS containers that are running on the node and their average processor and memory utilization. This knowledge can help you identify resource bottlenecks.
+
+- Identify processor and memory utilization of container groups and their containers hosted in Azure Container Instances.
+
+- Review the resource utilization of workloads running on the host that are unrelated to the standard processes that support the pod.
 
 ### 4. Implement network isolation and SSL connectivity
 

@@ -4,7 +4,7 @@ An Azure Content Delivery Network (CDN) utilizes distributed point-of-presence (
 
 ![This image demonstrates how Azure CDN POPs optimize content delivery.](./media/cdn-overview.png "Azure CDN POP static content delivery")
 
-Azure CDN also supports dynamic site acceleration, optimizing the network path from clients to the server through POP sites, prefetches images and scripts, and more.
+Azure CDN also supports dynamic site acceleration, optimizing the network path from clients to the server through POP sites, pre-fetches images and scripts, and more.
 
 ### Using Azure CDN in Web Apps
 

@@ -4466,8 +4466,8 @@ compliance with the [Azure Well-Architected Review utility.]
 ### 1. Co-locate resources
 
 Locating Azure services in the same region minimizes network traffic
-costs and network latency. Flexible Server not only supports colocation
-in the same region, but also colocation in the same Availability Zone
+costs and network latency. Flexible Server not only supports co-location
+in the same region, but also co-location in the same Availability Zone
 for [regions that support Availability Zones.] MySQL Flexible Server
 couples well with zonal services, like Virtual Machines.
 

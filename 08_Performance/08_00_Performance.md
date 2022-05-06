@@ -85,6 +85,8 @@ When using containers for your MySQL and PHP application, the platform choice ha
 
 Custom environments can be tested against standard workloads by running various benchmarks using the [PHPBench tool](https://github.com/phpbench/phpbench).
 
+See: [Container insights overview](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview)
+
 ## Running MySQL Benchmarks
 
 There are several tools that can be used to benchmark MySQL environments. Here are a few that can be used to determine how well an instance is performing:
