@@ -1,11 +1,11 @@
 ## 12 / Summary
 
-From basic two-tier and three-tier architectures to more advanced container based and event-driven architectures, there are many ways a developer can build a MySQL based application.  
+Many customers have built scalable resilient architectures using Azure Database for MySQL. Developers can build basic two-tier and three-tier architectures to more advanced container-based and event-driven MySQL based architectures.  
 
-At the very core, an application will consumer CPU, memory, disk and network.  Finding the right target hosting platform while balancing costs is a vital skill to have and by learning from the examples provided throughout this guide, developers with have a nice base of knowledge to start from.
+At the very core, an application will consume CPU, memory, disk and network.  Finding the right target hosting platform while balancing costs is a vital skill. Developers should leverage the examples provided throughout this guide to accelerate their learning and adoption journey.
 
 ### Checklist
 
-- Reference architectures can provide ideas on how to use a product.
+- Reference architectures can provide ideas on how to use a product. Start to learn from successful deployments.
 - Utilize the knowledge others have to build your own applications.
 - Implement common proven patterns in your architectures.

@@ -22,7 +22,12 @@ The following are a few examples of architectures using different patterns and f
 
 ### Gaming using Azure Database for MySQL
 
-- [Gaming using Azure Database for MySQL:](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/gaming-using-azure-database-for-mysql) This architecture demonstrates how to develop apps that must process API requests at scale, such as gaming backends. It utilizes Azure Traffic Manager, to geographically distribute traffic; Azure API Management, to provide rate limiting, among other features; Azure App Service, to host gaming APIs; and Azure Database for MySQL. Firms can perform analysis on gaming data in Azure Database for MySQL using Azure HDInsight and visualize the data in Power BI.
+- [Gaming using Azure Database for MySQL:](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/gaming-using-azure-database-for-mysql) This architecture demonstrates how to develop apps that must process API requests at scale, such as gaming backends.
+- The architecture utilizes:
+  - Azure Traffic Manager to geographically distribute traffic.
+  - Azure API Management to provide rate limiting.
+  - Azure App Service to host gaming APIs and Azure Database for MySQL. Firms can perform analysis on gaming data in Azure Database for MySQL using Azure HDInsight.
+  - Power BI to visualize the data.
 
 ### Retail and e-commerce using Azure MySQL
 
