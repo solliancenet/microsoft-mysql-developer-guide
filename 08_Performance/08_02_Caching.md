@@ -1,6 +1,6 @@
 ## Caching
 
-Utilizing resources such as CPU, memory, disk (read/write access) and network can factor into how long an application request takes to process.  Being able to remove deterministic actions (ex: the same function/API call does not change) within a certain set of time is an important pattern to implement in your various application layers.  Caching reduces the latency and contention that is associated with handling large volumes of concurrent requests in the original data store.
+Utilizing resources such as CPU, memory, disk (read/write access) and network can factor into how long an application request takes to process.  Being able to remove deterministic actions (ex: the same function/API call does not change) within a certain set of time is an important pattern to implement in your various application layers. Caching reduces the latency and contention that is associated with handling large volumes of concurrent requests in the original data store.
 
 Caching is a common technique that aims to improve the performance and scalability of a system. It does this by temporarily copying frequently accessed data to fast storage that's located close to the application.
 
