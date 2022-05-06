@@ -1,14 +1,14 @@
 # 09 / Troubleshooting
 
-As applications are running and executing in cloud environments it is always a possibility that something unexpected can occur. This section details a few common issues and the troubleshooting steps for each.
+As applications are running and executing in cloud environments, it is always a possibility that something unexpected can occur. This chapter covers a few common issues and the troubleshooting steps for each issue.
 
 ## Common MySQL issues
 
-Debugging operational support issues can be time consuming. As previous discussed, configuring the right monitoring and alerting can help provide useful error messages and clues to the potential problem area(s).
+Debugging operational support issues can be time consuming. Configuring the right monitoring and alerting can help provide useful error messages and clues to the potential problem area(s).
 
 ### Connectivity issues
 
-Both server misconfiguration issues and network access issues can prevent clients from connecting to a Azure Database for MySQL instance. For some helpful connectivity suggestions, reference the [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues) and [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-connectivity) articles.
+Both server misconfiguration issues and network access issues can prevent clients from connecting to an Azure Database for MySQL instance. For some helpful connectivity suggestions, reference the [Troubleshoot connection issues to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/howto-troubleshoot-common-connection-issues) and [Handle transient errors and connect efficiently to Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/concepts-connectivity) articles.
 
 #### Misconfiguration
 
@@ -26,11 +26,11 @@ Both server misconfiguration issues and network access issues can prevent client
 
 - Ensure that corporate firewalls do not block outbound connections to port 3306.
 
-- Use a fully qualified domain name instead of an IP address in connection strings. This is especially important with Azure Database for MySQL Single Server instances, which use gateways to route incoming requests to database servers. It is possible to use the gateway public IP address in your applications.
+- Use a fully qualified domain name instead of an IP address in connection strings. This type of configuration is especially important with Azure Database for MySQL Single Server instances, which use gateways to route incoming requests to database servers. It is possible to use the gateway public IP address in your applications.
   
   >![Warning](media/warning.png "Warning") **Warning:** However, as Microsoft plans to [retire older gateways](https://docs.microsoft.com/azure/mysql/concepts-connectivity-architecture#azure-database-for-mysql-gateway-ip-addresses), you are responsible for updating the gateway IP address in your applications. It is less error-prone to work with the FQDN.
 
-- Use [Azure Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) to debug traffic flows in virtual networks. Note that it does not support PaaS services, but it is still a useful tool for IaaS configurations
+- Use [Azure Network Watcher](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) to debug traffic flows in virtual networks. Note that it does not support PaaS services, but it is still a helpful tool for IaaS configurations
   - Network Watcher works well with other networking utilities, like the Unix `traceroute` tool
 
 ### Resource issues
@@ -43,7 +43,7 @@ Operating in a cloud environment means that certain features that function on-pr
 
 - Azure Database for MySQL does not support the MySQL `SUPER` privilege and the `DBA` role. This may affect how some applications operate.
   - [Error 1419](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_binlog_create_routine_need_super): By default, MySQL instances with binary logging enabled for replication require function creators to have the `SUPER` privilege to avoid privilege escalation attacks.
-    - **Resolution**: Azure suggest setting the `log_bin_trust_function_creators` parameter to `1`, as Azure insulates against threats that exploit the binary log.
+    - **Resolution**: The Azure suggested setting is to set the `log_bin_trust_function_creators` parameter to `1`. Azure insulates against threats that exploit the binary log.
   - [Error 1227](https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html#error_er_specific_access_denied_error): This error occurs when creating stored procedures or views with `DEFINER` statements.
     - **Resolution**: If you encounter this error while migrating schema objects from an on-premises MySQL instance, remove the `DEFINER` statements manually from the database dump.
 
@@ -103,7 +103,7 @@ Following software development best practices makes your code simpler to develop
 
 ### Opening a support ticket
 
-If you need assistance with an Azure Database for MySQL issue, [open an Azure support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.  Be sure to select the correct product and provide as much information as possible so the proper resources is assigned to your ticket.
+If you need assistance with an Azure Database for MySQL issue, [open an Azure support ticket](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) with Microsoft.  Be sure to select the correct product and provide as much information as possible, so the proper resources is assigned to your ticket.
 
 ![This image shows how to open a detailed support ticket for Microsoft from the Azure portal.](media/open-a-support%20ticket.png "Opening a detailed support ticket for Microsoft")
 
