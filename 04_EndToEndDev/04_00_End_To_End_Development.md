@@ -6,7 +6,7 @@ With a configured development environment available, it is time to explore the v
 
 ![This image shows a Data Exposed video explaining the benefits that Flexible Server offers for application development.](media/develop-app-faster-youtube.png "Data Exposed Flexible Server app development video")
 
-Watch: [Develop applications faster with Azure Database for MySQL – Flexible Server | Data Exposed](https://www.youtube.com/watch?v=RZXbwscC9FU&t=266s)
+>![Watch icon](media/watch.png "Watch") **Watch:** [Develop applications faster with Azure Database for MySQL – Flexible Server | Data Exposed](https://www.youtube.com/watch?v=RZXbwscC9FU&t=266s)
 
 This chapter focuses on these subjects:
 

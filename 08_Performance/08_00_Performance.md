@@ -59,7 +59,7 @@ For information on monitoring a DB instance's metrics, see [MySQL DB Metrics](ht
 
 It is possible to move a geo-redundant Flexible Server instance to a [paired Azure region](https://docs.microsoft.com/azure/availability-zones/cross-region-replication-azure) through geo-restore. Geo-restore creates a new Flexible Server instance in the paired Azure region based on the current state of the database.
 
->**Note:** Point-in-time restore is not supported.
+>![Note icon](media/note.png "Note") **Note:** Point-in-time restore is not supported.
 
 Geo-restore can be used to recover from a service outage in the primary region. However, the Flexible Server instance created in the paired region can only be configured with locally redundant storage, as its paired region (the old primary region) is down.
 
@@ -85,7 +85,7 @@ When using containers for your MySQL and PHP application, the platform choice ha
 
 Custom environments can be tested against standard workloads by running various benchmarks using the [PHPBench tool](https://github.com/phpbench/phpbench).
 
-See: [Container insights overview](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview)
+![Read more icon](media/read-more.png "Read more")  [Container insights overview](https://docs.microsoft.com/azure/azure-monitor/containers/container-insights-overview)
 
 ## Running MySQL Benchmarks
 

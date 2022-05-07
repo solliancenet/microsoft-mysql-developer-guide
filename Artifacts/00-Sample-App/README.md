@@ -16,7 +16,7 @@ Instead of learning multiple sample applications, the guide focused on evolving 
 
 As part of this guide, there are environment automation setup scripts provided that will build and configure much of the environment needed for the sample application. It is important to understand the basic Azure **concepts** before running the automated scripts. Walking through each step will help provide additional context and learning opportunities. The scripts will create an environment in a few minutes rather than requiring to walk through lengthy setup exercises.
 
->**Note:** The sample application was tested with PHP version 7.4 and 8.0. Deploying to an 8.x environment requires a slightly different configuration as the underlying web server has changed.
+>![Note icon](media/note.png "Note") **Note:** The sample application was tested with PHP version 7.4 and 8.0. Deploying to an 8.x environment requires a slightly different configuration as the underlying web server has changed.
 
 | PHP Version | Web Server |
 |-------------|----------------|
@@ -72,7 +72,7 @@ The deployment strategy applied in this sample application focuses on updating p
 
    - Select **Save** at the top.
 
-    >**Note:** Alternative Azure CLI command:
+    >![Note icon](media/note.png "Note") **Note:** Alternative Azure CLI command:
 
     ```cmd
     az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
@@ -183,7 +183,7 @@ TODO: Get the MS repo.
 
     ![ContosoNoshNow home page](media/ContosoNoshNow-home-page.png)
 
-   >**Note:** Notice the message in red at the bottom of the web page. "Site is unable to pull from database. Using JSON data instead."
+   >![Note icon](media/note.png "Note") **Note:** Notice the message in red at the bottom of the web page. "Site is unable to pull from database. Using JSON data instead."
 
 ## Connecting to the database
 
@@ -200,13 +200,13 @@ The application should now be available and show some sample data, however the w
    - User ID
    - Password
   
-   >**Note:** For production environments, values will be retrieved from Azure Key Vault.
+   >![Note icon](media/note.png "Note") **Note:** For production environments, values will be retrieved from Azure Key Vault.
 
 3. Using the Azure Portal, navigate to the Flexible Server in the resource group and create the `contosonoshnow` database.  
 
    ![This image shows how to create the contosonoshnow database in the new Flexible Server instance.](media/create-contosonoshnow-database.png "Creating the contosonoshnow database")
 
-   >**Note:** It is possible to execute alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
+   >![Note icon](media/note.png "Note") **Note:** It is possible to execute alternative commands in the App Service SSL terminal to create the database. See the alternative commands below.
 
    Alternative commands:
 

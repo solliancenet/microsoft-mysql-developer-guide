@@ -2,6 +2,8 @@
 
 Azure can be configured to monitor the Flexible server database as well.
 
+>![Watch icon](media/watch.png "Watch") **Watch:** [Monitoring [7 of 16] | Azure Database for MySQL - Beginners Series](https://www.youtube.com/watch?v=yQOnRNgly0M&list=PLlrxD0HtieHghqeFLMwaGxfxPbndt52Ap&index=7)
+
 ### Azure Database for MySQL overview
 
 The Azure Portal resource overview excellent overview of the MySQL metrics. This high-level dashboard provides insight into the typical database monitoring counters, like CPU, IO, Query Count, etc.
@@ -14,7 +16,7 @@ For more specific metrics, navigate to the **Monitoring** section. Select **Metr
 
 ![This image shows Metrics on the Monitoring tab in the Azure portal.](media/mysql-azure-portal-metrics.png "Monitoring tab in the Azure portal")
 
-See: [Monitor Azure Database for MySQL Flexible Servers with built-in metrics](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring)
+![Read more icon](media/read-more.png "Read more")  [Monitor Azure Database for MySQL Flexible Servers with built-in metrics](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-monitoring)
 
 ### Diagnostic settings
 
@@ -22,7 +24,7 @@ Diagnostic settings allow you to route platform logs and metrics continuously to
 
 ![This image shows how to graph metrics in the Azure portal Monitoring tab.](media/mysql-diagnostic-settings.png "Graphing metrics in the Azure portal")
 
-See: [Set up diagnostics](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics)
+![Read more icon](media/read-more.png "Read more")  [Set up diagnostics](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-configure-audit#set-up-diagnostics)
 
 ### Log Analytics
 
@@ -38,7 +40,7 @@ MySQL audit log information is also available.
 
 ![This image shows a KQL query that polls the MySQL audit log.](media/mysql-log-analytics-audit-log-query.png "KQL query for the MySQL audit log")
 
-See: [View query insights by using Log Analytics](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights#view-query-insights-by-using-log-analytics)
+![Read more icon](media/read-more.png "Read more")  [View query insights by using Log Analytics](https://docs.microsoft.com/azure/mysql/flexible-server/tutorial-query-performance-insights#view-query-insights-by-using-log-analytics)
 
 ### Workbooks
 
@@ -61,7 +63,7 @@ In addition to the query performance insight tool, `Wait statistics` provides a 
 
 Finally, the `slow_query_log` can be set to show slow queries in the MySQL log files (default is OFF). The `long_query_time` server parameter can be used to log long-running queries (default long query time is 10 sec).
 
-See: [Monitor Azure Database for MySQL Flexible Server by using Azure Monitor workbooks](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-workbooks)
+![Read more icon](media/read-more.png "Read more")  [Monitor Azure Database for MySQL Flexible Server by using Azure Monitor workbooks](https://docs.microsoft.com/azure/mysql/flexible-server/concepts-workbooks)
 
 ### Resource health
 
@@ -91,7 +93,7 @@ You can also create alerts from the Metrics section.
 
 Once the alert has been configured, you can create an action group to send a notification to the operations team.
 
-See: [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
+![Read more icon](media/read-more.png "Read more")  [Set up alerts on metrics for Azure Database for MySQL-Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
 
 ### Server Logs
 

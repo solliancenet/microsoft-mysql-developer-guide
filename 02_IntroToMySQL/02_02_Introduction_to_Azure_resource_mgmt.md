@@ -92,7 +92,7 @@ To use the Azure PowerShell cmdlets, install the `Az` module from the PowerShell
 
 The Azure Cloud Shell provides Bash and PowerShell environments for managing Azure resources imperatively. It also includes standard development tools, like Visual Studio Code, and files are persisted in an Azure Files share.
 
-Launch the Cloud Shell in a browser at [shell.azure.com](https://shell.azure.com).
+Launch the Cloud Shell in a browser at [https://shell.azure.com](https://shell.azure.com).
 
 #### PowerShell Module
 

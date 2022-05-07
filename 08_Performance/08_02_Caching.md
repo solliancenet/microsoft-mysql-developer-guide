@@ -4,7 +4,7 @@ Utilizing resources such as CPU, memory, disk (read/write access) and network ca
 
 Caching is a common technique that aims to improve the performance and scalability of a system. It does this by temporarily copying frequently accessed data to fast storage that's located close to the application.
 
-See: [Caching guidance](https://docs.microsoft.com/azure/architecture/best-practices/caching)
+![Read more icon](media/read-more.png "Read more")  [Caching guidance](https://docs.microsoft.com/azure/architecture/best-practices/caching)
 
 ### Disk cache
 

@@ -4,7 +4,7 @@ Running SQL statements from an application is quite common. This section demonst
 
 ### Setup
 
-Follow one of the methods in the [Provision Flexible Server and a database] document to create a Flexible Server instance with a database.
+Follow one of the methods in the [Create a Flexible Server database] document to create a Flexible Server instance with a database.
 
 Moreover, install PHP from the [downloads page.](https://windows.php.net/download/) These instructions were tested with PHP 8.0.13 (any PHP 8.0 version should work).
 
@@ -119,7 +119,7 @@ mysqli_close($conn);
 ?>
 ```
 
-PHP returns an array with the column values for the row inserted in the previous snippet. 
+PHP returns an array with the column values for the row inserted in the previous snippet.
 
 The next snippet uses a prepared update statement with bound parameters. It modifies the `Price` column of the record.
 

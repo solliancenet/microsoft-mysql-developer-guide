@@ -8,4 +8,4 @@ Azure CDN also supports dynamic site acceleration, optimizing the network path f
 
 ### Using Azure CDN in Web Apps
 
-Azure App Service natively supports integrating with Azure CDN. Refer to the digital marketing sample in the [MySQL architectures] section for a practical example involving Azure CDN and a content management system. For non-App Service workloads, Azure CDN is compatible with any public web server.
+Azure App Service natively supports integrating with Azure CDN. Refer to the digital marketing sample in the [12 / MySQL architectures] section for a practical example involving Azure CDN and a content management system. For non-App Service workloads, Azure CDN is compatible with any public web server.

@@ -1,8 +1,8 @@
 ## Connect and query Azure Database for MySQL using Python
 
-This section will demonstrate how to query Azure Database for MySQL Flexible Server using the `mysql-connector-python` library on Python 3.
-
 ### Setup
+
+This section will demonstrate how to query Azure Database for MySQL Flexible Server using the `mysql-connector-python` library on Python 3.
 
 Follow one of the methods in the [Create a Flexible Server database] document to create a Flexible Server instance with a database.
 
@@ -33,7 +33,7 @@ Inserted 1 row(s) of data.
 Done.
 ```
 
-Note that the sample establishes an SSL connection with the MySQL instance. Use the statement below (placed before `cursor` and `conn` are closed) to validate the use of SSL.
+>![Note icon](media/note.png "Note") **Note:** The sample establishes an SSL connection with the MySQL instance. Use the statement below (placed before `cursor` and `conn` are closed) to validate the use of SSL.
 
 ```python
 cursor.execute("SHOW STATUS LIKE 'Ssl_cipher'")

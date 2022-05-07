@@ -10,7 +10,7 @@ While the Azure article demonstrates how to provision a Flexible Server instance
 
 The Azure CLI supports running queries interactively, via the `az mysql flexible-server connect` command, which is similar to running queries interactively against a MySQL instance through the MySQL CLI. It is also possible to run an individual SQL query or a SQL file using the `az mysql flexible-server execute` command.
 
-Note that these commands require the `rdbms-connect` CLI extension, which is automatically installed if it is not present. If permissions errors are encountered from the Azure Cloud Shell, execute the commands from a local installation of the Azure CLI.
+>![Note icon](media/note.png "Note") **Note:** These commands require the `rdbms-connect` CLI extension, which is automatically installed if it is not present. If permissions errors are encountered from the Azure Cloud Shell, execute the commands from a local installation of the Azure CLI.
 
 In addition to the queries in the document, it is also possible to run basic admin queries. The statements below create a new user `analyst` that can read data from all tables in `newdatabase`.
 

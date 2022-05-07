@@ -4,8 +4,6 @@ This section will demonstrate how to operate a Spring Framework application that
 
 ### Setup
 
-#### Prerequisites
-
 Please complete the instructions in the [Connect and query Azure Database for MySQL using MySQL Workbench] document. When completing  the guide samples, utilize version 8.0.26 to ensure compatibility with Single Server.
 
 Optionally, download Postman or utilize `curl`, two popular HTTP testing tools.

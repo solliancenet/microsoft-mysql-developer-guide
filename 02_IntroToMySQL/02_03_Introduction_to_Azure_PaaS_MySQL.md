@@ -16,7 +16,7 @@ For managing database objects and access controls at the server and database lev
 
 Azure Database for MySQL provides two options for deployment: Single Server and Flexible Server. Below is a summary of these offerings. For a more comprehensive comparison table, please consult the article [Choose the right MySQL Server option in Azure](https://docs.microsoft.com/azure/mysql/select-right-deployment-type).
 
-> **Note:** This guide will be focused on Flexible Server and will not explore Single Server.
+>![Note](media/note.png "Note") **Note:** This guide will be focused on Flexible Server and will not explore Single Server.
 
 #### Flexible Server
 
@@ -24,9 +24,11 @@ Flexible Server is also a PaaS service fully managed by the Azure platform, but 
 
 ##### Flexible Server video introduction
 
-![The graphic shows the thumbnail for the Top3 Reasons for Azure Database for MySQL](media/top3-reasons-video.png "Top3 Reasons for Azure Database for MySQL")
+![The picture displays the logo for Azure Database for MySQL](media/azure-database-for-mysql-for-beginners.png "Azure Database for MySQL YouTube logo")
 
-Watch: [Top 3 Reasons to consider Azure Database for MySQL](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
+>![Watch icon](media/watch.png "Watch") **Watch:** [Introduction to the Beginners Series [1 of 16] | Azure Database for MySQL - Beginners Series](https://www.youtube.com/watch?v=TcPpNu45p78)
+
+>![Watch icon](media/watch.png "Watch") **Watch:** [Top 3 Reasons to consider Azure Database for MySQL](https://docs.microsoft.com/shows/data-exposed/top-3-reasons-to-consider-azure-database-for-mysql-flexible-server/) to learn more about Flexible Server's advantages.
 
 Cost management is one of the advantages of Flexible Server: it supports a *burstable* tier, which is based on the B-series Azure VM tier and is optimized for workloads that do not continually use the CPU. [Flexible Server instances can also be paused](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-restart-stop-start-server-cli). The image below shows how Flexible Server works for a non-high availability arrangement.
 
@@ -66,7 +68,7 @@ To estimate the TCO for Azure Database for MySQL:
 
 1. Use the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/).
 
-   >**Note:** that the [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) can be used to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center.
+   >![Note icon](media/note.png "Note") **Note:** The [Azure TCO Calculator](https://azure.microsoft.com/pricing/tco/calculator/) can be used to estimate the cost savings of deploying PaaS Azure MySQL over the same deployment in an on-premises data center.
 2. Indicate the configuration of on-premises hardware and the Azure landing zone, adjust calculation parameters, like the cost of electricity, and observe the potential savings.
 
 ##### Flexible Server Unsupported Features
@@ -81,5 +83,4 @@ Azure provides a [detailed list of the limitations of Flexible Server](https://d
 
 Single Server is suitable when apps do not need extensive database customization. Single Server will manage patching, high availability, and backups on a predetermined schedule (though developers can set the backup retention times between a week and 35 days). To reduce compute costs, developers can [pause the Single Server offering](https://docs.microsoft.com/azure/mysql/how-to-stop-start-server). Single Server offers an [SLA of 99.99%](https://azure.microsoft.com/updates/azure-database-for-mysql-general-availability/). For a refresher on how the SLAs of individual Azure services affect the SLA of the total deployment, review the associated [Microsoft Learn Module.](https://docs.microsoft.com/learn/modules/choose-azure-services-sla-lifecycle/)
 
-> **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option.
-> **Note:** This guide will focus primarily on Flexible Server and will not explore Single Server in depth.
+>![Note icon](media/note.png "Note") **Note:** Single servers are best suited for existing applications already leveraging Single Server. For all new developments or migrations, Flexible Server is the recommended deployment option. This guide will focus primarily on Flexible Server and will not explore Single Server in depth.

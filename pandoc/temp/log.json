@@ -92,8 +92,20 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "media/top3-reasons-video.png",
-        "for": "media/top3-reasons-video.png"
+        "from": "media/note.png",
+        "for": "media/note.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/azure-database-for-mysql-for-beginners.png",
+        "for": "media/azure-database-for-mysql-for-beginners.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
+        "from": "media/watch.png",
+        "for": "media/watch.png"
     },
     {
         "type": "LoadedResource",
@@ -164,6 +176,12 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
+        "from": "media/read-more.png",
+        "for": "media/read-more.png"
+    },
+    {
+        "type": "LoadedResource",
+        "verbosity": "INFO",
         "from": "media/sample-app-level-1-architecture.png",
         "for": "media/sample-app-level-1-architecture.png"
     },
@@ -176,8 +194,8 @@
     {
         "type": "LoadedResource",
         "verbosity": "INFO",
-        "from": "./media/classic-deployment-diagram.png",
-        "for": "./media/classic-deployment-diagram.png"
+        "from": "media/classic-deployment-diagram.png",
+        "for": "media/classic-deployment-diagram.png"
     },
     {
         "type": "LoadedResource",
@@ -418,12 +436,6 @@
         "verbosity": "INFO",
         "from": "media/configure-alert-example.png",
         "for": "media/configure-alert-example.png"
-    },
-    {
-        "type": "LoadedResource",
-        "verbosity": "INFO",
-        "from": "media/network-and-security-6-16-beginning-series.png",
-        "for": "media/network-and-security-6-16-beginning-series.png"
     },
     {
         "type": "LoadedResource",

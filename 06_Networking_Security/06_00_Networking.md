@@ -4,9 +4,7 @@ The Azure Database for MySQL network configuration can adversely affect security
 
 Azure Database for MySQL provides several mechanisms to secure the networking layers by limiting access to only authorized users, applications, and devices.
 
-![The picture shows a smaller image of the network and security YouTube link](media/network-and-security-6-16-beginning-series.png "Network and security YouTube")
-
-Watch: [Networking and Security [6 of 16] | Azure Database for MySQL - Beginners Series](https://www.youtube.com/watch?v=LSNV5BW-g-U&list=PLlrxD0HtieHghqeFLMwaGxfxPbndt52Ap&index=6)
+>![Watch icon](media/watch.png "Watch") **Watch:** [Networking and Security [6 of 16] | Azure Database for MySQL - Beginners Series](https://www.youtube.com/watch?v=LSNV5BW-g-U&list=PLlrxD0HtieHghqeFLMwaGxfxPbndt52Ap&index=6)
 
 ## Public vs. Private Access
 
@@ -22,7 +20,7 @@ The first line of defense for protecting a MySQL instance access is to implement
 
 Firewall rules are set at the server level, meaning that they govern network access to all databases on the server instance. While it is best practice to create rules that allow specific IP addresses or ranges to access the instance, developers can also enable network access from all Azure resources. This feature is useful for Azure services without fixed public IP addresses, such as [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) that use public networks to access the server and databases.
 
->**Note:** Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
+>![Note icon](media/note.png "Note") **Note:** Restricting access to Azure public IP addresses still provides network access to the instance to public IPs owned by other Azure customers.
 
 - Flexible Server
   - [Manage firewall rules for Azure Database for MySQL - Flexible Server using the Azure portal](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-manage-firewall-portal)
@@ -66,11 +64,11 @@ For more information on Virtual Networks, reference the following:
 
 Flexible Server supports deployment into a virtual network for secure access. When enabling virtual network integration, the target virtual network subnet must be *delegated*, meaning that it can only contain Flexible Server instances. Because Flexible Server is deployed in a subnet, it will receive a private IP address. To resolve the DNS names of Azure Database for MySQL instances, the virtual networks are integrated with a private DNS zone to support domain name resolution for the Flexible Server instances.
 
->**Note**: If the Flexible Server client, such as a VM, is located in a peered virtual network, then the private DNS zone created for the Flexible Server must also be integrated with the peered virtual network.
+>![Note icon](media/note.png "Note") **Note:** If the Flexible Server client, such as a VM, is located in a peered virtual network, then the private DNS zone created for the Flexible Server must also be integrated with the peered virtual network.
 
->**Note**: Private DNS zone names must end with mysql.database.azure.com. If you are connecting to the Azure Database for MySQL - Flexible sever with SSL and are using an option to perform full verification (sslmode=VERTIFY_IDENTITY) with certificate subject name, use <servername>.mysql.database.azure.com in your connection string.
+>![Note icon](media/note.png "Note") **Note:** Private DNS zone names must end with mysql.database.azure.com. If you are connecting to the Azure Database for MySQL - Flexible sever with SSL and are using an option to perform full verification (sslmode=VERIFY_IDENTITY) with certificate subject name, use <servername>.mysql.database.azure.com in your connection string.
 
-See: [Private DNS zone overview](https://docs.microsoft.com/azure/dns/private-dns-overview)
+![Read more icon](media/read-more.png "Read more")  [Private DNS zone overview](https://docs.microsoft.com/azure/dns/private-dns-overview)
 
 For more information on configuring Private Access for Flexible Server, reference the following:
 
@@ -81,7 +79,7 @@ For more information on configuring Private Access for Flexible Server, referenc
 
 - If deploying an application in an Azure region that supports *Availability Zones*, deploy the application and the Flexible Server instance in the same zone to minimize latency.
 
-> For a review of availability zones, consult the [Introduction to Azure Database for MySQL](../02_IntroToMySQL/02_03_Azure_MySQL.md) document.
+> For a review of availability zones, consult the [Introduction to Azure Database for MySQL] document.
 
 - Organize the components of the application into multiple virtual networks, such as in a [hub and spoke configuration.](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) Employ virtual network peering or VPN Gateways to join the application's virtual networks.
 

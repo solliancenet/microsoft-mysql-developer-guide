@@ -18,7 +18,7 @@ Test and validate the assumptions in a nonproduction environment, and then deplo
 
 Consider automating the remediation steps in Azure.
 
-See: [Successful alerting strategy](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy)
+![Read more icon](media/read-more.png "Read more")  [Successful alerting strategy](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/response#successful-alerting-strategy)
 
 ### Azure alerting concepts
 
@@ -67,7 +67,7 @@ Azure CLI provides the `az monitor` series of commands to manipulate action grou
 
 While the Azure Portal does not provide automation capabilities like the CLI or the REST API, it does support configurable dashboards and provides a strong introduction to monitoring metrics in MySQL.
 
-- [Set up alerts on metrics for Azure Database for MySQL - Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
+- [Set up alerts on metrics for Azure Database for MySQL-Flexible Server](https://docs.microsoft.com/azure/mysql/flexible-server/how-to-alert-on-metric)
 - [Tutorial: Analyze metrics for an Azure resource](https://docs.microsoft.com/azure/azure-monitor/essentials/tutorial-metrics)
 
 #### Azure Monitor REST API

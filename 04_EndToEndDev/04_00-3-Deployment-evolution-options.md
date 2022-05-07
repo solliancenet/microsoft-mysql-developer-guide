@@ -50,7 +50,7 @@ If supporting the operating system and the various other software is not a prefe
 
 However, modernizing an application and migrating them to these aforementioned services may introduce some relatively small application changes.
 
-To implement this deployment, reference the [Cloud Deployment to Azure App Service](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-02-CloudDeploy-AppSvc) article.
+To implement this deployment, reference the [Cloud Deployment to Azure App Service](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-02-CloudDeploy-AppSvc)(https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-02-CloudDeploy-AppSvc) article.
 
 ![This image demonstrates an App Service deployment that references Flexible Server.](./media/app-svc-flex-server.png "App Service and Flexible Server deployment")
 
@@ -71,8 +71,6 @@ To implement this deployment, reference the [Cloud Deployment to Azure App Servi
 Doing manual deployments every time a change is made can be a very time-consuming endeavor.  Utilizing an automated deployment approach can save a lot of time and effort.  Azure DevOps and Github Actions can be used to automatically deploy code and databases each time a new commit occurs in the codebase.
 
 Whether using Azure DevOps or Github, there will be some setup work to support the deployments.  This typically includes creating credentials that can connect to the target environment and deploy the release artifacts.
-
-TODO: Need to replace all relative path links.
 
 To perform deployments using Azure DevOps and GitHub Actions, reference the [Deployment via CI/CD](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-04-CloudDeploy-CICD) article.
 
@@ -114,9 +112,9 @@ ACI and App Service Container hosting are effective ways to run containers, but 
 
 Moving to Azure Kubernetes Service (AKS) will enable the application to inherit all the enterprise features provided by AKS. Moreover, Kubernetes apps that persist data in MySQL Flexible Server unlock numerous benefits:
 
-- In supported regions, co-locating Flexible Server and AKS nodes in the same availability zone minimizes latency
-- Applications can host database proxies, like ProxySQL for MySQL, [on the same infrastructure as their apps](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploy-proxysql-as-a-service-on-kubernetes-using-azure-database/ba-p/1105959)
-- Teams can manage Flexible Server instances directly from AKS through the [Azure Service Operator](https://azure.github.io/azure-service-operator/)
+- In supported regions, co-locating Flexible Server and AKS nodes in the same availability zone minimizes latency.
+- Applications can host database proxies, like ProxySQL for MySQL, [on the same infrastructure as their apps](https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/deploy-proxysql-as-a-service-on-kubernetes-using-azure-database/ba-p/1105959).
+- Teams can manage Flexible Server instances directly from AKS through the [Azure Service Operator](https://azure.github.io/azure-service-operator/).
 
 To perform deployments using AKS, reference the [Migrate to Azure Kubernetes Services (AKS)](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/04-AKS) article to host the database and web app containers on an enterprise-ready AKS instance.
 

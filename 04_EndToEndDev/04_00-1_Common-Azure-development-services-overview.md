@@ -10,8 +10,8 @@ Developers can deploy MySQL-backed apps to Azure on a Windows or Linux environme
 
 - [App Service overview](https://docs.microsoft.com/azure/app-service/overview)
 - PHP and MySQL Flexible Server sample app:
-  - Manual deployment: [Running the sample application]
-  - Scripted deployment: [Cloud Deployment to Azure App Service]
+  - Manual deployment: [Running the sample application](https://github.com/Azure/azure-mysql/blob/master/DeveloperGuide/step-1-sample-apps/README.md)
+  - Scripted deployment: [Cloud Deployment to Azure App Service](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/02-02-CloudDeploy-AppSvc)
 
 ### Serverless Compute
 
@@ -30,8 +30,8 @@ For long-running, stateful serverless architectures, such as when human interven
 - [Introduction to Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)
 - [Azure Functions hosting options](https://docs.microsoft.com/azure/azure-functions/functions-scale)
 - Azure Functions with MySQL Flexible Server samples:
-  - .NET: [Azure Function with MySQL (.NET)]
-  - Python: [Azure Function with MySQL (Python)]
+  - .NET: [Azure Function with MySQL (.NET)](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-01-FunctionApp-DotNet)
+  - Python: [Azure Function with MySQL (Python)](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-02-FunctionApp-Python)
 
 ### Azure Logic Apps
 
@@ -43,13 +43,13 @@ Azure Logic Apps interface with external systems through *managed connectors*. M
 
 - [What is a Azure Logic App?](https://docs.microsoft.com/azure/logic-apps/logic-apps-overview)
 - [Compare Azure Functions and Azure Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-compare-logic-apps-ms-flow-webjobs#compare-azure-functions-and-azure-logic-apps)
-- [Logic Apps with MySQL]
+- [Logic Apps with MySQL](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/06-05-LogicApp)
 
 ### Microservices
 
 Organizations deploy microservices architectures to offer resilient, scalable, developer-friendly applications. Unlike traditional monolithic apps, each service operates independently and can be updated without redeploying the app. Each service also manages its own persistence layer, meaning that service teams can perform database schema updates without affecting other services.
 
-While microservices apps offer major benefits, they require advanced tools and knowledge of distributed systems. Organizations utilize domain analysis to define optimal boundaries between services. 
+While microservices apps offer major benefits, they require advanced tools and knowledge of distributed systems. Organizations utilize domain analysis to define optimal boundaries between services.
 
 On Azure, organizations often deploy microservices to Azure Kubernetes Service through CI/CD platforms, such as GitHub Actions.
 
@@ -57,7 +57,7 @@ On Azure, organizations often deploy microservices to Azure Kubernetes Service t
 
 - [Build microservices on Azure](https://docs.microsoft.com/azure/architecture/microservices/)
 - [Using domain analysis to model microservices](https://docs.microsoft.com/azure/architecture/microservices/model/domain-analysis)
-- [Deploying a Laravel app backed by a Java REST API to AKS]
+- [Deploying a Laravel app backed by a Java REST API to AKS](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-2-developer-journey-steps/sample-php-app-rest)
 
 ### API Management
 
@@ -113,4 +113,4 @@ Azure Data Factory supports both Azure PaaS and generic (on-premises) MySQL inst
 
 Developers can execute Data Factory pipelines manually, on a schedule, or in response to Azure events through the Event Grid integration.
 
-See: [Copy activity performance and scalability guide](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
+![Read more icon](media/read-more.png "Read more") [Copy activity performance and scalability guide](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)

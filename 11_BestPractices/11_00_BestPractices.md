@@ -39,7 +39,7 @@ Developers can identify container resource issues using monitoring utilities, li
 
 ### 4. Implement network isolation and SSL connectivity
 
-MySQL Flexible Server natively supports connectivity through Azure Virtual Networks, meaning that the database endpoint does not face the public Internet, and database traffic remains within Azure. Consider the [Networking and connectivity options] document for more information regarding public and private access.
+MySQL Flexible Server natively supports connectivity through Azure Virtual Networks, meaning that the database endpoint does not face the public Internet, and database traffic remains within Azure. Consider the [06 / Networking and Security] document for more information regarding public and private access.
 
 Microsoft also recommends securing data in motion through SSL for applications that support SSL connectivity. Legacy applications should only use lower SSL versions or disable SSL connectivity in secure network environments.
 

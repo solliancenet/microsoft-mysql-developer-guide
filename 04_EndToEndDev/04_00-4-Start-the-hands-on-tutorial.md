@@ -44,7 +44,7 @@ Another option for deploying infrastructure using a template is to use Azure CLI
 
 #### Step 1 - Build the development environment - deploy one of the templates below
 
-This is an optional step if you have your development environment already set up. You will need to install the basic Azure development packages. 
+This is an optional step if you have your development environment already set up. You will need to install the basic Azure development packages.
 
 - [Basic Template](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-0-create-development-vm/basic-template/template.json)
 - [Secure Template](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-0-create-development-vm/secure-template/template-secure.json)
@@ -87,7 +87,7 @@ Click the links to complete each journey before going to the next.
 
 ##### Compute and orchestration tutorial lab links
 
-Additionally, some applications are more than just a web application with a database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities. 
+Additionally, some applications are more than just a web application with a database backend.  Microsoft Azure provides several  compute engines with varying degrees of features and administrative abilities.
 
 It is recommended that each of the above scenarios is executed in the order shown so that a full picture of the steps involved in the development evolution is understood.  This will also ensure the necessary pre-requisite Azure services and resources are available for the reader to progress to the more complex deployment examples.
 
@@ -105,4 +105,6 @@ It is recommended that each of the above scenarios is executed in the order show
 
 The Sample Application is written as a two-tier application.  This architecture is great for a proof of concept or an application that has limited performance needs. Scaling this type of application is difficult and costly. Developers should consider separating their application's business logic and data concerns into a [microservice](https://azure.microsoft.com/solutions/microservice-applications/#solution-architectures) layer. For more information on design patterns, review: [Design patterns for microservices](https://docs.microsoft.com/azure/architecture/microservices/design/patterns).
 
-After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture. See: [Deploying a Laravel app backed by a Java REST API to AKS](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-1-sample-apps/sample-php-app-rest).
+After reviewing the need for microservice architecture and the typical design patterns, you can see how the Sample Application architecture changed when it utilizes a Java REST microservice architecture.
+
+![Read more icon](media/read-more.png "Read more")  [Deploying a Laravel app backed by a Java REST API to AKS](https://github.com/Azure/azure-mysql/tree/master/DeveloperGuide/step-1-sample-apps/sample-php-app-rest).
